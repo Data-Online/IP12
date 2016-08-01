@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPv5", "IPv5.csproj", "{1DC0C898-AB4F-4488-8230-4CDF353E9134}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPv5.Data", "Data Access Layer\IPv5.Data.csproj", "{FA37A02D-13F3-449C-9CBD-EC20CBD11386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPv5.Business", "Business Layer\IPv5.Business.csproj", "{20DED90F-B904-4135-8695-2FD68E72EB45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DC0C898-AB4F-4488-8230-4CDF353E9134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC0C898-AB4F-4488-8230-4CDF353E9134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC0C898-AB4F-4488-8230-4CDF353E9134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC0C898-AB4F-4488-8230-4CDF353E9134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA37A02D-13F3-449C-9CBD-EC20CBD11386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA37A02D-13F3-449C-9CBD-EC20CBD11386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA37A02D-13F3-449C-9CBD-EC20CBD11386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA37A02D-13F3-449C-9CBD-EC20CBD11386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DED90F-B904-4135-8695-2FD68E72EB45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DED90F-B904-4135-8695-2FD68E72EB45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DED90F-B904-4135-8695-2FD68E72EB45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DED90F-B904-4135-8695-2FD68E72EB45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

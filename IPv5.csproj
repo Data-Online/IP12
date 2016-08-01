@@ -1,0 +1,2005 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1DC0C898-AB4F-4488-8230-4CDF353E9134}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>IPv5</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CarlosAg.ExcelXmlWriter, Version=1.0.0.6, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.3.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Recaptcha, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9afc4d65b28c38c2, processorArchitecture=MSIL" />
+    <Reference Include="Report, Version=3.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ciloci.Flee, Version=0.9.26.0, Culture=neutral, PublicKeyToken=c8526a021ef298ed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.DataVisualization.Design, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Extensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\System.Web.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.5.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>True</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="BaseClasses, Version=7.0.2.1000, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\Bin\BaseClasses.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.cs" />
+    <Compile Include="Shared\AccessParser.cs" />
+    <Compile Include="Shared\BaseApplicationMenuControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\BaseApplicationPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\BaseApplicationRecordControl.cs" />
+    <Compile Include="Shared\BaseApplicationTableControl.cs" />
+    <Compile Include="Shared\BaseApplicationUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\CalendarExtendarClass.cs" />
+    <Compile Include="Shared\CsvParser.cs" />
+    <Compile Include="Shared\CustomEditor.cs" />
+    <Compile Include="Shared\HTMLEditor.cs" />
+    <Compile Include="Shared\Data.cs" />
+    <Compile Include="Shared\ExcelParser.cs" />
+    <Compile Include="Shared\ExportData.cs" />
+    <Compile Include="Shared\FormulaEvaluator.cs" />
+    <Compile Include="Shared\FormulaUtils.cs" />
+    <Compile Include="Shared\ExportFieldValue.aspx.cs">
+      <DependentUpon>ExportFieldValue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Forbidden.aspx.cs">
+      <DependentUpon>Forbidden.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ForbiddenMobile.aspx.cs">
+      <DependentUpon>ForbiddenMobile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ImportData.aspx.cs">
+      <DependentUpon>ImportData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ImportDataItems.cs" />
+    <Compile Include="Shared\MenuXmlSiteMapProvider.cs" />
+    <Compile Include="Shared\Parser.cs" />
+    <Compile Include="Shared\SelectFileToImport.aspx.cs">
+      <DependentUpon>SelectFileToImport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Show_Error.aspx.cs">
+      <DependentUpon>Show_Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\SignInState.cs" />
+    <Compile Include="BankLoans\AddBankLoans.aspx.cs">
+      <DependentUpon>AddBankLoans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankLoans\AddBankLoans.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankLoans\EditBankLoans.aspx.cs">
+      <DependentUpon>EditBankLoans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankLoans\EditBankLoans.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankLoans\EditBankLoansTable.aspx.cs">
+      <DependentUpon>EditBankLoansTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankLoans\EditBankLoansTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankLoans\GroupByBankLoansTable.aspx.cs">
+      <DependentUpon>GroupByBankLoansTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankLoans\GroupByBankLoansTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankLoans\ShowBankLoans.aspx.cs">
+      <DependentUpon>ShowBankLoans.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankLoans\ShowBankLoans.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankLoans\ShowBankLoansGallery.aspx.cs">
+      <DependentUpon>ShowBankLoansGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankLoans\ShowBankLoansGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankLoans\ShowBankLoansTable.aspx.cs">
+      <DependentUpon>ShowBankLoansTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BankLoans\ShowBankLoansTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cities\AddCities.aspx.cs">
+      <DependentUpon>AddCities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities\AddCities.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cities\EditCities.aspx.cs">
+      <DependentUpon>EditCities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities\EditCities.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cities\EditCitiesTable.aspx.cs">
+      <DependentUpon>EditCitiesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities\EditCitiesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cities\GroupByCitiesTable.aspx.cs">
+      <DependentUpon>GroupByCitiesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities\GroupByCitiesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cities\ShowCities.aspx.cs">
+      <DependentUpon>ShowCities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities\ShowCities.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cities\ShowCitiesGallery.aspx.cs">
+      <DependentUpon>ShowCitiesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities\ShowCitiesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cities\ShowCitiesTable.aspx.cs">
+      <DependentUpon>ShowCitiesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities\ShowCitiesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\AddContactNotes.aspx.cs">
+      <DependentUpon>AddContactNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\AddContactNotes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\EditContactNotes.aspx.cs">
+      <DependentUpon>EditContactNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\EditContactNotes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\EditContactNotesTable.aspx.cs">
+      <DependentUpon>EditContactNotesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\EditContactNotesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\GroupByContactNotesTable.aspx.cs">
+      <DependentUpon>GroupByContactNotesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\GroupByContactNotesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\ShowContactNotes.aspx.cs">
+      <DependentUpon>ShowContactNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\ShowContactNotes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\ShowContactNotesGallery.aspx.cs">
+      <DependentUpon>ShowContactNotesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\ShowContactNotesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\ShowContactNotesTable.aspx.cs">
+      <DependentUpon>ShowContactNotesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactNotes\ShowContactNotesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contacts\AddContacts.aspx.cs">
+      <DependentUpon>AddContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\AddContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contacts\EditContacts.aspx.cs">
+      <DependentUpon>EditContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\EditContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contacts\EditContactsTable.aspx.cs">
+      <DependentUpon>EditContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\EditContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contacts\GroupByContactsTable.aspx.cs">
+      <DependentUpon>GroupByContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\GroupByContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contacts\ShowContacts.aspx.cs">
+      <DependentUpon>ShowContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\ShowContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contacts\ShowContactsGallery.aspx.cs">
+      <DependentUpon>ShowContactsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\ShowContactsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contacts\ShowContactsTable.aspx.cs">
+      <DependentUpon>ShowContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\ShowContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\AddContactTypes.aspx.cs">
+      <DependentUpon>AddContactTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\AddContactTypes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\EditContactTypes.aspx.cs">
+      <DependentUpon>EditContactTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\EditContactTypes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\EditContactTypesTable.aspx.cs">
+      <DependentUpon>EditContactTypesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\EditContactTypesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\GroupByContactTypesTable.aspx.cs">
+      <DependentUpon>GroupByContactTypesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\GroupByContactTypesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\ShowContactTypes.aspx.cs">
+      <DependentUpon>ShowContactTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\ShowContactTypes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\ShowContactTypesGallery.aspx.cs">
+      <DependentUpon>ShowContactTypesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\ShowContactTypesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\ShowContactTypesTable.aspx.cs">
+      <DependentUpon>ShowContactTypesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactTypes\ShowContactTypesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contractors\AddContractors.aspx.cs">
+      <DependentUpon>AddContractors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contractors\AddContractors.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contractors\EditContractors.aspx.cs">
+      <DependentUpon>EditContractors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contractors\EditContractors.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contractors\EditContractorsTable.aspx.cs">
+      <DependentUpon>EditContractorsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contractors\EditContractorsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contractors\GroupByContractorsTable.aspx.cs">
+      <DependentUpon>GroupByContractorsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contractors\GroupByContractorsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contractors\ShowContractors.aspx.cs">
+      <DependentUpon>ShowContractors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contractors\ShowContractors.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contractors\ShowContractorsGallery.aspx.cs">
+      <DependentUpon>ShowContractorsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contractors\ShowContractorsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Contractors\ShowContractorsTable.aspx.cs">
+      <DependentUpon>ShowContractorsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contractors\ShowContractorsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Countries\AddCountries.aspx.cs">
+      <DependentUpon>AddCountries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Countries\AddCountries.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Countries\EditCountries.aspx.cs">
+      <DependentUpon>EditCountries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Countries\EditCountries.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Countries\EditCountriesTable.aspx.cs">
+      <DependentUpon>EditCountriesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Countries\EditCountriesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Countries\GroupByCountriesTable.aspx.cs">
+      <DependentUpon>GroupByCountriesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Countries\GroupByCountriesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Countries\ShowCountries.aspx.cs">
+      <DependentUpon>ShowCountries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Countries\ShowCountries.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Countries\ShowCountriesGallery.aspx.cs">
+      <DependentUpon>ShowCountriesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Countries\ShowCountriesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Countries\ShowCountriesTable.aspx.cs">
+      <DependentUpon>ShowCountriesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Countries\ShowCountriesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Directors\AddDirectors.aspx.cs">
+      <DependentUpon>AddDirectors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Directors\AddDirectors.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Directors\EditDirectors.aspx.cs">
+      <DependentUpon>EditDirectors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Directors\EditDirectors.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Directors\EditDirectorsTable.aspx.cs">
+      <DependentUpon>EditDirectorsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Directors\EditDirectorsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Directors\GroupByDirectorsTable.aspx.cs">
+      <DependentUpon>GroupByDirectorsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Directors\GroupByDirectorsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Directors\ShowDirectors.aspx.cs">
+      <DependentUpon>ShowDirectors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Directors\ShowDirectors.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Directors\ShowDirectorsGallery.aspx.cs">
+      <DependentUpon>ShowDirectorsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Directors\ShowDirectorsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Directors\ShowDirectorsTable.aspx.cs">
+      <DependentUpon>ShowDirectorsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Directors\ShowDirectorsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\EmailHeader.ascx.cs">
+      <DependentUpon>EmailHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkTable\AddLinkTable.aspx.cs">
+      <DependentUpon>AddLinkTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkTable\AddLinkTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTable\EditLinkTable.aspx.cs">
+      <DependentUpon>EditLinkTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkTable\EditLinkTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTable\EditLinkTableTable.aspx.cs">
+      <DependentUpon>EditLinkTableTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkTable\EditLinkTableTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTable\GroupByLinkTableTable.aspx.cs">
+      <DependentUpon>GroupByLinkTableTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkTable\GroupByLinkTableTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTable\ShowLinkTable.aspx.cs">
+      <DependentUpon>ShowLinkTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkTable\ShowLinkTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTable\ShowLinkTableGallery.aspx.cs">
+      <DependentUpon>ShowLinkTableGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkTable\ShowLinkTableGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTable\ShowLinkTableTable.aspx.cs">
+      <DependentUpon>ShowLinkTableTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LinkTable\ShowLinkTableTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Menu Panels\Menu.ascx.cs">
+      <DependentUpon>Menu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MMContracts\AddMMContracts.aspx.cs">
+      <DependentUpon>AddMMContracts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MMContracts\AddMMContracts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContracts\EditMMContracts.aspx.cs">
+      <DependentUpon>EditMMContracts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MMContracts\EditMMContracts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContracts\EditMMContractsTable.aspx.cs">
+      <DependentUpon>EditMMContractsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MMContracts\EditMMContractsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContracts\GroupByMMContractsTable.aspx.cs">
+      <DependentUpon>GroupByMMContractsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MMContracts\GroupByMMContractsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContracts\ShowMMContracts.aspx.cs">
+      <DependentUpon>ShowMMContracts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MMContracts\ShowMMContracts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContracts\ShowMMContractsGallery.aspx.cs">
+      <DependentUpon>ShowMMContractsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MMContracts\ShowMMContractsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContracts\ShowMMContractsTable.aspx.cs">
+      <DependentUpon>ShowMMContractsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MMContracts\ShowMMContractsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AddProperties.aspx.cs">
+      <DependentUpon>AddProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\AddProperties.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\EditProperties.aspx.cs">
+      <DependentUpon>EditProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\EditProperties.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\EditPropertiesTable.aspx.cs">
+      <DependentUpon>EditPropertiesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\EditPropertiesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\GroupByPropertiesTable.aspx.cs">
+      <DependentUpon>GroupByPropertiesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\GroupByPropertiesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\ShowProperties.aspx.cs">
+      <DependentUpon>ShowProperties.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\ShowProperties.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\ShowPropertiesGallery.aspx.cs">
+      <DependentUpon>ShowPropertiesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\ShowPropertiesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\ShowPropertiesTable.aspx.cs">
+      <DependentUpon>ShowPropertiesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\ShowPropertiesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\AddPropertyContacts.aspx.cs">
+      <DependentUpon>AddPropertyContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\AddPropertyContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\EditPropertyContacts.aspx.cs">
+      <DependentUpon>EditPropertyContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\EditPropertyContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\EditPropertyContactsTable.aspx.cs">
+      <DependentUpon>EditPropertyContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\EditPropertyContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\GroupByPropertyContactsTable.aspx.cs">
+      <DependentUpon>GroupByPropertyContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\GroupByPropertyContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\ShowPropertyContacts.aspx.cs">
+      <DependentUpon>ShowPropertyContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\ShowPropertyContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\ShowPropertyContactsGallery.aspx.cs">
+      <DependentUpon>ShowPropertyContactsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\ShowPropertyContactsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\ShowPropertyContactsTable.aspx.cs">
+      <DependentUpon>ShowPropertyContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyContacts\ShowPropertyContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\AddPropertyNotes.aspx.cs">
+      <DependentUpon>AddPropertyNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\AddPropertyNotes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\EditPropertyNotes.aspx.cs">
+      <DependentUpon>EditPropertyNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\EditPropertyNotes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\EditPropertyNotesTable.aspx.cs">
+      <DependentUpon>EditPropertyNotesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\EditPropertyNotesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\GroupByPropertyNotesTable.aspx.cs">
+      <DependentUpon>GroupByPropertyNotesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\GroupByPropertyNotesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\ShowPropertyNotes.aspx.cs">
+      <DependentUpon>ShowPropertyNotes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\ShowPropertyNotes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\ShowPropertyNotesGallery.aspx.cs">
+      <DependentUpon>ShowPropertyNotesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\ShowPropertyNotesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\ShowPropertyNotesTable.aspx.cs">
+      <DependentUpon>ShowPropertyNotesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertyNotes\ShowPropertyNotesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Regions\AddRegions.aspx.cs">
+      <DependentUpon>AddRegions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regions\AddRegions.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Regions\EditRegions.aspx.cs">
+      <DependentUpon>EditRegions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regions\EditRegions.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Regions\EditRegionsTable.aspx.cs">
+      <DependentUpon>EditRegionsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regions\EditRegionsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Regions\GroupByRegionsTable.aspx.cs">
+      <DependentUpon>GroupByRegionsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regions\GroupByRegionsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Regions\ShowRegions.aspx.cs">
+      <DependentUpon>ShowRegions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regions\ShowRegions.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Regions\ShowRegionsGallery.aspx.cs">
+      <DependentUpon>ShowRegionsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regions\ShowRegionsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Regions\ShowRegionsTable.aspx.cs">
+      <DependentUpon>ShowRegionsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Regions\ShowRegionsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviews\AddRentReviews.aspx.cs">
+      <DependentUpon>AddRentReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentReviews\AddRentReviews.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviews\EditRentReviews.aspx.cs">
+      <DependentUpon>EditRentReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentReviews\EditRentReviews.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviews\EditRentReviewsTable.aspx.cs">
+      <DependentUpon>EditRentReviewsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentReviews\EditRentReviewsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviews\GroupByRentReviewsTable.aspx.cs">
+      <DependentUpon>GroupByRentReviewsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentReviews\GroupByRentReviewsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviews\ShowRentReviews.aspx.cs">
+      <DependentUpon>ShowRentReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentReviews\ShowRentReviews.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviews\ShowRentReviewsGallery.aspx.cs">
+      <DependentUpon>ShowRentReviewsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentReviews\ShowRentReviewsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviews\ShowRentReviewsTable.aspx.cs">
+      <DependentUpon>ShowRentReviewsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RentReviews\ShowRentReviewsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\AddRoles.aspx.cs">
+      <DependentUpon>AddRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\AddRoles.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\EditRoles.aspx.cs">
+      <DependentUpon>EditRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\EditRoles.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\EditRolesTable.aspx.cs">
+      <DependentUpon>EditRolesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\EditRolesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\GroupByRolesTable.aspx.cs">
+      <DependentUpon>GroupByRolesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\GroupByRolesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ShowRoles.aspx.cs">
+      <DependentUpon>ShowRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\ShowRoles.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ShowRolesGallery.aspx.cs">
+      <DependentUpon>ShowRolesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\ShowRolesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Roles\ShowRolesTable.aspx.cs">
+      <DependentUpon>ShowRolesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roles\ShowRolesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\AddServiceTypes.aspx.cs">
+      <DependentUpon>AddServiceTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\AddServiceTypes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\EditServiceTypes.aspx.cs">
+      <DependentUpon>EditServiceTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\EditServiceTypes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\EditServiceTypesTable.aspx.cs">
+      <DependentUpon>EditServiceTypesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\EditServiceTypesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\GroupByServiceTypesTable.aspx.cs">
+      <DependentUpon>GroupByServiceTypesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\GroupByServiceTypesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\ShowServiceTypes.aspx.cs">
+      <DependentUpon>ShowServiceTypes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\ShowServiceTypes.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\ShowServiceTypesGallery.aspx.cs">
+      <DependentUpon>ShowServiceTypesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\ShowServiceTypesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\ShowServiceTypesTable.aspx.cs">
+      <DependentUpon>ShowServiceTypesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceTypes\ShowServiceTypesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\DatePagination.ascx.cs">
+      <DependentUpon>DatePagination.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IncludeComponent.ascx.cs">
+      <DependentUpon>IncludeComponent.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Menu_Item.ascx.cs">
+      <DependentUpon>Menu_Item.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Menu_ItemVertical.ascx.cs">
+      <DependentUpon>Menu_ItemVertical.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Menu_Item_Highlighted.ascx.cs">
+      <DependentUpon>Menu_Item_Highlighted.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Menu_Item_HighlightedVertical.ascx.cs">
+      <DependentUpon>Menu_Item_HighlightedVertical.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\Pagination.ascx.cs">
+      <DependentUpon>Pagination.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PaginationMedium.ascx.cs">
+      <DependentUpon>PaginationMedium.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PaginationModern.ascx.cs">
+      <DependentUpon>PaginationModern.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\PaginationShort.ascx.cs">
+      <DependentUpon>PaginationShort.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ThemeButton.ascx.cs">
+      <DependentUpon>ThemeButton.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\ThemeButtonWithArrow.ascx.cs">
+      <DependentUpon>ThemeButtonWithArrow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\AddSuppliers.aspx.cs">
+      <DependentUpon>AddSuppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\AddSuppliers.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Suppliers\EditSuppliers.aspx.cs">
+      <DependentUpon>EditSuppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\EditSuppliers.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Suppliers\EditSuppliersTable.aspx.cs">
+      <DependentUpon>EditSuppliersTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\EditSuppliersTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Suppliers\GroupBySuppliersTable.aspx.cs">
+      <DependentUpon>GroupBySuppliersTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\GroupBySuppliersTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Suppliers\ShowSuppliers.aspx.cs">
+      <DependentUpon>ShowSuppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\ShowSuppliers.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Suppliers\ShowSuppliersGallery.aspx.cs">
+      <DependentUpon>ShowSuppliersGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\ShowSuppliersGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Suppliers\ShowSuppliersTable.aspx.cs">
+      <DependentUpon>ShowSuppliersTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Suppliers\ShowSuppliersTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpires\AddTermExpires.aspx.cs">
+      <DependentUpon>AddTermExpires.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermExpires\AddTermExpires.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpires\EditTermExpires.aspx.cs">
+      <DependentUpon>EditTermExpires.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermExpires\EditTermExpires.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpires\EditTermExpiresTable.aspx.cs">
+      <DependentUpon>EditTermExpiresTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermExpires\EditTermExpiresTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpires\GroupByTermExpiresTable.aspx.cs">
+      <DependentUpon>GroupByTermExpiresTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermExpires\GroupByTermExpiresTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpires\ShowTermExpires.aspx.cs">
+      <DependentUpon>ShowTermExpires.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermExpires\ShowTermExpires.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpires\ShowTermExpiresGallery.aspx.cs">
+      <DependentUpon>ShowTermExpiresGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermExpires\ShowTermExpiresGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpires\ShowTermExpiresTable.aspx.cs">
+      <DependentUpon>ShowTermExpiresTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermExpires\ShowTermExpiresTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\AddTermRenewals.aspx.cs">
+      <DependentUpon>AddTermRenewals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\AddTermRenewals.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\EditTermRenewals.aspx.cs">
+      <DependentUpon>EditTermRenewals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\EditTermRenewals.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\EditTermRenewalsTable.aspx.cs">
+      <DependentUpon>EditTermRenewalsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\EditTermRenewalsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\GroupByTermRenewalsTable.aspx.cs">
+      <DependentUpon>GroupByTermRenewalsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\GroupByTermRenewalsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\ShowTermRenewals.aspx.cs">
+      <DependentUpon>ShowTermRenewals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\ShowTermRenewals.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\ShowTermRenewalsGallery.aspx.cs">
+      <DependentUpon>ShowTermRenewalsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\ShowTermRenewalsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\ShowTermRenewalsTable.aspx.cs">
+      <DependentUpon>ShowTermRenewalsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TermRenewals\ShowTermRenewalsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\AddUsers.aspx.cs">
+      <DependentUpon>AddUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\AddUsers.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\EditUsers.aspx.cs">
+      <DependentUpon>EditUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\EditUsers.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\EditUsersTable.aspx.cs">
+      <DependentUpon>EditUsersTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\EditUsersTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\GroupByUsersTable.aspx.cs">
+      <DependentUpon>GroupByUsersTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\GroupByUsersTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\ShowUsers.aspx.cs">
+      <DependentUpon>ShowUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ShowUsers.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\ShowUsersGallery.aspx.cs">
+      <DependentUpon>ShowUsersGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ShowUsersGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users\ShowUsersTable.aspx.cs">
+      <DependentUpon>ShowUsersTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users\ShowUsersTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\AddUsers_Roles.aspx.cs">
+      <DependentUpon>AddUsers_Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\AddUsers_Roles.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\EditUsers_Roles.aspx.cs">
+      <DependentUpon>EditUsers_Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\EditUsers_Roles.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\EditUsers_RolesTable.aspx.cs">
+      <DependentUpon>EditUsers_RolesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\EditUsers_RolesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\GroupByUsers_RolesTable.aspx.cs">
+      <DependentUpon>GroupByUsers_RolesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\GroupByUsers_RolesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\ShowUsers_Roles.aspx.cs">
+      <DependentUpon>ShowUsers_Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\ShowUsers_Roles.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\ShowUsers_RolesGallery.aspx.cs">
+      <DependentUpon>ShowUsers_RolesGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\ShowUsers_RolesGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\ShowUsers_RolesTable.aspx.cs">
+      <DependentUpon>ShowUsers_RolesTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Users_Roles\ShowUsers_RolesTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyBankLoans\GroupByVPropertyBankLoansTable.aspx.cs">
+      <DependentUpon>GroupByVPropertyBankLoansTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyBankLoans\GroupByVPropertyBankLoansTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyBankLoans\ShowVPropertyBankLoansGallery.aspx.cs">
+      <DependentUpon>ShowVPropertyBankLoansGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyBankLoans\ShowVPropertyBankLoansGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyBankLoans\ShowVPropertyBankLoansTable.aspx.cs">
+      <DependentUpon>ShowVPropertyBankLoansTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyBankLoans\ShowVPropertyBankLoansTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyContacts\GroupByVPropertyContactsTable.aspx.cs">
+      <DependentUpon>GroupByVPropertyContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyContacts\GroupByVPropertyContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyContacts\ShowVPropertyContactsGallery.aspx.cs">
+      <DependentUpon>ShowVPropertyContactsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyContacts\ShowVPropertyContactsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyContacts\ShowVPropertyContactsTable.aspx.cs">
+      <DependentUpon>ShowVPropertyContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyContacts\ShowVPropertyContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyMMContracts\GroupByVPropertyMMContractsTable.aspx.cs">
+      <DependentUpon>GroupByVPropertyMMContractsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyMMContracts\GroupByVPropertyMMContractsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyMMContracts\ShowVPropertyMMContractsGallery.aspx.cs">
+      <DependentUpon>ShowVPropertyMMContractsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyMMContracts\ShowVPropertyMMContractsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyMMContracts\ShowVPropertyMMContractsTable.aspx.cs">
+      <DependentUpon>ShowVPropertyMMContractsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyMMContracts\ShowVPropertyMMContractsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyRentReviews\GroupByVPropertyRentReviewsTable.aspx.cs">
+      <DependentUpon>GroupByVPropertyRentReviewsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyRentReviews\GroupByVPropertyRentReviewsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyRentReviews\ShowVPropertyRentReviewsGallery.aspx.cs">
+      <DependentUpon>ShowVPropertyRentReviewsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyRentReviews\ShowVPropertyRentReviewsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyRentReviews\ShowVPropertyRentReviewsTable.aspx.cs">
+      <DependentUpon>ShowVPropertyRentReviewsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyRentReviews\ShowVPropertyRentReviewsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermExpires\GroupByVPropertyTermExpiresTable.aspx.cs">
+      <DependentUpon>GroupByVPropertyTermExpiresTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermExpires\GroupByVPropertyTermExpiresTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresGallery.aspx.cs">
+      <DependentUpon>ShowVPropertyTermExpiresGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable.aspx.cs">
+      <DependentUpon>ShowVPropertyTermExpiresTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermRenewals\GroupByVPropertyTermRenewalsTable.aspx.cs">
+      <DependentUpon>GroupByVPropertyTermRenewalsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermRenewals\GroupByVPropertyTermRenewalsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsGallery.aspx.cs">
+      <DependentUpon>ShowVPropertyTermRenewalsGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsGallery.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsTable.aspx.cs">
+      <DependentUpon>ShowVPropertyTermRenewalsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable2.aspx.cs">
+      <DependentUpon>ShowVPropertyTermExpiresTable2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable2.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertyMMContracts\ShowMMContractExpiration.aspx.cs">
+      <DependentUpon>ShowMMContractExpiration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\EmailFooter.ascx.cs" >
+      <DependentUpon>EmailFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\IEmailFooter.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\IEmailHeader.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\IFooter.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Header and Footer\IHeader.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Menu Panels\IMenu.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IDatePagination.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IIncludeComponent.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\InfinitePagination.ascx.cs" >
+      <DependentUpon>InfinitePagination.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shared\IInfinitePagination.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IMenu_Item.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IMenu_ItemVertical.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IMenu_Item_Highlighted.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IMenu_Item_HighlightedVertical.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IPagination.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IPaginationMedium.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IPaginationModern.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IPaginationShort.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IThemeButton.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Shared\IThemeButtonWithArrow.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseClasses\Readme.txt" />
+    <Content Include="Default.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Header and Footer\EmailHeader.ascx" />
+    <Content Include="Header and Footer\Footer.ascx" />
+    <Content Include="Header and Footer\Header.ascx" />
+    <Content Include="Menu Panels\Menu.ascx" />
+    <Content Include="AppInfo.xml" />
+    <Content Include="ApplicationWebForm.js" />
+    <Content Include="ApplicationWebUIValidation.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Master Pages\Blank.master" />
+    <Content Include="Master Pages\Email.master" />
+    <Content Include="Master Pages\HorizontalMenu.master" />
+    <Content Include="Master Pages\VerticalMenu.master" />
+    <Content Include="Menu Panels\Menu.sitemap" />
+    <Content Include="SetFocus.js" />
+    <Content Include="Shared\ConfigureAddRecord.aspx" />
+    <Content Include="Shared\ConfigureCollapseExpandRowBtn.aspx" />
+    <Content Include="Shared\ConfigureEditRecord.aspx" />
+    <Content Include="Shared\ConfigureSpecialEditRecord.aspx" />
+    <Content Include="Shared\ConfigureSpecialViewRecord.aspx" />
+    <Content Include="Shared\ConfigureViewRecord.aspx" />
+    <Content Include="Shared\Default.aspx" />
+    <Content Include="Shared\ExportFieldValue.aspx" />
+    <Content Include="Shared\Forbidden.aspx" />
+    <Content Include="Shared\ForbiddenMobile.aspx" />
+    <Content Include="Shared\ImportData.aspx" />
+    <Content Include="Shared\IncludeComponent.ascx" />
+    <Content Include="Shared\Internal_Server_Error.html" />
+    <Content Include="Shared\Menu_Item.ascx" />
+    <Content Include="Shared\Menu_ItemVertical.ascx" />
+    <Content Include="Shared\Menu_Item_Highlighted.ascx" />
+    <Content Include="Shared\Menu_Item_HighlightedVertical.ascx" />
+    <Content Include="Shared\Menu_Item_HighlightedVertical.xml" />
+    <Content Include="Shared\Pagination.ascx" />
+    <Content Include="Shared\PaginationShort.ascx" />
+    <Content Include="Shared\PaginationMedium.ascx" />
+    <Content Include="Shared\PreviewPage.html" />
+    <Content Include="Shared\SelectFileToImport.aspx" />
+    <Content Include="Shared\Show_Error.aspx" />
+    <Content Include="Shared\ThemeButton.ascx" />
+    <Content Include="Troubleshooting\default.aspx" />
+    <Content Include="Troubleshooting\default.htm" />
+    <Content Include="Troubleshooting\default.html" />
+    <Content Include="Troubleshooting\OnlineHelp.js" />
+    <Content Include="Troubleshooting\Readme.txt" />
+    <Content Include="Troubleshooting\Test0.html" />
+    <Content Include="Troubleshooting\Test0Do.aspx" />
+    <Content Include="Troubleshooting\Test1.html" />
+    <Content Include="Troubleshooting\Test1Do.aspx" />
+    <Content Include="Troubleshooting\Test2.html" />
+    <Content Include="Troubleshooting\Test2Do.aspx" />
+    <Content Include="Troubleshooting\Test3.aspx" />
+    <Content Include="Troubleshooting\Test3Do.aspx" />
+    <Content Include="Troubleshooting\Test4.aspx" />
+    <Content Include="Troubleshooting\Test4Do.aspx" />
+    <Content Include="Troubleshooting\Test5.aspx" />
+    <Content Include="Troubleshooting\Test5Do.aspx" />
+    <Content Include="Troubleshooting\TestConfiguration.css" />
+    <Content Include="Troubleshooting\TestConfiguration.mdb">
+    </Content>
+    <Content Include="BankLoans\AddBankLoans.aspx" />
+    <Content Include="BankLoans\EditBankLoans.aspx" />
+    <Content Include="BankLoans\EditBankLoansTable.aspx" />
+    <Content Include="BankLoans\GroupByBankLoansTable.aspx" />
+    <Content Include="BankLoans\ShowBankLoans.aspx" />
+    <Content Include="BankLoans\ShowBankLoansGallery.aspx" />
+    <Content Include="BankLoans\ShowBankLoansTable.aspx" />
+    <Content Include="Cities\AddCities.aspx" />
+    <Content Include="Cities\EditCities.aspx" />
+    <Content Include="Cities\EditCitiesTable.aspx" />
+    <Content Include="Cities\GroupByCitiesTable.aspx" />
+    <Content Include="Cities\ShowCities.aspx" />
+    <Content Include="Cities\ShowCitiesGallery.aspx" />
+    <Content Include="Cities\ShowCitiesTable.aspx" />
+    <Content Include="ContactNotes\AddContactNotes.aspx" />
+    <Content Include="ContactNotes\EditContactNotes.aspx" />
+    <Content Include="ContactNotes\EditContactNotesTable.aspx" />
+    <Content Include="ContactNotes\GroupByContactNotesTable.aspx" />
+    <Content Include="ContactNotes\ShowContactNotes.aspx" />
+    <Content Include="ContactNotes\ShowContactNotesGallery.aspx" />
+    <Content Include="ContactNotes\ShowContactNotesTable.aspx" />
+    <Content Include="Contacts\AddContacts.aspx" />
+    <Content Include="Contacts\EditContacts.aspx" />
+    <Content Include="Contacts\EditContactsTable.aspx" />
+    <Content Include="Contacts\GroupByContactsTable.aspx" />
+    <Content Include="Contacts\ShowContacts.aspx" />
+    <Content Include="Contacts\ShowContactsGallery.aspx" />
+    <Content Include="Contacts\ShowContactsTable.aspx" />
+    <Content Include="ContactTypes\AddContactTypes.aspx" />
+    <Content Include="ContactTypes\EditContactTypes.aspx" />
+    <Content Include="ContactTypes\EditContactTypesTable.aspx" />
+    <Content Include="ContactTypes\GroupByContactTypesTable.aspx" />
+    <Content Include="ContactTypes\ShowContactTypes.aspx" />
+    <Content Include="ContactTypes\ShowContactTypesGallery.aspx" />
+    <Content Include="ContactTypes\ShowContactTypesTable.aspx" />
+    <Content Include="Contractors\AddContractors.aspx" />
+    <Content Include="Contractors\EditContractors.aspx" />
+    <Content Include="Contractors\EditContractorsTable.aspx" />
+    <Content Include="Contractors\GroupByContractorsTable.aspx" />
+    <Content Include="Contractors\ShowContractors.aspx" />
+    <Content Include="Contractors\ShowContractorsGallery.aspx" />
+    <Content Include="Contractors\ShowContractorsTable.aspx" />
+    <Content Include="Countries\AddCountries.aspx" />
+    <Content Include="Countries\EditCountries.aspx" />
+    <Content Include="Countries\EditCountriesTable.aspx" />
+    <Content Include="Countries\GroupByCountriesTable.aspx" />
+    <Content Include="Countries\ShowCountries.aspx" />
+    <Content Include="Countries\ShowCountriesGallery.aspx" />
+    <Content Include="Countries\ShowCountriesTable.aspx" />
+    <Content Include="Directors\AddDirectors.aspx" />
+    <Content Include="Directors\EditDirectors.aspx" />
+    <Content Include="Directors\EditDirectorsTable.aspx" />
+    <Content Include="Directors\GroupByDirectorsTable.aspx" />
+    <Content Include="Directors\ShowDirectors.aspx" />
+    <Content Include="Directors\ShowDirectorsGallery.aspx" />
+    <Content Include="Directors\ShowDirectorsTable.aspx" />
+    <Content Include="LinkTable\AddLinkTable.aspx" />
+    <Content Include="LinkTable\EditLinkTable.aspx" />
+    <Content Include="LinkTable\EditLinkTableTable.aspx" />
+    <Content Include="LinkTable\GroupByLinkTableTable.aspx" />
+    <Content Include="LinkTable\ShowLinkTable.aspx" />
+    <Content Include="LinkTable\ShowLinkTableGallery.aspx" />
+    <Content Include="LinkTable\ShowLinkTableTable.aspx" />
+    <Content Include="MMContracts\AddMMContracts.aspx" />
+    <Content Include="MMContracts\EditMMContracts.aspx" />
+    <Content Include="MMContracts\EditMMContractsTable.aspx" />
+    <Content Include="MMContracts\GroupByMMContractsTable.aspx" />
+    <Content Include="MMContracts\ShowMMContracts.aspx" />
+    <Content Include="MMContracts\ShowMMContractsGallery.aspx" />
+    <Content Include="MMContracts\ShowMMContractsTable.aspx" />
+    <Content Include="Properties\AddProperties.aspx" />
+    <Content Include="Properties\EditProperties.aspx" />
+    <Content Include="Properties\EditPropertiesTable.aspx" />
+    <Content Include="Properties\GroupByPropertiesTable.aspx" />
+    <Content Include="Properties\ShowProperties.aspx" />
+    <Content Include="Properties\ShowPropertiesGallery.aspx" />
+    <Content Include="Properties\ShowPropertiesTable.aspx" />
+    <Content Include="PropertyContacts\AddPropertyContacts.aspx" />
+    <Content Include="PropertyContacts\EditPropertyContacts.aspx" />
+    <Content Include="PropertyContacts\EditPropertyContactsTable.aspx" />
+    <Content Include="PropertyContacts\GroupByPropertyContactsTable.aspx" />
+    <Content Include="PropertyContacts\ShowPropertyContacts.aspx" />
+    <Content Include="PropertyContacts\ShowPropertyContactsGallery.aspx" />
+    <Content Include="PropertyContacts\ShowPropertyContactsTable.aspx" />
+    <Content Include="PropertyNotes\AddPropertyNotes.aspx" />
+    <Content Include="PropertyNotes\EditPropertyNotes.aspx" />
+    <Content Include="PropertyNotes\EditPropertyNotesTable.aspx" />
+    <Content Include="PropertyNotes\GroupByPropertyNotesTable.aspx" />
+    <Content Include="PropertyNotes\ShowPropertyNotes.aspx" />
+    <Content Include="PropertyNotes\ShowPropertyNotesGallery.aspx" />
+    <Content Include="PropertyNotes\ShowPropertyNotesTable.aspx" />
+    <Content Include="Regions\AddRegions.aspx" />
+    <Content Include="Regions\EditRegions.aspx" />
+    <Content Include="Regions\EditRegionsTable.aspx" />
+    <Content Include="Regions\GroupByRegionsTable.aspx" />
+    <Content Include="Regions\ShowRegions.aspx" />
+    <Content Include="Regions\ShowRegionsGallery.aspx" />
+    <Content Include="Regions\ShowRegionsTable.aspx" />
+    <Content Include="RentReviews\AddRentReviews.aspx" />
+    <Content Include="RentReviews\EditRentReviews.aspx" />
+    <Content Include="RentReviews\EditRentReviewsTable.aspx" />
+    <Content Include="RentReviews\GroupByRentReviewsTable.aspx" />
+    <Content Include="RentReviews\ShowRentReviews.aspx" />
+    <Content Include="RentReviews\ShowRentReviewsGallery.aspx" />
+    <Content Include="RentReviews\ShowRentReviewsTable.aspx" />
+    <Content Include="Roles\AddRoles.aspx" />
+    <Content Include="Roles\EditRoles.aspx" />
+    <Content Include="Roles\EditRolesTable.aspx" />
+    <Content Include="Roles\GroupByRolesTable.aspx" />
+    <Content Include="Roles\ShowRoles.aspx" />
+    <Content Include="Roles\ShowRolesGallery.aspx" />
+    <Content Include="Roles\ShowRolesTable.aspx" />
+    <Content Include="ServiceTypes\AddServiceTypes.aspx" />
+    <Content Include="ServiceTypes\EditServiceTypes.aspx" />
+    <Content Include="ServiceTypes\EditServiceTypesTable.aspx" />
+    <Content Include="ServiceTypes\GroupByServiceTypesTable.aspx" />
+    <Content Include="ServiceTypes\ShowServiceTypes.aspx" />
+    <Content Include="ServiceTypes\ShowServiceTypesGallery.aspx" />
+    <Content Include="ServiceTypes\ShowServiceTypesTable.aspx" />
+    <Content Include="Shared\DatePagination.ascx" />
+    <Content Include="Shared\PaginationModern.ascx" />
+    <Content Include="Shared\ThemeButtonWithArrow.ascx" />
+    <Content Include="Suppliers\AddSuppliers.aspx" />
+    <Content Include="Suppliers\EditSuppliers.aspx" />
+    <Content Include="Suppliers\EditSuppliersTable.aspx" />
+    <Content Include="Suppliers\GroupBySuppliersTable.aspx" />
+    <Content Include="Suppliers\ShowSuppliers.aspx" />
+    <Content Include="Suppliers\ShowSuppliersGallery.aspx" />
+    <Content Include="Suppliers\ShowSuppliersTable.aspx" />
+    <Content Include="TermExpires\AddTermExpires.aspx" />
+    <Content Include="TermExpires\EditTermExpires.aspx" />
+    <Content Include="TermExpires\EditTermExpiresTable.aspx" />
+    <Content Include="TermExpires\GroupByTermExpiresTable.aspx" />
+    <Content Include="TermExpires\ShowTermExpires.aspx" />
+    <Content Include="TermExpires\ShowTermExpiresGallery.aspx" />
+    <Content Include="TermExpires\ShowTermExpiresTable.aspx" />
+    <Content Include="TermRenewals\AddTermRenewals.aspx" />
+    <Content Include="TermRenewals\EditTermRenewals.aspx" />
+    <Content Include="TermRenewals\EditTermRenewalsTable.aspx" />
+    <Content Include="TermRenewals\GroupByTermRenewalsTable.aspx" />
+    <Content Include="TermRenewals\ShowTermRenewals.aspx" />
+    <Content Include="TermRenewals\ShowTermRenewalsGallery.aspx" />
+    <Content Include="TermRenewals\ShowTermRenewalsTable.aspx" />
+    <Content Include="Users\AddUsers.aspx" />
+    <Content Include="Users\EditUsers.aspx" />
+    <Content Include="Users\EditUsersTable.aspx" />
+    <Content Include="Users\GroupByUsersTable.aspx" />
+    <Content Include="Users\ShowUsers.aspx" />
+    <Content Include="Users\ShowUsersGallery.aspx" />
+    <Content Include="Users\ShowUsersTable.aspx" />
+    <Content Include="Users_Roles\AddUsers_Roles.aspx" />
+    <Content Include="Users_Roles\EditUsers_Roles.aspx" />
+    <Content Include="Users_Roles\EditUsers_RolesTable.aspx" />
+    <Content Include="Users_Roles\GroupByUsers_RolesTable.aspx" />
+    <Content Include="Users_Roles\ShowUsers_Roles.aspx" />
+    <Content Include="Users_Roles\ShowUsers_RolesGallery.aspx" />
+    <Content Include="Users_Roles\ShowUsers_RolesTable.aspx" />
+    <Content Include="vPropertyBankLoans\GroupByVPropertyBankLoansTable.aspx" />
+    <Content Include="vPropertyBankLoans\ShowVPropertyBankLoansGallery.aspx" />
+    <Content Include="vPropertyBankLoans\ShowVPropertyBankLoansTable.aspx" />
+    <Content Include="vPropertyContacts\GroupByVPropertyContactsTable.aspx" />
+    <Content Include="vPropertyContacts\ShowVPropertyContactsGallery.aspx" />
+    <Content Include="vPropertyContacts\ShowVPropertyContactsTable.aspx" />
+    <Content Include="vPropertyMMContracts\GroupByVPropertyMMContractsTable.aspx" />
+    <Content Include="vPropertyMMContracts\ShowVPropertyMMContractsGallery.aspx" />
+    <Content Include="vPropertyMMContracts\ShowVPropertyMMContractsTable.aspx" />
+    <Content Include="vPropertyRentReviews\GroupByVPropertyRentReviewsTable.aspx" />
+    <Content Include="vPropertyRentReviews\ShowVPropertyRentReviewsGallery.aspx" />
+    <Content Include="vPropertyRentReviews\ShowVPropertyRentReviewsTable.aspx" />
+    <Content Include="vPropertyTermExpires\GroupByVPropertyTermExpiresTable.aspx" />
+    <Content Include="vPropertyTermExpires\ShowVPropertyTermExpiresGallery.aspx" />
+    <Content Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable.aspx" />
+    <Content Include="vPropertyTermRenewals\GroupByVPropertyTermRenewalsTable.aspx" />
+    <Content Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsGallery.aspx" />
+    <Content Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsTable.aspx" />
+    <Content Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable2.aspx" />
+    <Content Include="vPropertyMMContracts\ShowMMContractExpiration.aspx" />
+    <Content Include="JQuery.js" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\ASCXControlPlaceholder.gif" />
+    <Content Include="Images\ASCXControlPlaceholderMobile.png" />
+    <Content Include="Images\Batwing.gif" />
+    <Content Include="Images\BatwingMobile.gif" />
+    <Content Include="Images\BatwingMobilePasswordRetrievalEmail.png" />
+    <Content Include="Images\ButtonBarAdd.gif" />
+    <Content Include="Images\ButtonBarAddOver.gif" />
+    <Content Include="Images\ButtonBarCopy.gif" />
+    <Content Include="Images\ButtonBarCopyOver.gif" />
+    <Content Include="Images\ButtonBarCSVExport.gif" />
+    <Content Include="Images\ButtonBarCSVExportOver.gif" />
+    <Content Include="Images\ButtonBarDecrement.gif" />
+    <Content Include="Images\ButtonBarDecrementOver.gif" />
+    <Content Include="Images\ButtonBarDelete.gif" />
+    <Content Include="Images\ButtonBarDeleteOver.gif" />
+    <Content Include="Images\ButtonBarEdit.gif" />
+    <Content Include="Images\ButtonBarEditOver.gif" />
+    <Content Include="Images\ButtonBarExcelExport.gif" />
+    <Content Include="Images\ButtonBarExcelExportOver.gif" />
+    <Content Include="Images\ButtonBarFirst.gif" />
+    <Content Include="Images\ButtonBarFirst.ltr.gif" />
+    <Content Include="Images\ButtonBarFirst.rtl.gif" />
+    <Content Include="Images\ButtonBarFirstOver.gif" />
+    <Content Include="Images\ButtonBarFirstOver.ltr.gif" />
+    <Content Include="Images\ButtonBarFirstOver.rtl.gif" />
+    <Content Include="Images\ButtonBarImport.gif" />
+    <Content Include="Images\ButtonBarImportOver.gif" />
+    <Content Include="Images\ButtonBarIncrement.gif" />
+    <Content Include="Images\ButtonBarIncrementOver.gif" />
+    <Content Include="Images\ButtonBarLast.gif" />
+    <Content Include="Images\ButtonBarLast.ltr.gif" />
+    <Content Include="Images\ButtonBarLast.rtl.gif" />
+    <Content Include="Images\ButtonBarLastOver.gif" />
+    <Content Include="Images\ButtonBarLastOver.ltr.gif" />
+    <Content Include="Images\ButtonBarLastOver.rtl.gif" />
+    <Content Include="Images\ButtonBarNew.gif" />
+    <Content Include="Images\ButtonBarNewOver.gif" />
+    <Content Include="Images\ButtonBarNext.gif" />
+    <Content Include="Images\ButtonBarNext.ltr.gif" />
+    <Content Include="Images\ButtonBarNext.rtl.gif" />
+    <Content Include="Images\ButtonBarNextOver.gif" />
+    <Content Include="Images\ButtonBarNextOver.ltr.gif" />
+    <Content Include="Images\ButtonBarNextOver.rtl.gif" />
+    <Content Include="Images\ButtonBarPDFExport.gif" />
+    <Content Include="Images\ButtonBarPDFExportOver.gif" />
+    <Content Include="Images\ButtonBarPrevious.gif" />
+    <Content Include="Images\ButtonBarPrevious.ltr.gif" />
+    <Content Include="Images\ButtonBarPrevious.rtl.gif" />
+    <Content Include="Images\ButtonBarPreviousOver.gif" />
+    <Content Include="Images\ButtonBarPreviousOver.ltr.gif" />
+    <Content Include="Images\ButtonBarPreviousOver.rtl.gif" />
+    <Content Include="Images\ButtonBarRefresh.gif" />
+    <Content Include="Images\ButtonBarRefreshOver.gif" />
+    <Content Include="Images\ButtonBarReset.gif" />
+    <Content Include="Images\ButtonBarResetOver.gif" />
+    <Content Include="Images\ButtonBarSave.gif" />
+    <Content Include="Images\ButtonBarSaveOver.gif" />
+    <Content Include="Images\ButtonBarView.gif" />
+    <Content Include="Images\ButtonBarViewOver.gif" />
+    <Content Include="Images\ButtonBarWordExport.gif" />
+    <Content Include="Images\ButtonBarWordExportOver.gif" />
+    <Content Include="Images\ButtonCheckmark.png" />
+    <Content Include="Images\ButtonDecrement.gif" />
+    <Content Include="Images\ButtonDecrementOver.gif" />
+    <Content Include="Images\ButtonExpandArrow.png" />
+    <Content Include="Images\ButtonIncrement.gif" />
+    <Content Include="Images\ButtonIncrementOver.gif" />
+    <Content Include="Images\ButtonOptions.png" />
+    <Content Include="Images\ButtonOptionsOver.png" />
+    <Content Include="Images\closeButton.gif" />
+    <Content Include="Images\closeButtonOver.gif" />
+    <Content Include="Images\DateSelector.gif" />
+    <Content Include="Images\Default-568h@2x.png" />
+    <Content Include="Images\Default-Landscape.png" />
+    <Content Include="Images\Default-Landscape@2x.png" />
+    <Content Include="Images\Default-Portrait.png" />
+    <Content Include="Images\Default-Portrait@2x.png" />
+    <Content Include="Images\Default.png" />
+    <Content Include="Images\Default@2x.png" />
+    <Content Include="Images\defaulticonextraextraextrahighdensity.png" />
+    <Content Include="Images\defaulticonextraextrahighdensity.png" />
+    <Content Include="Images\defaulticonextrahighdensity.png" />
+    <Content Include="Images\defaulticonhighdensity.png" />
+    <Content Include="Images\defaulticonmediumdensity.png" />
+    <Content Include="Images\defaultlogoextraextraextrahighdensity.png" />
+    <Content Include="Images\defaultlogoextraextrahighdensity.png" />
+    <Content Include="Images\defaultlogoextrahighdensity.png" />
+    <Content Include="Images\defaultlogohighdensity.png" />
+    <Content Include="Images\defaultlogomediumdensity.png" />
+    <Content Include="Images\GalleryDescriptionBackground.png" />
+    <Content Include="Images\Icon-60@2x.png" />
+    <Content Include="Images\Icon-72.png" />
+    <Content Include="Images\Icon-72@2x.png" />
+    <Content Include="Images\Icon-76.png" />
+    <Content Include="Images\Icon-76@2x.png" />
+    <Content Include="Images\Icon-Small-40.png" />
+    <Content Include="Images\Icon-Small-40@2x.png" />
+    <Content Include="Images\Icon-Small-50.png" />
+    <Content Include="Images\Icon-Small-50@2x.png" />
+    <Content Include="Images\Icon-Small.png" />
+    <Content Include="Images\Icon-Small@2x.png" />
+    <Content Include="Images\Icon.png" />
+    <Content Include="Images\Icon@2x.png" />
+    <Content Include="Images\iconEdit.gif" />
+    <Content Include="Images\iconEditOver.gif" />
+    <Content Include="Images\iconNewFlat.gif" />
+    <Content Include="Images\icon_collapserow.gif" />
+    <Content Include="Images\icon_copy.gif" />
+    <Content Include="Images\icon_copy_over.gif" />
+    <Content Include="Images\icon_delete.gif" />
+    <Content Include="Images\icon_delete_over.gif" />
+    <Content Include="Images\icon_edit.gif" />
+    <Content Include="Images\icon_edit_over.gif" />
+    <Content Include="Images\icon_expandcollapserow.gif" />
+    <Content Include="Images\icon_expandcollapserow2.gif" />
+    <Content Include="Images\icon_expandcollapserow_over.gif" />
+    <Content Include="Images\icon_expandcollapserow_over2.gif" />
+    <Content Include="Images\icon_new.gif" />
+    <Content Include="Images\icon_panelcollapse.gif" />
+    <Content Include="Images\icon_panelexpand.gif" />
+    <Content Include="Images\icon_updatepanels.gif" />
+    <Content Include="Images\icon_updatepanels2.gif" />
+    <Content Include="Images\icon_updatepanels_over.gif" />
+    <Content Include="Images\icon_updatepanels_over2.gif" />
+    <Content Include="Images\icon_view.gif" />
+    <Content Include="Images\icon_view_over.gif" />
+    <Content Include="Images\LargeListSelector.gif" />
+    <Content Include="Images\logo.gif" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logoMobile.png" />
+    <Content Include="Images\marginTLBackground.png" />
+    <Content Include="Images\marginTRBackground.png" />
+    <Content Include="Images\Mobile.ajax-loader.gif" />
+    <Content Include="Images\MobileBatwing.png" />
+    <Content Include="Images\MobileButtonBack.ltr.png" />
+    <Content Include="Images\MobileButtonBack.png" />
+    <Content Include="Images\MobileButtonBack.rtl.png" />
+    <Content Include="Images\MobileButtonCancel.png" />
+    <Content Include="Images\MobileButtonDelete.png" />
+    <Content Include="Images\MobileButtonEdit.png" />
+    <Content Include="Images\MobileButtonFilters.png" />
+    <Content Include="Images\MobileButtonFiltersCollapse.png" />
+    <Content Include="Images\MobileButtonFiltersExpand.png" />
+    <Content Include="Images\MobileButtonFirst.ltr.png" />
+    <Content Include="Images\MobileButtonFirst.png" />
+    <Content Include="Images\MobileButtonFirst.rtl.png" />
+    <Content Include="Images\MobileButtonLast.ltr.png" />
+    <Content Include="Images\MobileButtonLast.png" />
+    <Content Include="Images\MobileButtonLast.rtl.png" />
+    <Content Include="Images\MobileButtonNew.png" />
+    <Content Include="Images\MobileButtonNext.ltr.png" />
+    <Content Include="Images\MobileButtonNext.png" />
+    <Content Include="Images\MobileButtonNext.rtl.png" />
+    <Content Include="Images\MobileButtonOK.png" />
+    <Content Include="Images\MobileButtonPrevious.ltr.png" />
+    <Content Include="Images\MobileButtonPrevious.png" />
+    <Content Include="Images\MobileButtonPrevious.rtl.png" />
+    <Content Include="Images\MobileButtonRefresh.png" />
+    <Content Include="Images\MobileButtonReset.png" />
+    <Content Include="Images\MobileButtonSave.png" />
+    <Content Include="Images\MobileButtonSaveAndNew.png" />
+    <Content Include="Images\MobileButtonSettings.png" />
+    <Content Include="Images\MobileButtonSettingsCollapse.png" />
+    <Content Include="Images\MobileButtonSettingsExpand.png" />
+    <Content Include="Images\MobileCalendar.png" />
+    <Content Include="Images\MobileLogo.png" />
+    <Content Include="Images\panelSearchButton.ltr.png" />
+    <Content Include="Images\panelSearchButton.png" />
+    <Content Include="Images\panelSearchButton.rtl.png" />
+    <Content Include="Images\pBack.jpg" />
+    <Content Include="Images\pBackTile.png" />
+    <Content Include="Images\pcTBackground.png" />
+    <Content Include="Images\PDFReportButton.gif" />
+    <Content Include="Images\SignInBarPrint.gif" />
+    <Content Include="Images\SignInBarPrintOver.gif" />
+    <Content Include="Images\SignInBarSetLanguage.gif" />
+    <Content Include="Images\SignInBarSetLanguageOver.gif" />
+    <Content Include="Images\SignInPageGraphic.jpg" />
+    <Content Include="Images\SignOutPageGraphic.jpg" />
+    <Content Include="Images\space.gif" />
+    <Content Include="Images\spacerOpaque.png" />
+    <Content Include="Images\Updating.gif" />
+    <Content Include="App_Themes\GridViewTheme\BlueDream.css" />
+    <Content Include="App_Themes\Syrah\BaseStyles.css" />
+    <Content Include="App_Themes\Syrah\Styles.css" />
+    <Content Include="App_Themes\Syrah Mobile\BaseStyles.css" />
+    <Content Include="App_Themes\Syrah Mobile\Styles.css" />
+    <Content Include="App_GlobalResources\BaseClasses.en-NZ.resx" />
+    <Content Include="App_GlobalResources\BaseClasses.resx" />
+    <Content Include="App_GlobalResources\IPv5.en-NZ.resx" />
+    <Content Include="App_GlobalResources\IPv5.resx" />
+    <Content Include="Header and Footer\EmailFooter.ascx"  />
+    <Content Include="Master Pages\Popup.master"  />
+    <Content Include="Shared\InfinitePagination.ascx"  />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Global.asax.resx">
+      <DependentUpon>Global.asax.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Reports\PDF.en-US.report" />
+    <None Include="Reports\PDF.en.report" />
+    <None Include="Reports\PDF.report" />
+    <None Include="Reports\WordReport.en-US.word" />
+    <None Include="Reports\WordReport.en.word" />
+    <None Include="Reports\WordReport.word" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Business Layer\IPv5.Business.csproj">
+      <Project>{20DED90F-B904-4135-8695-2FD68E72EB45}</Project>
+      <Name>IPv5.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="Data Access Layer\IPv5.Data.csproj">
+      <Project>{FA37A02D-13F3-449C-9CBD-EC20CBD11386}</Project>
+      <Name>IPv5.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49646</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

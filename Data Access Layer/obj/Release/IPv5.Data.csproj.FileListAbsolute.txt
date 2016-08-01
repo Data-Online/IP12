@@ -1,0 +1,6 @@
+E:\Projects\InvestmentProperties\IPv5\Data Access Layer\bin\IPv5.Data.dll
+E:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Release\IPv5.Data.csprojResolveAssemblyReference.cache
+E:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Release\IPv5.Data.dll
+P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Data Access Layer\bin\IPv5.Data.dll
+P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Data Access Layer\obj\Release\IPv5.Data.csprojResolveAssemblyReference.cache
+P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Data Access Layer\obj\Release\IPv5.Data.dll

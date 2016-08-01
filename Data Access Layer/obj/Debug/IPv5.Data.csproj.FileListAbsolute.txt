@@ -1,0 +1,10 @@
+E:\Projects\InvestmentProperties\IPv5\Data Access Layer\bin\IPv5.Data.dll
+E:\Projects\InvestmentProperties\IPv5\Data Access Layer\bin\IPv5.Data.pdb
+E:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Debug\IPv5.Data.dll
+E:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Debug\IPv5.Data.pdb
+E:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Debug\IPv5.Data.csprojResolveAssemblyReference.cache
+P:\Projects\InvestmentProperties\IPv5\Data Access Layer\bin\IPv5.Data.dll
+P:\Projects\InvestmentProperties\IPv5\Data Access Layer\bin\IPv5.Data.pdb
+P:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Debug\IPv5.Data.csprojResolveAssemblyReference.cache
+P:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Debug\IPv5.Data.dll
+P:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Debug\IPv5.Data.pdb

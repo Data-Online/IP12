@@ -1,0 +1,10 @@
+E:\Projects\InvestmentProperties\IPv5\Business Layer\bin\IPv5.Business.dll
+E:\Projects\InvestmentProperties\IPv5\Business Layer\bin\IPv5.Business.pdb
+E:\Projects\InvestmentProperties\IPv5\Business Layer\obj\Debug\IPv5.Business.csprojResolveAssemblyReference.cache
+E:\Projects\InvestmentProperties\IPv5\Business Layer\obj\Debug\IPv5.Business.dll
+E:\Projects\InvestmentProperties\IPv5\Business Layer\obj\Debug\IPv5.Business.pdb
+P:\Projects\InvestmentProperties\IPv5\Business Layer\bin\IPv5.Business.dll
+P:\Projects\InvestmentProperties\IPv5\Business Layer\bin\IPv5.Business.pdb
+P:\Projects\InvestmentProperties\IPv5\Business Layer\obj\Debug\IPv5.Business.csprojResolveAssemblyReference.cache
+P:\Projects\InvestmentProperties\IPv5\Business Layer\obj\Debug\IPv5.Business.dll
+P:\Projects\InvestmentProperties\IPv5\Business Layer\obj\Debug\IPv5.Business.pdb

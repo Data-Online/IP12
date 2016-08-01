@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA37A02D-13F3-449C-9CBD-EC20CBD11386}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>IPv5.Data</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaseClasses">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\BaseClasses.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ciloci.Flee">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Ciloci.Flee.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Shared\BaseFormulaEvaluator.cs" />
+    <Compile Include="Shared\BaseFormulaUtils.cs" />
+    <Compile Include="My Project\AssemblyInfo.cs" />
+    <Compile Include="Shared\DatabaseObjects.cs" />
+    <Compile Include="BankLoansDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankLoansSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseBankLoansSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CitiesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CitiesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCitiesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactNotesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactTypesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractorsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractorsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContractorsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CountriesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CountriesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCountriesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DirectorsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DirectorsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDirectorsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTableDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTableSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseLinkTableSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContractsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContractsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseMMContractsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertiesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContactsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContactsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertyContactsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertyNotesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegionsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegionsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRegionsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviewsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviewsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRentReviewsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RolesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RolesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRolesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseServiceTypesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuppliersDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuppliersSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSuppliersSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpiresDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpiresSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTermExpiresSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewalsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewalsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTermRenewalsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UsersDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UsersSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseUsersSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_RolesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_RolesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseUsers_RolesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyBankLoansDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyBankLoansSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyBankLoansSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyContactsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyContactsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyContactsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyMMContractsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyMMContractsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyMMContractsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyRentReviewsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyRentReviewsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyRentReviewsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyTermExpiresDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyTermExpiresSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyTermExpiresSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyTermRenewalsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyTermRenewalsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyTermRenewalsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertDataDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertDataSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertDataSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertLevelsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertLevelsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertLevelsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertTypesDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertTypesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertTypesSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

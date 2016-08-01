@@ -1,0 +1,459 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{20DED90F-B904-4135-8695-2FD68E72EB45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>IPv5.Business</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>None</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaseClasses">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\BaseClasses.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ciloci.Flee">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Ciloci.Flee.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.cs" />
+    <Compile Include="BankLoansTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseBankLoansTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BankLoansRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseBankLoansRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CitiesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCitiesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CitiesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCitiesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactNotesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactNotesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactNotesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactTypesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactTypesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactTypesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractorsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContractorsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContractorsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContractorsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CountriesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCountriesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CountriesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseCountriesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DirectorsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDirectorsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DirectorsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseDirectorsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTableTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseLinkTableTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkTableRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseLinkTableRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContractsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseMMContractsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MMContractsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseMMContractsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertiesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertiesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContactsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertyContactsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyContactsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertyContactsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertyNotesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertyNotesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertyNotesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegionsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRegionsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RegionsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRegionsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviewsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRentReviewsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RentReviewsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRentReviewsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RolesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRolesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RolesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseRolesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseServiceTypesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceTypesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseServiceTypesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuppliersTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSuppliersTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SuppliersRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseSuppliersRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpiresTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTermExpiresTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermExpiresRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTermExpiresRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewalsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTermRenewalsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TermRenewalsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseTermRenewalsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UsersTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseUsersTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UsersRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseUsersRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_RolesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseUsers_RolesTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Users_RolesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseUsers_RolesRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyBankLoansView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyBankLoansView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyBankLoansRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyBankLoansRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyContactsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyContactsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyContactsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyContactsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyMMContractsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyMMContractsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyMMContractsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyMMContractsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyRentReviewsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyRentReviewsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyRentReviewsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyRentReviewsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyTermExpiresView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyTermExpiresView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyTermExpiresRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyTermExpiresRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyTermRenewalsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyTermRenewalsView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyTermRenewalsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyTermRenewalsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertDataTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertDataTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertDataRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertDataRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertLevelsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertLevelsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertLevelsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertLevelsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertTypesTable.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertTypesTable.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AlertTypesRecord.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseAlertTypesRecord.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data Access Layer\IPv5.Data.csproj">
+      <Project>{FA37A02D-13F3-449C-9CBD-EC20CBD11386}</Project>
+      <Name>IPv5.Data</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

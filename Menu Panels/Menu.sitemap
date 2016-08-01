@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+Each siteMapNode tag represents a menu item in the menu control. 
+The tags are case-sensitive and should contain the following case-sensitive attributes:
+  title: Text to be displayed for the menu item. Surround any part of the title to be retrieved from a RESX file with {}.
+  eg. title="{Menu:Add} Categories".
+	
+  desciption: Tool tip for the menu item. Surround any part of the title to be retrieved from a RESX file with {}.
+  eg. description="{Menu:Add} Categories".
+
+  url: The url value may be an empty string or may contain a unique value. The value should be one of the following types:
+      Absolute url: a complete path of the web page you want to display. 
+      eg: http://www.ironspeed.com
+      Relative url: url relative to application root. 
+      eg: ~/Categories/ShowCategoriesTablePage.aspx.
+      
+  imageUrl: The URL of the image to be displayed for each menu item.
+  eg. imageUrl="~/Images/MenuTopLevel.gif"
+
+  roles: A list of comma separated role ids defined as part of application's security (use role names as role ids
+  for Microsoft Active Directory and Microsoft AzMan Role management). To specify standard Iron Speed Designer roles, use:
+        Everyone: For all users.
+        NOT_ANONYMOUS: For signed in users only.
+        ANONYMOUS: For users who are not signed in.
+        NO_ACCESS: For none of the users.
+  The user should belong to one of the listed roles in order for the menu item to be displayed.
+	
+  order: (Please do not modify this attribute.) Specifies the order in which the elements are displayed. Changing the value 
+  of this attribute will not affect the order of the menu items on the display. They are used whenever a new menu item is 
+  inserted into the sitemap file to locate the position where the new menu item should be added.
+  -->
+<siteMap>
+  <siteMapNode>
+    <siteMapNode title="Bank Loans" description="Bank Loans" url="~/BankLoans/ShowBankLoansTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Bank Loans" description="{Menu:GroupBy} Bank Loans" url="~/BankLoans/GroupByBankLoansTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Bank Loans Gallery" description="{Menu:Show} Bank Loans Gallery" url="~/BankLoans/ShowBankLoansGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Bank Loans" description="{Menu:Show} Bank Loans" url="~/BankLoans/ShowBankLoansTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Bank Loans" description="{Menu:Edit} Bank Loans" url="~/BankLoans/EditBankLoansTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Bank Loans" description="{Menu:Add} Bank Loans" url="~/BankLoans/AddBankLoans.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Cities" description="Cities" url="~/Cities/ShowCitiesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Cities" description="{Menu:GroupBy} Cities" url="~/Cities/GroupByCitiesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Cities Gallery" description="{Menu:Show} Cities Gallery" url="~/Cities/ShowCitiesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Cities" description="{Menu:Show} Cities" url="~/Cities/ShowCitiesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Cities" description="{Menu:Edit} Cities" url="~/Cities/EditCitiesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Cities" description="{Menu:Add} Cities" url="~/Cities/AddCities.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Contact Notes" description="Contact Notes" url="~/ContactNotes/ShowContactNotesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Contact Notes" description="{Menu:GroupBy} Contact Notes" url="~/ContactNotes/GroupByContactNotesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Contact Notes Gallery" description="{Menu:Show} Contact Notes Gallery" url="~/ContactNotes/ShowContactNotesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Contact Notes" description="{Menu:Show} Contact Notes" url="~/ContactNotes/ShowContactNotesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Contact Notes" description="{Menu:Edit} Contact Notes" url="~/ContactNotes/EditContactNotesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Contact Notes" description="{Menu:Add} Contact Notes" url="~/ContactNotes/AddContactNotes.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Contacts" description="Contacts" url="~/Contacts/ShowContactsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Contacts" description="{Menu:GroupBy} Contacts" url="~/Contacts/GroupByContactsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Contacts Gallery" description="{Menu:Show} Contacts Gallery" url="~/Contacts/ShowContactsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Contacts" description="{Menu:Show} Contacts" url="~/Contacts/ShowContactsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Contacts" description="{Menu:Edit} Contacts" url="~/Contacts/EditContactsTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Contacts" description="{Menu:Add} Contacts" url="~/Contacts/AddContacts.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Contact Types" description="Contact Types" url="~/ContactTypes/ShowContactTypesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Contact Types" description="{Menu:GroupBy} Contact Types" url="~/ContactTypes/GroupByContactTypesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Contact Types Gallery" description="{Menu:Show} Contact Types Gallery" url="~/ContactTypes/ShowContactTypesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Contact Types" description="{Menu:Show} Contact Types" url="~/ContactTypes/ShowContactTypesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Contact Types" description="{Menu:Edit} Contact Types" url="~/ContactTypes/EditContactTypesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Contact Types" description="{Menu:Add} Contact Types" url="~/ContactTypes/AddContactTypes.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Contractors" description="Contractors" url="~/Contractors/ShowContractorsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Contractors" description="{Menu:GroupBy} Contractors" url="~/Contractors/GroupByContractorsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Contractors Gallery" description="{Menu:Show} Contractors Gallery" url="~/Contractors/ShowContractorsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Contractors" description="{Menu:Show} Contractors" url="~/Contractors/ShowContractorsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Contractors" description="{Menu:Edit} Contractors" url="~/Contractors/EditContractorsTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Contractors" description="{Menu:Add} Contractors" url="~/Contractors/AddContractors.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Countries" description="Countries" url="~/Countries/ShowCountriesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Countries" description="{Menu:GroupBy} Countries" url="~/Countries/GroupByCountriesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Countries Gallery" description="{Menu:Show} Countries Gallery" url="~/Countries/ShowCountriesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Countries" description="{Menu:Show} Countries" url="~/Countries/ShowCountriesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Countries" description="{Menu:Edit} Countries" url="~/Countries/EditCountriesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Countries" description="{Menu:Add} Countries" url="~/Countries/AddCountries.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Directors" description="Directors" url="~/Directors/ShowDirectorsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Directors" description="{Menu:GroupBy} Directors" url="~/Directors/GroupByDirectorsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Directors Gallery" description="{Menu:Show} Directors Gallery" url="~/Directors/ShowDirectorsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Directors" description="{Menu:Show} Directors" url="~/Directors/ShowDirectorsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Directors" description="{Menu:Edit} Directors" url="~/Directors/EditDirectorsTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Directors" description="{Menu:Add} Directors" url="~/Directors/AddDirectors.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Link" description="Link" url="~/LinkTable/GroupByLinkTableTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Link" description="{Menu:GroupBy} Link" url="~/LinkTable/GroupByLinkTableTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Link Gallery" description="{Menu:Show} Link Gallery" url="~/LinkTable/ShowLinkTableGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Link" description="{Menu:Show} Link" url="~/LinkTable/ShowLinkTableTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Link" description="{Menu:Edit} Link" url="~/LinkTable/EditLinkTableTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Link" description="{Menu:Add} Link" url="~/LinkTable/AddLinkTable.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="MM Contracts" description="MM Contracts" url="~/MMContracts/ShowMMContractsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} MM Contracts" description="{Menu:GroupBy} MM Contracts" url="~/MMContracts/GroupByMMContractsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} MM Contracts Gallery" description="{Menu:Show} MM Contracts Gallery" url="~/MMContracts/ShowMMContractsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} MM Contracts" description="{Menu:Show} MM Contracts" url="~/MMContracts/ShowMMContractsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} MM Contracts" description="{Menu:Edit} MM Contracts" url="~/MMContracts/EditMMContractsTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} MM Contracts" description="{Menu:Add} MM Contracts" url="~/MMContracts/AddMMContracts.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Properties" description="Properties" url="~/Properties/ShowPropertiesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Properties" description="{Menu:GroupBy} Properties" url="~/Properties/GroupByPropertiesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Properties Gallery" description="{Menu:Show} Properties Gallery" url="~/Properties/ShowPropertiesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Properties" description="{Menu:Show} Properties" url="~/Properties/ShowPropertiesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Properties" description="{Menu:Edit} Properties" url="~/Properties/EditPropertiesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Properties" description="{Menu:Add} Properties" url="~/Properties/AddProperties.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Property Contacts" description="Property Contacts" url="~/PropertyContacts/ShowPropertyContactsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Property Contacts" description="{Menu:GroupBy} Property Contacts" url="~/PropertyContacts/GroupByPropertyContactsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Contacts Gallery" description="{Menu:Show} Property Contacts Gallery" url="~/PropertyContacts/ShowPropertyContactsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Contacts" description="{Menu:Show} Property Contacts" url="~/PropertyContacts/ShowPropertyContactsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:GroupBy} Property Contacts" description="{Menu:GroupBy} Property Contacts" url="~/vPropertyContacts/GroupByVPropertyContactsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Contacts Gallery" description="{Menu:Show} Property Contacts Gallery" url="~/vPropertyContacts/ShowVPropertyContactsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Contacts" description="{Menu:Show} Property Contacts" url="~/vPropertyContacts/ShowVPropertyContactsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Property Contacts" description="{Menu:Edit} Property Contacts" url="~/PropertyContacts/EditPropertyContactsTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Property Contacts" description="{Menu:Add} Property Contacts" url="~/PropertyContacts/AddPropertyContacts.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Property Notes" description="Property Notes" url="~/PropertyNotes/ShowPropertyNotesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Property Notes" description="{Menu:GroupBy} Property Notes" url="~/PropertyNotes/GroupByPropertyNotesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Notes Gallery" description="{Menu:Show} Property Notes Gallery" url="~/PropertyNotes/ShowPropertyNotesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Notes" description="{Menu:Show} Property Notes" url="~/PropertyNotes/ShowPropertyNotesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Property Notes" description="{Menu:Edit} Property Notes" url="~/PropertyNotes/EditPropertyNotesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Property Notes" description="{Menu:Add} Property Notes" url="~/PropertyNotes/AddPropertyNotes.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Regions" description="Regions" url="~/Regions/ShowRegionsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Regions" description="{Menu:GroupBy} Regions" url="~/Regions/GroupByRegionsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Regions Gallery" description="{Menu:Show} Regions Gallery" url="~/Regions/ShowRegionsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Regions" description="{Menu:Show} Regions" url="~/Regions/ShowRegionsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Regions" description="{Menu:Edit} Regions" url="~/Regions/EditRegionsTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Regions" description="{Menu:Add} Regions" url="~/Regions/AddRegions.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Rent Reviews" description="Rent Reviews" url="~/RentReviews/ShowRentReviewsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Rent Reviews" description="{Menu:GroupBy} Rent Reviews" url="~/RentReviews/GroupByRentReviewsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Rent Reviews Gallery" description="{Menu:Show} Rent Reviews Gallery" url="~/RentReviews/ShowRentReviewsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Rent Reviews" description="{Menu:Show} Rent Reviews" url="~/RentReviews/ShowRentReviewsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Rent Reviews" description="{Menu:Edit} Rent Reviews" url="~/RentReviews/EditRentReviewsTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Rent Reviews" description="{Menu:Add} Rent Reviews" url="~/RentReviews/AddRentReviews.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Roles" description="Roles" url="~/Roles/ShowRolesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Roles" description="{Menu:GroupBy} Roles" url="~/Roles/GroupByRolesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Roles Gallery" description="{Menu:Show} Roles Gallery" url="~/Roles/ShowRolesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Roles" description="{Menu:Show} Roles" url="~/Roles/ShowRolesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Roles" description="{Menu:Edit} Roles" url="~/Roles/EditRolesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Roles" description="{Menu:Add} Roles" url="~/Roles/AddRoles.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Service Types" description="Service Types" url="~/ServiceTypes/ShowServiceTypesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Service Types" description="{Menu:GroupBy} Service Types" url="~/ServiceTypes/GroupByServiceTypesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Service Types Gallery" description="{Menu:Show} Service Types Gallery" url="~/ServiceTypes/ShowServiceTypesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Service Types" description="{Menu:Show} Service Types" url="~/ServiceTypes/ShowServiceTypesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Service Types" description="{Menu:Edit} Service Types" url="~/ServiceTypes/EditServiceTypesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Service Types" description="{Menu:Add} Service Types" url="~/ServiceTypes/AddServiceTypes.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Suppliers" description="Suppliers" url="~/Suppliers/ShowSuppliersTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Suppliers" description="{Menu:GroupBy} Suppliers" url="~/Suppliers/GroupBySuppliersTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Suppliers Gallery" description="{Menu:Show} Suppliers Gallery" url="~/Suppliers/ShowSuppliersGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Suppliers" description="{Menu:Show} Suppliers" url="~/Suppliers/ShowSuppliersTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Suppliers" description="{Menu:Edit} Suppliers" url="~/Suppliers/EditSuppliersTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Suppliers" description="{Menu:Add} Suppliers" url="~/Suppliers/AddSuppliers.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Term Expires" description="Term Expires" url="~/TermExpires/ShowTermExpiresTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Term Expires" description="{Menu:GroupBy} Term Expires" url="~/TermExpires/GroupByTermExpiresTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Term Expires Gallery" description="{Menu:Show} Term Expires Gallery" url="~/TermExpires/ShowTermExpiresGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Term Expires" description="{Menu:Show} Term Expires" url="~/TermExpires/ShowTermExpiresTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Term Expires" description="{Menu:Edit} Term Expires" url="~/TermExpires/EditTermExpiresTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Term Expires" description="{Menu:Add} Term Expires" url="~/TermExpires/AddTermExpires.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Term Renewals" description="Term Renewals" url="~/TermRenewals/ShowTermRenewalsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Term Renewals" description="{Menu:GroupBy} Term Renewals" url="~/TermRenewals/GroupByTermRenewalsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Term Renewals Gallery" description="{Menu:Show} Term Renewals Gallery" url="~/TermRenewals/ShowTermRenewalsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Term Renewals" description="{Menu:Show} Term Renewals" url="~/TermRenewals/ShowTermRenewalsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Term Renewals" description="{Menu:Edit} Term Renewals" url="~/TermRenewals/EditTermRenewalsTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Term Renewals" description="{Menu:Add} Term Renewals" url="~/TermRenewals/AddTermRenewals.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Users" description="Users" url="~/Users/ShowUsersTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Users" description="{Menu:GroupBy} Users" url="~/Users/GroupByUsersTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Users Gallery" description="{Menu:Show} Users Gallery" url="~/Users/ShowUsersGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Users" description="{Menu:Show} Users" url="~/Users/ShowUsersTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Users" description="{Menu:Edit} Users" url="~/Users/EditUsersTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Users" description="{Menu:Add} Users" url="~/Users/AddUsers.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Users Roles" description="Users Roles" url="~/Users_Roles/ShowUsers_RolesTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Users Roles" description="{Menu:GroupBy} Users Roles" url="~/Users_Roles/GroupByUsers_RolesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Users Roles Gallery" description="{Menu:Show} Users Roles Gallery" url="~/Users_Roles/ShowUsers_RolesGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Users Roles" description="{Menu:Show} Users Roles" url="~/Users_Roles/ShowUsers_RolesTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Edit} Users Roles" description="{Menu:Edit} Users Roles" url="~/Users_Roles/EditUsers_RolesTable.aspx" imageUrl="" roles="" order="9" />
+      <siteMapNode title="{Menu:Add} Users Roles" description="{Menu:Add} Users Roles" url="~/Users_Roles/AddUsers_Roles.aspx" imageUrl="" roles="" order="10" />
+    </siteMapNode>
+    <siteMapNode title="Property Bank Loans" description="Property Bank Loans" url="~/vPropertyBankLoans/ShowVPropertyBankLoansTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Property Bank Loans" description="{Menu:GroupBy} Property Bank Loans" url="~/vPropertyBankLoans/GroupByVPropertyBankLoansTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Bank Loans Gallery" description="{Menu:Show} Property Bank Loans Gallery" url="~/vPropertyBankLoans/ShowVPropertyBankLoansGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Bank Loans" description="{Menu:Show} Property Bank Loans" url="~/vPropertyBankLoans/ShowVPropertyBankLoansTable.aspx" imageUrl="" roles="" order="4" />
+    </siteMapNode>
+    <siteMapNode title="Property MM Contracts" description="Property MM Contracts" url="~/vPropertyMMContracts/ShowVPropertyMMContractsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Property MM Contracts" description="{Menu:GroupBy} Property MM Contracts" url="~/vPropertyMMContracts/GroupByVPropertyMMContractsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property MM Contracts Gallery" description="{Menu:Show} Property MM Contracts Gallery" url="~/vPropertyMMContracts/ShowVPropertyMMContractsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property MM Contracts" description="{Menu:Show} Property MM Contracts" url="~/vPropertyMMContracts/ShowVPropertyMMContractsTable.aspx" imageUrl="" roles="" order="4" />
+    </siteMapNode>
+    <siteMapNode title="Property Rent Reviews" description="Property Rent Reviews" url="~/vPropertyRentReviews/ShowVPropertyRentReviewsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Property Rent Reviews" description="{Menu:GroupBy} Property Rent Reviews" url="~/vPropertyRentReviews/GroupByVPropertyRentReviewsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Rent Reviews Gallery" description="{Menu:Show} Property Rent Reviews Gallery" url="~/vPropertyRentReviews/ShowVPropertyRentReviewsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Rent Reviews" description="{Menu:Show} Property Rent Reviews" url="~/vPropertyRentReviews/ShowVPropertyRentReviewsTable.aspx" imageUrl="" roles="" order="4" />
+    </siteMapNode>
+    <siteMapNode title="Property Term Expires" description="Property Term Expires" url="~/vPropertyTermExpires/ShowVPropertyTermExpiresTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:Show} Property Term Expires 2" description="{Menu:Show} Property Term Expires 2" url="~/vPropertyTermExpires/ShowVPropertyTermExpiresTable2.aspx" imageUrl="" roles="" order="1" />
+      <siteMapNode title="{Menu:GroupBy} Property Term Expires" description="{Menu:GroupBy} Property Term Expires" url="~/vPropertyTermExpires/GroupByVPropertyTermExpiresTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Term Expires Gallery" description="{Menu:Show} Property Term Expires Gallery" url="~/vPropertyTermExpires/ShowVPropertyTermExpiresGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Term Expires" description="{Menu:Show} Property Term Expires" url="~/vPropertyTermExpires/ShowVPropertyTermExpiresTable.aspx" imageUrl="" roles="" order="4" />
+    </siteMapNode>
+    <siteMapNode title="Property Term Renewals" description="Property Term Renewals" url="~/vPropertyTermRenewals/ShowVPropertyTermRenewalsTable.aspx?" imageUrl="" roles="" order="0">
+      <siteMapNode title="{Menu:GroupBy} Property Term Renewals" description="{Menu:GroupBy} Property Term Renewals" url="~/vPropertyTermRenewals/GroupByVPropertyTermRenewalsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Term Renewals Gallery" description="{Menu:Show} Property Term Renewals Gallery" url="~/vPropertyTermRenewals/ShowVPropertyTermRenewalsGallery.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="{Menu:Show} Property Term Renewals" description="{Menu:Show} Property Term Renewals" url="~/vPropertyTermRenewals/ShowVPropertyTermRenewalsTable.aspx" imageUrl="" roles="" order="4" />
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
