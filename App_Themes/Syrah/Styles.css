@@ -1,4 +1,4 @@
-/**********************************************************************
+﻿/**********************************************************************
  * Styles.css                                                         *
  *                                                                    *
  * This file is initially empty and you can add any additional styles *
@@ -26,3 +26,34 @@
  * not specified in the original declaration of the menus style.      *
  *                                                                    *
  **********************************************************************/
+ .alerts
+ {
+     background-color: #FFFFFF;
+ }
+
+ .alerts_overdue /* red */
+ {
+     background-color: #FFFFFF;
+/*	 -moz-opacity: 0.8;
+	 filter: alpha(opacity=80);
+	 opacity: 0.8; */
+	 color:#FF3333;
+ }
+ 
+ .alerts_duenow  /* blue */
+ {
+     background-color:#FFFFFF;
+	 color:#0099FF;
+ }
+ .alerts_nextmonth  /* yellow */
+ {
+     background-color: #FFFFFF;
+	 color:#FFCC33;
+ }
+
+#mailtolink {
+	background-image:url(/Images/ButtonEmail.gif);
+	display: inline-block;
+	height: 16px;
+	width: 15px;
+	}

@@ -294,27 +294,22 @@
     </ContainedComponent>
     <ContainedComponent>
       <Name>Address1Label</Name>
-      <Type>Literal</Type>
+      <Type>FieldSort</Type>
       <PassthroughAttributes>
         <Attribute>
-          <Name>Consumers</Name>
-          <Value>PropertiesTableControl</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Field</Name>
+          <Name>Field</Name>
           <Value>Address1</Value>
         </Attribute>
         <Attribute>
-          <Name>InternalUse:Table</Name>
+          <Name>Table</Name>
           <Value>DatabaseMM_IP1%dbo.Properties</Value>
         </Attribute>
         <Attribute>
           <Name>Text</Name>
-          <Value>%ISD_DEFAULT%Properties%Address1</Value>
+          <Value>Address</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertiesTableControl</InsideControl>
-      <InsideItemTemplate>true</InsideItemTemplate>
     </ContainedComponent>
     <ContainedComponent>
       <Name>Address1Label1</Name>
@@ -1038,6 +1033,66 @@
       <InsideItemTemplate>true</InsideItemTemplate>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>BankLoansCountControl1</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(BankLoansCountQuery1, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>BankLoansCountControl2</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(BankLoansCountQuery2, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>BankLoansCountControl3</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(BankLoansCountQuery3, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>BankLoansCountQuery</Name>
       <Type>DataSource</Type>
       <Table>DatabaseMM_IP1%dbo.Properties</Table>
@@ -1076,6 +1131,258 @@
           <TableToJoinAlias />
         </JoinList>
       </Joins>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>BankLoansCountQuery1</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.BankLoans_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.BankLoans_].[ExpiryDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.BankLoans_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.BankLoans</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.BankLoans</Table>
+          <SelectAs>BankLoansCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.BankLoans</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.BankLoans</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.BankLoans</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>BankLoansCountQuery2</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.BankLoans_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.BankLoans_].[ExpiryDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.BankLoans_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.BankLoans_].[ExpiryDate]</Field>
+          <Operator>lessThanOrEqualTo</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.BankLoans_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.BankLoans</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.BankLoans</Table>
+          <SelectAs>BankLoansCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.BankLoans</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.BankLoans</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.BankLoans</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>BankLoansCountQuery3</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.BankLoans_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.BankLoans_].[ExpiryDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.BankLoans_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.BankLoans_].[ExpiryDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().AddDays(60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.BankLoans_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.BankLoans</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.BankLoans</Table>
+          <SelectAs>BankLoansCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.BankLoans</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.BankLoans</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.BankLoans</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
     </ContainedComponent>
     <ContainedComponent>
       <Name>BankLoansExportExcelButton</Name>
@@ -2007,18 +2314,14 @@
     </ContainedComponent>
     <ContainedComponent>
       <Name>CompanyNameLabel</Name>
-      <Type>Literal</Type>
+      <Type>FieldSort</Type>
       <PassthroughAttributes>
         <Attribute>
-          <Name>Consumers</Name>
-          <Value>PropertiesTableControl</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Field</Name>
+          <Name>Field</Name>
           <Value>CompanyName</Value>
         </Attribute>
         <Attribute>
-          <Name>InternalUse:Table</Name>
+          <Name>Table</Name>
           <Value>DatabaseMM_IP1%dbo.Properties</Value>
         </Attribute>
         <Attribute>
@@ -2027,7 +2330,6 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertiesTableControl</InsideControl>
-      <InsideItemTemplate>true</InsideItemTemplate>
     </ContainedComponent>
     <ContainedComponent>
       <Name>CompanyNameSortLabel</Name>
@@ -3308,6 +3610,66 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>DirectorsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>DirectorsCountControl</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(DirectorsCountQuery, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>DirectorsCountQuery</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.Directors</Table>
+          <SelectAs>DirectorsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.Directors</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Directors</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.Directors</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
     </ContainedComponent>
     <ContainedComponent>
       <Name>DirectorsExportExcelButton</Name>
@@ -5057,6 +5419,66 @@
       <InsideControl>LinkTableTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>LinkTableCountControl</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(LinkTableCountQuery, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>LinkTableCountQuery</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.LinkTable</Table>
+          <SelectAs>LinkTableCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.LinkTable</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.LinkTable</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.LinkTable</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>LinkTableExportExcelButton</Name>
       <Type>ImageButton</Type>
       <PassthroughAttributes>
@@ -5566,6 +5988,378 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>LinkTableTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MMContractsCountControl</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(MMContractsCountQuery, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MMContractsCountControl1</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(MMContractsCountQuery1, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MMContractsCountControl2</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(MMContractsCountQuery2, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MMContractsCountControl3</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(MMContractsCountQuery3, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MMContractsCountQuery</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.MMContracts</Table>
+          <SelectAs>MMContractsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.MMContracts</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.MMContracts</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.MMContracts</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MMContractsCountQuery1</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.MMContracts_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.MMContracts_].[ExpiryDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.MMContracts_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.MMContracts</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.MMContracts</Table>
+          <SelectAs>MMContractsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.MMContracts</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.MMContracts</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.MMContracts</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MMContractsCountQuery2</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.MMContracts_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.MMContracts_].[ExpiryDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.MMContracts_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.MMContracts_].[ExpiryDate]</Field>
+          <Operator>lessThanOrEqualTo</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.MMContracts_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.MMContracts</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.MMContracts</Table>
+          <SelectAs>MMContractsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.MMContracts</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.MMContracts</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.MMContracts</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MMContractsCountQuery3</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.MMContracts_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.MMContracts_].[ExpiryDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.MMContracts_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.MMContracts_].[ExpiryDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.MMContracts_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.MMContracts</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.MMContracts</Table>
+          <SelectAs>MMContractsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.MMContracts</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.MMContracts</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.MMContracts</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
     </ContainedComponent>
     <ContainedComponent>
       <Name>MMContractsPagination</Name>
@@ -8164,6 +8958,378 @@
       <InsideControl>RentReviewsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>RentReviewsCountControl</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(RentReviewsCountQuery, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RentReviewsCountControl1</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(RentReviewsCountQuery1, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RentReviewsCountControl2</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(RentReviewsCountQuery2, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RentReviewsCountControl3</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(RentReviewsCountQuery3, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RentReviewsCountQuery</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.RentReviews</Table>
+          <SelectAs>RentReviewsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.RentReviews</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.RentReviews</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.RentReviews</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RentReviewsCountQuery1</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.RentReviews_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.RentReviews_].[ExpiryDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().AddDays(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.RentReviews_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.RentReviews</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.RentReviews</Table>
+          <SelectAs>RentReviewsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.RentReviews</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.RentReviews</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.RentReviews</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RentReviewsCountQuery2</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.RentReviews_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.RentReviews_].[ExpiryDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.RentReviews_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.RentReviews_].[ExpiryDate]</Field>
+          <Operator>lessThanOrEqualTo</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.RentReviews_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.RentReviews</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.RentReviews</Table>
+          <SelectAs>RentReviewsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.RentReviews</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.RentReviews</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.RentReviews</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>RentReviewsCountQuery3</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.RentReviews_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.RentReviews_].[ExpiryDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.RentReviews_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.RentReviews_].[ExpiryDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.RentReviews_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.RentReviews</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.RentReviews</Table>
+          <SelectAs>RentReviewsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.RentReviews</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.RentReviews</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.RentReviews</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>RentReviewsExportExcelButton</Name>
       <Type>ImageButton</Type>
       <PassthroughAttributes>
@@ -8921,6 +10087,378 @@
       <InsideControl>PropertiesTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>TermExpiresCountControl</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(TermExpiresCountQuery, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermExpiresCountControl1</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(TermExpiresCountQuery1, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermExpiresCountControl2</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(TermExpiresCountQuery2, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermExpiresCountControl3</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(TermExpiresCountQuery3, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermExpiresCountQuery</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.TermExpires</Table>
+          <SelectAs>TermExpiresCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.TermExpires</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.TermExpires</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.TermExpires</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermExpiresCountQuery1</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermExpires_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermExpires_].[ExpiryDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.TermExpires_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.TermExpires</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.TermExpires</Table>
+          <SelectAs>TermExpiresCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.TermExpires</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.TermExpires</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.TermExpires</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermExpiresCountQuery2</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermExpires_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermExpires_].[ExpiryDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermExpires_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermExpires_].[ExpiryDate]</Field>
+          <Operator>lessThanOrEqualTo</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.TermExpires_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.TermExpires</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.TermExpires</Table>
+          <SelectAs>TermExpiresCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.TermExpires</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.TermExpires</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.TermExpires</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermExpiresCountQuery3</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermExpires_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermExpires_].[ExpiryDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermExpires_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermExpires_].[ExpiryDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.TermExpires_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.TermExpires</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.TermExpires</Table>
+          <SelectAs>TermExpiresCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.TermExpires</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.TermExpires</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.TermExpires</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>TermExpiresPagination</Name>
       <Type>Pagination</Type>
       <Layout>..\Shared\PaginationModern.ascx</Layout>
@@ -9096,6 +10634,378 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>TermRenewalsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermRenewalsCountControl</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(TermRenewalsCountQuery, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermRenewalsCountControl1</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(TermRenewalsCountQuery1, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermRenewalsCountControl2</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(TermRenewalsCountQuery2, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermRenewalsCountControl3</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:ApplyInitializeFormula</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:InitializeFormula</Name>
+          <Value>LOOKUP(TermRenewalsCountQuery3, PropertyID)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldValue</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermRenewalsCountQuery</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.TermRenewals</Table>
+          <SelectAs>TermRenewalsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.TermRenewals</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.TermRenewals</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.TermRenewals</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermRenewalsCountQuery1</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermRenewals_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermRenewals_].[RenewalDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.TermRenewals_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.TermRenewals</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.TermRenewals</Table>
+          <SelectAs>TermRenewalsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.TermRenewals</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.TermRenewals</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.TermRenewals</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermRenewalsCountQuery2</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermRenewals_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermRenewals_].[RenewalDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().ADDDAYS(-60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermRenewals_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermRenewals_].[RenewalDate]</Field>
+          <Operator>lessThanOrEqualTo</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.TermRenewals_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.TermRenewals</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.TermRenewals</Table>
+          <SelectAs>TermRenewalsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.TermRenewals</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.TermRenewals</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.TermRenewals</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TermRenewalsCountQuery3</Name>
+      <Type>DataSource</Type>
+      <Table>DatabaseMM_IP1%dbo.Properties</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermRenewals_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermRenewals_].[RenewalDate]</Field>
+          <Operator>&gt;</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today()</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <WhereClause>
+          <Position>2</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.TermRenewals_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.TermRenewals_].[RenewalDate]</Field>
+          <Operator>lessThan</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>Today().AddDays(60)</Value>
+          </Operand>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator>
+            <Position>1</Position>
+            <Operatr>AND</Operatr>
+          </Operator>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.TermRenewals_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.TermRenewals</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesTableControl</InsideControl>
+      <Selects>
+        <Select>
+          <Position>0</Position>
+          <Table>DatabaseMM_IP1%dbo.Properties</Table>
+          <Field>PropertyID</Field>
+          <SelectAs />
+          <SQLOperation>None</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+        <Select>
+          <Position>1</Position>
+          <Table>DatabaseMM_IP1%dbo.TermRenewals</Table>
+          <SelectAs>TermRenewalsCount</SelectAs>
+          <SQLOperation>COUNT</SQLOperation>
+          <SetDistinct>false</SetDistinct>
+        </Select>
+      </Selects>
+      <Joins>
+        <JoinList>
+          <Join>
+            <Position>0</Position>
+            <TableToJoin>DatabaseMM_IP1%dbo.TermRenewals</TableToJoin>
+            <LeftJoinContent>
+              <Table>DatabaseMM_IP1%dbo.Properties</Table>
+              <Field>PropertyID</Field>
+            </LeftJoinContent>
+            <RightJoinContent>
+              <Table>DatabaseMM_IP1%dbo.TermRenewals</Table>
+              <Field>PropertyID</Field>
+            </RightJoinContent>
+          </Join>
+          <TableToJoin>DatabaseMM_IP1%dbo.TermRenewals</TableToJoin>
+          <TableToJoinAlias />
+        </JoinList>
+      </Joins>
+      <OrderBys />
     </ContainedComponent>
     <ContainedComponent>
       <Name>TermRenewalsExportExcelButton</Name>
@@ -9929,7 +11839,7 @@
       </PassthroughAttributes>
     </ContainedComponent>
   </ComposedOf>
-  <LayoutDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+  <LayoutDefinition>&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;LayoutDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;Layout Name="Page" Type="RootLayout"&gt;
     &lt;Prolog&gt;
@@ -10932,9 +12842,60 @@
             &lt;Name&gt;colspan&lt;/Name&gt;
             &lt;AttributeValue&gt;3&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp; 
+&amp;lt;GEN:FIELDLABEL NAME="CompanyNameLabel" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp; 
+&amp;lt;GEN:FIELDLABEL NAME="Address1Label" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;Investors&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display:none&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;Directors&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
@@ -10947,12 +12908,12 @@
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display: none&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;width:75px&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;Value&gt;Bank Loans&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -10960,12 +12921,12 @@
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display: none&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;Value&gt;Rent Reviews&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -10973,12 +12934,12 @@
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display: none&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;Value&gt;Term Expires&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -10986,12 +12947,12 @@
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display: none&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;Value&gt;Term Renewals&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -10999,12 +12960,12 @@
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display: none&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;Value&gt;MM Contracts&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -11012,33 +12973,7 @@
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display: none&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display: none&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;display: none&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
@@ -11082,12 +13017,11 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="CompanyNameLabel"/&amp;gt; 
-&lt;/Value&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CompanyName" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;scope&lt;/Name&gt;
@@ -11096,7 +13030,9 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CompanyName"/&amp;gt; &lt;/Value&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Address1" /&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;GEN:FIELDVALUE NAME="Address2" /&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;GEN:FIELDVALUE NAME="Address3" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -11117,26 +13053,40 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:LITERAL NAME="LinkTableCountControl"/&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
             &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:LITERAL NAME="DirectorsCountControl"/&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;scope&lt;/Name&gt;
             &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;i&amp;gt;&amp;gt; 60 days&amp;lt;br /&amp;gt;
+Now&amp;lt;br /&amp;gt;
+Next month&amp;lt;br /&amp;gt;
+&amp;lt;b&amp;gt;Total&amp;lt;/b&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -11145,197 +13095,99 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:LITERAL NAME="BankLoansCountControl1" /&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="BankLoansCountControl2" /&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="BankLoansCountControl3" /&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="BankLoansCountControl" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;scope&lt;/Name&gt;
             &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:LITERAL NAME="RentReviewsCountControl1" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="RentReviewsCountControl2" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="RentReviewsCountControl3" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="RentReviewsCountControl" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
             &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;RowAttributes /&gt;
-    &lt;/Row&gt;
-    &lt;Row Type="Repeater"&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="Address1Label"/&amp;gt; 
-&lt;/Value&gt;
-        &lt;CellAttributes&gt;
           &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Address1"/&amp;gt; &lt;/Value&gt;
+        &lt;Value&gt;&amp;lt;GEN:LITERAL NAME="TermExpiresCountControl1" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="TermExpiresCountControl2" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="TermExpiresCountControl3" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="TermExpiresCountControl" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
             &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
           &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:LITERAL NAME="TermRenewalsCountControl1" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="TermRenewalsCountControl2" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="TermRenewalsCountControl3" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="TermRenewalsCountControl" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
             &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:LITERAL NAME="BankLoansCountControl"/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
           &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:LITERAL NAME="MMContractsCountControl1" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="MMContractsCountControl2" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="MMContractsCountControl3" /&amp;gt;  &amp;lt;br /&amp;gt;
+&amp;lt;GEN:LITERAL NAME="MMContractsCountControl" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
             &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
           &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:center;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;RowAttributes /&gt;
-    &lt;/Row&gt;
-    &lt;Row Type="Repeater"&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Address2"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;RowAttributes /&gt;
+      &lt;RowAttributes&gt;
+        &lt;Attribute&gt;
+          &lt;Name&gt;id&lt;/Name&gt;
+          &lt;AttributeValue&gt;MyTR&lt;/AttributeValue&gt;
+        &lt;/Attribute&gt;
+        &lt;Attribute&gt;
+          &lt;Name&gt;runat&lt;/Name&gt;
+          &lt;AttributeValue&gt;server&lt;/AttributeValue&gt;
+        &lt;/Attribute&gt;
+      &lt;/RowAttributes&gt;
     &lt;/Row&gt;
     &lt;Row Type="Repeater"&gt;
       &lt;Cell&gt;
@@ -11351,7 +13203,224 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Address3"/&amp;gt; &lt;/Value&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CityID" /&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;GEN:FIELDVALUE NAME="RegionID" /&amp;gt; &amp;lt;br /&amp;gt;
+&amp;lt;GEN:FIELDVALUE NAME="CountryID" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="PostCode" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row Type="Repeater"&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row Type="Repeater"&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -11404,6 +13473,30 @@
           &lt;Attribute&gt;
             &lt;Name&gt;scope&lt;/Name&gt;
             &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
@@ -11467,7 +13560,6 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CityID"/&amp;gt; &lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -11476,7 +13568,30 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="PostCode"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -11577,7 +13692,6 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="RegionID"/&amp;gt; &lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -11586,7 +13700,30 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CountryID"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -11718,7 +13855,7 @@
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;colspan&lt;/Name&gt;
-            &lt;AttributeValue&gt;8&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;11&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
@@ -11744,6 +13881,30 @@
           &lt;Attribute&gt;
             &lt;Name&gt;colspan&lt;/Name&gt;
             &lt;AttributeValue&gt;11&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableRowDivider&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableRowDivider&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableRowDivider&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
@@ -19317,5 +21478,5 @@
       &lt;/Attribute&gt;
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
-&lt;/LayoutDefinition&gt;</LayoutDefinition>
+&lt;/LayoutDefinition&gt;]]&gt;</LayoutDefinition>
 </ComponentDefinition>

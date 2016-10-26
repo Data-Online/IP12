@@ -66,19 +66,107 @@ public class MMContractsTableControl : BaseMMContractsTableControl
   
 public class PropertiesTableControlRow : BasePropertiesTableControlRow
 {
-      
+
         // The BasePropertiesTableControlRow implements code for a ROW within the
         // the PropertiesTableControl table.  The BasePropertiesTableControlRow implements the DataBind and SaveData methods.
         // The loading of data is actually performed by the LoadData method in the base class of PropertiesTableControl.
 
         // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
         // SaveData, GetUIData, and Validate methods.
-        
-}
+        public PropertiesTableControlRow()
+        {
 
-  
 
-public class PropertiesTableControl : BasePropertiesTableControl
+            #region "Code Customization"
+
+            // The following line will be inserted inside the
+            // constructor for page class.
+            this.PreRender += new System.EventHandler(RecordControl_PreRender);
+
+            #endregion
+        }
+
+        #region "Code Customization"
+
+        /// <summary>
+        /// Highlights the record in the PreRender event
+        /// </summary>
+        private void RecordControl_PreRender(object sender, System.EventArgs e)
+        {
+            // Compare value to determine if you want to highlight the background of the row.
+            // For example, if BankLoansCountControl > 25, then, highlight.
+            // Note: You can also check if the field value equals a certain string,
+            // e.g, BankLoansCountControl.Text = "Yes".
+            int colCount;
+            string[] applyToColumn = new string[5];
+
+            if (double.Parse(this.BankLoansCountControl1.Text) > 0) // Overdue
+                applyToColumn[0] = "_overdue";
+            else if (double.Parse(this.BankLoansCountControl2.Text) > 0) // Due now
+                applyToColumn[0] = "_duenow";
+            else if (double.Parse(this.BankLoansCountControl3.Text) > 0) // Next month
+                applyToColumn[0] = "_nextmonth";
+
+            if (double.Parse(this.RentReviewsCountControl1.Text) > 0) // Overdue
+                applyToColumn[1] = "_overdue";
+            else if (double.Parse(this.RentReviewsCountControl2.Text) > 0) // Due now
+                applyToColumn[1] = "_duenow";
+            else if (double.Parse(this.RentReviewsCountControl3.Text) > 0) // Next month
+                applyToColumn[1] = "_nextmonth";
+
+            if (double.Parse(this.TermExpiresCountControl1.Text) > 0) // Overdue
+                applyToColumn[2] = "_overdue";
+            else if (double.Parse(this.TermExpiresCountControl2.Text) > 0) // Due now
+                applyToColumn[2] = "_duenow";
+            else if (double.Parse(this.TermExpiresCountControl3.Text) > 0) // Next month
+                applyToColumn[2] = "_nextmonth";
+
+            if (double.Parse(this.TermRenewalsCountControl1.Text) > 0) // Overdue
+                applyToColumn[3] = "_overdue";
+            else if (double.Parse(this.TermRenewalsCountControl2.Text) > 0) // Due now
+                applyToColumn[3] = "_duenow";
+            else if (double.Parse(this.TermRenewalsCountControl3.Text) > 0) // Next month
+                applyToColumn[3] = "_nextmonth";
+
+            if (double.Parse(this.MMContractsCountControl1.Text) > 0) // Overdue
+                applyToColumn[4] = "_overdue";
+            else if (double.Parse(this.MMContractsCountControl2.Text) > 0) // Due now
+                applyToColumn[4] = "_duenow";
+            else if (double.Parse(this.MMContractsCountControl3.Text) > 0) // Next month
+                applyToColumn[4] = "_nextmonth";
+
+
+            System.Web.UI.HtmlControls.HtmlTableRow recordRow;
+            recordRow = (System.Web.UI.HtmlControls.HtmlTableRow)this.FindControl("MyTR");
+
+            colCount = 1;
+            foreach (System.Web.UI.HtmlControls.HtmlTableCell recordRowCell in recordRow.Cells)
+            {
+            //# 12  var _ztest = recordRowCell.ClientID;
+                switch (colCount)
+                {
+
+                    case 8: // Bank loans
+                    case 9: // Rent reviews
+                    case 10: // Term Expires
+                    case 11: // Term Renewals
+                    case 12: // MM Contracts
+                        recordRowCell.Attributes.Add("class", "alerts" + applyToColumn[colCount - 8]);
+                        break;
+                    default:
+                        break;
+                }
+                colCount++;
+            }
+
+        }
+
+        #endregion
+    }
+
+
+
+    public class PropertiesTableControl : BasePropertiesTableControl
 {
     // The BasePropertiesTableControl class implements the LoadData, DataBind, CreateWhereClause
     // and other methods to load and display the data in a table control.
@@ -12360,17 +12448,24 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             // Call the Set methods for each controls on the panel
         
                 SetAddress1();
-                SetAddress1Label();
                 SetAddress2();
                 SetAddress3();
                 SetBankLoansCountControl();
+                SetBankLoansCountControl1();
+                SetBankLoansCountControl2();
+                SetBankLoansCountControl3();
                 
                 SetCityID();
                 SetCompanyName();
-                SetCompanyNameLabel();
                 SetCountryID();
+                SetDirectorsCountControl();
                 
+                SetLinkTableCountControl();
                 
+                SetMMContractsCountControl();
+                SetMMContractsCountControl1();
+                SetMMContractsCountControl2();
+                SetMMContractsCountControl3();
                 
                 SetPostCode();
                 
@@ -12380,8 +12475,20 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 
                 
                 SetRegionID();
+                SetRentReviewsCountControl();
+                SetRentReviewsCountControl1();
+                SetRentReviewsCountControl2();
+                SetRentReviewsCountControl3();
                 
+                SetTermExpiresCountControl();
+                SetTermExpiresCountControl1();
+                SetTermExpiresCountControl2();
+                SetTermExpiresCountControl3();
                 
+                SetTermRenewalsCountControl();
+                SetTermRenewalsCountControl1();
+                SetTermRenewalsCountControl2();
+                SetTermRenewalsCountControl3();
                 
                 SetPropertiesRowDeleteButton();
               
@@ -12762,12 +12869,6 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                                
         }
                 
-        public virtual void SetAddress1Label()
-                  {
-                  
-                    
-        }
-                
         public virtual void SetBankLoansCountControl()
                   {
                   
@@ -12776,9 +12877,171 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                     
         }
                 
-        public virtual void SetCompanyNameLabel()
+        public virtual void SetBankLoansCountControl1()
                   {
                   
+                        this.BankLoansCountControl1.Text = EvaluateFormula("LOOKUP(BankLoansCountQuery1, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetBankLoansCountControl2()
+                  {
+                  
+                        this.BankLoansCountControl2.Text = EvaluateFormula("LOOKUP(BankLoansCountQuery2, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetBankLoansCountControl3()
+                  {
+                  
+                        this.BankLoansCountControl3.Text = EvaluateFormula("LOOKUP(BankLoansCountQuery3, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetDirectorsCountControl()
+                  {
+                  
+                        this.DirectorsCountControl.Text = EvaluateFormula("LOOKUP(DirectorsCountQuery, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetLinkTableCountControl()
+                  {
+                  
+                        this.LinkTableCountControl.Text = EvaluateFormula("LOOKUP(LinkTableCountQuery, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetMMContractsCountControl()
+                  {
+                  
+                        this.MMContractsCountControl.Text = EvaluateFormula("LOOKUP(MMContractsCountQuery, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetMMContractsCountControl1()
+                  {
+                  
+                        this.MMContractsCountControl1.Text = EvaluateFormula("LOOKUP(MMContractsCountQuery1, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetMMContractsCountControl2()
+                  {
+                  
+                        this.MMContractsCountControl2.Text = EvaluateFormula("LOOKUP(MMContractsCountQuery2, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetMMContractsCountControl3()
+                  {
+                  
+                        this.MMContractsCountControl3.Text = EvaluateFormula("LOOKUP(MMContractsCountQuery3, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetRentReviewsCountControl()
+                  {
+                  
+                        this.RentReviewsCountControl.Text = EvaluateFormula("LOOKUP(RentReviewsCountQuery, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetRentReviewsCountControl1()
+                  {
+                  
+                        this.RentReviewsCountControl1.Text = EvaluateFormula("LOOKUP(RentReviewsCountQuery1, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetRentReviewsCountControl2()
+                  {
+                  
+                        this.RentReviewsCountControl2.Text = EvaluateFormula("LOOKUP(RentReviewsCountQuery2, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetRentReviewsCountControl3()
+                  {
+                  
+                        this.RentReviewsCountControl3.Text = EvaluateFormula("LOOKUP(RentReviewsCountQuery3, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetTermExpiresCountControl()
+                  {
+                  
+                        this.TermExpiresCountControl.Text = EvaluateFormula("LOOKUP(TermExpiresCountQuery, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetTermExpiresCountControl1()
+                  {
+                  
+                        this.TermExpiresCountControl1.Text = EvaluateFormula("LOOKUP(TermExpiresCountQuery1, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetTermExpiresCountControl2()
+                  {
+                  
+                        this.TermExpiresCountControl2.Text = EvaluateFormula("LOOKUP(TermExpiresCountQuery2, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetTermExpiresCountControl3()
+                  {
+                  
+                        this.TermExpiresCountControl3.Text = EvaluateFormula("LOOKUP(TermExpiresCountQuery3, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetTermRenewalsCountControl()
+                  {
+                  
+                        this.TermRenewalsCountControl.Text = EvaluateFormula("LOOKUP(TermRenewalsCountQuery, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetTermRenewalsCountControl1()
+                  {
+                  
+                        this.TermRenewalsCountControl1.Text = EvaluateFormula("LOOKUP(TermRenewalsCountQuery1, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetTermRenewalsCountControl2()
+                  {
+                  
+                        this.TermRenewalsCountControl2.Text = EvaluateFormula("LOOKUP(TermRenewalsCountQuery2, PropertyID)");
+                    
+                    
+        }
+                
+        public virtual void SetTermRenewalsCountControl3()
+                  {
+                  
+                        this.TermRenewalsCountControl3.Text = EvaluateFormula("LOOKUP(TermRenewalsCountQuery3, PropertyID)");
+                    
                     
         }
                 
@@ -12912,6 +13175,48 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 panel = (PropertiesTableControl)(this.GetParentTableControl());
                   
                 e.Variables.Add("BankLoansCountQuery", panel.BankLoansCountQuery);                                                       
+                        
+                e.Variables.Add("BankLoansCountQuery1", panel.BankLoansCountQuery1);                                                       
+                        
+                e.Variables.Add("BankLoansCountQuery2", panel.BankLoansCountQuery2);                                                       
+                        
+                e.Variables.Add("BankLoansCountQuery3", panel.BankLoansCountQuery3);                                                       
+                        
+                e.Variables.Add("DirectorsCountQuery", panel.DirectorsCountQuery);                                                       
+                        
+                e.Variables.Add("LinkTableCountQuery", panel.LinkTableCountQuery);                                                       
+                        
+                e.Variables.Add("MMContractsCountQuery", panel.MMContractsCountQuery);                                                       
+                        
+                e.Variables.Add("MMContractsCountQuery1", panel.MMContractsCountQuery1);                                                       
+                        
+                e.Variables.Add("MMContractsCountQuery2", panel.MMContractsCountQuery2);                                                       
+                        
+                e.Variables.Add("MMContractsCountQuery3", panel.MMContractsCountQuery3);                                                       
+                        
+                e.Variables.Add("RentReviewsCountQuery", panel.RentReviewsCountQuery);                                                       
+                        
+                e.Variables.Add("RentReviewsCountQuery1", panel.RentReviewsCountQuery1);                                                       
+                        
+                e.Variables.Add("RentReviewsCountQuery2", panel.RentReviewsCountQuery2);                                                       
+                        
+                e.Variables.Add("RentReviewsCountQuery3", panel.RentReviewsCountQuery3);                                                       
+                        
+                e.Variables.Add("TermExpiresCountQuery", panel.TermExpiresCountQuery);                                                       
+                        
+                e.Variables.Add("TermExpiresCountQuery1", panel.TermExpiresCountQuery1);                                                       
+                        
+                e.Variables.Add("TermExpiresCountQuery2", panel.TermExpiresCountQuery2);                                                       
+                        
+                e.Variables.Add("TermExpiresCountQuery3", panel.TermExpiresCountQuery3);                                                       
+                        
+                e.Variables.Add("TermRenewalsCountQuery", panel.TermRenewalsCountQuery);                                                       
+                        
+                e.Variables.Add("TermRenewalsCountQuery1", panel.TermRenewalsCountQuery1);                                                       
+                        
+                e.Variables.Add("TermRenewalsCountQuery2", panel.TermRenewalsCountQuery2);                                                       
+                        
+                e.Variables.Add("TermRenewalsCountQuery3", panel.TermRenewalsCountQuery3);                                                       
                         
             }
             
@@ -13662,12 +13967,6 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             }
         }
             
-        public System.Web.UI.WebControls.Literal Address1Label {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1Label");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal Address2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address2");
@@ -13683,6 +13982,24 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         public System.Web.UI.WebControls.Literal BankLoansCountControl {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankLoansCountControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal BankLoansCountControl1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankLoansCountControl1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal BankLoansCountControl2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankLoansCountControl2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal BankLoansCountControl3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankLoansCountControl3");
             }
         }
         
@@ -13704,27 +14021,57 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             }
         }
             
-        public System.Web.UI.WebControls.Literal CompanyNameLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CompanyNameLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.LinkButton CountryID {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryID");
             }
         }
             
+        public System.Web.UI.WebControls.Literal DirectorsCountControl {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DirectorsCountControl");
+            }
+        }
+        
         public DirectorsTableControl DirectorsTableControl {
             get {
                 return (DirectorsTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DirectorsTableControl");
             }
         }
         
+        public System.Web.UI.WebControls.Literal LinkTableCountControl {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableCountControl");
+            }
+        }
+        
         public LinkTableTableControl LinkTableTableControl {
             get {
                 return (LinkTableTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableTableControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal MMContractsCountControl {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MMContractsCountControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal MMContractsCountControl1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MMContractsCountControl1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal MMContractsCountControl2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MMContractsCountControl2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal MMContractsCountControl3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MMContractsCountControl3");
             }
         }
         
@@ -13782,15 +14129,87 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             }
         }
             
+        public System.Web.UI.WebControls.Literal RentReviewsCountControl {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewsCountControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal RentReviewsCountControl1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewsCountControl1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal RentReviewsCountControl2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewsCountControl2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal RentReviewsCountControl3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewsCountControl3");
+            }
+        }
+        
         public RentReviewsTableControl RentReviewsTableControl {
             get {
                 return (RentReviewsTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewsTableControl");
             }
         }
         
+        public System.Web.UI.WebControls.Literal TermExpiresCountControl {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresCountControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal TermExpiresCountControl1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresCountControl1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal TermExpiresCountControl2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresCountControl2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal TermExpiresCountControl3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresCountControl3");
+            }
+        }
+        
         public TermExpiresTableControl TermExpiresTableControl {
             get {
                 return (TermExpiresTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresTableControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal TermRenewalsCountControl {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermRenewalsCountControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal TermRenewalsCountControl1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermRenewalsCountControl1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal TermRenewalsCountControl2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermRenewalsCountControl2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal TermRenewalsCountControl3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermRenewalsCountControl3");
             }
         }
         
@@ -14031,6 +14450,8 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
+              this.Address1Label.Click += Address1Label_Click;
+            
               this.Address1SortLabel.Click += Address1SortLabel_Click;
             
               this.Address2SortLabel.Click += Address2SortLabel_Click;
@@ -14038,6 +14459,8 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
               this.Address3SortLabel.Click += Address3SortLabel_Click;
             
               this.CityIDSortLabel.Click += CityIDSortLabel_Click;
+            
+              this.CompanyNameLabel.Click += CompanyNameLabel_Click;
             
               this.CompanyNameSortLabel.Click += CompanyNameSortLabel_Click;
             
@@ -14275,6 +14698,48 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
           
                   LoadData_BankLoansCountQuery();
        
+                  LoadData_BankLoansCountQuery1();
+       
+                  LoadData_BankLoansCountQuery2();
+       
+                  LoadData_BankLoansCountQuery3();
+       
+                  LoadData_DirectorsCountQuery();
+       
+                  LoadData_LinkTableCountQuery();
+       
+                  LoadData_MMContractsCountQuery();
+       
+                  LoadData_MMContractsCountQuery1();
+       
+                  LoadData_MMContractsCountQuery2();
+       
+                  LoadData_MMContractsCountQuery3();
+       
+                  LoadData_RentReviewsCountQuery();
+       
+                  LoadData_RentReviewsCountQuery1();
+       
+                  LoadData_RentReviewsCountQuery2();
+       
+                  LoadData_RentReviewsCountQuery3();
+       
+                  LoadData_TermExpiresCountQuery();
+       
+                  LoadData_TermExpiresCountQuery1();
+       
+                  LoadData_TermExpiresCountQuery2();
+       
+                  LoadData_TermExpiresCountQuery3();
+       
+                  LoadData_TermRenewalsCountQuery();
+       
+                  LoadData_TermRenewalsCountQuery1();
+       
+                  LoadData_TermRenewalsCountQuery2();
+       
+                  LoadData_TermRenewalsCountQuery3();
+       
             // Improve performance by prefetching display as records.
             this.PreFetchForeignKeyValues();     
 
@@ -14311,15 +14776,26 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Call the Set methods for each controls on the panel
         
+                SetAddress1Label();
                 SetAddress1SortLabel();
                 SetAddress2SortLabel();
                 SetAddress3SortLabel();
                 
+                
+                
+                
                 SetCityIDFilter();
                 SetCityIDLabel1();
                 SetCityIDSortLabel();
+                SetCompanyNameLabel();
                 SetCompanyNameSortLabel();
                 SetCountryIDSortLabel();
+                
+                
+                
+                
+                
+                
                 SetPostCodeSortLabel();
                 
                 
@@ -14338,6 +14814,18 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                 SetRegionIDFilter();
                 SetRegionIDLabel1();
                 SetRegionIDSortLabel();
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 
                 
                 
@@ -14473,6 +14961,48 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                 // add datasource as variables for formula evaluation
                     
                 if (BankLoansCountQuery != null) e.Variables.Add("BankLoansCountQuery", BankLoansCountQuery);                                                       
+                    
+                if (BankLoansCountQuery1 != null) e.Variables.Add("BankLoansCountQuery1", BankLoansCountQuery1);                                                       
+                    
+                if (BankLoansCountQuery2 != null) e.Variables.Add("BankLoansCountQuery2", BankLoansCountQuery2);                                                       
+                    
+                if (BankLoansCountQuery3 != null) e.Variables.Add("BankLoansCountQuery3", BankLoansCountQuery3);                                                       
+                    
+                if (DirectorsCountQuery != null) e.Variables.Add("DirectorsCountQuery", DirectorsCountQuery);                                                       
+                    
+                if (LinkTableCountQuery != null) e.Variables.Add("LinkTableCountQuery", LinkTableCountQuery);                                                       
+                    
+                if (MMContractsCountQuery != null) e.Variables.Add("MMContractsCountQuery", MMContractsCountQuery);                                                       
+                    
+                if (MMContractsCountQuery1 != null) e.Variables.Add("MMContractsCountQuery1", MMContractsCountQuery1);                                                       
+                    
+                if (MMContractsCountQuery2 != null) e.Variables.Add("MMContractsCountQuery2", MMContractsCountQuery2);                                                       
+                    
+                if (MMContractsCountQuery3 != null) e.Variables.Add("MMContractsCountQuery3", MMContractsCountQuery3);                                                       
+                    
+                if (RentReviewsCountQuery != null) e.Variables.Add("RentReviewsCountQuery", RentReviewsCountQuery);                                                       
+                    
+                if (RentReviewsCountQuery1 != null) e.Variables.Add("RentReviewsCountQuery1", RentReviewsCountQuery1);                                                       
+                    
+                if (RentReviewsCountQuery2 != null) e.Variables.Add("RentReviewsCountQuery2", RentReviewsCountQuery2);                                                       
+                    
+                if (RentReviewsCountQuery3 != null) e.Variables.Add("RentReviewsCountQuery3", RentReviewsCountQuery3);                                                       
+                    
+                if (TermExpiresCountQuery != null) e.Variables.Add("TermExpiresCountQuery", TermExpiresCountQuery);                                                       
+                    
+                if (TermExpiresCountQuery1 != null) e.Variables.Add("TermExpiresCountQuery1", TermExpiresCountQuery1);                                                       
+                    
+                if (TermExpiresCountQuery2 != null) e.Variables.Add("TermExpiresCountQuery2", TermExpiresCountQuery2);                                                       
+                    
+                if (TermExpiresCountQuery3 != null) e.Variables.Add("TermExpiresCountQuery3", TermExpiresCountQuery3);                                                       
+                    
+                if (TermRenewalsCountQuery != null) e.Variables.Add("TermRenewalsCountQuery", TermRenewalsCountQuery);                                                       
+                    
+                if (TermRenewalsCountQuery1 != null) e.Variables.Add("TermRenewalsCountQuery1", TermRenewalsCountQuery1);                                                       
+                    
+                if (TermRenewalsCountQuery2 != null) e.Variables.Add("TermRenewalsCountQuery2", TermRenewalsCountQuery2);                                                       
+                    
+                if (TermRenewalsCountQuery3 != null) e.Variables.Add("TermRenewalsCountQuery3", TermRenewalsCountQuery3);                                                       
                     
             }
 
@@ -15167,6 +15697,16 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetAddress1Label()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.Address1Label.Text = "Some value";
+                    
+                    
+        }
+                
         public virtual void SetAddress1SortLabel()
                   {
                   
@@ -15192,6 +15732,12 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
         }
                 
         public virtual void SetCityIDSortLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetCompanyNameLabel()
                   {
                   
                     
@@ -15240,6 +15786,629 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
             return wc;
         }
       
+        public virtual WhereClause CreateWhereClause_BankLoansCountQuery1()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_BankLoansCountQuery1();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_BankLoansCountQuery2()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_BankLoansCountQuery2();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_BankLoansCountQuery3()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_BankLoansCountQuery3();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_DirectorsCountQuery()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_LinkTableCountQuery()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_MMContractsCountQuery()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_MMContractsCountQuery1()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_MMContractsCountQuery1();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_MMContractsCountQuery2()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_MMContractsCountQuery2();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_MMContractsCountQuery3()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_MMContractsCountQuery3();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_RentReviewsCountQuery()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_RentReviewsCountQuery1()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_RentReviewsCountQuery1();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_RentReviewsCountQuery2()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_RentReviewsCountQuery2();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_RentReviewsCountQuery3()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_RentReviewsCountQuery3();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_TermExpiresCountQuery()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_TermExpiresCountQuery1()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_TermExpiresCountQuery1();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_TermExpiresCountQuery2()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_TermExpiresCountQuery2();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_TermExpiresCountQuery3()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_TermExpiresCountQuery3();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_TermRenewalsCountQuery()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_TermRenewalsCountQuery1()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_TermRenewalsCountQuery1();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_TermRenewalsCountQuery2()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_TermRenewalsCountQuery2();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateWhereClause_TermRenewalsCountQuery3()
+        
+        {
+            WhereClause wc = new WhereClause();
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design tithis.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+
+          
+            // Get the static clause defined at design time on the Query Wizard
+            WhereClause qc = this.CreateQueryClause_TermRenewalsCountQuery3();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+                      
+            return wc;
+        }
+      
+        public virtual WhereClause CreateQueryClause_BankLoansCountQuery1()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.BankLoansTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"BankLoans_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_BankLoansCountQuery2()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.BankLoansTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"BankLoans_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.BankLoansTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"BankLoans_.ExpiryDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than_Or_Equal, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_BankLoansCountQuery3()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.BankLoansTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"BankLoans_.ExpiryDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today().AddDays(60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.BankLoansTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"BankLoans_.ExpiryDate"), EvaluateFormula("Today().AddDays(60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today().AddDays(60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().AddDays(60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_MMContractsCountQuery1()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.MMContractsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"MMContracts_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_MMContractsCountQuery2()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.MMContractsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"MMContracts_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.MMContractsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"MMContracts_.ExpiryDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than_Or_Equal, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_MMContractsCountQuery3()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.MMContractsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"MMContracts_.ExpiryDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today().ADDDAYS(60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.MMContractsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"MMContracts_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today().ADDDAYS(60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_RentReviewsCountQuery1()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().AddDays(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.RentReviewsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"RentReviews_.ExpiryDate"), EvaluateFormula("Today().AddDays(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today().AddDays(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().AddDays(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_RentReviewsCountQuery2()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.RentReviewsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"RentReviews_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.RentReviewsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"RentReviews_.ExpiryDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than_Or_Equal, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_RentReviewsCountQuery3()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.RentReviewsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"RentReviews_.ExpiryDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today().ADDDAYS(60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.RentReviewsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"RentReviews_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today().ADDDAYS(60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_TermExpiresCountQuery1()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermExpiresTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermExpires_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_TermExpiresCountQuery2()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermExpiresTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermExpires_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermExpiresTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermExpires_.ExpiryDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than_Or_Equal, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_TermExpiresCountQuery3()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermExpiresTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermExpires_.ExpiryDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today().ADDDAYS(60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermExpiresTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermExpires_.ExpiryDate"), EvaluateFormula("Today().ADDDAYS(60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today().ADDDAYS(60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_TermRenewalsCountQuery1()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermRenewalsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermRenewals_.RenewalDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_TermRenewalsCountQuery2()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today().ADDDAYS(-60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermRenewalsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermRenewals_.RenewalDate"), EvaluateFormula("Today().ADDDAYS(-60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermRenewalsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermRenewals_.RenewalDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than_Or_Equal, false));
+         if (EvaluateFormula("Today().ADDDAYS(-60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().ADDDAYS(-60)", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
+        public virtual WhereClause CreateQueryClause_TermRenewalsCountQuery3()
+        
+        {
+          
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("Today()", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermRenewalsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermRenewals_.RenewalDate"), EvaluateFormula("Today()", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Greater_Than, false));
+            if (EvaluateFormula("Today().AddDays(60)", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.TermRenewalsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"TermRenewals_.RenewalDate"), EvaluateFormula("Today().AddDays(60)", false), BaseClasses.Data.BaseFilter.ComparisonOperator.Less_Than, false));
+         if (EvaluateFormula("Today()", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today()", false) == "--ANY--") whereClause.RunQuery = false;
+         if (EvaluateFormula("Today().AddDays(60)", false) == "--PLEASE_SELECT--" || EvaluateFormula("Today().AddDays(60)", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
         public virtual void LoadData_BankLoansCountQuery()
         
         {
@@ -15269,12 +16438,810 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                         
         }
       
+        public virtual void LoadData_BankLoansCountQuery1()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _BankLoansCountQuery1.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _BankLoansCountQuery1.DataChanged = true;
+          
+              this._BankLoansCountQuery1.Initialize("BankLoansCountQuery1", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_BankLoansCountQuery1();
+              this._BankLoansCountQuery1.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._BankLoansCountQuery1.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._BankLoansCountQuery1.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, BankLoansTable.Instance, "BankLoansCount", ""), "BankLoansCount"));
+              
+              // Define joins if there are any
+          
+              this._BankLoansCountQuery1.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", BankLoansTable.PropertyID, BankLoansTable.Instance, "");
+          
+              this._BankLoansCountQuery1.LoadData(false, this._BankLoansCountQuery1.PageSize, this._BankLoansCountQuery1.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_BankLoansCountQuery2()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _BankLoansCountQuery2.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _BankLoansCountQuery2.DataChanged = true;
+          
+              this._BankLoansCountQuery2.Initialize("BankLoansCountQuery2", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_BankLoansCountQuery2();
+              this._BankLoansCountQuery2.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._BankLoansCountQuery2.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._BankLoansCountQuery2.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, BankLoansTable.Instance, "BankLoansCount", ""), "BankLoansCount"));
+              
+              // Define joins if there are any
+          
+              this._BankLoansCountQuery2.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", BankLoansTable.PropertyID, BankLoansTable.Instance, "");
+          
+              this._BankLoansCountQuery2.LoadData(false, this._BankLoansCountQuery2.PageSize, this._BankLoansCountQuery2.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_BankLoansCountQuery3()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _BankLoansCountQuery3.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _BankLoansCountQuery3.DataChanged = true;
+          
+              this._BankLoansCountQuery3.Initialize("BankLoansCountQuery3", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_BankLoansCountQuery3();
+              this._BankLoansCountQuery3.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._BankLoansCountQuery3.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._BankLoansCountQuery3.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, BankLoansTable.Instance, "BankLoansCount", ""), "BankLoansCount"));
+              
+              // Define joins if there are any
+          
+              this._BankLoansCountQuery3.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", BankLoansTable.PropertyID, BankLoansTable.Instance, "");
+          
+              this._BankLoansCountQuery3.LoadData(false, this._BankLoansCountQuery3.PageSize, this._BankLoansCountQuery3.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_DirectorsCountQuery()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _DirectorsCountQuery.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _DirectorsCountQuery.DataChanged = true;
+          
+              this._DirectorsCountQuery.Initialize("DirectorsCountQuery", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_DirectorsCountQuery();
+              this._DirectorsCountQuery.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._DirectorsCountQuery.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._DirectorsCountQuery.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, DirectorsTable.Instance, "DirectorsCount", ""), "DirectorsCount"));
+              
+              // Define joins if there are any
+          
+              this._DirectorsCountQuery.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", DirectorsTable.PropertyID, DirectorsTable.Instance, "");
+          
+              this._DirectorsCountQuery.LoadData(false, this._DirectorsCountQuery.PageSize, this._DirectorsCountQuery.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_LinkTableCountQuery()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _LinkTableCountQuery.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _LinkTableCountQuery.DataChanged = true;
+          
+              this._LinkTableCountQuery.Initialize("LinkTableCountQuery", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_LinkTableCountQuery();
+              this._LinkTableCountQuery.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._LinkTableCountQuery.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._LinkTableCountQuery.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, LinkTableTable.Instance, "LinkTableCount", ""), "LinkTableCount"));
+              
+              // Define joins if there are any
+          
+              this._LinkTableCountQuery.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", LinkTableTable.PropertyID, LinkTableTable.Instance, "");
+          
+              this._LinkTableCountQuery.LoadData(false, this._LinkTableCountQuery.PageSize, this._LinkTableCountQuery.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_MMContractsCountQuery()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _MMContractsCountQuery.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _MMContractsCountQuery.DataChanged = true;
+          
+              this._MMContractsCountQuery.Initialize("MMContractsCountQuery", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_MMContractsCountQuery();
+              this._MMContractsCountQuery.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._MMContractsCountQuery.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._MMContractsCountQuery.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, MMContractsTable.Instance, "MMContractsCount", ""), "MMContractsCount"));
+              
+              // Define joins if there are any
+          
+              this._MMContractsCountQuery.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", MMContractsTable.PropertyID, MMContractsTable.Instance, "");
+          
+              this._MMContractsCountQuery.LoadData(false, this._MMContractsCountQuery.PageSize, this._MMContractsCountQuery.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_MMContractsCountQuery1()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _MMContractsCountQuery1.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _MMContractsCountQuery1.DataChanged = true;
+          
+              this._MMContractsCountQuery1.Initialize("MMContractsCountQuery1", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_MMContractsCountQuery1();
+              this._MMContractsCountQuery1.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._MMContractsCountQuery1.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._MMContractsCountQuery1.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, MMContractsTable.Instance, "MMContractsCount", ""), "MMContractsCount"));
+              
+              // Define joins if there are any
+          
+              this._MMContractsCountQuery1.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", MMContractsTable.PropertyID, MMContractsTable.Instance, "");
+          
+              this._MMContractsCountQuery1.LoadData(false, this._MMContractsCountQuery1.PageSize, this._MMContractsCountQuery1.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_MMContractsCountQuery2()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _MMContractsCountQuery2.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _MMContractsCountQuery2.DataChanged = true;
+          
+              this._MMContractsCountQuery2.Initialize("MMContractsCountQuery2", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_MMContractsCountQuery2();
+              this._MMContractsCountQuery2.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._MMContractsCountQuery2.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._MMContractsCountQuery2.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, MMContractsTable.Instance, "MMContractsCount", ""), "MMContractsCount"));
+              
+              // Define joins if there are any
+          
+              this._MMContractsCountQuery2.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", MMContractsTable.PropertyID, MMContractsTable.Instance, "");
+          
+              this._MMContractsCountQuery2.LoadData(false, this._MMContractsCountQuery2.PageSize, this._MMContractsCountQuery2.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_MMContractsCountQuery3()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _MMContractsCountQuery3.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _MMContractsCountQuery3.DataChanged = true;
+          
+              this._MMContractsCountQuery3.Initialize("MMContractsCountQuery3", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_MMContractsCountQuery3();
+              this._MMContractsCountQuery3.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._MMContractsCountQuery3.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._MMContractsCountQuery3.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, MMContractsTable.Instance, "MMContractsCount", ""), "MMContractsCount"));
+              
+              // Define joins if there are any
+          
+              this._MMContractsCountQuery3.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", MMContractsTable.PropertyID, MMContractsTable.Instance, "");
+          
+              this._MMContractsCountQuery3.LoadData(false, this._MMContractsCountQuery3.PageSize, this._MMContractsCountQuery3.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_RentReviewsCountQuery()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _RentReviewsCountQuery.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _RentReviewsCountQuery.DataChanged = true;
+          
+              this._RentReviewsCountQuery.Initialize("RentReviewsCountQuery", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_RentReviewsCountQuery();
+              this._RentReviewsCountQuery.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._RentReviewsCountQuery.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._RentReviewsCountQuery.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, RentReviewsTable.Instance, "RentReviewsCount", ""), "RentReviewsCount"));
+              
+              // Define joins if there are any
+          
+              this._RentReviewsCountQuery.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", RentReviewsTable.PropertyID, RentReviewsTable.Instance, "");
+          
+              this._RentReviewsCountQuery.LoadData(false, this._RentReviewsCountQuery.PageSize, this._RentReviewsCountQuery.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_RentReviewsCountQuery1()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _RentReviewsCountQuery1.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _RentReviewsCountQuery1.DataChanged = true;
+          
+              this._RentReviewsCountQuery1.Initialize("RentReviewsCountQuery1", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_RentReviewsCountQuery1();
+              this._RentReviewsCountQuery1.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._RentReviewsCountQuery1.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._RentReviewsCountQuery1.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, RentReviewsTable.Instance, "RentReviewsCount", ""), "RentReviewsCount"));
+              
+              // Define joins if there are any
+          
+              this._RentReviewsCountQuery1.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", RentReviewsTable.PropertyID, RentReviewsTable.Instance, "");
+          
+              this._RentReviewsCountQuery1.LoadData(false, this._RentReviewsCountQuery1.PageSize, this._RentReviewsCountQuery1.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_RentReviewsCountQuery2()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _RentReviewsCountQuery2.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _RentReviewsCountQuery2.DataChanged = true;
+          
+              this._RentReviewsCountQuery2.Initialize("RentReviewsCountQuery2", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_RentReviewsCountQuery2();
+              this._RentReviewsCountQuery2.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._RentReviewsCountQuery2.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._RentReviewsCountQuery2.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, RentReviewsTable.Instance, "RentReviewsCount", ""), "RentReviewsCount"));
+              
+              // Define joins if there are any
+          
+              this._RentReviewsCountQuery2.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", RentReviewsTable.PropertyID, RentReviewsTable.Instance, "");
+          
+              this._RentReviewsCountQuery2.LoadData(false, this._RentReviewsCountQuery2.PageSize, this._RentReviewsCountQuery2.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_RentReviewsCountQuery3()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _RentReviewsCountQuery3.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _RentReviewsCountQuery3.DataChanged = true;
+          
+              this._RentReviewsCountQuery3.Initialize("RentReviewsCountQuery3", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_RentReviewsCountQuery3();
+              this._RentReviewsCountQuery3.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._RentReviewsCountQuery3.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._RentReviewsCountQuery3.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, RentReviewsTable.Instance, "RentReviewsCount", ""), "RentReviewsCount"));
+              
+              // Define joins if there are any
+          
+              this._RentReviewsCountQuery3.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", RentReviewsTable.PropertyID, RentReviewsTable.Instance, "");
+          
+              this._RentReviewsCountQuery3.LoadData(false, this._RentReviewsCountQuery3.PageSize, this._RentReviewsCountQuery3.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_TermExpiresCountQuery()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _TermExpiresCountQuery.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _TermExpiresCountQuery.DataChanged = true;
+          
+              this._TermExpiresCountQuery.Initialize("TermExpiresCountQuery", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_TermExpiresCountQuery();
+              this._TermExpiresCountQuery.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._TermExpiresCountQuery.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._TermExpiresCountQuery.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, TermExpiresTable.Instance, "TermExpiresCount", ""), "TermExpiresCount"));
+              
+              // Define joins if there are any
+          
+              this._TermExpiresCountQuery.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", TermExpiresTable.PropertyID, TermExpiresTable.Instance, "");
+          
+              this._TermExpiresCountQuery.LoadData(false, this._TermExpiresCountQuery.PageSize, this._TermExpiresCountQuery.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_TermExpiresCountQuery1()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _TermExpiresCountQuery1.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _TermExpiresCountQuery1.DataChanged = true;
+          
+              this._TermExpiresCountQuery1.Initialize("TermExpiresCountQuery1", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_TermExpiresCountQuery1();
+              this._TermExpiresCountQuery1.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._TermExpiresCountQuery1.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._TermExpiresCountQuery1.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, TermExpiresTable.Instance, "TermExpiresCount", ""), "TermExpiresCount"));
+              
+              // Define joins if there are any
+          
+              this._TermExpiresCountQuery1.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", TermExpiresTable.PropertyID, TermExpiresTable.Instance, "");
+          
+              this._TermExpiresCountQuery1.LoadData(false, this._TermExpiresCountQuery1.PageSize, this._TermExpiresCountQuery1.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_TermExpiresCountQuery2()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _TermExpiresCountQuery2.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _TermExpiresCountQuery2.DataChanged = true;
+          
+              this._TermExpiresCountQuery2.Initialize("TermExpiresCountQuery2", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_TermExpiresCountQuery2();
+              this._TermExpiresCountQuery2.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._TermExpiresCountQuery2.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._TermExpiresCountQuery2.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, TermExpiresTable.Instance, "TermExpiresCount", ""), "TermExpiresCount"));
+              
+              // Define joins if there are any
+          
+              this._TermExpiresCountQuery2.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", TermExpiresTable.PropertyID, TermExpiresTable.Instance, "");
+          
+              this._TermExpiresCountQuery2.LoadData(false, this._TermExpiresCountQuery2.PageSize, this._TermExpiresCountQuery2.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_TermExpiresCountQuery3()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _TermExpiresCountQuery3.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _TermExpiresCountQuery3.DataChanged = true;
+          
+              this._TermExpiresCountQuery3.Initialize("TermExpiresCountQuery3", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_TermExpiresCountQuery3();
+              this._TermExpiresCountQuery3.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._TermExpiresCountQuery3.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._TermExpiresCountQuery3.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, TermExpiresTable.Instance, "TermExpiresCount", ""), "TermExpiresCount"));
+              
+              // Define joins if there are any
+          
+              this._TermExpiresCountQuery3.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", TermExpiresTable.PropertyID, TermExpiresTable.Instance, "");
+          
+              this._TermExpiresCountQuery3.LoadData(false, this._TermExpiresCountQuery3.PageSize, this._TermExpiresCountQuery3.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_TermRenewalsCountQuery()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _TermRenewalsCountQuery.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _TermRenewalsCountQuery.DataChanged = true;
+          
+              this._TermRenewalsCountQuery.Initialize("TermRenewalsCountQuery", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_TermRenewalsCountQuery();
+              this._TermRenewalsCountQuery.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._TermRenewalsCountQuery.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._TermRenewalsCountQuery.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, TermRenewalsTable.Instance, "TermRenewalsCount", ""), "TermRenewalsCount"));
+              
+              // Define joins if there are any
+          
+              this._TermRenewalsCountQuery.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", TermRenewalsTable.PropertyID, TermRenewalsTable.Instance, "");
+          
+              this._TermRenewalsCountQuery.LoadData(false, this._TermRenewalsCountQuery.PageSize, this._TermRenewalsCountQuery.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_TermRenewalsCountQuery1()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _TermRenewalsCountQuery1.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _TermRenewalsCountQuery1.DataChanged = true;
+          
+              this._TermRenewalsCountQuery1.Initialize("TermRenewalsCountQuery1", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_TermRenewalsCountQuery1();
+              this._TermRenewalsCountQuery1.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._TermRenewalsCountQuery1.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._TermRenewalsCountQuery1.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, TermRenewalsTable.Instance, "TermRenewalsCount", ""), "TermRenewalsCount"));
+              
+              // Define joins if there are any
+          
+              this._TermRenewalsCountQuery1.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", TermRenewalsTable.PropertyID, TermRenewalsTable.Instance, "");
+          
+              this._TermRenewalsCountQuery1.LoadData(false, this._TermRenewalsCountQuery1.PageSize, this._TermRenewalsCountQuery1.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_TermRenewalsCountQuery2()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _TermRenewalsCountQuery2.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _TermRenewalsCountQuery2.DataChanged = true;
+          
+              this._TermRenewalsCountQuery2.Initialize("TermRenewalsCountQuery2", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_TermRenewalsCountQuery2();
+              this._TermRenewalsCountQuery2.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._TermRenewalsCountQuery2.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._TermRenewalsCountQuery2.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, TermRenewalsTable.Instance, "TermRenewalsCount", ""), "TermRenewalsCount"));
+              
+              // Define joins if there are any
+          
+              this._TermRenewalsCountQuery2.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", TermRenewalsTable.PropertyID, TermRenewalsTable.Instance, "");
+          
+              this._TermRenewalsCountQuery2.LoadData(false, this._TermRenewalsCountQuery2.PageSize, this._TermRenewalsCountQuery2.PageIndex);                       
+                        
+        }
+      
+        public virtual void LoadData_TermRenewalsCountQuery3()
+        
+        {
+          
+              if (!(this.ResetData || this.DataChanged || _TermRenewalsCountQuery3.DataChanged) && this.Page.IsPostBack  && this.Page.Request["__EVENTTARGET"] != "isd_geo_location") return;
+        
+              _TermRenewalsCountQuery3.DataChanged = true;
+          
+              this._TermRenewalsCountQuery3.Initialize("TermRenewalsCountQuery3", PropertiesTable.Instance, 0, 0);
+            
+               
+              // Add the primary key of the record
+              WhereClause wc = CreateWhereClause_TermRenewalsCountQuery3();
+              this._TermRenewalsCountQuery3.WhereClause.iAND(wc);                      
+          
+              // Define selects
+          
+              this._TermRenewalsCountQuery3.AddSelectItem(new SelectItem(PropertiesTable.PropertyID, PropertiesTable.Instance, false, "", ""));
+              
+                    this._TermRenewalsCountQuery3.AddSelectItem(new SelectItem(SelectItem.Operation.COUNT, new SelectItem(SelectItem.ItemType.AllColumns, TermRenewalsTable.Instance, "TermRenewalsCount", ""), "TermRenewalsCount"));
+              
+              // Define joins if there are any
+          
+              this._TermRenewalsCountQuery3.AddJoin(PropertiesTable.PropertyID, PropertiesTable.Instance, "", TermRenewalsTable.PropertyID, TermRenewalsTable.Instance, "");
+          
+              this._TermRenewalsCountQuery3.LoadData(false, this._TermRenewalsCountQuery3.PageSize, this._TermRenewalsCountQuery3.PageIndex);                       
+                        
+        }
+      
         private DataSource _BankLoansCountQuery = new DataSource();
         public DataSource BankLoansCountQuery
         {
             get
             {
                 return _BankLoansCountQuery;
+             }
+        }
+      
+        private DataSource _BankLoansCountQuery1 = new DataSource();
+        public DataSource BankLoansCountQuery1
+        {
+            get
+            {
+                return _BankLoansCountQuery1;
+             }
+        }
+      
+        private DataSource _BankLoansCountQuery2 = new DataSource();
+        public DataSource BankLoansCountQuery2
+        {
+            get
+            {
+                return _BankLoansCountQuery2;
+             }
+        }
+      
+        private DataSource _BankLoansCountQuery3 = new DataSource();
+        public DataSource BankLoansCountQuery3
+        {
+            get
+            {
+                return _BankLoansCountQuery3;
+             }
+        }
+      
+        private DataSource _DirectorsCountQuery = new DataSource();
+        public DataSource DirectorsCountQuery
+        {
+            get
+            {
+                return _DirectorsCountQuery;
+             }
+        }
+      
+        private DataSource _LinkTableCountQuery = new DataSource();
+        public DataSource LinkTableCountQuery
+        {
+            get
+            {
+                return _LinkTableCountQuery;
+             }
+        }
+      
+        private DataSource _MMContractsCountQuery = new DataSource();
+        public DataSource MMContractsCountQuery
+        {
+            get
+            {
+                return _MMContractsCountQuery;
+             }
+        }
+      
+        private DataSource _MMContractsCountQuery1 = new DataSource();
+        public DataSource MMContractsCountQuery1
+        {
+            get
+            {
+                return _MMContractsCountQuery1;
+             }
+        }
+      
+        private DataSource _MMContractsCountQuery2 = new DataSource();
+        public DataSource MMContractsCountQuery2
+        {
+            get
+            {
+                return _MMContractsCountQuery2;
+             }
+        }
+      
+        private DataSource _MMContractsCountQuery3 = new DataSource();
+        public DataSource MMContractsCountQuery3
+        {
+            get
+            {
+                return _MMContractsCountQuery3;
+             }
+        }
+      
+        private DataSource _RentReviewsCountQuery = new DataSource();
+        public DataSource RentReviewsCountQuery
+        {
+            get
+            {
+                return _RentReviewsCountQuery;
+             }
+        }
+      
+        private DataSource _RentReviewsCountQuery1 = new DataSource();
+        public DataSource RentReviewsCountQuery1
+        {
+            get
+            {
+                return _RentReviewsCountQuery1;
+             }
+        }
+      
+        private DataSource _RentReviewsCountQuery2 = new DataSource();
+        public DataSource RentReviewsCountQuery2
+        {
+            get
+            {
+                return _RentReviewsCountQuery2;
+             }
+        }
+      
+        private DataSource _RentReviewsCountQuery3 = new DataSource();
+        public DataSource RentReviewsCountQuery3
+        {
+            get
+            {
+                return _RentReviewsCountQuery3;
+             }
+        }
+      
+        private DataSource _TermExpiresCountQuery = new DataSource();
+        public DataSource TermExpiresCountQuery
+        {
+            get
+            {
+                return _TermExpiresCountQuery;
+             }
+        }
+      
+        private DataSource _TermExpiresCountQuery1 = new DataSource();
+        public DataSource TermExpiresCountQuery1
+        {
+            get
+            {
+                return _TermExpiresCountQuery1;
+             }
+        }
+      
+        private DataSource _TermExpiresCountQuery2 = new DataSource();
+        public DataSource TermExpiresCountQuery2
+        {
+            get
+            {
+                return _TermExpiresCountQuery2;
+             }
+        }
+      
+        private DataSource _TermExpiresCountQuery3 = new DataSource();
+        public DataSource TermExpiresCountQuery3
+        {
+            get
+            {
+                return _TermExpiresCountQuery3;
+             }
+        }
+      
+        private DataSource _TermRenewalsCountQuery = new DataSource();
+        public DataSource TermRenewalsCountQuery
+        {
+            get
+            {
+                return _TermRenewalsCountQuery;
+             }
+        }
+      
+        private DataSource _TermRenewalsCountQuery1 = new DataSource();
+        public DataSource TermRenewalsCountQuery1
+        {
+            get
+            {
+                return _TermRenewalsCountQuery1;
+             }
+        }
+      
+        private DataSource _TermRenewalsCountQuery2 = new DataSource();
+        public DataSource TermRenewalsCountQuery2
+        {
+            get
+            {
+                return _TermRenewalsCountQuery2;
+             }
+        }
+      
+        private DataSource _TermRenewalsCountQuery3 = new DataSource();
+        public DataSource TermRenewalsCountQuery3
+        {
+            get
+            {
+                return _TermRenewalsCountQuery3;
              }
         }
       
@@ -15935,6 +17902,36 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void Address1Label_Click(object sender, EventArgs args)
+        {
+            //Sorts by Address1 when clicked.
+              
+            // Get previous sorting state for Address1.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(PropertiesTable.Address1);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Address1.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(PropertiesTable.Address1, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Address1, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void Address1SortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by Address1 when clicked.
@@ -16044,6 +18041,36 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
             
             } else {
                 // Previously sorted by CityID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void CompanyNameLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by CompanyName when clicked.
+              
+            // Get previous sorting state for CompanyName.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(PropertiesTable.CompanyName);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for CompanyName.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(PropertiesTable.CompanyName, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by CompanyName, so just reverse.
                 sd.Reverse();
             }
         
@@ -16927,6 +18954,12 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
 
 #region "Helper Properties"
         
+        public System.Web.UI.WebControls.LinkButton Address1Label {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1Label");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton Address1SortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1SortLabel");
@@ -16960,6 +18993,12 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
         public System.Web.UI.WebControls.LinkButton CityIDSortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDSortLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton CompanyNameLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CompanyNameLabel");
             }
         }
         

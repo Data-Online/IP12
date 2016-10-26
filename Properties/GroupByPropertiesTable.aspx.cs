@@ -318,6 +318,8 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal Address12;
             
+        public System.Web.UI.WebControls.LinkButton Address1Label;
+        
         public System.Web.UI.WebControls.Literal Address1Label2;
         
         public System.Web.UI.WebControls.LinkButton Address1SortLabel;
@@ -369,6 +371,8 @@ public override void SetControl(string control)
         public System.Web.UI.WebControls.Literal CityIDLabel3;
         
         public System.Web.UI.WebControls.LinkButton CityIDSortLabel;
+        
+        public System.Web.UI.WebControls.LinkButton CompanyNameLabel;
         
         public System.Web.UI.WebControls.LinkButton CompanyNameSortLabel;
         
