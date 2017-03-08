@@ -78,7 +78,9 @@
                 </td><td class="panelHeaderR"></td></tr><tr><td class="panelL"></td><td>
                   <asp:panel id="SuppliersTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="SuppliersTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" style="display:none" colspan="3">&nbsp;</th></tr><asp:Repeater runat="server" id="SuppliersTableControlRepeater">		<ITEMTEMPLATE>
 <tr><asp:Repeater runat="server" id="SuppliersTableControlCellRepeater">		<ITEMTEMPLATE>		<IPv5:SuppliersTableControlRow runat="server" id="SuppliersTableControlRow">
-<td class="galleryttc" style="width:33%;"><asp:Literal runat="server" id="CityID"></asp:Literal> <br />
+<td class="galleryttc" style="width:33%;"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="CityID"></asp:Literal></span>
+ <br />
 <asp:LinkButton runat="server" id="CompanyName" causesvalidation="False" commandname="Redirect"></asp:LinkButton> <br />
 </td></IPv5:SuppliersTableControlRow>
 </ITEMTEMPLATE>

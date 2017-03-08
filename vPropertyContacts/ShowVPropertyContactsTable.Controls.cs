@@ -4502,7 +4502,7 @@ public class BaseVPropertyContactsTableControl : IPv5.UI.BaseApplicationTableCon
                  report.AddColumn(VPropertyContactsView.City.Name, ReportEnum.Align.Left, "${City}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyContactsView.Country.Name, ReportEnum.Align.Left, "${Country}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyContactsView.LinkID.Name, ReportEnum.Align.Right, "${LinkID}", ReportEnum.Align.Right, 15);
-                 report.AddColumn(VPropertyContactsView.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(VPropertyContactsView.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 17);
 
   
                 int rowsPerQuery = 5000;
@@ -4688,7 +4688,7 @@ public class BaseVPropertyContactsTableControl : IPv5.UI.BaseApplicationTableCon
                  report.AddColumn(VPropertyContactsView.City.Name, ReportEnum.Align.Left, "${City}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyContactsView.Country.Name, ReportEnum.Align.Left, "${Country}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyContactsView.LinkID.Name, ReportEnum.Align.Right, "${LinkID}", ReportEnum.Align.Right, 15);
-                 report.AddColumn(VPropertyContactsView.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(VPropertyContactsView.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 17);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -5948,6 +5948,8 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetAddress1Label2()
                   {
                   
+                        this.Address1Label2.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 
@@ -5978,6 +5980,8 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetFirstName2Label1()
                   {
                   
+                        this.FirstName2Label1.Text = EvaluateFormula("\"Second Contact\"");
+                      
                     
         }
                 

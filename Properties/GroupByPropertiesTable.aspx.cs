@@ -382,6 +382,10 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.LinkButton CountryIDSortLabel;
         
+        public System.Web.UI.WebControls.Literal DateOfBirth;
+            
+        public System.Web.UI.WebControls.Literal DateOfBirthLabel;
+        
         public System.Web.UI.WebControls.Literal DescriptionLabel4;
         
         public System.Web.UI.WebControls.Literal DescriptionLabel6;
@@ -424,6 +428,8 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal ExpiryDateLabel7;
         
+        public System.Web.UI.WebControls.Literal FirstName1;
+            
         public System.Web.UI.WebControls.Literal FirstName2;
             
         public System.Web.UI.WebControls.Literal FirstName2Label;
@@ -434,6 +440,8 @@ public override void SetControl(string control)
             
         public System.Web.UI.WebControls.Literal IrdNumberLabel;
         
+        public System.Web.UI.WebControls.Literal LastName1;
+            
         public System.Web.UI.WebControls.Literal LastName2;
             
         public System.Web.UI.WebControls.LinkButton LastNameSortLabel1;
@@ -467,6 +475,10 @@ public override void SetControl(string control)
         public System.Web.UI.WebControls.Literal PhoneNumber;
             
         public System.Web.UI.WebControls.Literal PhoneNumberLabel;
+        
+        public System.Web.UI.WebControls.Literal PlaceOfBirth;
+            
+        public System.Web.UI.WebControls.Literal PlaceOfBirthLabel;
         
         public System.Web.UI.WebControls.Literal PostCode2;
             
@@ -594,6 +606,8 @@ public override void SetControl(string control)
             
         public System.Web.UI.WebControls.ImageButton TermRenewalsWordButton;
         
+        public System.Web.UI.WebControls.Literal Title0;
+            
         public System.Web.UI.WebControls.LinkButton TitleSortLabel1;
         
         public System.Web.UI.WebControls.Literal TrustName;

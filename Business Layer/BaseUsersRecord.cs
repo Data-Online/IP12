@@ -210,6 +210,38 @@ public class BaseUsersRecord : PrimaryKeyRecord
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.PasswordColumn);
 	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Users_.eMail field.
+	/// </summary>
+	public ColumnValue GeteMailValue()
+	{
+		return this.GetValue(TableUtils.eMailColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Users_.eMail field.
+	/// </summary>
+	public string GeteMailFieldValue()
+	{
+		return this.GetValue(TableUtils.eMailColumn).ToString();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.eMail field.
+	/// </summary>
+	public void SeteMailFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.eMailColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.eMail field.
+	/// </summary>
+	public void SeteMailFieldValue(string val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.eMailColumn);
+	}
 
 
 #endregion
@@ -343,6 +375,49 @@ public class BaseUsersRecord : PrimaryKeyRecord
 		get
 		{
 			return TableUtils.PasswordColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Users_.eMail field.
+	/// </summary>
+	public string eMail
+	{
+		get
+		{
+			return this.GetValue(TableUtils.eMailColumn).ToString();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.eMailColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool eMailSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.eMailColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.eMail field.
+	/// </summary>
+	public string eMailDefault
+	{
+		get
+		{
+			return TableUtils.eMailColumn.DefaultValue;
 		}
 	}
 

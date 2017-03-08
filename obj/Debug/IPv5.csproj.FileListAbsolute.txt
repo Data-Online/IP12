@@ -36,3 +36,15 @@ P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\obj\Debug\IPv5.Global.resources
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\obj\Debug\IPv5.csproj.GenerateResource.Cache
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\obj\Debug\IPv5.dll
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\obj\Debug\IPv5.pdb
+C:\Users\atkin\Documents\GitHub\IP12\bin\IPv5.dll.config
+C:\Users\atkin\Documents\GitHub\IP12\bin\IPv5.dll
+C:\Users\atkin\Documents\GitHub\IP12\bin\IPv5.pdb
+C:\Users\atkin\Documents\GitHub\IP12\bin\IPv5.Business.dll
+C:\Users\atkin\Documents\GitHub\IP12\bin\IPv5.Data.dll
+C:\Users\atkin\Documents\GitHub\IP12\bin\IPv5.Business.pdb
+C:\Users\atkin\Documents\GitHub\IP12\bin\IPv5.Data.pdb
+C:\Users\atkin\Documents\GitHub\IP12\obj\Debug\IPv5.csprojResolveAssemblyReference.cache
+C:\Users\atkin\Documents\GitHub\IP12\obj\Debug\IPv5.Global.resources
+C:\Users\atkin\Documents\GitHub\IP12\obj\Debug\IPv5.csproj.GenerateResource.Cache
+C:\Users\atkin\Documents\GitHub\IP12\obj\Debug\IPv5.dll
+C:\Users\atkin\Documents\GitHub\IP12\obj\Debug\IPv5.pdb

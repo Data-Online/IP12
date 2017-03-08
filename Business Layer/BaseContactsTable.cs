@@ -64,6 +64,7 @@ public class BaseContactsTable : PrimaryKeyTable
         LastNameColumn.CodeName = "LastName";
         eMailColumn.CodeName = "eMail";
         Address1Column.CodeName = "Address1";
+        Address1Column.Name = EvaluateFormula("\"Address\"");
         Address2Column.CodeName = "Address2";
         Address3Column.CodeName = "Address3";
         CityIDColumn.CodeName = "CityID";
@@ -75,8 +76,11 @@ public class BaseContactsTable : PrimaryKeyTable
         ActiveColumn.CodeName = "Active";
         PhoneNumberColumn.CodeName = "PhoneNumber";
         FirstName2Column.CodeName = "FirstName2";
+        FirstName2Column.Name = EvaluateFormula("\"Second Contact\"");
         LastName2Column.CodeName = "LastName2";
         BankAccountColumn.CodeName = "BankAccount";
+        DateOfBirthColumn.CodeName = "DateOfBirth";
+        PlaceOfBirthColumn.CodeName = "PlaceOfBirth";
 
         
     }
@@ -558,6 +562,56 @@ public class BaseContactsTable : PrimaryKeyTable
         get
         {
             return ContactsTable.Instance.BankAccountColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.DateOfBirth column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn DateOfBirthColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[19];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.DateOfBirth column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn DateOfBirth
+    {
+        get
+        {
+            return ContactsTable.Instance.DateOfBirthColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.PlaceOfBirth column object.
+    /// </summary>
+    public BaseClasses.Data.StringColumn PlaceOfBirthColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.StringColumn)this.TableDefinition.ColumnList[20];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.PlaceOfBirth column object.
+    /// </summary>
+    public static BaseClasses.Data.StringColumn PlaceOfBirth
+    {
+        get
+        {
+            return ContactsTable.Instance.PlaceOfBirthColumn;
         }
     }
     
@@ -1104,7 +1158,9 @@ public class BaseContactsTable : PrimaryKeyTable
         string PhoneNumberValue, 
         string FirstName2Value, 
         string LastName2Value, 
-        string BankAccountValue
+        string BankAccountValue, 
+        string DateOfBirthValue, 
+        string PlaceOfBirthValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
@@ -1126,6 +1182,8 @@ public class BaseContactsTable : PrimaryKeyTable
         rec.SetString(FirstName2Value, FirstName2Column);
         rec.SetString(LastName2Value, LastName2Column);
         rec.SetString(BankAccountValue, BankAccountColumn);
+        rec.SetString(DateOfBirthValue, DateOfBirthColumn);
+        rec.SetString(PlaceOfBirthValue, PlaceOfBirthColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

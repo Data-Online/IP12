@@ -591,9 +591,9 @@ public class BaseUsers_RolesTableControlRow : IPv5.UI.BaseApplicationRecordContr
                     string url = "../Users/AddUsers.aspx";
               
                       
-                    url = this.ModifyRedirectUrl(url, "", false);
+                    url = this.ModifyRedirectUrl(url, "", true);
                     
-                    url = this.Page.ModifyRedirectUrl(url, "", false);                                  
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
                     url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.UserId0.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("UserName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("UserID");                      
                               
@@ -795,8 +795,8 @@ public class BaseUsers_RolesTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -3125,6 +3125,13 @@ public class BaseRolesRecordControl : IPv5.UI.BaseApplicationRecordControl
             
             // Retrieve the record id from the URL parameter.
             string recId = this.Page.Request.QueryString["Roles"];
+            if (recId == null || recId.Length == 0) {
+                
+                return null;
+                
+            }
+              
+            recId = ((BaseApplicationPage)(this.Page)).Decrypt(recId);
             if (recId == null || recId.Length == 0) {
                 
                 return null;

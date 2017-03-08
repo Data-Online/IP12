@@ -404,42 +404,6 @@
     <Compile Include="BaseVPropertyTermRenewalsRecord.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AlertDataTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertDataTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertDataRecord.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertDataRecord.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertLevelsTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertLevelsTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertLevelsRecord.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertLevelsRecord.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertTypesTable.cs" >
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertTypesTable.cs" >
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertTypesRecord.cs" >
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertTypesRecord.cs" >
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data Access Layer\IPv5.Data.csproj">

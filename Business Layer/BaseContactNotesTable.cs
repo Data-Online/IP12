@@ -62,6 +62,7 @@ public class BaseContactNotesTable : PrimaryKeyTable
         ContactIDColumn.CodeName = "ContactID";
         NotesColumn.CodeName = "Notes";
         DateRecordedColumn.CodeName = "DateRecorded";
+        NoteTypeColumn.CodeName = "NoteType";
 
         
     }
@@ -168,6 +169,31 @@ public class BaseContactNotesTable : PrimaryKeyTable
         get
         {
             return ContactNotesTable.Instance.DateRecordedColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's ContactNotes_.NoteType column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn NoteTypeColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[4];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's ContactNotes_.NoteType column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn NoteType
+    {
+        get
+        {
+            return ContactNotesTable.Instance.NoteTypeColumn;
         }
     }
     
@@ -699,13 +725,15 @@ public class BaseContactNotesTable : PrimaryKeyTable
         public KeyValue NewRecord(
         string ContactIDValue, 
         string NotesValue, 
-        string DateRecordedValue
+        string DateRecordedValue, 
+        string NoteTypeValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
                     rec.SetString(ContactIDValue, ContactIDColumn);
         rec.SetString(NotesValue, NotesColumn);
         rec.SetString(DateRecordedValue, DateRecordedColumn);
+        rec.SetString(NoteTypeValue, NoteTypeColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

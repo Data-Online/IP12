@@ -61,6 +61,7 @@ public class BaseUsersTable : PrimaryKeyTable
         UserId0Column.CodeName = "UserId0";
         UserName0Column.CodeName = "UserName0";
         PasswordColumn.CodeName = "Password";
+        eMailColumn.CodeName = "eMail";
 
         
     }
@@ -142,6 +143,31 @@ public class BaseUsersTable : PrimaryKeyTable
         get
         {
             return UsersTable.Instance.PasswordColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Users_.eMail column object.
+    /// </summary>
+    public BaseClasses.Data.EmailColumn eMailColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.EmailColumn)this.TableDefinition.ColumnList[3];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Users_.eMail column object.
+    /// </summary>
+    public static BaseClasses.Data.EmailColumn eMail
+    {
+        get
+        {
+            return UsersTable.Instance.eMailColumn;
         }
     }
     
@@ -672,12 +698,14 @@ public class BaseUsersTable : PrimaryKeyTable
         //Convenience method for creating a record
         public KeyValue NewRecord(
         string UserName0Value, 
-        string PasswordValue
+        string PasswordValue, 
+        string eMailValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
                     rec.SetString(UserName0Value, UserName0Column);
         rec.SetString(PasswordValue, PasswordColumn);
+        rec.SetString(eMailValue, eMailColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

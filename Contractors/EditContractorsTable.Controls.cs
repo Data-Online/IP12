@@ -404,7 +404,7 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             {
                             
                 // If the CityID is non-NULL, then format the value.
-                // The Format method will return the Display Foreign Key As (DFKA) value
+                // The Format method will use the Display Format
                 selectedValue = this.DataSource.CityID.ToString();
                 
             }
@@ -1242,11 +1242,11 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                     string url = "../Cities/AddCities.aspx";
               
                       
-                    url = this.ModifyRedirectUrl(url, "", false);
+                    url = this.ModifyRedirectUrl(url, "", true);
                     
-                    url = this.Page.ModifyRedirectUrl(url, "", false);                                  
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("City")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
+                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
                               
                 string javascriptCall = "";
                 
@@ -1287,11 +1287,6 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
         {
             // By default, we simply return a new WhereClause.
             // Add additional where clauses to restrict the items shown in the dropdown list.
-            						
-            // This WhereClause is for the DatabaseMM_IP1%dbo.Cities table.
-            // Examples:
-            // wc.iAND(CitiesTable.City, BaseFilter.ComparisonOperator.EqualsTo, "XYZ");
-            // wc.iAND(CitiesTable.Active, BaseFilter.ComparisonOperator.EqualsTo, "1");
             
             WhereClause wc = new WhereClause();
             return wc;
@@ -1318,78 +1313,48 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 
             // Create the ORDER BY clause to sort based on the displayed value.							
                 
+
+            // Create the ORDER BY clause to sort based on the displayed value.
             OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(CitiesTable.City, OrderByItem.OrderDir.Asc);
+            orderBy.Add(ContractorsTable.CityID, OrderByItem.OrderDir.Asc);
 
-            System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
-            FormulaEvaluator evaluator = new FormulaEvaluator();
+            ArrayList listDuplicates = new ArrayList();
 
-            // 3. Read a total of maxItems from the database and insert them into the CityIDDropDownList.
-            CitiesRecord[] itemValues  = null;
+            // Populate the dropdown list in the sort order specified above.
             if (wc.RunQuery)
             {
-                int counter = 0;
-                int pageNum = 0;	
-                ArrayList listDuplicates = new ArrayList();
+                foreach (string itemValue in ContractorsTable.GetValues(ContractorsTable.CityID, wc, orderBy, maxItems)) {
+                    // Create the dropdown list item and add it to the list.
+                    string fvalue = ContractorsTable.CityID.Format(itemValue);
+                    if (fvalue == null || fvalue.Trim() == "") fvalue = itemValue;				
 
-                do
-                {
-                    itemValues = CitiesTable.GetRecords(wc, orderBy, pageNum, maxItems);
-                    foreach (CitiesRecord itemValue in itemValues) 
-                    {
-                        // Create the item and add to the list.
-                        string cvalue = null;
-                        string fvalue = null;
-                        if (itemValue.CityIDSpecified) 
-                        {
-                            cvalue = itemValue.CityID.ToString().ToString();
-                            if (counter < maxItems && this.CityID.Items.FindByValue(cvalue) == null)
-                            {
-                                     
-                                Boolean _isExpandableNonCompositeForeignKey = ContractorsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(ContractorsTable.CityID);
-                                if(_isExpandableNonCompositeForeignKey && ContractorsTable.CityID.IsApplyDisplayAs)
-                                    fvalue = ContractorsTable.GetDFKA(itemValue, ContractorsTable.CityID);
-                                if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                    fvalue = itemValue.Format(CitiesTable.City);
-                                    		
+                    if (fvalue == null) {
+                        fvalue = "";
+                    }
 
-                                if (fvalue == null || fvalue.Trim() == "") 
-                                    fvalue = cvalue;
+                    fvalue = fvalue.Trim();
 
-                                if (fvalue == null) {
-                                    fvalue = "";
-                                }
+                    if ( fvalue.Length > 50 ) {
+                         fvalue = fvalue.Substring(0, 50) + "...";
+                    }
 
-                                fvalue = fvalue.Trim();
-
-                                if ( fvalue.Length > 50 ) {
-                                    fvalue = fvalue.Substring(0, 50) + "...";
-                                }
-
-                                ListItem dupItem = this.CityID.Items.FindByText(fvalue);
+                    ListItem dupItem = this.CityID.Items.FindByText(fvalue);
 								
-                                if (dupItem != null) {
-                                    listDuplicates.Add(fvalue);
-                                    if (!string.IsNullOrEmpty(dupItem.Value))
-                                    {
-                                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
-                                    }
-                                }
-
-                                ListItem newItem = new ListItem(fvalue, cvalue);
-                                this.CityID.Items.Add(newItem);
-
-                                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                                }
-
-                                counter += 1;
-                            }
+                    if (dupItem != null) {
+                        listDuplicates.Add(fvalue);
+                        if (!string.IsNullOrEmpty(dupItem.Value))
+                        {
+                            dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
                         }
                     }
-                    pageNum++;
+
+                    ListItem newItem = new ListItem(fvalue, itemValue);
+                    this.CityID.Items.Add(newItem);
+
+                    if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(itemValue)) {
+                        newItem.Text = fvalue + " (ID " + itemValue.Substring(0, Math.Min(itemValue.Length,38)) + ")";
+                    }
                 }
-                while (itemValues.Length == maxItems && counter < maxItems);
             }
                         
                                         
@@ -1398,46 +1363,14 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             if (selectedValue != null &&
                 selectedValue.Trim() != "" &&
                 !MiscUtils.SetSelectedValue(this.CityID, selectedValue) &&
-                !MiscUtils.SetSelectedDisplayText(this.CityID, selectedValue))
+                !MiscUtils.SetSelectedDisplayText(this.CityID, selectedValue) &&
+                !MiscUtils.SetSelectedDisplayText(this.CityID, ContractorsTable.CityID.Format(selectedValue)))
             {
-
-                // construct a whereclause to query a record with DatabaseMM_IP1%dbo.Cities.CityID = selectedValue
+                string fvalue = ContractorsTable.CityID.Format(selectedValue);
+                if (fvalue == null || fvalue.Trim() == "") fvalue = selectedValue;
+                MiscUtils.ResetSelectedItem(this.CityID, new ListItem(fvalue, selectedValue));
+            }
                     
-                CompoundFilter filter2 = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
-                WhereClause whereClause2 = new WhereClause();
-                filter2.AddFilter(new BaseClasses.Data.ColumnValueFilter(CitiesTable.CityID, selectedValue, BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
-                whereClause2.AddFilter(filter2, CompoundFilter.CompoundingOperators.And_Operator);
-
-                // Execute the query
-                try
-                {
-                    CitiesRecord[] rc = CitiesTable.GetRecords(whereClause2, new OrderBy(false, false), 0, 1);
-                    System.Collections.Generic.IDictionary<string, object> vars = new System.Collections.Generic.Dictionary<string, object> ();
-                    // if find a record, add it to the dropdown and set it as selected item
-                    if (rc != null && rc.Length == 1)
-                    {
-                        CitiesRecord itemValue = rc[0];
-                        string cvalue = null;
-                        string fvalue = null;                        
-                        if (itemValue.CityIDSpecified)
-                            cvalue = itemValue.CityID.ToString(); 
-                        Boolean _isExpandableNonCompositeForeignKey = ContractorsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(ContractorsTable.CityID);
-                        if(_isExpandableNonCompositeForeignKey && ContractorsTable.CityID.IsApplyDisplayAs)
-                            fvalue = ContractorsTable.GetDFKA(itemValue, ContractorsTable.CityID);
-                        if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                            fvalue = itemValue.Format(CitiesTable.City);
-                            					
-                        if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
-                        MiscUtils.ResetSelectedItem(this.CityID, new ListItem(fvalue, cvalue));                      
-                    }
-                }
-                catch
-                {
-                }
-
-                    					
-            }					
-                        
         }
                   
         // event handler for ImageButton
@@ -1460,8 +1393,8 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -1478,7 +1411,7 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             if (shouldRedirect) {
                 this.Page.ShouldSaveControlsToSession = true;
       
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("City")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
+                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
                               
                 string javascriptCall = "";
                 
@@ -1550,8 +1483,8 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -1598,8 +1531,8 @@ public class BaseContractorsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -2413,9 +2346,7 @@ public class BaseContractorsTableControl : IPv5.UI.BaseApplicationTableControl
           }
           
           //  LoadData for DataSource for chart and report if they exist
-          
-            // Improve performance by prefetching display as records.
-            this.PreFetchForeignKeyValues();     
+               
 
             // Setup the pagination controls.
             BindPaginationControls();
@@ -2516,14 +2447,6 @@ public class BaseContractorsTableControl : IPv5.UI.BaseApplicationTableControl
 
     }
 
-        
-        public void PreFetchForeignKeyValues() {
-            if (this.DataSource == null) {
-                return;
-            }
-          
-            this.Page.PregetDfkaRecords(ContractorsTable.CityID, this.DataSource);
-        }
         
 
         public virtual void RegisterPostback()
@@ -3374,85 +3297,59 @@ public class BaseContractorsTableControl : IPv5.UI.BaseApplicationTableControl
                 // Add the All item.
                 this.CityIDFilter.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
               
-            OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(CitiesTable.City, OrderByItem.OrderDir.Asc);
-
-
-            System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
-
             
- 
-            string noValueFormat = Page.GetResourceValue("Txt:Other", "IPv5");
-
-            CitiesRecord[] itemValues  = null;
+            
+            OrderBy orderBy = new OrderBy(false, false);
+            orderBy.Add(ContractorsTable.CityID, OrderByItem.OrderDir.Asc);                
+            
+            
+            string[] values = new string[0];
             if (wc.RunQuery)
             {
-                int counter = 0;
-                int pageNum = 0;
-                FormulaEvaluator evaluator = new FormulaEvaluator();
-                ArrayList listDuplicates = new ArrayList();
-                
-                do
-                {
-                    
-                    itemValues = CitiesTable.GetRecords(wc, orderBy, pageNum, maxItems);
-                                    
-                    foreach (CitiesRecord itemValue in itemValues) 
-                    {
-                        // Create the item and add to the list.
-                        string cvalue = null;
-                        string fvalue = null;
-                        if (itemValue.CityIDSpecified) 
-                        {
-                            cvalue = itemValue.CityID.ToString();
-                            if (counter < maxItems && this.CityIDFilter.Items.FindByValue(cvalue) == null)
-                            {
-                                    
-                                Boolean _isExpandableNonCompositeForeignKey = ContractorsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(ContractorsTable.CityID);
-                                if(_isExpandableNonCompositeForeignKey && ContractorsTable.CityID.IsApplyDisplayAs)
-                                     fvalue = ContractorsTable.GetDFKA(itemValue, ContractorsTable.CityID);
-                                if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                     fvalue = itemValue.Format(CitiesTable.City);
-                                   					
-                                if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
-
-                                if (fvalue == null) {
-                                    fvalue = "";
-                                }
-
-                                fvalue = fvalue.Trim();
-
-                                if ( fvalue.Length > 50 ) {
-                                   fvalue = fvalue.Substring(0, 50) + "...";
-                                }
-
-                                ListItem dupItem = this.CityIDFilter.Items.FindByText(fvalue);
-								
-                                if (dupItem != null) {
-                                    listDuplicates.Add(fvalue);
-                                    if (!string.IsNullOrEmpty(dupItem.Value))
-                                    {
-                                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
-                                    }
-                                }
-
-                                ListItem newItem = new ListItem(fvalue, cvalue);
-                                this.CityIDFilter.Items.Add(newItem);
-
-                                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                                }
-
-                                counter += 1;
-                            }
-                        }
-                    }
-                    pageNum++;
-                }
-                while (itemValues.Length == maxItems && counter < maxItems);
+            
+                values = ContractorsTable.GetValues(ContractorsTable.CityID, wc, orderBy, maxItems);
+            
             }
-        
-                      
+            
+            ArrayList listDuplicates = new ArrayList();
+            foreach (string cvalue in values)
+            {
+            // Create the item and add to the list.
+            string fvalue;
+            if ( ContractorsTable.CityID.IsColumnValueTypeBoolean()) {
+                    fvalue = cvalue;
+                }else {
+                    fvalue = ContractorsTable.CityID.Format(cvalue);
+                }
+                if (fvalue == null) {
+                    fvalue = "";
+                }
+
+                fvalue = fvalue.Trim();
+
+                if ( fvalue.Length > 50 ) {
+                    fvalue = fvalue.Substring(0, 50) + "...";
+                }
+
+                ListItem dupItem = this.CityIDFilter.Items.FindByText(fvalue);
+								
+                if (dupItem != null) {
+                    listDuplicates.Add(fvalue);
+                    if (!string.IsNullOrEmpty(dupItem.Value))
+                    {
+                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
+                    }
+                }
+
+                ListItem newItem = new ListItem(fvalue, cvalue);
+                this.CityIDFilter.Items.Add(newItem);
+
+                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
+                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
+                }
+            }
+
+                          
             try
             {
       

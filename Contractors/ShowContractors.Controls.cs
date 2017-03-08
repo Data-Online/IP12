@@ -366,16 +366,8 @@ public class BaseContractorsRecordControl : IPv5.UI.BaseApplicationRecordControl
             if (this.DataSource != null && this.DataSource.CityIDSpecified) {
                 								
                 // If the CityID is non-NULL, then format the value.
-                // The Format method will return the Display Foreign Key As (DFKA) value
-               string formattedValue = "";
-               Boolean _isExpandableNonCompositeForeignKey = ContractorsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(ContractorsTable.CityID);
-               if(_isExpandableNonCompositeForeignKey &&ContractorsTable.CityID.IsApplyDisplayAs)
-                                  
-                     formattedValue = ContractorsTable.GetDFKA(this.DataSource.CityID.ToString(),ContractorsTable.CityID, null);
-                                    
-               if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(formattedValue)))
-                     formattedValue = this.DataSource.Format(ContractorsTable.CityID);
-                                  
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContractorsTable.CityID);
                                 
                 this.CityID.Text = formattedValue;
                 
@@ -1038,7 +1030,7 @@ public class BaseContractorsRecordControl : IPv5.UI.BaseApplicationRecordControl
               
             // Retrieve the record id from the URL parameter.
               
-            string recId = this.Page.Request.QueryString["Contractors"];
+            string recId = ((BaseApplicationPage)(this.Page)).Decrypt(this.Page.Request.QueryString["Contractors"]);
                 
             if (recId == null || recId.Length == 0) {
                 // Get the error message from the application resource file.
@@ -1366,8 +1358,8 @@ public class BaseContractorsRecordControl : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -1414,8 +1406,8 @@ public class BaseContractorsRecordControl : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction

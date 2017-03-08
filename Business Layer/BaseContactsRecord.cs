@@ -808,6 +808,78 @@ public class BaseContactsRecord : PrimaryKeyRecord
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.BankAccountColumn);
 	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.DateOfBirth field.
+	/// </summary>
+	public ColumnValue GetDateOfBirthValue()
+	{
+		return this.GetValue(TableUtils.DateOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.DateOfBirth field.
+	/// </summary>
+	public DateTime GetDateOfBirthFieldValue()
+	{
+		return this.GetValue(TableUtils.DateOfBirthColumn).ToDateTime();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DateOfBirth field.
+	/// </summary>
+	public void SetDateOfBirthFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.DateOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DateOfBirth field.
+	/// </summary>
+	public void SetDateOfBirthFieldValue(string val)
+	{
+		this.SetString(val, TableUtils.DateOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DateOfBirth field.
+	/// </summary>
+	public void SetDateOfBirthFieldValue(DateTime val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.DateOfBirthColumn);
+	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.PlaceOfBirth field.
+	/// </summary>
+	public ColumnValue GetPlaceOfBirthValue()
+	{
+		return this.GetValue(TableUtils.PlaceOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.PlaceOfBirth field.
+	/// </summary>
+	public string GetPlaceOfBirthFieldValue()
+	{
+		return this.GetValue(TableUtils.PlaceOfBirthColumn).ToString();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.PlaceOfBirth field.
+	/// </summary>
+	public void SetPlaceOfBirthFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.PlaceOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.PlaceOfBirth field.
+	/// </summary>
+	public void SetPlaceOfBirthFieldValue(string val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.PlaceOfBirthColumn);
+	}
 
 
 #endregion
@@ -1630,6 +1702,93 @@ public class BaseContactsRecord : PrimaryKeyRecord
 		get
 		{
 			return TableUtils.BankAccountColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Contacts_.DateOfBirth field.
+	/// </summary>
+	public DateTime DateOfBirth
+	{
+		get
+		{
+			return this.GetValue(TableUtils.DateOfBirthColumn).ToDateTime();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.DateOfBirthColumn);
+			
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool DateOfBirthSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.DateOfBirthColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DateOfBirth field.
+	/// </summary>
+	public string DateOfBirthDefault
+	{
+		get
+		{
+			return TableUtils.DateOfBirthColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Contacts_.PlaceOfBirth field.
+	/// </summary>
+	public string PlaceOfBirth
+	{
+		get
+		{
+			return this.GetValue(TableUtils.PlaceOfBirthColumn).ToString();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.PlaceOfBirthColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool PlaceOfBirthSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.PlaceOfBirthColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.PlaceOfBirth field.
+	/// </summary>
+	public string PlaceOfBirthDefault
+	{
+		get
+		{
+			return TableUtils.PlaceOfBirthColumn.DefaultValue;
 		}
 	}
 
