@@ -1079,9 +1079,9 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                     string url = "../Cities/AddCities.aspx";
               
                       
-                    url = this.ModifyRedirectUrl(url, "", false);
+                    url = this.ModifyRedirectUrl(url, "", true);
                     
-                    url = this.Page.ModifyRedirectUrl(url, "", false);                                  
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
                     url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("City")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
                               
@@ -1108,9 +1108,9 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                     string url = "../Countries/AddCountries.aspx";
               
                       
-                    url = this.ModifyRedirectUrl(url, "", false);
+                    url = this.ModifyRedirectUrl(url, "", true);
                     
-                    url = this.Page.ModifyRedirectUrl(url, "", false);                                  
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
                     url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CountryID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("Country")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CountryID");                      
                               
@@ -1158,9 +1158,9 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                     string url = "../Regions/AddRegions.aspx";
               
                       
-                    url = this.ModifyRedirectUrl(url, "", false);
+                    url = this.ModifyRedirectUrl(url, "", true);
                     
-                    url = this.Page.ModifyRedirectUrl(url, "", false);                                  
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
                     url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.RegionID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("Region")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("RegionID");                      
                               
@@ -1669,8 +1669,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -1720,8 +1720,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -1810,8 +1810,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -1858,8 +1858,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -1903,8 +1903,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction

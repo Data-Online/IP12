@@ -3249,6 +3249,8 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetAddress1Label()
                   {
                   
+                        this.Address1Label.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 
@@ -3291,6 +3293,8 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetFirstName2Label()
                   {
                   
+                        this.FirstName2Label.Text = EvaluateFormula("\"Second Contact\"");
+                      
                     
         }
                 
@@ -3871,8 +3875,8 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -3973,8 +3977,8 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -4021,8 +4025,8 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -4069,8 +4073,8 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -5847,6 +5851,8 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
         public virtual void SetAddress1SortLabel()
                   {
                   
+                        this.Address1SortLabel.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 
@@ -5871,6 +5877,8 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
         public virtual void SetFirstName2SortLabel()
                   {
                   
+                        this.FirstName2SortLabel.Text = EvaluateFormula("\"Second Contact\"");
+                      
                     
         }
                 
@@ -7117,8 +7125,8 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -7181,7 +7189,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(ContactsTable.PhoneNumber.Name, ReportEnum.Align.Left, "${PhoneNumber}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactsTable.FirstName2.Name, ReportEnum.Align.Left, "${FirstName2}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactsTable.LastName2.Name, ReportEnum.Align.Left, "${LastName2}", ReportEnum.Align.Left, 24);
-                 report.AddColumn(ContactsTable.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(ContactsTable.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 17);
 
   
                 int rowsPerQuery = 5000;
@@ -7401,7 +7409,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(ContactsTable.PhoneNumber.Name, ReportEnum.Align.Left, "${PhoneNumber}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactsTable.FirstName2.Name, ReportEnum.Align.Left, "${FirstName2}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactsTable.LastName2.Name, ReportEnum.Align.Left, "${LastName2}", ReportEnum.Align.Left, 24);
-                 report.AddColumn(ContactsTable.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(ContactsTable.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 17);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -8509,8 +8517,8 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -10642,8 +10650,8 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction

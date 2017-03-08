@@ -212,30 +212,30 @@ public partial class ShowMMContractExpiration
 
       protected void Expiration_Load(object sender, System.EventArgs e)
       {
-	    //AlertTypesRecord rec = default(AlertTypesRecord);
+	    ////AlertTypesRecord rec = default(AlertTypesRecord);
 
-	    // If already loaded, no need to load it again from the database
-	    if (this.Expiration.Items.Count > 0)
-		    return;
+	    //// If already loaded, no need to load it again from the database
+	    //if (this.Expiration.Items.Count > 0)
+		   // return;
 
-	    OrderBy ob = new OrderBy(false, true);
-	    ob.Add(AlertTypesTable.Text0, OrderByItem.OrderDir.Asc);
+	    //OrderBy ob = new OrderBy(false, true);
+	    //ob.Add(AlertTypesTable.Text0, OrderByItem.OrderDir.Asc);
 
-	    ListItem item = default(ListItem);
-	    foreach ( AlertTypesRecord record in AlertTypesTable.GetRecords("", ob)) {
-		    item = new ListItem(record.Text0, record.Text0);
-		    // If the item is already in the list, do not add it.
-		    if (!this.Expiration.Items.Contains(item)) {
-			    this.Expiration.Items.Add(item);
-		    }
-	    }
+	    //ListItem item = default(ListItem);
+	    //foreach ( AlertTypesRecord record in AlertTypesTable.GetRecords("", ob)) {
+		   // item = new ListItem(record.Text0, record.Text0);
+		   // // If the item is already in the list, do not add it.
+		   // if (!this.Expiration.Items.Contains(item)) {
+			  //  this.Expiration.Items.Add(item);
+		   // }
+	    //}
 
-            // Add the Please Select item.
-           // this.Expiration.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:PleaseSelect", "IPv5"), "--PLEASE_SELECT--"));
+     //       // Add the Please Select item.
+     //      // this.Expiration.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:PleaseSelect", "IPv5"), "--PLEASE_SELECT--"));
 
-          item = new ListItem("All", "");
-	    this.Expiration.Items.Insert(0, item);
-        //this.Expiration.SelectedValue = "duenow";
+     //     item = new ListItem("All", "");
+	    //this.Expiration.Items.Insert(0, item);
+     //   //this.Expiration.SelectedValue = "duenow";
     }
 
 

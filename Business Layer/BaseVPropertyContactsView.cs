@@ -78,6 +78,8 @@ public class BaseVPropertyContactsView : KeylessTable
         LinkIDColumn.CodeName = "LinkID";
         ContactIDColumn.CodeName = "ContactID";
         BankAccountColumn.CodeName = "BankAccount";
+        DateOfBirthColumn.CodeName = "DateOfBirth";
+        PlaceOfBirthColumn.CodeName = "PlaceOfBirth";
 		
 	}
 
@@ -88,7 +90,7 @@ public class BaseVPropertyContactsView : KeylessTable
 #region "Properties for columns"
 
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.PropertyID column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.PropertyID column object.
     /// </summary>
     public BaseClasses.Data.NumberColumn PropertyIDColumn
     {
@@ -101,7 +103,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.PropertyID column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.PropertyID column object.
     /// </summary>
     public static BaseClasses.Data.NumberColumn PropertyID
     {
@@ -113,7 +115,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Title column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Title column object.
     /// </summary>
     public BaseClasses.Data.StringColumn Title0Column
     {
@@ -126,7 +128,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Title column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Title column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn Title0
     {
@@ -138,7 +140,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.FirstName column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.FirstName column object.
     /// </summary>
     public BaseClasses.Data.StringColumn FirstNameColumn
     {
@@ -151,7 +153,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.FirstName column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.FirstName column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn FirstName
     {
@@ -163,7 +165,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.LastName column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.LastName column object.
     /// </summary>
     public BaseClasses.Data.StringColumn LastNameColumn
     {
@@ -176,7 +178,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.LastName column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.LastName column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn LastName
     {
@@ -188,7 +190,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Address1 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Address1 column object.
     /// </summary>
     public BaseClasses.Data.StringColumn Address1Column
     {
@@ -201,7 +203,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Address1 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Address1 column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn Address1
     {
@@ -213,7 +215,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Address2 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Address2 column object.
     /// </summary>
     public BaseClasses.Data.StringColumn Address2Column
     {
@@ -226,7 +228,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Address2 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Address2 column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn Address2
     {
@@ -238,7 +240,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Address3 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Address3 column object.
     /// </summary>
     public BaseClasses.Data.StringColumn Address3Column
     {
@@ -251,7 +253,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Address3 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Address3 column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn Address3
     {
@@ -263,7 +265,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.PostCode column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.PostCode column object.
     /// </summary>
     public BaseClasses.Data.StringColumn PostCodeColumn
     {
@@ -276,7 +278,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.PostCode column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.PostCode column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn PostCode
     {
@@ -288,7 +290,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.TrustName column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.TrustName column object.
     /// </summary>
     public BaseClasses.Data.StringColumn TrustNameColumn
     {
@@ -301,7 +303,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.TrustName column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.TrustName column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn TrustName
     {
@@ -313,7 +315,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.eMail column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.eMail column object.
     /// </summary>
     public BaseClasses.Data.EmailColumn eMailColumn
     {
@@ -326,7 +328,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.eMail column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.eMail column object.
     /// </summary>
     public static BaseClasses.Data.EmailColumn eMail
     {
@@ -338,7 +340,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.IrdNumber column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.IrdNumber column object.
     /// </summary>
     public BaseClasses.Data.StringColumn IrdNumberColumn
     {
@@ -351,7 +353,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.IrdNumber column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.IrdNumber column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn IrdNumber
     {
@@ -363,7 +365,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Active column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Active column object.
     /// </summary>
     public BaseClasses.Data.BooleanColumn ActiveColumn
     {
@@ -376,7 +378,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Active column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Active column object.
     /// </summary>
     public static BaseClasses.Data.BooleanColumn Active
     {
@@ -388,7 +390,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.PhoneNumber column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.PhoneNumber column object.
     /// </summary>
     public BaseClasses.Data.StringColumn PhoneNumberColumn
     {
@@ -401,7 +403,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.PhoneNumber column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.PhoneNumber column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn PhoneNumber
     {
@@ -413,7 +415,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.FirstName2 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.FirstName2 column object.
     /// </summary>
     public BaseClasses.Data.StringColumn FirstName2Column
     {
@@ -426,7 +428,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.FirstName2 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.FirstName2 column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn FirstName2
     {
@@ -438,7 +440,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.LastName2 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.LastName2 column object.
     /// </summary>
     public BaseClasses.Data.StringColumn LastName2Column
     {
@@ -451,7 +453,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.LastName2 column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.LastName2 column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn LastName2
     {
@@ -463,7 +465,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Region column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Region column object.
     /// </summary>
     public BaseClasses.Data.StringColumn RegionColumn
     {
@@ -476,7 +478,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Region column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Region column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn Region
     {
@@ -488,7 +490,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.City column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.City column object.
     /// </summary>
     public BaseClasses.Data.StringColumn CityColumn
     {
@@ -501,7 +503,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.City column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.City column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn City
     {
@@ -513,7 +515,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Country column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Country column object.
     /// </summary>
     public BaseClasses.Data.CountryColumn CountryColumn
     {
@@ -526,7 +528,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.Country column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.Country column object.
     /// </summary>
     public static BaseClasses.Data.CountryColumn Country
     {
@@ -538,7 +540,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.LinkID column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.LinkID column object.
     /// </summary>
     public BaseClasses.Data.NumberColumn LinkIDColumn
     {
@@ -551,7 +553,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.LinkID column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.LinkID column object.
     /// </summary>
     public static BaseClasses.Data.NumberColumn LinkID
     {
@@ -563,7 +565,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.ContactID column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.ContactID column object.
     /// </summary>
     public BaseClasses.Data.NumberColumn ContactIDColumn
     {
@@ -576,7 +578,7 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.ContactID column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.ContactID column object.
     /// </summary>
     public static BaseClasses.Data.NumberColumn ContactID
     {
@@ -588,7 +590,7 @@ public class BaseVPropertyContactsView : KeylessTable
     
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.BankAccount column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.BankAccount column object.
     /// </summary>
     public BaseClasses.Data.StringColumn BankAccountColumn
     {
@@ -601,13 +603,63 @@ public class BaseVPropertyContactsView : KeylessTable
 
     
     /// <summary>
-    /// This is a convenience property that provides direct access to the table's VPropertyContacts_.BankAccount column object.
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.BankAccount column object.
     /// </summary>
     public static BaseClasses.Data.StringColumn BankAccount
     {
         get
         {
             return VPropertyContactsView.Instance.BankAccountColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.DateOfBirth column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn DateOfBirthColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[21];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.DateOfBirth column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn DateOfBirth
+    {
+        get
+        {
+            return VPropertyContactsView.Instance.DateOfBirthColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.PlaceOfBirth column object.
+    /// </summary>
+    public BaseClasses.Data.StringColumn PlaceOfBirthColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.StringColumn)this.TableDefinition.ColumnList[22];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's vPropertyContacts_.PlaceOfBirth column object.
+    /// </summary>
+    public static BaseClasses.Data.StringColumn PlaceOfBirth
+    {
+        get
+        {
+            return VPropertyContactsView.Instance.PlaceOfBirthColumn;
         }
     }
     

@@ -276,6 +276,64 @@ public class BaseContactNotesRecord : PrimaryKeyRecord
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.DateRecordedColumn);
 	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public ColumnValue GetNoteTypeValue()
+	{
+		return this.GetValue(TableUtils.NoteTypeColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public Int32 GetNoteTypeFieldValue()
+	{
+		return this.GetValue(TableUtils.NoteTypeColumn).ToInt32();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public void SetNoteTypeFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.NoteTypeColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public void SetNoteTypeFieldValue(string val)
+	{
+		this.SetString(val, TableUtils.NoteTypeColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public void SetNoteTypeFieldValue(double val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.NoteTypeColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public void SetNoteTypeFieldValue(decimal val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.NoteTypeColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public void SetNoteTypeFieldValue(long val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.NoteTypeColumn);
+	}
 
 
 #endregion
@@ -453,6 +511,49 @@ public class BaseContactNotesRecord : PrimaryKeyRecord
 		get
 		{
 			return TableUtils.DateRecordedColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public Int32 NoteType
+	{
+		get
+		{
+			return this.GetValue(TableUtils.NoteTypeColumn).ToInt32();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.NoteTypeColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool NoteTypeSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.NoteTypeColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's ContactNotes_.NoteType field.
+	/// </summary>
+	public string NoteTypeDefault
+	{
+		get
+		{
+			return TableUtils.NoteTypeColumn.DefaultValue;
 		}
 	}
 

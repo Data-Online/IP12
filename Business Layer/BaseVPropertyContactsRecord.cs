@@ -102,7 +102,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 #region "Convenience methods to get/set values of fields"
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public ColumnValue GetPropertyIDValue()
 	{
@@ -110,7 +110,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public Int32 GetPropertyIDFieldValue()
 	{
@@ -118,7 +118,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public void SetPropertyIDFieldValue(ColumnValue val)
 	{
@@ -126,7 +126,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public void SetPropertyIDFieldValue(string val)
 	{
@@ -134,7 +134,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public void SetPropertyIDFieldValue(double val)
 	{
@@ -143,7 +143,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public void SetPropertyIDFieldValue(decimal val)
 	{
@@ -152,7 +152,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public void SetPropertyIDFieldValue(long val)
 	{
@@ -160,7 +160,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.PropertyIDColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Title field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Title field.
 	/// </summary>
 	public ColumnValue GetTitle0Value()
 	{
@@ -168,7 +168,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Title field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Title field.
 	/// </summary>
 	public string GetTitle0FieldValue()
 	{
@@ -176,7 +176,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Title field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Title field.
 	/// </summary>
 	public void SetTitle0FieldValue(ColumnValue val)
 	{
@@ -184,7 +184,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Title field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Title field.
 	/// </summary>
 	public void SetTitle0FieldValue(string val)
 	{
@@ -192,7 +192,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.Title0Column);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.FirstName field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.FirstName field.
 	/// </summary>
 	public ColumnValue GetFirstNameValue()
 	{
@@ -200,7 +200,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.FirstName field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.FirstName field.
 	/// </summary>
 	public string GetFirstNameFieldValue()
 	{
@@ -208,7 +208,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.FirstName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.FirstName field.
 	/// </summary>
 	public void SetFirstNameFieldValue(ColumnValue val)
 	{
@@ -216,7 +216,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.FirstName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.FirstName field.
 	/// </summary>
 	public void SetFirstNameFieldValue(string val)
 	{
@@ -224,7 +224,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.FirstNameColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.LastName field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.LastName field.
 	/// </summary>
 	public ColumnValue GetLastNameValue()
 	{
@@ -232,7 +232,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.LastName field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.LastName field.
 	/// </summary>
 	public string GetLastNameFieldValue()
 	{
@@ -240,7 +240,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LastName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LastName field.
 	/// </summary>
 	public void SetLastNameFieldValue(ColumnValue val)
 	{
@@ -248,7 +248,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LastName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LastName field.
 	/// </summary>
 	public void SetLastNameFieldValue(string val)
 	{
@@ -256,7 +256,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.LastNameColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Address1 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Address1 field.
 	/// </summary>
 	public ColumnValue GetAddress1Value()
 	{
@@ -264,7 +264,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Address1 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Address1 field.
 	/// </summary>
 	public string GetAddress1FieldValue()
 	{
@@ -272,7 +272,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address1 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address1 field.
 	/// </summary>
 	public void SetAddress1FieldValue(ColumnValue val)
 	{
@@ -280,7 +280,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address1 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address1 field.
 	/// </summary>
 	public void SetAddress1FieldValue(string val)
 	{
@@ -288,7 +288,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.Address1Column);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Address2 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Address2 field.
 	/// </summary>
 	public ColumnValue GetAddress2Value()
 	{
@@ -296,7 +296,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Address2 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Address2 field.
 	/// </summary>
 	public string GetAddress2FieldValue()
 	{
@@ -304,7 +304,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address2 field.
 	/// </summary>
 	public void SetAddress2FieldValue(ColumnValue val)
 	{
@@ -312,7 +312,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address2 field.
 	/// </summary>
 	public void SetAddress2FieldValue(string val)
 	{
@@ -320,7 +320,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.Address2Column);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Address3 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Address3 field.
 	/// </summary>
 	public ColumnValue GetAddress3Value()
 	{
@@ -328,7 +328,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Address3 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Address3 field.
 	/// </summary>
 	public string GetAddress3FieldValue()
 	{
@@ -336,7 +336,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address3 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address3 field.
 	/// </summary>
 	public void SetAddress3FieldValue(ColumnValue val)
 	{
@@ -344,7 +344,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address3 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address3 field.
 	/// </summary>
 	public void SetAddress3FieldValue(string val)
 	{
@@ -352,7 +352,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.Address3Column);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.PostCode field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.PostCode field.
 	/// </summary>
 	public ColumnValue GetPostCodeValue()
 	{
@@ -360,7 +360,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.PostCode field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.PostCode field.
 	/// </summary>
 	public string GetPostCodeFieldValue()
 	{
@@ -368,7 +368,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PostCode field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PostCode field.
 	/// </summary>
 	public void SetPostCodeFieldValue(ColumnValue val)
 	{
@@ -376,7 +376,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PostCode field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PostCode field.
 	/// </summary>
 	public void SetPostCodeFieldValue(string val)
 	{
@@ -384,7 +384,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.PostCodeColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.TrustName field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.TrustName field.
 	/// </summary>
 	public ColumnValue GetTrustNameValue()
 	{
@@ -392,7 +392,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.TrustName field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.TrustName field.
 	/// </summary>
 	public string GetTrustNameFieldValue()
 	{
@@ -400,7 +400,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.TrustName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.TrustName field.
 	/// </summary>
 	public void SetTrustNameFieldValue(ColumnValue val)
 	{
@@ -408,7 +408,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.TrustName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.TrustName field.
 	/// </summary>
 	public void SetTrustNameFieldValue(string val)
 	{
@@ -416,7 +416,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.TrustNameColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.eMail field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.eMail field.
 	/// </summary>
 	public ColumnValue GeteMailValue()
 	{
@@ -424,7 +424,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.eMail field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.eMail field.
 	/// </summary>
 	public string GeteMailFieldValue()
 	{
@@ -432,7 +432,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.eMail field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.eMail field.
 	/// </summary>
 	public void SeteMailFieldValue(ColumnValue val)
 	{
@@ -440,7 +440,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.eMail field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.eMail field.
 	/// </summary>
 	public void SeteMailFieldValue(string val)
 	{
@@ -448,7 +448,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.eMailColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.IrdNumber field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.IrdNumber field.
 	/// </summary>
 	public ColumnValue GetIrdNumberValue()
 	{
@@ -456,7 +456,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.IrdNumber field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.IrdNumber field.
 	/// </summary>
 	public string GetIrdNumberFieldValue()
 	{
@@ -464,7 +464,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.IrdNumber field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.IrdNumber field.
 	/// </summary>
 	public void SetIrdNumberFieldValue(ColumnValue val)
 	{
@@ -472,7 +472,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.IrdNumber field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.IrdNumber field.
 	/// </summary>
 	public void SetIrdNumberFieldValue(string val)
 	{
@@ -480,7 +480,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.IrdNumberColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Active field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Active field.
 	/// </summary>
 	public ColumnValue GetActiveValue()
 	{
@@ -488,7 +488,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Active field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Active field.
 	/// </summary>
 	public bool GetActiveFieldValue()
 	{
@@ -496,7 +496,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Active field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Active field.
 	/// </summary>
 	public void SetActiveFieldValue(ColumnValue val)
 	{
@@ -504,7 +504,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Active field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Active field.
 	/// </summary>
 	public void SetActiveFieldValue(string val)
 	{
@@ -512,7 +512,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Active field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Active field.
 	/// </summary>
 	public void SetActiveFieldValue(bool val)
 	{
@@ -520,7 +520,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.ActiveColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.PhoneNumber field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.PhoneNumber field.
 	/// </summary>
 	public ColumnValue GetPhoneNumberValue()
 	{
@@ -528,7 +528,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.PhoneNumber field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.PhoneNumber field.
 	/// </summary>
 	public string GetPhoneNumberFieldValue()
 	{
@@ -536,7 +536,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PhoneNumber field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PhoneNumber field.
 	/// </summary>
 	public void SetPhoneNumberFieldValue(ColumnValue val)
 	{
@@ -544,7 +544,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PhoneNumber field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PhoneNumber field.
 	/// </summary>
 	public void SetPhoneNumberFieldValue(string val)
 	{
@@ -552,7 +552,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.PhoneNumberColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.FirstName2 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.FirstName2 field.
 	/// </summary>
 	public ColumnValue GetFirstName2Value()
 	{
@@ -560,7 +560,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.FirstName2 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.FirstName2 field.
 	/// </summary>
 	public string GetFirstName2FieldValue()
 	{
@@ -568,7 +568,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.FirstName2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.FirstName2 field.
 	/// </summary>
 	public void SetFirstName2FieldValue(ColumnValue val)
 	{
@@ -576,7 +576,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.FirstName2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.FirstName2 field.
 	/// </summary>
 	public void SetFirstName2FieldValue(string val)
 	{
@@ -584,7 +584,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.FirstName2Column);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.LastName2 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.LastName2 field.
 	/// </summary>
 	public ColumnValue GetLastName2Value()
 	{
@@ -592,7 +592,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.LastName2 field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.LastName2 field.
 	/// </summary>
 	public string GetLastName2FieldValue()
 	{
@@ -600,7 +600,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LastName2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LastName2 field.
 	/// </summary>
 	public void SetLastName2FieldValue(ColumnValue val)
 	{
@@ -608,7 +608,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LastName2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LastName2 field.
 	/// </summary>
 	public void SetLastName2FieldValue(string val)
 	{
@@ -616,7 +616,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.LastName2Column);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Region field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Region field.
 	/// </summary>
 	public ColumnValue GetRegionValue()
 	{
@@ -624,7 +624,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Region field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Region field.
 	/// </summary>
 	public string GetRegionFieldValue()
 	{
@@ -632,7 +632,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Region field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Region field.
 	/// </summary>
 	public void SetRegionFieldValue(ColumnValue val)
 	{
@@ -640,7 +640,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Region field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Region field.
 	/// </summary>
 	public void SetRegionFieldValue(string val)
 	{
@@ -648,7 +648,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.RegionColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.City field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.City field.
 	/// </summary>
 	public ColumnValue GetCityValue()
 	{
@@ -656,7 +656,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.City field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.City field.
 	/// </summary>
 	public string GetCityFieldValue()
 	{
@@ -664,7 +664,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.City field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.City field.
 	/// </summary>
 	public void SetCityFieldValue(ColumnValue val)
 	{
@@ -672,7 +672,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.City field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.City field.
 	/// </summary>
 	public void SetCityFieldValue(string val)
 	{
@@ -680,7 +680,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.CityColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Country field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Country field.
 	/// </summary>
 	public ColumnValue GetCountryValue()
 	{
@@ -688,7 +688,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.Country field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.Country field.
 	/// </summary>
 	public string GetCountryFieldValue()
 	{
@@ -696,7 +696,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Country field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Country field.
 	/// </summary>
 	public void SetCountryFieldValue(ColumnValue val)
 	{
@@ -704,7 +704,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Country field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Country field.
 	/// </summary>
 	public void SetCountryFieldValue(string val)
 	{
@@ -712,7 +712,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.CountryColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public ColumnValue GetLinkIDValue()
 	{
@@ -720,7 +720,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public Int32 GetLinkIDFieldValue()
 	{
@@ -728,7 +728,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public void SetLinkIDFieldValue(ColumnValue val)
 	{
@@ -736,7 +736,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public void SetLinkIDFieldValue(string val)
 	{
@@ -744,7 +744,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public void SetLinkIDFieldValue(double val)
 	{
@@ -753,7 +753,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public void SetLinkIDFieldValue(decimal val)
 	{
@@ -762,7 +762,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public void SetLinkIDFieldValue(long val)
 	{
@@ -770,7 +770,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.LinkIDColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public ColumnValue GetContactIDValue()
 	{
@@ -778,7 +778,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public Int32 GetContactIDFieldValue()
 	{
@@ -786,7 +786,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public void SetContactIDFieldValue(ColumnValue val)
 	{
@@ -794,7 +794,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public void SetContactIDFieldValue(string val)
 	{
@@ -802,7 +802,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public void SetContactIDFieldValue(double val)
 	{
@@ -811,7 +811,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public void SetContactIDFieldValue(decimal val)
 	{
@@ -820,7 +820,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public void SetContactIDFieldValue(long val)
 	{
@@ -828,7 +828,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		this.SetValue(cv, TableUtils.ContactIDColumn);
 	}
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.BankAccount field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.BankAccount field.
 	/// </summary>
 	public ColumnValue GetBankAccountValue()
 	{
@@ -836,7 +836,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that provides direct access to the value of the record's VPropertyContacts_.BankAccount field.
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.BankAccount field.
 	/// </summary>
 	public string GetBankAccountFieldValue()
 	{
@@ -844,7 +844,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.BankAccount field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.BankAccount field.
 	/// </summary>
 	public void SetBankAccountFieldValue(ColumnValue val)
 	{
@@ -852,12 +852,84 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.BankAccount field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.BankAccount field.
 	/// </summary>
 	public void SetBankAccountFieldValue(string val)
 	{
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.BankAccountColumn);
+	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.DateOfBirth field.
+	/// </summary>
+	public ColumnValue GetDateOfBirthValue()
+	{
+		return this.GetValue(TableUtils.DateOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.DateOfBirth field.
+	/// </summary>
+	public DateTime GetDateOfBirthFieldValue()
+	{
+		return this.GetValue(TableUtils.DateOfBirthColumn).ToDateTime();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.DateOfBirth field.
+	/// </summary>
+	public void SetDateOfBirthFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.DateOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.DateOfBirth field.
+	/// </summary>
+	public void SetDateOfBirthFieldValue(string val)
+	{
+		this.SetString(val, TableUtils.DateOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.DateOfBirth field.
+	/// </summary>
+	public void SetDateOfBirthFieldValue(DateTime val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.DateOfBirthColumn);
+	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.PlaceOfBirth field.
+	/// </summary>
+	public ColumnValue GetPlaceOfBirthValue()
+	{
+		return this.GetValue(TableUtils.PlaceOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's vPropertyContacts_.PlaceOfBirth field.
+	/// </summary>
+	public string GetPlaceOfBirthFieldValue()
+	{
+		return this.GetValue(TableUtils.PlaceOfBirthColumn).ToString();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PlaceOfBirth field.
+	/// </summary>
+	public void SetPlaceOfBirthFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.PlaceOfBirthColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PlaceOfBirth field.
+	/// </summary>
+	public void SetPlaceOfBirthFieldValue(string val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.PlaceOfBirthColumn);
 	}
 
 
@@ -866,7 +938,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 #region "Convenience methods to get field names"
 
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public Int32 PropertyID
 	{
@@ -899,7 +971,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PropertyID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PropertyID field.
 	/// </summary>
 	public string PropertyIDDefault
 	{
@@ -909,7 +981,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.Title field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.Title field.
 	/// </summary>
 	public string Title0
 	{
@@ -942,7 +1014,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Title field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Title field.
 	/// </summary>
 	public string Title0Default
 	{
@@ -952,7 +1024,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.FirstName field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.FirstName field.
 	/// </summary>
 	public string FirstName
 	{
@@ -985,7 +1057,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.FirstName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.FirstName field.
 	/// </summary>
 	public string FirstNameDefault
 	{
@@ -995,7 +1067,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.LastName field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.LastName field.
 	/// </summary>
 	public string LastName
 	{
@@ -1028,7 +1100,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LastName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LastName field.
 	/// </summary>
 	public string LastNameDefault
 	{
@@ -1038,7 +1110,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.Address1 field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.Address1 field.
 	/// </summary>
 	public string Address1
 	{
@@ -1071,7 +1143,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address1 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address1 field.
 	/// </summary>
 	public string Address1Default
 	{
@@ -1081,7 +1153,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.Address2 field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.Address2 field.
 	/// </summary>
 	public string Address2
 	{
@@ -1114,7 +1186,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address2 field.
 	/// </summary>
 	public string Address2Default
 	{
@@ -1124,7 +1196,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.Address3 field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.Address3 field.
 	/// </summary>
 	public string Address3
 	{
@@ -1157,7 +1229,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Address3 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Address3 field.
 	/// </summary>
 	public string Address3Default
 	{
@@ -1167,7 +1239,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.PostCode field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.PostCode field.
 	/// </summary>
 	public string PostCode
 	{
@@ -1200,7 +1272,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PostCode field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PostCode field.
 	/// </summary>
 	public string PostCodeDefault
 	{
@@ -1210,7 +1282,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.TrustName field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.TrustName field.
 	/// </summary>
 	public string TrustName
 	{
@@ -1243,7 +1315,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.TrustName field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.TrustName field.
 	/// </summary>
 	public string TrustNameDefault
 	{
@@ -1253,7 +1325,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.eMail field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.eMail field.
 	/// </summary>
 	public string eMail
 	{
@@ -1286,7 +1358,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.eMail field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.eMail field.
 	/// </summary>
 	public string eMailDefault
 	{
@@ -1296,7 +1368,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.IrdNumber field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.IrdNumber field.
 	/// </summary>
 	public string IrdNumber
 	{
@@ -1329,7 +1401,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.IrdNumber field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.IrdNumber field.
 	/// </summary>
 	public string IrdNumberDefault
 	{
@@ -1339,7 +1411,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.Active field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.Active field.
 	/// </summary>
 	public bool Active
 	{
@@ -1373,7 +1445,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Active field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Active field.
 	/// </summary>
 	public string ActiveDefault
 	{
@@ -1383,7 +1455,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.PhoneNumber field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.PhoneNumber field.
 	/// </summary>
 	public string PhoneNumber
 	{
@@ -1416,7 +1488,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.PhoneNumber field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PhoneNumber field.
 	/// </summary>
 	public string PhoneNumberDefault
 	{
@@ -1426,7 +1498,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.FirstName2 field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.FirstName2 field.
 	/// </summary>
 	public string FirstName2
 	{
@@ -1459,7 +1531,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.FirstName2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.FirstName2 field.
 	/// </summary>
 	public string FirstName2Default
 	{
@@ -1469,7 +1541,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.LastName2 field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.LastName2 field.
 	/// </summary>
 	public string LastName2
 	{
@@ -1502,7 +1574,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LastName2 field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LastName2 field.
 	/// </summary>
 	public string LastName2Default
 	{
@@ -1512,7 +1584,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.Region field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.Region field.
 	/// </summary>
 	public string Region
 	{
@@ -1545,7 +1617,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Region field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Region field.
 	/// </summary>
 	public string RegionDefault
 	{
@@ -1555,7 +1627,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.City field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.City field.
 	/// </summary>
 	public string City
 	{
@@ -1588,7 +1660,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.City field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.City field.
 	/// </summary>
 	public string CityDefault
 	{
@@ -1598,7 +1670,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.Country field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.Country field.
 	/// </summary>
 	public string Country
 	{
@@ -1631,7 +1703,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.Country field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.Country field.
 	/// </summary>
 	public string CountryDefault
 	{
@@ -1641,7 +1713,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public Int32 LinkID
 	{
@@ -1674,7 +1746,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.LinkID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.LinkID field.
 	/// </summary>
 	public string LinkIDDefault
 	{
@@ -1684,7 +1756,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public Int32 ContactID
 	{
@@ -1717,7 +1789,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.ContactID field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.ContactID field.
 	/// </summary>
 	public string ContactIDDefault
 	{
@@ -1727,7 +1799,7 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 		}
 	}
 	/// <summary>
-	/// This is a property that provides direct access to the value of the record's VPropertyContacts_.BankAccount field.
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.BankAccount field.
 	/// </summary>
 	public string BankAccount
 	{
@@ -1760,13 +1832,100 @@ public class BaseVPropertyContactsRecord : KeylessRecord
 	}
 
 	/// <summary>
-	/// This is a convenience method that allows direct modification of the value of the record's VPropertyContacts_.BankAccount field.
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.BankAccount field.
 	/// </summary>
 	public string BankAccountDefault
 	{
 		get
 		{
 			return TableUtils.BankAccountColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.DateOfBirth field.
+	/// </summary>
+	public DateTime DateOfBirth
+	{
+		get
+		{
+			return this.GetValue(TableUtils.DateOfBirthColumn).ToDateTime();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.DateOfBirthColumn);
+			
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool DateOfBirthSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.DateOfBirthColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.DateOfBirth field.
+	/// </summary>
+	public string DateOfBirthDefault
+	{
+		get
+		{
+			return TableUtils.DateOfBirthColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's vPropertyContacts_.PlaceOfBirth field.
+	/// </summary>
+	public string PlaceOfBirth
+	{
+		get
+		{
+			return this.GetValue(TableUtils.PlaceOfBirthColumn).ToString();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.PlaceOfBirthColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool PlaceOfBirthSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.PlaceOfBirthColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's vPropertyContacts_.PlaceOfBirth field.
+	/// </summary>
+	public string PlaceOfBirthDefault
+	{
+		get
+		{
+			return TableUtils.PlaceOfBirthColumn.DefaultValue;
 		}
 	}
 

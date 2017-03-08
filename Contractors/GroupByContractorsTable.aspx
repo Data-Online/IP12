@@ -100,7 +100,9 @@
 </td><td class="tableCellValue"><asp:Literal runat="server" id="CellPhone"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address2Label" Text="Address 2">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="Address2"></asp:Literal> </td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="eMailLabel" Text="Email">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="eMail"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CityIDLabel" Text="City">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:LinkButton runat="server" id="CityID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CompanyNameLabel" Text="Company Name">	</asp:Literal> 
+</td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:LinkButton runat="server" id="CityID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></span>
+ </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CompanyNameLabel" Text="Company Name">	</asp:Literal> 
 </td><td class="tableCellValue" colspan="3"><asp:Literal runat="server" id="CompanyName"></asp:Literal> </td></tr><tr><td class="tableRowDivider" colspan="11">&nbsp;</td></tr></IPv5:ContractorsTableControlRow>
 </ITEMTEMPLATE>
 

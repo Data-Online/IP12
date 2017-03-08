@@ -589,8 +589,8 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -2923,8 +2923,8 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction

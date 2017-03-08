@@ -573,6 +573,13 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
                 return null;
                 
             }
+              
+            recId = ((BaseApplicationPage)(this.Page)).Decrypt(recId);
+            if (recId == null || recId.Length == 0) {
+                
+                return null;
+                
+            }
                        
             HttpContext.Current.Session["QueryString in AddContactNotes"] = recId;
               
@@ -875,9 +882,9 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
                     string url = "../Contacts/AddContacts.aspx";
               
                       
-                    url = this.ModifyRedirectUrl(url, "", false);
+                    url = this.ModifyRedirectUrl(url, "", true);
                     
-                    url = this.Page.ModifyRedirectUrl(url, "", false);                                  
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
                     url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.ContactID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("LastName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("ContactID");                      
                               
@@ -1072,8 +1079,8 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction

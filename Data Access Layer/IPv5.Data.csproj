@@ -324,33 +324,6 @@
     <Compile Include="BaseVPropertyTermRenewalsSqlView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AlertDataDefinition.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertDataSqlTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertDataSqlTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertLevelsDefinition.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertLevelsSqlTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertLevelsSqlTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertTypesDefinition.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="AlertTypesSqlTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BaseAlertTypesSqlTable.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -596,9 +596,9 @@ public class BaseUsers_RolesTableControlRow : IPv5.UI.BaseApplicationRecordContr
                     string url = "../Roles/AddRoles.aspx";
               
                       
-                    url = this.ModifyRedirectUrl(url, "", false);
+                    url = this.ModifyRedirectUrl(url, "", true);
                     
-                    url = this.Page.ModifyRedirectUrl(url, "", false);                                  
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
                     url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.RoleID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("RoleName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("RoleID");                      
                               
@@ -807,8 +807,8 @@ public class BaseUsers_RolesTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -897,8 +897,8 @@ public class BaseUsers_RolesTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -3273,7 +3273,7 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
               
             // Retrieve the record id from the URL parameter.
               
-            string recId = this.Page.Request.QueryString["Users"];
+            string recId = ((BaseApplicationPage)(this.Page)).Decrypt(this.Page.Request.QueryString["Users"]);
                 
             if (recId == null || recId.Length == 0) {
                 // Get the error message from the application resource file.

@@ -586,7 +586,7 @@ public class BaseTermRenewalsRecordControl : IPv5.UI.BaseApplicationRecordContro
               
             // Retrieve the record id from the URL parameter.
               
-            string recId = this.Page.Request.QueryString["TermRenewals"];
+            string recId = ((BaseApplicationPage)(this.Page)).Decrypt(this.Page.Request.QueryString["TermRenewals"]);
                 
             if (recId == null || recId.Length == 0) {
                 // Get the error message from the application resource file.
@@ -893,9 +893,9 @@ public class BaseTermRenewalsRecordControl : IPv5.UI.BaseApplicationRecordContro
                     string url = "../Properties/AddProperties.aspx";
               
                       
-                    url = this.ModifyRedirectUrl(url, "", false);
+                    url = this.ModifyRedirectUrl(url, "", true);
                     
-                    url = this.Page.ModifyRedirectUrl(url, "", false);                                  
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
                     url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.PropertyID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("CompanyName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("PropertyID");                      
                               
@@ -1090,8 +1090,8 @@ public class BaseTermRenewalsRecordControl : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction

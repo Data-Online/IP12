@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class UsersDefinition
 {
 #region "Definition (XML) for UsersDefinition table"
-	//Next 98 lines contain Table Definition (XML) for table "UsersDefinition"
+	//Next 161 lines contain Table Definition (XML) for table "UsersDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -41,7 +41,7 @@ public class UsersDefinition
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
          tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>Y</columnUnique>");
-         tbf.Append(      @"<columnFunction>notrim</columnFunction>");
+         tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
          tbf.Append(      @"<columnPK>Y</columnPK>");
          tbf.Append(      @"<columnPermanent>N</columnPermanent>");
@@ -56,6 +56,18 @@ public class UsersDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""1"" Priority=""2"" ColumnNum=""1"">");
          tbf.Append(      @"<columnName>UserName</columnName>");
@@ -82,6 +94,18 @@ public class UsersDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""2"" Priority=""3"" ColumnNum=""2"">");
          tbf.Append(      @"<columnName>Password</columnName>");
@@ -108,12 +132,49 @@ public class UsersDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
+         tbf.Append(    "</Column>");
+         tbf.Append(    @"<Column InternalName=""3"" Priority=""4"" ColumnNum=""3"">");
+         tbf.Append(      @"<columnName>eMail</columnName>");
+         tbf.Append(      @"<columnUIName>Email</columnUIName>");
+         tbf.Append(      @"<columnType>Email</columnType>");
+         tbf.Append(      @"<columnDBType>nvarchar</columnDBType>");
+         tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
+         tbf.Append(      @"<columnDefault></columnDefault>");
+         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnUnique>N</columnUnique>");
+         tbf.Append(      @"<columnFunction></columnFunction>");
+         tbf.Append(      @"<columnDBFormat></columnDBFormat>");
+         tbf.Append(      @"<columnPK>N</columnPK>");
+         tbf.Append(      @"<columnPermanent>N</columnPermanent>");
+         tbf.Append(      @"<columnComputed>N</columnComputed>");
+         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnRequired>N</columnRequired>");
+         tbf.Append(      @"<columnNotNull>N</columnNotNull>");
+         tbf.Append(      @"<columnCaseSensitive Source=""Database"">N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>");
+         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
+         tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
+         tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
          tbf.Append(    "</Column>");
          tbf.Append(  "</ColumnDefinition>");
          tbf.Append(  @"<TableName>Users</TableName>");
-         tbf.Append(  @"<Version></Version>");
+         tbf.Append(  @"<Version>1</Version>");
          tbf.Append(  @"<Owner>dbo</Owner>");
-         tbf.Append(  @"<TableCodeName>Users</TableCodeName>");
          tbf.Append(  @"<TableAliasName>Users_</TableAliasName>");
          tbf.Append(  @"<ConnectionName>DatabaseMM_IP1</ConnectionName>");
          tbf.Append(  @"<PagingMethod>RowNum</PagingMethod>");
@@ -123,9 +184,11 @@ public class UsersDefinition
          tbf.Append(  @"<canViewRecords Source=""Database"">Y</canViewRecords>");
          tbf.Append(  @"<ConcurrencyMethod>BinaryChecksum</ConcurrencyMethod>");
          tbf.Append(  @"<AppShortName>IPv5</AppShortName>");
+         tbf.Append(  @"<TableCodeName>Users</TableCodeName>");
          tbf.Append(  @"<FolderName>Users</FolderName>");
          tbf.Append(  @"<MenuName>Users</MenuName>");
          tbf.Append(  @"<QSPath>../Users/UsersQuickSelector.aspx</QSPath>");
+         tbf.Append(  @"<TableStoredProcPrefix>pIPv5Users</TableStoredProcPrefix>");
          tbf.Append("</XMLDefinition>");
          _DefinitionString = tbf.ToString();
 	

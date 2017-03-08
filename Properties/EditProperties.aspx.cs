@@ -225,26 +225,26 @@ public void SetCancelButton()
         {
             SetCancelButton_Base(); 
         }              
-public void SetTermExpiresTableControl()
-        {
-            SetTermExpiresTableControl_Base(); 
-        }
-public void SetPropertyNotesTableControl()
-        {
-            SetPropertyNotesTableControl_Base(); 
-        }
+//public void SetTermExpiresTableControl()
+//        {
+//            SetTermExpiresTableControl_Base(); 
+//        }
+//public void SetPropertyNotesTableControl()
+//        {
+//            SetPropertyNotesTableControl_Base(); 
+//        }
 public void SetPropertiesRecordControl()
         {
             SetPropertiesRecordControl_Base(); 
         }
-public void SetMMContractsTableControl()
-        {
-            SetMMContractsTableControl_Base(); 
-        }
-public void SetPropertiesTabContainer()
-        {
-            SetPropertiesTabContainer_Base(); 
-        }
+//public void SetMMContractsTableControl()
+//        {
+//            SetMMContractsTableControl_Base(); 
+//        }
+//public void SetPropertiesTabContainer()
+//        {
+//            SetPropertiesTabContainer_Base(); 
+//        }
 [System.Web.Services.WebMethod()]
         public static object[] GetImage(string contextName,
                                         string tableName,
@@ -286,6 +286,10 @@ public override void SetControl(string control)
       {
           this.SetControl_Base(control);
       }
+public void SetLinkTableTableControl()
+        {
+            SetLinkTableTableControl_Base(); 
+        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -303,6 +307,10 @@ public override void SetControl(string control)
         }
         
     
+        public ThemeButtonWithArrow ActionsButton;
+                
+        public System.Web.UI.WebControls.ImageButton AddButton;
+        
         public System.Web.UI.WebControls.Literal Address1Label;
         
         public System.Web.UI.WebControls.Literal Address2Label;
@@ -319,83 +327,49 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal CompanyNameLabel;
         
+        public System.Web.UI.WebControls.Literal ContactIDLabel2;
+        
         public System.Web.UI.WebControls.DropDownList CountryID;
             
         public System.Web.UI.WebControls.ImageButton CountryIDAddRecordLink;
         
         public System.Web.UI.WebControls.Literal CountryIDLabel;
         
-        public System.Web.UI.WebControls.LinkButton DateRecordedSortLabel;
+        public System.Web.UI.WebControls.ImageButton DeleteButton;
         
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton ExpiryDateSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton ExpiryDateSortLabel1;
-        
-        public System.Web.UI.WebControls.ImageButton MMContractsAddButton;
-        
-        public ThemeButtonWithArrow MMContractsButtonsButton;
+        public ThemeButton FilterButton;
                 
-        public System.Web.UI.WebControls.ImageButton MMContractsDeleteButton;
-        
-        public ThemeButtonWithArrow MMContractsFiltersButton;
+        public ThemeButtonWithArrow FiltersButton;
                 
-        public PaginationModern MMContractsPagination;
-                
-        public IPv5.UI.Controls.EditProperties.MMContractsTableControl MMContractsTableControl;
+        public IPv5.UI.Controls.EditProperties.LinkTableTableControl LinkTableTableControl;
           
-        public System.Web.UI.WebControls.CheckBox MMContractsToggleAll;
-        
-        public System.Web.UI.WebControls.LinkButton NotesSortLabel;
-        
         public System.Web.UI.WebControls.Literal PageTitle;
         
+        public PaginationModern Pagination;
+                
         public System.Web.UI.WebControls.Literal PostCodeLabel;
         
         public IPv5.UI.Controls.EditProperties.PropertiesRecordControl PropertiesRecordControl;
           
-        public AjaxControlToolkit.TabContainer PropertiesTabContainer;
-        
         public System.Web.UI.WebControls.Literal PropertiesTitle;
             
-        public System.Web.UI.WebControls.ImageButton PropertyNotesAddButton;
-        
-        public ThemeButtonWithArrow PropertyNotesButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton PropertyNotesDeleteButton;
-        
-        public ThemeButtonWithArrow PropertyNotesFiltersButton;
-                
-        public PaginationModern PropertyNotesPagination;
-                
-        public IPv5.UI.Controls.EditProperties.PropertyNotesTableControl PropertyNotesTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox PropertyNotesToggleAll;
-        
         public System.Web.UI.WebControls.DropDownList RegionID;
             
         public System.Web.UI.WebControls.ImageButton RegionIDAddRecordLink;
         
         public System.Web.UI.WebControls.Literal RegionIDLabel;
         
+        public System.Web.UI.WebControls.ImageButton ResetButton;
+        
         public ThemeButton SaveButton;
                 
-        public System.Web.UI.WebControls.ImageButton TermExpiresAddButton;
+        public System.Web.UI.WebControls.ImageButton SaveButton1;
         
-        public ThemeButtonWithArrow TermExpiresButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton TermExpiresDeleteButton;
+        public System.Web.UI.WebControls.Label SortByLabel;
         
-        public ThemeButtonWithArrow TermExpiresFiltersButton;
-                
-        public PaginationModern TermExpiresPagination;
-                
-        public IPv5.UI.Controls.EditProperties.TermExpiresTableControl TermExpiresTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox TermExpiresToggleAll;
+        public System.Web.UI.WebControls.Literal Title0;
+            
+        public System.Web.UI.WebControls.CheckBox ToggleAll;
         
         public ValidationSummary ValidationSummary1;
 
@@ -576,20 +550,12 @@ public override void SetControl(string control)
           switch (control)
           {
           
-              case "MMContractsTableControl":
-                 SetMMContractsTableControl();
+              case "LinkTableTableControl":
+                 SetLinkTableTableControl();
                  break;
           
               case "PropertiesRecordControl":
                  SetPropertiesRecordControl();
-                 break;
-          
-              case "PropertyNotesTableControl":
-                 SetPropertyNotesTableControl();
-                 break;
-          
-              case "TermExpiresTableControl":
-                 SetTermExpiresTableControl();
                  break;
                
           }
@@ -693,9 +659,7 @@ public override void SetControl(string control)
                 this.DataBind();
                 
                 
-                
-            SetPropertiesTabContainer(); 
-          
+                    
     
                 // Load and bind data for each record and table UI control.
                 
@@ -801,26 +765,13 @@ public override void SetControl(string control)
                 
         // Write out the Set methods
         
-        public void SetPropertiesTabContainer_Base()           
-        
-        {
-                            
-                   
-            if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "true") 
-                MiscUtils.FindControlRecursively(this, "PropertiesTabContainer").Visible = true;
-            else if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "false") 
-                MiscUtils.FindControlRecursively(this, "PropertiesTabContainer").Visible = false;
-         
-  
-        }      
-      
-        public void SetMMContractsTableControl_Base()           
+        public void SetLinkTableTableControl_Base()           
         
         {        
-            if (MMContractsTableControl.Visible)
+            if (LinkTableTableControl.Visible)
             {
-                MMContractsTableControl.LoadData();
-                MMContractsTableControl.DataBind();
+                LinkTableTableControl.LoadData();
+                LinkTableTableControl.DataBind();
             }
         }
       
@@ -831,26 +782,6 @@ public override void SetControl(string control)
             {
                 PropertiesRecordControl.LoadData();
                 PropertiesRecordControl.DataBind();
-            }
-        }
-      
-        public void SetPropertyNotesTableControl_Base()           
-        
-        {        
-            if (PropertyNotesTableControl.Visible)
-            {
-                PropertyNotesTableControl.LoadData();
-                PropertyNotesTableControl.DataBind();
-            }
-        }
-      
-        public void SetTermExpiresTableControl_Base()           
-        
-        {        
-            if (TermExpiresTableControl.Visible)
-            {
-                TermExpiresTableControl.LoadData();
-                TermExpiresTableControl.DataBind();
             }
         }
       

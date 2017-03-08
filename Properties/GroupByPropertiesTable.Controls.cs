@@ -985,8 +985,8 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -3207,8 +3207,8 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -4432,8 +4432,8 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -4480,8 +4480,8 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -6398,8 +6398,8 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -7582,7 +7582,7 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../LinkTable/EditLinkTable.aspx?LinkTable={PK}";
+            string url = @"../Contacts/EditContacts.aspx?Contacts={LinkTableTableControlRow:FK:FK_LinkTable_Contacts}";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
                 url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
@@ -7595,8 +7595,8 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -7643,8 +7643,8 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -9568,8 +9568,8 @@ public class BaseLinkTableTableControl : IPv5.UI.BaseApplicationTableControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -13649,8 +13649,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -13751,8 +13751,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -13799,8 +13799,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -13847,8 +13847,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -18432,8 +18432,8 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -20378,8 +20378,8 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -20426,8 +20426,8 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -20474,8 +20474,8 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -20522,8 +20522,8 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -20570,8 +20570,8 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -23291,8 +23291,8 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -26945,8 +26945,8 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -29167,8 +29167,8 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -32606,8 +32606,8 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -34828,8 +34828,8 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-                url = this.ModifyRedirectUrl(url, "",false);
-                url = this.Page.ModifyRedirectUrl(url, "",false);
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
@@ -35614,17 +35614,25 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                 SetAddress32();
                 SetBankAccount();
                 SetBankAccountLabel();
+                SetDateOfBirth();
+                SetDateOfBirthLabel();
                 SeteMail1();
                 SeteMailLabel();
+                SetFirstName1();
                 SetFirstName2();
                 SetFirstName2Label();
                 SetIrdNumber();
                 SetIrdNumberLabel();
+                SetLastName1();
                 SetLastName2();
+                
                 SetPhoneNumber();
                 SetPhoneNumberLabel();
+                SetPlaceOfBirth();
+                SetPlaceOfBirthLabel();
                 SetPostCode2();
                 SetPostCodeLabel1();
+                SetTitle0();
                 SetTrustName();
                 SetTrustNameLabel();
 
@@ -35850,6 +35858,46 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                                      
         }
                 
+        public virtual void SetDateOfBirth()
+        {
+            
+                    
+            // Set the DateOfBirth Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.DateOfBirth is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.DateOfBirthSpecified) {
+                								
+                // If the DateOfBirth is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.DateOfBirth, @"d");
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.DateOfBirth.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // DateOfBirth is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.DateOfBirth.Text = ContactsTable.DateOfBirth.Format(ContactsTable.DateOfBirth.DefaultValue, @"d");
+            		
+            }
+            
+            // If the DateOfBirth is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.DateOfBirth.Text == null ||
+                this.DateOfBirth.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.DateOfBirth.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SeteMail1()
         {
             
@@ -35886,6 +35934,46 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                 this.eMail1.Text.Trim().Length == 0) {
                 // Set the value specified on the Properties.
                 this.eMail1.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetFirstName1()
+        {
+            
+                    
+            // Set the FirstName Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.FirstName1 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.FirstNameSpecified) {
+                								
+                // If the FirstName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.FirstName);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.FirstName1.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // FirstName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.FirstName1.Text = ContactsTable.FirstName.Format(ContactsTable.FirstName.DefaultValue);
+            		
+            }
+            
+            // If the FirstName is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.FirstName1.Text == null ||
+                this.FirstName1.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.FirstName1.Text = "&nbsp;";
             }
                                      
         }
@@ -35970,6 +36058,46 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                                      
         }
                 
+        public virtual void SetLastName1()
+        {
+            
+                    
+            // Set the LastName Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.LastName1 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.LastNameSpecified) {
+                								
+                // If the LastName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.LastName);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.LastName1.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // LastName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.LastName1.Text = ContactsTable.LastName.Format(ContactsTable.LastName.DefaultValue);
+            		
+            }
+            
+            // If the LastName is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.LastName1.Text == null ||
+                this.LastName1.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.LastName1.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SetLastName2()
         {
             
@@ -36050,6 +36178,46 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                                      
         }
                 
+        public virtual void SetPlaceOfBirth()
+        {
+            
+                    
+            // Set the PlaceOfBirth Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.PlaceOfBirth is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PlaceOfBirthSpecified) {
+                								
+                // If the PlaceOfBirth is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.PlaceOfBirth);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.PlaceOfBirth.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PlaceOfBirth is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PlaceOfBirth.Text = ContactsTable.PlaceOfBirth.Format(ContactsTable.PlaceOfBirth.DefaultValue);
+            		
+            }
+            
+            // If the PlaceOfBirth is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.PlaceOfBirth.Text == null ||
+                this.PlaceOfBirth.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.PlaceOfBirth.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SetPostCode2()
         {
             
@@ -36086,6 +36254,46 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                 this.PostCode2.Text.Trim().Length == 0) {
                 // Set the value specified on the Properties.
                 this.PostCode2.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetTitle0()
+        {
+            
+                    
+            // Set the Title Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.Title0 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.Title0Specified) {
+                								
+                // If the Title is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.Title0);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.Title0.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // Title is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.Title0.Text = ContactsTable.Title0.Format(ContactsTable.Title0.DefaultValue);
+            		
+            }
+            
+            // If the Title is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.Title0.Text == null ||
+                this.Title0.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.Title0.Text = "&nbsp;";
             }
                                      
         }
@@ -36139,10 +36347,18 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetAddress1Label2()
                   {
                   
+                        this.Address1Label2.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 
         public virtual void SetBankAccountLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetDateOfBirthLabel()
                   {
                   
                     
@@ -36157,6 +36373,8 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetFirstName2Label()
                   {
                   
+                        this.FirstName2Label.Text = EvaluateFormula("\"Second Contact\"");
+                      
                     
         }
                 
@@ -36167,6 +36385,12 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void SetPhoneNumberLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetPlaceOfBirthLabel()
                   {
                   
                     
@@ -36362,12 +36586,17 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             GetAddress22();
             GetAddress32();
             GetBankAccount();
+            GetDateOfBirth();
             GeteMail1();
+            GetFirstName1();
             GetFirstName2();
             GetIrdNumber();
+            GetLastName1();
             GetLastName2();
             GetPhoneNumber();
+            GetPlaceOfBirth();
             GetPostCode2();
+            GetTitle0();
             GetTrustName();
         }
         
@@ -36397,7 +36626,17 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             
         }
                 
+        public virtual void GetDateOfBirth()
+        {
+            
+        }
+                
         public virtual void GeteMail1()
+        {
+            
+        }
+                
+        public virtual void GetFirstName1()
         {
             
         }
@@ -36412,6 +36651,11 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             
         }
                 
+        public virtual void GetLastName1()
+        {
+            
+        }
+                
         public virtual void GetLastName2()
         {
             
@@ -36422,7 +36666,17 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             
         }
                 
+        public virtual void GetPlaceOfBirth()
+        {
+            
+        }
+                
         public virtual void GetPostCode2()
+        {
+            
+        }
+                
+        public virtual void GetTitle0()
         {
             
         }
@@ -36980,6 +37234,18 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             }
         }
         
+        public System.Web.UI.WebControls.Literal DateOfBirth {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateOfBirth");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal DateOfBirthLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateOfBirthLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal eMail1 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMail1");
@@ -36992,6 +37258,12 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             }
         }
         
+        public System.Web.UI.WebControls.Literal FirstName1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName1");
+            }
+        }
+            
         public System.Web.UI.WebControls.Literal FirstName2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName2");
@@ -37016,6 +37288,12 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             }
         }
         
+        public System.Web.UI.WebControls.Literal LastName1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastName1");
+            }
+        }
+            
         public System.Web.UI.WebControls.Literal LastName2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastName2");
@@ -37034,6 +37312,18 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             }
         }
         
+        public System.Web.UI.WebControls.Literal PlaceOfBirth {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PlaceOfBirth");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PlaceOfBirthLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PlaceOfBirthLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal PostCode2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCode2");
@@ -37046,6 +37336,12 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             }
         }
         
+        public System.Web.UI.WebControls.Literal Title0 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Title0");
+            }
+        }
+            
         public System.Web.UI.WebControls.Literal TrustName {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TrustName");
