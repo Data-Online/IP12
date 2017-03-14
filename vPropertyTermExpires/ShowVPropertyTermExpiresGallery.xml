@@ -16,6 +16,7 @@
     <Description>Gallery to show multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>VPropertyTermExpiresMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>-1679082295-19487</CheckSum>
   </Self>
   <ComposedOf>

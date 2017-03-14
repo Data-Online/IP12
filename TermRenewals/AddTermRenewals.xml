@@ -16,6 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>TermRenewalsMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NO_ACCESS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>237737505-9415</CheckSum>
   </Self>
   <ComposedOf>

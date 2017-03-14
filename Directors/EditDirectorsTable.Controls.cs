@@ -662,7 +662,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                     
                     url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.ContactID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("LastName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("ContactID");                      
+                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.ContactID.ClientID) + "&Formula=" + (this.Page as BaseApplicationPage).Encrypt("=  Contacts.FirstName + ' ' + Contacts.LastName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("ContactID");                      
                               
                 string javascriptCall = "";
                 
@@ -735,7 +735,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             						
             // This WhereClause is for the DatabaseMM_IP1%dbo.Contacts table.
             // Examples:
-            // wc.iAND(ContactsTable.LastName, BaseFilter.ComparisonOperator.EqualsTo, "XYZ");
+            // wc.iAND(ContactsTable.ContactID, BaseFilter.ComparisonOperator.EqualsTo, "XYZ");
             // wc.iAND(ContactsTable.Active, BaseFilter.ComparisonOperator.EqualsTo, "1");
             
             WhereClause wc = new WhereClause();
@@ -779,7 +779,8 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Create the ORDER BY clause to sort based on the displayed value.							
                 
             OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
+                          orderBy.Add(ContactsTable.FirstName, OrderByItem.OrderDir.Asc);
+              orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
 
             System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
             FormulaEvaluator evaluator = new FormulaEvaluator();
@@ -810,7 +811,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                                 if(_isExpandableNonCompositeForeignKey && DirectorsTable.ContactID.IsApplyDisplayAs)
                                     fvalue = DirectorsTable.GetDFKA(itemValue, DirectorsTable.ContactID);
                                 if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                    fvalue = itemValue.Format(ContactsTable.LastName);
+                                    fvalue = itemValue.Format(ContactsTable.ContactID);
                                     		
 
                                 if (fvalue == null || fvalue.Trim() == "") 
@@ -885,7 +886,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                         if(_isExpandableNonCompositeForeignKey && DirectorsTable.ContactID.IsApplyDisplayAs)
                             fvalue = DirectorsTable.GetDFKA(itemValue, DirectorsTable.ContactID);
                         if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                            fvalue = itemValue.Format(ContactsTable.LastName);
+                            fvalue = itemValue.Format(ContactsTable.ContactID);
                             					
                         if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
                         MiscUtils.ResetSelectedItem(this.ContactID, new ListItem(fvalue, cvalue));                      
@@ -1080,7 +1081,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             if (shouldRedirect) {
                 this.Page.ShouldSaveControlsToSession = true;
       
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.ContactID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("LastName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("ContactID");                      
+                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.ContactID.ClientID) + "&Formula=" + (this.Page as BaseApplicationPage).Encrypt("=  Contacts.FirstName + ' ' + Contacts.LastName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("ContactID");                      
                               
                 string javascriptCall = "";
                 
@@ -2587,7 +2588,8 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                 this.ContactIDFilter.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
               
             OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
+                          orderBy.Add(ContactsTable.FirstName, OrderByItem.OrderDir.Asc);
+              orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
 
 
             System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
@@ -2624,7 +2626,7 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                                 if(_isExpandableNonCompositeForeignKey && DirectorsTable.ContactID.IsApplyDisplayAs)
                                      fvalue = DirectorsTable.GetDFKA(itemValue, DirectorsTable.ContactID);
                                 if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                     fvalue = itemValue.Format(ContactsTable.LastName);
+                                     fvalue = itemValue.Format(ContactsTable.ContactID);
                                    					
                                 if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
 

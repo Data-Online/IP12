@@ -75,7 +75,7 @@
         </Attribute>
         <Attribute>
           <Name>ImageURL</Name>
-          <Value>../Images/Logo.gif</Value>
+          <Value>../Images/Logo.png</Value>
         </Attribute>
         <Attribute>
           <Name>style</Name>

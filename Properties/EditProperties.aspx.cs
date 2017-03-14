@@ -290,6 +290,106 @@ public void SetLinkTableTableControl()
         {
             SetLinkTableTableControl_Base(); 
         }
+//public void SetDirectorsTableControl()
+//        {
+//            SetDirectorsTableControl_Base(); 
+//        }
+public void SetDirectorsTableControl1()
+        {
+            SetDirectorsTableControl1_Base(); 
+        }
+public void SetTermRenewalsTableControl()
+        {
+            SetTermRenewalsTableControl_Base(); 
+        }
+public void SetTermExpiresTableControl()
+        {
+            SetTermExpiresTableControl_Base(); 
+        }
+public void SetRentReviewsTableControl()
+        {
+            SetRentReviewsTableControl_Base(); 
+        }
+public void SetPropertyNotesTableControl()
+        {
+            SetPropertyNotesTableControl_Base(); 
+        }
+public void SetPropertyContactsTableControl()
+        {
+            SetPropertyContactsTableControl_Base(); 
+        }
+public void SetMMContractsTableControl()
+        {
+            SetMMContractsTableControl_Base(); 
+        }
+public void SetBankLoansTableControl()
+        {
+            SetBankLoansTableControl_Base(); 
+        }
+public void SetTabContainer()
+        {
+            SetTabContainer_Base(); 
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_TermRenewalsSearchText(string prefixText, int count)
+        {
+            // GetTermRenewalsSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_TermRenewalsSearchText_Base()
+            // or replace the call to GetAutoCompletionList_TermRenewalsSearchText_Base().
+            return GetAutoCompletionList_TermRenewalsSearchText_Base(prefixText, count);
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_TermExpiresSearchText(string prefixText, int count)
+        {
+            // GetTermExpiresSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_TermExpiresSearchText_Base()
+            // or replace the call to GetAutoCompletionList_TermExpiresSearchText_Base().
+            return GetAutoCompletionList_TermExpiresSearchText_Base(prefixText, count);
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_RentReviewsSearchText(string prefixText, int count)
+        {
+            // GetRentReviewsSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_RentReviewsSearchText_Base()
+            // or replace the call to GetAutoCompletionList_RentReviewsSearchText_Base().
+            return GetAutoCompletionList_RentReviewsSearchText_Base(prefixText, count);
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_PropertyContactsSearchText(string prefixText, int count)
+        {
+            // GetPropertyContactsSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_PropertyContactsSearchText_Base()
+            // or replace the call to GetAutoCompletionList_PropertyContactsSearchText_Base().
+            return GetAutoCompletionList_PropertyContactsSearchText_Base(prefixText, count);
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_MMContractsSearchText(string prefixText, int count)
+        {
+            // GetMMContractsSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_MMContractsSearchText_Base()
+            // or replace the call to GetAutoCompletionList_MMContractsSearchText_Base().
+            return GetAutoCompletionList_MMContractsSearchText_Base(prefixText, count);
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_BankLoansSearchText(string prefixText, int count)
+        {
+            // GetBankLoansSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_BankLoansSearchText_Base()
+            // or replace the call to GetAutoCompletionList_BankLoansSearchText_Base().
+            return GetAutoCompletionList_BankLoansSearchText_Base(prefixText, count);
+        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -307,9 +407,41 @@ public void SetLinkTableTableControl()
         }
         
     
+        public ThemeButtonWithArrow Actions1Button;
+                
+        public ThemeButtonWithArrow Actions2Button;
+                
+        public ThemeButtonWithArrow Actions3Button;
+                
+        public ThemeButtonWithArrow Actions4Button;
+                
+        public ThemeButtonWithArrow Actions5Button;
+                
+        public ThemeButtonWithArrow Actions6Button;
+                
+        public ThemeButtonWithArrow Actions7Button;
+                
+        public ThemeButtonWithArrow Actions8Button;
+                
         public ThemeButtonWithArrow ActionsButton;
                 
         public System.Web.UI.WebControls.ImageButton AddButton;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton1;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton2;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton3;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton4;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton5;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton6;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton7;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton8;
         
         public System.Web.UI.WebControls.Literal Address1Label;
         
@@ -317,6 +449,10 @@ public void SetLinkTableTableControl()
         
         public System.Web.UI.WebControls.Literal Address3Label;
         
+        public System.Web.UI.WebControls.TextBox BankLoansSearchText;
+        
+        public IPv5.UI.Controls.EditProperties.BankLoansTableControl BankLoansTableControl;
+          
         public ThemeButton CancelButton;
                 
         public System.Web.UI.WebControls.DropDownList CityID;
@@ -329,6 +465,8 @@ public void SetLinkTableTableControl()
         
         public System.Web.UI.WebControls.Literal ContactIDLabel2;
         
+        public System.Web.UI.WebControls.Literal ContactIDLabel5;
+        
         public System.Web.UI.WebControls.DropDownList CountryID;
             
         public System.Web.UI.WebControls.ImageButton CountryIDAddRecordLink;
@@ -337,39 +475,235 @@ public void SetLinkTableTableControl()
         
         public System.Web.UI.WebControls.ImageButton DeleteButton;
         
+        public System.Web.UI.WebControls.ImageButton DeleteButton1;
+        
+        public System.Web.UI.WebControls.ImageButton DeleteButton2;
+        
+        public System.Web.UI.WebControls.ImageButton DeleteButton3;
+        
+        public System.Web.UI.WebControls.ImageButton DeleteButton4;
+        
+        public System.Web.UI.WebControls.ImageButton DeleteButton5;
+        
+        public System.Web.UI.WebControls.ImageButton DeleteButton6;
+        
+        public System.Web.UI.WebControls.ImageButton DeleteButton7;
+        
+        public System.Web.UI.WebControls.ImageButton DeleteButton8;
+        
+        public System.Web.UI.WebControls.Literal DescriptionLabel11;
+        
+        public System.Web.UI.WebControls.Literal DescriptionLabel14;
+        
+        public System.Web.UI.WebControls.Literal DescriptionLabel2;
+        
+        public System.Web.UI.WebControls.Literal DescriptionLabel5;
+        
+        public System.Web.UI.WebControls.Literal DescriptionLabel8;
+        
+        public IPv5.UI.Controls.EditProperties.DirectorsTableControl1 DirectorsTableControl1;
+          
         public ThemeButton FilterButton;
+                
+        public ThemeButton FilterButton1;
+                
+        public ThemeButton FilterButton2;
+                
+        public ThemeButton FilterButton3;
+                
+        public ThemeButton FilterButton4;
+                
+        public ThemeButton FilterButton5;
+                
+        public ThemeButton FilterButton6;
+                
+        public ThemeButton FilterButton7;
+                
+        public ThemeButton FilterButton8;
+                
+        public ThemeButtonWithArrow Filters1Button;
+                
+        public ThemeButtonWithArrow Filters2Button;
+                
+        public ThemeButtonWithArrow Filters3Button;
+                
+        public ThemeButtonWithArrow Filters4Button;
+                
+        public ThemeButtonWithArrow Filters5Button;
+                
+        public ThemeButtonWithArrow Filters6Button;
+                
+        public ThemeButtonWithArrow Filters7Button;
+                
+        public ThemeButtonWithArrow Filters8Button;
                 
         public ThemeButtonWithArrow FiltersButton;
                 
         public IPv5.UI.Controls.EditProperties.LinkTableTableControl LinkTableTableControl;
           
+        public System.Web.UI.WebControls.TextBox MMContractsSearchText;
+        
+        public IPv5.UI.Controls.EditProperties.MMContractsTableControl MMContractsTableControl;
+          
+        public System.Web.UI.WebControls.Literal NotesLabel2;
+        
         public System.Web.UI.WebControls.Literal PageTitle;
         
         public PaginationModern Pagination;
                 
+        public PaginationModern Pagination1;
+                
+        public PaginationModern Pagination2;
+                
+        public PaginationModern Pagination3;
+                
+        public PaginationModern Pagination4;
+                
+        public PaginationModern Pagination5;
+                
+        public PaginationModern Pagination6;
+                
+        public PaginationModern Pagination7;
+                
+        public PaginationModern Pagination8;
+                
         public System.Web.UI.WebControls.Literal PostCodeLabel;
+        
+        public System.Web.UI.WebControls.Literal PostCodeLabel3;
         
         public IPv5.UI.Controls.EditProperties.PropertiesRecordControl PropertiesRecordControl;
           
         public System.Web.UI.WebControls.Literal PropertiesTitle;
             
+        public System.Web.UI.WebControls.TextBox PropertyContactsSearchText;
+        
+        public IPv5.UI.Controls.EditProperties.PropertyContactsTableControl PropertyContactsTableControl;
+          
+        public IPv5.UI.Controls.EditProperties.PropertyNotesTableControl PropertyNotesTableControl;
+          
         public System.Web.UI.WebControls.DropDownList RegionID;
             
         public System.Web.UI.WebControls.ImageButton RegionIDAddRecordLink;
         
         public System.Web.UI.WebControls.Literal RegionIDLabel;
         
+        public System.Web.UI.WebControls.TextBox RentReviewsSearchText;
+        
+        public IPv5.UI.Controls.EditProperties.RentReviewsTableControl RentReviewsTableControl;
+          
         public System.Web.UI.WebControls.ImageButton ResetButton;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton1;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton2;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton3;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton4;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton5;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton6;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton7;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton8;
         
         public ThemeButton SaveButton;
                 
         public System.Web.UI.WebControls.ImageButton SaveButton1;
         
+        public System.Web.UI.WebControls.ImageButton SaveButton2;
+        
+        public System.Web.UI.WebControls.ImageButton SaveButton3;
+        
+        public System.Web.UI.WebControls.ImageButton SaveButton4;
+        
+        public System.Web.UI.WebControls.ImageButton SaveButton5;
+        
+        public System.Web.UI.WebControls.ImageButton SaveButton6;
+        
+        public System.Web.UI.WebControls.ImageButton SaveButton7;
+        
+        public System.Web.UI.WebControls.ImageButton SaveButton8;
+        
+        public System.Web.UI.WebControls.ImageButton SaveButton9;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton10;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton12;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton2;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton4;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton6;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton8;
+        
         public System.Web.UI.WebControls.Label SortByLabel;
         
+        public System.Web.UI.WebControls.Label SortByLabel1;
+        
+        public System.Web.UI.WebControls.Label SortByLabel2;
+        
+        public System.Web.UI.WebControls.Label SortByLabel3;
+        
+        public System.Web.UI.WebControls.Label SortByLabel4;
+        
+        public System.Web.UI.WebControls.Label SortByLabel5;
+        
+        public System.Web.UI.WebControls.Label SortByLabel6;
+        
+        public System.Web.UI.WebControls.Label SortByLabel7;
+        
+        public System.Web.UI.WebControls.Label SortByLabel8;
+        
+        public AjaxControlToolkit.TabContainer TabContainer;
+        
+        public System.Web.UI.WebControls.TextBox TermExpiresSearchText;
+        
+        public IPv5.UI.Controls.EditProperties.TermExpiresTableControl TermExpiresTableControl;
+          
+        public System.Web.UI.WebControls.TextBox TermRenewalsSearchText;
+        
+        public IPv5.UI.Controls.EditProperties.TermRenewalsTableControl TermRenewalsTableControl;
+          
         public System.Web.UI.WebControls.Literal Title0;
             
+        public System.Web.UI.WebControls.Literal Title1;
+            
+        public System.Web.UI.WebControls.Literal Title10;
+            
+        public System.Web.UI.WebControls.Literal Title2;
+            
+        public System.Web.UI.WebControls.Literal Title3;
+            
+        public System.Web.UI.WebControls.Literal Title4;
+            
+        public System.Web.UI.WebControls.Literal Title5;
+            
+        public System.Web.UI.WebControls.Literal Title6;
+            
+        public System.Web.UI.WebControls.Literal Title7;
+            
         public System.Web.UI.WebControls.CheckBox ToggleAll;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll1;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll2;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll3;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll4;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll5;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll6;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll7;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll8;
         
         public ValidationSummary ValidationSummary1;
 
@@ -438,7 +772,7 @@ public void SetLinkTableTableControl()
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("");
+            this.Authorize("NO_ACCESS");
              if (!this.IsPostBack)
              {
             
@@ -550,12 +884,44 @@ public void SetLinkTableTableControl()
           switch (control)
           {
           
+              case "BankLoansTableControl":
+                 SetBankLoansTableControl();
+                 break;
+          
+              case "DirectorsTableControl1":
+                 SetDirectorsTableControl1();
+                 break;
+          
               case "LinkTableTableControl":
                  SetLinkTableTableControl();
                  break;
           
+              case "MMContractsTableControl":
+                 SetMMContractsTableControl();
+                 break;
+          
               case "PropertiesRecordControl":
                  SetPropertiesRecordControl();
+                 break;
+          
+              case "PropertyContactsTableControl":
+                 SetPropertyContactsTableControl();
+                 break;
+          
+              case "PropertyNotesTableControl":
+                 SetPropertyNotesTableControl();
+                 break;
+          
+              case "RentReviewsTableControl":
+                 SetRentReviewsTableControl();
+                 break;
+          
+              case "TermExpiresTableControl":
+                 SetTermExpiresTableControl();
+                 break;
+          
+              case "TermRenewalsTableControl":
+                 SetTermRenewalsTableControl();
                  break;
                
           }
@@ -640,6 +1006,72 @@ public void SetLinkTableTableControl()
       }  
       
         
+    public static string[] GetAutoCompletionList_BankLoansSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.EditProperties.BankLoansTableControl control = new IPv5.UI.Controls.EditProperties.BankLoansTableControl();
+        
+        return control.GetAutoCompletionList_BankLoansSearchText(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_MMContractsSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.EditProperties.MMContractsTableControl control = new IPv5.UI.Controls.EditProperties.MMContractsTableControl();
+        
+        return control.GetAutoCompletionList_MMContractsSearchText(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_PropertyContactsSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.EditProperties.PropertyContactsTableControl control = new IPv5.UI.Controls.EditProperties.PropertyContactsTableControl();
+        
+        return control.GetAutoCompletionList_PropertyContactsSearchText(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_RentReviewsSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.EditProperties.RentReviewsTableControl control = new IPv5.UI.Controls.EditProperties.RentReviewsTableControl();
+        
+        return control.GetAutoCompletionList_RentReviewsSearchText(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_TermExpiresSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.EditProperties.TermExpiresTableControl control = new IPv5.UI.Controls.EditProperties.TermExpiresTableControl();
+        
+        return control.GetAutoCompletionList_TermExpiresSearchText(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_TermRenewalsSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.EditProperties.TermRenewalsTableControl control = new IPv5.UI.Controls.EditProperties.TermRenewalsTableControl();
+        
+        return control.GetAutoCompletionList_TermRenewalsSearchText(prefixText, count);
+            
+    }
+      
 
     // Load data from database into UI controls.
     // Modify LoadData in Section 1 above to customize.  Or override DataBind() in
@@ -659,7 +1091,9 @@ public void SetLinkTableTableControl()
                 this.DataBind();
                 
                 
-                    
+                
+            SetTabContainer(); 
+          
     
                 // Load and bind data for each record and table UI control.
                 
@@ -765,6 +1199,39 @@ public void SetLinkTableTableControl()
                 
         // Write out the Set methods
         
+        public void SetTabContainer_Base()           
+        
+        {
+                            
+                   
+            if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "true") 
+                MiscUtils.FindControlRecursively(this, "TabContainer").Visible = true;
+            else if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "false") 
+                MiscUtils.FindControlRecursively(this, "TabContainer").Visible = false;
+         
+  
+        }      
+      
+        public void SetBankLoansTableControl_Base()           
+        
+        {        
+            if (BankLoansTableControl.Visible)
+            {
+                BankLoansTableControl.LoadData();
+                BankLoansTableControl.DataBind();
+            }
+        }
+      
+        public void SetDirectorsTableControl1_Base()           
+        
+        {        
+            if (DirectorsTableControl1.Visible)
+            {
+                DirectorsTableControl1.LoadData();
+                DirectorsTableControl1.DataBind();
+            }
+        }
+      
         public void SetLinkTableTableControl_Base()           
         
         {        
@@ -775,6 +1242,16 @@ public void SetLinkTableTableControl()
             }
         }
       
+        public void SetMMContractsTableControl_Base()           
+        
+        {        
+            if (MMContractsTableControl.Visible)
+            {
+                MMContractsTableControl.LoadData();
+                MMContractsTableControl.DataBind();
+            }
+        }
+      
         public void SetPropertiesRecordControl_Base()           
         
         {        
@@ -782,6 +1259,56 @@ public void SetLinkTableTableControl()
             {
                 PropertiesRecordControl.LoadData();
                 PropertiesRecordControl.DataBind();
+            }
+        }
+      
+        public void SetPropertyContactsTableControl_Base()           
+        
+        {        
+            if (PropertyContactsTableControl.Visible)
+            {
+                PropertyContactsTableControl.LoadData();
+                PropertyContactsTableControl.DataBind();
+            }
+        }
+      
+        public void SetPropertyNotesTableControl_Base()           
+        
+        {        
+            if (PropertyNotesTableControl.Visible)
+            {
+                PropertyNotesTableControl.LoadData();
+                PropertyNotesTableControl.DataBind();
+            }
+        }
+      
+        public void SetRentReviewsTableControl_Base()           
+        
+        {        
+            if (RentReviewsTableControl.Visible)
+            {
+                RentReviewsTableControl.LoadData();
+                RentReviewsTableControl.DataBind();
+            }
+        }
+      
+        public void SetTermExpiresTableControl_Base()           
+        
+        {        
+            if (TermExpiresTableControl.Visible)
+            {
+                TermExpiresTableControl.LoadData();
+                TermExpiresTableControl.DataBind();
+            }
+        }
+      
+        public void SetTermRenewalsTableControl_Base()           
+        
+        {        
+            if (TermRenewalsTableControl.Visible)
+            {
+                TermRenewalsTableControl.LoadData();
+                TermRenewalsTableControl.DataBind();
             }
         }
       

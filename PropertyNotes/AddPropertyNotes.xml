@@ -16,6 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>PropertyNotesMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NO_ACCESS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>1905000185-9674</CheckSum>
   </Self>
   <ComposedOf>
@@ -231,6 +232,10 @@
           <Name>PropertyIDRequiredFieldValidator:Text</Name>
           <Value>*</Value>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyNotesRecordControl</InsideControl>
     </ContainedComponent>
@@ -275,6 +280,10 @@
           <Value>Btn:Add</Value>
           <Type>ResourceReference</Type>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyNotesRecordControl</InsideControl>
     </ContainedComponent>
@@ -298,6 +307,10 @@
           <Name>Text</Name>
           <Value>%ISD_DEFAULT%PropertyNotes%PropertyID</Value>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyNotesRecordControl</InsideControl>
     </ContainedComponent>
@@ -306,6 +319,29 @@
       <Type>Record</Type>
       <PanelStyle>AddRec_DTB_Parent</PanelStyle>
       <Table>DatabaseMM_IP1%dbo.PropertyNotes</Table>
+      <QueryDefinition>
+        <WhereClause>
+          <Position>1</Position>
+          <TableAlias>DatabaseMM_IP1%dbo.PropertyNotes_</TableAlias>
+          <Field>[DatabaseMM_IP1%dbo.PropertyNotes_].[PropertyID]</Field>
+          <Operator>=</Operator>
+          <Operand>
+            <Type>Formula</Type>
+            <Value>URL("PropertyID")</Value>
+          </Operand>
+          <CompareDFKA>No</CompareDFKA>
+          <IgnoreBlankString>Yes</IgnoreBlankString>
+        </WhereClause>
+        <Operators>
+          <Operator xsi:nil="true" />
+        </Operators>
+        <TableAliases>
+          <Alias>
+            <AliasName>DatabaseMM_IP1%dbo.PropertyNotes_</AliasName>
+            <TableName>DatabaseMM_IP1%dbo.PropertyNotes</TableName>
+          </Alias>
+        </TableAliases>
+      </QueryDefinition>
       <PassthroughAttributes>
         <Attribute>
           <Name>EnterKeyCaptureToButton</Name>
@@ -317,7 +353,7 @@
         </Attribute>
         <Attribute>
           <Name>InternalUse:DataSource</Name>
-          <Value>AddRecord</Value>
+          <Value>TableOrQuery</Value>
         </Attribute>
         <Attribute>
           <Name>InternalUse:DataSourceArg</Name>
@@ -328,6 +364,7 @@
           <Value>PropertyNotes</Value>
         </Attribute>
       </PassthroughAttributes>
+      <OrderBys />
     </ContainedComponent>
     <ContainedComponent>
       <Name>PropertyNotesTitle</Name>

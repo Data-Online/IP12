@@ -1,4 +1,4 @@
-﻿/**********************************************************************
+/**********************************************************************
  * Styles.css                                                         *
  *                                                                    *
  * This file is initially empty and you can add any additional styles *
@@ -52,8 +52,20 @@
  }
 
 #mailtolink {
-	background-image:url(/Images/ButtonEmail.gif);
+	background-image:url(/Images/eMail.png);
 	display: inline-block;
-	height: 16px;
-	width: 15px;
+	height: 20px;
+	width: 20px;
 	}
+
+.largeText {
+	color: #4E4E4E;
+	font-family: 'PT Sans Narrow', Arial, Verdana, sans-serif;
+	font-size: 18px;
+	padding-bottom: 0px;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 8px;
+	text-align: left;
+	vertical-align: top;
+}

@@ -16,6 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>BankLoansMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NO_ACCESS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>1833891890-8625</CheckSum>
   </Self>
   <ComposedOf>
@@ -231,6 +232,10 @@
           <Value>field_input</Value>
         </Attribute>
         <Attribute>
+          <Name>EnableViewState</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
           <Name>InternalUse:DataSource</Name>
           <Value>Parent</Value>
         </Attribute>
@@ -257,6 +262,10 @@
         <Attribute>
           <Name>PropertyIDRequiredFieldValidator:Text</Name>
           <Value>*</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>BankLoansRecordControl</InsideControl>
@@ -302,6 +311,10 @@
           <Value>Btn:Add</Value>
           <Type>ResourceReference</Type>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>BankLoansRecordControl</InsideControl>
     </ContainedComponent>
@@ -324,6 +337,10 @@
         <Attribute>
           <Name>Text</Name>
           <Value>%ISD_DEFAULT%BankLoans%PropertyID</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>BankLoansRecordControl</InsideControl>

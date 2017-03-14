@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<XMLDefinition Generator="Iron Speed Designer" Version="12.2" Type="GENERIC">
+<XMLDefinition Generator="Iron Speed Designer" Version="12.2" Type="USER">
   <ColumnDefinition>
     <Column InternalName="0" Priority="1" ColumnNum="0">
       <columnName>UserID</columnName>
@@ -195,4 +195,9 @@
   <MenuName>Users</MenuName>
   <QSPath>../Users/UsersQuickSelector.aspx</QSPath>
   <TableStoredProcPrefix>pIPv5Users</TableStoredProcPrefix>
+  <IsUserTable>Y</IsUserTable>
+  <UserUserIDField>UserID</UserUserIDField>
+  <UserEmailField>eMail</UserEmailField>
+  <UserUserNameField>UserName</UserUserNameField>
+  <UserPassword>Password</UserPassword>
 </XMLDefinition>

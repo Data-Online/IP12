@@ -16,6 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>BankLoansMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>1133316215-9358</CheckSum>
   </Self>
   <ComposedOf>

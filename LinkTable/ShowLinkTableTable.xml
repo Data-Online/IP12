@@ -16,6 +16,7 @@
     <Description>Table view to show or edit multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>LinkTableMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>2022176101-55445</CheckSum>
   </Self>
   <ComposedOf>

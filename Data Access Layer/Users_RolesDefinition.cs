@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class Users_RolesDefinition
 {
 #region "Definition (XML) for Users_RolesDefinition table"
-	//Next 116 lines contain Table Definition (XML) for table "Users_RolesDefinition"
+	//Next 119 lines contain Table Definition (XML) for table "Users_RolesDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -29,7 +29,7 @@ public class Users_RolesDefinition
 		if(_DefinitionString == "")
 		{
 			         System.Text.StringBuilder tbf = new System.Text.StringBuilder();
-         tbf.Append(@"<XMLDefinition Generator=""Iron Speed Designer"" Version=""12.2"" Type=""GENERIC"">");
+         tbf.Append(@"<XMLDefinition Generator=""Iron Speed Designer"" Version=""12.2"" Type=""USER"">");
          tbf.Append(  @"<ColumnDefinition>");
          tbf.Append(    @"<Column InternalName=""0"" Priority=""1"" ColumnNum=""0"">");
          tbf.Append(      @"<columnName>Users_RoleID</columnName>");
@@ -144,6 +144,9 @@ public class Users_RolesDefinition
          tbf.Append(  @"<FolderName>Users_Roles</FolderName>");
          tbf.Append(  @"<MenuName>Users Roles</MenuName>");
          tbf.Append(  @"<QSPath>../Users_Roles/Users_RolesQuickSelector.aspx</QSPath>");
+         tbf.Append(  @"<IsRoleTable>Y</IsRoleTable>");
+         tbf.Append(  @"<RoleRoleID>RoleID</RoleRoleID>");
+         tbf.Append(  @"<RoleUserID>UserID</RoleUserID>");
          tbf.Append("</XMLDefinition>");
          _DefinitionString = tbf.ToString();
 	

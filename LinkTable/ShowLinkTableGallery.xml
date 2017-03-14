@@ -16,6 +16,7 @@
     <Description>Gallery to show multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>LinkTableMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>1100725784-17963</CheckSum>
   </Self>
   <ComposedOf>

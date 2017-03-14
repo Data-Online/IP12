@@ -20,6 +20,11 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1445,67 +1450,101 @@
       <DependentUpon>ShowMMContractExpiration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Header and Footer\EmailFooter.ascx.cs" >
+    <Compile Include="Header and Footer\EmailFooter.ascx.cs">
       <DependentUpon>EmailFooter.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Header and Footer\IEmailFooter.cs" >
+    <Compile Include="Header and Footer\IEmailFooter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Header and Footer\IEmailHeader.cs" >
+    <Compile Include="Header and Footer\IEmailHeader.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Header and Footer\IFooter.cs" >
+    <Compile Include="Header and Footer\IFooter.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Header and Footer\IHeader.cs" >
+    <Compile Include="Header and Footer\IHeader.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Menu Panels\IMenu.cs" >
+    <Compile Include="Menu Panels\IMenu.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IDatePagination.cs" >
+    <Compile Include="Shared\IDatePagination.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IIncludeComponent.cs" >
+    <Compile Include="Shared\IIncludeComponent.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\InfinitePagination.ascx.cs" >
+    <Compile Include="Shared\InfinitePagination.ascx.cs">
       <DependentUpon>InfinitePagination.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Shared\IInfinitePagination.cs" >
+    <Compile Include="Shared\IInfinitePagination.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IMenu_Item.cs" >
+    <Compile Include="Shared\IMenu_Item.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IMenu_ItemVertical.cs" >
+    <Compile Include="Shared\IMenu_ItemVertical.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IMenu_Item_Highlighted.cs" >
+    <Compile Include="Shared\IMenu_Item_Highlighted.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IMenu_Item_HighlightedVertical.cs" >
+    <Compile Include="Shared\IMenu_Item_HighlightedVertical.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IPagination.cs" >
+    <Compile Include="Shared\IPagination.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IPaginationMedium.cs" >
+    <Compile Include="Shared\IPaginationMedium.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IPaginationModern.cs" >
+    <Compile Include="Shared\IPaginationModern.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IPaginationShort.cs" >
+    <Compile Include="Shared\IPaginationShort.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IThemeButton.cs" >
+    <Compile Include="Shared\IThemeButton.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Shared\IThemeButtonWithArrow.cs" >
+    <Compile Include="Shared\IThemeButtonWithArrow.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dashboard\LandingPage.aspx.cs">
+      <DependentUpon>LandingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\ContactsQuickSelector.aspx.cs">
+      <DependentUpon>ContactsQuickSelector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacts\ContactsQuickSelector.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Cities\CitiesQuickSelector.aspx.cs">
+      <DependentUpon>CitiesQuickSelector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cities\CitiesQuickSelector.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\ForgotUser.aspx.cs" >
+      <DependentUpon>ForgotUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\SendUserInfo.aspx.cs" >
+      <DependentUpon>SendUserInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\SignIn.aspx.cs" >
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Security\SignOut.aspx.cs" >
+      <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1749,6 +1788,9 @@
     <Content Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable2.aspx" />
     <Content Include="vPropertyMMContracts\ShowMMContractExpiration.aspx" />
     <Content Include="JQuery.js" />
+    <Content Include="Header and Footer\EmailFooter.ascx" />
+    <Content Include="Master Pages\Popup.master" />
+    <Content Include="Shared\InfinitePagination.ascx" />
     <Content Include="Images\ajax-loader.gif" />
     <Content Include="Images\ASCXControlPlaceholder.gif" />
     <Content Include="Images\ASCXControlPlaceholderMobile.png" />
@@ -1877,6 +1919,7 @@
     <Content Include="Images\icon_view.gif" />
     <Content Include="Images\icon_view_over.gif" />
     <Content Include="Images\LargeListSelector.gif" />
+    <Content Include="Images\logo-original.png" />
     <Content Include="Images\logo.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logoMobile.png" />
@@ -1933,17 +1976,21 @@
     <Content Include="Images\spacerOpaque.png" />
     <Content Include="Images\Updating.gif" />
     <Content Include="App_Themes\GridViewTheme\BlueDream.css" />
-    <Content Include="App_Themes\Syrah\BaseStyles.css" />
-    <Content Include="App_Themes\Syrah\Styles.css" />
-    <Content Include="App_Themes\Syrah Mobile\BaseStyles.css" />
-    <Content Include="App_Themes\Syrah Mobile\Styles.css" />
+    <Content Include="App_Themes\Pinot Grigio\BaseStyles.css" />
+    <Content Include="App_Themes\Pinot Grigio\Styles.css" />
+    <Content Include="App_Themes\Pinot Grigio Mobile\BaseStyles.css" />
+    <Content Include="App_Themes\Pinot Grigio Mobile\Styles.css" />
     <Content Include="App_GlobalResources\BaseClasses.en-NZ.resx" />
     <Content Include="App_GlobalResources\BaseClasses.resx" />
     <Content Include="App_GlobalResources\IPv5.en-NZ.resx" />
     <Content Include="App_GlobalResources\IPv5.resx" />
-    <Content Include="Header and Footer\EmailFooter.ascx"  />
-    <Content Include="Master Pages\Popup.master"  />
-    <Content Include="Shared\InfinitePagination.ascx"  />
+    <Content Include="Dashboard\LandingPage.aspx" />
+    <Content Include="Contacts\ContactsQuickSelector.aspx" />
+    <Content Include="Cities\CitiesQuickSelector.aspx" />
+    <Content Include="Security\ForgotUser.aspx"  />
+    <Content Include="Security\SendUserInfo.aspx"  />
+    <Content Include="Security\SignIn.aspx"  />
+    <Content Include="Security\SignOut.aspx"  />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">
@@ -1968,6 +2015,9 @@
       <Project>{FA37A02D-13F3-449C-9CBD-EC20CBD11386}</Project>
       <Name>IPv5.Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dashboard\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

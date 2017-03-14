@@ -20,7 +20,7 @@ namespace IPv5.Business
 /// </remarks>
 /// <seealso cref="Users_RolesTable"></seealso>
 /// <seealso cref="Users_RolesRecord"></seealso>
-public class BaseUsers_RolesRecord : PrimaryKeyRecord
+public class BaseUsers_RolesRecord : PrimaryKeyRecord, IUserRoleRecord
 {
 
 	public readonly static Users_RolesTable TableUtils = Users_RolesTable.Instance;
@@ -122,10 +122,28 @@ public class BaseUsers_RolesRecord : PrimaryKeyRecord
         return resultObj.ToString();
 	}
 
+#region "IUserRecord Members"
+
+	//Get the user's unique identifier
+	public string GetUserId()
+	{
+		return this.GetString(((BaseClasses.IUserTable)this.TableAccess).UserIdColumn);
+	}
+
+#endregion
 
 
 
 
+#region "IUserRoleRecord Members"
+
+	//Get the role to which this user belongs
+	public string GetUserRole()
+	{
+		return this.GetString(((BaseClasses.IUserRoleTable)this.TableAccess).UserRoleColumn);
+	}
+
+#endregion
 
 
 #region "Convenience methods to get/set values of fields"

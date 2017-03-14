@@ -16,6 +16,7 @@
     <Description>Gallery to show multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>ContactNotesMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>-810995177-20204</CheckSum>
   </Self>
   <ComposedOf>

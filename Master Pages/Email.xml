@@ -80,8 +80,6 @@ ISD_GeolocationInit();
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-
-            &lt;AttributeValue&gt;background-color: #3e3e3e; height: 60px; padding-bottom: 8px; padding-left: 8px; padding-right: 8px; padding-top: 4px;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
@@ -93,8 +91,6 @@ ISD_GeolocationInit();
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
-
-            &lt;AttributeValue&gt;background-color: #ffffff; border-bottom: 1px solid  #3e3e3e; border-left: 1px solid  #3e3e3e; border-right:1px solid  #3e3e3e; height: 300px; padding: 10px; vertical-align: top; width:600px;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;

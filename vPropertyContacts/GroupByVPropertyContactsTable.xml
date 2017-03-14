@@ -16,6 +16,7 @@
     <Description>Table view to show or edit multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>VPropertyContactsMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>-1763269227-61628</CheckSum>
   </Self>
   <ComposedOf>

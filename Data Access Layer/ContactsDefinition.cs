@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class ContactsDefinition
 {
 #region "Definition (XML) for ContactsDefinition table"
-	//Next 824 lines contain Table Definition (XML) for table "ContactsDefinition"
+	//Next 828 lines contain Table Definition (XML) for table "ContactsDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -268,24 +268,24 @@ public class ContactsDefinition
          tbf.Append(      @"<columnDBType>nvarchar</columnDBType>");
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
-         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnDBDefault Source=""User""></columnDBDefault>");
          tbf.Append(      @"<columnIndex>N</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
          tbf.Append(      @"<columnPermanent>N</columnPermanent>");
-         tbf.Append(      @"<columnComputed>N</columnComputed>");
-         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
-         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnComputed Source=""User"">N</columnComputed>");
+         tbf.Append(      @"<columnIdentity Source=""User"">N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly Source=""User"">N</columnReadOnly>");
          tbf.Append(      @"<columnRequired>N</columnRequired>");
          tbf.Append(      @"<columnNotNull>N</columnNotNull>");
-         tbf.Append(      @"<columnCaseSensitive Source=""Database"">N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCaseSensitive Source=""User"">N</columnCaseSensitive>");
          tbf.Append(      @"<columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>");
-         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnFullText Source=""User"">N</columnFullText>");
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
-         tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyLabelText>N</applyLabelText>");
          tbf.Append(      @"<applyDFKA>N</applyDFKA>");
          tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
          tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
@@ -298,6 +298,8 @@ public class ContactsDefinition
          tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
          tbf.Append(      @"<insertingFormula></insertingFormula>");
          tbf.Append(      @"<updatingFormula></updatingFormula>");
+         tbf.Append(      @"<InternalName>6</InternalName>");
+         tbf.Append(      @"<columnTableClassName></columnTableClassName>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""7"" Priority=""8"" ColumnNum=""7"">");
          tbf.Append(      @"<columnName>Address3</columnName>");
@@ -306,24 +308,24 @@ public class ContactsDefinition
          tbf.Append(      @"<columnDBType>nvarchar</columnDBType>");
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
-         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnDBDefault Source=""User""></columnDBDefault>");
          tbf.Append(      @"<columnIndex>N</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
          tbf.Append(      @"<columnPermanent>N</columnPermanent>");
-         tbf.Append(      @"<columnComputed>N</columnComputed>");
-         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
-         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnComputed Source=""User"">N</columnComputed>");
+         tbf.Append(      @"<columnIdentity Source=""User"">N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly Source=""User"">N</columnReadOnly>");
          tbf.Append(      @"<columnRequired>N</columnRequired>");
          tbf.Append(      @"<columnNotNull>N</columnNotNull>");
-         tbf.Append(      @"<columnCaseSensitive Source=""Database"">N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCaseSensitive Source=""User"">N</columnCaseSensitive>");
          tbf.Append(      @"<columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>");
-         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnFullText Source=""User"">N</columnFullText>");
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
-         tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyLabelText>N</applyLabelText>");
          tbf.Append(      @"<applyDFKA>N</applyDFKA>");
          tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
          tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
@@ -336,6 +338,8 @@ public class ContactsDefinition
          tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
          tbf.Append(      @"<insertingFormula></insertingFormula>");
          tbf.Append(      @"<updatingFormula></updatingFormula>");
+         tbf.Append(      @"<InternalName>7</InternalName>");
+         tbf.Append(      @"<columnTableClassName></columnTableClassName>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""8"" Priority=""9"" ColumnNum=""8"">");
          tbf.Append(      @"<columnName>CityID</columnName>");

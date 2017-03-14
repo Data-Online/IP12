@@ -32,7 +32,9 @@
 </td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
 
                 </td><td class="panelHeaderR"></td></tr><tr><td class="panelL"></td><td>
-                  <asp:panel id="DirectorsRecordControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td><asp:panel id="DirectorsRecordControlPanel" runat="server"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="fls"><asp:Literal runat="server" id="PropertyIDLabel" Text="Property">	</asp:Literal></td><td class="dfv"><asp:LinkButton runat="server" id="PropertyID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> </td></tr><tr><td class="fls"><asp:Literal runat="server" id="ContactIDLabel" Text="Contact">	</asp:Literal></td><td class="dfv"><asp:LinkButton runat="server" id="ContactID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> </td></tr></table></asp:panel>
+                  <asp:panel id="DirectorsRecordControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td><asp:panel id="DirectorsRecordControlPanel" runat="server"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="fls"><asp:Literal runat="server" id="PropertyIDLabel" Text="Property">	</asp:Literal></td><td class="dfv"><asp:LinkButton runat="server" id="PropertyID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> </td></tr><tr><td class="fls"><asp:Literal runat="server" id="ContactIDLabel" Text="Contact">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
+<asp:LinkButton runat="server" id="ContactID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></span>
+ </td></tr></table></asp:panel>
 </td></tr></table>
 </asp:panel>
                 </td><td class="panelR"></td></tr><tr><td class="panelBL"><img src="../Images/space.gif" class="panelBLSpace" alt="" /></td><td class="panelB"></td><td class="panelBR"><img src="../Images/space.gif" class="panelBRSpace" alt="" /></td></tr></table>

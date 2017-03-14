@@ -31,21 +31,22 @@ The tags are case-sensitive and should contain the following case-sensitive attr
   -->
 <siteMap>
   <siteMapNode>
-    <siteMapNode title="Contacts" description="Contacts" url="~/Contacts/ShowContactsTable.aspx?" imageUrl="" roles="" order="1">
+    <siteMapNode title="" description="Home" url="~/Dashboard/LandingPage.aspx" imageUrl="../Images/home.png" roles="" order="1" />
+    <siteMapNode title="Contacts" description="Contacts" url="~/Contacts/ShowContactsTable.aspx?" imageUrl="" roles="" order="2">
       <siteMapNode title="{Menu:GroupBy} Contacts" description="{Menu:GroupBy} Contacts" url="~/Contacts/GroupByContactsTable.aspx" imageUrl="" roles="" order="1" />
       <siteMapNode title="{Menu:Show} Contacts Gallery" description="{Menu:Show} Contacts Gallery" url="~/Contacts/ShowContactsGallery.aspx" imageUrl="" roles="" order="2" />
       <siteMapNode title="{Menu:Show} Contacts" description="{Menu:Show} Contacts" url="~/Contacts/ShowContactsTable.aspx" imageUrl="" roles="" order="3" />
       <siteMapNode title="{Menu:Edit} Contacts" description="{Menu:Edit} Contacts" url="~/Contacts/EditContactsTable.aspx" imageUrl="" roles="" order="4" />
       <siteMapNode title="{Menu:Add} Contacts" description="{Menu:Add} Contacts" url="~/Contacts/AddContacts.aspx" imageUrl="" roles="" order="5" />
     </siteMapNode>
-    <siteMapNode title="Properties" description="Properties" url="~/Properties/ShowPropertiesTable.aspx?" imageUrl="" roles="" order="2">
+    <siteMapNode title="Properties" description="Properties" url="~/Properties/ShowPropertiesTable.aspx?" imageUrl="" roles="" order="3">
       <siteMapNode title="{Menu:GroupBy} Properties" description="{Menu:GroupBy} Properties" url="~/Properties/GroupByPropertiesTable.aspx" imageUrl="" roles="" order="1" />
       <siteMapNode title="{Menu:Show} Properties Gallery" description="{Menu:Show} Properties Gallery" url="~/Properties/ShowPropertiesGallery.aspx" imageUrl="" roles="" order="2" />
       <siteMapNode title="{Menu:Show} Properties" description="{Menu:Show} Properties" url="~/Properties/ShowPropertiesTable.aspx" imageUrl="" roles="" order="3" />
       <siteMapNode title="{Menu:Edit} Properties" description="{Menu:Edit} Properties" url="~/Properties/EditPropertiesTable.aspx" imageUrl="" roles="" order="4" />
       <siteMapNode title="{Menu:Add} Properties" description="{Menu:Add} Properties" url="~/Properties/AddProperties.aspx" imageUrl="" roles="" order="5" />
     </siteMapNode>
-    <siteMapNode title="Suppliers" description="Suppliers" url="~/Suppliers/ShowSuppliersTable.aspx?" imageUrl="" roles="" order="3">
+    <siteMapNode title="Suppliers" description="Suppliers" url="~/Suppliers/ShowSuppliersTable.aspx?" imageUrl="" roles="" order="4">
       <siteMapNode title="{Menu:GroupBy} Suppliers" description="{Menu:GroupBy} Suppliers" url="~/Suppliers/GroupBySuppliersTable.aspx" imageUrl="" roles="" order="1" />
       <siteMapNode title="{Menu:Show} Suppliers Gallery" description="{Menu:Show} Suppliers Gallery" url="~/Suppliers/ShowSuppliersGallery.aspx" imageUrl="" roles="" order="2" />
       <siteMapNode title="{Menu:Show} Suppliers" description="{Menu:Show} Suppliers" url="~/Suppliers/ShowSuppliersTable.aspx" imageUrl="" roles="" order="3" />

@@ -23848,7 +23848,7 @@
     <converter />
   </option>
   <option name="Directory" readonly="False" feature="" displayorder="-1">
-    <value>C:\Users\atkin\Documents\GitHub\IP12</value>
+    <value>P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5</value>
     <datatype>System.String</datatype>
     <defaultvalue />
     <displayname />
@@ -23952,7 +23952,7 @@
     <converter />
   </option>
   <option name="Theme" readonly="False" feature="" displayorder="-1">
-    <value>Syrah</value>
+    <value>Pinot Grigio</value>
     <datatype>System.String</datatype>
     <defaultvalue />
     <displayname />
@@ -24069,6 +24069,10 @@
   </option>
   <option name="o_GenerateSharepoint10" readonly="False" displayorder="-1">
     <value>No</value>
+    <datatype>System.String</datatype>
+  </option>
+  <option name="RolesTable" readonly="False" displayorder="-1">
+    <value>DatabaseMM_IP1%dbo.Users_Roles</value>
     <datatype>System.String</datatype>
   </option>
   <optiongroup name="NewAppOptions" displayorder="1">

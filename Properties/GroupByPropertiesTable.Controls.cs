@@ -315,27 +315,29 @@ public class PropertyContactsTableControlRow : BasePropertyContactsTableControlR
         // SaveData, GetUIData, and Validate methods.
         
 }
-public class LinkTableTableControl : BaseLinkTableTableControl
-{
-    // The BaseLinkTableTableControl class implements the LoadData, DataBind, CreateWhereClause
-    // and other methods to load and display the data in a table control.
-
-    // This is the ideal place to add your code customizations. You can override the LoadData and CreateWhereClause,
-    // The LinkTableTableControlRow class offers another place where you can customize
-    // the DataBind, GetUIData, SaveData and Validate methods specific to each row displayed on the table.
-
-}
-public class LinkTableTableControlRow : BaseLinkTableTableControlRow
-{
-      
-        // The BaseLinkTableTableControlRow implements code for a ROW within the
-        // the LinkTableTableControl table.  The BaseLinkTableTableControlRow implements the DataBind and SaveData methods.
-        // The loading of data is actually performed by the LoadData method in the base class of LinkTableTableControl.
-
-        // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
-        // SaveData, GetUIData, and Validate methods.
-        
-}
+//public class LinkTableTableControl : BaseLinkTableTableControl
+//{
+//    // The BaseLinkTableTableControl class implements the LoadData, DataBind, CreateWhereClause
+//    // and other methods to load and display the data in a table control.
+//
+//    // This is the ideal place to add your code customizations. You can override the LoadData and CreateWhereClause,
+//    // The LinkTableTableControlRow class offers another place where you can customize
+//    // the DataBind, GetUIData, SaveData and Validate methods specific to each row displayed on the table.
+//
+//}
+//
+//public class LinkTableTableControlRow : BaseLinkTableTableControlRow
+//{
+//      
+//        // The BaseLinkTableTableControlRow implements code for a ROW within the
+//        // the LinkTableTableControl table.  The BaseLinkTableTableControlRow implements the DataBind and SaveData methods.
+//        // The loading of data is actually performed by the LoadData method in the base class of LinkTableTableControl.
+//
+//        // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
+//        // SaveData, GetUIData, and Validate methods.
+//        
+//}
+//
 public class BankLoansTableControl : BaseBankLoansTableControl
 {
     // The BaseBankLoansTableControl class implements the LoadData, DataBind, CreateWhereClause
@@ -357,14 +359,202 @@ public class BankLoansTableControlRow : BaseBankLoansTableControlRow
         // SaveData, GetUIData, and Validate methods.
         
 }
-public class ContactsRecordControl : BaseContactsRecordControl
+    //public class ContactsRecordControl : BaseContactsRecordControl
+    //{
+    //      
+    //        // The BaseContactsRecordControl implements the LoadData, DataBind and other
+    //        // methods to load and display the data in a table control.
+    //
+    //        // This is the ideal place to add your code customizations. For example, you can override the LoadData, 
+    //        // CreateWhereClause, DataBind, SaveData, GetUIData, and Validate methods.
+    //        
+    //}
+    //
+    //public class LinkTableTableControl1 : BaseLinkTableTableControl1
+    //{
+    //    // The BaseLinkTableTableControl1 class implements the LoadData, DataBind, CreateWhereClause
+    //    // and other methods to load and display the data in a table control.
+    //
+    //    // This is the ideal place to add your code customizations. You can override the LoadData and CreateWhereClause,
+    //    // The LinkTableTableControl1Row class offers another place where you can customize
+    //    // the DataBind, GetUIData, SaveData and Validate methods specific to each row displayed on the table.
+    //    
+    //}
+    //
+    //public class LinkTableTableControl1Row : BaseLinkTableTableControl1Row
+    //{
+    //      
+    //        // The BaseLinkTableTableControl1Row implements code for a ROW within the
+    //        // the LinkTableTableControl1 table.  The BaseLinkTableTableControl1Row implements the DataBind and SaveData methods.
+    //        // The loading of data is actually performed by the LoadData method in the base class of LinkTableTableControl1.
+    //
+    //        // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
+    //        // SaveData, GetUIData, and Validate methods.
+    //        
+    //}
+    //
+    //public class ContactsTableControl : BaseContactsTableControl
+    //{
+    //    // The BaseContactsTableControl class implements the LoadData, DataBind, CreateWhereClause
+    //    // and other methods to load and display the data in a table control.
+    //
+    //    // This is the ideal place to add your code customizations. You can override the LoadData and CreateWhereClause,
+    //    // The ContactsTableControlRow class offers another place where you can customize
+    //    // the DataBind, GetUIData, SaveData and Validate methods specific to each row displayed on the table.
+    //    
+    //}
+    //
+    //public class ContactsTableControlRow : BaseContactsTableControlRow
+    //{
+    //      
+    //        // The BaseContactsTableControlRow implements code for a ROW within the
+    //        // the ContactsTableControl table.  The BaseContactsTableControlRow implements the DataBind and SaveData methods.
+    //        // The loading of data is actually performed by the LoadData method in the base class of ContactsTableControl.
+    //
+    //        // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
+    //        // SaveData, GetUIData, and Validate methods.
+    //        
+    //}
+    //
+    //public class LinkTableRecordControl : BaseLinkTableRecordControl
+    //{
+    //      
+    //        // The BaseLinkTableRecordControl implements the LoadData, DataBind and other
+    //        // methods to load and display the data in a table control.
+    //
+    //        // This is the ideal place to add your code customizations. For example, you can override the LoadData, 
+    //        // CreateWhereClause, DataBind, SaveData, GetUIData, and Validate methods.
+    //        
+    //}
+    //
+    //public class LinkTableTableControl1 : BaseLinkTableTableControl1
+    //{
+    //    // The BaseLinkTableTableControl1 class implements the LoadData, DataBind, CreateWhereClause
+    //    // and other methods to load and display the data in a table control.
+    //
+    //    // This is the ideal place to add your code customizations. You can override the LoadData and CreateWhereClause,
+    //    // The LinkTableTableControl1Row class offers another place where you can customize
+    //    // the DataBind, GetUIData, SaveData and Validate methods specific to each row displayed on the table.
+    //    
+    //}
+    //
+    //public class LinkTableTableControl1Row : BaseLinkTableTableControl1Row
+    //{
+    //      
+    //        // The BaseLinkTableTableControl1Row implements code for a ROW within the
+    //        // the LinkTableTableControl1 table.  The BaseLinkTableTableControl1Row implements the DataBind and SaveData methods.
+    //        // The loading of data is actually performed by the LoadData method in the base class of LinkTableTableControl1.
+    //
+    //        // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
+    //        // SaveData, GetUIData, and Validate methods.
+    //        
+    //}
+    //
+    public class ContactsTableControl1 : BaseContactsTableControl1
+    {
+        // The BaseContactsTableControl1 class implements the LoadData, DataBind, CreateWhereClause
+        // and other methods to load and display the data in a table control.
+
+        // This is the ideal place to add your code customizations. You can override the LoadData and CreateWhereClause,
+        // The ContactsTableControl1Row class offers another place where you can customize
+        // the DataBind, GetUIData, SaveData and Validate methods specific to each row displayed on the table.
+
+        public override void ResetButton1_Click(object sender, ImageClickEventArgs args)
+        {
+
+            // Ensure that only included items in Many-to-Many are displayed
+
+            base.ResetButton1_Click(sender, args);
+
+            string initialVal = EvaluateFormula("\"--Included--\"");
+
+
+            this.ShowSelectedFilter.SelectedValue = initialVal;
+
+        }
+    
+		public override string[] GetAutoCompletionList_ContactsSearchText1(String prefixText,int count)
+        {
+            ArrayList resultList = new ArrayList();
+            ArrayList wordList= new ArrayList();
+            
+            CompoundFilter filterJoin = CreateCompoundJoinFilter();    
+            WhereClause wc = CreateWhereClause(prefixText,"ContactsSearchText1", "WordsStartingWithSearchString", "[^a-zA-Z0-9]");
+
+
+            //var zzz = MiscUtils.GetSelectedValue(LinkTableTable.PropertyID, this.GetFromSession(this.BankLoansSearch1))
+            ////if ((wc == null))
+            ////{
+            ////    wc = new WhereClause();
+            ////}
+            ////bool expandForeignKey = false;
+            ////bool isCaseSensitive = false;
+            ////wc.iAND(LinkTableTable.ContactID, BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, "1", expandForeignKey, isCaseSensitive);
+
+            
+            if (count==0) count = 10;
+            IPv5.Business.ContactsRecord[] recordList  = ContactsTable.GetRecords(filterJoin, wc, null, 0, count, ref count);
+            String resultItem = "";
+            if (resultItem == "") resultItem = "";
+            foreach (ContactsRecord rec in recordList ){
+                // Exit the loop if recordList count has reached AutoTypeAheadListSize.
+                if (resultList.Count >= count) {
+                    break;
+                }
+                // If the field is configured to Display as Foreign key, Format() method returns the 
+                // Display as Forien Key value instead of original field value.
+                // Since search had to be done in multiple fields (selected in Control's page property, binding tab) in a record,
+                // We need to find relevent field to display which matches the prefixText and is not already present in the result list.
+        
+                resultItem = rec.Format(ContactsTable.LastName);
+  
+                if (resultItem != null) {
+                    string prText = prefixText;
+                    if(ContactsTable.LastName.IsFullTextSearchable) {
+                        FullTextExpression ft = new FullTextExpression();
+                        prText = ft.GetFirstNonExcludedTerm(prText);
+                    }
+                    if (!string.IsNullOrEmpty(prText) && resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).Contains(prText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture))) {
+                        bool isAdded = FormatSuggestions(prText, resultItem, 50, "AtBeginningOfMatchedString", "WordsStartingWithSearchString", "[^a-zA-Z0-9]", resultList, ContactsTable.LastName.IsFullTextSearchable);
+                        if (isAdded) {
+                            continue;
+                        }
+                    }
+                }
+      
+                resultItem = rec.Format(ContactsTable.LastName2);
+  
+                if (resultItem != null) {
+                    string prText = prefixText;
+                    if(ContactsTable.LastName2.IsFullTextSearchable) {
+                        FullTextExpression ft = new FullTextExpression();
+                        prText = ft.GetFirstNonExcludedTerm(prText);
+                    }
+                    if (!string.IsNullOrEmpty(prText) && resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).Contains(prText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture))) {
+                        bool isAdded = FormatSuggestions(prText, resultItem, 50, "AtBeginningOfMatchedString", "WordsStartingWithSearchString", "[^a-zA-Z0-9]", resultList, ContactsTable.LastName2.IsFullTextSearchable);
+                        if (isAdded) {
+                            continue;
+                        }
+                    }
+                }
+                      
+            }
+              
+            resultList.Sort();
+            string[] result = new string[resultList.Count];
+            Array.Copy(resultList.ToArray(), result, resultList.Count);
+            return result;
+        }
+}
+public class ContactsTableControl1Row : BaseContactsTableControl1Row
 {
       
-        // The BaseContactsRecordControl implements the LoadData, DataBind and other
-        // methods to load and display the data in a table control.
+        // The BaseContactsTableControl1Row implements code for a ROW within the
+        // the ContactsTableControl1 table.  The BaseContactsTableControl1Row implements the DataBind and SaveData methods.
+        // The loading of data is actually performed by the LoadData method in the base class of ContactsTableControl1.
 
-        // This is the ideal place to add your code customizations. For example, you can override the LoadData, 
-        // CreateWhereClause, DataBind, SaveData, GetUIData, and Validate methods.
+        // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
+        // SaveData, GetUIData, and Validate methods.
         
 }
 #endregion
@@ -466,6 +656,7 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 SetDescription3();
                 SetDescriptionLabel3();
                 SetExpiryDate2();
+                SetExpiryDateLabel1();
                 SetBankLoansRowDeleteButton();
               
                 SetBankLoansRowEditButton();
@@ -574,6 +765,12 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void SetDescriptionLabel3()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetExpiryDateLabel1()
                   {
                   
                     
@@ -772,14 +969,11 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -929,6 +1123,28 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
               
         {
         
+              try
+              {
+                    string url = "../BankLoans/EditBankLoans.aspx?BankLoans={BankLoansTableControlRow:PK}&SaveAndNewVisible=False";
+              
+                      
+                    url = this.ModifyRedirectUrl(url, "", true);
+                    
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
+                    
+                    url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(MiscUtils.FindControlRecursively(this.GetParentTableControl(), "BankLoansTableControl_PostbackTracker").ClientID);                            
+                                
+                string javascriptCall = "";
+                
+                    javascriptCall = "initializeNewWindow(document.getElementById('" + MiscUtils.FindControlRecursively(this.GetParentTableControl(), "BankLoansTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                  
+                       
+                    this.BankLoansRowEditButton.Attributes["onClick"] = javascriptCall + "return false;";            
+                }
+                catch
+                {
+                    // do nothing.  If the code above fails, server side click event, BankLoansRowEditButton_ClickBankLoansRowEditButton_Click will be trigger when user click the button.
+                }
+                  
    
         }
             
@@ -972,10 +1188,7 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../BankLoans/EditBankLoans.aspx?BankLoans={PK}";
-            
-            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
-                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            string url = @"../BankLoans/EditBankLoans.aspx?BankLoans={BankLoansTableControlRow:PK}&SaveAndNewVisible=False";
             
         bool shouldRedirect = true;
         string target = null;
@@ -1002,7 +1215,13 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
             }
             if (shouldRedirect) {
                 this.Page.ShouldSaveControlsToSession = true;
-      this.Page.Response.Redirect(url);
+      
+                    url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(MiscUtils.FindControlRecursively(this.GetParentTableControl(), "BankLoansTableControl_PostbackTracker").ClientID);                            
+                                
+                string javascriptCall = "";
+                
+                    javascriptCall = "initializeNewWindow(document.getElementById('" + MiscUtils.FindControlRecursively(this.GetParentTableControl(), "BankLoansTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                  
+                AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "BankLoansRowEditButton_Click", javascriptCall, true);
         
             }
         
@@ -1129,6 +1348,12 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
             }
         }
             
+        public System.Web.UI.WebControls.Literal ExpiryDateLabel1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel1");
+            }
+        }
+        
     #endregion
 
     #region "Helper Functions"
@@ -1249,6 +1474,27 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
             if (!this.Page.IsPostBack)
             {
                 string initialVal = "";
+                
+                  if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                  {
+                  initialVal = "";
+                  }
+                
+                if  (this.InSession(this.SortControl7)) 				
+                    initialVal = this.GetFromSession(this.SortControl7);
+                
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.SortControl7.Items.Add(new ListItem(initialVal, initialVal));
+                        
+                    this.SortControl7.SelectedValue = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
                 if  (this.InSession(this.BankLoansSearch1)) 				
                     initialVal = this.GetFromSession(this.BankLoansSearch1);
                 
@@ -1261,30 +1507,6 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                 {
                         
                     this.BankLoansSearch1.Text = initialVal;
-                            
-                    }
-            }
-            if (!this.Page.IsPostBack)
-            {
-                string initialVal = "";
-                if  (this.InSession(this.DescriptionFilter2)) 				
-                    initialVal = this.GetFromSession(this.DescriptionFilter2);
-                
-                else
-                    
-                    initialVal = EvaluateFormula("URL(\"Description\")");
-                
-                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
-                {
-                initialVal = "";
-                }
-              
-                if (initialVal != null && initialVal != "")		
-                {
-                        
-                    this.DescriptionFilter2.Items.Add(new ListItem(initialVal, initialVal));
-                        
-                    this.DescriptionFilter2.SelectedValue = initialVal;
                             
                     }
             }
@@ -1380,8 +1602,6 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
-              this.DescriptionSortLabel2.Click += DescriptionSortLabel2_Click;
-            
             // Setup the button events.
           
                     this.BankLoansExportExcelButton.Click += BankLoansExportExcelButton_Click;
@@ -1404,7 +1624,7 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                         
                     this.BankLoansFiltersButton.Button.Click += BankLoansFiltersButton_Click;
                         
-            this.DescriptionFilter2.SelectedIndexChanged += new EventHandler(DescriptionFilter2_SelectedIndexChanged);
+            this.SortControl7.SelectedIndexChanged += new EventHandler(SortControl7_SelectedIndexChanged);
                     
         
          //' Setup events for others
@@ -1654,13 +1874,11 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                 
                 
                 
-                SetDescriptionFilter2();
-                SetDescriptionLabel6();
-                SetDescriptionSortLabel2();
-                
                 SetExpiryDateLabel4();
                 
                 
+                SetSortByLabel7();
+                SetSortControl7();
                 SetBankLoansExportExcelButton();
               
                 SetBankLoansImportButton();
@@ -2012,12 +2230,6 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                 }
             }
                   
-            if (MiscUtils.IsValueSelected(this.DescriptionFilter2)) {
-                        
-                wc.iAND(BankLoansTable.Description, BaseFilter.ComparisonOperator.EqualsTo, MiscUtils.GetSelectedValue(this.DescriptionFilter2, this.GetFromSession(this.DescriptionFilter2)), false, false);
-                    
-            }
-                      
             if (MiscUtils.IsValueSelected(this.ExpiryDateFromFilter1)) {
                 string val = MiscUtils.GetSelectedValue(this.ExpiryDateFromFilter1, this.GetFromSession(this.ExpiryDateFromFilter1));
                 DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
@@ -2118,14 +2330,6 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                 }
             }
                   
-      String DescriptionFilter2SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "DescriptionFilter2_Ajax"];
-            if (MiscUtils.IsValueSelected(DescriptionFilter2SelectedValue)) {
-
-              
-                wc.iAND(BankLoansTable.Description, BaseFilter.ComparisonOperator.EqualsTo, DescriptionFilter2SelectedValue, false, false);
-                      
-      }
-                      
             string ExpiryDateFromFilter1SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "ExpiryDateFromFilter1_Ajax"];
             if (MiscUtils.IsValueSelected(ExpiryDateFromFilter1SelectedValue)) {
                 DateTime d = DateParser.ParseDate(ExpiryDateFromFilter1SelectedValue, DateColumn.DEFAULT_FORMAT);
@@ -2443,24 +2647,30 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
-        public virtual void SetDescriptionLabel6()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDescriptionSortLabel2()
-                  {
-                  
-                    
-        }
-                
         public virtual void SetExpiryDateLabel4()
                   {
                   
                     
         }
                 
+        public virtual void SetSortByLabel7()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.SortByLabel7.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetSortControl7()
+        {
+            
+                this.PopulateSortControl7(MiscUtils.GetSelectedValue(this.SortControl7,  GetFromSession(this.SortControl7)), 500);					
+                    
+
+        }
+            
         public virtual void SetBankLoansSearch1()
         {
                                             
@@ -2469,115 +2679,43 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                                    
         }
             
-        public virtual void SetDescriptionFilter2()
-        {
-            
-            this.PopulateDescriptionFilter2(MiscUtils.GetSelectedValue(this.DescriptionFilter2,  GetFromSession(this.DescriptionFilter2)), 500);					
-                                     
-        }
-            
-        // Get the filters' data for DescriptionFilter2.
+        // Get the filters' data for SortControl7.
                 
-        protected virtual void PopulateDescriptionFilter2(string selectedValue, int maxItems)
+        protected virtual void PopulateSortControl7(string selectedValue, int maxItems)
                     
         {
-        
             
-            //Setup the WHERE clause.
-                        
-            this.DescriptionFilter2.Items.Clear();
-            WhereClause wc = this.CreateWhereClause_DescriptionFilter2();            
-            			  			
-            // Set up the WHERE and the ORDER BY clause by calling the CreateWhereClause_DescriptionFilter2 function.
-            // It is better to customize the where clause there.
-             
-            // Setup the static list items        
-            
-                // Add the All item.
-                this.DescriptionFilter2.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
               
-            
-            
-            OrderBy orderBy = new OrderBy(false, false);
-            orderBy.Add(BankLoansTable.Description, OrderByItem.OrderDir.Asc);                
-            
-            
-            string[] values = new string[0];
-            if (wc.RunQuery)
-            {
-            
-                values = BankLoansTable.GetValues(BankLoansTable.Description, wc, orderBy, maxItems);
-            
-            }
-            
-            ArrayList listDuplicates = new ArrayList();
-            foreach (string cvalue in values)
-            {
-            // Create the item and add to the list.
-            string fvalue;
-            if ( BankLoansTable.Description.IsColumnValueTypeBoolean()) {
-                    fvalue = cvalue;
-                }else {
-                    fvalue = BankLoansTable.Description.Format(cvalue);
-                }
-                if (fvalue == null) {
-                    fvalue = "";
-                }
-
-                fvalue = fvalue.Trim();
-
-                if ( fvalue.Length > 50 ) {
-                    fvalue = fvalue.Substring(0, 50) + "...";
-                }
-
-                ListItem dupItem = this.DescriptionFilter2.Items.FindByText(fvalue);
-								
-                if (dupItem != null) {
-                    listDuplicates.Add(fvalue);
-                    if (!string.IsNullOrEmpty(dupItem.Value))
-                    {
-                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
-                    }
-                }
-
-                ListItem newItem = new ListItem(fvalue, cvalue);
-                this.DescriptionFilter2.Items.Add(newItem);
-
-                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                }
-            }
-
-                          
+                this.SortControl7.Items.Clear();
+                
+              // 1. Setup the static list items
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Ascending}"), "Description Asc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Descending}"), "Description Desc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Ascending}"), "ExpiryDate Asc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Descending}"), "ExpiryDate Desc"));
+              
             try
-            {
-      
-                
+            {          
                 // Set the selected value.
-                MiscUtils.SetSelectedValue(this.DescriptionFilter2, selectedValue);
-                
+                MiscUtils.SetSelectedValue(this.SortControl7, selectedValue);
+
+               
             }
             catch
             {
             }
-            
-            
-            if (this.DescriptionFilter2.SelectedValue != null && this.DescriptionFilter2.Items.FindByValue(this.DescriptionFilter2.SelectedValue) == null)
-                this.DescriptionFilter2.SelectedValue = null;
-                           
+              
+            if (this.SortControl7.SelectedValue != null && this.SortControl7.Items.FindByValue(this.SortControl7.SelectedValue) == null)
+                this.SortControl7.SelectedValue = null;
+              
         }
             
-        public virtual WhereClause CreateWhereClause_DescriptionFilter2()
-        {
-            // Create a where clause for the filter DescriptionFilter2.
-            // This function is called by the Populate method to load the items 
-            // in the DescriptionFilter2DropDownList
-        
-            WhereClause wc = new WhereClause();
-            return wc;
-            
-        }
-      
 
     
         protected virtual void Control_PreRender(object sender, System.EventArgs e)
@@ -2611,9 +2749,9 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
             base.SaveControlsToSession();
             // Save filter controls to values to session.
         
-            this.SaveToSession(this.BankLoansSearch1, this.BankLoansSearch1.Text);
+            this.SaveToSession(this.SortControl7, this.SortControl7.SelectedValue);
                   
-            this.SaveToSession(this.DescriptionFilter2, this.DescriptionFilter2.SelectedValue);
+            this.SaveToSession(this.BankLoansSearch1, this.BankLoansSearch1.Text);
                   
             this.SaveToSession(this.ExpiryDateFromFilter1, this.ExpiryDateFromFilter1.Text);
                   
@@ -2646,9 +2784,9 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
         {
             // Save filter controls to values to session.
           
+            this.SaveToSession(this.SortControl7, this.SortControl7.SelectedValue);
+                  
       this.SaveToSession("BankLoansSearch1_Ajax", this.BankLoansSearch1.Text);
-              
-      this.SaveToSession("DescriptionFilter2_Ajax", this.DescriptionFilter2.SelectedValue);
               
       this.SaveToSession("ExpiryDateFromFilter1_Ajax", this.ExpiryDateFromFilter1.Text);
               
@@ -2664,8 +2802,8 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
             base.ClearControlsFromSession();
             // Clear filter controls values from the session.
         
+            this.RemoveFromSession(this.SortControl7);
             this.RemoveFromSession(this.BankLoansSearch1);
-            this.RemoveFromSession(this.DescriptionFilter2);
             this.RemoveFromSession(this.ExpiryDateFromFilter1);
             this.RemoveFromSession(this.ExpiryDateToFilter1);
             
@@ -2827,9 +2965,6 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
          themeButtonBankLoansFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonExpandArrow.png";
     
       
-            if (MiscUtils.IsValueSelected(DescriptionFilter2))
-                themeButtonBankLoansFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonCheckmark.png";
-        
    
         }
                
@@ -2959,36 +3094,6 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
-        public virtual void DescriptionSortLabel2_Click(object sender, EventArgs args)
-        {
-            //Sorts by Description when clicked.
-              
-            // Get previous sorting state for Description.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(BankLoansTable.Description);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for Description.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(BankLoansTable.Description, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by Description, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
 
         // Generate the event handling functions for button events.
         
@@ -3327,8 +3432,9 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
               
             try {
                 
-              this.DescriptionFilter2.ClearSelection();
-            
+           
+            this.SortControl7.ClearSelection();
+          
               this.BankLoansSearch1.Text = "";
             
               this.ExpiryDateFromFilter1.Text = "";
@@ -3539,15 +3645,56 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for filter and search events.
         
-        // event handler for FieldFilter
-        protected virtual void DescriptionFilter2_SelectedIndexChanged(object sender, EventArgs args)
+        // event handler for OrderSort
+        protected virtual void SortControl7_SelectedIndexChanged(object sender, EventArgs args)
         {
-            // Setting the DataChanged to True results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-            
-           				
+              
+                  string SelVal1 = this.SortControl7.SelectedValue.ToUpper();
+                  string[] words1 = SelVal1.Split(' ');
+                  if (SelVal1 != "" )
+                  {
+                  SelVal1 = SelVal1.Replace(words1[words1.Length - 1], "").TrimEnd();
+                  foreach (BaseClasses.Data.BaseColumn ColumnNam in BankLoansTable.GetColumns())
+                  {
+                  if (ColumnNam.Name.ToUpper().Equals(SelVal1))
+                  {
+                  SelVal1 = ColumnNam.InternalName;
+                  }
+                  }
+                  }
+
+                
+                OrderByItem sd = this.CurrentSortOrder.Find(BankLoansTable.GetColumnByName(SelVal1));
+                if (sd == null || this.CurrentSortOrder.Items != null)
+                {
+                // First time sort, so add sort order for Discontinued.
+                if (BankLoansTable.GetColumnByName(SelVal1) != null)
+                {
+                  this.CurrentSortOrder.Reset();
+                }
+
+                //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+                if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+                
+                  if (SelVal1 != "--PLEASE_SELECT--" && BankLoansTable.GetColumnByName(SelVal1) != null)
+                  {
+                    if (words1[words1.Length - 1].Contains("ASC"))
+                  {
+                  this.CurrentSortOrder.Add(BankLoansTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Asc);
+                    }
+                    else
+                    {
+                      if (words1[words1.Length - 1].Contains("DESC"))
+                  {
+                  this.CurrentSortOrder.Add(BankLoansTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Desc );
+                      }
+                    }
+                  }
+                
+                }
+                this.DataChanged = true;
+              				
         }
             
     
@@ -3702,24 +3849,6 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
             }
         }
         
-        public System.Web.UI.WebControls.DropDownList DescriptionFilter2 {
-            get {
-                return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionFilter2");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal DescriptionLabel6 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel6");
-            }
-        }
-        
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel2 {
-            get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionSortLabel2");
-            }
-        }
-        
         public System.Web.UI.WebControls.TextBox ExpiryDateFromFilter1 {
             get {
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateFromFilter1");
@@ -3737,6 +3866,18 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateToFilter1");
             }
         }
+        
+        public System.Web.UI.WebControls.Label SortByLabel7 {
+            get {
+                return (System.Web.UI.WebControls.Label)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortByLabel7");
+            }
+        }
+        
+          public System.Web.UI.WebControls.DropDownList SortControl7 {
+          get {
+          return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortControl7");
+          }
+          }
         
 #endregion
 
@@ -3872,6 +4013,4810 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
 
     }
   
+// Base class for the ContactsTableControl1Row control on the GroupByPropertiesTable page.
+// Do not modify this class. Instead override any method in ContactsTableControl1Row.
+public class BaseContactsTableControl1Row : IPv5.UI.BaseApplicationRecordControl
+{
+        public BaseContactsTableControl1Row()
+        {
+            this.Init += Control_Init;
+            this.Load += Control_Load;
+            this.PreRender += Control_PreRender;
+            this.EvaluateFormulaDelegate = new DataSource.EvaluateFormulaDelegate(this.EvaluateFormula);
+        }
+
+        // To customize, override this method in ContactsTableControl1Row.
+        protected virtual void Control_Init(object sender, System.EventArgs e)
+        {
+                
+        }
+
+        // To customize, override this method in ContactsTableControl1Row.
+        protected virtual void Control_Load(object sender, System.EventArgs e)
+        {      
+                    
+        
+              // Register the event handlers.
+
+          
+                    this.EditRowButton.Click += EditRowButton_Click;
+                        
+                    this.ViewRowButton.Click += ViewRowButton_Click;
+                        
+              this.SelectRow.CheckedChanged += SelectRow_CheckedChanged;
+            
+        }
+
+        public virtual void LoadData()  
+        {
+            // Load the data from the database into the DataSource DatabaseMM_IP1%dbo.Contacts record.
+            // It is better to make changes to functions called by LoadData such as
+            // CreateWhereClause, rather than making changes here.
+            
+        
+            // The RecordUniqueId is set the first time a record is loaded, and is
+            // used during a PostBack to load the record.
+            if (this.RecordUniqueId != null && this.RecordUniqueId.Length > 0) {
+              
+                this.DataSource = ContactsTable.GetRecord(this.RecordUniqueId, true);
+              
+                return;
+            }
+      
+            // Since this is a row in the table, the data for this row is loaded by the 
+            // LoadData method of the BaseContactsTableControl1 when the data for the entire
+            // table is loaded.
+            
+            this.DataSource = new ContactsRecord();
+            
+        }
+
+        public override void DataBind()
+        {
+            // The DataBind method binds the user interface controls to the values
+            // from the database record.  To do this, it calls the Set methods for 
+            // each of the field displayed on the webpage.  It is better to make 
+            // changes in the Set methods, rather than making changes here.
+            
+            base.DataBind();
+            
+            this.ClearControlsFromSession();
+            
+            // Make sure that the DataSource is initialized.
+            
+            if (this.DataSource == null) {
+             //This is to make sure all the controls will be invisible if no record is present in the cell
+             
+                return;
+            }
+              
+            // LoadData for DataSource for chart and report if they exist
+          
+            // Store the checksum. The checksum is used to
+            // ensure the record was not changed by another user.
+            if (this.DataSource.GetCheckSumValue() != null)
+                this.CheckSum = this.DataSource.GetCheckSumValue().Value;
+            
+
+            // Call the Set methods for each controls on the panel
+        
+                SetAddress14();
+                SetAddress1Label11();
+                SetAddress24();
+                SetAddress34();
+                SetBankAccount2();
+                SetBankAccountLabel();
+                SetCityID3();
+                SetCountryID3();
+                SetDateOfBirth2();
+                SetDateOfBirthLabel();
+                
+                SeteMail3();
+                SeteMailLabel();
+                SetFirstName22();
+                SetFirstName2Label();
+                SetFirstName4();
+                SetIrdNumber2();
+                SetIrdNumberLabel();
+                SetLastName22();
+                SetLastName4();
+                SetLiteral();
+                SetPhoneNumber2();
+                SetPhoneNumberLabel();
+                SetPlaceOfBirth2();
+                SetPlaceOfBirthLabel();
+                SetPostCode4();
+                
+                SetTrustName2();
+                SetTrustNameLabel();
+                
+                SetEditRowButton();
+              
+                SetViewRowButton();
+              
+
+      
+
+            this.IsNewRecord = true;
+          
+            if (this.DataSource.IsCreated) {
+                this.IsNewRecord = false;
+              
+                if (this.DataSource.GetID() != null)
+                    this.RecordUniqueId = this.DataSource.GetID().ToXmlString();
+              
+            }
+            
+
+            // Now load data for each record and table child UI controls.
+            // Ordering is important because child controls get 
+            // their parent ids from their parent UI controls.
+            bool shouldResetControl = false;
+            if (shouldResetControl) { }; // prototype usage to void compiler warnings
+            
+      RegisterRowForHiddenVariableSelection();
+    
+        }
+        
+        
+          public virtual void RegisterRowForHiddenVariableSelection()
+          {
+          PropertiesTableControlRow propertiesTableControlRowObj = (IPv5.UI.Controls.GroupByPropertiesTable.PropertiesTableControlRow)(MiscUtils.GetParentControlObject(this, "PropertiesTableControlRow"));
+              string id = "";
+              if ((propertiesTableControlRowObj != null) && (propertiesTableControlRowObj.GetRecord() != null) && (propertiesTableControlRowObj.GetRecord().IsCreated)) {
+                 id = propertiesTableControlRowObj.GetRecord().GetID().ToXmlString();
+              }
+            ContactsTableControl1 contactsTableControl1Obj = (IPv5.UI.Controls.GroupByPropertiesTable.ContactsTableControl1)(MiscUtils.GetParentControlObject(this, "ContactsTableControl1"));  
+            System.Web.UI.HtmlControls.HtmlInputHidden addvalues = (System.Web.UI.HtmlControls.HtmlInputHidden)contactsTableControl1Obj.FindControl("_AddValuesContactsTableControl1");
+            System.Web.UI.HtmlControls.HtmlInputHidden removeValues = (System.Web.UI.HtmlControls.HtmlInputHidden)contactsTableControl1Obj.FindControl("_RemoveValuesContactsTableControl1");
+
+            this.SelectRow.Attributes["onclick"] = "AddRemoveValuesForMTM('" + this.SelectRow.ClientID + "','" + addvalues.ClientID + "','" + removeValues.ClientID + "', '" + this.RecordUniqueId + ";" + id + "');";
+            
+          }
+        
+        public virtual void SetAddress14()
+        {
+            
+                    
+            // Set the Address1 Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.Address14 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.Address1Specified) {
+                								
+                // If the Address1 is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.Address1);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.Address14.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // Address1 is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.Address14.Text = ContactsTable.Address1.Format(ContactsTable.Address1.DefaultValue);
+            		
+            }
+            
+            // If the Address1 is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.Address14.Text == null ||
+                this.Address14.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.Address14.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetAddress24()
+        {
+            
+                    
+            // Set the Address2 Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.Address24 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.Address2Specified) {
+                								
+                // If the Address2 is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.Address2);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.Address24.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // Address2 is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.Address24.Text = ContactsTable.Address2.Format(ContactsTable.Address2.DefaultValue);
+            		
+            }
+            
+            // If the Address2 is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.Address24.Text == null ||
+                this.Address24.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.Address24.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetAddress34()
+        {
+            
+                    
+            // Set the Address3 Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.Address34 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.Address3Specified) {
+                								
+                // If the Address3 is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.Address3);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.Address34.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // Address3 is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.Address34.Text = ContactsTable.Address3.Format(ContactsTable.Address3.DefaultValue);
+            		
+            }
+            
+            // If the Address3 is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.Address34.Text == null ||
+                this.Address34.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.Address34.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetBankAccount2()
+        {
+            
+                    
+            // Set the BankAccount Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.BankAccount2 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.BankAccountSpecified) {
+                								
+                // If the BankAccount is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.BankAccount);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.BankAccount2.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // BankAccount is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.BankAccount2.Text = ContactsTable.BankAccount.Format(ContactsTable.BankAccount.DefaultValue);
+            		
+            }
+            
+            // If the BankAccount is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.BankAccount2.Text == null ||
+                this.BankAccount2.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.BankAccount2.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetCityID3()
+        {
+            
+                    
+            // Set the CityID Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.CityID3 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.CityIDSpecified) {
+                								
+                // If the CityID is non-NULL, then format the value.
+                // The Format method will return the Display Foreign Key As (DFKA) value
+               string formattedValue = "";
+               Boolean _isExpandableNonCompositeForeignKey = ContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(ContactsTable.CityID);
+               if(_isExpandableNonCompositeForeignKey &&ContactsTable.CityID.IsApplyDisplayAs)
+                                  
+                     formattedValue = ContactsTable.GetDFKA(this.DataSource.CityID.ToString(),ContactsTable.CityID, null);
+                                    
+               if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(formattedValue)))
+                     formattedValue = this.DataSource.Format(ContactsTable.CityID);
+                                  
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.CityID3.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // CityID is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.CityID3.Text = ContactsTable.CityID.Format(ContactsTable.CityID.DefaultValue);
+            		
+            }
+            
+            // If the CityID is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.CityID3.Text == null ||
+                this.CityID3.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.CityID3.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetCountryID3()
+        {
+            
+                    
+            // Set the CountryID Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.CountryID3 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.CountryIDSpecified) {
+                								
+                // If the CountryID is non-NULL, then format the value.
+                // The Format method will return the Display Foreign Key As (DFKA) value
+               string formattedValue = "";
+               Boolean _isExpandableNonCompositeForeignKey = ContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(ContactsTable.CountryID);
+               if(_isExpandableNonCompositeForeignKey &&ContactsTable.CountryID.IsApplyDisplayAs)
+                                  
+                     formattedValue = ContactsTable.GetDFKA(this.DataSource.CountryID.ToString(),ContactsTable.CountryID, null);
+                                    
+               if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(formattedValue)))
+                     formattedValue = this.DataSource.Format(ContactsTable.CountryID);
+                                  
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.CountryID3.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // CountryID is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.CountryID3.Text = ContactsTable.CountryID.Format(ContactsTable.CountryID.DefaultValue);
+            		
+            }
+            
+            // If the CountryID is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.CountryID3.Text == null ||
+                this.CountryID3.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.CountryID3.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetDateOfBirth2()
+        {
+            
+                    
+            // Set the DateOfBirth Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.DateOfBirth2 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.DateOfBirthSpecified) {
+                								
+                // If the DateOfBirth is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.DateOfBirth, @"d");
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.DateOfBirth2.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // DateOfBirth is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.DateOfBirth2.Text = ContactsTable.DateOfBirth.Format(ContactsTable.DateOfBirth.DefaultValue, @"d");
+            		
+            }
+            
+            // If the DateOfBirth is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.DateOfBirth2.Text == null ||
+                this.DateOfBirth2.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.DateOfBirth2.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SeteMail3()
+        {
+            
+                    
+            // Set the eMail Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.eMail3 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.eMailSpecified) {
+                								
+                // If the eMail is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.eMail);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.eMail3.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // eMail is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.eMail3.Text = ContactsTable.eMail.Format(ContactsTable.eMail.DefaultValue);
+            		
+            }
+            
+            // If the eMail is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.eMail3.Text == null ||
+                this.eMail3.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.eMail3.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetFirstName22()
+        {
+            
+                    
+            // Set the FirstName2 Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.FirstName22 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.FirstName2Specified) {
+                								
+                // If the FirstName2 is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.FirstName2);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.FirstName22.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // FirstName2 is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.FirstName22.Text = ContactsTable.FirstName2.Format(ContactsTable.FirstName2.DefaultValue);
+            		
+            }
+            
+            // If the FirstName2 is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.FirstName22.Text == null ||
+                this.FirstName22.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.FirstName22.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetFirstName4()
+        {
+            
+                    
+            // Set the FirstName Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.FirstName4 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.FirstNameSpecified) {
+                								
+                // If the FirstName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.FirstName);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.FirstName4.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // FirstName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.FirstName4.Text = ContactsTable.FirstName.Format(ContactsTable.FirstName.DefaultValue);
+            		
+            }
+            
+            // If the FirstName is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.FirstName4.Text == null ||
+                this.FirstName4.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.FirstName4.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetIrdNumber2()
+        {
+            
+                    
+            // Set the IrdNumber Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.IrdNumber2 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.IrdNumberSpecified) {
+                								
+                // If the IrdNumber is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.IrdNumber);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.IrdNumber2.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // IrdNumber is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.IrdNumber2.Text = ContactsTable.IrdNumber.Format(ContactsTable.IrdNumber.DefaultValue);
+            		
+            }
+            
+            // If the IrdNumber is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.IrdNumber2.Text == null ||
+                this.IrdNumber2.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.IrdNumber2.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetLastName22()
+        {
+            
+                    
+            // Set the LastName2 Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.LastName22 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.LastName2Specified) {
+                								
+                // If the LastName2 is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.LastName2);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.LastName22.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // LastName2 is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.LastName22.Text = ContactsTable.LastName2.Format(ContactsTable.LastName2.DefaultValue);
+            		
+            }
+            
+            // If the LastName2 is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.LastName22.Text == null ||
+                this.LastName22.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.LastName22.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetLastName4()
+        {
+            
+                    
+            // Set the LastName Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.LastName4 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.LastNameSpecified) {
+                								
+                // If the LastName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.LastName);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.LastName4.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // LastName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.LastName4.Text = ContactsTable.LastName.Format(ContactsTable.LastName.DefaultValue);
+            		
+            }
+            
+            // If the LastName is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.LastName4.Text == null ||
+                this.LastName4.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.LastName4.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetPhoneNumber2()
+        {
+            
+                    
+            // Set the PhoneNumber Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.PhoneNumber2 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PhoneNumberSpecified) {
+                								
+                // If the PhoneNumber is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.PhoneNumber);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.PhoneNumber2.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PhoneNumber is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PhoneNumber2.Text = ContactsTable.PhoneNumber.Format(ContactsTable.PhoneNumber.DefaultValue);
+            		
+            }
+            
+            // If the PhoneNumber is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.PhoneNumber2.Text == null ||
+                this.PhoneNumber2.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.PhoneNumber2.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetPlaceOfBirth2()
+        {
+            
+                    
+            // Set the PlaceOfBirth Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.PlaceOfBirth2 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PlaceOfBirthSpecified) {
+                								
+                // If the PlaceOfBirth is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.PlaceOfBirth);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.PlaceOfBirth2.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PlaceOfBirth is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PlaceOfBirth2.Text = ContactsTable.PlaceOfBirth.Format(ContactsTable.PlaceOfBirth.DefaultValue);
+            		
+            }
+            
+            // If the PlaceOfBirth is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.PlaceOfBirth2.Text == null ||
+                this.PlaceOfBirth2.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.PlaceOfBirth2.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetPostCode4()
+        {
+            
+                    
+            // Set the PostCode Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.PostCode4 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PostCodeSpecified) {
+                								
+                // If the PostCode is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.PostCode);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.PostCode4.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PostCode is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PostCode4.Text = ContactsTable.PostCode.Format(ContactsTable.PostCode.DefaultValue);
+            		
+            }
+            
+            // If the PostCode is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.PostCode4.Text == null ||
+                this.PostCode4.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.PostCode4.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetTrustName2()
+        {
+            
+                    
+            // Set the TrustName Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.TrustName2 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.TrustNameSpecified) {
+                								
+                // If the TrustName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.TrustName);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.TrustName2.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // TrustName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.TrustName2.Text = ContactsTable.TrustName.Format(ContactsTable.TrustName.DefaultValue);
+            		
+            }
+            
+            // If the TrustName is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.TrustName2.Text == null ||
+                this.TrustName2.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.TrustName2.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetAddress1Label11()
+                  {
+                  
+                        this.Address1Label11.Text = EvaluateFormula("\"Address\"");
+                      
+                    
+        }
+                
+        public virtual void SetBankAccountLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetDateOfBirthLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SeteMailLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetFirstName2Label()
+                  {
+                  
+                        this.FirstName2Label.Text = EvaluateFormula("\"Second Contact\"");
+                      
+                    
+        }
+                
+        public virtual void SetIrdNumberLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetLiteral()
+                  {
+                  
+                        this.Literal.Text = EvaluateFormula("IF(LEN(ContactsTableControl1Row.eMail3.Text)<>0, \"<a title=\\\"Send eMail\\\" href=\\\"mailto:\" + ContactsTableControl1Row.eMail3.Text + \"\\\" id=\\\"mailtolink\\\"></a>\", \"\")");
+                    
+                    
+        }
+                
+        public virtual void SetPhoneNumberLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetPlaceOfBirthLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetTrustNameLabel()
+                  {
+                  
+                    
+        }
+                
+        public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS, FormulaEvaluator e)
+        {
+            if (e == null)
+                e = new FormulaEvaluator();
+
+            e.Variables.Clear();
+            // add variables for formula evaluation
+            if (variables != null)
+            {
+                System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<string, object>> enumerator = variables.GetEnumerator();
+                while (enumerator.MoveNext())
+                {
+                    e.Variables.Add(enumerator.Current.Key, enumerator.Current.Value);
+                }
+            }
+            
+            
+            if (includeDS)
+            {
+                
+            }
+            
+            // All variables referred to in the formula are expected to be
+            // properties of the DataSource.  For example, referring to
+            // UnitPrice as a variable will refer to DataSource.UnitPrice
+            if (dataSourceForEvaluate == null)
+                e.DataSource = this.DataSource;
+            else
+                e.DataSource = dataSourceForEvaluate;
+
+            // Define the calling control.  This is used to add other 
+            // related table and record controls as variables.
+            e.CallingControl = this;
+
+            object resultObj = e.Evaluate(formula);
+            if (resultObj == null)
+                return "";
+            
+            if ( !string.IsNullOrEmpty(format) && (string.IsNullOrEmpty(formula) || formula.IndexOf("Format(") < 0) )
+                return FormulaUtils.Format(resultObj, format);
+            else
+                return resultObj.ToString();
+        }
+                
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS)
+        {
+          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, includeDS, null);
+        }
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables)
+        {
+          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, true, null);
+        }
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format)
+        {
+          return this.EvaluateFormula(formula, dataSourceForEvaluate, format, null, true, null);
+        }
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, System.Collections.Generic.IDictionary<string, object> variables, FormulaEvaluator e)
+        {
+          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, variables, true, e);
+        }
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate)
+        {
+          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, null, true, null);
+        }
+
+        public virtual string EvaluateFormula(string formula, bool includeDS)
+        {
+          return this.EvaluateFormula(formula, null, null, null, includeDS, null);
+        }
+
+        public virtual string EvaluateFormula(string formula)
+        {
+          return this.EvaluateFormula(formula, null, null, null, true, null);
+        }
+        
+      
+
+        public virtual void RegisterPostback()
+        {
+            
+        }
+    
+        
+
+        public virtual void SaveData()
+        {
+            // Saves the associated record in the database.
+            // SaveData calls Validate and Get methods - so it may be more appropriate to
+            // customize those methods.
+
+            // 1. Load the existing record from the database. Since we save the entire record, this ensures 
+            // that fields that are not displayed are also properly initialized.
+            this.LoadData();
+        
+            // The checksum is used to ensure the record was not changed by another user.
+            if (this.DataSource != null && this.DataSource.GetCheckSumValue() != null) {
+                if (this.CheckSum != null && this.CheckSum != this.DataSource.GetCheckSumValue().Value) {
+                    throw new Exception(Page.GetResourceValue("Err:RecChangedByOtherUser", "IPv5"));
+                }
+            }
+        
+          
+            // 2. Perform any custom validation.
+            this.Validate();
+
+            // 3. Set the values in the record with data from UI controls.
+            // This calls the Get() method for each of the user interface controls.
+            this.GetUIData();
+   
+            // 4. Save in the database.
+            // We should not save the record if the data did not change. This
+            // will save a database hit and avoid triggering any database triggers.
+            
+            if (this.DataSource.IsAnyValueChanged) {
+                // Save record to database but do not commit yet.
+                // Auto generated ids are available after saving for use by child (dependent) records.
+                this.DataSource.Save();
+                
+                // Set the DataChanged flag to True for the for the related panels so they get refreshed as well.
+                ((ContactsTableControl1)MiscUtils.GetParentControlObject(this, "ContactsTableControl1")).DataChanged = true;
+                ((ContactsTableControl1)MiscUtils.GetParentControlObject(this, "ContactsTableControl1")).ResetData = true;
+            }
+            
+      
+            // update session or cookie by formula
+             		  
+      
+            // Setting the DataChanged to True results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+            this.ResetData = true;
+            
+            this.CheckSum = "";
+            // For Master-Detail relationships, save data on the Detail table(s)            
+          
+        }
+
+        public virtual void GetUIData()
+        {
+            // The GetUIData method retrieves the updated values from the user interface 
+            // controls into a database record in preparation for saving or updating.
+            // To do this, it calls the Get methods for each of the field displayed on 
+            // the webpage.  It is better to make changes in the Get methods, rather 
+            // than making changes here.
+      
+            // Call the Get methods for each of the user interface controls.
+        
+            GetAddress14();
+            GetAddress24();
+            GetAddress34();
+            GetBankAccount2();
+            GetCityID3();
+            GetCountryID3();
+            GetDateOfBirth2();
+            GeteMail3();
+            GetFirstName22();
+            GetFirstName4();
+            GetIrdNumber2();
+            GetLastName22();
+            GetLastName4();
+            GetPhoneNumber2();
+            GetPlaceOfBirth2();
+            GetPostCode4();
+            GetTrustName2();
+        }
+        
+        
+        public virtual void GetAddress14()
+        {
+            
+        }
+                
+        public virtual void GetAddress24()
+        {
+            
+        }
+                
+        public virtual void GetAddress34()
+        {
+            
+        }
+                
+        public virtual void GetBankAccount2()
+        {
+            
+        }
+                
+        public virtual void GetCityID3()
+        {
+            
+        }
+                
+        public virtual void GetCountryID3()
+        {
+            
+        }
+                
+        public virtual void GetDateOfBirth2()
+        {
+            
+        }
+                
+        public virtual void GeteMail3()
+        {
+            
+        }
+                
+        public virtual void GetFirstName22()
+        {
+            
+        }
+                
+        public virtual void GetFirstName4()
+        {
+            
+        }
+                
+        public virtual void GetIrdNumber2()
+        {
+            
+        }
+                
+        public virtual void GetLastName22()
+        {
+            
+        }
+                
+        public virtual void GetLastName4()
+        {
+            
+        }
+                
+        public virtual void GetPhoneNumber2()
+        {
+            
+        }
+                
+        public virtual void GetPlaceOfBirth2()
+        {
+            
+        }
+                
+        public virtual void GetPostCode4()
+        {
+            
+        }
+                
+        public virtual void GetTrustName2()
+        {
+            
+        }
+                
+
+      // To customize, override this method in ContactsTableControl1Row.
+      
+        public virtual WhereClause CreateWhereClause()
+         
+        {
+    
+            bool hasFiltersBankLoansTableControl = false;
+            hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
+      
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
+      
+            bool hasFiltersDirectorsTableControl = false;
+            hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
+      
+            bool hasFiltersMMContractsTableControl = false;
+            hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
+      
+            bool hasFiltersPropertiesTableControl = false;
+            hasFiltersPropertiesTableControl = hasFiltersPropertiesTableControl && false; // suppress warning
+      
+            bool hasFiltersPropertyContactsTableControl = false;
+            hasFiltersPropertyContactsTableControl = hasFiltersPropertyContactsTableControl && false; // suppress warning
+      
+            bool hasFiltersPropertyNotesTableControl = false;
+            hasFiltersPropertyNotesTableControl = hasFiltersPropertyNotesTableControl && false; // suppress warning
+      
+            bool hasFiltersRentReviewsTableControl = false;
+            hasFiltersRentReviewsTableControl = hasFiltersRentReviewsTableControl && false; // suppress warning
+      
+            bool hasFiltersTermExpiresTableControl = false;
+            hasFiltersTermExpiresTableControl = hasFiltersTermExpiresTableControl && false; // suppress warning
+      
+            bool hasFiltersTermRenewalsTableControl = false;
+            hasFiltersTermRenewalsTableControl = hasFiltersTermRenewalsTableControl && false; // suppress warning
+      
+            return null;
+        
+        }
+        
+        
+    
+        public virtual void Validate()
+        {
+            // Add custom validation for any control within this panel.
+            // Example.  If you have a State ASP:Textbox control
+            // if (this.State.Text != "CA")
+            //    throw new Exception("State must be CA (California).");
+            // The Validate method is common across all controls within
+            // this panel so you can validate multiple fields, but report
+            // one error message.
+            
+            
+            
+        }
+
+        public virtual void Delete()
+        {
+        
+            if (this.IsNewRecord) {
+                return;
+            }
+
+            KeyValue pkValue = KeyValue.XmlToKey(this.RecordUniqueId);
+          ContactsTable.DeleteRecord(pkValue);
+          
+              
+            // Setting the DataChanged to True results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            ((ContactsTableControl1)MiscUtils.GetParentControlObject(this, "ContactsTableControl1")).DataChanged = true;
+            ((ContactsTableControl1)MiscUtils.GetParentControlObject(this, "ContactsTableControl1")).ResetData = true;
+        }
+
+        protected virtual void Control_PreRender(object sender, System.EventArgs e)
+        {
+            // PreRender event is raised just before page is being displayed.
+            try {
+                DbUtils.StartTransaction();
+                this.RegisterPostback();
+                if (!this.Page.ErrorOnPage && (this.Page.IsPageRefresh || this.DataChanged || this.ResetData)) {
+                  
+                
+                    // Re-load the data and update the web page if necessary.
+                    // This is typically done during a postback (filter, search button, sort, pagination button).
+                    // In each of the other click handlers, simply set DataChanged to True to reload the data.
+                    this.LoadData();
+                    this.DataBind();
+                }
+                				
+            } catch (Exception ex) {
+                BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+            } finally {
+                DbUtils.EndTransaction();
+            }
+        }
+        
+            
+        protected override void SaveControlsToSession()
+        {
+            base.SaveControlsToSession();
+        
+    
+            // Save pagination state to session.
+          
+        }
+        
+        
+    
+        protected override void ClearControlsFromSession()
+        {
+            base.ClearControlsFromSession();
+
+        
+
+            // Clear pagination state from session.
+        
+        }
+        
+        protected override void LoadViewState(object savedState)
+        {
+            base.LoadViewState(savedState);
+            string isNewRecord = (string)ViewState["IsNewRecord"];
+            if (isNewRecord != null && isNewRecord.Length > 0) {
+                this.IsNewRecord = Boolean.Parse(isNewRecord);
+            }
+        
+            string myCheckSum = (string)ViewState["CheckSum"];
+            if (myCheckSum != null && myCheckSum.Length > 0) {
+                this.CheckSum = myCheckSum;
+            }
+        
+    
+            // Load view state for pagination control.
+                 
+        }
+
+        protected override object SaveViewState()
+        {
+            ViewState["IsNewRecord"] = this.IsNewRecord.ToString();
+            ViewState["CheckSum"] = this.CheckSum;
+        
+
+            // Load view state for pagination control.
+               
+            return base.SaveViewState();
+        }
+
+        
+    
+        // Generate set method for buttons
+        
+        public virtual void SetEditRowButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetViewRowButton()                
+              
+        {
+        
+   
+        }
+            
+        // event handler for ImageButton
+        public virtual void EditRowButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../Contacts/EditContacts.aspx?Contacts={PK}";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      this.Page.Response.Redirect(url);
+        
+            }
+        
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ViewRowButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../Contacts/ShowContacts.aspx?Contacts={PK}";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      this.Page.Response.Redirect(url);
+        
+            }
+        
+        }
+            
+            
+        
+              protected virtual void SelectRow_CheckedChanged(object sender, EventArgs args)
+              {
+                 HttpContext.Current.Session.Add("SelectRowDataChanged", "true");
+              }
+            
+  
+        private Hashtable _PreviousUIData = new Hashtable();
+        public virtual Hashtable PreviousUIData {
+            get {
+                return this._PreviousUIData;
+            }
+            set {
+                this._PreviousUIData = value;
+            }
+        }
+  
+
+        
+        public String RecordUniqueId {
+            get {
+                return (string)this.ViewState["BaseContactsTableControl1Row_Rec"];
+            }
+            set {
+                this.ViewState["BaseContactsTableControl1Row_Rec"] = value;
+            }
+        }
+        
+        public ContactsRecord DataSource {
+            get {
+                return (ContactsRecord)(this._DataSource);
+            }
+            set {
+                this._DataSource = value;
+            }
+        }
+        
+
+        private string _checkSum;
+        public virtual string CheckSum {
+            get {
+                return (this._checkSum);
+            }
+            set {
+                this._checkSum = value;
+            }
+        }
+    
+        private int _TotalPages;
+        public virtual int TotalPages {
+            get {
+                return (this._TotalPages);
+            }
+            set {
+                this._TotalPages = value;
+            }
+        }
+        
+        private int _PageIndex;
+        public virtual int PageIndex {
+            get {
+                return (this._PageIndex);
+            }
+            set {
+                this._PageIndex = value;
+            }
+        }
+        
+        private bool _DisplayLastPage;
+        public virtual bool DisplayLastPage {
+            get {
+                return (this._DisplayLastPage);
+            }
+            set {
+                this._DisplayLastPage = value;
+            }
+        }
+        
+        
+    
+        private KeyValue selectedParentKeyValue;
+        public KeyValue SelectedParentKeyValue
+        {
+            get
+            {
+                return this.selectedParentKeyValue;
+            }
+            set
+            {
+                this.selectedParentKeyValue = value;
+            }
+        }
+       
+#region "Helper Properties"
+        
+        public System.Web.UI.WebControls.Literal Address14 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address14");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal Address1Label11 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1Label11");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal Address24 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address24");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal Address34 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address34");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal BankAccount2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankAccount2");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal BankAccountLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankAccountLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal CityID3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityID3");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal CountryID3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryID3");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal DateOfBirth2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateOfBirth2");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal DateOfBirthLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateOfBirthLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton EditRowButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "EditRowButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal eMail3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMail3");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal eMailLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMailLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal FirstName22 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName22");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal FirstName2Label {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName2Label");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal FirstName4 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName4");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal IrdNumber2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "IrdNumber2");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal IrdNumberLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "IrdNumberLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal LastName22 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastName22");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal LastName4 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastName4");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal Literal {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Literal");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal PhoneNumber2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumber2");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumberLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal PlaceOfBirth2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PlaceOfBirth2");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PlaceOfBirthLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PlaceOfBirthLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal PostCode4 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCode4");
+            }
+        }
+            
+        public System.Web.UI.WebControls.CheckBox SelectRow {
+            get {
+                return (System.Web.UI.WebControls.CheckBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SelectRow");
+            }
+        }              
+            
+        public System.Web.UI.WebControls.Literal TrustName2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TrustName2");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal TrustNameLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TrustNameLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ViewRowButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ViewRowButton");
+            }
+        }
+        
+    #endregion
+
+    #region "Helper Functions"
+    public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt)
+    {
+        return this.Page.EvaluateExpressions(url, arg, bEncrypt, this);
+    }
+
+    public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt,bool includeSession)
+    {
+        return this.Page.EvaluateExpressions(url, arg, bEncrypt, this,includeSession);
+    }
+
+    public override string EvaluateExpressions(string url, string arg, bool bEncrypt)
+    {
+        ContactsRecord rec = null;
+             
+            try {
+                rec = this.GetRecord();
+            }
+            catch (Exception ) {
+                // Do Nothing
+            }
+            
+            if (rec == null && url.IndexOf("{") >= 0) {
+                // Localization.
+                
+                throw new Exception(Page.GetResourceValue("Err:RecDataSrcNotInitialized", "IPv5"));
+                    
+            }
+        
+            return EvaluateExpressions(url, arg, rec, bEncrypt);
+        
+    }
+
+
+    public override string EvaluateExpressions(string url, string arg, bool bEncrypt,bool includeSession)
+    {
+    ContactsRecord rec = null;
+    
+          try {
+               rec = this.GetRecord();
+          }
+          catch (Exception ) {
+          // Do Nothing
+          }
+
+          if (rec == null && url.IndexOf("{") >= 0) {
+          // Localization.
+    
+              throw new Exception(Page.GetResourceValue("Err:RecDataSrcNotInitialized", "IPv5"));
+      
+          }
+    
+          if (includeSession)
+          {
+              return EvaluateExpressions(url, arg, rec, bEncrypt);
+          }
+          else
+          {
+              return EvaluateExpressions(url, arg, rec, bEncrypt,includeSession);
+          }
+    
+    }
+
+        
+        public virtual ContactsRecord GetRecord()
+             
+        {
+        
+            if (this.DataSource != null) {
+                return this.DataSource;
+            }
+            
+              if (this.RecordUniqueId != null) {
+              
+                return ContactsTable.GetRecord(this.RecordUniqueId, true);
+              
+            }
+            
+            // Localization.
+            
+            throw new Exception(Page.GetResourceValue("Err:RetrieveRec", "IPv5"));
+                
+        }
+
+        public new BaseApplicationPage Page
+        {
+            get {
+                return ((BaseApplicationPage)base.Page);
+            }
+        }
+
+#endregion
+
+}
+
+  
+// Base class for the ContactsTableControl1 control on the GroupByPropertiesTable page.
+// Do not modify this class. Instead override any method in ContactsTableControl1.
+public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
+{
+         
+       public BaseContactsTableControl1()
+        {
+            this.Init += Control_Init;
+            this.Load += Control_Load;
+            this.PreRender += Control_PreRender;
+            this.EvaluateFormulaDelegate = new DataSource.EvaluateFormulaDelegate(this.EvaluateFormula);
+        }
+
+        protected virtual void Control_Init(object sender, System.EventArgs e)
+        {
+      
+    
+           // Setup the filter and search.
+        
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                
+                  if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                  {
+                  initialVal = "";
+                  }
+                
+                if  (this.InSession(this.SortControl1)) 				
+                    initialVal = this.GetFromSession(this.SortControl1);
+                
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.SortControl1.Items.Add(new ListItem(initialVal, initialVal));
+                        
+                    this.SortControl1.SelectedValue = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.ContactsSearchText1)) 				
+                    initialVal = this.GetFromSession(this.ContactsSearchText1);
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.ContactsSearchText1.Text = initialVal;
+                            
+                    }
+            }
+
+            if (!this.Page.IsPostBack) {
+            string initialVal = "";
+            if (this.InSession(this.ShowSelectedFilter))
+            initialVal = this.GetFromSession(this.ShowSelectedFilter);
+            
+              else
+              
+              initialVal = EvaluateFormula("\"--Included--\"");
+            
+
+            if (initialVal != "") {
+            
+                this.ShowSelectedFilter.Items.Add(new ListItem(initialVal, initialVal));
+                this.ShowSelectedFilter.SelectedValue = initialVal;
+              
+            }
+            }
+          
+
+
+      
+      
+            // Control Initializations.
+            // Initialize the table's current sort order.
+
+            if (this.InSession(this, "Order_By"))
+                this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));         
+            else
+            {
+                   
+                this.CurrentSortOrder = new OrderBy(true, false);
+            
+        }
+
+
+
+    // Setup default pagination settings.
+    
+            this.PageSize = Convert.ToInt32(this.GetFromSession(this, "Page_Size", "10"));
+            this.PageIndex = Convert.ToInt32(this.GetFromSession(this, "Page_Index", "0"));
+                     
+        }
+
+        protected virtual void Control_Load(object sender, EventArgs e)
+        {
+        
+            SaveControlsToSession_Ajax();
+        
+            // Setup the pagination events.
+            
+                    this.Pagination2.FirstPage.Click += Pagination2_FirstPage_Click;
+                        
+                    this.Pagination2.LastPage.Click += Pagination2_LastPage_Click;
+                        
+                    this.Pagination2.NextPage.Click += Pagination2_NextPage_Click;
+                        
+                    this.Pagination2.PageSizeButton.Click += Pagination2_PageSizeButton_Click;
+                        
+                    this.Pagination2.PreviousPage.Click += Pagination2_PreviousPage_Click;
+                        
+
+            string url =""; //to avoid warning in VS as its not being used
+            if(url == null) url=""; //to avoid warning in VS as its not being used
+        
+       // Setup the sorting events.
+        
+            // Setup the button events.
+          
+                    this.CSVButton.Click += CSVButton_Click;
+                        
+                    this.ExcelButton.Click += ExcelButton_Click;
+                        
+                    this.NewButton2.Click += NewButton2_Click;
+                        
+                    this.PDFButton.Click += PDFButton_Click;
+                        
+                    this.ResetButton1.Click += ResetButton1_Click;
+                        
+                    this.SearchButton2.Click += SearchButton2_Click;
+                        
+                    this.Actions2Button.Button.Click += Actions2Button_Click;
+                        
+                    this.FilterButton1.Button.Click += FilterButton1_Click;
+                        
+                    this.Filters1Button.Button.Click += Filters1Button_Click;
+                        
+            this.SortControl1.SelectedIndexChanged += new EventHandler(SortControl1_SelectedIndexChanged);
+                    
+        
+         //' Setup events for others
+            
+          this.ShowSelectedFilter.SelectedIndexChanged += ShowSelectedFilter_SelectedIndexChanged;
+        AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "ContactsSearchText1SearchBoxText", "setSearchBoxText(\"" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "\", \"" + ContactsSearchText1.ClientID + "\");", true);
+             
+        }
+
+        public virtual void LoadData()
+        {
+            // Read data from database. Returns an array of records that can be assigned
+            // to the DataSource table control property.
+            try {
+                  CompoundFilter joinFilter = CreateCompoundJoinFilter();
+                
+                  // The WHERE clause will be empty when displaying all records in table.
+                  WhereClause wc = CreateWhereClause();
+                  if (wc != null && !wc.RunQuery) {
+                        // Initialize an empty array of records
+                      ArrayList alist = new ArrayList(0);
+                      Type myrec = typeof(IPv5.Business.ContactsRecord);
+                      this.DataSource = (ContactsRecord[])(alist.ToArray(myrec));
+                      // Add records to the list if needed.
+                      this.AddNewRecords();
+                      this._TotalRecords = 0;
+                      this._TotalPages = 0;
+                      return;
+                  }
+
+                  // Call OrderBy to determine the order - either use the order defined
+                  // on the Query Wizard, or specified by user (by clicking on column heading)
+
+                  OrderBy orderBy = CreateOrderBy();
+
+      
+                // Get the pagesize from the pagesize control.
+                this.GetPageSize();
+                if (this.DisplayLastPage)
+                {
+                    int totalRecords = this._TotalRecords < 0? GetRecordCount(CreateCompoundJoinFilter(), CreateWhereClause()): this._TotalRecords;
+                     
+                        int totalPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(totalRecords) / Convert.ToDouble(this.PageSize)));
+                       
+                    this.PageIndex = totalPages - 1;                
+                }
+                
+                // Make sure PageIndex (current page) and PageSize are within bounds.
+                if (this.PageIndex < 0)
+                    this.PageIndex = 0;
+                if (this.PageSize < 1)
+                    this.PageSize = 1;
+                
+                
+                // Retrieve the records and set the table DataSource.
+                // Only PageSize records are fetched starting at PageIndex (zero based).
+                if (this.AddNewRecord > 0) {
+                    // Make sure to preserve the previously entered data on new rows.
+                    ArrayList postdata = new ArrayList(0);
+                    foreach (ContactsTableControl1Row rc in this.GetRecordControls()) {
+                        if (!rc.IsNewRecord) {
+                            rc.DataSource = rc.GetRecord();
+                            rc.GetUIData();
+                            postdata.Add(rc.DataSource);
+                            UIData.Add(rc.PreservedUIData());
+                        }
+                    }
+                    Type myrec = typeof(IPv5.Business.ContactsRecord);
+                    this.DataSource = (ContactsRecord[])(postdata.ToArray(myrec));
+                } 
+                else {
+                    // Get the records from the database
+                    
+                        this.DataSource = GetRecords(joinFilter, wc, orderBy, this.PageIndex, this.PageSize);
+                                          
+                }
+                
+                // if the datasource contains no records contained in database, then load the last page.
+                if (DbUtils.GetCreatedRecords(this.DataSource).Length == 0 && !this.DisplayLastPage)
+                {
+                      this.DisplayLastPage = true;
+                      LoadData();
+                }
+                else
+                {
+                    // Add any new rows desired by the user.
+                    this.AddNewRecords();
+                    
+    
+                    // Initialize the page and grand totals. now
+                
+                }                 
+                
+
+    
+            } catch (Exception ex) {
+                // Report the error message to the end user
+                    String msg = ex.Message;
+                    if (ex.InnerException != null)
+                        msg += " InnerException: " + ex.InnerException.Message;
+
+                    throw new Exception(msg, ex.InnerException);
+            }
+        }
+        
+        public virtual ContactsRecord[] GetRecords(BaseFilter join, WhereClause where, OrderBy orderBy, int pageIndex, int pageSize)
+        {    
+            // by default, Select * will be executed to get a list of records.  If you want to run Select Distinct with certain column only, add the column to selCols
+            ColumnList selCols = new ColumnList();                 
+               
+    
+            // If you want to specify certain columns to be in the select statement, you can write code similar to the following:
+            // However, if you don't specify PK, row button click might show an error message.
+            // And make sure you write similar code in GetRecordCount as well
+            // selCols.Add(ContactsTable.Column1, true);          
+            // selCols.Add(ContactsTable.Column2, true);          
+            // selCols.Add(ContactsTable.Column3, true);          
+            
+
+            // If the parameters doesn't specify specific columns in the Select statement, then run Select *
+            // Alternatively, if the parameters specifies to include PK, also run Select *
+            
+            if (selCols.Count == 0)                 
+                  
+            {
+              
+                return ContactsTable.GetRecords(join, where, orderBy, this.PageIndex, this.PageSize);
+                 
+            }
+            else
+            {
+                ContactsTable databaseTable = new ContactsTable();
+                databaseTable.SelectedColumns.Clear();
+                databaseTable.SelectedColumns.AddRange(selCols);
+                
+            
+                
+                ArrayList recList; 
+                orderBy.ExpandForeignKeyColums = false;
+                recList = databaseTable.GetRecordList(join, where.GetFilter(), null, orderBy, pageIndex, pageSize);
+                return (recList.ToArray(typeof(ContactsRecord)) as ContactsRecord[]);
+            }            
+            
+        }
+        
+        
+        public virtual int GetRecordCount(BaseFilter join, WhereClause where)
+        {
+
+            // By default, Select * will be executed to get a list of records.  If you want to run Select Distinct with certain column only, add the column to selCols
+            ColumnList selCols = new ColumnList();                 
+               
+
+
+            // If you want to specify certain columns to be in the select statement, you can write code similar to the following:
+            // However, if you don't specify PK, row button click might show an error message.
+            // And make sure you write similar code in GetRecords as well
+            // selCols.Add(ContactsTable.Column1, true);          
+            // selCols.Add(ContactsTable.Column2, true);          
+            // selCols.Add(ContactsTable.Column3, true);          
+
+
+            // If the parameters doesn't specify specific columns in the Select statement, then run Select *
+            // Alternatively, if the parameters specifies to include PK, also run Select *
+            
+            if (selCols.Count == 0)                 
+                     
+            
+                return ContactsTable.GetRecordCount(join, where);
+            else
+            {
+                ContactsTable databaseTable = new ContactsTable();
+                databaseTable.SelectedColumns.Clear();
+                databaseTable.SelectedColumns.AddRange(selCols);        
+                
+                return (int)(databaseTable.GetRecordListCount(join, where.GetFilter(), null, null));
+            }
+
+        }
+        
+      
+    
+      public override void DataBind()
+      {
+          // The DataBind method binds the user interface controls to the values
+          // from the database record for each row in the table.  To do this, it calls the
+          // DataBind for each of the rows.
+          // DataBind also populates any filters above the table, and sets the pagination
+          // control to the correct number of records and the current page number.
+         
+          
+          base.DataBind();
+          
+
+          this.ClearControlsFromSession();
+          
+          // Make sure that the DataSource is initialized.
+          if (this.DataSource == null) {
+              return;
+          }
+          
+          //  LoadData for DataSource for chart and report if they exist
+          
+            // Improve performance by prefetching display as records.
+            this.PreFetchForeignKeyValues();     
+
+            // Setup the pagination controls.
+            BindPaginationControls();
+
+    
+        
+        // Bind the repeater with the list of records to expand the UI.
+        
+        System.Web.UI.WebControls.Repeater rep = (System.Web.UI.WebControls.Repeater)(BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactsTableControl1Repeater"));
+        if (rep == null){return;}
+        rep.DataSource = this.DataSource;
+        rep.DataBind();
+        
+        string id = GetParentControlPrimaryKey();
+
+        ListItemCollection addVar = new ListItemCollection();
+        ListItemCollection removeVar = new ListItemCollection();
+        GetValuesFromHiddenVariable(ref addVar, ref removeVar);
+          
+        int index = 0;
+        
+        foreach (System.Web.UI.WebControls.RepeaterItem repItem in rep.Items)
+        {
+        
+            // Loop through all rows in the table, set its DataSource and call DataBind().
+            ContactsTableControl1Row recControl = (ContactsTableControl1Row)(repItem.FindControl("ContactsTableControl1Row"));
+            recControl.DataSource = this.DataSource[index];            
+            if (this.UIData.Count > index)
+                recControl.PreviousUIData = this.UIData[index];
+            recControl.DataBind();
+            
+           
+                string ContactID  = recControl.GetRecord().ContactID.ToString();
+              
+                Boolean hasChanged = false;
+
+                if (addVar != null)
+                {
+                    foreach(ListItem item in addVar)
+                    {
+                        string[] addVal = item.ToString().Split(new char[]{';'});
+                        if ((ContactID == KeyValue.XmlToKey(addVal[0]).ColumnValueByName("ContactID")) && (id == KeyValue.XmlToKey(addVal[1]).ColumnValueByName("PropertyID")))
+                        {
+                            recControl.SelectRow.Checked = true;
+                            hasChanged = true;
+                        }
+                    }
+                }
+
+                if (removeVar != null)
+                {
+                    foreach(ListItem item in removeVar)
+                    {
+                        string[] remVal = item.ToString().Split(new char[]{';'});
+                        if ((ContactID == KeyValue.XmlToKey(remVal[0]).ColumnValueByName("ContactID")) && (id == KeyValue.XmlToKey(remVal[1]).ColumnValueByName("PropertyID")))
+                        {
+                            recControl.SelectRow.Checked = false;
+                            hasChanged = true;
+                        }
+                    }
+                }
+                
+              if (!hasChanged) {
+                 WhereClause wc = new WhereClause();
+                 CompoundFilter jFilter = new CompoundFilter();
+                 wc.iAND(LinkTableTable.Instance.PropertyIDColumn, BaseFilter.ComparisonOperator.EqualsTo, id);
+                 wc.iAND(LinkTableTable.Instance.ContactIDColumn, BaseFilter.ComparisonOperator.EqualsTo, ContactID);
+
+              if (LinkTableTable.GetRecordCount(jFilter, wc) > 0) {              
+                    recControl.SelectRow.Checked = true;
+                 }
+                 else{
+                    recControl.SelectRow.Checked = false;
+                 }
+              }
+            
+            recControl.Visible = !this.InDeletedRecordIds(recControl);
+        
+            index++;
+        }
+           
+    
+            // Call the Set methods for each controls on the panel
+        
+                
+                SetContactsSearchText1();
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                SetShowSelectedFilterLabel();
+                SetSortByLabel1();
+                SetSortControl1();
+                SetCSVButton();
+              
+                SetExcelButton();
+              
+                SetNewButton2();
+              
+                SetPDFButton();
+              
+                SetResetButton1();
+              
+                SetSearchButton2();
+              
+                SetActions2Button();
+              
+                SetFilterButton1();
+              
+                SetFilters1Button();
+              
+          SetShowSelectedFilter();
+        
+            // setting the state of expand or collapse alternative rows
+      
+            // Load data for each record and table UI control.
+            // Ordering is important because child controls get 
+            // their parent ids from their parent UI controls.
+                
+      
+            // this method calls the set method for controls with special formula like running total, sum, rank, etc
+            SetFormulaControls();
+            
+             
+              SetFilters1Button();
+                     
+        }
+        
+        
+        public virtual void SetFormulaControls()
+        {
+            // this method calls Set methods for the control that has special formula
+        
+
+    }
+
+        
+    public virtual void AddWarningMessageOnClick() {
+    
+        if (this.TotalRecords > 10000)
+          this.CSVButton.Attributes.Add("onClick", "return (confirm('" + ((BaseApplicationPage)this.Page).GetResourceValue("ExportConfirm","IPv5") + "'));");
+        else
+          this.CSVButton.Attributes.Remove("onClick");
+      
+        if (this.TotalRecords > 10000)
+          this.ExcelButton.Attributes.Add("onClick", "return (confirm('" + ((BaseApplicationPage)this.Page).GetResourceValue("ExportConfirm", "IPv5") + "'));");
+        else
+          this.ExcelButton.Attributes.Remove("onClick");
+      
+    }
+  
+        public void PreFetchForeignKeyValues() {
+            if (this.DataSource == null) {
+                return;
+            }
+          
+            this.Page.PregetDfkaRecords(ContactsTable.CityID, this.DataSource);
+            this.Page.PregetDfkaRecords(ContactsTable.CountryID, this.DataSource);
+        }
+        
+
+        public virtual void RegisterPostback()
+        {
+        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"CSVButton"));
+                        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"ExcelButton"));
+                        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"PDFButton"));
+                                
+        }
+        
+
+        
+          public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
+
+          public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS, FormulaEvaluator e)
+          {
+            if (e == null)
+                e = new FormulaEvaluator();
+
+            e.Variables.Clear();
+
+            // add variables for formula evaluation
+            if (variables != null)
+            {
+                System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<string, object>> enumerator = variables.GetEnumerator();
+                while (enumerator.MoveNext())
+                {
+                    e.Variables.Add(enumerator.Current.Key, enumerator.Current.Value);
+                }
+            }
+            if (includeDS)
+            {
+                
+            }
+
+            // All variables referred to in the formula are expected to be
+            // properties of the DataSource.  For example, referring to
+            // UnitPrice as a variable will refer to DataSource.UnitPrice
+            e.DataSource = dataSourceForEvaluate;
+
+            // Define the calling control.  This is used to add other 
+            // related table and record controls as variables.
+            e.CallingControl = this;
+
+            object resultObj = e.Evaluate(formula);
+            if (resultObj == null)
+                return "";
+            
+            if ( !string.IsNullOrEmpty(format) && (string.IsNullOrEmpty(formula) || formula.IndexOf("Format(") < 0) )
+                return FormulaUtils.Format(resultObj, format);
+            else
+                return resultObj.ToString();
+        }
+        
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS)
+        {
+          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, includeDS, null);
+        }
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables)
+        {
+          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, true, null);
+        }
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format)
+        {
+          return this.EvaluateFormula(formula, dataSourceForEvaluate, format, null, true, null);
+        }
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, System.Collections.Generic.IDictionary<string, object> variables, FormulaEvaluator e)
+        {
+          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, variables, true, e);
+        }
+
+        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate)
+        {
+          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, null, true, null);
+        }
+
+        public virtual string EvaluateFormula(string formula, bool includeDS)
+        {
+          return this.EvaluateFormula(formula, null, null, null, includeDS, null);
+        }
+
+        public virtual string EvaluateFormula(string formula)
+        {
+          return this.EvaluateFormula(formula, null, null, null, true, null);
+        }
+           
+        public virtual void ResetControl()
+        {
+
+
+            
+           this.ShowSelectedFilter.ClearSelection();
+             
+            this.CurrentSortOrder.Reset();
+            if (this.InSession(this, "Order_By")) {
+                this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));
+            }
+            else {
+            
+                this.CurrentSortOrder = new OrderBy(true, false);
+               
+            }
+                
+            this.PageIndex = 0;
+        }
+        
+        public virtual void ResetPageControl()
+        {
+            this.PageIndex = 0;
+        }
+        
+        protected virtual void BindPaginationControls()
+        {
+            // Setup the pagination controls.   
+
+            // Bind the pagination labels.
+        
+            if (DbUtils.GetCreatedRecords(this.DataSource).Length > 0)                      
+                    
+            {
+                this.Pagination2.CurrentPage.Text = (this.PageIndex + 1).ToString();
+            } 
+            else
+            {
+                this.Pagination2.CurrentPage.Text = "0";
+            }
+            this.Pagination2.PageSize.Text = this.PageSize.ToString();
+    
+            // Bind the buttons for ContactsTableControl1 pagination.
+        
+            this.Pagination2.FirstPage.Enabled = !(this.PageIndex == 0);
+            if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
+                this.Pagination2.LastPage.Enabled = true;
+            else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
+                this.Pagination2.LastPage.Enabled = false;            
+            else                                     // if the total pages is the last page, disable last and next buttons
+                this.Pagination2.LastPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
+          
+            if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
+                this.Pagination2.NextPage.Enabled = true;
+            else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
+                this.Pagination2.NextPage.Enabled = false;            
+            else                                     // if the total pages is the last page, disable last and next buttons
+                this.Pagination2.NextPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
+          
+            this.Pagination2.PreviousPage.Enabled = !(this.PageIndex == 0);    
+        }
+ 
+        public virtual string GetParentControlPrimaryKey()
+        {                      
+          PropertiesTableControlRow propertiesTableControlRowObj = (IPv5.UI.Controls.GroupByPropertiesTable.PropertiesTableControlRow)(MiscUtils.GetParentControlObject(this, "PropertiesTableControlRow"));
+	         
+            string id = "";
+         
+            if ((propertiesTableControlRowObj != null) && (propertiesTableControlRowObj.GetRecord() != null) && (propertiesTableControlRowObj.GetRecord().IsCreated)) {
+              
+              id = propertiesTableControlRowObj.GetRecord().PropertyID.ToString();
+              
+            } 
+     
+            return id;        
+        }
+        
+        public virtual void DeleteValuesFromHiddenVariable()
+        {
+            string PropertyID = GetParentControlPrimaryKey();
+            ListItemCollection addVar = new ListItemCollection();
+            ListItemCollection removeVar = new ListItemCollection();
+
+            System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            serializer.RegisterConverters(new System.Web.Script.Serialization.JavaScriptConverter[] { new System.Web.Script.Serialization.ListItemCollectionConverter() });
+
+            System.Web.UI.HtmlControls.HtmlInputHidden addvalues = (System.Web.UI.HtmlControls.HtmlInputHidden)this.Page.FindControlRecursively("_AddValuesContactsTableControl1");
+            if (addvalues != null)
+            {
+              addVar = serializer.Deserialize<ListItemCollection>(addvalues.Value);
+            }
+
+            System.Web.UI.HtmlControls.HtmlInputHidden removeValues = (System.Web.UI.HtmlControls.HtmlInputHidden)this.Page.FindControlRecursively("_RemoveValuesContactsTableControl1");
+             if (removeValues != null)
+             {
+                removeVar = serializer.Deserialize<ListItemCollection>(removeValues.Value);
+             }
+
+            ListItemCollection newAddVar = new ListItemCollection();
+            ListItemCollection newRemoveVar = new ListItemCollection();
+            
+              if (addVar != null)
+                {
+                    foreach (ListItem item in addVar)
+                    {
+                        string[] addVal = item.ToString().Split(new char[] { ';' });
+                        if (PropertyID != KeyValue.XmlToKey(addVal[1]).ColumnValueByName("PropertyID"))
+                        {
+                            newAddVar.Add(item);
+                        }
+                    }
+                }
+
+                if (removeVar != null)
+                {
+                    foreach (ListItem item in removeVar)
+                    {
+                        string[] remVal = item.ToString().Split(new char[] { ';' });
+                        if (PropertyID != KeyValue.XmlToKey(remVal[1]).ColumnValueByName("PropertyID"))
+                        {
+                            newRemoveVar.Add(item);
+                        }
+                    }
+                }
+
+                if (newRemoveVar.Count > 0)
+                {
+                  removeValues.Value = serializer.Serialize(newRemoveVar);
+                }
+                else
+                {
+                    removeValues.Value = "";
+                }
+                
+                if (newAddVar.Count > 0)
+                {
+                  addvalues.Value = serializer.Serialize(newAddVar);
+                }
+                else
+                {
+                    addvalues.Value = "";
+                }
+
+                this.DataChanged = true;
+                   
+        }
+
+        public virtual void GetValuesFromHiddenVariable(ref ListItemCollection addVar, ref ListItemCollection removeVar)
+        {
+            System.Web.Script.Serialization.JavaScriptSerializer serializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+            serializer.RegisterConverters(new System.Web.Script.Serialization.JavaScriptConverter[] { new System.Web.Script.Serialization.ListItemCollectionConverter() });
+
+            System.Web.UI.HtmlControls.HtmlInputHidden addvalues = (System.Web.UI.HtmlControls.HtmlInputHidden)this.FindControl("_AddValuesContactsTableControl1");
+            addVar = serializer.Deserialize<ListItemCollection>(addvalues.Value);
+
+            System.Web.UI.HtmlControls.HtmlInputHidden removeValues = (System.Web.UI.HtmlControls.HtmlInputHidden)this.FindControl("_RemoveValuesContactsTableControl1");
+            removeVar = serializer.Deserialize<ListItemCollection>(removeValues.Value);
+        }
+  
+        public virtual void SaveData()
+        {
+            // Save the data from the entire table.  Calls each row's Save Data
+            // to save their data.  This function is called by the Click handler of the
+            // Save button.  The button handler should Start/Commit/End a transaction.
+                            
+            ListItemCollection addVar = new ListItemCollection();
+            ListItemCollection removeVar = new ListItemCollection();
+            GetValuesFromHiddenVariable(ref addVar, ref removeVar);
+            
+            string isChanged = (string)(HttpContext.Current.Session["SelectRowDataChanged"]);
+            if (isChanged != "") {
+                if (isChanged == "true") {                
+                    string PropertyID = "";
+                    string ContactID = "";
+                    try{
+                        PropertyID = GetParentControlPrimaryKey();                           
+                        
+                        if (addVar != null)
+                        {
+                            foreach (ListItem item in addVar)
+                            {
+                                string[] addVal = item.ToString().Split(new char[] { ';' });
+                                ContactID = KeyValue.XmlToKey(addVal[0].ToString()).ColumnValueByName("ContactID");
+                                if (PropertyID == KeyValue.XmlToKey(addVal[1]).ColumnValueByName("PropertyID"))
+                                {
+                                    WhereClause wc = new WhereClause();
+                                    CompoundFilter jFilter = new CompoundFilter();
+                                    wc.iAND(LinkTableTable.Instance.PropertyIDColumn, BaseFilter.ComparisonOperator.EqualsTo, PropertyID);
+                                    wc.iAND(LinkTableTable.Instance.ContactIDColumn, BaseFilter.ComparisonOperator.EqualsTo, ContactID);
+
+                                    if (LinkTableTable.GetRecordCount(jFilter, wc) == 0)
+                                    {
+                                      LinkTableRecord rec = new LinkTableRecord();
+                                      rec.Parse(ContactID, rec.TableAccess.TableDefinition.ColumnList.GetByAnyName("ContactID"));
+                                      rec.Parse(PropertyID, rec.TableAccess.TableDefinition.ColumnList.GetByAnyName("PropertyID"));
+                                      rec.Save();
+                                    }
+                                }
+                            }
+                        }
+
+                        if (removeVar != null)
+                        {
+                            foreach (ListItem item in removeVar)
+                            {
+                                string[] remVal = item.ToString().Split(new char[] { ';' });
+                                ContactID = KeyValue.XmlToKey(remVal[0].ToString()).ColumnValueByName("ContactID");
+                                if (PropertyID == KeyValue.XmlToKey(remVal[1]).ColumnValueByName("PropertyID"))
+                                {
+                                    BaseClasses.Data.KeyValue myKeyValue = new BaseClasses.Data.KeyValue();
+                                    myKeyValue.AddElement(LinkTableTable.Instance.PropertyIDColumn.InternalName, PropertyID);
+                                    myKeyValue.AddElement(LinkTableTable.Instance.ContactIDColumn.InternalName, ContactID);
+
+                                    WhereClause wc = new WhereClause();
+                                    CompoundFilter jFilter = new CompoundFilter();
+                                    wc.iAND(LinkTableTable.Instance.PropertyIDColumn, BaseFilter.ComparisonOperator.EqualsTo, PropertyID);
+                                    wc.iAND(LinkTableTable.Instance.ContactIDColumn, BaseFilter.ComparisonOperator.EqualsTo, ContactID);
+                                    
+                                    string[] LinkID = LinkTableTable.GetValues(LinkTableTable.Instance.LinkIDColumn, wc, null, 1);
+                                    myKeyValue.AddElement(LinkTableTable.Instance.LinkIDColumn.InternalName, LinkID[0]);
+                                    
+                                    if (LinkTableTable.GetRecordCount(jFilter, wc) > 0)
+                                    {
+                                        LinkTableTable.DeleteRecord(myKeyValue);
+                                    }
+                                }
+                            }
+                        }
+                       
+                    } catch (Exception ex){                    
+                        this.Page.ErrorOnPage = true;
+                        // Report the error message to the end user
+                        BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+                    } finally{
+                    
+                    }
+                }
+                HttpContext.Current.Session.Remove("SelectRowDataChanged");
+                HttpContext.Current.Session.Add("SelectRowDataChanged", "false");
+                DeleteValuesFromHiddenVariable();
+            }
+            
+            foreach (ContactsTableControl1Row recCtl in this.GetRecordControls())
+            {
+        
+                if (this.InDeletedRecordIds(recCtl)) {
+                    // Delete any pending deletes. 
+                    recCtl.Delete();
+                }
+                else {
+                    if (recCtl.Visible) {
+                        recCtl.SaveData();
+                    }
+                }
+          
+            }
+
+          
+    
+            // Setting the DataChanged to True results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+            this.ResetData = true;
+          
+            // Set IsNewRecord to False for all records - since everything has been saved and is no longer "new"
+            foreach (ContactsTableControl1Row recCtl in this.GetRecordControls()){
+                recCtl.IsNewRecord = false;
+            }
+      
+            // Set DeletedRecordsIds to Nothing since we have deleted all pending deletes.
+            this.DeletedRecordIds = null;
+                
+        }
+        
+        public virtual CompoundFilter CreateCompoundJoinFilter()
+        {
+            CompoundFilter jFilter = new CompoundFilter();
+        
+           if (this.Page != null) {
+              string id = GetParentControlPrimaryKey();
+         
+              if (MiscUtils.IsValueSelected(this.ShowSelectedFilter) && id != "") {
+                 jFilter.AddJoin(ContactsTable.ContactID, null, LinkTableTable.ContactID, null);
+              }  
+             
+           }
+       
+           return jFilter;
+        }      
+        
+    
+        public virtual OrderBy CreateOrderBy()
+        {
+            // The CurrentSortOrder is initialized to the sort order on the 
+            // Query Wizard.  It may be modified by the Click handler for any of
+            // the column heading to sort or reverse sort by that column.
+            // You can add your own sort order, or modify it on the Query Wizard.
+            return this.CurrentSortOrder;
+        }
+         
+        
+        private string parentSelectedKeyValue;
+        public string ParentSelectedKeyValue
+        {
+          get
+          {
+            return parentSelectedKeyValue;
+          }
+          set
+          {
+            parentSelectedKeyValue = value;
+          }
+        }
+
+    
+        public virtual WhereClause CreateWhereClause()
+        {
+            // This CreateWhereClause is used for loading the data.
+            ContactsTable.Instance.InnerFilter = null;
+            WhereClause wc = new WhereClause();
+    
+            // CreateWhereClause() Compose the WHERE clause consist of:
+            // 1. Static clause defined at design time.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+            
+        
+            if (MiscUtils.IsValueSelected(this.ContactsSearchText1)) {
+                if (this.ContactsSearchText1.Text == BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) ) {
+                        this.ContactsSearchText1.Text = "";
+                } else {
+                  // Strip "..." from begin and ending of the search text, otherwise the search will return 0 values as in database "..." is not stored.
+                  if (this.ContactsSearchText1.Text.StartsWith("...")) {
+                      this.ContactsSearchText1.Text = this.ContactsSearchText1.Text.Substring(3,this.ContactsSearchText1.Text.Length-3);
+                  }
+                  if (this.ContactsSearchText1.Text.EndsWith("...")) {
+                      this.ContactsSearchText1.Text = this.ContactsSearchText1.Text.Substring(0,this.ContactsSearchText1.Text.Length-3);
+                      // Strip the last word as well as it is likely only a partial word
+                      int endindex = this.ContactsSearchText1.Text.Length - 1;
+                      while (!Char.IsWhiteSpace(ContactsSearchText1.Text[endindex]) && endindex > 0) {
+                          endindex--;
+                      }
+                      if (endindex > 0) {
+                          this.ContactsSearchText1.Text = this.ContactsSearchText1.Text.Substring(0, endindex);
+                      }
+                  }
+                }
+                string formatedSearchText = MiscUtils.GetSelectedValue(this.ContactsSearchText1, this.GetFromSession(this.ContactsSearchText1));
+                // After stripping "..." see if the search text is null or empty.
+                if (MiscUtils.IsValueSelected(this.ContactsSearchText1)) {
+                      
+                    // These clauses are added depending on operator and fields selected in Control's property page, bindings tab.
+                  
+                    WhereClause search = new WhereClause();
+                    
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(ContactsTable.LastName, true);
+      
+      cols.Add(ContactsTable.LastName2, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+          search.iOR(col, BaseFilter.ComparisonOperator.Contains, MiscUtils.GetSelectedValue(this.ContactsSearchText1, this.GetFromSession(this.ContactsSearchText1)), true, false);
+        
+      }
+    
+                    wc.iAND(search);
+                  
+                }
+            }
+                  
+           if (MiscUtils.IsValueSelected(this.ShowSelectedFilter)) {
+          
+               string id = GetParentControlPrimaryKey(); 
+            
+               if (id != "") {
+                   wc.iAND(LinkTableTable.PropertyID, BaseFilter.ComparisonOperator.EqualsTo, id, false, false);
+               }             
+           }   
+                
+            return wc;
+        }
+        
+         
+        public virtual WhereClause CreateWhereClause(String searchText, String fromSearchControl, String AutoTypeAheadSearch, String AutoTypeAheadWordSeparators)
+        {
+            // This CreateWhereClause is used for loading list of suggestions for Auto Type-Ahead feature.
+            ContactsTable.Instance.InnerFilter = null;
+            WhereClause wc = new WhereClause();
+        
+            // Compose the WHERE clause consist of:
+            // 1. Static clause defined at design time.
+            // 2. User selected search criteria.
+            // 3. User selected filter criteria.
+            
+            String appRelativeVirtualPath = (String)HttpContext.Current.Session["AppRelativeVirtualPath"];
+            
+            // Adds clauses if values are selected in Filter controls which are configured in the page.
+          
+            if (MiscUtils.IsValueSelected(searchText) && fromSearchControl == "ContactsSearchText1") {
+                String formatedSearchText = searchText;
+                // strip "..." from begin and ending of the search text, otherwise the search will return 0 values as in database "..." is not stored.
+                if (searchText.StartsWith("...")) {
+                    formatedSearchText = searchText.Substring(3,searchText.Length-3);
+                }
+                if (searchText.EndsWith("...")) {
+                    formatedSearchText = searchText.Substring(0,searchText.Length-3);
+                }
+                // After stripping "...", trim any leading and trailing whitespaces 
+                formatedSearchText = formatedSearchText.Trim();
+                // After stripping "..." see if the search text is null or empty.
+                if (MiscUtils.IsValueSelected(searchText)) {
+                      
+                    // These clauses are added depending on operator and fields selected in Control's property page, bindings tab.
+                  
+                    WhereClause search = new WhereClause();
+                    
+                    if (StringUtils.InvariantLCase(AutoTypeAheadSearch).Equals("wordsstartingwithsearchstring")) {
+                
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(ContactsTable.LastName, true);
+      
+      cols.Add(ContactsTable.LastName2, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+                  search.iOR(col, BaseFilter.ComparisonOperator.Starts_With, formatedSearchText, true, false);
+                  search.iOR(col, BaseFilter.ComparisonOperator.Contains, AutoTypeAheadWordSeparators + formatedSearchText, true, false);
+                
+      }
+    
+                    } else {
+                        
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(ContactsTable.LastName, true);
+      
+      cols.Add(ContactsTable.LastName2, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+                  search.iOR(col, BaseFilter.ComparisonOperator.Contains, formatedSearchText, true, false);
+      }
+    
+                    } 
+                    wc.iAND(search);
+                  
+                }
+            }
+                  
+
+            return wc;
+        }
+
+        
+        public virtual string[] GetAutoCompletionList_ContactsSearchText1(String prefixText,int count)
+        {
+            ArrayList resultList = new ArrayList();
+            ArrayList wordList= new ArrayList();
+            
+            CompoundFilter filterJoin = CreateCompoundJoinFilter();    
+            WhereClause wc = CreateWhereClause(prefixText,"ContactsSearchText1", "WordsStartingWithSearchString", "[^a-zA-Z0-9]");
+            if(count==0) count = 10;
+            IPv5.Business.ContactsRecord[] recordList  = ContactsTable.GetRecords(filterJoin, wc, null, 0, count, ref count);
+            String resultItem = "";
+            if (resultItem == "") resultItem = "";
+            foreach (ContactsRecord rec in recordList ){
+                // Exit the loop if recordList count has reached AutoTypeAheadListSize.
+                if (resultList.Count >= count) {
+                    break;
+                }
+                // If the field is configured to Display as Foreign key, Format() method returns the 
+                // Display as Forien Key value instead of original field value.
+                // Since search had to be done in multiple fields (selected in Control's page property, binding tab) in a record,
+                // We need to find relevent field to display which matches the prefixText and is not already present in the result list.
+        
+                resultItem = rec.Format(ContactsTable.LastName);
+  
+                if (resultItem != null) {
+                    string prText = prefixText;
+                    if(ContactsTable.LastName.IsFullTextSearchable) {
+                        FullTextExpression ft = new FullTextExpression();
+                        prText = ft.GetFirstNonExcludedTerm(prText);
+                    }
+                    if (!string.IsNullOrEmpty(prText) && resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).Contains(prText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture))) {
+                        bool isAdded = FormatSuggestions(prText, resultItem, 50, "AtBeginningOfMatchedString", "WordsStartingWithSearchString", "[^a-zA-Z0-9]", resultList, ContactsTable.LastName.IsFullTextSearchable);
+                        if (isAdded) {
+                            continue;
+                        }
+                    }
+                }
+      
+                resultItem = rec.Format(ContactsTable.LastName2);
+  
+                if (resultItem != null) {
+                    string prText = prefixText;
+                    if(ContactsTable.LastName2.IsFullTextSearchable) {
+                        FullTextExpression ft = new FullTextExpression();
+                        prText = ft.GetFirstNonExcludedTerm(prText);
+                    }
+                    if (!string.IsNullOrEmpty(prText) && resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).Contains(prText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture))) {
+                        bool isAdded = FormatSuggestions(prText, resultItem, 50, "AtBeginningOfMatchedString", "WordsStartingWithSearchString", "[^a-zA-Z0-9]", resultList, ContactsTable.LastName2.IsFullTextSearchable);
+                        if (isAdded) {
+                            continue;
+                        }
+                    }
+                }
+                      
+            }
+              
+            resultList.Sort();
+            string[] result = new string[resultList.Count];
+            Array.Copy(resultList.ToArray(), result, resultList.Count);
+            return result;
+        }
+          
+          
+         public virtual bool FormatSuggestions(String prefixText, String resultItem,
+                                              int columnLength, String AutoTypeAheadDisplayFoundText,
+                                              String autoTypeAheadSearch, String AutoTypeAheadWordSeparators,
+                                              ArrayList resultList)
+        {
+            return this.FormatSuggestions(prefixText, resultItem, columnLength, AutoTypeAheadDisplayFoundText,
+                                              autoTypeAheadSearch, AutoTypeAheadWordSeparators, resultList, false);
+        }          
+          
+        public virtual bool FormatSuggestions(String prefixText, String resultItem,
+                                              int columnLength, String AutoTypeAheadDisplayFoundText,
+                                              String autoTypeAheadSearch, String AutoTypeAheadWordSeparators,
+                                              ArrayList resultList, bool stripHTML)
+        {
+            if (stripHTML){
+                prefixText = StringUtils.ConvertHTMLToPlainText(prefixText);
+                resultItem = StringUtils.ConvertHTMLToPlainText(resultItem);
+            }
+            // Formats the result Item and adds it to the list of suggestions.
+            int index  = resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).IndexOf(prefixText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture));
+            String itemToAdd = null;
+            bool isFound = false;
+            bool isAdded = false;
+            if (StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("wordsstartingwithsearchstring") && !(index == 0)) {
+                // Expression to find word which contains AutoTypeAheadWordSeparators followed by prefixText
+                System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex( AutoTypeAheadWordSeparators + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+                if (regex1.IsMatch(resultItem)) {
+                    index = regex1.Match(resultItem).Index;
+                    isFound = true;
+                }
+                //If the prefixText is found immediatly after white space then starting of the word is found so don not search any further
+                if (resultItem[index].ToString() != " ") {
+                    // Expression to find beginning of the word which contains AutoTypeAheadWordSeparators followed by prefixText
+                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex("\\S*" + AutoTypeAheadWordSeparators + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+                    if (regex.IsMatch(resultItem)) {
+                        index = regex.Match(resultItem).Index;
+                        isFound = true;
+                    }
+                }
+            }
+            // If autoTypeAheadSearch value is wordsstartingwithsearchstring then, extract the substring only if the prefixText is found at the 
+            // beginning of the resultItem (index = 0) or a word in resultItem is found starts with prefixText. 
+            if (index == 0 || isFound || StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("anywhereinstring")) {
+                if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("atbeginningofmatchedstring")) {
+                    // Expression to find beginning of the word which contains prefixText
+                    System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex("\\S*" + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+                    //  Find the beginning of the word which contains prefexText
+                    if (StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("anywhereinstring") && regex1.IsMatch(resultItem)) {
+                        index = regex1.Match(resultItem).Index;
+                        isFound = true;
+                    }
+                    // Display string from the index till end of the string if, sub string from index till end of string is less than columnLength value.
+                    if ((resultItem.Length - index) <= columnLength) {
+                        if (index == 0) {
+                            itemToAdd = resultItem;
+                        } else {
+                            itemToAdd = resultItem.Substring(index);
+                        }
+                    }
+                    else {
+                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index, index + columnLength, StringUtils.Direction.forward);
+                    }
+                }
+                else if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("inmiddleofmatchedstring")) {
+                    int subStringBeginIndex = (int)(columnLength / 2);
+                    if (resultItem.Length <= columnLength) {
+                        itemToAdd = resultItem;
+                    }
+                    else {
+                        // Sanity check at end of the string
+                        if (((index + prefixText.Length) >= resultItem.Length - 1)||(resultItem.Length - index < subStringBeginIndex)) {
+                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, resultItem.Length - 1 - columnLength, resultItem.Length - 1, StringUtils.Direction.backward);
+                        }
+                        else if (index <= subStringBeginIndex) {
+                            // Sanity check at beginning of the string
+                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, 0, columnLength, StringUtils.Direction.forward);
+                        } 
+                        else {
+                            // Display string containing text before the prefixText occures and text after the prefixText
+                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index - subStringBeginIndex, index - subStringBeginIndex + columnLength, StringUtils.Direction.both);
+                        }
+                    }
+                }
+                else if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("atendofmatchedstring")) {
+                     // Expression to find ending of the word which contains prefexText
+                    System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex("\\s", System.Text.RegularExpressions.RegexOptions.IgnoreCase); 
+                    // Find the ending of the word which contains prefexText
+                    if (regex1.IsMatch(resultItem, index + 1)) {
+                        index = regex1.Match(resultItem, index + 1).Index;
+                    }
+                    else{
+                        // If the word which contains prefexText is the last word in string, regex1.IsMatch returns false.
+                        index = resultItem.Length;
+                    }
+                    
+                    if (index > resultItem.Length) {
+                        index = resultItem.Length;
+                    }
+                    // If text from beginning of the string till index is less than columnLength value then, display string from the beginning till index.
+                    if (index <= columnLength) {
+                        itemToAdd = resultItem.Substring(0, index);
+                    } 
+                    else {
+                        // Truncate the string to show only columnLength has to be appended.
+                        itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index - columnLength, index, StringUtils.Direction.backward);
+                    }
+                }
+                
+                // Remove newline character from itemToAdd
+                int prefixTextIndex = itemToAdd.IndexOf(prefixText, StringComparison.CurrentCultureIgnoreCase);
+                if(prefixTextIndex < 0) return false;
+                // If itemToAdd contains any newline after the search text then show text only till newline
+                System.Text.RegularExpressions.Regex regex2 = new System.Text.RegularExpressions.Regex("(\r\n|\n)", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+                int newLineIndexAfterPrefix = -1;
+                if (regex2.IsMatch(itemToAdd, prefixTextIndex)){
+                    newLineIndexAfterPrefix = regex2.Match(itemToAdd, prefixTextIndex).Index;
+                }
+                if ((newLineIndexAfterPrefix > -1)) {                   
+                    itemToAdd = itemToAdd.Substring(0, newLineIndexAfterPrefix);                   
+                }
+                // If itemToAdd contains any newline before search text then show text which comes after newline
+                System.Text.RegularExpressions.Regex regex3 = new System.Text.RegularExpressions.Regex("(\r\n|\n)", System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.RightToLeft );
+                int newLineIndexBeforePrefix = -1;
+                if (regex3.IsMatch(itemToAdd, prefixTextIndex)){
+                    newLineIndexBeforePrefix = regex3.Match(itemToAdd, prefixTextIndex).Index;
+                }
+                if ((newLineIndexBeforePrefix > -1)) {
+                    itemToAdd = itemToAdd.Substring(newLineIndexBeforePrefix +regex3.Match(itemToAdd, prefixTextIndex).Length);
+                }
+
+                if (!string.IsNullOrEmpty(itemToAdd) && !resultList.Contains(itemToAdd)) {
+                    
+                    resultList.Add(itemToAdd);
+          								
+                    isAdded = true;
+                }
+            }
+            return isAdded;
+        }        
+        
+    
+        protected virtual void GetPageSize()
+        {
+        
+            if (this.Pagination2.PageSize.Text.Length > 0) {
+                try {
+                    // this.PageSize = Convert.ToInt32(this.Pagination2.PageSize.Text);
+                } catch (Exception ) {
+                }
+            }
+        }
+
+        protected virtual void AddNewRecords()
+        {
+          
+            ArrayList newRecordList = new ArrayList();
+          
+            System.Collections.Generic.List<Hashtable> newUIDataList = new System.Collections.Generic.List<Hashtable>();
+            // Loop though all the record controls and if the record control
+            // does not have a unique record id set, then create a record
+            // and add to the list.
+            if (!this.ResetData)
+            {
+              System.Web.UI.WebControls.Repeater rep = (System.Web.UI.WebControls.Repeater)(BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactsTableControl1Repeater"));
+              if (rep == null){return;}
+              
+                foreach (System.Web.UI.WebControls.RepeaterItem repItem in rep.Items)
+                {
+                
+                // Loop through all rows in the table, set its DataSource and call DataBind().
+                ContactsTableControl1Row recControl = (ContactsTableControl1Row)(repItem.FindControl("ContactsTableControl1Row"));
+      
+            if (recControl.Visible && recControl.IsNewRecord) {
+      ContactsRecord rec = new ContactsRecord();
+        
+                        if (recControl.Address14.Text != "") {
+                            rec.Parse(recControl.Address14.Text, ContactsTable.Address1);
+                  }
+                
+                        if (recControl.Address24.Text != "") {
+                            rec.Parse(recControl.Address24.Text, ContactsTable.Address2);
+                  }
+                
+                        if (recControl.Address34.Text != "") {
+                            rec.Parse(recControl.Address34.Text, ContactsTable.Address3);
+                  }
+                
+                        if (recControl.BankAccount2.Text != "") {
+                            rec.Parse(recControl.BankAccount2.Text, ContactsTable.BankAccount);
+                  }
+                
+                        if (recControl.CityID3.Text != "") {
+                            rec.Parse(recControl.CityID3.Text, ContactsTable.CityID);
+                  }
+                
+                        if (recControl.CountryID3.Text != "") {
+                            rec.Parse(recControl.CountryID3.Text, ContactsTable.CountryID);
+                  }
+                
+                        if (recControl.DateOfBirth2.Text != "") {
+                            rec.Parse(recControl.DateOfBirth2.Text, ContactsTable.DateOfBirth);
+                  }
+                
+                        if (recControl.eMail3.Text != "") {
+                            rec.Parse(recControl.eMail3.Text, ContactsTable.eMail);
+                  }
+                
+                        if (recControl.FirstName22.Text != "") {
+                            rec.Parse(recControl.FirstName22.Text, ContactsTable.FirstName2);
+                  }
+                
+                        if (recControl.FirstName4.Text != "") {
+                            rec.Parse(recControl.FirstName4.Text, ContactsTable.FirstName);
+                  }
+                
+                        if (recControl.IrdNumber2.Text != "") {
+                            rec.Parse(recControl.IrdNumber2.Text, ContactsTable.IrdNumber);
+                  }
+                
+                        if (recControl.LastName22.Text != "") {
+                            rec.Parse(recControl.LastName22.Text, ContactsTable.LastName2);
+                  }
+                
+                        if (recControl.LastName4.Text != "") {
+                            rec.Parse(recControl.LastName4.Text, ContactsTable.LastName);
+                  }
+                
+                        if (recControl.PhoneNumber2.Text != "") {
+                            rec.Parse(recControl.PhoneNumber2.Text, ContactsTable.PhoneNumber);
+                  }
+                
+                        if (recControl.PlaceOfBirth2.Text != "") {
+                            rec.Parse(recControl.PlaceOfBirth2.Text, ContactsTable.PlaceOfBirth);
+                  }
+                
+                        if (recControl.PostCode4.Text != "") {
+                            rec.Parse(recControl.PostCode4.Text, ContactsTable.PostCode);
+                  }
+                
+                        if (recControl.TrustName2.Text != "") {
+                            rec.Parse(recControl.TrustName2.Text, ContactsTable.TrustName);
+                  }
+                
+              newUIDataList.Add(recControl.PreservedUIData());
+              newRecordList.Add(rec);
+            }
+          }
+        }
+    
+            // Add any new record to the list.
+            for (int count = 1; count <= this.AddNewRecord; count++) {
+              
+                newRecordList.Insert(0, new ContactsRecord());
+                newUIDataList.Insert(0, new Hashtable());
+              
+            }
+            this.AddNewRecord = 0;
+
+            // Finally, add any new records to the DataSource.
+            if (newRecordList.Count > 0) {
+              
+                ArrayList finalList = new ArrayList(this.DataSource);
+                finalList.InsertRange(0, newRecordList);
+
+                Type myrec = typeof(IPv5.Business.ContactsRecord);
+                this.DataSource = (ContactsRecord[])(finalList.ToArray(myrec));
+              
+            }
+            
+            // Add the existing UI data to this hash table
+            if (newUIDataList.Count > 0)
+                this.UIData.InsertRange(0, newUIDataList);
+        }
+
+        
+        public void AddToDeletedRecordIds(ContactsTableControl1Row rec)
+        {
+            if (rec.IsNewRecord) {
+                return;
+            }
+
+            if (this.DeletedRecordIds != null && this.DeletedRecordIds.Length > 0) {
+                this.DeletedRecordIds += ",";
+            }
+
+            this.DeletedRecordIds += "[" + rec.RecordUniqueId + "]";
+        }
+
+        protected virtual bool InDeletedRecordIds(ContactsTableControl1Row rec)            
+        {
+            if (this.DeletedRecordIds == null || this.DeletedRecordIds.Length == 0) {
+                return (false);
+            }
+
+            return (this.DeletedRecordIds.IndexOf("[" + rec.RecordUniqueId + "]") >= 0);
+        }
+
+        private String _DeletedRecordIds;
+        public String DeletedRecordIds {
+            get {
+                return (this._DeletedRecordIds);
+            }
+            set {
+                this._DeletedRecordIds = value;
+            }
+        }
+        
+      
+        // Create Set, WhereClause, and Populate Methods
+        
+        public virtual void SetShowSelectedFilterLabel()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.ShowSelectedFilterLabel.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetSortByLabel1()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.SortByLabel1.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetSortControl1()
+        {
+            
+                this.PopulateSortControl1(MiscUtils.GetSelectedValue(this.SortControl1,  GetFromSession(this.SortControl1)), 500);					
+                    
+
+        }
+            
+        public virtual void SetContactsSearchText1()
+        {
+                                            
+            this.ContactsSearchText1.Attributes.Add("onfocus", "if(this.value=='" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "') {this.value='';this.className='Search_Input';}");
+            this.ContactsSearchText1.Attributes.Add("onblur", "if(this.value=='') {this.value='" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "';this.className='Search_InputHint';}");
+                                   
+        }
+            
+        public virtual void SetShowSelectedFilter() {
+        
+        this.PopulateShowSelectedFilter(MiscUtils.GetSelectedValue(this.ShowSelectedFilter,  GetFromSession(this.ShowSelectedFilter)));
+        }
+      
+        // Get the filters' data for SortControl1.
+                
+        protected virtual void PopulateSortControl1(string selectedValue, int maxItems)
+                    
+        {
+            
+              
+                this.SortControl1.Items.Clear();
+                
+              // 1. Setup the static list items
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Address {Txt:Ascending}"), "Address1 Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Address {Txt:Descending}"), "Address1 Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("City {Txt:Ascending}"), "CityID Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("City {Txt:Descending}"), "CityID Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("First Name {Txt:Ascending}"), "FirstName Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("First Name {Txt:Descending}"), "FirstName Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Last Name {Txt:Ascending}"), "LastName Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Last Name {Txt:Descending}"), "LastName Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Second Contact First Name {Txt:Ascending}"), "FirstName2 Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Second Contact First Name {Txt:Descending}"), "FirstName2 Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Second Contact Last Name {Txt:Ascending}"), "LastName2 Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Second Contact Last Name {Txt:Descending}"), "LastName2 Desc"));
+              
+            try
+            {          
+                // Set the selected value.
+                MiscUtils.SetSelectedValue(this.SortControl1, selectedValue);
+
+               
+            }
+            catch
+            {
+            }
+              
+            if (this.SortControl1.SelectedValue != null && this.SortControl1.Items.FindByValue(this.SortControl1.SelectedValue) == null)
+                this.SortControl1.SelectedValue = null;
+              
+        }
+            
+          protected virtual void PopulateShowSelectedFilter(string selectedValue) {
+          this.ShowSelectedFilter.Items.Clear();
+
+          // 1. Setup the static list items
+          
+                  this.ShowSelectedFilter.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:ShowAll}"),"--ANY--"));
+                
+                  this.ShowSelectedFilter.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:ShowIncluded}"),"--Included--"));
+                
+                // Set the selected value.
+                MiscUtils.SetSelectedValue(this.ShowSelectedFilter, selectedValue);
+              
+          }
+        
+
+    
+        protected virtual void Control_PreRender(object sender, System.EventArgs e)
+        {
+            // PreRender event is raised just before page is being displayed.
+            try {
+                DbUtils.StartTransaction();
+                this.RegisterPostback();
+                if (!this.Page.ErrorOnPage && (this.Page.IsPageRefresh || this.DataChanged || this.ResetData)) {
+                  
+                
+                    // Re-load the data and update the web page if necessary.
+                    // This is typically done during a postback (filter, search button, sort, pagination button).
+                    // In each of the other click handlers, simply set DataChanged to True to reload the data.
+                    
+                    this.LoadData();
+                    this.DataBind();					
+                    
+                }
+                                
+            } catch (Exception ex) {
+                BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+            } finally {
+                DbUtils.EndTransaction();
+            }
+        }
+        
+        
+        protected override void SaveControlsToSession()
+        {
+            base.SaveControlsToSession();
+            // Save filter controls to values to session.
+        
+            this.SaveToSession(this.SortControl1, this.SortControl1.SelectedValue);
+                  
+            this.SaveToSession(this.ContactsSearchText1, this.ContactsSearchText1.Text);
+                  
+            
+                    
+            // Save pagination state to session.
+        
+          this.SaveToSession(this.ShowSelectedFilter, this.ShowSelectedFilter.SelectedValue);
+         
+    
+            // Save table control properties to the session.
+          
+            if (this.CurrentSortOrder != null)
+            {
+                if ((this.CurrentSortOrder).GetType() != typeof(GeoOrderBy))
+                {
+                    this.SaveToSession(this, "Order_By", this.CurrentSortOrder.ToXmlString());
+                }
+            }
+          
+            this.SaveToSession(this, "Page_Index", this.PageIndex.ToString());
+            this.SaveToSession(this, "Page_Size", this.PageSize.ToString());
+          
+            this.SaveToSession(this, "DeletedRecordIds", this.DeletedRecordIds);
+        
+        }
+        
+        
+        protected  void SaveControlsToSession_Ajax()
+        {
+            // Save filter controls to values to session.
+          
+            this.SaveToSession(this.SortControl1, this.SortControl1.SelectedValue);
+                  
+      this.SaveToSession("ContactsSearchText1_Ajax", this.ContactsSearchText1.Text);
+              
+           HttpContext.Current.Session["AppRelativeVirtualPath"] = this.Page.AppRelativeVirtualPath;
+         
+        }
+        
+        
+        protected override void ClearControlsFromSession()
+        {
+            base.ClearControlsFromSession();
+            // Clear filter controls values from the session.
+        
+            this.RemoveFromSession(this.SortControl1);
+            this.RemoveFromSession(this.ContactsSearchText1);
+            
+            // Clear pagination state from session.
+        
+        this.RemoveFromSession(this.ShowSelectedFilter);
+       
+
+    // Clear table properties from the session.
+    this.RemoveFromSession(this, "Order_By");
+    this.RemoveFromSession(this, "Page_Index");
+    this.RemoveFromSession(this, "Page_Size");
+    
+            this.RemoveFromSession(this, "DeletedRecordIds");
+            
+        }
+
+        protected override void LoadViewState(object savedState)
+        {
+            base.LoadViewState(savedState);
+
+            string orderByStr = (string)ViewState["ContactsTableControl1_OrderBy"];
+          
+            if (orderByStr != null && orderByStr.Length > 0) {
+                this.CurrentSortOrder = BaseClasses.Data.OrderBy.FromXmlString(orderByStr);
+            }
+          
+            else {
+                this.CurrentSortOrder = new OrderBy(true, false);
+            }
+          
+
+            Control Pagination = this.FindControl("Pagination2");
+            String PaginationType = "";
+            if (Pagination != null){
+              Control Summary = Pagination.FindControl("_Summary");
+              if (Summary != null){
+                if (((System.Web.UI.WebControls.TextBox)(Summary)).Text == "Infinite Pagination"){
+                  PaginationType = "Infinite Pagination";
+                }
+                if (((System.Web.UI.WebControls.TextBox)(Summary)).Text == "Infinite Pagination Mobile"){
+                  PaginationType = "Infinite Pagination Mobile";
+              }
+            }
+            }
+            
+            if (!(PaginationType.Equals("Infinite Pagination"))) {
+              if (!this.Page.ClientQueryString.Contains("InfiIframe") && PaginationType == "Infinite Pagination Mobile"){
+                    this.ViewState["Page_Index"] = 0;
+               }
+	            string pageIndex = Convert.ToString(ViewState["Page_Index"]);
+	            if (pageIndex != null) {
+		            this.PageIndex = Convert.ToInt32(pageIndex);
+	            }
+            }
+            
+            string pageSize = Convert.ToString(ViewState["Page_Size"]);
+            if ((pageSize != null)) {
+	            this.PageSize = Convert.ToInt32(pageSize);
+            }
+            
+          
+            // Load view state for pagination control.
+    
+            this.DeletedRecordIds = (string)this.ViewState["DeletedRecordIds"];
+        
+        }
+
+        protected override object SaveViewState()
+        {            
+          
+            if (this.CurrentSortOrder != null) {
+                this.ViewState["ContactsTableControl1_OrderBy"] = this.CurrentSortOrder.ToXmlString();
+            }
+          
+
+    this.ViewState["Page_Index"] = this.PageIndex;
+    this.ViewState["Page_Size"] = this.PageSize;
+    
+            this.ViewState["DeletedRecordIds"] = this.DeletedRecordIds;
+        
+    
+            // Load view state for pagination control.
+              
+            return (base.SaveViewState());
+        }
+
+        // Generate set method for buttons
+        
+        public virtual void SetCSVButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetExcelButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetNewButton2()                
+              
+        {
+        
+              try
+              {
+                    string url = "../Contacts/AddContacts.aspx?TabVisible=False&SaveAndNewVisible=False";
+              
+                      
+                    url = this.ModifyRedirectUrl(url, "", true);
+                    
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
+                    
+                    url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("Popup") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(MiscUtils.FindControlRecursively(this, "ContactsTableControl1_PostbackTracker").ClientID);                           
+                                
+                string javascriptCall = "";
+                
+                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "ContactsTableControl1_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                       
+                    this.NewButton2.Attributes["onClick"] = javascriptCall + "return false;";            
+                }
+                catch
+                {
+                    // do nothing.  If the code above fails, server side click event, NewButton2_ClickNewButton2_Click will be trigger when user click the button.
+                }
+                  
+   
+        }
+            
+        public virtual void SetPDFButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetResetButton1()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetSearchButton2()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetActions2Button()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetFilterButton1()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetFilters1Button()                
+              
+        {
+                
+         IThemeButtonWithArrow themeButtonFilters1Button = (IThemeButtonWithArrow)(MiscUtils.FindControlRecursively(this, "Filters1Button"));
+         themeButtonFilters1Button.ArrowImage.ImageUrl = "../Images/ButtonExpandArrow.png";
+    
+      
+          if (MiscUtils.IsValueSelected(this.ShowSelectedFilter))
+                themeButtonFilters1Button.ArrowImage.ImageUrl = "../Images/ButtonCheckmark.png";
+            
+   
+        }
+               
+        
+        // Generate the event handling functions for pagination events.
+        
+        // event handler for ImageButton
+        public virtual void Pagination2_FirstPage_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+            this.PageIndex = 0;
+            this.DataChanged = true;
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void Pagination2_LastPage_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+            this.DisplayLastPage = true;
+            this.DataChanged = true;
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void Pagination2_NextPage_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+            this.PageIndex += 1;
+            this.DataChanged = true;
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for LinkButton
+        public virtual void Pagination2_PageSizeButton_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            this.DataChanged = true;
+      
+            this.PageSize = this.Pagination2.GetCurrentPageSize();
+      
+            this.PageIndex = Convert.ToInt32(this.Pagination2.CurrentPage.Text) - 1;
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void Pagination2_PreviousPage_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+            if (this.PageIndex > 0) {
+                this.PageIndex -= 1;
+                this.DataChanged = true;
+            }
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+
+        // Generate the event handling functions for sorting events.
+        
+
+        // Generate the event handling functions for button events.
+        
+        // event handler for ImageButton
+        public virtual void CSVButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                    WhereClause wc = null;
+                    wc = CreateWhereClause();
+                    OrderBy orderBy = null;
+                    
+                    orderBy = CreateOrderBy();
+                    
+                BaseColumn[] columns = new BaseColumn[] {
+                             ContactsTable.FirstName,
+             ContactsTable.LastName,
+             ContactsTable.eMail,
+             ContactsTable.Address1,
+             ContactsTable.Address2,
+             ContactsTable.Address3,
+             ContactsTable.CityID,
+             ContactsTable.PostCode,
+             ContactsTable.CountryID,
+             ContactsTable.TrustName,
+             ContactsTable.IrdNumber,
+             ContactsTable.PhoneNumber,
+             ContactsTable.FirstName2,
+             ContactsTable.LastName2,
+             ContactsTable.BankAccount,
+             ContactsTable.DateOfBirth,
+             ContactsTable.PlaceOfBirth,
+             null};
+                ExportDataToCSV exportData = new ExportDataToCSV(ContactsTable.Instance,wc,orderBy,columns);
+                
+                Boolean done = false;
+
+                int totalRowsReturned = 0;
+                CompoundFilter join = CreateCompoundJoinFilter();
+                DataForExport data = new DataForExport(ContactsTable.Instance, wc, orderBy, columns,join);
+
+                this.TotalRecords = ContactsTable.GetRecordCount(join, wc);
+                Boolean exportRawValues = false;
+                if (this.TotalRecords > 10000)
+                  exportRawValues = true;
+                exportData.StartExport(this.Page.Response, exportRawValues);
+                
+                //  Read pageSize records at a time and write out the CSV file.
+                while (!done)
+                {
+                ArrayList recList = data.GetRows(exportData.pageSize);
+                if (recList == null)
+                break; //we are done
+
+                totalRowsReturned = recList.Count;
+                foreach (BaseRecord rec in recList)
+                {
+                foreach (BaseColumn col in data.ColumnList)
+                {
+                if (col == null)
+                continue;
+
+                if (!data.IncludeInExport(col))
+                continue;
+
+                String val = "";
+
+                if (exportRawValues )
+                val = rec.GetValue(col).ToString();
+                else{
+                Boolean _isExpandableNonCompositeForeignKey = col.TableDefinition.IsExpandableNonCompositeForeignKey(col);
+                if (_isExpandableNonCompositeForeignKey && col.IsApplyDisplayAs)
+                val = ContactsTable.GetDFKA(rec.GetValue(col).ToString(), col, null);
+                if( (!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(val)))
+                val = exportData.GetDataForExport(col, rec);
+                }                
+                exportData.WriteColumnData(val, data.IsString(col));
+                }
+                exportData.WriteNewRow();
+                }
+
+                //  If we already are below the pageSize, then we are done.
+                if (totalRowsReturned < exportData.pageSize)
+                {
+                done = true;
+                }
+                }
+                exportData.FinishExport(this.Page.Response);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ExcelButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            
+            // To customize the columns or the format, override this function in Section 1 of the page
+            // and modify it to your liking.
+            // Build the where clause based on the current filter and search criteria
+            // Create the Order By clause based on the user's current sorting preference.
+            
+                WhereClause wc = null;
+                wc = CreateWhereClause();
+                OrderBy orderBy = null;
+              
+                orderBy = CreateOrderBy();
+              
+              bool done = false;
+              object val = "";
+              CompoundFilter join = CreateCompoundJoinFilter();
+              
+              // Read pageSize records at a time and write out the Excel file.
+              int totalRowsReturned = 0;
+
+
+              this.TotalRecords = ContactsTable.GetRecordCount(join, wc);
+              if (this.TotalRecords > 10000)
+              {
+              
+                // Add each of the columns in order of export.
+                BaseColumn[] columns = new BaseColumn[] {
+                             ContactsTable.FirstName,
+             ContactsTable.LastName,
+             ContactsTable.eMail,
+             ContactsTable.Address1,
+             ContactsTable.Address2,
+             ContactsTable.Address3,
+             ContactsTable.CityID,
+             ContactsTable.PostCode,
+             ContactsTable.CountryID,
+             ContactsTable.TrustName,
+             ContactsTable.IrdNumber,
+             ContactsTable.PhoneNumber,
+             ContactsTable.FirstName2,
+             ContactsTable.LastName2,
+             ContactsTable.BankAccount,
+             ContactsTable.DateOfBirth,
+             ContactsTable.PlaceOfBirth,
+             null};
+                ExportDataToCSV exportData = new ExportDataToCSV(ContactsTable.Instance,wc,orderBy,columns);
+                exportData.StartExport(this.Page.Response, true);
+
+                DataForExport dataForCSV = new DataForExport(ContactsTable.Instance, wc, orderBy, columns,join);
+
+                //  Read pageSize records at a time and write out the CSV file.
+                while (!done)
+                {
+                ArrayList recList = dataForCSV.GetRows(exportData.pageSize);
+                if (recList == null)
+                break; //we are done
+
+                totalRowsReturned = recList.Count;
+                foreach (BaseRecord rec in recList)
+                {
+                foreach (BaseColumn col in dataForCSV.ColumnList)
+                {
+                if (col == null)
+                continue;
+
+                if (!dataForCSV.IncludeInExport(col))
+                continue;
+
+                val = rec.GetValue(col).ToString();
+                exportData.WriteColumnData(val, dataForCSV.IsString(col));
+                }
+                exportData.WriteNewRow();
+                }
+
+                //  If we already are below the pageSize, then we are done.
+                if (totalRowsReturned < exportData.pageSize)
+                {
+                done = true;
+                }
+                }
+                exportData.FinishExport(this.Page.Response);
+              
+              }
+              else
+              {
+              // Create an instance of the ExportDataToExcel class with the table class, where clause and order by.
+              ExportDataToExcel excelReport = new ExportDataToExcel(ContactsTable.Instance, wc, orderBy);
+              // Add each of the columns in order of export.
+              // To customize the data type, change the second parameter of the new ExcelColumn to be
+              // a format string from Excel's Format Cell menu. For example "dddd, mmmm dd, yyyy h:mm AM/PM;@", "#,##0.00"
+
+              if (this.Page.Response == null)
+              return;
+
+              excelReport.CreateExcelBook();
+
+              int width = 0;
+              int columnCounter = 0;
+              DataForExport data = new DataForExport(ContactsTable.Instance, wc, orderBy, null,join);
+                           data.ColumnList.Add(new ExcelColumn(ContactsTable.FirstName, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.LastName, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.eMail, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.Address1, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.Address2, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.Address3, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.CityID, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.PostCode, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.CountryID, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.TrustName, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.IrdNumber, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.PhoneNumber, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.FirstName2, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.LastName2, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.BankAccount, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.DateOfBirth, "Short Date"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.PlaceOfBirth, "Default"));
+
+
+              //  First write out the Column Headers
+              foreach (ExcelColumn col in data.ColumnList)
+              {
+              width = excelReport.GetExcelCellWidth(col);
+              if (data.IncludeInExport(col))
+              {
+              excelReport.AddColumnToExcelBook(columnCounter, col.ToString(), excelReport.GetExcelDataType(col), width, excelReport.GetDisplayFormat(col));
+              columnCounter++;
+              }
+              }
+              
+              while (!done)
+              {
+              ArrayList recList = data.GetRows(excelReport.pageSize);
+
+              if (recList == null)
+              {
+              break;
+              }
+              totalRowsReturned = recList.Count;
+
+              foreach (BaseRecord rec in recList)
+              {
+              excelReport.AddRowToExcelBook();
+              columnCounter = 0;
+              foreach (ExcelColumn col in data.ColumnList)
+              {
+              if (!data.IncludeInExport(col))
+              continue;
+
+              Boolean _isExpandableNonCompositeForeignKey = col.DisplayColumn.TableDefinition.IsExpandableNonCompositeForeignKey(col.DisplayColumn);
+              if (_isExpandableNonCompositeForeignKey && col.DisplayColumn.IsApplyDisplayAs)
+              {
+                val = ContactsTable.GetDFKA(rec.GetValue(col.DisplayColumn).ToString(), col.DisplayColumn, null) as string;
+                if (String.IsNullOrEmpty(val as string))
+                {
+                  val = rec.Format(col.DisplayColumn);
+                }
+              }
+              else
+                val = excelReport.GetValueForExcelExport(col, rec);
+              
+              excelReport.AddCellToExcelRow(columnCounter, excelReport.GetExcelDataType(col), val, col.DisplayFormat);
+
+              columnCounter++;
+              }
+              }
+
+              // If we already are below the pageSize, then we are done.
+              if (totalRowsReturned < excelReport.pageSize)
+              {
+              done = true;
+              }
+              }
+              excelReport.SaveExcelBook(this.Page.Response);
+              }
+            
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void NewButton2_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../Contacts/AddContacts.aspx?TabVisible=False&SaveAndNewVisible=False";
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      
+                    url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("Popup") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(MiscUtils.FindControlRecursively(this, "ContactsTableControl1_PostbackTracker").ClientID);                           
+                                
+                string javascriptCall = "";
+                
+                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "ContactsTableControl1_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "NewButton2_Click", javascriptCall, true);
+        
+            }
+        
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void PDFButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+
+                PDFReport report = new PDFReport();
+
+                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.PDFButton.report");
+                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
+                report.Title = "Contacts";
+                // If GroupByPropertiesTable.PDFButton.report specifies a valid report template,
+                // AddColumn methods will generate a report template.   
+                // Each AddColumn method-call specifies a column
+                // The 1st parameter represents the text of the column header
+                // The 2nd parameter represents the horizontal alignment of the column header
+                // The 3rd parameter represents the text format of the column detail
+                // The 4th parameter represents the horizontal alignment of the column detail
+                // The 5th parameter represents the relative width of the column
+                 report.AddColumn(ContactsTable.FirstName.Name, ReportEnum.Align.Left, "${FirstName}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(ContactsTable.LastName.Name, ReportEnum.Align.Left, "${LastName}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(ContactsTable.eMail.Name, ReportEnum.Align.Left, "${eMail}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(ContactsTable.Address1.Name, ReportEnum.Align.Left, "${Address1}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(ContactsTable.Address2.Name, ReportEnum.Align.Left, "${Address2}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(ContactsTable.Address3.Name, ReportEnum.Align.Left, "${Address3}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(ContactsTable.CityID.Name, ReportEnum.Align.Left, "${CityID}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(ContactsTable.PostCode.Name, ReportEnum.Align.Left, "${PostCode}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(ContactsTable.CountryID.Name, ReportEnum.Align.Left, "${CountryID}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(ContactsTable.TrustName.Name, ReportEnum.Align.Left, "${TrustName}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(ContactsTable.IrdNumber.Name, ReportEnum.Align.Left, "${IrdNumber}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(ContactsTable.PhoneNumber.Name, ReportEnum.Align.Left, "${PhoneNumber}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(ContactsTable.FirstName2.Name, ReportEnum.Align.Left, "${FirstName2}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(ContactsTable.LastName2.Name, ReportEnum.Align.Left, "${LastName2}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(ContactsTable.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 17);
+                 report.AddColumn(ContactsTable.DateOfBirth.Name, ReportEnum.Align.Left, "${DateOfBirth}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(ContactsTable.PlaceOfBirth.Name, ReportEnum.Align.Left, "${PlaceOfBirth}", ReportEnum.Align.Left, 28);
+
+  
+                int rowsPerQuery = 5000;
+                int recordCount = 0;
+                                
+                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
+                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
+
+                
+                ColumnList columns = ContactsTable.GetColumnList();
+                
+                WhereClause whereClause = null;
+                whereClause = CreateWhereClause();
+                OrderBy orderBy = CreateOrderBy();
+                BaseFilter joinFilter = CreateCompoundJoinFilter();
+                
+                int pageNum = 0;
+                int totalRows = ContactsTable.GetRecordCount(joinFilter,whereClause);
+                ContactsRecord[] records = null;
+                
+                do
+                {
+                    
+                    records = ContactsTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
+                     if (records != null && records.Length > 0 && whereClause.RunQuery)
+                    {
+                        foreach ( ContactsRecord record in records)
+                    
+                        {
+                            // AddData method takes four parameters   
+                            // The 1st parameter represent the data format
+                            // The 2nd parameter represent the data value
+                            // The 3rd parameter represent the default alignment of column using the data
+                            // The 4th parameter represent the maximum length of the data value being shown
+                                                 report.AddData("${FirstName}", record.Format(ContactsTable.FirstName), ReportEnum.Align.Left, 100);
+                             report.AddData("${LastName}", record.Format(ContactsTable.LastName), ReportEnum.Align.Left, 100);
+                             report.AddData("${eMail}", record.Format(ContactsTable.eMail), ReportEnum.Align.Left, 100);
+                             report.AddData("${Address1}", record.Format(ContactsTable.Address1), ReportEnum.Align.Left, 100);
+                             report.AddData("${Address2}", record.Format(ContactsTable.Address2), ReportEnum.Align.Left, 100);
+                             report.AddData("${Address3}", record.Format(ContactsTable.Address3), ReportEnum.Align.Left, 100);
+                             if (BaseClasses.Utils.MiscUtils.IsNull(record.CityID)){
+                                 report.AddData("${CityID}", "",ReportEnum.Align.Left, 100);
+                             }else{
+                                 Boolean _isExpandableNonCompositeForeignKey;
+                                 String _DFKA = "";
+                                 _isExpandableNonCompositeForeignKey = ContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(ContactsTable.CityID);
+                                 _DFKA = ContactsTable.GetDFKA(record.CityID.ToString(), ContactsTable.CityID,null);
+                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  ContactsTable.CityID.IsApplyDisplayAs){
+                                     report.AddData("${CityID}", _DFKA,ReportEnum.Align.Left, 100);
+                                 }else{
+                                     report.AddData("${CityID}", record.Format(ContactsTable.CityID), ReportEnum.Align.Left, 100);
+                                 }
+                             }
+                             report.AddData("${PostCode}", record.Format(ContactsTable.PostCode), ReportEnum.Align.Left, 100);
+                             if (BaseClasses.Utils.MiscUtils.IsNull(record.CountryID)){
+                                 report.AddData("${CountryID}", "",ReportEnum.Align.Left, 100);
+                             }else{
+                                 Boolean _isExpandableNonCompositeForeignKey;
+                                 String _DFKA = "";
+                                 _isExpandableNonCompositeForeignKey = ContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(ContactsTable.CountryID);
+                                 _DFKA = ContactsTable.GetDFKA(record.CountryID.ToString(), ContactsTable.CountryID,null);
+                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  ContactsTable.CountryID.IsApplyDisplayAs){
+                                     report.AddData("${CountryID}", _DFKA,ReportEnum.Align.Left, 100);
+                                 }else{
+                                     report.AddData("${CountryID}", record.Format(ContactsTable.CountryID), ReportEnum.Align.Left, 100);
+                                 }
+                             }
+                             report.AddData("${TrustName}", record.Format(ContactsTable.TrustName), ReportEnum.Align.Left, 100);
+                             report.AddData("${IrdNumber}", record.Format(ContactsTable.IrdNumber), ReportEnum.Align.Left, 100);
+                             report.AddData("${PhoneNumber}", record.Format(ContactsTable.PhoneNumber), ReportEnum.Align.Left, 100);
+                             report.AddData("${FirstName2}", record.Format(ContactsTable.FirstName2), ReportEnum.Align.Left, 100);
+                             report.AddData("${LastName2}", record.Format(ContactsTable.LastName2), ReportEnum.Align.Left, 100);
+                             report.AddData("${BankAccount}", record.Format(ContactsTable.BankAccount), ReportEnum.Align.Left, 100);
+                             report.AddData("${DateOfBirth}", record.Format(ContactsTable.DateOfBirth), ReportEnum.Align.Left, 100);
+                             report.AddData("${PlaceOfBirth}", record.Format(ContactsTable.PlaceOfBirth), ReportEnum.Align.Left, 100);
+
+                            report.WriteRow();
+                        }
+                        pageNum++;
+                        recordCount += records.Length;
+                    }
+                }
+                while (records != null && recordCount < totalRows && whereClause.RunQuery);
+                	
+                
+                report.Close();
+                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".pdf", report.ReportInByteArray, 0, true);
+            
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ResetButton1_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+           
+            this.SortControl1.ClearSelection();
+          
+              this.ContactsSearchText1.Text = "";
+            
+          this.ShowSelectedFilter.ClearSelection();
+          
+            DeleteValuesFromHiddenVariable();
+          
+              this.CurrentSortOrder.Reset();
+              if (this.InSession(this, "Order_By"))
+                  this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));
+              else
+              {
+                  this.CurrentSortOrder = new OrderBy(true, false);
+                  
+              }
+                
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+                
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void SearchButton2_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            this.DataChanged = true;
+          
+              DeleteValuesFromHiddenVariable();
+          
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void Actions2Button_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            //This method is initially empty to implement custom click handler.
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void FilterButton1_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            this.DataChanged = true;
+          
+              DeleteValuesFromHiddenVariable();
+          
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void Filters1Button_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            //This method is initially empty to implement custom click handler.
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+
+
+        // Generate the event handling functions for filter and search events.
+        
+        // event handler for OrderSort
+        protected virtual void SortControl1_SelectedIndexChanged(object sender, EventArgs args)
+        {
+              
+                  string SelVal1 = this.SortControl1.SelectedValue.ToUpper();
+                  string[] words1 = SelVal1.Split(' ');
+                  if (SelVal1 != "" )
+                  {
+                  SelVal1 = SelVal1.Replace(words1[words1.Length - 1], "").TrimEnd();
+                  foreach (BaseClasses.Data.BaseColumn ColumnNam in ContactsTable.GetColumns())
+                  {
+                  if (ColumnNam.Name.ToUpper().Equals(SelVal1))
+                  {
+                  SelVal1 = ColumnNam.InternalName;
+                  }
+                  }
+                  }
+
+                
+                OrderByItem sd = this.CurrentSortOrder.Find(ContactsTable.GetColumnByName(SelVal1));
+                if (sd == null || this.CurrentSortOrder.Items != null)
+                {
+                // First time sort, so add sort order for Discontinued.
+                if (ContactsTable.GetColumnByName(SelVal1) != null)
+                {
+                  this.CurrentSortOrder.Reset();
+                }
+
+                //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+                if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+                
+                  if (SelVal1 != "--PLEASE_SELECT--" && ContactsTable.GetColumnByName(SelVal1) != null)
+                  {
+                    if (words1[words1.Length - 1].Contains("ASC"))
+                  {
+                  this.CurrentSortOrder.Add(ContactsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Asc);
+                    }
+                    else
+                    {
+                      if (words1[words1.Length - 1].Contains("DESC"))
+                  {
+                  this.CurrentSortOrder.Add(ContactsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Desc );
+                      }
+                    }
+                  }
+                
+                }
+                this.DataChanged = true;
+              				
+        }
+            
+          // event handler for DropDownList
+          protected virtual void ShowSelectedFilter_SelectedIndexChanged(object sender, EventArgs args) {
+        
+          try
+          {
+          DbUtils.StartTransaction();
+          DeleteValuesFromHiddenVariable();
+          DbUtils.CommitTransaction();
+          }
+          catch (Exception ex)
+          {
+          // Upon error, rollback the transaction
+          DbUtils.RollBackTransaction();
+          this.Page.ErrorOnPage = true;
+          // Report the error message to the end user
+          BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+          }
+          finally
+          {
+          DbUtils.EndTransaction();
+          }
+          this.DataChanged = true;
+          }
+        
+    
+        // Generate the event handling functions for others
+        	  
+
+        protected int _TotalRecords = -1;
+        public int TotalRecords 
+        {
+            get {
+                if (_TotalRecords < 0)
+                {
+                    _TotalRecords = ContactsTable.GetRecordCount(CreateCompoundJoinFilter(), CreateWhereClause());
+                }
+                return (this._TotalRecords);
+            }
+            set {
+                if (this.PageSize > 0) {
+                  
+                      this.TotalPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(value) / Convert.ToDouble(this.PageSize)));
+                          
+                }
+                this._TotalRecords = value;
+            }
+        }
+
+      
+      
+        protected int _TotalPages = -1;
+        public int TotalPages {
+            get {
+                if (_TotalPages < 0) 
+                
+                    this.TotalPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(TotalRecords) / Convert.ToDouble(this.PageSize)));
+                  
+                return this._TotalPages;
+            }
+            set {
+                this._TotalPages = value;
+            }
+        }
+
+        protected bool _DisplayLastPage;
+        public bool DisplayLastPage {
+            get {
+                return this._DisplayLastPage;
+            }
+            set {
+                this._DisplayLastPage = value;
+            }
+        }
+
+
+        
+        private OrderBy _CurrentSortOrder = null;
+        public OrderBy CurrentSortOrder {
+            get {
+                return this._CurrentSortOrder;
+            }
+            set {
+                this._CurrentSortOrder = value;
+            }
+        }
+        
+        public  ContactsRecord[] DataSource {
+             
+            get {
+                return (ContactsRecord[])(base._DataSource);
+            }
+            set {
+                this._DataSource = value;
+            }
+        }
+
+#region "Helper Properties"
+        
+        public IPv5.UI.IThemeButtonWithArrow Actions2Button {
+            get {
+                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Actions2Button");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox ContactsSearchText1 {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactsSearchText1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton CSVButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CSVButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ExcelButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExcelButton");
+            }
+        }
+        
+        public IPv5.UI.IThemeButton FilterButton1 {
+            get {
+                return (IPv5.UI.IThemeButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FilterButton1");
+            }
+        }
+        
+        public IPv5.UI.IThemeButtonWithArrow Filters1Button {
+            get {
+                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Filters1Button");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton NewButton2 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NewButton2");
+            }
+        }
+        
+        public IPv5.UI.IPaginationModern Pagination2 {
+            get {
+                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Pagination2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton PDFButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PDFButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton1 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ResetButton1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton2 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SearchButton2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.DropDownList ShowSelectedFilter {
+            get {
+                return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ShowSelectedFilter");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal ShowSelectedFilterLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ShowSelectedFilterLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Label SortByLabel1 {
+            get {
+                return (System.Web.UI.WebControls.Label)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortByLabel1");
+            }
+        }
+        
+          public System.Web.UI.WebControls.DropDownList SortControl1 {
+          get {
+          return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortControl1");
+          }
+          }
+        
+#endregion
+
+#region "Helper Functions"
+        
+        public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt)
+        {
+            return this.Page.EvaluateExpressions(url, arg, bEncrypt, this);
+        }
+        
+        public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt,bool includeSession)
+        {
+            return this.Page.EvaluateExpressions(url, arg, bEncrypt, this,includeSession);
+        }
+        
+        public override string EvaluateExpressions(string url, string arg, bool bEncrypt)
+        {
+            bool needToProcess = AreAnyUrlParametersForMe(url, arg);
+            if (needToProcess) {
+                ContactsTableControl1Row recCtl = this.GetSelectedRecordControl();
+                if (recCtl == null && url.IndexOf("{") >= 0) {
+                    // Localization.
+                    throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
+                }
+
+        ContactsRecord rec = null;
+                if (recCtl != null) {
+                    rec = recCtl.GetRecord();
+                }
+                return EvaluateExpressions(url, arg, rec, bEncrypt);
+             
+            }
+            return url;
+        }
+        
+        
+        public override string EvaluateExpressions(string url, string arg, bool bEncrypt, bool includeSession)
+        {
+            bool needToProcess = AreAnyUrlParametersForMe(url, arg);
+            if (needToProcess) {
+                ContactsTableControl1Row recCtl = this.GetSelectedRecordControl();
+                if (recCtl == null && url.IndexOf("{") >= 0) {
+                    // Localization.
+                    throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
+                }
+
+        ContactsRecord rec = null;
+                if (recCtl != null) {
+                    rec = recCtl.GetRecord();
+                }
+                
+                if (includeSession)
+                {
+                    return EvaluateExpressions(url, arg, rec, bEncrypt);
+                }
+                else
+                {
+                    return EvaluateExpressions(url, arg, rec, bEncrypt,false);
+                }
+             
+            }
+            return url;
+        }
+          
+        public virtual int GetSelectedRecordIndex()
+        {
+            int counter = 0;
+            foreach (ContactsTableControl1Row recControl in this.GetRecordControls())
+            {
+                if (recControl.SelectRow.Checked) {
+                    return counter;
+                }
+                counter += 1;
+            }
+            return -1;
+        }
+        
+        public virtual ContactsTableControl1Row GetSelectedRecordControl()
+        {
+        ContactsTableControl1Row[] selectedList = this.GetSelectedRecordControls();
+            if (selectedList.Length == 0) {
+            return null;
+            }
+            return selectedList[0];
+          
+        }
+
+        public virtual ContactsTableControl1Row[] GetSelectedRecordControls()
+        {
+        
+            ArrayList selectedList = new ArrayList(25);
+            foreach (ContactsTableControl1Row recControl in this.GetRecordControls())
+            {
+                if (recControl.SelectRow != null && recControl.SelectRow.Checked) {
+                    selectedList.Add(recControl);
+                }
+            }
+            return (ContactsTableControl1Row[])(selectedList.ToArray(Type.GetType("IPv5.UI.Controls.GroupByPropertiesTable.ContactsTableControl1Row")));
+          
+        }
+
+        public virtual void DeleteSelectedRecords(bool deferDeletion)
+        {
+            ContactsTableControl1Row[] recordList = this.GetSelectedRecordControls();
+            if (recordList.Length == 0) {
+                // Localization.
+                throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
+            }
+            
+            foreach (ContactsTableControl1Row recCtl in recordList)
+            {
+                if (deferDeletion) {
+                    if (!recCtl.IsNewRecord) {
+                
+                        this.AddToDeletedRecordIds(recCtl);
+                  
+                    }
+                    recCtl.Visible = false;
+                
+                    recCtl.SelectRow.Checked = false;
+                
+                } else {
+                
+                    recCtl.Delete();
+                    // Setting the DataChanged to True results in the page being refreshed with
+                    // the most recent data from the database.  This happens in PreRender event
+                    // based on the current sort, search and filter criteria.
+                    this.DataChanged = true;
+                    this.ResetData = true;
+                  
+                }
+            }
+        }
+
+        public virtual ContactsTableControl1Row[] GetRecordControls()
+        {
+            Control[] recCtrls = BaseClasses.Utils.MiscUtils.FindControlsRecursively(this, "ContactsTableControl1Row");
+	          List<ContactsTableControl1Row> list = new List<ContactsTableControl1Row>();
+	          foreach (ContactsTableControl1Row recCtrl in recCtrls) {
+		          list.Add(recCtrl);
+	          }
+	          return list.ToArray();
+        }
+
+        public new BaseApplicationPage Page 
+        {
+            get {
+                return ((BaseApplicationPage)base.Page);
+            }
+        }
+        
+                
+
+        
+        
+#endregion
+
+
+    }
+  
 // Base class for the DirectorsTableControlRow control on the GroupByPropertiesTable page.
 // Do not modify this class. Instead override any method in DirectorsTableControlRow.
 public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
@@ -3893,18 +8838,14 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
         // To customize, override this method in DirectorsTableControlRow.
         protected virtual void Control_Load(object sender, System.EventArgs e)
         {      
-        
-              // Show confirmation message on Click
-              this.DirectorsRowDeleteButton.Attributes.Add("onClick", "return (confirm(\"" + ((BaseApplicationPage)this.Page).GetResourceValue("DeleteRecordConfirm", "IPv5") + "\"));");            
+                    
         
               // Register the event handlers.
 
           
-                    this.DirectorsRowDeleteButton.Click += DirectorsRowDeleteButton_Click;
-                        
                     this.DirectorsRowEditButton.Click += DirectorsRowEditButton_Click;
                         
-                    this.ContactID.Click += ContactID_Click;
+                    this.ViewRowButton1.Click += ViewRowButton1_Click;
                         
         }
 
@@ -3964,9 +8905,9 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 SetContactID();
                 
                 
-                SetDirectorsRowDeleteButton();
-              
                 SetDirectorsRowEditButton();
+              
+                SetViewRowButton1();
               
 
       
@@ -3995,11 +8936,11 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
         {
             
                     
-            // Set the ContactID LinkButton on the webpage with value from the
+            // Set the ContactID Literal on the webpage with value from the
             // DatabaseMM_IP1%dbo.Directors database record.
 
             // this.DataSource is the DatabaseMM_IP1%dbo.Directors record retrieved from the database.
-            // this.ContactID is the ASP:LinkButton on the webpage.
+            // this.ContactID is the ASP:Literal on the webpage.
                   
             if (this.DataSource != null && this.DataSource.ContactIDSpecified) {
                 								
@@ -4015,9 +8956,8 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                      formattedValue = this.DataSource.Format(DirectorsTable.ContactID);
                                   
                                 
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
                 this.ContactID.Text = formattedValue;
-                
-                  this.ContactID.ToolTip = "Go to " + this.ContactID.Text.Replace("<wbr/>", "");
                    
             } 
             
@@ -4219,14 +9159,11 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -4365,13 +9302,6 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
     
         // Generate set method for buttons
         
-        public virtual void SetDirectorsRowDeleteButton()                
-              
-        {
-        
-   
-        }
-            
         public virtual void SetDirectorsRowEditButton()                
               
         {
@@ -4379,36 +9309,13 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
    
         }
             
-        // event handler for ImageButton
-        public virtual void DirectorsRowDeleteButton_Click(object sender, ImageClickEventArgs args)
+        public virtual void SetViewRowButton1()                
+              
         {
-              
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-            if (!this.Page.IsPageRefresh) {
         
-                this.Delete();
-              
-            }
-      this.Page.CommitTransaction(sender);
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-    
+   
         }
             
-            
-        
         // event handler for ImageButton
         public virtual void DirectorsRowEditButton_Click(object sender, ImageClickEventArgs args)
         {
@@ -4419,7 +9326,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../Directors/EditDirectors.aspx?Directors={PK}";
+            string url = @"../Contacts/EditContacts.aspx?Contacts={DirectorsTableControlRow:FK:FK_Directors_Contacts}";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
                 url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
@@ -4457,8 +9364,8 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             
             
         
-        // event handler for LinkButton
-        public virtual void ContactID_Click(object sender, EventArgs args)
+        // event handler for ImageButton
+        public virtual void ViewRowButton1_Click(object sender, ImageClickEventArgs args)
         {
               
             // The redirect URL is set on the Properties, Custom Properties or Actions.
@@ -4467,7 +9374,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../Contacts/ShowContacts.aspx?Contacts={DirectorsTableControlRow:FK:FK_Directors_Contacts}";
+            string url = @"../Directors/ShowDirectors.aspx?Directors={PK}";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
                 url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
@@ -4594,21 +9501,21 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
        
 #region "Helper Properties"
         
-        public System.Web.UI.WebControls.LinkButton ContactID {
+        public System.Web.UI.WebControls.Literal ContactID {
             get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactID");
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactID");
             }
         }
             
-        public System.Web.UI.WebControls.ImageButton DirectorsRowDeleteButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DirectorsRowDeleteButton");
-            }
-        }
-        
         public System.Web.UI.WebControls.ImageButton DirectorsRowEditButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DirectorsRowEditButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ViewRowButton1 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ViewRowButton1");
             }
         }
         
@@ -5716,7 +10623,8 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                 this.ContactIDFilter2.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
               
             OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
+                          orderBy.Add(ContactsTable.FirstName, OrderByItem.OrderDir.Asc);
+              orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
 
 
             System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
@@ -5753,7 +10661,7 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                                 if(_isExpandableNonCompositeForeignKey && DirectorsTable.ContactID.IsApplyDisplayAs)
                                      fvalue = DirectorsTable.GetDFKA(itemValue, DirectorsTable.ContactID);
                                 if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                     fvalue = itemValue.Format(ContactsTable.LastName);
+                                     fvalue = itemValue.Format(ContactsTable.ContactID);
                                    					
                                 if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
 
@@ -6445,7 +11353,7 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 3rd parameter represents the text format of the column detail
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
-                 report.AddColumn(DirectorsTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(DirectorsTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 27);
 
   
                 int rowsPerQuery = 5000;
@@ -6481,16 +11389,16 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 3rd parameter represent the default alignment of column using the data
                             // The 4th parameter represent the maximum length of the data value being shown
                                                  if (BaseClasses.Utils.MiscUtils.IsNull(record.ContactID)){
-                                 report.AddData("${ContactID}", "",ReportEnum.Align.Left);
+                                 report.AddData("${ContactID}", "",ReportEnum.Align.Left, 100);
                              }else{
                                  Boolean _isExpandableNonCompositeForeignKey;
                                  String _DFKA = "";
                                  _isExpandableNonCompositeForeignKey = DirectorsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(DirectorsTable.ContactID);
                                  _DFKA = DirectorsTable.GetDFKA(record.ContactID.ToString(), DirectorsTable.ContactID,null);
                                  if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  DirectorsTable.ContactID.IsApplyDisplayAs){
-                                     report.AddData("${ContactID}", _DFKA,ReportEnum.Align.Left);
+                                     report.AddData("${ContactID}", _DFKA,ReportEnum.Align.Left, 100);
                                  }else{
-                                     report.AddData("${ContactID}", record.Format(DirectorsTable.ContactID), ReportEnum.Align.Left);
+                                     report.AddData("${ContactID}", record.Format(DirectorsTable.ContactID), ReportEnum.Align.Left, 100);
                                  }
                              }
 
@@ -6581,7 +11489,7 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 3rd parameter represents the text format of the column detail
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
-                 report.AddColumn(DirectorsTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(DirectorsTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 27);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -6613,16 +11521,16 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 3rd parameter represents the default alignment of column using the data
                             // The 4th parameter represents the maximum length of the data value being shown
                              if (BaseClasses.Utils.MiscUtils.IsNull(record.ContactID)){
-                                 report.AddData("${ContactID}", "",ReportEnum.Align.Left);
+                                 report.AddData("${ContactID}", "",ReportEnum.Align.Left, 100);
                              }else{
                                  Boolean _isExpandableNonCompositeForeignKey;
                                  String _DFKA = "";
                                  _isExpandableNonCompositeForeignKey = DirectorsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(DirectorsTable.ContactID);
                                  _DFKA = DirectorsTable.GetDFKA(record.ContactID.ToString(), DirectorsTable.ContactID,null);
                                  if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  DirectorsTable.ContactID.IsApplyDisplayAs){
-                                     report.AddData("${ContactID}", _DFKA,ReportEnum.Align.Left);
+                                     report.AddData("${ContactID}", _DFKA,ReportEnum.Align.Left, 100);
                                  }else{
-                                     report.AddData("${ContactID}", record.Format(DirectorsTable.ContactID), ReportEnum.Align.Left);
+                                     report.AddData("${ContactID}", record.Format(DirectorsTable.ContactID), ReportEnum.Align.Left, 100);
                                  }
                              }
 
@@ -7019,3176 +11927,6 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
 
     }
   
-// Base class for the LinkTableTableControlRow control on the GroupByPropertiesTable page.
-// Do not modify this class. Instead override any method in LinkTableTableControlRow.
-public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
-{
-        public BaseLinkTableTableControlRow()
-        {
-            this.Init += Control_Init;
-            this.Load += Control_Load;
-            this.PreRender += Control_PreRender;
-            this.EvaluateFormulaDelegate = new DataSource.EvaluateFormulaDelegate(this.EvaluateFormula);
-        }
-
-        // To customize, override this method in LinkTableTableControlRow.
-        protected virtual void Control_Init(object sender, System.EventArgs e)
-        {
-                
-        }
-
-        // To customize, override this method in LinkTableTableControlRow.
-        protected virtual void Control_Load(object sender, System.EventArgs e)
-        {      
-        
-              // Show confirmation message on Click
-              this.LinkTableRowDeleteButton.Attributes.Add("onClick", "return (confirm(\"" + ((BaseApplicationPage)this.Page).GetResourceValue("DeleteRecordConfirm", "IPv5") + "\"));");            
-        
-              // Register the event handlers.
-
-          
-                    this.LinkTableRowDeleteButton.Click += LinkTableRowDeleteButton_Click;
-                        
-                    this.LinkTableRowEditButton.Click += LinkTableRowEditButton_Click;
-                        
-                    this.ContactID1.Click += ContactID1_Click;
-                        
-        }
-
-        public virtual void LoadData()  
-        {
-            // Load the data from the database into the DataSource DatabaseMM_IP1%dbo.LinkTable record.
-            // It is better to make changes to functions called by LoadData such as
-            // CreateWhereClause, rather than making changes here.
-            
-        
-            // The RecordUniqueId is set the first time a record is loaded, and is
-            // used during a PostBack to load the record.
-            if (this.RecordUniqueId != null && this.RecordUniqueId.Length > 0) {
-              
-                this.DataSource = LinkTableTable.GetRecord(this.RecordUniqueId, true);
-              
-                return;
-            }
-      
-            // Since this is a row in the table, the data for this row is loaded by the 
-            // LoadData method of the BaseLinkTableTableControl when the data for the entire
-            // table is loaded.
-            
-            this.DataSource = new LinkTableRecord();
-            
-        }
-
-        public override void DataBind()
-        {
-            // The DataBind method binds the user interface controls to the values
-            // from the database record.  To do this, it calls the Set methods for 
-            // each of the field displayed on the webpage.  It is better to make 
-            // changes in the Set methods, rather than making changes here.
-            
-            base.DataBind();
-            
-            this.ClearControlsFromSession();
-            
-            // Make sure that the DataSource is initialized.
-            
-            if (this.DataSource == null) {
-             //This is to make sure all the controls will be invisible if no record is present in the cell
-             
-                return;
-            }
-              
-            // LoadData for DataSource for chart and report if they exist
-          
-            // Store the checksum. The checksum is used to
-            // ensure the record was not changed by another user.
-            if (this.DataSource.GetCheckSumValue() != null)
-                this.CheckSum = this.DataSource.GetCheckSumValue().Value;
-            
-
-            // Call the Set methods for each controls on the panel
-        
-                SetContactID1();
-                
-                
-                
-                SetLinkTableRowDeleteButton();
-              
-                SetLinkTableRowEditButton();
-              
-
-      
-
-            this.IsNewRecord = true;
-          
-            if (this.DataSource.IsCreated) {
-                this.IsNewRecord = false;
-              
-                if (this.DataSource.GetID() != null)
-                    this.RecordUniqueId = this.DataSource.GetID().ToXmlString();
-              
-            }
-            
-
-            // Now load data for each record and table child UI controls.
-            // Ordering is important because child controls get 
-            // their parent ids from their parent UI controls.
-            bool shouldResetControl = false;
-            if (shouldResetControl) { }; // prototype usage to void compiler warnings
-                      
-        SetContactsRecordControl();
-
-        
-        }
-        
-        
-        public virtual void SetContactID1()
-        {
-            
-                    
-            // Set the ContactID LinkButton on the webpage with value from the
-            // DatabaseMM_IP1%dbo.LinkTable database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.LinkTable record retrieved from the database.
-            // this.ContactID1 is the ASP:LinkButton on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.ContactIDSpecified) {
-                								
-                // If the ContactID is non-NULL, then format the value.
-                // The Format method will return the Display Foreign Key As (DFKA) value
-               string formattedValue = "";
-               Boolean _isExpandableNonCompositeForeignKey = LinkTableTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(LinkTableTable.ContactID);
-               if(_isExpandableNonCompositeForeignKey &&LinkTableTable.ContactID.IsApplyDisplayAs)
-                                  
-                     formattedValue = LinkTableTable.GetDFKA(this.DataSource.ContactID.ToString(),LinkTableTable.ContactID, null);
-                                    
-               if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(formattedValue)))
-                     formattedValue = this.DataSource.Format(LinkTableTable.ContactID);
-                                  
-                                
-                this.ContactID1.Text = formattedValue;
-                
-                  this.ContactID1.ToolTip = "Go to " + this.ContactID1.Text.Replace("<wbr/>", "");
-                   
-            } 
-            
-            else {
-            
-                // ContactID is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.ContactID1.Text = LinkTableTable.ContactID.Format(LinkTableTable.ContactID.DefaultValue);
-            		
-            }
-                               
-        }
-                
-        public virtual void SetContactsRecordControl()           
-        
-        {        
-            if (ContactsRecordControl.Visible)
-            {
-                ContactsRecordControl.LoadData();
-                ContactsRecordControl.DataBind();
-            }
-        }
-      
-        public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS, FormulaEvaluator e)
-        {
-            if (e == null)
-                e = new FormulaEvaluator();
-
-            e.Variables.Clear();
-            // add variables for formula evaluation
-            if (variables != null)
-            {
-                System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<string, object>> enumerator = variables.GetEnumerator();
-                while (enumerator.MoveNext())
-                {
-                    e.Variables.Add(enumerator.Current.Key, enumerator.Current.Value);
-                }
-            }
-            
-            
-            if (includeDS)
-            {
-                
-            }
-            
-            // All variables referred to in the formula are expected to be
-            // properties of the DataSource.  For example, referring to
-            // UnitPrice as a variable will refer to DataSource.UnitPrice
-            if (dataSourceForEvaluate == null)
-                e.DataSource = this.DataSource;
-            else
-                e.DataSource = dataSourceForEvaluate;
-
-            // Define the calling control.  This is used to add other 
-            // related table and record controls as variables.
-            e.CallingControl = this;
-
-            object resultObj = e.Evaluate(formula);
-            if (resultObj == null)
-                return "";
-            
-            if ( !string.IsNullOrEmpty(format) && (string.IsNullOrEmpty(formula) || formula.IndexOf("Format(") < 0) )
-                return FormulaUtils.Format(resultObj, format);
-            else
-                return resultObj.ToString();
-        }
-                
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS)
-        {
-          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, includeDS, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables)
-        {
-          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, format, null, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, System.Collections.Generic.IDictionary<string, object> variables, FormulaEvaluator e)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, variables, true, e);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, null, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, bool includeDS)
-        {
-          return this.EvaluateFormula(formula, null, null, null, includeDS, null);
-        }
-
-        public virtual string EvaluateFormula(string formula)
-        {
-          return this.EvaluateFormula(formula, null, null, null, true, null);
-        }
-        
-      
-
-        public virtual void RegisterPostback()
-        {
-            
-        }
-    
-        
-
-        public virtual void SaveData()
-        {
-            // Saves the associated record in the database.
-            // SaveData calls Validate and Get methods - so it may be more appropriate to
-            // customize those methods.
-
-            // 1. Load the existing record from the database. Since we save the entire record, this ensures 
-            // that fields that are not displayed are also properly initialized.
-            this.LoadData();
-        
-            // The checksum is used to ensure the record was not changed by another user.
-            if (this.DataSource != null && this.DataSource.GetCheckSumValue() != null) {
-                if (this.CheckSum != null && this.CheckSum != this.DataSource.GetCheckSumValue().Value) {
-                    throw new Exception(Page.GetResourceValue("Err:RecChangedByOtherUser", "IPv5"));
-                }
-            }
-        PropertiesTableControlRow parentCtrl;
-      
-            parentCtrl = (PropertiesTableControlRow)MiscUtils.GetParentControlObject(this, "PropertiesTableControlRow");
-          
-        if (parentCtrl != null && parentCtrl.DataSource == null) {
-        // Load the record if it is not loaded yet.
-        parentCtrl.LoadData();
-        }
-        if (parentCtrl == null || parentCtrl.DataSource == null) {
-        // Get the error message from the application resource file.
-        throw new Exception(Page.GetResourceValue("Err:NoParentRecId", "IPv5"));
-        }
-        
-          this.DataSource.PropertyID = parentCtrl.DataSource.PropertyID;
-        
-          
-            // 2. Perform any custom validation.
-            this.Validate();
-
-            // 3. Set the values in the record with data from UI controls.
-            // This calls the Get() method for each of the user interface controls.
-            this.GetUIData();
-   
-            // 4. Save in the database.
-            // We should not save the record if the data did not change. This
-            // will save a database hit and avoid triggering any database triggers.
-            
-            if (this.DataSource.IsAnyValueChanged) {
-                // Save record to database but do not commit yet.
-                // Auto generated ids are available after saving for use by child (dependent) records.
-                this.DataSource.Save();
-                
-                // Set the DataChanged flag to True for the for the related panels so they get refreshed as well.
-                ((LinkTableTableControl)MiscUtils.GetParentControlObject(this, "LinkTableTableControl")).DataChanged = true;
-                ((LinkTableTableControl)MiscUtils.GetParentControlObject(this, "LinkTableTableControl")).ResetData = true;
-            }
-            
-      
-            // update session or cookie by formula
-             		  
-      
-            // Setting the DataChanged to True results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-            this.ResetData = true;
-            
-            this.CheckSum = "";
-            // For Master-Detail relationships, save data on the Detail table(s)            
-          ContactsRecordControl recContactsRecordControl = (ContactsRecordControl)(MiscUtils.FindControlRecursively(this, "ContactsRecordControl"));
-        recContactsRecordControl.SaveData();
-        
-        }
-
-        public virtual void GetUIData()
-        {
-            // The GetUIData method retrieves the updated values from the user interface 
-            // controls into a database record in preparation for saving or updating.
-            // To do this, it calls the Get methods for each of the field displayed on 
-            // the webpage.  It is better to make changes in the Get methods, rather 
-            // than making changes here.
-      
-            // Call the Get methods for each of the user interface controls.
-        
-            GetContactID1();
-        }
-        
-        
-        public virtual void GetContactID1()
-        {
-            
-        }
-                
-
-      // To customize, override this method in LinkTableTableControlRow.
-      
-        public virtual WhereClause CreateWhereClause()
-         
-        {
-    
-            bool hasFiltersBankLoansTableControl = false;
-            hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
-      
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
-      
-            bool hasFiltersDirectorsTableControl = false;
-            hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
-      
-            bool hasFiltersMMContractsTableControl = false;
-            hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertiesTableControl = false;
-            hasFiltersPropertiesTableControl = hasFiltersPropertiesTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertyContactsTableControl = false;
-            hasFiltersPropertyContactsTableControl = hasFiltersPropertyContactsTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertyNotesTableControl = false;
-            hasFiltersPropertyNotesTableControl = hasFiltersPropertyNotesTableControl && false; // suppress warning
-      
-            bool hasFiltersRentReviewsTableControl = false;
-            hasFiltersRentReviewsTableControl = hasFiltersRentReviewsTableControl && false; // suppress warning
-      
-            bool hasFiltersTermExpiresTableControl = false;
-            hasFiltersTermExpiresTableControl = hasFiltersTermExpiresTableControl && false; // suppress warning
-      
-            bool hasFiltersTermRenewalsTableControl = false;
-            hasFiltersTermRenewalsTableControl = hasFiltersTermRenewalsTableControl && false; // suppress warning
-      
-            return null;
-        
-        }
-        
-        
-    
-        public virtual void Validate()
-        {
-            // Add custom validation for any control within this panel.
-            // Example.  If you have a State ASP:Textbox control
-            // if (this.State.Text != "CA")
-            //    throw new Exception("State must be CA (California).");
-            // The Validate method is common across all controls within
-            // this panel so you can validate multiple fields, but report
-            // one error message.
-            
-            
-            
-        }
-
-        public virtual void Delete()
-        {
-        
-            if (this.IsNewRecord) {
-                return;
-            }
-
-            KeyValue pkValue = KeyValue.XmlToKey(this.RecordUniqueId);
-          LinkTableTable.DeleteRecord(pkValue);
-          
-              
-            // Setting the DataChanged to True results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            ((LinkTableTableControl)MiscUtils.GetParentControlObject(this, "LinkTableTableControl")).DataChanged = true;
-            ((LinkTableTableControl)MiscUtils.GetParentControlObject(this, "LinkTableTableControl")).ResetData = true;
-        }
-
-        protected virtual void Control_PreRender(object sender, System.EventArgs e)
-        {
-            // PreRender event is raised just before page is being displayed.
-            try {
-                DbUtils.StartTransaction();
-                this.RegisterPostback();
-                if (!this.Page.ErrorOnPage && (this.Page.IsPageRefresh || this.DataChanged || this.ResetData)) {
-                  
-                
-                    // Re-load the data and update the web page if necessary.
-                    // This is typically done during a postback (filter, search button, sort, pagination button).
-                    // In each of the other click handlers, simply set DataChanged to True to reload the data.
-                    this.LoadData();
-                    this.DataBind();
-                }
-                				
-            } catch (Exception ex) {
-                BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-            } finally {
-                DbUtils.EndTransaction();
-            }
-        }
-        
-            
-        protected override void SaveControlsToSession()
-        {
-            base.SaveControlsToSession();
-        
-    
-            // Save pagination state to session.
-          
-        }
-        
-        
-    
-        protected override void ClearControlsFromSession()
-        {
-            base.ClearControlsFromSession();
-
-        
-
-            // Clear pagination state from session.
-        
-        }
-        
-        protected override void LoadViewState(object savedState)
-        {
-            base.LoadViewState(savedState);
-            string isNewRecord = (string)ViewState["IsNewRecord"];
-            if (isNewRecord != null && isNewRecord.Length > 0) {
-                this.IsNewRecord = Boolean.Parse(isNewRecord);
-            }
-        
-            string myCheckSum = (string)ViewState["CheckSum"];
-            if (myCheckSum != null && myCheckSum.Length > 0) {
-                this.CheckSum = myCheckSum;
-            }
-        
-    
-            // Load view state for pagination control.
-                 
-        }
-
-        protected override object SaveViewState()
-        {
-            ViewState["IsNewRecord"] = this.IsNewRecord.ToString();
-            ViewState["CheckSum"] = this.CheckSum;
-        
-
-            // Load view state for pagination control.
-               
-            return base.SaveViewState();
-        }
-
-        
-    
-        // Generate set method for buttons
-        
-        public virtual void SetLinkTableRowDeleteButton()                
-              
-        {
-        
-   
-        }
-            
-        public virtual void SetLinkTableRowEditButton()                
-              
-        {
-        
-   
-        }
-            
-        // event handler for ImageButton
-        public virtual void LinkTableRowDeleteButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-            if (!this.Page.IsPageRefresh) {
-        
-                this.Delete();
-              
-            }
-      this.Page.CommitTransaction(sender);
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-    
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTableRowEditButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            // The redirect URL is set on the Properties, Custom Properties or Actions.
-            // The ModifyRedirectURL call resolves the parameters before the
-            // Response.Redirect redirects the page to the URL.  
-            // Any code after the Response.Redirect call will not be executed, since the page is
-            // redirected to the URL.
-            
-            string url = @"../Contacts/EditContacts.aspx?Contacts={LinkTableTableControlRow:FK:FK_LinkTable_Contacts}";
-            
-            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
-                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
-            
-        bool shouldRedirect = true;
-        string target = null;
-        if (target == null) target = ""; // avoid warning on VS
-      
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-                url = this.ModifyRedirectUrl(url, "",true);
-                url = this.Page.ModifyRedirectUrl(url, "",true);
-              
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  shouldRedirect = false;
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-            if (shouldRedirect) {
-                this.Page.ShouldSaveControlsToSession = true;
-      this.Page.Response.Redirect(url);
-        
-            }
-        
-        }
-            
-            
-        
-        // event handler for LinkButton
-        public virtual void ContactID1_Click(object sender, EventArgs args)
-        {
-              
-            // The redirect URL is set on the Properties, Custom Properties or Actions.
-            // The ModifyRedirectURL call resolves the parameters before the
-            // Response.Redirect redirects the page to the URL.  
-            // Any code after the Response.Redirect call will not be executed, since the page is
-            // redirected to the URL.
-            
-            string url = @"../Contacts/ShowContacts.aspx?Contacts={LinkTableTableControlRow:FK:FK_LinkTable_Contacts}";
-            
-            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
-                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
-            
-        bool shouldRedirect = true;
-        string target = null;
-        if (target == null) target = ""; // avoid warning on VS
-      
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-                url = this.ModifyRedirectUrl(url, "",true);
-                url = this.Page.ModifyRedirectUrl(url, "",true);
-              
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  shouldRedirect = false;
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-            if (shouldRedirect) {
-                this.Page.ShouldSaveControlsToSession = true;
-      this.Page.Response.Redirect(url);
-        
-            }
-        
-        }
-            
-            
-        
-  
-        private Hashtable _PreviousUIData = new Hashtable();
-        public virtual Hashtable PreviousUIData {
-            get {
-                return this._PreviousUIData;
-            }
-            set {
-                this._PreviousUIData = value;
-            }
-        }
-  
-
-        
-        public String RecordUniqueId {
-            get {
-                return (string)this.ViewState["BaseLinkTableTableControlRow_Rec"];
-            }
-            set {
-                this.ViewState["BaseLinkTableTableControlRow_Rec"] = value;
-            }
-        }
-        
-        public LinkTableRecord DataSource {
-            get {
-                return (LinkTableRecord)(this._DataSource);
-            }
-            set {
-                this._DataSource = value;
-            }
-        }
-        
-
-        private string _checkSum;
-        public virtual string CheckSum {
-            get {
-                return (this._checkSum);
-            }
-            set {
-                this._checkSum = value;
-            }
-        }
-    
-        private int _TotalPages;
-        public virtual int TotalPages {
-            get {
-                return (this._TotalPages);
-            }
-            set {
-                this._TotalPages = value;
-            }
-        }
-        
-        private int _PageIndex;
-        public virtual int PageIndex {
-            get {
-                return (this._PageIndex);
-            }
-            set {
-                this._PageIndex = value;
-            }
-        }
-        
-        private bool _DisplayLastPage;
-        public virtual bool DisplayLastPage {
-            get {
-                return (this._DisplayLastPage);
-            }
-            set {
-                this._DisplayLastPage = value;
-            }
-        }
-        
-        
-    
-        private KeyValue selectedParentKeyValue;
-        public KeyValue SelectedParentKeyValue
-        {
-            get
-            {
-                return this.selectedParentKeyValue;
-            }
-            set
-            {
-                this.selectedParentKeyValue = value;
-            }
-        }
-       
-#region "Helper Properties"
-        
-        public System.Web.UI.WebControls.LinkButton ContactID1 {
-            get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactID1");
-            }
-        }
-            
-        public ContactsRecordControl ContactsRecordControl {
-            get {
-                return (ContactsRecordControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactsRecordControl");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableRowDeleteButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableRowDeleteButton");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableRowEditButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableRowEditButton");
-            }
-        }
-        
-    #endregion
-
-    #region "Helper Functions"
-    public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt)
-    {
-        return this.Page.EvaluateExpressions(url, arg, bEncrypt, this);
-    }
-
-    public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt,bool includeSession)
-    {
-        return this.Page.EvaluateExpressions(url, arg, bEncrypt, this,includeSession);
-    }
-
-    public override string EvaluateExpressions(string url, string arg, bool bEncrypt)
-    {
-        LinkTableRecord rec = null;
-             
-            try {
-                rec = this.GetRecord();
-            }
-            catch (Exception ) {
-                // Do Nothing
-            }
-            
-            if (rec == null && url.IndexOf("{") >= 0) {
-                // Localization.
-                
-                throw new Exception(Page.GetResourceValue("Err:RecDataSrcNotInitialized", "IPv5"));
-                    
-            }
-        
-            return EvaluateExpressions(url, arg, rec, bEncrypt);
-        
-    }
-
-
-    public override string EvaluateExpressions(string url, string arg, bool bEncrypt,bool includeSession)
-    {
-    LinkTableRecord rec = null;
-    
-          try {
-               rec = this.GetRecord();
-          }
-          catch (Exception ) {
-          // Do Nothing
-          }
-
-          if (rec == null && url.IndexOf("{") >= 0) {
-          // Localization.
-    
-              throw new Exception(Page.GetResourceValue("Err:RecDataSrcNotInitialized", "IPv5"));
-      
-          }
-    
-          if (includeSession)
-          {
-              return EvaluateExpressions(url, arg, rec, bEncrypt);
-          }
-          else
-          {
-              return EvaluateExpressions(url, arg, rec, bEncrypt,includeSession);
-          }
-    
-    }
-
-        
-        public virtual LinkTableRecord GetRecord()
-             
-        {
-        
-            if (this.DataSource != null) {
-                return this.DataSource;
-            }
-            
-              if (this.RecordUniqueId != null) {
-              
-                return LinkTableTable.GetRecord(this.RecordUniqueId, true);
-              
-            }
-            
-            // Localization.
-            
-            return null;
-                
-        }
-
-        public new BaseApplicationPage Page
-        {
-            get {
-                return ((BaseApplicationPage)base.Page);
-            }
-        }
-
-#endregion
-
-}
-
-  
-// Base class for the LinkTableTableControl control on the GroupByPropertiesTable page.
-// Do not modify this class. Instead override any method in LinkTableTableControl.
-public class BaseLinkTableTableControl : IPv5.UI.BaseApplicationTableControl
-{
-         
-       public BaseLinkTableTableControl()
-        {
-            this.Init += Control_Init;
-            this.Load += Control_Load;
-            this.PreRender += Control_PreRender;
-            this.EvaluateFormulaDelegate = new DataSource.EvaluateFormulaDelegate(this.EvaluateFormula);
-        }
-
-        protected virtual void Control_Init(object sender, System.EventArgs e)
-        {
-      
-    
-           // Setup the filter and search.
-        
-            if (!this.Page.IsPostBack)
-            {
-                string initialVal = "";
-                if  (this.InSession(this.ContactIDFilter3)) 				
-                    initialVal = this.GetFromSession(this.ContactIDFilter3);
-                
-                else
-                    
-                    initialVal = EvaluateFormula("URL(\"ContactID\")");
-                
-                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
-                {
-                initialVal = "";
-                }
-              
-                if (initialVal != null && initialVal != "")		
-                {
-                        
-                    this.ContactIDFilter3.Items.Add(new ListItem(initialVal, initialVal));
-                        
-                    this.ContactIDFilter3.SelectedValue = initialVal;
-                            
-                    }
-            }
-
-
-      
-      
-            // Control Initializations.
-            // Initialize the table's current sort order.
-
-            if (this.InSession(this, "Order_By"))
-                this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));         
-            else
-            {
-                   
-                this.CurrentSortOrder = new OrderBy(true, false);
-            
-        }
-
-
-
-    // Setup default pagination settings.
-    
-            this.PageSize = Convert.ToInt32(this.GetFromSession(this, "Page_Size", "10"));
-            this.PageIndex = Convert.ToInt32(this.GetFromSession(this, "Page_Index", "0"));
-                     
-        }
-
-        protected virtual void Control_Load(object sender, EventArgs e)
-        {
-        
-            SaveControlsToSession_Ajax();
-        
-            // Setup the pagination events.
-            
-                    this.LinkTablePagination.FirstPage.Click += LinkTablePagination_FirstPage_Click;
-                        
-                    this.LinkTablePagination.LastPage.Click += LinkTablePagination_LastPage_Click;
-                        
-                    this.LinkTablePagination.NextPage.Click += LinkTablePagination_NextPage_Click;
-                        
-                    this.LinkTablePagination.PageSizeButton.Click += LinkTablePagination_PageSizeButton_Click;
-                        
-                    this.LinkTablePagination.PreviousPage.Click += LinkTablePagination_PreviousPage_Click;
-                        
-
-            string url =""; //to avoid warning in VS as its not being used
-            if(url == null) url=""; //to avoid warning in VS as its not being used
-        
-       // Setup the sorting events.
-        
-            // Setup the button events.
-          
-                    this.LinkTableExportExcelButton.Click += LinkTableExportExcelButton_Click;
-                        
-                    this.LinkTableImportButton.Click += LinkTableImportButton_Click;
-                        
-                    this.LinkTableNewButton.Click += LinkTableNewButton_Click;
-                        
-                    this.LinkTablePDFButton.Click += LinkTablePDFButton_Click;
-                        
-                    this.LinkTableResetButton.Click += LinkTableResetButton_Click;
-                        
-                    this.LinkTableWordButton.Click += LinkTableWordButton_Click;
-                        
-                    this.LinkTableButtonsButton.Button.Click += LinkTableButtonsButton_Click;
-                        
-                    this.LinkTableFilterButton.Button.Click += LinkTableFilterButton_Click;
-                        
-                    this.LinkTableFiltersButton.Button.Click += LinkTableFiltersButton_Click;
-                        
-            this.ContactIDFilter3.SelectedIndexChanged += new EventHandler(ContactIDFilter3_SelectedIndexChanged);
-                    
-        
-         //' Setup events for others
-               
-        }
-
-        public virtual void LoadData()
-        {
-            // Read data from database. Returns an array of records that can be assigned
-            // to the DataSource table control property.
-            try {
-                  CompoundFilter joinFilter = CreateCompoundJoinFilter();
-                
-                  // The WHERE clause will be empty when displaying all records in table.
-                  WhereClause wc = CreateWhereClause();
-                  if (wc != null && !wc.RunQuery) {
-                        // Initialize an empty array of records
-                      ArrayList alist = new ArrayList(0);
-                      Type myrec = typeof(IPv5.Business.LinkTableRecord);
-                      this.DataSource = (LinkTableRecord[])(alist.ToArray(myrec));
-                      // Add records to the list if needed.
-                      this.AddNewRecords();
-                      this._TotalRecords = 0;
-                      this._TotalPages = 0;
-                      return;
-                  }
-
-                  // Call OrderBy to determine the order - either use the order defined
-                  // on the Query Wizard, or specified by user (by clicking on column heading)
-
-                  OrderBy orderBy = CreateOrderBy();
-
-      
-                // Get the pagesize from the pagesize control.
-                this.GetPageSize();
-                if (this.DisplayLastPage)
-                {
-                    int totalRecords = this._TotalRecords < 0? GetRecordCount(CreateCompoundJoinFilter(), CreateWhereClause()): this._TotalRecords;
-                     
-                        int totalPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(totalRecords) / Convert.ToDouble(this.PageSize)));
-                       
-                    this.PageIndex = totalPages - 1;                
-                }
-                
-                // Make sure PageIndex (current page) and PageSize are within bounds.
-                if (this.PageIndex < 0)
-                    this.PageIndex = 0;
-                if (this.PageSize < 1)
-                    this.PageSize = 1;
-                
-                
-                // Retrieve the records and set the table DataSource.
-                // Only PageSize records are fetched starting at PageIndex (zero based).
-                if (this.AddNewRecord > 0) {
-                    // Make sure to preserve the previously entered data on new rows.
-                    ArrayList postdata = new ArrayList(0);
-                    foreach (LinkTableTableControlRow rc in this.GetRecordControls()) {
-                        if (!rc.IsNewRecord) {
-                            rc.DataSource = rc.GetRecord();
-                            rc.GetUIData();
-                            postdata.Add(rc.DataSource);
-                            UIData.Add(rc.PreservedUIData());
-                        }
-                    }
-                    Type myrec = typeof(IPv5.Business.LinkTableRecord);
-                    this.DataSource = (LinkTableRecord[])(postdata.ToArray(myrec));
-                } 
-                else {
-                    // Get the records from the database
-                    
-                        this.DataSource = GetRecords(joinFilter, wc, orderBy, this.PageIndex, this.PageSize);
-                                          
-                }
-                
-                // if the datasource contains no records contained in database, then load the last page.
-                if (DbUtils.GetCreatedRecords(this.DataSource).Length == 0 && !this.DisplayLastPage)
-                {
-                      this.DisplayLastPage = true;
-                      LoadData();
-                }
-                else
-                {
-                    // Add any new rows desired by the user.
-                    this.AddNewRecords();
-                    
-    
-                    // Initialize the page and grand totals. now
-                
-                }                 
-                
-
-    
-            } catch (Exception ex) {
-                // Report the error message to the end user
-                    String msg = ex.Message;
-                    if (ex.InnerException != null)
-                        msg += " InnerException: " + ex.InnerException.Message;
-
-                    throw new Exception(msg, ex.InnerException);
-            }
-        }
-        
-        public virtual LinkTableRecord[] GetRecords(BaseFilter join, WhereClause where, OrderBy orderBy, int pageIndex, int pageSize)
-        {    
-            // by default, Select * will be executed to get a list of records.  If you want to run Select Distinct with certain column only, add the column to selCols
-            ColumnList selCols = new ColumnList();                 
-               
-    
-            // If you want to specify certain columns to be in the select statement, you can write code similar to the following:
-            // However, if you don't specify PK, row button click might show an error message.
-            // And make sure you write similar code in GetRecordCount as well
-            // selCols.Add(LinkTableTable.Column1, true);          
-            // selCols.Add(LinkTableTable.Column2, true);          
-            // selCols.Add(LinkTableTable.Column3, true);          
-            
-
-            // If the parameters doesn't specify specific columns in the Select statement, then run Select *
-            // Alternatively, if the parameters specifies to include PK, also run Select *
-            
-            if (selCols.Count == 0)                 
-                  
-            {
-              
-                return LinkTableTable.GetRecords(join, where, orderBy, this.PageIndex, this.PageSize);
-                 
-            }
-            else
-            {
-                LinkTableTable databaseTable = new LinkTableTable();
-                databaseTable.SelectedColumns.Clear();
-                databaseTable.SelectedColumns.AddRange(selCols);
-                
-            
-                
-                ArrayList recList; 
-                orderBy.ExpandForeignKeyColums = false;
-                recList = databaseTable.GetRecordList(join, where.GetFilter(), null, orderBy, pageIndex, pageSize);
-                return (recList.ToArray(typeof(LinkTableRecord)) as LinkTableRecord[]);
-            }            
-            
-        }
-        
-        
-        public virtual int GetRecordCount(BaseFilter join, WhereClause where)
-        {
-
-            // By default, Select * will be executed to get a list of records.  If you want to run Select Distinct with certain column only, add the column to selCols
-            ColumnList selCols = new ColumnList();                 
-               
-
-
-            // If you want to specify certain columns to be in the select statement, you can write code similar to the following:
-            // However, if you don't specify PK, row button click might show an error message.
-            // And make sure you write similar code in GetRecords as well
-            // selCols.Add(LinkTableTable.Column1, true);          
-            // selCols.Add(LinkTableTable.Column2, true);          
-            // selCols.Add(LinkTableTable.Column3, true);          
-
-
-            // If the parameters doesn't specify specific columns in the Select statement, then run Select *
-            // Alternatively, if the parameters specifies to include PK, also run Select *
-            
-            if (selCols.Count == 0)                 
-                     
-            
-                return LinkTableTable.GetRecordCount(join, where);
-            else
-            {
-                LinkTableTable databaseTable = new LinkTableTable();
-                databaseTable.SelectedColumns.Clear();
-                databaseTable.SelectedColumns.AddRange(selCols);        
-                
-                return (int)(databaseTable.GetRecordListCount(join, where.GetFilter(), null, null));
-            }
-
-        }
-        
-      
-    
-      public override void DataBind()
-      {
-          // The DataBind method binds the user interface controls to the values
-          // from the database record for each row in the table.  To do this, it calls the
-          // DataBind for each of the rows.
-          // DataBind also populates any filters above the table, and sets the pagination
-          // control to the correct number of records and the current page number.
-         
-          
-          base.DataBind();
-          
-
-          this.ClearControlsFromSession();
-          
-          // Make sure that the DataSource is initialized.
-          if (this.DataSource == null) {
-              return;
-          }
-          
-          //  LoadData for DataSource for chart and report if they exist
-          
-            // Improve performance by prefetching display as records.
-            this.PreFetchForeignKeyValues();     
-
-            // Setup the pagination controls.
-            BindPaginationControls();
-
-    
-        
-        // Bind the repeater with the list of records to expand the UI.
-        
-        System.Web.UI.WebControls.Repeater rep = (System.Web.UI.WebControls.Repeater)(BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableTableControlRepeater"));
-        if (rep == null){return;}
-        rep.DataSource = this.DataSource;
-        rep.DataBind();
-        
-        int index = 0;
-        
-        foreach (System.Web.UI.WebControls.RepeaterItem repItem in rep.Items)
-        {
-        
-            // Loop through all rows in the table, set its DataSource and call DataBind().
-            LinkTableTableControlRow recControl = (LinkTableTableControlRow)(repItem.FindControl("LinkTableTableControlRow"));
-            recControl.DataSource = this.DataSource[index];            
-            if (this.UIData.Count > index)
-                recControl.PreviousUIData = this.UIData[index];
-            recControl.DataBind();
-            
-           
-            recControl.Visible = !this.InDeletedRecordIds(recControl);
-        
-            index++;
-        }
-           
-    
-            // Call the Set methods for each controls on the panel
-        
-                SetContactIDFilter3();
-                SetContactIDLabel5();
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                SetLinkTableExportExcelButton();
-              
-                SetLinkTableImportButton();
-              
-                SetLinkTableNewButton();
-              
-                SetLinkTablePDFButton();
-              
-                SetLinkTableResetButton();
-              
-                SetLinkTableWordButton();
-              
-                SetLinkTableButtonsButton();
-              
-                SetLinkTableFilterButton();
-              
-                SetLinkTableFiltersButton();
-              
-            // setting the state of expand or collapse alternative rows
-      
-            // Load data for each record and table UI control.
-            // Ordering is important because child controls get 
-            // their parent ids from their parent UI controls.
-                
-      
-            // this method calls the set method for controls with special formula like running total, sum, rank, etc
-            SetFormulaControls();
-            
-             
-              SetLinkTableFiltersButton();
-                     
-        }
-        
-        
-        public virtual void SetFormulaControls()
-        {
-            // this method calls Set methods for the control that has special formula
-        
-
-    }
-
-        
-    public virtual void AddWarningMessageOnClick() {
-    
-        if (this.TotalRecords > 10000)
-          this.LinkTableExportExcelButton.Attributes.Add("onClick", "return (confirm('" + ((BaseApplicationPage)this.Page).GetResourceValue("ExportConfirm", "IPv5") + "'));");
-        else
-          this.LinkTableExportExcelButton.Attributes.Remove("onClick");
-      
-    }
-  
-        public void PreFetchForeignKeyValues() {
-            if (this.DataSource == null) {
-                return;
-            }
-          
-            this.Page.PregetDfkaRecords(LinkTableTable.ContactID, this.DataSource);
-        }
-        
-
-        public virtual void RegisterPostback()
-        {
-        
-              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"LinkTableExportExcelButton"));
-                        
-              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"LinkTablePDFButton"));
-                        
-              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"LinkTableWordButton"));
-                                
-        }
-        
-
-        
-          public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
-
-          public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS, FormulaEvaluator e)
-          {
-            if (e == null)
-                e = new FormulaEvaluator();
-
-            e.Variables.Clear();
-
-            // add variables for formula evaluation
-            if (variables != null)
-            {
-                System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<string, object>> enumerator = variables.GetEnumerator();
-                while (enumerator.MoveNext())
-                {
-                    e.Variables.Add(enumerator.Current.Key, enumerator.Current.Value);
-                }
-            }
-            if (includeDS)
-            {
-                
-            }
-
-            // All variables referred to in the formula are expected to be
-            // properties of the DataSource.  For example, referring to
-            // UnitPrice as a variable will refer to DataSource.UnitPrice
-            e.DataSource = dataSourceForEvaluate;
-
-            // Define the calling control.  This is used to add other 
-            // related table and record controls as variables.
-            e.CallingControl = this;
-
-            object resultObj = e.Evaluate(formula);
-            if (resultObj == null)
-                return "";
-            
-            if ( !string.IsNullOrEmpty(format) && (string.IsNullOrEmpty(formula) || formula.IndexOf("Format(") < 0) )
-                return FormulaUtils.Format(resultObj, format);
-            else
-                return resultObj.ToString();
-        }
-        
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS)
-        {
-          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, includeDS, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables)
-        {
-          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, format, null, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, System.Collections.Generic.IDictionary<string, object> variables, FormulaEvaluator e)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, variables, true, e);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, null, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, bool includeDS)
-        {
-          return this.EvaluateFormula(formula, null, null, null, includeDS, null);
-        }
-
-        public virtual string EvaluateFormula(string formula)
-        {
-          return this.EvaluateFormula(formula, null, null, null, true, null);
-        }
-           
-        public virtual void ResetControl()
-        {
-
-
-            
-            this.CurrentSortOrder.Reset();
-            if (this.InSession(this, "Order_By")) {
-                this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));
-            }
-            else {
-            
-                this.CurrentSortOrder = new OrderBy(true, false);
-               
-            }
-                
-            this.PageIndex = 0;
-        }
-        
-        public virtual void ResetPageControl()
-        {
-            this.PageIndex = 0;
-        }
-        
-        protected virtual void BindPaginationControls()
-        {
-            // Setup the pagination controls.   
-
-            // Bind the pagination labels.
-        
-            if (DbUtils.GetCreatedRecords(this.DataSource).Length > 0)                      
-                    
-            {
-                this.LinkTablePagination.CurrentPage.Text = (this.PageIndex + 1).ToString();
-            } 
-            else
-            {
-                this.LinkTablePagination.CurrentPage.Text = "0";
-            }
-            this.LinkTablePagination.PageSize.Text = this.PageSize.ToString();
-    
-            // Bind the buttons for LinkTableTableControl pagination.
-        
-            this.LinkTablePagination.FirstPage.Enabled = !(this.PageIndex == 0);
-            if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
-                this.LinkTablePagination.LastPage.Enabled = true;
-            else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
-                this.LinkTablePagination.LastPage.Enabled = false;            
-            else                                     // if the total pages is the last page, disable last and next buttons
-                this.LinkTablePagination.LastPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
-          
-            if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
-                this.LinkTablePagination.NextPage.Enabled = true;
-            else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
-                this.LinkTablePagination.NextPage.Enabled = false;            
-            else                                     // if the total pages is the last page, disable last and next buttons
-                this.LinkTablePagination.NextPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
-          
-            this.LinkTablePagination.PreviousPage.Enabled = !(this.PageIndex == 0);    
-        }
- 
-        public virtual void SaveData()
-        {
-            // Save the data from the entire table.  Calls each row's Save Data
-            // to save their data.  This function is called by the Click handler of the
-            // Save button.  The button handler should Start/Commit/End a transaction.
-              
-            foreach (LinkTableTableControlRow recCtl in this.GetRecordControls())
-            {
-        
-                if (this.InDeletedRecordIds(recCtl)) {
-                    // Delete any pending deletes. 
-                    recCtl.Delete();
-                }
-                else {
-                    if (recCtl.Visible) {
-                        recCtl.SaveData();
-                    }
-                }
-          
-            }
-
-          
-    
-            // Setting the DataChanged to True results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-            this.ResetData = true;
-          
-            // Set IsNewRecord to False for all records - since everything has been saved and is no longer "new"
-            foreach (LinkTableTableControlRow recCtl in this.GetRecordControls()){
-                recCtl.IsNewRecord = false;
-            }
-      
-            // Set DeletedRecordsIds to Nothing since we have deleted all pending deletes.
-            this.DeletedRecordIds = null;
-                
-        }
-        
-        public virtual CompoundFilter CreateCompoundJoinFilter()
-        {
-            CompoundFilter jFilter = new CompoundFilter();
-        
-           return jFilter;
-        }      
-        
-    
-        public virtual OrderBy CreateOrderBy()
-        {
-            // The CurrentSortOrder is initialized to the sort order on the 
-            // Query Wizard.  It may be modified by the Click handler for any of
-            // the column heading to sort or reverse sort by that column.
-            // You can add your own sort order, or modify it on the Query Wizard.
-            return this.CurrentSortOrder;
-        }
-         
-        
-        private string parentSelectedKeyValue;
-        public string ParentSelectedKeyValue
-        {
-          get
-          {
-            return parentSelectedKeyValue;
-          }
-          set
-          {
-            parentSelectedKeyValue = value;
-          }
-        }
-
-    
-        public virtual WhereClause CreateWhereClause()
-        {
-            // This CreateWhereClause is used for loading the data.
-            LinkTableTable.Instance.InnerFilter = null;
-            WhereClause wc = new WhereClause();
-    
-            // CreateWhereClause() Compose the WHERE clause consist of:
-            // 1. Static clause defined at design time.
-            // 2. User selected search criteria.
-            // 3. User selected filter criteria.
-            
-        
-      KeyValue selectedRecordKeyValue = new KeyValue();
-    
-          KeyValue propertiesRecordObj = null;
-          // make variable assignment here to avoid possible incorrect compiler warning
-          KeyValue tmp = propertiesRecordObj;
-          propertiesRecordObj = tmp;
-        PropertiesTableControlRow propertiesTableControlObjRow = (MiscUtils.GetParentControlObject(this, "PropertiesTableControlRow") as PropertiesTableControlRow);
-          
-              if (propertiesTableControlObjRow != null && propertiesTableControlObjRow.GetRecord() != null)
-              {
-              wc.iAND(LinkTableTable.PropertyID, BaseFilter.ComparisonOperator.EqualsTo, propertiesTableControlObjRow.GetRecord().PropertyID.ToString());
-              }
-              else
-              {
-              wc.RunQuery = false;
-              return wc;
-              }
-            
-      HttpContext.Current.Session["LinkTableTableControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
-    
-            if (MiscUtils.IsValueSelected(this.ContactIDFilter3)) {
-                        
-                wc.iAND(LinkTableTable.ContactID, BaseFilter.ComparisonOperator.EqualsTo, MiscUtils.GetSelectedValue(this.ContactIDFilter3, this.GetFromSession(this.ContactIDFilter3)), false, false);
-                    
-            }
-                           
-            return wc;
-        }
-        
-         
-        public virtual WhereClause CreateWhereClause(String searchText, String fromSearchControl, String AutoTypeAheadSearch, String AutoTypeAheadWordSeparators)
-        {
-            // This CreateWhereClause is used for loading list of suggestions for Auto Type-Ahead feature.
-            LinkTableTable.Instance.InnerFilter = null;
-            WhereClause wc = new WhereClause();
-        
-            // Compose the WHERE clause consist of:
-            // 1. Static clause defined at design time.
-            // 2. User selected search criteria.
-            // 3. User selected filter criteria.
-            
-            String appRelativeVirtualPath = (String)HttpContext.Current.Session["AppRelativeVirtualPath"];
-            
-      string selectedRecordInPropertiesTableControl = HttpContext.Current.Session["LinkTableTableControlWhereClause"] as string;
-      
-      if (selectedRecordInPropertiesTableControl != null && KeyValue.IsXmlKey(selectedRecordInPropertiesTableControl))
-      {
-      KeyValue selectedRecordKeyValue = KeyValue.XmlToKey(selectedRecordInPropertiesTableControl);
-      
-      if (selectedRecordKeyValue != null && selectedRecordKeyValue.ContainsColumn(LinkTableTable.PropertyID))
-      {
-      wc.iAND(LinkTableTable.PropertyID, BaseFilter.ComparisonOperator.EqualsTo, selectedRecordKeyValue.GetColumnValue(LinkTableTable.PropertyID).ToString());
-      }
-    
-      }
-    
-            // Adds clauses if values are selected in Filter controls which are configured in the page.
-          
-      String ContactIDFilter3SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "ContactIDFilter3_Ajax"];
-            if (MiscUtils.IsValueSelected(ContactIDFilter3SelectedValue)) {
-
-              
-                wc.iAND(LinkTableTable.ContactID, BaseFilter.ComparisonOperator.EqualsTo, ContactIDFilter3SelectedValue, false, false);
-                      
-      }
-                      
-
-            return wc;
-        }
-
-        
-          
-         public virtual bool FormatSuggestions(String prefixText, String resultItem,
-                                              int columnLength, String AutoTypeAheadDisplayFoundText,
-                                              String autoTypeAheadSearch, String AutoTypeAheadWordSeparators,
-                                              ArrayList resultList)
-        {
-            return this.FormatSuggestions(prefixText, resultItem, columnLength, AutoTypeAheadDisplayFoundText,
-                                              autoTypeAheadSearch, AutoTypeAheadWordSeparators, resultList, false);
-        }          
-          
-        public virtual bool FormatSuggestions(String prefixText, String resultItem,
-                                              int columnLength, String AutoTypeAheadDisplayFoundText,
-                                              String autoTypeAheadSearch, String AutoTypeAheadWordSeparators,
-                                              ArrayList resultList, bool stripHTML)
-        {
-            if (stripHTML){
-                prefixText = StringUtils.ConvertHTMLToPlainText(prefixText);
-                resultItem = StringUtils.ConvertHTMLToPlainText(resultItem);
-            }
-            // Formats the result Item and adds it to the list of suggestions.
-            int index  = resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).IndexOf(prefixText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture));
-            String itemToAdd = null;
-            bool isFound = false;
-            bool isAdded = false;
-            if (StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("wordsstartingwithsearchstring") && !(index == 0)) {
-                // Expression to find word which contains AutoTypeAheadWordSeparators followed by prefixText
-                System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex( AutoTypeAheadWordSeparators + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-                if (regex1.IsMatch(resultItem)) {
-                    index = regex1.Match(resultItem).Index;
-                    isFound = true;
-                }
-                //If the prefixText is found immediatly after white space then starting of the word is found so don not search any further
-                if (resultItem[index].ToString() != " ") {
-                    // Expression to find beginning of the word which contains AutoTypeAheadWordSeparators followed by prefixText
-                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex("\\S*" + AutoTypeAheadWordSeparators + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-                    if (regex.IsMatch(resultItem)) {
-                        index = regex.Match(resultItem).Index;
-                        isFound = true;
-                    }
-                }
-            }
-            // If autoTypeAheadSearch value is wordsstartingwithsearchstring then, extract the substring only if the prefixText is found at the 
-            // beginning of the resultItem (index = 0) or a word in resultItem is found starts with prefixText. 
-            if (index == 0 || isFound || StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("anywhereinstring")) {
-                if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("atbeginningofmatchedstring")) {
-                    // Expression to find beginning of the word which contains prefixText
-                    System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex("\\S*" + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-                    //  Find the beginning of the word which contains prefexText
-                    if (StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("anywhereinstring") && regex1.IsMatch(resultItem)) {
-                        index = regex1.Match(resultItem).Index;
-                        isFound = true;
-                    }
-                    // Display string from the index till end of the string if, sub string from index till end of string is less than columnLength value.
-                    if ((resultItem.Length - index) <= columnLength) {
-                        if (index == 0) {
-                            itemToAdd = resultItem;
-                        } else {
-                            itemToAdd = resultItem.Substring(index);
-                        }
-                    }
-                    else {
-                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index, index + columnLength, StringUtils.Direction.forward);
-                    }
-                }
-                else if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("inmiddleofmatchedstring")) {
-                    int subStringBeginIndex = (int)(columnLength / 2);
-                    if (resultItem.Length <= columnLength) {
-                        itemToAdd = resultItem;
-                    }
-                    else {
-                        // Sanity check at end of the string
-                        if (((index + prefixText.Length) >= resultItem.Length - 1)||(resultItem.Length - index < subStringBeginIndex)) {
-                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, resultItem.Length - 1 - columnLength, resultItem.Length - 1, StringUtils.Direction.backward);
-                        }
-                        else if (index <= subStringBeginIndex) {
-                            // Sanity check at beginning of the string
-                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, 0, columnLength, StringUtils.Direction.forward);
-                        } 
-                        else {
-                            // Display string containing text before the prefixText occures and text after the prefixText
-                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index - subStringBeginIndex, index - subStringBeginIndex + columnLength, StringUtils.Direction.both);
-                        }
-                    }
-                }
-                else if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("atendofmatchedstring")) {
-                     // Expression to find ending of the word which contains prefexText
-                    System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex("\\s", System.Text.RegularExpressions.RegexOptions.IgnoreCase); 
-                    // Find the ending of the word which contains prefexText
-                    if (regex1.IsMatch(resultItem, index + 1)) {
-                        index = regex1.Match(resultItem, index + 1).Index;
-                    }
-                    else{
-                        // If the word which contains prefexText is the last word in string, regex1.IsMatch returns false.
-                        index = resultItem.Length;
-                    }
-                    
-                    if (index > resultItem.Length) {
-                        index = resultItem.Length;
-                    }
-                    // If text from beginning of the string till index is less than columnLength value then, display string from the beginning till index.
-                    if (index <= columnLength) {
-                        itemToAdd = resultItem.Substring(0, index);
-                    } 
-                    else {
-                        // Truncate the string to show only columnLength has to be appended.
-                        itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index - columnLength, index, StringUtils.Direction.backward);
-                    }
-                }
-                
-                // Remove newline character from itemToAdd
-                int prefixTextIndex = itemToAdd.IndexOf(prefixText, StringComparison.CurrentCultureIgnoreCase);
-                if(prefixTextIndex < 0) return false;
-                // If itemToAdd contains any newline after the search text then show text only till newline
-                System.Text.RegularExpressions.Regex regex2 = new System.Text.RegularExpressions.Regex("(\r\n|\n)", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-                int newLineIndexAfterPrefix = -1;
-                if (regex2.IsMatch(itemToAdd, prefixTextIndex)){
-                    newLineIndexAfterPrefix = regex2.Match(itemToAdd, prefixTextIndex).Index;
-                }
-                if ((newLineIndexAfterPrefix > -1)) {                   
-                    itemToAdd = itemToAdd.Substring(0, newLineIndexAfterPrefix);                   
-                }
-                // If itemToAdd contains any newline before search text then show text which comes after newline
-                System.Text.RegularExpressions.Regex regex3 = new System.Text.RegularExpressions.Regex("(\r\n|\n)", System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.RightToLeft );
-                int newLineIndexBeforePrefix = -1;
-                if (regex3.IsMatch(itemToAdd, prefixTextIndex)){
-                    newLineIndexBeforePrefix = regex3.Match(itemToAdd, prefixTextIndex).Index;
-                }
-                if ((newLineIndexBeforePrefix > -1)) {
-                    itemToAdd = itemToAdd.Substring(newLineIndexBeforePrefix +regex3.Match(itemToAdd, prefixTextIndex).Length);
-                }
-
-                if (!string.IsNullOrEmpty(itemToAdd) && !resultList.Contains(itemToAdd)) {
-                    
-                    resultList.Add(itemToAdd);
-          								
-                    isAdded = true;
-                }
-            }
-            return isAdded;
-        }        
-        
-    
-        protected virtual void GetPageSize()
-        {
-        
-            if (this.LinkTablePagination.PageSize.Text.Length > 0) {
-                try {
-                    // this.PageSize = Convert.ToInt32(this.LinkTablePagination.PageSize.Text);
-                } catch (Exception ) {
-                }
-            }
-        }
-
-        protected virtual void AddNewRecords()
-        {
-          
-            ArrayList newRecordList = new ArrayList();
-          
-            System.Collections.Generic.List<Hashtable> newUIDataList = new System.Collections.Generic.List<Hashtable>();
-            // Loop though all the record controls and if the record control
-            // does not have a unique record id set, then create a record
-            // and add to the list.
-            if (!this.ResetData)
-            {
-              System.Web.UI.WebControls.Repeater rep = (System.Web.UI.WebControls.Repeater)(BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableTableControlRepeater"));
-              if (rep == null){return;}
-              
-                foreach (System.Web.UI.WebControls.RepeaterItem repItem in rep.Items)
-                {
-                
-                // Loop through all rows in the table, set its DataSource and call DataBind().
-                LinkTableTableControlRow recControl = (LinkTableTableControlRow)(repItem.FindControl("LinkTableTableControlRow"));
-      
-            if (recControl.Visible && recControl.IsNewRecord) {
-      LinkTableRecord rec = new LinkTableRecord();
-        
-                        if (recControl.ContactID1.Text != "") {
-                            rec.Parse(recControl.ContactID1.Text, LinkTableTable.ContactID);
-                  }
-                
-              newUIDataList.Add(recControl.PreservedUIData());
-              newRecordList.Add(rec);
-            }
-          }
-        }
-    
-            // Add any new record to the list.
-            for (int count = 1; count <= this.AddNewRecord; count++) {
-              
-                newRecordList.Insert(0, new LinkTableRecord());
-                newUIDataList.Insert(0, new Hashtable());
-              
-            }
-            this.AddNewRecord = 0;
-
-            // Finally, add any new records to the DataSource.
-            if (newRecordList.Count > 0) {
-              
-                ArrayList finalList = new ArrayList(this.DataSource);
-                finalList.InsertRange(0, newRecordList);
-
-                Type myrec = typeof(IPv5.Business.LinkTableRecord);
-                this.DataSource = (LinkTableRecord[])(finalList.ToArray(myrec));
-              
-            }
-            
-            // Add the existing UI data to this hash table
-            if (newUIDataList.Count > 0)
-                this.UIData.InsertRange(0, newUIDataList);
-        }
-
-        
-        public void AddToDeletedRecordIds(LinkTableTableControlRow rec)
-        {
-            if (rec.IsNewRecord) {
-                return;
-            }
-
-            if (this.DeletedRecordIds != null && this.DeletedRecordIds.Length > 0) {
-                this.DeletedRecordIds += ",";
-            }
-
-            this.DeletedRecordIds += "[" + rec.RecordUniqueId + "]";
-        }
-
-        protected virtual bool InDeletedRecordIds(LinkTableTableControlRow rec)            
-        {
-            if (this.DeletedRecordIds == null || this.DeletedRecordIds.Length == 0) {
-                return (false);
-            }
-
-            return (this.DeletedRecordIds.IndexOf("[" + rec.RecordUniqueId + "]") >= 0);
-        }
-
-        private String _DeletedRecordIds;
-        public String DeletedRecordIds {
-            get {
-                return (this._DeletedRecordIds);
-            }
-            set {
-                this._DeletedRecordIds = value;
-            }
-        }
-        
-      
-        // Create Set, WhereClause, and Populate Methods
-        
-        public virtual void SetContactIDLabel5()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetContactIDFilter3()
-        {
-            
-            this.PopulateContactIDFilter3(MiscUtils.GetSelectedValue(this.ContactIDFilter3,  GetFromSession(this.ContactIDFilter3)), 500);					
-                                     
-        }
-            
-        // Get the filters' data for ContactIDFilter3.
-                
-        protected virtual void PopulateContactIDFilter3(string selectedValue, int maxItems)
-                    
-        {
-        
-            
-            //Setup the WHERE clause.
-                        
-            this.ContactIDFilter3.Items.Clear();
-            WhereClause wc = this.CreateWhereClause_ContactIDFilter3();            
-            			  			
-            // Set up the WHERE and the ORDER BY clause by calling the CreateWhereClause_ContactIDFilter3 function.
-            // It is better to customize the where clause there.
-             
-            // Setup the static list items        
-            
-                // Add the All item.
-                this.ContactIDFilter3.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
-              
-            OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(ContactsTable.FirstName, OrderByItem.OrderDir.Asc);
-              orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
-
-
-            System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
-
-            
- 
-            string noValueFormat = Page.GetResourceValue("Txt:Other", "IPv5");
-
-            ContactsRecord[] itemValues  = null;
-            if (wc.RunQuery)
-            {
-                int counter = 0;
-                int pageNum = 0;
-                FormulaEvaluator evaluator = new FormulaEvaluator();
-                ArrayList listDuplicates = new ArrayList();
-                
-                do
-                {
-                    
-                    itemValues = ContactsTable.GetRecords(wc, orderBy, pageNum, maxItems);
-                                    
-                    foreach (ContactsRecord itemValue in itemValues) 
-                    {
-                        // Create the item and add to the list.
-                        string cvalue = null;
-                        string fvalue = null;
-                        if (itemValue.ContactIDSpecified) 
-                        {
-                            cvalue = itemValue.ContactID.ToString();
-                            if (counter < maxItems && this.ContactIDFilter3.Items.FindByValue(cvalue) == null)
-                            {
-                                    
-                                Boolean _isExpandableNonCompositeForeignKey = LinkTableTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(LinkTableTable.ContactID);
-                                if(_isExpandableNonCompositeForeignKey && LinkTableTable.ContactID.IsApplyDisplayAs)
-                                     fvalue = LinkTableTable.GetDFKA(itemValue, LinkTableTable.ContactID);
-                                if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                     fvalue = itemValue.Format(ContactsTable.ContactID);
-                                   					
-                                if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
-
-                                if (fvalue == null) {
-                                    fvalue = "";
-                                }
-
-                                fvalue = fvalue.Trim();
-
-                                if ( fvalue.Length > 50 ) {
-                                   fvalue = fvalue.Substring(0, 50) + "...";
-                                }
-
-                                ListItem dupItem = this.ContactIDFilter3.Items.FindByText(fvalue);
-								
-                                if (dupItem != null) {
-                                    listDuplicates.Add(fvalue);
-                                    if (!string.IsNullOrEmpty(dupItem.Value))
-                                    {
-                                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
-                                    }
-                                }
-
-                                ListItem newItem = new ListItem(fvalue, cvalue);
-                                this.ContactIDFilter3.Items.Add(newItem);
-
-                                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                                }
-
-                                counter += 1;
-                            }
-                        }
-                    }
-                    pageNum++;
-                }
-                while (itemValues.Length == maxItems && counter < maxItems);
-            }
-        
-                      
-            try
-            {
-      
-                
-                // Set the selected value.
-                MiscUtils.SetSelectedValue(this.ContactIDFilter3, selectedValue);
-                
-            }
-            catch
-            {
-            }
-            
-            
-            if (this.ContactIDFilter3.SelectedValue != null && this.ContactIDFilter3.Items.FindByValue(this.ContactIDFilter3.SelectedValue) == null)
-                this.ContactIDFilter3.SelectedValue = null;
-                           
-        }
-            
-        public virtual WhereClause CreateWhereClause_ContactIDFilter3()
-        {
-            // Create a where clause for the filter ContactIDFilter3.
-            // This function is called by the Populate method to load the items 
-            // in the ContactIDFilter3DropDownList
-        
-            WhereClause wc = new WhereClause();
-            return wc;
-            
-        }
-      
-
-    
-        protected virtual void Control_PreRender(object sender, System.EventArgs e)
-        {
-            // PreRender event is raised just before page is being displayed.
-            try {
-                DbUtils.StartTransaction();
-                this.RegisterPostback();
-                if (!this.Page.ErrorOnPage && (this.Page.IsPageRefresh || this.DataChanged || this.ResetData)) {
-                  
-                
-                    // Re-load the data and update the web page if necessary.
-                    // This is typically done during a postback (filter, search button, sort, pagination button).
-                    // In each of the other click handlers, simply set DataChanged to True to reload the data.
-                    
-                    this.LoadData();
-                    this.DataBind();					
-                    
-                }
-                                
-            } catch (Exception ex) {
-                BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-            } finally {
-                DbUtils.EndTransaction();
-            }
-        }
-        
-        
-        protected override void SaveControlsToSession()
-        {
-            base.SaveControlsToSession();
-            // Save filter controls to values to session.
-        
-            this.SaveToSession(this.ContactIDFilter3, this.ContactIDFilter3.SelectedValue);
-                  
-            
-                    
-            // Save pagination state to session.
-         
-    
-            // Save table control properties to the session.
-          
-            if (this.CurrentSortOrder != null)
-            {
-                if ((this.CurrentSortOrder).GetType() != typeof(GeoOrderBy))
-                {
-                    this.SaveToSession(this, "Order_By", this.CurrentSortOrder.ToXmlString());
-                }
-            }
-          
-            this.SaveToSession(this, "Page_Index", this.PageIndex.ToString());
-            this.SaveToSession(this, "Page_Size", this.PageSize.ToString());
-          
-            this.SaveToSession(this, "DeletedRecordIds", this.DeletedRecordIds);
-        
-        }
-        
-        
-        protected  void SaveControlsToSession_Ajax()
-        {
-            // Save filter controls to values to session.
-          
-      this.SaveToSession("ContactIDFilter3_Ajax", this.ContactIDFilter3.SelectedValue);
-              
-           HttpContext.Current.Session["AppRelativeVirtualPath"] = this.Page.AppRelativeVirtualPath;
-         
-        }
-        
-        
-        protected override void ClearControlsFromSession()
-        {
-            base.ClearControlsFromSession();
-            // Clear filter controls values from the session.
-        
-            this.RemoveFromSession(this.ContactIDFilter3);
-            
-            // Clear pagination state from session.
-         
-
-    // Clear table properties from the session.
-    this.RemoveFromSession(this, "Order_By");
-    this.RemoveFromSession(this, "Page_Index");
-    this.RemoveFromSession(this, "Page_Size");
-    
-            this.RemoveFromSession(this, "DeletedRecordIds");
-            
-        }
-
-        protected override void LoadViewState(object savedState)
-        {
-            base.LoadViewState(savedState);
-
-            string orderByStr = (string)ViewState["LinkTableTableControl_OrderBy"];
-          
-            if (orderByStr != null && orderByStr.Length > 0) {
-                this.CurrentSortOrder = BaseClasses.Data.OrderBy.FromXmlString(orderByStr);
-            }
-          
-            else {
-                this.CurrentSortOrder = new OrderBy(true, false);
-            }
-          
-
-            Control Pagination = this.FindControl("LinkTablePagination");
-            String PaginationType = "";
-            if (Pagination != null){
-              Control Summary = Pagination.FindControl("_Summary");
-              if (Summary != null){
-                if (((System.Web.UI.WebControls.TextBox)(Summary)).Text == "Infinite Pagination"){
-                  PaginationType = "Infinite Pagination";
-                }
-                if (((System.Web.UI.WebControls.TextBox)(Summary)).Text == "Infinite Pagination Mobile"){
-                  PaginationType = "Infinite Pagination Mobile";
-              }
-            }
-            }
-            
-            if (!(PaginationType.Equals("Infinite Pagination"))) {
-              if (!this.Page.ClientQueryString.Contains("InfiIframe") && PaginationType == "Infinite Pagination Mobile"){
-                    this.ViewState["Page_Index"] = 0;
-               }
-	            string pageIndex = Convert.ToString(ViewState["Page_Index"]);
-	            if (pageIndex != null) {
-		            this.PageIndex = Convert.ToInt32(pageIndex);
-	            }
-            }
-            
-            string pageSize = Convert.ToString(ViewState["Page_Size"]);
-            if ((pageSize != null)) {
-	            this.PageSize = Convert.ToInt32(pageSize);
-            }
-            
-          
-            // Load view state for pagination control.
-    
-            this.DeletedRecordIds = (string)this.ViewState["DeletedRecordIds"];
-        
-        }
-
-        protected override object SaveViewState()
-        {            
-          
-            if (this.CurrentSortOrder != null) {
-                this.ViewState["LinkTableTableControl_OrderBy"] = this.CurrentSortOrder.ToXmlString();
-            }
-          
-
-    this.ViewState["Page_Index"] = this.PageIndex;
-    this.ViewState["Page_Size"] = this.PageSize;
-    
-            this.ViewState["DeletedRecordIds"] = this.DeletedRecordIds;
-        
-    
-            // Load view state for pagination control.
-              
-            return (base.SaveViewState());
-        }
-
-        // Generate set method for buttons
-        
-        public virtual void SetLinkTableExportExcelButton()                
-              
-        {
-        
-   
-        }
-            
-        public virtual void SetLinkTableImportButton()                
-              
-        {
-        							
-                    this.LinkTableImportButton.PostBackUrl = "../Shared/SelectFileToImport.aspx?TableName=LinkTable" ;
-                    this.LinkTableImportButton.Attributes["onClick"] = "window.open('" + this.Page.EncryptUrlParameter(this.LinkTableImportButton.PostBackUrl) + "','importWindow', 'width=700, height=500,top=' +(screen.availHeight-500)/2 + ',left=' + (screen.availWidth-700)/2+ ', resizable=yes, scrollbars=yes,modal=yes'); return false;";
-                        
-   
-        }
-            
-        public virtual void SetLinkTableNewButton()                
-              
-        {
-        
-   
-        }
-            
-        public virtual void SetLinkTablePDFButton()                
-              
-        {
-        
-   
-        }
-            
-        public virtual void SetLinkTableResetButton()                
-              
-        {
-        
-   
-        }
-            
-        public virtual void SetLinkTableWordButton()                
-              
-        {
-        
-   
-        }
-            
-        public virtual void SetLinkTableButtonsButton()                
-              
-        {
-        
-   
-        }
-            
-        public virtual void SetLinkTableFilterButton()                
-              
-        {
-        
-   
-        }
-            
-        public virtual void SetLinkTableFiltersButton()                
-              
-        {
-                
-         IThemeButtonWithArrow themeButtonLinkTableFiltersButton = (IThemeButtonWithArrow)(MiscUtils.FindControlRecursively(this, "LinkTableFiltersButton"));
-         themeButtonLinkTableFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonExpandArrow.png";
-    
-      
-            if (MiscUtils.IsValueSelected(ContactIDFilter3))
-                themeButtonLinkTableFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonCheckmark.png";
-        
-   
-        }
-               
-        
-        // Generate the event handling functions for pagination events.
-        
-        // event handler for ImageButton
-        public virtual void LinkTablePagination_FirstPage_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                
-            this.PageIndex = 0;
-            this.DataChanged = true;
-      
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTablePagination_LastPage_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                
-            this.DisplayLastPage = true;
-            this.DataChanged = true;
-      
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTablePagination_NextPage_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                
-            this.PageIndex += 1;
-            this.DataChanged = true;
-      
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-        // event handler for LinkButton
-        public virtual void LinkTablePagination_PageSizeButton_Click(object sender, EventArgs args)
-        {
-              
-            try {
-                
-            this.DataChanged = true;
-      
-            this.PageSize = this.LinkTablePagination.GetCurrentPageSize();
-      
-            this.PageIndex = Convert.ToInt32(this.LinkTablePagination.CurrentPage.Text) - 1;
-      
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTablePagination_PreviousPage_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                
-            if (this.PageIndex > 0) {
-                this.PageIndex -= 1;
-                this.DataChanged = true;
-            }
-      
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-
-        // Generate the event handling functions for sorting events.
-        
-
-        // Generate the event handling functions for button events.
-        
-        // event handler for ImageButton
-        public virtual void LinkTableExportExcelButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-            
-            // To customize the columns or the format, override this function in Section 1 of the page
-            // and modify it to your liking.
-            // Build the where clause based on the current filter and search criteria
-            // Create the Order By clause based on the user's current sorting preference.
-            
-                WhereClause wc = null;
-                wc = CreateWhereClause();
-                OrderBy orderBy = null;
-              
-                orderBy = CreateOrderBy();
-              
-              bool done = false;
-              object val = "";
-              CompoundFilter join = CreateCompoundJoinFilter();
-              
-              // Read pageSize records at a time and write out the Excel file.
-              int totalRowsReturned = 0;
-
-
-              this.TotalRecords = LinkTableTable.GetRecordCount(join, wc);
-              if (this.TotalRecords > 10000)
-              {
-              
-                // Add each of the columns in order of export.
-                BaseColumn[] columns = new BaseColumn[] {
-                             LinkTableTable.ContactID,
-             null};
-                ExportDataToCSV exportData = new ExportDataToCSV(LinkTableTable.Instance,wc,orderBy,columns);
-                exportData.StartExport(this.Page.Response, true);
-
-                DataForExport dataForCSV = new DataForExport(LinkTableTable.Instance, wc, orderBy, columns,join);
-
-                //  Read pageSize records at a time and write out the CSV file.
-                while (!done)
-                {
-                ArrayList recList = dataForCSV.GetRows(exportData.pageSize);
-                if (recList == null)
-                break; //we are done
-
-                totalRowsReturned = recList.Count;
-                foreach (BaseRecord rec in recList)
-                {
-                foreach (BaseColumn col in dataForCSV.ColumnList)
-                {
-                if (col == null)
-                continue;
-
-                if (!dataForCSV.IncludeInExport(col))
-                continue;
-
-                val = rec.GetValue(col).ToString();
-                exportData.WriteColumnData(val, dataForCSV.IsString(col));
-                }
-                exportData.WriteNewRow();
-                }
-
-                //  If we already are below the pageSize, then we are done.
-                if (totalRowsReturned < exportData.pageSize)
-                {
-                done = true;
-                }
-                }
-                exportData.FinishExport(this.Page.Response);
-              
-              }
-              else
-              {
-              // Create an instance of the ExportDataToExcel class with the table class, where clause and order by.
-              ExportDataToExcel excelReport = new ExportDataToExcel(LinkTableTable.Instance, wc, orderBy);
-              // Add each of the columns in order of export.
-              // To customize the data type, change the second parameter of the new ExcelColumn to be
-              // a format string from Excel's Format Cell menu. For example "dddd, mmmm dd, yyyy h:mm AM/PM;@", "#,##0.00"
-
-              if (this.Page.Response == null)
-              return;
-
-              excelReport.CreateExcelBook();
-
-              int width = 0;
-              int columnCounter = 0;
-              DataForExport data = new DataForExport(LinkTableTable.Instance, wc, orderBy, null,join);
-                           data.ColumnList.Add(new ExcelColumn(LinkTableTable.ContactID, "Default"));
-
-
-              //  First write out the Column Headers
-              foreach (ExcelColumn col in data.ColumnList)
-              {
-              width = excelReport.GetExcelCellWidth(col);
-              if (data.IncludeInExport(col))
-              {
-              excelReport.AddColumnToExcelBook(columnCounter, col.ToString(), excelReport.GetExcelDataType(col), width, excelReport.GetDisplayFormat(col));
-              columnCounter++;
-              }
-              }
-              
-              while (!done)
-              {
-              ArrayList recList = data.GetRows(excelReport.pageSize);
-
-              if (recList == null)
-              {
-              break;
-              }
-              totalRowsReturned = recList.Count;
-
-              foreach (BaseRecord rec in recList)
-              {
-              excelReport.AddRowToExcelBook();
-              columnCounter = 0;
-              foreach (ExcelColumn col in data.ColumnList)
-              {
-              if (!data.IncludeInExport(col))
-              continue;
-
-              Boolean _isExpandableNonCompositeForeignKey = col.DisplayColumn.TableDefinition.IsExpandableNonCompositeForeignKey(col.DisplayColumn);
-              if (_isExpandableNonCompositeForeignKey && col.DisplayColumn.IsApplyDisplayAs)
-              {
-                val = LinkTableTable.GetDFKA(rec.GetValue(col.DisplayColumn).ToString(), col.DisplayColumn, null) as string;
-                if (String.IsNullOrEmpty(val as string))
-                {
-                  val = rec.Format(col.DisplayColumn);
-                }
-              }
-              else
-                val = excelReport.GetValueForExcelExport(col, rec);
-              
-              excelReport.AddCellToExcelRow(columnCounter, excelReport.GetExcelDataType(col), val, col.DisplayFormat);
-
-              columnCounter++;
-              }
-              }
-
-              // If we already are below the pageSize, then we are done.
-              if (totalRowsReturned < excelReport.pageSize)
-              {
-              done = true;
-              }
-              }
-              excelReport.SaveExcelBook(this.Page.Response);
-              }
-            
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-    
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTableImportButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-    
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTableNewButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            // The redirect URL is set on the Properties, Custom Properties or Actions.
-            // The ModifyRedirectURL call resolves the parameters before the
-            // Response.Redirect redirects the page to the URL.  
-            // Any code after the Response.Redirect call will not be executed, since the page is
-            // redirected to the URL.
-            
-            string url = @"../LinkTable/AddLinkTable.aspx";
-            
-            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"])) 
-                url += "?RedirectStyle=" + this.Page.Request["RedirectStyle"];
-            
-        bool shouldRedirect = true;
-        string target = null;
-        if (target == null) target = ""; // avoid warning on VS
-      
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-                url = this.ModifyRedirectUrl(url, "",true);
-                url = this.Page.ModifyRedirectUrl(url, "",true);
-              
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  shouldRedirect = false;
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-            if (shouldRedirect) {
-                this.Page.ShouldSaveControlsToSession = true;
-      this.Page.Response.Redirect(url);
-        
-            }
-        
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTablePDFButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-
-                PDFReport report = new PDFReport();
-
-                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.LinkTablePDFButton.report");
-                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
-                report.Title = "LinkTable";
-                // If GroupByPropertiesTable.LinkTablePDFButton.report specifies a valid report template,
-                // AddColumn methods will generate a report template.   
-                // Each AddColumn method-call specifies a column
-                // The 1st parameter represents the text of the column header
-                // The 2nd parameter represents the horizontal alignment of the column header
-                // The 3rd parameter represents the text format of the column detail
-                // The 4th parameter represents the horizontal alignment of the column detail
-                // The 5th parameter represents the relative width of the column
-                 report.AddColumn(LinkTableTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 27);
-
-  
-                int rowsPerQuery = 5000;
-                int recordCount = 0;
-                                
-                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
-                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
-
-                
-                ColumnList columns = LinkTableTable.GetColumnList();
-                
-                WhereClause whereClause = null;
-                whereClause = CreateWhereClause();
-                OrderBy orderBy = CreateOrderBy();
-                BaseFilter joinFilter = CreateCompoundJoinFilter();
-                
-                int pageNum = 0;
-                int totalRows = LinkTableTable.GetRecordCount(joinFilter,whereClause);
-                LinkTableRecord[] records = null;
-                
-                do
-                {
-                    
-                    records = LinkTableTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
-                     if (records != null && records.Length > 0 && whereClause.RunQuery)
-                    {
-                        foreach ( LinkTableRecord record in records)
-                    
-                        {
-                            // AddData method takes four parameters   
-                            // The 1st parameter represent the data format
-                            // The 2nd parameter represent the data value
-                            // The 3rd parameter represent the default alignment of column using the data
-                            // The 4th parameter represent the maximum length of the data value being shown
-                                                 if (BaseClasses.Utils.MiscUtils.IsNull(record.ContactID)){
-                                 report.AddData("${ContactID}", "",ReportEnum.Align.Left);
-                             }else{
-                                 Boolean _isExpandableNonCompositeForeignKey;
-                                 String _DFKA = "";
-                                 _isExpandableNonCompositeForeignKey = LinkTableTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(LinkTableTable.ContactID);
-                                 _DFKA = LinkTableTable.GetDFKA(record.ContactID.ToString(), LinkTableTable.ContactID,null);
-                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  LinkTableTable.ContactID.IsApplyDisplayAs){
-                                     report.AddData("${ContactID}", _DFKA,ReportEnum.Align.Left);
-                                 }else{
-                                     report.AddData("${ContactID}", record.Format(LinkTableTable.ContactID), ReportEnum.Align.Left);
-                                 }
-                             }
-
-                            report.WriteRow();
-                        }
-                        pageNum++;
-                        recordCount += records.Length;
-                    }
-                }
-                while (records != null && recordCount < totalRows && whereClause.RunQuery);
-                	
-                
-                report.Close();
-                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".pdf", report.ReportInByteArray, 0, true);
-            
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-    
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTableResetButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                
-              this.ContactIDFilter3.ClearSelection();
-            
-              this.CurrentSortOrder.Reset();
-              if (this.InSession(this, "Order_By"))
-                  this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));
-              else
-              {
-                  this.CurrentSortOrder = new OrderBy(true, false);
-                  
-              }
-                
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-                
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-        // event handler for ImageButton
-        public virtual void LinkTableWordButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-
-                WordReport report = new WordReport();
-
-                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.LinkTableWordButton.word");
-                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
-                report.Title = "LinkTable";
-                // If GroupByPropertiesTable.LinkTableWordButton.report specifies a valid report template,
-                // AddColumn methods will generate a report template.
-                // Each AddColumn method-call specifies a column
-                // The 1st parameter represents the text of the column header
-                // The 2nd parameter represents the horizontal alignment of the column header
-                // The 3rd parameter represents the text format of the column detail
-                // The 4th parameter represents the horizontal alignment of the column detail
-                // The 5th parameter represents the relative width of the column
-                 report.AddColumn(LinkTableTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 27);
-
-                WhereClause whereClause = null;
-                whereClause = CreateWhereClause();
-            
-                OrderBy orderBy = CreateOrderBy();
-                BaseFilter joinFilter = CreateCompoundJoinFilter();
-                
-
-                int rowsPerQuery = 5000;
-                int pageNum = 0;
-                int recordCount = 0;
-                int totalRows = LinkTableTable.GetRecordCount(joinFilter,whereClause);
-
-                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
-                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
-
-                ColumnList columns = LinkTableTable.GetColumnList();
-                LinkTableRecord[] records = null;
-                do
-                {
-                    records = LinkTableTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
-                    if (records != null && records.Length > 0 && whereClause.RunQuery)
-                    {
-                        foreach ( LinkTableRecord record in records)
-                        {
-                            // AddData method takes four parameters
-                            // The 1st parameter represents the data format
-                            // The 2nd parameter represents the data value
-                            // The 3rd parameter represents the default alignment of column using the data
-                            // The 4th parameter represents the maximum length of the data value being shown
-                             if (BaseClasses.Utils.MiscUtils.IsNull(record.ContactID)){
-                                 report.AddData("${ContactID}", "",ReportEnum.Align.Left);
-                             }else{
-                                 Boolean _isExpandableNonCompositeForeignKey;
-                                 String _DFKA = "";
-                                 _isExpandableNonCompositeForeignKey = LinkTableTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(LinkTableTable.ContactID);
-                                 _DFKA = LinkTableTable.GetDFKA(record.ContactID.ToString(), LinkTableTable.ContactID,null);
-                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  LinkTableTable.ContactID.IsApplyDisplayAs){
-                                     report.AddData("${ContactID}", _DFKA,ReportEnum.Align.Left);
-                                 }else{
-                                     report.AddData("${ContactID}", record.Format(LinkTableTable.ContactID), ReportEnum.Align.Left);
-                                 }
-                             }
-
-                            report.WriteRow();
-                        }
-                        pageNum++;
-                        recordCount += records.Length;
-                    }
-                }
-                while (records != null && recordCount < totalRows && whereClause.RunQuery);
-                report.save();
-                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".doc", report.ReportInByteArray, 0, true);
-          
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-    
-        }
-            
-            
-        
-        // event handler for Button
-        public virtual void LinkTableButtonsButton_Click(object sender, EventArgs args)
-        {
-              
-            try {
-                
-            //This method is initially empty to implement custom click handler.
-      
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-        // event handler for Button
-        public virtual void LinkTableFilterButton_Click(object sender, EventArgs args)
-        {
-              
-            try {
-                
-            this.DataChanged = true;
-          
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-        // event handler for Button
-        public virtual void LinkTableFiltersButton_Click(object sender, EventArgs args)
-        {
-              
-            try {
-                
-            //This method is initially empty to implement custom click handler.
-      
-            } catch (Exception ex) {
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-    
-            }
-    
-        }
-            
-            
-        
-
-
-        // Generate the event handling functions for filter and search events.
-        
-        // event handler for FieldFilter
-        protected virtual void ContactIDFilter3_SelectedIndexChanged(object sender, EventArgs args)
-        {
-            // Setting the DataChanged to True results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-            
-           				
-        }
-            
-    
-        // Generate the event handling functions for others
-        	  
-
-        protected int _TotalRecords = -1;
-        public int TotalRecords 
-        {
-            get {
-                if (_TotalRecords < 0)
-                {
-                    _TotalRecords = LinkTableTable.GetRecordCount(CreateCompoundJoinFilter(), CreateWhereClause());
-                }
-                return (this._TotalRecords);
-            }
-            set {
-                if (this.PageSize > 0) {
-                  
-                      this.TotalPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(value) / Convert.ToDouble(this.PageSize)));
-                          
-                }
-                this._TotalRecords = value;
-            }
-        }
-
-      
-      
-        protected int _TotalPages = -1;
-        public int TotalPages {
-            get {
-                if (_TotalPages < 0) 
-                
-                    this.TotalPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(TotalRecords) / Convert.ToDouble(this.PageSize)));
-                  
-                return this._TotalPages;
-            }
-            set {
-                this._TotalPages = value;
-            }
-        }
-
-        protected bool _DisplayLastPage;
-        public bool DisplayLastPage {
-            get {
-                return this._DisplayLastPage;
-            }
-            set {
-                this._DisplayLastPage = value;
-            }
-        }
-
-
-        
-        private OrderBy _CurrentSortOrder = null;
-        public OrderBy CurrentSortOrder {
-            get {
-                return this._CurrentSortOrder;
-            }
-            set {
-                this._CurrentSortOrder = value;
-            }
-        }
-        
-        public  LinkTableRecord[] DataSource {
-             
-            get {
-                return (LinkTableRecord[])(base._DataSource);
-            }
-            set {
-                this._DataSource = value;
-            }
-        }
-
-#region "Helper Properties"
-        
-        public System.Web.UI.WebControls.DropDownList ContactIDFilter3 {
-            get {
-                return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactIDFilter3");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal ContactIDLabel5 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactIDLabel5");
-            }
-        }
-        
-        public IPv5.UI.IThemeButtonWithArrow LinkTableButtonsButton {
-            get {
-                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableButtonsButton");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableExportExcelButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableExportExcelButton");
-            }
-        }
-        
-        public IPv5.UI.IThemeButton LinkTableFilterButton {
-            get {
-                return (IPv5.UI.IThemeButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableFilterButton");
-            }
-        }
-        
-        public IPv5.UI.IThemeButtonWithArrow LinkTableFiltersButton {
-            get {
-                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableFiltersButton");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableImportButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableImportButton");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableNewButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableNewButton");
-            }
-        }
-        
-        public IPv5.UI.IPaginationModern LinkTablePagination {
-            get {
-                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTablePagination");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton LinkTablePDFButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTablePDFButton");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableResetButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableResetButton");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal LinkTableTitle {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableTitle");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableWordButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableWordButton");
-            }
-        }
-        
-#endregion
-
-#region "Helper Functions"
-        
-        public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt)
-        {
-            return this.Page.EvaluateExpressions(url, arg, bEncrypt, this);
-        }
-        
-        public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt,bool includeSession)
-        {
-            return this.Page.EvaluateExpressions(url, arg, bEncrypt, this,includeSession);
-        }
-        
-        public override string EvaluateExpressions(string url, string arg, bool bEncrypt)
-        {
-            bool needToProcess = AreAnyUrlParametersForMe(url, arg);
-            if (needToProcess) {
-                LinkTableTableControlRow recCtl = this.GetSelectedRecordControl();
-                if (recCtl == null && url.IndexOf("{") >= 0) {
-                    // Localization.
-                    throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
-                }
-
-        LinkTableRecord rec = null;
-                if (recCtl != null) {
-                    rec = recCtl.GetRecord();
-                }
-                return EvaluateExpressions(url, arg, rec, bEncrypt);
-             
-            }
-            return url;
-        }
-        
-        
-        public override string EvaluateExpressions(string url, string arg, bool bEncrypt, bool includeSession)
-        {
-            bool needToProcess = AreAnyUrlParametersForMe(url, arg);
-            if (needToProcess) {
-                LinkTableTableControlRow recCtl = this.GetSelectedRecordControl();
-                if (recCtl == null && url.IndexOf("{") >= 0) {
-                    // Localization.
-                    throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
-                }
-
-        LinkTableRecord rec = null;
-                if (recCtl != null) {
-                    rec = recCtl.GetRecord();
-                }
-                
-                if (includeSession)
-                {
-                    return EvaluateExpressions(url, arg, rec, bEncrypt);
-                }
-                else
-                {
-                    return EvaluateExpressions(url, arg, rec, bEncrypt,false);
-                }
-             
-            }
-            return url;
-        }
-          
-        public virtual LinkTableTableControlRow GetSelectedRecordControl()
-        {
-        
-            return null;
-          
-        }
-
-        public virtual LinkTableTableControlRow[] GetSelectedRecordControls()
-        {
-        
-            return (LinkTableTableControlRow[])((new ArrayList()).ToArray(Type.GetType("IPv5.UI.Controls.GroupByPropertiesTable.LinkTableTableControlRow")));
-          
-        }
-
-        public virtual void DeleteSelectedRecords(bool deferDeletion)
-        {
-            LinkTableTableControlRow[] recordList = this.GetSelectedRecordControls();
-            if (recordList.Length == 0) {
-                // Localization.
-                throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
-            }
-            
-            foreach (LinkTableTableControlRow recCtl in recordList)
-            {
-                if (deferDeletion) {
-                    if (!recCtl.IsNewRecord) {
-                
-                        this.AddToDeletedRecordIds(recCtl);
-                  
-                    }
-                    recCtl.Visible = false;
-                
-                } else {
-                
-                    recCtl.Delete();
-                    // Setting the DataChanged to True results in the page being refreshed with
-                    // the most recent data from the database.  This happens in PreRender event
-                    // based on the current sort, search and filter criteria.
-                    this.DataChanged = true;
-                    this.ResetData = true;
-                  
-                }
-            }
-        }
-
-        public virtual LinkTableTableControlRow[] GetRecordControls()
-        {
-            Control[] recCtrls = BaseClasses.Utils.MiscUtils.FindControlsRecursively(this, "LinkTableTableControlRow");
-	          List<LinkTableTableControlRow> list = new List<LinkTableTableControlRow>();
-	          foreach (LinkTableTableControlRow recCtrl in recCtrls) {
-		          list.Add(recCtrl);
-	          }
-	          return list.ToArray();
-        }
-
-        public new BaseApplicationPage Page 
-        {
-            get {
-                return ((BaseApplicationPage)base.Page);
-            }
-        }
-        
-                
-
-        
-        
-#endregion
-
-
-    }
-  
 // Base class for the MMContractsTableControlRow control on the GroupByPropertiesTable page.
 // Do not modify this class. Instead override any method in MMContractsTableControlRow.
 public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordControl
@@ -10210,14 +11948,12 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
         // To customize, override this method in MMContractsTableControlRow.
         protected virtual void Control_Load(object sender, System.EventArgs e)
         {      
-        
-              // Show confirmation message on Click
-              this.MMContractsRowDeleteButton.Attributes.Add("onClick", "return (confirm(\"" + ((BaseApplicationPage)this.Page).GetResourceValue("DeleteRecordConfirm", "IPv5") + "\"));");            
+                    
         
               // Register the event handlers.
 
           
-                    this.MMContractsRowDeleteButton.Click += MMContractsRowDeleteButton_Click;
+                    this.EditRowButton3.Click += EditRowButton3_Click;
                         
         }
 
@@ -10276,10 +12012,10 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
         
                 SetDescription1();
                 SetDescriptionLabel2();
+                
                 SetExpiryDate1();
                 SetExpiryDateLabel2();
-                
-                SetMMContractsRowDeleteButton();
+                SetEditRowButton3();
               
 
       
@@ -10589,14 +12325,11 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -10735,7 +12468,7 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
     
         // Generate set method for buttons
         
-        public virtual void SetMMContractsRowDeleteButton()                
+        public virtual void SetEditRowButton3()                
               
         {
         
@@ -10743,22 +12476,35 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
         }
             
         // event handler for ImageButton
-        public virtual void MMContractsRowDeleteButton_Click(object sender, ImageClickEventArgs args)
+        public virtual void EditRowButton3_Click(object sender, ImageClickEventArgs args)
         {
               
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../MMContracts/EditMMContracts.aspx?MMContracts={PK}";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
             try {
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-            if (!this.Page.IsPageRefresh) {
-        
-                this.Delete();
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
-            }
-      this.Page.CommitTransaction(sender);
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
                   this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
                   this.Page.ErrorOnPage = true;
 
             // Report the error message to the end user
@@ -10767,7 +12513,12 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             } finally {
                 DbUtils.EndTransaction();
             }
-    
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      this.Page.Response.Redirect(url);
+        
+            }
+        
         }
             
             
@@ -10873,6 +12624,12 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             }
         }
         
+        public System.Web.UI.WebControls.ImageButton EditRowButton3 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "EditRowButton3");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal ExpiryDate1 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDate1");
@@ -10882,12 +12639,6 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
         public System.Web.UI.WebControls.Literal ExpiryDateLabel2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel2");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton MMContractsRowDeleteButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MMContractsRowDeleteButton");
             }
         }
         
@@ -11008,6 +12759,89 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
     
            // Setup the filter and search.
         
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                
+                  if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                  {
+                  initialVal = "";
+                  }
+                
+                if  (this.InSession(this.SortControl3)) 				
+                    initialVal = this.GetFromSession(this.SortControl3);
+                
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.SortControl3.Items.Add(new ListItem(initialVal, initialVal));
+                        
+                    this.SortControl3.SelectedValue = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.ExpiryDateFromFilter2)) 				
+                    initialVal = this.GetFromSession(this.ExpiryDateFromFilter2);
+                
+                else
+                    
+                    initialVal = EvaluateFormula("URL(\"ExpiryDateFrom\")");
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.ExpiryDateFromFilter2.Text = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.ExpiryDateToFilter2)) 				
+                    initialVal = this.GetFromSession(this.ExpiryDateToFilter2);
+                
+                else
+                    
+                    initialVal = EvaluateFormula("URL(\"ExpiryDateTo\")");
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.ExpiryDateToFilter2.Text = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.MMContractsSearchText)) 				
+                    initialVal = this.GetFromSession(this.MMContractsSearchText);
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.MMContractsSearchText.Text = initialVal;
+                            
+                    }
+            }
 
 
       
@@ -11040,15 +12874,15 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
         
             // Setup the pagination events.
             
-                    this.MMContractsPagination.FirstPage.Click += MMContractsPagination_FirstPage_Click;
+                    this.Pagination3.FirstPage.Click += Pagination3_FirstPage_Click;
                         
-                    this.MMContractsPagination.LastPage.Click += MMContractsPagination_LastPage_Click;
+                    this.Pagination3.LastPage.Click += Pagination3_LastPage_Click;
                         
-                    this.MMContractsPagination.NextPage.Click += MMContractsPagination_NextPage_Click;
+                    this.Pagination3.NextPage.Click += Pagination3_NextPage_Click;
                         
-                    this.MMContractsPagination.PageSizeButton.Click += MMContractsPagination_PageSizeButton_Click;
+                    this.Pagination3.PageSizeButton.Click += Pagination3_PageSizeButton_Click;
                         
-                    this.MMContractsPagination.PreviousPage.Click += MMContractsPagination_PreviousPage_Click;
+                    this.Pagination3.PreviousPage.Click += Pagination3_PreviousPage_Click;
                         
 
             string url =""; //to avoid warning in VS as its not being used
@@ -11057,10 +12891,33 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
        // Setup the sorting events.
         
             // Setup the button events.
-                  
+          
+                    this.ExcelButton3.Click += ExcelButton3_Click;
+                        
+                    this.ImportButton2.Click += ImportButton2_Click;
+                        
+                    this.NewButton3.Click += NewButton3_Click;
+                        
+                    this.PDFButton3.Click += PDFButton3_Click;
+                        
+                    this.ResetButton3.Click += ResetButton3_Click;
+                        
+                    this.SearchButton5.Click += SearchButton5_Click;
+                        
+                    this.WordButton2.Click += WordButton2_Click;
+                        
+                    this.Actions3Button.Button.Click += Actions3Button_Click;
+                        
+                    this.FilterButton3.Button.Click += FilterButton3_Click;
+                        
+                    this.Filters3Button.Button.Click += Filters3Button_Click;
+                        
+            this.SortControl3.SelectedIndexChanged += new EventHandler(SortControl3_SelectedIndexChanged);
+                    
         
          //' Setup events for others
-               
+            AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "MMContractsSearchTextSearchBoxText", "setSearchBoxText(\"" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "\", \"" + MMContractsSearchText.ClientID + "\");", true);
+             
         }
 
         public virtual void LoadData()
@@ -11292,6 +13149,44 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             // Call the Set methods for each controls on the panel
         
                 
+                
+                
+                SetExpiryDateLabel6();
+                
+                
+                
+                
+                
+                SetMMContractsSearchText();
+                
+                
+                
+                
+                
+                SetSortByLabel3();
+                SetSortControl3();
+                
+                
+                SetExcelButton3();
+              
+                SetImportButton2();
+              
+                SetNewButton3();
+              
+                SetPDFButton3();
+              
+                SetResetButton3();
+              
+                SetSearchButton5();
+              
+                SetWordButton2();
+              
+                SetActions3Button();
+              
+                SetFilterButton3();
+              
+                SetFilters3Button();
+              
             // setting the state of expand or collapse alternative rows
       
             // Load data for each record and table UI control.
@@ -11302,7 +13197,9 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             // this method calls the set method for controls with special formula like running total, sum, rank, etc
             SetFormulaControls();
             
-                    
+             
+              SetFilters3Button();
+                     
         }
         
         
@@ -11314,10 +13211,25 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
     }
 
         
+    public virtual void AddWarningMessageOnClick() {
+    
+        if (this.TotalRecords > 10000)
+          this.ExcelButton3.Attributes.Add("onClick", "return (confirm('" + ((BaseApplicationPage)this.Page).GetResourceValue("ExportConfirm", "IPv5") + "'));");
+        else
+          this.ExcelButton3.Attributes.Remove("onClick");
+      
+    }
+  
 
         public virtual void RegisterPostback()
         {
-                
+        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"ExcelButton3"));
+                        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"PDFButton3"));
+                        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"WordButton2"));
+                                
         }
         
 
@@ -11431,32 +13343,32 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             if (DbUtils.GetCreatedRecords(this.DataSource).Length > 0)                      
                     
             {
-                this.MMContractsPagination.CurrentPage.Text = (this.PageIndex + 1).ToString();
+                this.Pagination3.CurrentPage.Text = (this.PageIndex + 1).ToString();
             } 
             else
             {
-                this.MMContractsPagination.CurrentPage.Text = "0";
+                this.Pagination3.CurrentPage.Text = "0";
             }
-            this.MMContractsPagination.PageSize.Text = this.PageSize.ToString();
+            this.Pagination3.PageSize.Text = this.PageSize.ToString();
     
             // Bind the buttons for MMContractsTableControl pagination.
         
-            this.MMContractsPagination.FirstPage.Enabled = !(this.PageIndex == 0);
+            this.Pagination3.FirstPage.Enabled = !(this.PageIndex == 0);
             if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
-                this.MMContractsPagination.LastPage.Enabled = true;
+                this.Pagination3.LastPage.Enabled = true;
             else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
-                this.MMContractsPagination.LastPage.Enabled = false;            
+                this.Pagination3.LastPage.Enabled = false;            
             else                                     // if the total pages is the last page, disable last and next buttons
-                this.MMContractsPagination.LastPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
+                this.Pagination3.LastPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
           
             if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
-                this.MMContractsPagination.NextPage.Enabled = true;
+                this.Pagination3.NextPage.Enabled = true;
             else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
-                this.MMContractsPagination.NextPage.Enabled = false;            
+                this.Pagination3.NextPage.Enabled = false;            
             else                                     // if the total pages is the last page, disable last and next buttons
-                this.MMContractsPagination.NextPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
+                this.Pagination3.NextPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
           
-            this.MMContractsPagination.PreviousPage.Enabled = !(this.PageIndex == 0);    
+            this.Pagination3.PreviousPage.Enabled = !(this.PageIndex == 0);    
         }
  
         public virtual void SaveData()
@@ -11561,7 +13473,69 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
               }
             
       HttpContext.Current.Session["MMContractsTableControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
-         
+    
+            if (MiscUtils.IsValueSelected(this.ExpiryDateFromFilter2)) {
+                string val = MiscUtils.GetSelectedValue(this.ExpiryDateFromFilter2, this.GetFromSession(this.ExpiryDateFromFilter2));
+                DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
+                    
+                val = d.ToShortDateString() + " " + "00:00:00";
+                wc.iAND(MMContractsTable.ExpiryDate, BaseFilter.ComparisonOperator.Greater_Than_Or_Equal, val, false, false);
+                    
+            }
+                      
+            if (MiscUtils.IsValueSelected(this.ExpiryDateToFilter2)) {
+                string val = MiscUtils.GetSelectedValue(this.ExpiryDateToFilter2, this.GetFromSession(this.ExpiryDateToFilter2));
+                DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
+                    
+                val = d.ToShortDateString() + " " + "23:59:59";
+                wc.iAND(MMContractsTable.ExpiryDate, BaseFilter.ComparisonOperator.Less_Than_Or_Equal, val, false, false);
+                    
+            }
+                      
+            if (MiscUtils.IsValueSelected(this.MMContractsSearchText)) {
+                if (this.MMContractsSearchText.Text == BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) ) {
+                        this.MMContractsSearchText.Text = "";
+                } else {
+                  // Strip "..." from begin and ending of the search text, otherwise the search will return 0 values as in database "..." is not stored.
+                  if (this.MMContractsSearchText.Text.StartsWith("...")) {
+                      this.MMContractsSearchText.Text = this.MMContractsSearchText.Text.Substring(3,this.MMContractsSearchText.Text.Length-3);
+                  }
+                  if (this.MMContractsSearchText.Text.EndsWith("...")) {
+                      this.MMContractsSearchText.Text = this.MMContractsSearchText.Text.Substring(0,this.MMContractsSearchText.Text.Length-3);
+                      // Strip the last word as well as it is likely only a partial word
+                      int endindex = this.MMContractsSearchText.Text.Length - 1;
+                      while (!Char.IsWhiteSpace(MMContractsSearchText.Text[endindex]) && endindex > 0) {
+                          endindex--;
+                      }
+                      if (endindex > 0) {
+                          this.MMContractsSearchText.Text = this.MMContractsSearchText.Text.Substring(0, endindex);
+                      }
+                  }
+                }
+                string formatedSearchText = MiscUtils.GetSelectedValue(this.MMContractsSearchText, this.GetFromSession(this.MMContractsSearchText));
+                // After stripping "..." see if the search text is null or empty.
+                if (MiscUtils.IsValueSelected(this.MMContractsSearchText)) {
+                      
+                    // These clauses are added depending on operator and fields selected in Control's property page, bindings tab.
+                  
+                    WhereClause search = new WhereClause();
+                    
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(MMContractsTable.Description, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+          search.iOR(col, BaseFilter.ComparisonOperator.Contains, MiscUtils.GetSelectedValue(this.MMContractsSearchText, this.GetFromSession(this.MMContractsSearchText)), true, false);
+        
+      }
+    
+                    wc.iAND(search);
+                  
+                }
+            }
+                       
             return wc;
         }
         
@@ -11594,11 +13568,122 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
+            string ExpiryDateFromFilter2SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "ExpiryDateFromFilter2_Ajax"];
+            if (MiscUtils.IsValueSelected(ExpiryDateFromFilter2SelectedValue)) {
+                DateTime d = DateParser.ParseDate(ExpiryDateFromFilter2SelectedValue, DateColumn.DEFAULT_FORMAT);
+                ExpiryDateFromFilter2SelectedValue = d.ToShortDateString() + " " + "00:00:00";
+                    
+                wc.iAND(MMContractsTable.ExpiryDate, BaseFilter.ComparisonOperator.Greater_Than_Or_Equal, ExpiryDateFromFilter2SelectedValue, false, false);
+                    
+            }         
+            string ExpiryDateToFilter2SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "ExpiryDateToFilter2_Ajax"];
+            if (MiscUtils.IsValueSelected(ExpiryDateToFilter2SelectedValue)) {
+                DateTime d = DateParser.ParseDate(ExpiryDateToFilter2SelectedValue, DateColumn.DEFAULT_FORMAT);
+                ExpiryDateToFilter2SelectedValue = d.ToShortDateString() + " " + "23:59:59";
+                    
+                wc.iAND(MMContractsTable.ExpiryDate, BaseFilter.ComparisonOperator.Less_Than_Or_Equal, ExpiryDateToFilter2SelectedValue, false, false);
+                    
+            }         
+            if (MiscUtils.IsValueSelected(searchText) && fromSearchControl == "MMContractsSearchText") {
+                String formatedSearchText = searchText;
+                // strip "..." from begin and ending of the search text, otherwise the search will return 0 values as in database "..." is not stored.
+                if (searchText.StartsWith("...")) {
+                    formatedSearchText = searchText.Substring(3,searchText.Length-3);
+                }
+                if (searchText.EndsWith("...")) {
+                    formatedSearchText = searchText.Substring(0,searchText.Length-3);
+                }
+                // After stripping "...", trim any leading and trailing whitespaces 
+                formatedSearchText = formatedSearchText.Trim();
+                // After stripping "..." see if the search text is null or empty.
+                if (MiscUtils.IsValueSelected(searchText)) {
+                      
+                    // These clauses are added depending on operator and fields selected in Control's property page, bindings tab.
+                  
+                    WhereClause search = new WhereClause();
+                    
+                    if (StringUtils.InvariantLCase(AutoTypeAheadSearch).Equals("wordsstartingwithsearchstring")) {
+                
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(MMContractsTable.Description, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+                  search.iOR(col, BaseFilter.ComparisonOperator.Starts_With, formatedSearchText, true, false);
+                  search.iOR(col, BaseFilter.ComparisonOperator.Contains, AutoTypeAheadWordSeparators + formatedSearchText, true, false);
+                
+      }
+    
+                    } else {
+                        
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(MMContractsTable.Description, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+                  search.iOR(col, BaseFilter.ComparisonOperator.Contains, formatedSearchText, true, false);
+      }
+    
+                    } 
+                    wc.iAND(search);
+                  
+                }
+            }
+                  
 
             return wc;
         }
 
         
+        public virtual string[] GetAutoCompletionList_MMContractsSearchText(String prefixText,int count)
+        {
+            ArrayList resultList = new ArrayList();
+            ArrayList wordList= new ArrayList();
+            
+            CompoundFilter filterJoin = CreateCompoundJoinFilter();    
+            WhereClause wc = CreateWhereClause(prefixText,"MMContractsSearchText", "WordsStartingWithSearchString", "[^a-zA-Z0-9]");
+            if(count==0) count = 10;
+            IPv5.Business.MMContractsRecord[] recordList  = MMContractsTable.GetRecords(filterJoin, wc, null, 0, count, ref count);
+            String resultItem = "";
+            if (resultItem == "") resultItem = "";
+            foreach (MMContractsRecord rec in recordList ){
+                // Exit the loop if recordList count has reached AutoTypeAheadListSize.
+                if (resultList.Count >= count) {
+                    break;
+                }
+                // If the field is configured to Display as Foreign key, Format() method returns the 
+                // Display as Forien Key value instead of original field value.
+                // Since search had to be done in multiple fields (selected in Control's page property, binding tab) in a record,
+                // We need to find relevent field to display which matches the prefixText and is not already present in the result list.
+        
+                resultItem = rec.Format(MMContractsTable.Description);
+  
+                if (resultItem != null) {
+                    string prText = prefixText;
+                    if(MMContractsTable.Description.IsFullTextSearchable) {
+                        FullTextExpression ft = new FullTextExpression();
+                        prText = ft.GetFirstNonExcludedTerm(prText);
+                    }
+                    if (!string.IsNullOrEmpty(prText) && resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).Contains(prText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture))) {
+                        bool isAdded = FormatSuggestions(prText, resultItem, 50, "AtBeginningOfMatchedString", "WordsStartingWithSearchString", "[^a-zA-Z0-9]", resultList, MMContractsTable.Description.IsFullTextSearchable);
+                        if (isAdded) {
+                            continue;
+                        }
+                    }
+                }
+                      
+            }
+              
+            resultList.Sort();
+            string[] result = new string[resultList.Count];
+            Array.Copy(resultList.ToArray(), result, resultList.Count);
+            return result;
+        }
+          
           
          public virtual bool FormatSuggestions(String prefixText, String resultItem,
                                               int columnLength, String AutoTypeAheadDisplayFoundText,
@@ -11744,9 +13829,9 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
         protected virtual void GetPageSize()
         {
         
-            if (this.MMContractsPagination.PageSize.Text.Length > 0) {
+            if (this.Pagination3.PageSize.Text.Length > 0) {
                 try {
-                    // this.PageSize = Convert.ToInt32(this.MMContractsPagination.PageSize.Text);
+                    // this.PageSize = Convert.ToInt32(this.Pagination3.PageSize.Text);
                 } catch (Exception ) {
                 }
             }
@@ -11850,6 +13935,75 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetExpiryDateLabel6()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetSortByLabel3()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.SortByLabel3.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetSortControl3()
+        {
+            
+                this.PopulateSortControl3(MiscUtils.GetSelectedValue(this.SortControl3,  GetFromSession(this.SortControl3)), 500);					
+                    
+
+        }
+            
+        public virtual void SetMMContractsSearchText()
+        {
+                                            
+            this.MMContractsSearchText.Attributes.Add("onfocus", "if(this.value=='" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "') {this.value='';this.className='Search_Input';}");
+            this.MMContractsSearchText.Attributes.Add("onblur", "if(this.value=='') {this.value='" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "';this.className='Search_InputHint';}");
+                                   
+        }
+            
+        // Get the filters' data for SortControl3.
+                
+        protected virtual void PopulateSortControl3(string selectedValue, int maxItems)
+                    
+        {
+            
+              
+                this.SortControl3.Items.Clear();
+                
+              // 1. Setup the static list items
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Ascending}"), "Description Asc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Descending}"), "Description Desc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Ascending}"), "ExpiryDate Asc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Descending}"), "ExpiryDate Desc"));
+              
+            try
+            {          
+                // Set the selected value.
+                MiscUtils.SetSelectedValue(this.SortControl3, selectedValue);
+
+               
+            }
+            catch
+            {
+            }
+              
+            if (this.SortControl3.SelectedValue != null && this.SortControl3.Items.FindByValue(this.SortControl3.SelectedValue) == null)
+                this.SortControl3.SelectedValue = null;
+              
+        }
+            
 
     
         protected virtual void Control_PreRender(object sender, System.EventArgs e)
@@ -11883,6 +14037,14 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             base.SaveControlsToSession();
             // Save filter controls to values to session.
         
+            this.SaveToSession(this.SortControl3, this.SortControl3.SelectedValue);
+                  
+            this.SaveToSession(this.ExpiryDateFromFilter2, this.ExpiryDateFromFilter2.Text);
+                  
+            this.SaveToSession(this.ExpiryDateToFilter2, this.ExpiryDateToFilter2.Text);
+                  
+            this.SaveToSession(this.MMContractsSearchText, this.MMContractsSearchText.Text);
+                  
             
                     
             // Save pagination state to session.
@@ -11910,6 +14072,14 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
         {
             // Save filter controls to values to session.
           
+            this.SaveToSession(this.SortControl3, this.SortControl3.SelectedValue);
+                  
+      this.SaveToSession("ExpiryDateFromFilter2_Ajax", this.ExpiryDateFromFilter2.Text);
+              
+      this.SaveToSession("ExpiryDateToFilter2_Ajax", this.ExpiryDateToFilter2.Text);
+              
+      this.SaveToSession("MMContractsSearchText_Ajax", this.MMContractsSearchText.Text);
+              
            HttpContext.Current.Session["AppRelativeVirtualPath"] = this.Page.AppRelativeVirtualPath;
          
         }
@@ -11920,6 +14090,10 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             base.ClearControlsFromSession();
             // Clear filter controls values from the session.
         
+            this.RemoveFromSession(this.SortControl3);
+            this.RemoveFromSession(this.ExpiryDateFromFilter2);
+            this.RemoveFromSession(this.ExpiryDateToFilter2);
+            this.RemoveFromSession(this.MMContractsSearchText);
             
             // Clear pagination state from session.
          
@@ -11948,7 +14122,7 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             }
           
 
-            Control Pagination = this.FindControl("MMContractsPagination");
+            Control Pagination = this.FindControl("Pagination3");
             String PaginationType = "";
             if (Pagination != null){
               Control Summary = Pagination.FindControl("_Summary");
@@ -12004,12 +14178,111 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
         }
 
         // Generate set method for buttons
-           
+        
+        public virtual void SetExcelButton3()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetImportButton2()                
+              
+        {
+        							
+                    this.ImportButton2.PostBackUrl = "../Shared/SelectFileToImport.aspx?TableName=MMContracts" ;
+                    this.ImportButton2.Attributes["onClick"] = "window.open('" + this.Page.EncryptUrlParameter(this.ImportButton2.PostBackUrl) + "','importWindow', 'width=700, height=500,top=' +(screen.availHeight-500)/2 + ',left=' + (screen.availWidth-700)/2+ ', resizable=yes, scrollbars=yes,modal=yes'); return false;";
+                        
+   
+        }
+            
+        public virtual void SetNewButton3()                
+              
+        {
+        
+              try
+              {
+                    string url = "../MMContracts/AddMMContracts.aspx?PropertyID={PropertiesTableControlRow:FV:PropertyID}&TabVisible=False&SaveAndNewVisible=False";
+              
+                      
+                    url = this.ModifyRedirectUrl(url, "", true);
+                    
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
+                    
+                    url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("Popup") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(MiscUtils.FindControlRecursively(this, "MMContractsTableControl_PostbackTracker").ClientID);                           
+                                
+                string javascriptCall = "";
+                
+                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "MMContractsTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                       
+                    this.NewButton3.Attributes["onClick"] = javascriptCall + "return false;";            
+                }
+                catch
+                {
+                    // do nothing.  If the code above fails, server side click event, NewButton3_ClickNewButton3_Click will be trigger when user click the button.
+                }
+                  
+   
+        }
+            
+        public virtual void SetPDFButton3()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetResetButton3()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetSearchButton5()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetWordButton2()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetActions3Button()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetFilterButton3()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetFilters3Button()                
+              
+        {
+                
+         IThemeButtonWithArrow themeButtonFilters3Button = (IThemeButtonWithArrow)(MiscUtils.FindControlRecursively(this, "Filters3Button"));
+         themeButtonFilters3Button.ArrowImage.ImageUrl = "../Images/ButtonExpandArrow.png";
+    
+      
+   
+        }
+               
         
         // Generate the event handling functions for pagination events.
         
         // event handler for ImageButton
-        public virtual void MMContractsPagination_FirstPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination3_FirstPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -12032,7 +14305,7 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void MMContractsPagination_LastPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination3_LastPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -12055,7 +14328,7 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void MMContractsPagination_NextPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination3_NextPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -12078,16 +14351,16 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for LinkButton
-        public virtual void MMContractsPagination_PageSizeButton_Click(object sender, EventArgs args)
+        public virtual void Pagination3_PageSizeButton_Click(object sender, EventArgs args)
         {
               
             try {
                 
             this.DataChanged = true;
       
-            this.PageSize = this.MMContractsPagination.GetCurrentPageSize();
+            this.PageSize = this.Pagination3.GetCurrentPageSize();
       
-            this.PageIndex = Convert.ToInt32(this.MMContractsPagination.CurrentPage.Text) - 1;
+            this.PageIndex = Convert.ToInt32(this.Pagination3.CurrentPage.Text) - 1;
       
             } catch (Exception ex) {
                   this.Page.ErrorOnPage = true;
@@ -12104,7 +14377,7 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void MMContractsPagination_PreviousPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination3_PreviousPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -12134,10 +14407,609 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for button events.
         
+        // event handler for ImageButton
+        public virtual void ExcelButton3_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            
+            // To customize the columns or the format, override this function in Section 1 of the page
+            // and modify it to your liking.
+            // Build the where clause based on the current filter and search criteria
+            // Create the Order By clause based on the user's current sorting preference.
+            
+                WhereClause wc = null;
+                wc = CreateWhereClause();
+                OrderBy orderBy = null;
+              
+                orderBy = CreateOrderBy();
+              
+              bool done = false;
+              object val = "";
+              CompoundFilter join = CreateCompoundJoinFilter();
+              
+              // Read pageSize records at a time and write out the Excel file.
+              int totalRowsReturned = 0;
+
+
+              this.TotalRecords = MMContractsTable.GetRecordCount(join, wc);
+              if (this.TotalRecords > 10000)
+              {
+              
+                // Add each of the columns in order of export.
+                BaseColumn[] columns = new BaseColumn[] {
+                             MMContractsTable.ExpiryDate,
+             MMContractsTable.Description,
+             null};
+                ExportDataToCSV exportData = new ExportDataToCSV(MMContractsTable.Instance,wc,orderBy,columns);
+                exportData.StartExport(this.Page.Response, true);
+
+                DataForExport dataForCSV = new DataForExport(MMContractsTable.Instance, wc, orderBy, columns,join);
+
+                //  Read pageSize records at a time and write out the CSV file.
+                while (!done)
+                {
+                ArrayList recList = dataForCSV.GetRows(exportData.pageSize);
+                if (recList == null)
+                break; //we are done
+
+                totalRowsReturned = recList.Count;
+                foreach (BaseRecord rec in recList)
+                {
+                foreach (BaseColumn col in dataForCSV.ColumnList)
+                {
+                if (col == null)
+                continue;
+
+                if (!dataForCSV.IncludeInExport(col))
+                continue;
+
+                val = rec.GetValue(col).ToString();
+                exportData.WriteColumnData(val, dataForCSV.IsString(col));
+                }
+                exportData.WriteNewRow();
+                }
+
+                //  If we already are below the pageSize, then we are done.
+                if (totalRowsReturned < exportData.pageSize)
+                {
+                done = true;
+                }
+                }
+                exportData.FinishExport(this.Page.Response);
+              
+              }
+              else
+              {
+              // Create an instance of the ExportDataToExcel class with the table class, where clause and order by.
+              ExportDataToExcel excelReport = new ExportDataToExcel(MMContractsTable.Instance, wc, orderBy);
+              // Add each of the columns in order of export.
+              // To customize the data type, change the second parameter of the new ExcelColumn to be
+              // a format string from Excel's Format Cell menu. For example "dddd, mmmm dd, yyyy h:mm AM/PM;@", "#,##0.00"
+
+              if (this.Page.Response == null)
+              return;
+
+              excelReport.CreateExcelBook();
+
+              int width = 0;
+              int columnCounter = 0;
+              DataForExport data = new DataForExport(MMContractsTable.Instance, wc, orderBy, null,join);
+                           data.ColumnList.Add(new ExcelColumn(MMContractsTable.ExpiryDate, "Short Date"));
+             data.ColumnList.Add(new ExcelColumn(MMContractsTable.Description, "Default"));
+
+
+              //  First write out the Column Headers
+              foreach (ExcelColumn col in data.ColumnList)
+              {
+              width = excelReport.GetExcelCellWidth(col);
+              if (data.IncludeInExport(col))
+              {
+              excelReport.AddColumnToExcelBook(columnCounter, col.ToString(), excelReport.GetExcelDataType(col), width, excelReport.GetDisplayFormat(col));
+              columnCounter++;
+              }
+              }
+              
+              while (!done)
+              {
+              ArrayList recList = data.GetRows(excelReport.pageSize);
+
+              if (recList == null)
+              {
+              break;
+              }
+              totalRowsReturned = recList.Count;
+
+              foreach (BaseRecord rec in recList)
+              {
+              excelReport.AddRowToExcelBook();
+              columnCounter = 0;
+              foreach (ExcelColumn col in data.ColumnList)
+              {
+              if (!data.IncludeInExport(col))
+              continue;
+
+              Boolean _isExpandableNonCompositeForeignKey = col.DisplayColumn.TableDefinition.IsExpandableNonCompositeForeignKey(col.DisplayColumn);
+              if (_isExpandableNonCompositeForeignKey && col.DisplayColumn.IsApplyDisplayAs)
+              {
+                val = MMContractsTable.GetDFKA(rec.GetValue(col.DisplayColumn).ToString(), col.DisplayColumn, null) as string;
+                if (String.IsNullOrEmpty(val as string))
+                {
+                  val = rec.Format(col.DisplayColumn);
+                }
+              }
+              else
+                val = excelReport.GetValueForExcelExport(col, rec);
+              
+              excelReport.AddCellToExcelRow(columnCounter, excelReport.GetExcelDataType(col), val, col.DisplayFormat);
+
+              columnCounter++;
+              }
+              }
+
+              // If we already are below the pageSize, then we are done.
+              if (totalRowsReturned < excelReport.pageSize)
+              {
+              done = true;
+              }
+              }
+              excelReport.SaveExcelBook(this.Page.Response);
+              }
+            
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ImportButton2_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void NewButton3_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../MMContracts/AddMMContracts.aspx?PropertyID={PropertiesTableControlRow:FV:PropertyID}&TabVisible=False&SaveAndNewVisible=False";
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      
+                    url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("Popup") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(MiscUtils.FindControlRecursively(this, "MMContractsTableControl_PostbackTracker").ClientID);                           
+                                
+                string javascriptCall = "";
+                
+                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "MMContractsTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "NewButton3_Click", javascriptCall, true);
+        
+            }
+        
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void PDFButton3_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+
+                PDFReport report = new PDFReport();
+
+                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.PDFButton3.report");
+                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
+                report.Title = "MMContracts";
+                // If GroupByPropertiesTable.PDFButton3.report specifies a valid report template,
+                // AddColumn methods will generate a report template.   
+                // Each AddColumn method-call specifies a column
+                // The 1st parameter represents the text of the column header
+                // The 2nd parameter represents the horizontal alignment of the column header
+                // The 3rd parameter represents the text format of the column detail
+                // The 4th parameter represents the horizontal alignment of the column detail
+                // The 5th parameter represents the relative width of the column
+                 report.AddColumn(MMContractsTable.ExpiryDate.Name, ReportEnum.Align.Left, "${ExpiryDate}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(MMContractsTable.Description.Name, ReportEnum.Align.Left, "${Description}", ReportEnum.Align.Left, 28);
+
+  
+                int rowsPerQuery = 5000;
+                int recordCount = 0;
+                                
+                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
+                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
+
+                
+                ColumnList columns = MMContractsTable.GetColumnList();
+                
+                WhereClause whereClause = null;
+                whereClause = CreateWhereClause();
+                OrderBy orderBy = CreateOrderBy();
+                BaseFilter joinFilter = CreateCompoundJoinFilter();
+                
+                int pageNum = 0;
+                int totalRows = MMContractsTable.GetRecordCount(joinFilter,whereClause);
+                MMContractsRecord[] records = null;
+                
+                do
+                {
+                    
+                    records = MMContractsTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
+                     if (records != null && records.Length > 0 && whereClause.RunQuery)
+                    {
+                        foreach ( MMContractsRecord record in records)
+                    
+                        {
+                            // AddData method takes four parameters   
+                            // The 1st parameter represent the data format
+                            // The 2nd parameter represent the data value
+                            // The 3rd parameter represent the default alignment of column using the data
+                            // The 4th parameter represent the maximum length of the data value being shown
+                                                 report.AddData("${ExpiryDate}", record.Format(MMContractsTable.ExpiryDate), ReportEnum.Align.Left, 100);
+                             report.AddData("${Description}", record.Format(MMContractsTable.Description), ReportEnum.Align.Left, 100);
+
+                            report.WriteRow();
+                        }
+                        pageNum++;
+                        recordCount += records.Length;
+                    }
+                }
+                while (records != null && recordCount < totalRows && whereClause.RunQuery);
+                	
+                
+                report.Close();
+                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".pdf", report.ReportInByteArray, 0, true);
+            
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ResetButton3_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+           
+            this.SortControl3.ClearSelection();
+          
+              this.ExpiryDateFromFilter2.Text = "";
+            
+              this.ExpiryDateToFilter2.Text = "";
+            
+              this.MMContractsSearchText.Text = "";
+            
+              this.CurrentSortOrder.Reset();
+              if (this.InSession(this, "Order_By"))
+                  this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));
+              else
+              {
+                  this.CurrentSortOrder = new OrderBy(true, false);
+                  
+              }
+                
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+                
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void SearchButton5_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+            this.DataChanged = true;
+          
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void WordButton2_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+
+                WordReport report = new WordReport();
+
+                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.WordButton2.word");
+                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
+                report.Title = "MMContracts";
+                // If GroupByPropertiesTable.WordButton2.report specifies a valid report template,
+                // AddColumn methods will generate a report template.
+                // Each AddColumn method-call specifies a column
+                // The 1st parameter represents the text of the column header
+                // The 2nd parameter represents the horizontal alignment of the column header
+                // The 3rd parameter represents the text format of the column detail
+                // The 4th parameter represents the horizontal alignment of the column detail
+                // The 5th parameter represents the relative width of the column
+                 report.AddColumn(MMContractsTable.ExpiryDate.Name, ReportEnum.Align.Left, "${ExpiryDate}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(MMContractsTable.Description.Name, ReportEnum.Align.Left, "${Description}", ReportEnum.Align.Left, 28);
+
+                WhereClause whereClause = null;
+                whereClause = CreateWhereClause();
+            
+                OrderBy orderBy = CreateOrderBy();
+                BaseFilter joinFilter = CreateCompoundJoinFilter();
+                
+
+                int rowsPerQuery = 5000;
+                int pageNum = 0;
+                int recordCount = 0;
+                int totalRows = MMContractsTable.GetRecordCount(joinFilter,whereClause);
+
+                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
+                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
+
+                ColumnList columns = MMContractsTable.GetColumnList();
+                MMContractsRecord[] records = null;
+                do
+                {
+                    records = MMContractsTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
+                    if (records != null && records.Length > 0 && whereClause.RunQuery)
+                    {
+                        foreach ( MMContractsRecord record in records)
+                        {
+                            // AddData method takes four parameters
+                            // The 1st parameter represents the data format
+                            // The 2nd parameter represents the data value
+                            // The 3rd parameter represents the default alignment of column using the data
+                            // The 4th parameter represents the maximum length of the data value being shown
+                             report.AddData("${ExpiryDate}", record.Format(MMContractsTable.ExpiryDate), ReportEnum.Align.Left, 100);
+                             report.AddData("${Description}", record.Format(MMContractsTable.Description), ReportEnum.Align.Left, 100);
+
+                            report.WriteRow();
+                        }
+                        pageNum++;
+                        recordCount += records.Length;
+                    }
+                }
+                while (records != null && recordCount < totalRows && whereClause.RunQuery);
+                report.save();
+                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".doc", report.ReportInByteArray, 0, true);
+          
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void Actions3Button_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            //This method is initially empty to implement custom click handler.
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void FilterButton3_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            this.DataChanged = true;
+          
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void Filters3Button_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            //This method is initially empty to implement custom click handler.
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
 
 
         // Generate the event handling functions for filter and search events.
         
+        // event handler for OrderSort
+        protected virtual void SortControl3_SelectedIndexChanged(object sender, EventArgs args)
+        {
+              
+                  string SelVal1 = this.SortControl3.SelectedValue.ToUpper();
+                  string[] words1 = SelVal1.Split(' ');
+                  if (SelVal1 != "" )
+                  {
+                  SelVal1 = SelVal1.Replace(words1[words1.Length - 1], "").TrimEnd();
+                  foreach (BaseClasses.Data.BaseColumn ColumnNam in MMContractsTable.GetColumns())
+                  {
+                  if (ColumnNam.Name.ToUpper().Equals(SelVal1))
+                  {
+                  SelVal1 = ColumnNam.InternalName;
+                  }
+                  }
+                  }
+
+                
+                OrderByItem sd = this.CurrentSortOrder.Find(MMContractsTable.GetColumnByName(SelVal1));
+                if (sd == null || this.CurrentSortOrder.Items != null)
+                {
+                // First time sort, so add sort order for Discontinued.
+                if (MMContractsTable.GetColumnByName(SelVal1) != null)
+                {
+                  this.CurrentSortOrder.Reset();
+                }
+
+                //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+                if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+                
+                  if (SelVal1 != "--PLEASE_SELECT--" && MMContractsTable.GetColumnByName(SelVal1) != null)
+                  {
+                    if (words1[words1.Length - 1].Contains("ASC"))
+                  {
+                  this.CurrentSortOrder.Add(MMContractsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Asc);
+                    }
+                    else
+                    {
+                      if (words1[words1.Length - 1].Contains("DESC"))
+                  {
+                  this.CurrentSortOrder.Add(MMContractsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Desc );
+                      }
+                    }
+                  }
+                
+                }
+                this.DataChanged = true;
+              				
+        }
+            
     
         // Generate the event handling functions for others
         	  
@@ -12212,9 +15084,111 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
 
 #region "Helper Properties"
         
-        public IPv5.UI.IPaginationModern MMContractsPagination {
+        public IPv5.UI.IThemeButtonWithArrow Actions3Button {
             get {
-                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MMContractsPagination");
+                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Actions3Button");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ExcelButton3 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExcelButton3");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox ExpiryDateFromFilter2 {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateFromFilter2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal ExpiryDateLabel6 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel6");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox ExpiryDateToFilter2 {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateToFilter2");
+            }
+        }
+        
+        public IPv5.UI.IThemeButton FilterButton3 {
+            get {
+                return (IPv5.UI.IThemeButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FilterButton3");
+            }
+        }
+        
+        public IPv5.UI.IThemeButtonWithArrow Filters3Button {
+            get {
+                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Filters3Button");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ImportButton2 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ImportButton2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox MMContractsSearchText {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MMContractsSearchText");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton NewButton3 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NewButton3");
+            }
+        }
+        
+        public IPv5.UI.IPaginationModern Pagination3 {
+            get {
+                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Pagination3");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton PDFButton3 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PDFButton3");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton3 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ResetButton3");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton5 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SearchButton5");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Label SortByLabel3 {
+            get {
+                return (System.Web.UI.WebControls.Label)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortByLabel3");
+            }
+        }
+        
+          public System.Web.UI.WebControls.DropDownList SortControl3 {
+          get {
+          return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortControl3");
+          }
+          }
+        
+        public System.Web.UI.WebControls.Literal Title2 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Title2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton WordButton2 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "WordButton2");
             }
         }
         
@@ -12457,11 +15431,11 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 
                 SetCityID();
                 SetCompanyName();
+                
                 SetCountryID();
                 SetDirectorsCountControl();
                 
                 SetLinkTableCountControl();
-                
                 SetMMContractsCountControl();
                 SetMMContractsCountControl1();
                 SetMMContractsCountControl2();
@@ -12522,9 +15496,6 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         SetDirectorsTableControl();
 
                   
-        SetLinkTableTableControl();
-
-                  
         SetMMContractsTableControl();
 
                   
@@ -12543,6 +15514,10 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         SetTermRenewalsTableControl();
 
         
+            SetContactsTableControl1();
+
+
+          
         }
         
         
@@ -13068,6 +16043,16 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             }
         }
       
+        public virtual void SetContactsTableControl1()           
+        
+        {        
+            if (ContactsTableControl1.Visible)
+            {
+                ContactsTableControl1.LoadData();
+                ContactsTableControl1.DataBind();
+            }
+        }
+      
         public virtual void SetDirectorsTableControl()           
         
         {        
@@ -13075,16 +16060,6 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             {
                 DirectorsTableControl.LoadData();
                 DirectorsTableControl.DataBind();
-            }
-        }
-      
-        public virtual void SetLinkTableTableControl()           
-        
-        {        
-            if (LinkTableTableControl.Visible)
-            {
-                LinkTableTableControl.LoadData();
-                LinkTableTableControl.DataBind();
             }
         }
       
@@ -13341,8 +16316,6 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         recBankLoansTableControl.SaveData();
         DirectorsTableControl recDirectorsTableControl = (DirectorsTableControl)(MiscUtils.FindControlRecursively(this, "DirectorsTableControl"));
         recDirectorsTableControl.SaveData();
-        LinkTableTableControl recLinkTableTableControl = (LinkTableTableControl)(MiscUtils.FindControlRecursively(this, "LinkTableTableControl"));
-        recLinkTableTableControl.SaveData();
         MMContractsTableControl recMMContractsTableControl = (MMContractsTableControl)(MiscUtils.FindControlRecursively(this, "MMContractsTableControl"));
         recMMContractsTableControl.SaveData();
         PropertyContactsTableControl recPropertyContactsTableControl = (PropertyContactsTableControl)(MiscUtils.FindControlRecursively(this, "PropertyContactsTableControl"));
@@ -13355,7 +16328,9 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         recTermExpiresTableControl.SaveData();
         TermRenewalsTableControl recTermRenewalsTableControl = (TermRenewalsTableControl)(MiscUtils.FindControlRecursively(this, "TermRenewalsTableControl"));
         recTermRenewalsTableControl.SaveData();
-        
+        ContactsTableControl1 recContactsTableControl1 = (ContactsTableControl1)(MiscUtils.FindControlRecursively(this, "ContactsTableControl1"));
+            recContactsTableControl1.SaveData();
+            
         }
 
         public virtual void GetUIData()
@@ -13429,14 +16404,11 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -14021,6 +16993,12 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             }
         }
             
+        public ContactsTableControl1 ContactsTableControl1 {
+            get {
+                return (ContactsTableControl1)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactsTableControl1");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton CountryID {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryID");
@@ -14042,12 +17020,6 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         public System.Web.UI.WebControls.Literal LinkTableCountControl {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableCountControl");
-            }
-        }
-        
-        public LinkTableTableControl LinkTableTableControl {
-            get {
-                return (LinkTableTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableTableControl");
             }
         }
         
@@ -14857,7 +17829,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
               
             // setting the state of expand or collapse alternative rows
       
-            bool expandFirstRow = true;
+            bool expandFirstRow = false;          
         PropertiesTableControlRow[] recControls = this.GetRecordControls();
             for (int i = 0; i < recControls.Length; i++)
             {
@@ -15105,6 +18077,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                 this.PropertiesPagination.CurrentPage.Text = "0";
             }
             this.PropertiesPagination.PageSize.Text = this.PageSize.ToString();
+            this.PropertiesPagination.TotalPages.Text = this.TotalPages.ToString();
     
             // Bind the buttons for PropertiesTableControl pagination.
         
@@ -19056,9 +22029,9 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
             }
         }
         
-        public IPv5.UI.IPaginationModern PropertiesPagination {
+        public IPv5.UI.IPaginationMedium PropertiesPagination {
             get {
-                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertiesPagination");
+                return (IPv5.UI.IPaginationMedium)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertiesPagination");
             }
         }
         
@@ -19351,9 +22324,13 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                 SetAddress2Label();
                 SetAddress31();
                 SetCityID1();
+                SetCityIDLabel11();
                 SetContactTypeID();
+                SetContactTypeIDLabel();
                 SetCountryID1();
+                SetCountryIDLabel1();
                 SeteMail();
+                SeteMailLabel1();
                 SetFirstName();
                 SetFirstNameLabel();
                 SetLastName();
@@ -19363,6 +22340,7 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                 
                 
                 SetRegionID1();
+                SetRegionIDLabel11();
                 SetTitle();
                 SetTitleLabel();
                 SetPropertyContactsRowDeleteButton();
@@ -19888,6 +22866,30 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                     
         }
                 
+        public virtual void SetCityIDLabel11()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetContactTypeIDLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetCountryIDLabel1()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SeteMailLabel1()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetFirstNameLabel()
                   {
                   
@@ -19901,6 +22903,12 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
         }
                 
         public virtual void SetPostCodeLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetRegionIDLabel11()
                   {
                   
                     
@@ -20165,14 +23173,11 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -20720,24 +23725,48 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
             }
         }
             
+        public System.Web.UI.WebControls.Literal CityIDLabel11 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDLabel11");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton ContactTypeID {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactTypeID");
             }
         }
             
+        public System.Web.UI.WebControls.Literal ContactTypeIDLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactTypeIDLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton CountryID1 {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryID1");
             }
         }
             
+        public System.Web.UI.WebControls.Literal CountryIDLabel1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryIDLabel1");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal eMail {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMail");
             }
         }
             
+        public System.Web.UI.WebControls.Literal eMailLabel1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMailLabel1");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal FirstName {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName");
@@ -20792,6 +23821,12 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
             }
         }
             
+        public System.Web.UI.WebControls.Literal RegionIDLabel11 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionIDLabel11");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal Title {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Title");
@@ -20924,6 +23959,27 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             if (!this.Page.IsPostBack)
             {
                 string initialVal = "";
+                
+                  if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                  {
+                  initialVal = "";
+                  }
+                
+                if  (this.InSession(this.SortControl6)) 				
+                    initialVal = this.GetFromSession(this.SortControl6);
+                
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.SortControl6.Items.Add(new ListItem(initialVal, initialVal));
+                        
+                    this.SortControl6.SelectedValue = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
                 if  (this.InSession(this.CityIDFilter2)) 				
                     initialVal = this.GetFromSession(this.CityIDFilter2);
                 
@@ -20942,6 +23998,30 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                     this.CityIDFilter2.Items.Add(new ListItem(initialVal, initialVal));
                         
                     this.CityIDFilter2.SelectedValue = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.ContactTypeIDFilter)) 				
+                    initialVal = this.GetFromSession(this.ContactTypeIDFilter);
+                
+                else
+                    
+                    initialVal = EvaluateFormula("URL(\"ContactTypeID\")");
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.ContactTypeIDFilter.Items.Add(new ListItem(initialVal, initialVal));
+                        
+                    this.ContactTypeIDFilter.SelectedValue = initialVal;
                             
                     }
             }
@@ -21035,18 +24115,6 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
         
        // Setup the sorting events.
         
-              this.Address1SortLabel2.Click += Address1SortLabel2_Click;
-            
-              this.Address2SortLabel2.Click += Address2SortLabel2_Click;
-            
-              this.FirstNameSortLabel1.Click += FirstNameSortLabel1_Click;
-            
-              this.LastNameSortLabel1.Click += LastNameSortLabel1_Click;
-            
-              this.PostCodeSortLabel2.Click += PostCodeSortLabel2_Click;
-            
-              this.TitleSortLabel1.Click += TitleSortLabel1_Click;
-            
             // Setup the button events.
           
                     this.PropertyContactsExportExcelButton.Click += PropertyContactsExportExcelButton_Click;
@@ -21069,7 +24137,11 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                         
                     this.PropertyContactsFiltersButton.Button.Click += PropertyContactsFiltersButton_Click;
                         
+            this.SortControl6.SelectedIndexChanged += new EventHandler(SortControl6_SelectedIndexChanged);
+            
             this.CityIDFilter2.SelectedIndexChanged += new EventHandler(CityIDFilter2_SelectedIndexChanged);
+            
+            this.ContactTypeIDFilter.SelectedIndexChanged += new EventHandler(ContactTypeIDFilter_SelectedIndexChanged);
             
             this.RegionIDFilter2.SelectedIndexChanged += new EventHandler(RegionIDFilter2_SelectedIndexChanged);
                     
@@ -21309,13 +24381,10 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
     
             // Call the Set methods for each controls on the panel
         
-                SetAddress1SortLabel2();
-                SetAddress2SortLabel2();
                 SetCityIDFilter2();
                 SetCityIDLabel3();
-                SetFirstNameSortLabel1();
-                SetLastNameSortLabel1();
-                SetPostCodeSortLabel2();
+                SetContactTypeIDFilter();
+                SetContactTypeIDLabel1();
                 
                 
                 
@@ -21329,10 +24398,10 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                 
                 
                 
-                
                 SetRegionIDFilter2();
                 SetRegionIDLabel3();
-                SetTitleSortLabel1();
+                SetSortByLabel6();
+                SetSortControl6();
                 SetPropertyContactsExportExcelButton();
               
                 SetPropertyContactsImportButton();
@@ -21657,6 +24726,12 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                     
             }
                       
+            if (MiscUtils.IsValueSelected(this.ContactTypeIDFilter)) {
+                        
+                wc.iAND(PropertyContactsTable.ContactTypeID, BaseFilter.ComparisonOperator.EqualsTo, MiscUtils.GetSelectedValue(this.ContactTypeIDFilter, this.GetFromSession(this.ContactTypeIDFilter)), false, false);
+                    
+            }
+                      
             if (MiscUtils.IsValueSelected(this.PropertyContactsSearch1)) {
                 if (this.PropertyContactsSearch1.Text == BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) ) {
                         this.PropertyContactsSearch1.Text = "";
@@ -21746,6 +24821,14 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
 
               
                 wc.iAND(PropertyContactsTable.CityID, BaseFilter.ComparisonOperator.EqualsTo, CityIDFilter2SelectedValue, false, false);
+                      
+      }
+                      
+      String ContactTypeIDFilterSelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "ContactTypeIDFilter_Ajax"];
+            if (MiscUtils.IsValueSelected(ContactTypeIDFilterSelectedValue)) {
+
+              
+                wc.iAND(PropertyContactsTable.ContactTypeID, BaseFilter.ComparisonOperator.EqualsTo, ContactTypeIDFilterSelectedValue, false, false);
                       
       }
                       
@@ -22168,37 +25251,13 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
       
         // Create Set, WhereClause, and Populate Methods
         
-        public virtual void SetAddress1SortLabel2()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetAddress2SortLabel2()
-                  {
-                  
-                    
-        }
-                
         public virtual void SetCityIDLabel3()
                   {
                   
                     
         }
                 
-        public virtual void SetFirstNameSortLabel1()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetLastNameSortLabel1()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPostCodeSortLabel2()
+        public virtual void SetContactTypeIDLabel1()
                   {
                   
                     
@@ -22210,16 +25269,35 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                     
         }
                 
-        public virtual void SetTitleSortLabel1()
+        public virtual void SetSortByLabel6()
                   {
                   
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.SortByLabel6.Text = "Some value";
+                    
                     
         }
                 
+        public virtual void SetSortControl6()
+        {
+            
+                this.PopulateSortControl6(MiscUtils.GetSelectedValue(this.SortControl6,  GetFromSession(this.SortControl6)), 500);					
+                    
+
+        }
+            
         public virtual void SetCityIDFilter2()
         {
             
             this.PopulateCityIDFilter2(MiscUtils.GetSelectedValue(this.CityIDFilter2,  GetFromSession(this.CityIDFilter2)), 500);					
+                                     
+        }
+            
+        public virtual void SetContactTypeIDFilter()
+        {
+            
+            this.PopulateContactTypeIDFilter(MiscUtils.GetSelectedValue(this.ContactTypeIDFilter,  GetFromSession(this.ContactTypeIDFilter)), 500);					
                                      
         }
             
@@ -22236,6 +25314,75 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             
             this.PopulateRegionIDFilter2(MiscUtils.GetSelectedValue(this.RegionIDFilter2,  GetFromSession(this.RegionIDFilter2)), 500);					
                                      
+        }
+            
+        // Get the filters' data for SortControl6.
+                
+        protected virtual void PopulateSortControl6(string selectedValue, int maxItems)
+                    
+        {
+            
+              
+                this.SortControl6.Items.Clear();
+                
+              // 1. Setup the static list items
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Address 1 {Txt:Ascending}"), "Address1 Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Address 1 {Txt:Descending}"), "Address1 Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Address 2 {Txt:Ascending}"), "Address2 Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Address 2 {Txt:Descending}"), "Address2 Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Address 3 {Txt:Ascending}"), "Address3 Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Address 3 {Txt:Descending}"), "Address3 Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("City {Txt:Ascending}"), "CityID Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("City {Txt:Descending}"), "CityID Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Country {Txt:Ascending}"), "CountryID Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Country {Txt:Descending}"), "CountryID Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("First Name {Txt:Ascending}"), "FirstName Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("First Name {Txt:Descending}"), "FirstName Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Last Name {Txt:Ascending}"), "LastName Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Last Name {Txt:Descending}"), "LastName Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Post Code {Txt:Ascending}"), "PostCode Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Post Code {Txt:Descending}"), "PostCode Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Region {Txt:Ascending}"), "RegionID Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Region {Txt:Descending}"), "RegionID Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Title {Txt:Ascending}"), "Title Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Title {Txt:Descending}"), "Title Desc"));
+              
+            try
+            {          
+                // Set the selected value.
+                MiscUtils.SetSelectedValue(this.SortControl6, selectedValue);
+
+               
+            }
+            catch
+            {
+            }
+              
+            if (this.SortControl6.SelectedValue != null && this.SortControl6.Items.FindByValue(this.SortControl6.SelectedValue) == null)
+                this.SortControl6.SelectedValue = null;
+              
         }
             
         // Get the filters' data for CityIDFilter2.
@@ -22352,6 +25499,123 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             
             if (this.CityIDFilter2.SelectedValue != null && this.CityIDFilter2.Items.FindByValue(this.CityIDFilter2.SelectedValue) == null)
                 this.CityIDFilter2.SelectedValue = null;
+                           
+        }
+            
+        // Get the filters' data for ContactTypeIDFilter.
+                
+        protected virtual void PopulateContactTypeIDFilter(string selectedValue, int maxItems)
+                    
+        {
+        
+            
+            //Setup the WHERE clause.
+                        
+            this.ContactTypeIDFilter.Items.Clear();
+            WhereClause wc = this.CreateWhereClause_ContactTypeIDFilter();            
+            			  			
+            // Set up the WHERE and the ORDER BY clause by calling the CreateWhereClause_ContactTypeIDFilter function.
+            // It is better to customize the where clause there.
+             
+            // Setup the static list items        
+            
+                // Add the All item.
+                this.ContactTypeIDFilter.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
+              
+            OrderBy orderBy = new OrderBy(false, false);
+                          orderBy.Add(ContactTypesTable.ContactType, OrderByItem.OrderDir.Asc);
+
+
+            System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
+
+            
+ 
+            string noValueFormat = Page.GetResourceValue("Txt:Other", "IPv5");
+
+            ContactTypesRecord[] itemValues  = null;
+            if (wc.RunQuery)
+            {
+                int counter = 0;
+                int pageNum = 0;
+                FormulaEvaluator evaluator = new FormulaEvaluator();
+                ArrayList listDuplicates = new ArrayList();
+                
+                do
+                {
+                    
+                    itemValues = ContactTypesTable.GetRecords(wc, orderBy, pageNum, maxItems);
+                                    
+                    foreach (ContactTypesRecord itemValue in itemValues) 
+                    {
+                        // Create the item and add to the list.
+                        string cvalue = null;
+                        string fvalue = null;
+                        if (itemValue.ContactTypeIDSpecified) 
+                        {
+                            cvalue = itemValue.ContactTypeID.ToString();
+                            if (counter < maxItems && this.ContactTypeIDFilter.Items.FindByValue(cvalue) == null)
+                            {
+                                    
+                                Boolean _isExpandableNonCompositeForeignKey = PropertyContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertyContactsTable.ContactTypeID);
+                                if(_isExpandableNonCompositeForeignKey && PropertyContactsTable.ContactTypeID.IsApplyDisplayAs)
+                                     fvalue = PropertyContactsTable.GetDFKA(itemValue, PropertyContactsTable.ContactTypeID);
+                                if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
+                                     fvalue = itemValue.Format(ContactTypesTable.ContactType);
+                                   					
+                                if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
+
+                                if (fvalue == null) {
+                                    fvalue = "";
+                                }
+
+                                fvalue = fvalue.Trim();
+
+                                if ( fvalue.Length > 50 ) {
+                                   fvalue = fvalue.Substring(0, 50) + "...";
+                                }
+
+                                ListItem dupItem = this.ContactTypeIDFilter.Items.FindByText(fvalue);
+								
+                                if (dupItem != null) {
+                                    listDuplicates.Add(fvalue);
+                                    if (!string.IsNullOrEmpty(dupItem.Value))
+                                    {
+                                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
+                                    }
+                                }
+
+                                ListItem newItem = new ListItem(fvalue, cvalue);
+                                this.ContactTypeIDFilter.Items.Add(newItem);
+
+                                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
+                                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
+                                }
+
+                                counter += 1;
+                            }
+                        }
+                    }
+                    pageNum++;
+                }
+                while (itemValues.Length == maxItems && counter < maxItems);
+            }
+        
+                      
+            try
+            {
+      
+                
+                // Set the selected value.
+                MiscUtils.SetSelectedValue(this.ContactTypeIDFilter, selectedValue);
+                
+            }
+            catch
+            {
+            }
+            
+            
+            if (this.ContactTypeIDFilter.SelectedValue != null && this.ContactTypeIDFilter.Items.FindByValue(this.ContactTypeIDFilter.SelectedValue) == null)
+                this.ContactTypeIDFilter.SelectedValue = null;
                            
         }
             
@@ -22483,6 +25747,17 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             
         }
       
+        public virtual WhereClause CreateWhereClause_ContactTypeIDFilter()
+        {
+            // Create a where clause for the filter ContactTypeIDFilter.
+            // This function is called by the Populate method to load the items 
+            // in the ContactTypeIDFilterDropDownList
+        
+            WhereClause wc = new WhereClause();
+            return wc;
+            
+        }
+      
         public virtual WhereClause CreateWhereClause_RegionIDFilter2()
         {
             // Create a where clause for the filter RegionIDFilter2.
@@ -22527,7 +25802,11 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             base.SaveControlsToSession();
             // Save filter controls to values to session.
         
+            this.SaveToSession(this.SortControl6, this.SortControl6.SelectedValue);
+                  
             this.SaveToSession(this.CityIDFilter2, this.CityIDFilter2.SelectedValue);
+                  
+            this.SaveToSession(this.ContactTypeIDFilter, this.ContactTypeIDFilter.SelectedValue);
                   
             this.SaveToSession(this.PropertyContactsSearch1, this.PropertyContactsSearch1.Text);
                   
@@ -22560,7 +25839,11 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
         {
             // Save filter controls to values to session.
           
+            this.SaveToSession(this.SortControl6, this.SortControl6.SelectedValue);
+                  
       this.SaveToSession("CityIDFilter2_Ajax", this.CityIDFilter2.SelectedValue);
+              
+      this.SaveToSession("ContactTypeIDFilter_Ajax", this.ContactTypeIDFilter.SelectedValue);
               
       this.SaveToSession("PropertyContactsSearch1_Ajax", this.PropertyContactsSearch1.Text);
               
@@ -22576,7 +25859,9 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             base.ClearControlsFromSession();
             // Clear filter controls values from the session.
         
+            this.RemoveFromSession(this.SortControl6);
             this.RemoveFromSession(this.CityIDFilter2);
+            this.RemoveFromSession(this.ContactTypeIDFilter);
             this.RemoveFromSession(this.PropertyContactsSearch1);
             this.RemoveFromSession(this.RegionIDFilter2);
             
@@ -22741,6 +26026,9 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             if (MiscUtils.IsValueSelected(CityIDFilter2))
                 themeButtonPropertyContactsFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonCheckmark.png";
         
+            if (MiscUtils.IsValueSelected(ContactTypeIDFilter))
+                themeButtonPropertyContactsFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonCheckmark.png";
+        
             if (MiscUtils.IsValueSelected(RegionIDFilter2))
                 themeButtonPropertyContactsFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonCheckmark.png";
         
@@ -22873,186 +26161,6 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
 
         // Generate the event handling functions for sorting events.
         
-        public virtual void Address1SortLabel2_Click(object sender, EventArgs args)
-        {
-            //Sorts by Address1 when clicked.
-              
-            // Get previous sorting state for Address1.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(PropertyContactsTable.Address1);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for Address1.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(PropertyContactsTable.Address1, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by Address1, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
-        public virtual void Address2SortLabel2_Click(object sender, EventArgs args)
-        {
-            //Sorts by Address2 when clicked.
-              
-            // Get previous sorting state for Address2.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(PropertyContactsTable.Address2);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for Address2.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(PropertyContactsTable.Address2, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by Address2, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
-        public virtual void FirstNameSortLabel1_Click(object sender, EventArgs args)
-        {
-            //Sorts by FirstName when clicked.
-              
-            // Get previous sorting state for FirstName.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(PropertyContactsTable.FirstName);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for FirstName.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(PropertyContactsTable.FirstName, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by FirstName, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
-        public virtual void LastNameSortLabel1_Click(object sender, EventArgs args)
-        {
-            //Sorts by LastName when clicked.
-              
-            // Get previous sorting state for LastName.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(PropertyContactsTable.LastName);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for LastName.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(PropertyContactsTable.LastName, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by LastName, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
-        public virtual void PostCodeSortLabel2_Click(object sender, EventArgs args)
-        {
-            //Sorts by PostCode when clicked.
-              
-            // Get previous sorting state for PostCode.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(PropertyContactsTable.PostCode);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for PostCode.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(PropertyContactsTable.PostCode, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by PostCode, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
-        public virtual void TitleSortLabel1_Click(object sender, EventArgs args)
-        {
-            //Sorts by Title when clicked.
-              
-            // Get previous sorting state for Title.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(PropertyContactsTable.Title0);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for Title.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(PropertyContactsTable.Title0, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by Title, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
 
         // Generate the event handling functions for button events.
         
@@ -23481,8 +26589,13 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                 
               this.CityIDFilter2.ClearSelection();
             
+              this.ContactTypeIDFilter.ClearSelection();
+            
               this.RegionIDFilter2.ClearSelection();
             
+           
+            this.SortControl6.ClearSelection();
+          
               this.PropertyContactsSearch1.Text = "";
             
               this.CurrentSortOrder.Reset();
@@ -23757,8 +26870,71 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
 
         // Generate the event handling functions for filter and search events.
         
+        // event handler for OrderSort
+        protected virtual void SortControl6_SelectedIndexChanged(object sender, EventArgs args)
+        {
+              
+                  string SelVal1 = this.SortControl6.SelectedValue.ToUpper();
+                  string[] words1 = SelVal1.Split(' ');
+                  if (SelVal1 != "" )
+                  {
+                  SelVal1 = SelVal1.Replace(words1[words1.Length - 1], "").TrimEnd();
+                  foreach (BaseClasses.Data.BaseColumn ColumnNam in PropertyContactsTable.GetColumns())
+                  {
+                  if (ColumnNam.Name.ToUpper().Equals(SelVal1))
+                  {
+                  SelVal1 = ColumnNam.InternalName;
+                  }
+                  }
+                  }
+
+                
+                OrderByItem sd = this.CurrentSortOrder.Find(PropertyContactsTable.GetColumnByName(SelVal1));
+                if (sd == null || this.CurrentSortOrder.Items != null)
+                {
+                // First time sort, so add sort order for Discontinued.
+                if (PropertyContactsTable.GetColumnByName(SelVal1) != null)
+                {
+                  this.CurrentSortOrder.Reset();
+                }
+
+                //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+                if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+                
+                  if (SelVal1 != "--PLEASE_SELECT--" && PropertyContactsTable.GetColumnByName(SelVal1) != null)
+                  {
+                    if (words1[words1.Length - 1].Contains("ASC"))
+                  {
+                  this.CurrentSortOrder.Add(PropertyContactsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Asc);
+                    }
+                    else
+                    {
+                      if (words1[words1.Length - 1].Contains("DESC"))
+                  {
+                  this.CurrentSortOrder.Add(PropertyContactsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Desc );
+                      }
+                    }
+                  }
+                
+                }
+                this.DataChanged = true;
+              				
+        }
+            
         // event handler for FieldFilter
         protected virtual void CityIDFilter2_SelectedIndexChanged(object sender, EventArgs args)
+        {
+            // Setting the DataChanged to True results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+            
+           				
+        }
+            
+        // event handler for FieldFilter
+        protected virtual void ContactTypeIDFilter_SelectedIndexChanged(object sender, EventArgs args)
         {
             // Setting the DataChanged to True results in the page being refreshed with
             // the most recent data from the database.  This happens in PreRender event
@@ -23853,18 +27029,6 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
 
 #region "Helper Properties"
         
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel2 {
-            get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1SortLabel2");
-            }
-        }
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel2 {
-            get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address2SortLabel2");
-            }
-        }
-        
         public System.Web.UI.WebControls.DropDownList CityIDFilter2 {
             get {
                 return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDFilter2");
@@ -23877,21 +27041,15 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             }
         }
         
-        public System.Web.UI.WebControls.LinkButton FirstNameSortLabel1 {
+        public System.Web.UI.WebControls.DropDownList ContactTypeIDFilter {
             get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstNameSortLabel1");
+                return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactTypeIDFilter");
             }
         }
         
-        public System.Web.UI.WebControls.LinkButton LastNameSortLabel1 {
+        public System.Web.UI.WebControls.Literal ContactTypeIDLabel1 {
             get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastNameSortLabel1");
-            }
-        }
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel2 {
-            get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCodeSortLabel2");
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactTypeIDLabel1");
             }
         }
         
@@ -23985,11 +27143,17 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
             }
         }
         
-        public System.Web.UI.WebControls.LinkButton TitleSortLabel1 {
+        public System.Web.UI.WebControls.Label SortByLabel6 {
             get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TitleSortLabel1");
+                return (System.Web.UI.WebControls.Label)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortByLabel6");
             }
         }
+        
+          public System.Web.UI.WebControls.DropDownList SortControl6 {
+          get {
+          return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortControl6");
+          }
+          }
         
 #endregion
 
@@ -24146,14 +27310,12 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
         // To customize, override this method in PropertyNotesTableControlRow.
         protected virtual void Control_Load(object sender, System.EventArgs e)
         {      
-        
-              // Show confirmation message on Click
-              this.PropertyNotesRowDeleteButton.Attributes.Add("onClick", "return (confirm(\"" + ((BaseApplicationPage)this.Page).GetResourceValue("DeleteRecordConfirm", "IPv5") + "\"));");            
+                    
         
               // Register the event handlers.
 
           
-                    this.PropertyNotesRowDeleteButton.Click += PropertyNotesRowDeleteButton_Click;
+                    this.EditRowButton1.Click += EditRowButton1_Click;
                         
         }
 
@@ -24212,10 +27374,10 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
         
                 SetDateRecorded();
                 SetDateRecordedLabel();
+                
                 SetNotes();
                 SetNotesLabel();
-                
-                SetPropertyNotesRowDeleteButton();
+                SetEditRowButton1();
               
 
       
@@ -24571,14 +27733,11 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -24717,7 +27876,7 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
     
         // Generate set method for buttons
         
-        public virtual void SetPropertyNotesRowDeleteButton()                
+        public virtual void SetEditRowButton1()                
               
         {
         
@@ -24725,22 +27884,35 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
         }
             
         // event handler for ImageButton
-        public virtual void PropertyNotesRowDeleteButton_Click(object sender, ImageClickEventArgs args)
+        public virtual void EditRowButton1_Click(object sender, ImageClickEventArgs args)
         {
               
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../PropertyNotes/EditPropertyNotes.aspx?PropertyNotes={PK}";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
             try {
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-            if (!this.Page.IsPageRefresh) {
-        
-                this.Delete();
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
-            }
-      this.Page.CommitTransaction(sender);
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
                   this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
                   this.Page.ErrorOnPage = true;
 
             // Report the error message to the end user
@@ -24749,7 +27921,12 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
             } finally {
                 DbUtils.EndTransaction();
             }
-    
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      this.Page.Response.Redirect(url);
+        
+            }
+        
         }
             
             
@@ -24855,6 +28032,12 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
             }
         }
         
+        public System.Web.UI.WebControls.ImageButton EditRowButton1 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "EditRowButton1");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal Notes {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Notes");
@@ -24864,12 +28047,6 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
         public System.Web.UI.WebControls.Literal NotesLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NotesLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton PropertyNotesRowDeleteButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyNotesRowDeleteButton");
             }
         }
         
@@ -24990,6 +28167,71 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
     
            // Setup the filter and search.
         
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                
+                  if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                  {
+                  initialVal = "";
+                  }
+                
+                if  (this.InSession(this.SortControl)) 				
+                    initialVal = this.GetFromSession(this.SortControl);
+                
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.SortControl.Items.Add(new ListItem(initialVal, initialVal));
+                        
+                    this.SortControl.SelectedValue = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.DateRecordedFromFilter)) 				
+                    initialVal = this.GetFromSession(this.DateRecordedFromFilter);
+                
+                else
+                    
+                    initialVal = EvaluateFormula("URL(\"DateRecordedFrom\")");
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.DateRecordedFromFilter.Text = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.DateRecordedToFilter)) 				
+                    initialVal = this.GetFromSession(this.DateRecordedToFilter);
+                
+                else
+                    
+                    initialVal = EvaluateFormula("URL(\"DateRecordedTo\")");
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.DateRecordedToFilter.Text = initialVal;
+                            
+                    }
+            }
 
 
       
@@ -25022,15 +28264,15 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
         
             // Setup the pagination events.
             
-                    this.PropertyNotesPagination.FirstPage.Click += PropertyNotesPagination_FirstPage_Click;
+                    this.Pagination.FirstPage.Click += Pagination_FirstPage_Click;
                         
-                    this.PropertyNotesPagination.LastPage.Click += PropertyNotesPagination_LastPage_Click;
+                    this.Pagination.LastPage.Click += Pagination_LastPage_Click;
                         
-                    this.PropertyNotesPagination.NextPage.Click += PropertyNotesPagination_NextPage_Click;
+                    this.Pagination.NextPage.Click += Pagination_NextPage_Click;
                         
-                    this.PropertyNotesPagination.PageSizeButton.Click += PropertyNotesPagination_PageSizeButton_Click;
+                    this.Pagination.PageSizeButton.Click += Pagination_PageSizeButton_Click;
                         
-                    this.PropertyNotesPagination.PreviousPage.Click += PropertyNotesPagination_PreviousPage_Click;
+                    this.Pagination.PreviousPage.Click += Pagination_PreviousPage_Click;
                         
 
             string url =""; //to avoid warning in VS as its not being used
@@ -25039,7 +28281,27 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
        // Setup the sorting events.
         
             // Setup the button events.
-                  
+          
+                    this.ExcelButton1.Click += ExcelButton1_Click;
+                        
+                    this.ImportButton.Click += ImportButton_Click;
+                        
+                    this.NewButton.Click += NewButton_Click;
+                        
+                    this.PDFButton1.Click += PDFButton1_Click;
+                        
+                    this.ResetButton.Click += ResetButton_Click;
+                        
+                    this.WordButton.Click += WordButton_Click;
+                        
+                    this.ActionsButton.Button.Click += ActionsButton_Click;
+                        
+                    this.FilterButton.Button.Click += FilterButton_Click;
+                        
+                    this.FiltersButton.Button.Click += FiltersButton_Click;
+                        
+            this.SortControl.SelectedIndexChanged += new EventHandler(SortControl_SelectedIndexChanged);
+                    
         
          //' Setup events for others
                
@@ -25274,6 +28536,40 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             // Call the Set methods for each controls on the panel
         
                 
+                
+                SetDateRecordedLabel1();
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                SetSortByLabel();
+                SetSortControl();
+                
+                
+                SetExcelButton1();
+              
+                SetImportButton();
+              
+                SetNewButton();
+              
+                SetPDFButton1();
+              
+                SetResetButton();
+              
+                SetWordButton();
+              
+                SetActionsButton();
+              
+                SetFilterButton();
+              
+                SetFiltersButton();
+              
             // setting the state of expand or collapse alternative rows
       
             // Load data for each record and table UI control.
@@ -25284,7 +28580,9 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             // this method calls the set method for controls with special formula like running total, sum, rank, etc
             SetFormulaControls();
             
-                    
+             
+              SetFiltersButton();
+                     
         }
         
         
@@ -25296,10 +28594,25 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
     }
 
         
+    public virtual void AddWarningMessageOnClick() {
+    
+        if (this.TotalRecords > 10000)
+          this.ExcelButton1.Attributes.Add("onClick", "return (confirm('" + ((BaseApplicationPage)this.Page).GetResourceValue("ExportConfirm", "IPv5") + "'));");
+        else
+          this.ExcelButton1.Attributes.Remove("onClick");
+      
+    }
+  
 
         public virtual void RegisterPostback()
         {
-                
+        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"ExcelButton1"));
+                        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"PDFButton1"));
+                        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"WordButton"));
+                                
         }
         
 
@@ -25413,32 +28726,32 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             if (DbUtils.GetCreatedRecords(this.DataSource).Length > 0)                      
                     
             {
-                this.PropertyNotesPagination.CurrentPage.Text = (this.PageIndex + 1).ToString();
+                this.Pagination.CurrentPage.Text = (this.PageIndex + 1).ToString();
             } 
             else
             {
-                this.PropertyNotesPagination.CurrentPage.Text = "0";
+                this.Pagination.CurrentPage.Text = "0";
             }
-            this.PropertyNotesPagination.PageSize.Text = this.PageSize.ToString();
+            this.Pagination.PageSize.Text = this.PageSize.ToString();
     
             // Bind the buttons for PropertyNotesTableControl pagination.
         
-            this.PropertyNotesPagination.FirstPage.Enabled = !(this.PageIndex == 0);
+            this.Pagination.FirstPage.Enabled = !(this.PageIndex == 0);
             if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
-                this.PropertyNotesPagination.LastPage.Enabled = true;
+                this.Pagination.LastPage.Enabled = true;
             else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
-                this.PropertyNotesPagination.LastPage.Enabled = false;            
+                this.Pagination.LastPage.Enabled = false;            
             else                                     // if the total pages is the last page, disable last and next buttons
-                this.PropertyNotesPagination.LastPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
+                this.Pagination.LastPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
           
             if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
-                this.PropertyNotesPagination.NextPage.Enabled = true;
+                this.Pagination.NextPage.Enabled = true;
             else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
-                this.PropertyNotesPagination.NextPage.Enabled = false;            
+                this.Pagination.NextPage.Enabled = false;            
             else                                     // if the total pages is the last page, disable last and next buttons
-                this.PropertyNotesPagination.NextPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
+                this.Pagination.NextPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
           
-            this.PropertyNotesPagination.PreviousPage.Enabled = !(this.PageIndex == 0);    
+            this.Pagination.PreviousPage.Enabled = !(this.PageIndex == 0);    
         }
  
         public virtual void SaveData()
@@ -25543,7 +28856,25 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
               }
             
       HttpContext.Current.Session["PropertyNotesTableControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
-         
+    
+            if (MiscUtils.IsValueSelected(this.DateRecordedFromFilter)) {
+                string val = MiscUtils.GetSelectedValue(this.DateRecordedFromFilter, this.GetFromSession(this.DateRecordedFromFilter));
+                DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
+                    
+                val = d.ToShortDateString() + " " + "00:00:00";
+                wc.iAND(PropertyNotesTable.DateRecorded, BaseFilter.ComparisonOperator.Greater_Than_Or_Equal, val, false, false);
+                    
+            }
+                      
+            if (MiscUtils.IsValueSelected(this.DateRecordedToFilter)) {
+                string val = MiscUtils.GetSelectedValue(this.DateRecordedToFilter, this.GetFromSession(this.DateRecordedToFilter));
+                DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
+                    
+                val = d.ToShortDateString() + " " + "23:59:59";
+                wc.iAND(PropertyNotesTable.DateRecorded, BaseFilter.ComparisonOperator.Less_Than_Or_Equal, val, false, false);
+                    
+            }
+                           
             return wc;
         }
         
@@ -25576,6 +28907,22 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
+            string DateRecordedFromFilterSelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "DateRecordedFromFilter_Ajax"];
+            if (MiscUtils.IsValueSelected(DateRecordedFromFilterSelectedValue)) {
+                DateTime d = DateParser.ParseDate(DateRecordedFromFilterSelectedValue, DateColumn.DEFAULT_FORMAT);
+                DateRecordedFromFilterSelectedValue = d.ToShortDateString() + " " + "00:00:00";
+                    
+                wc.iAND(PropertyNotesTable.DateRecorded, BaseFilter.ComparisonOperator.Greater_Than_Or_Equal, DateRecordedFromFilterSelectedValue, false, false);
+                    
+            }         
+            string DateRecordedToFilterSelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "DateRecordedToFilter_Ajax"];
+            if (MiscUtils.IsValueSelected(DateRecordedToFilterSelectedValue)) {
+                DateTime d = DateParser.ParseDate(DateRecordedToFilterSelectedValue, DateColumn.DEFAULT_FORMAT);
+                DateRecordedToFilterSelectedValue = d.ToShortDateString() + " " + "23:59:59";
+                    
+                wc.iAND(PropertyNotesTable.DateRecorded, BaseFilter.ComparisonOperator.Less_Than_Or_Equal, DateRecordedToFilterSelectedValue, false, false);
+                    
+            }         
 
             return wc;
         }
@@ -25726,9 +29073,9 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
         protected virtual void GetPageSize()
         {
         
-            if (this.PropertyNotesPagination.PageSize.Text.Length > 0) {
+            if (this.Pagination.PageSize.Text.Length > 0) {
                 try {
-                    // this.PageSize = Convert.ToInt32(this.PropertyNotesPagination.PageSize.Text);
+                    // this.PageSize = Convert.ToInt32(this.Pagination.PageSize.Text);
                 } catch (Exception ) {
                 }
             }
@@ -25832,6 +29179,67 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetDateRecordedLabel1()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetSortByLabel()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.SortByLabel.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetSortControl()
+        {
+            
+                this.PopulateSortControl(MiscUtils.GetSelectedValue(this.SortControl,  GetFromSession(this.SortControl)), 500);					
+                    
+
+        }
+            
+        // Get the filters' data for SortControl.
+                
+        protected virtual void PopulateSortControl(string selectedValue, int maxItems)
+                    
+        {
+            
+              
+                this.SortControl.Items.Clear();
+                
+              // 1. Setup the static list items
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Date Recorded {Txt:Ascending}"), "DateRecorded Asc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Date Recorded {Txt:Descending}"), "DateRecorded Desc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Notes {Txt:Ascending}"), "Notes Asc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Notes {Txt:Descending}"), "Notes Desc"));
+              
+            try
+            {          
+                // Set the selected value.
+                MiscUtils.SetSelectedValue(this.SortControl, selectedValue);
+
+               
+            }
+            catch
+            {
+            }
+              
+            if (this.SortControl.SelectedValue != null && this.SortControl.Items.FindByValue(this.SortControl.SelectedValue) == null)
+                this.SortControl.SelectedValue = null;
+              
+        }
+            
 
     
         protected virtual void Control_PreRender(object sender, System.EventArgs e)
@@ -25865,6 +29273,12 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             base.SaveControlsToSession();
             // Save filter controls to values to session.
         
+            this.SaveToSession(this.SortControl, this.SortControl.SelectedValue);
+                  
+            this.SaveToSession(this.DateRecordedFromFilter, this.DateRecordedFromFilter.Text);
+                  
+            this.SaveToSession(this.DateRecordedToFilter, this.DateRecordedToFilter.Text);
+                  
             
                     
             // Save pagination state to session.
@@ -25892,6 +29306,12 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
         {
             // Save filter controls to values to session.
           
+            this.SaveToSession(this.SortControl, this.SortControl.SelectedValue);
+                  
+      this.SaveToSession("DateRecordedFromFilter_Ajax", this.DateRecordedFromFilter.Text);
+              
+      this.SaveToSession("DateRecordedToFilter_Ajax", this.DateRecordedToFilter.Text);
+              
            HttpContext.Current.Session["AppRelativeVirtualPath"] = this.Page.AppRelativeVirtualPath;
          
         }
@@ -25902,6 +29322,9 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             base.ClearControlsFromSession();
             // Clear filter controls values from the session.
         
+            this.RemoveFromSession(this.SortControl);
+            this.RemoveFromSession(this.DateRecordedFromFilter);
+            this.RemoveFromSession(this.DateRecordedToFilter);
             
             // Clear pagination state from session.
          
@@ -25930,7 +29353,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             }
           
 
-            Control Pagination = this.FindControl("PropertyNotesPagination");
+            Control Pagination = this.FindControl("Pagination");
             String PaginationType = "";
             if (Pagination != null){
               Control Summary = Pagination.FindControl("_Summary");
@@ -25986,12 +29409,82 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
         }
 
         // Generate set method for buttons
-           
+        
+        public virtual void SetExcelButton1()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetImportButton()                
+              
+        {
+        							
+                    this.ImportButton.PostBackUrl = "../Shared/SelectFileToImport.aspx?TableName=PropertyNotes" ;
+                    this.ImportButton.Attributes["onClick"] = "window.open('" + this.Page.EncryptUrlParameter(this.ImportButton.PostBackUrl) + "','importWindow', 'width=700, height=500,top=' +(screen.availHeight-500)/2 + ',left=' + (screen.availWidth-700)/2+ ', resizable=yes, scrollbars=yes,modal=yes'); return false;";
+                        
+   
+        }
+            
+        public virtual void SetNewButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetPDFButton1()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetResetButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetWordButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetActionsButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetFilterButton()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetFiltersButton()                
+              
+        {
+                
+         IThemeButtonWithArrow themeButtonFiltersButton = (IThemeButtonWithArrow)(MiscUtils.FindControlRecursively(this, "FiltersButton"));
+         themeButtonFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonExpandArrow.png";
+    
+      
+   
+        }
+               
         
         // Generate the event handling functions for pagination events.
         
         // event handler for ImageButton
-        public virtual void PropertyNotesPagination_FirstPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination_FirstPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -26014,7 +29507,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void PropertyNotesPagination_LastPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination_LastPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -26037,7 +29530,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void PropertyNotesPagination_NextPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination_NextPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -26060,16 +29553,16 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for LinkButton
-        public virtual void PropertyNotesPagination_PageSizeButton_Click(object sender, EventArgs args)
+        public virtual void Pagination_PageSizeButton_Click(object sender, EventArgs args)
         {
               
             try {
                 
             this.DataChanged = true;
       
-            this.PageSize = this.PropertyNotesPagination.GetCurrentPageSize();
+            this.PageSize = this.Pagination.GetCurrentPageSize();
       
-            this.PageIndex = Convert.ToInt32(this.PropertyNotesPagination.CurrentPage.Text) - 1;
+            this.PageIndex = Convert.ToInt32(this.Pagination.CurrentPage.Text) - 1;
       
             } catch (Exception ex) {
                   this.Page.ErrorOnPage = true;
@@ -26086,7 +29579,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void PropertyNotesPagination_PreviousPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination_PreviousPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -26116,10 +29609,582 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for button events.
         
+        // event handler for ImageButton
+        public virtual void ExcelButton1_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            
+            // To customize the columns or the format, override this function in Section 1 of the page
+            // and modify it to your liking.
+            // Build the where clause based on the current filter and search criteria
+            // Create the Order By clause based on the user's current sorting preference.
+            
+                WhereClause wc = null;
+                wc = CreateWhereClause();
+                OrderBy orderBy = null;
+              
+                orderBy = CreateOrderBy();
+              
+              bool done = false;
+              object val = "";
+              CompoundFilter join = CreateCompoundJoinFilter();
+              
+              // Read pageSize records at a time and write out the Excel file.
+              int totalRowsReturned = 0;
+
+
+              this.TotalRecords = PropertyNotesTable.GetRecordCount(join, wc);
+              if (this.TotalRecords > 10000)
+              {
+              
+                // Add each of the columns in order of export.
+                BaseColumn[] columns = new BaseColumn[] {
+                             PropertyNotesTable.Notes,
+             PropertyNotesTable.DateRecorded,
+             null};
+                ExportDataToCSV exportData = new ExportDataToCSV(PropertyNotesTable.Instance,wc,orderBy,columns);
+                exportData.StartExport(this.Page.Response, true);
+
+                DataForExport dataForCSV = new DataForExport(PropertyNotesTable.Instance, wc, orderBy, columns,join);
+
+                //  Read pageSize records at a time and write out the CSV file.
+                while (!done)
+                {
+                ArrayList recList = dataForCSV.GetRows(exportData.pageSize);
+                if (recList == null)
+                break; //we are done
+
+                totalRowsReturned = recList.Count;
+                foreach (BaseRecord rec in recList)
+                {
+                foreach (BaseColumn col in dataForCSV.ColumnList)
+                {
+                if (col == null)
+                continue;
+
+                if (!dataForCSV.IncludeInExport(col))
+                continue;
+
+                val = rec.GetValue(col).ToString();
+                exportData.WriteColumnData(val, dataForCSV.IsString(col));
+                }
+                exportData.WriteNewRow();
+                }
+
+                //  If we already are below the pageSize, then we are done.
+                if (totalRowsReturned < exportData.pageSize)
+                {
+                done = true;
+                }
+                }
+                exportData.FinishExport(this.Page.Response);
+              
+              }
+              else
+              {
+              // Create an instance of the ExportDataToExcel class with the table class, where clause and order by.
+              ExportDataToExcel excelReport = new ExportDataToExcel(PropertyNotesTable.Instance, wc, orderBy);
+              // Add each of the columns in order of export.
+              // To customize the data type, change the second parameter of the new ExcelColumn to be
+              // a format string from Excel's Format Cell menu. For example "dddd, mmmm dd, yyyy h:mm AM/PM;@", "#,##0.00"
+
+              if (this.Page.Response == null)
+              return;
+
+              excelReport.CreateExcelBook();
+
+              int width = 0;
+              int columnCounter = 0;
+              DataForExport data = new DataForExport(PropertyNotesTable.Instance, wc, orderBy, null,join);
+                           data.ColumnList.Add(new ExcelColumn(PropertyNotesTable.Notes, "Default"));
+             data.ColumnList.Add(new ExcelColumn(PropertyNotesTable.DateRecorded, "Short Date"));
+
+
+              //  First write out the Column Headers
+              foreach (ExcelColumn col in data.ColumnList)
+              {
+              width = excelReport.GetExcelCellWidth(col);
+              if (data.IncludeInExport(col))
+              {
+              excelReport.AddColumnToExcelBook(columnCounter, col.ToString(), excelReport.GetExcelDataType(col), width, excelReport.GetDisplayFormat(col));
+              columnCounter++;
+              }
+              }
+              
+              while (!done)
+              {
+              ArrayList recList = data.GetRows(excelReport.pageSize);
+
+              if (recList == null)
+              {
+              break;
+              }
+              totalRowsReturned = recList.Count;
+
+              foreach (BaseRecord rec in recList)
+              {
+              excelReport.AddRowToExcelBook();
+              columnCounter = 0;
+              foreach (ExcelColumn col in data.ColumnList)
+              {
+              if (!data.IncludeInExport(col))
+              continue;
+
+              Boolean _isExpandableNonCompositeForeignKey = col.DisplayColumn.TableDefinition.IsExpandableNonCompositeForeignKey(col.DisplayColumn);
+              if (_isExpandableNonCompositeForeignKey && col.DisplayColumn.IsApplyDisplayAs)
+              {
+                val = PropertyNotesTable.GetDFKA(rec.GetValue(col.DisplayColumn).ToString(), col.DisplayColumn, null) as string;
+                if (String.IsNullOrEmpty(val as string))
+                {
+                  val = rec.Format(col.DisplayColumn);
+                }
+              }
+              else
+                val = excelReport.GetValueForExcelExport(col, rec);
+              
+              excelReport.AddCellToExcelRow(columnCounter, excelReport.GetExcelDataType(col), val, col.DisplayFormat);
+
+              columnCounter++;
+              }
+              }
+
+              // If we already are below the pageSize, then we are done.
+              if (totalRowsReturned < excelReport.pageSize)
+              {
+              done = true;
+              }
+              }
+              excelReport.SaveExcelBook(this.Page.Response);
+              }
+            
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ImportButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void NewButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../PropertyNotes/AddPropertyNotes.aspx?PropertyID={PropertiesTableControlRow:FV:PropertyID}";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      this.Page.Response.Redirect(url);
+        
+            }
+        
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void PDFButton1_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+
+                PDFReport report = new PDFReport();
+
+                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.PDFButton1.report");
+                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
+                report.Title = "PropertyNotes";
+                // If GroupByPropertiesTable.PDFButton1.report specifies a valid report template,
+                // AddColumn methods will generate a report template.   
+                // Each AddColumn method-call specifies a column
+                // The 1st parameter represents the text of the column header
+                // The 2nd parameter represents the horizontal alignment of the column header
+                // The 3rd parameter represents the text format of the column detail
+                // The 4th parameter represents the horizontal alignment of the column detail
+                // The 5th parameter represents the relative width of the column
+                 report.AddColumn(PropertyNotesTable.Notes.Name, ReportEnum.Align.Left, "${Notes}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(PropertyNotesTable.DateRecorded.Name, ReportEnum.Align.Left, "${DateRecorded}", ReportEnum.Align.Left, 20);
+
+  
+                int rowsPerQuery = 5000;
+                int recordCount = 0;
+                                
+                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
+                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
+
+                
+                ColumnList columns = PropertyNotesTable.GetColumnList();
+                
+                WhereClause whereClause = null;
+                whereClause = CreateWhereClause();
+                OrderBy orderBy = CreateOrderBy();
+                BaseFilter joinFilter = CreateCompoundJoinFilter();
+                
+                int pageNum = 0;
+                int totalRows = PropertyNotesTable.GetRecordCount(joinFilter,whereClause);
+                PropertyNotesRecord[] records = null;
+                
+                do
+                {
+                    
+                    records = PropertyNotesTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
+                     if (records != null && records.Length > 0 && whereClause.RunQuery)
+                    {
+                        foreach ( PropertyNotesRecord record in records)
+                    
+                        {
+                            // AddData method takes four parameters   
+                            // The 1st parameter represent the data format
+                            // The 2nd parameter represent the data value
+                            // The 3rd parameter represent the default alignment of column using the data
+                            // The 4th parameter represent the maximum length of the data value being shown
+                                                 report.AddData("${Notes}", record.Format(PropertyNotesTable.Notes), ReportEnum.Align.Left, 100);
+                             report.AddData("${DateRecorded}", record.Format(PropertyNotesTable.DateRecorded), ReportEnum.Align.Left, 100);
+
+                            report.WriteRow();
+                        }
+                        pageNum++;
+                        recordCount += records.Length;
+                    }
+                }
+                while (records != null && recordCount < totalRows && whereClause.RunQuery);
+                	
+                
+                report.Close();
+                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".pdf", report.ReportInByteArray, 0, true);
+            
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ResetButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+           
+            this.SortControl.ClearSelection();
+          
+              this.DateRecordedFromFilter.Text = "";
+            
+              this.DateRecordedToFilter.Text = "";
+            
+              this.CurrentSortOrder.Reset();
+              if (this.InSession(this, "Order_By"))
+                  this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));
+              else
+              {
+                  this.CurrentSortOrder = new OrderBy(true, false);
+                  
+              }
+                
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+                
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void WordButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+
+                WordReport report = new WordReport();
+
+                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.WordButton.word");
+                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
+                report.Title = "PropertyNotes";
+                // If GroupByPropertiesTable.WordButton.report specifies a valid report template,
+                // AddColumn methods will generate a report template.
+                // Each AddColumn method-call specifies a column
+                // The 1st parameter represents the text of the column header
+                // The 2nd parameter represents the horizontal alignment of the column header
+                // The 3rd parameter represents the text format of the column detail
+                // The 4th parameter represents the horizontal alignment of the column detail
+                // The 5th parameter represents the relative width of the column
+                 report.AddColumn(PropertyNotesTable.Notes.Name, ReportEnum.Align.Left, "${Notes}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(PropertyNotesTable.DateRecorded.Name, ReportEnum.Align.Left, "${DateRecorded}", ReportEnum.Align.Left, 20);
+
+                WhereClause whereClause = null;
+                whereClause = CreateWhereClause();
+            
+                OrderBy orderBy = CreateOrderBy();
+                BaseFilter joinFilter = CreateCompoundJoinFilter();
+                
+
+                int rowsPerQuery = 5000;
+                int pageNum = 0;
+                int recordCount = 0;
+                int totalRows = PropertyNotesTable.GetRecordCount(joinFilter,whereClause);
+
+                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
+                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
+
+                ColumnList columns = PropertyNotesTable.GetColumnList();
+                PropertyNotesRecord[] records = null;
+                do
+                {
+                    records = PropertyNotesTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
+                    if (records != null && records.Length > 0 && whereClause.RunQuery)
+                    {
+                        foreach ( PropertyNotesRecord record in records)
+                        {
+                            // AddData method takes four parameters
+                            // The 1st parameter represents the data format
+                            // The 2nd parameter represents the data value
+                            // The 3rd parameter represents the default alignment of column using the data
+                            // The 4th parameter represents the maximum length of the data value being shown
+                             report.AddData("${Notes}", record.Format(PropertyNotesTable.Notes), ReportEnum.Align.Left, 100);
+                             report.AddData("${DateRecorded}", record.Format(PropertyNotesTable.DateRecorded), ReportEnum.Align.Left, 100);
+
+                            report.WriteRow();
+                        }
+                        pageNum++;
+                        recordCount += records.Length;
+                    }
+                }
+                while (records != null && recordCount < totalRows && whereClause.RunQuery);
+                report.save();
+                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".doc", report.ReportInByteArray, 0, true);
+          
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void ActionsButton_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            //This method is initially empty to implement custom click handler.
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void FilterButton_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            this.DataChanged = true;
+          
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void FiltersButton_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            //This method is initially empty to implement custom click handler.
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
 
 
         // Generate the event handling functions for filter and search events.
         
+        // event handler for OrderSort
+        protected virtual void SortControl_SelectedIndexChanged(object sender, EventArgs args)
+        {
+              
+                  string SelVal1 = this.SortControl.SelectedValue.ToUpper();
+                  string[] words1 = SelVal1.Split(' ');
+                  if (SelVal1 != "" )
+                  {
+                  SelVal1 = SelVal1.Replace(words1[words1.Length - 1], "").TrimEnd();
+                  foreach (BaseClasses.Data.BaseColumn ColumnNam in PropertyNotesTable.GetColumns())
+                  {
+                  if (ColumnNam.Name.ToUpper().Equals(SelVal1))
+                  {
+                  SelVal1 = ColumnNam.InternalName;
+                  }
+                  }
+                  }
+
+                
+                OrderByItem sd = this.CurrentSortOrder.Find(PropertyNotesTable.GetColumnByName(SelVal1));
+                if (sd == null || this.CurrentSortOrder.Items != null)
+                {
+                // First time sort, so add sort order for Discontinued.
+                if (PropertyNotesTable.GetColumnByName(SelVal1) != null)
+                {
+                  this.CurrentSortOrder.Reset();
+                }
+
+                //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+                if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+                
+                  if (SelVal1 != "--PLEASE_SELECT--" && PropertyNotesTable.GetColumnByName(SelVal1) != null)
+                  {
+                    if (words1[words1.Length - 1].Contains("ASC"))
+                  {
+                  this.CurrentSortOrder.Add(PropertyNotesTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Asc);
+                    }
+                    else
+                    {
+                      if (words1[words1.Length - 1].Contains("DESC"))
+                  {
+                  this.CurrentSortOrder.Add(PropertyNotesTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Desc );
+                      }
+                    }
+                  }
+                
+                }
+                this.DataChanged = true;
+              				
+        }
+            
     
         // Generate the event handling functions for others
         	  
@@ -26194,9 +30259,99 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
 
 #region "Helper Properties"
         
-        public IPv5.UI.IPaginationModern PropertyNotesPagination {
+        public IPv5.UI.IThemeButtonWithArrow ActionsButton {
             get {
-                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyNotesPagination");
+                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ActionsButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox DateRecordedFromFilter {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedFromFilter");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal DateRecordedLabel1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedLabel1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox DateRecordedToFilter {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedToFilter");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ExcelButton1 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExcelButton1");
+            }
+        }
+        
+        public IPv5.UI.IThemeButton FilterButton {
+            get {
+                return (IPv5.UI.IThemeButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FilterButton");
+            }
+        }
+        
+        public IPv5.UI.IThemeButtonWithArrow FiltersButton {
+            get {
+                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FiltersButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ImportButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ImportButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton NewButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NewButton");
+            }
+        }
+        
+        public IPv5.UI.IPaginationModern Pagination {
+            get {
+                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Pagination");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton PDFButton1 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PDFButton1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ResetButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Label SortByLabel {
+            get {
+                return (System.Web.UI.WebControls.Label)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortByLabel");
+            }
+        }
+        
+          public System.Web.UI.WebControls.DropDownList SortControl {
+          get {
+          return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortControl");
+          }
+          }
+        
+        public System.Web.UI.WebControls.Literal Title0 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Title0");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton WordButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "WordButton");
             }
         }
         
@@ -26424,6 +30579,7 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 SetDescription4();
                 SetDescriptionLabel7();
                 SetExpiryDate3();
+                SetExpiryDateLabel3();
                 
                 
                 SetRentReviewsRowDeleteButton();
@@ -26534,6 +30690,12 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
         }
                 
         public virtual void SetDescriptionLabel7()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetExpiryDateLabel3()
                   {
                   
                     
@@ -26732,14 +30894,11 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -27077,6 +31236,12 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             }
         }
             
+        public System.Web.UI.WebControls.Literal ExpiryDateLabel3 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel3");
+            }
+        }
+        
         public System.Web.UI.WebControls.ImageButton RentReviewsRowDeleteButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewsRowDeleteButton");
@@ -27209,24 +31374,21 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
             if (!this.Page.IsPostBack)
             {
                 string initialVal = "";
-                if  (this.InSession(this.DescriptionFilter4)) 				
-                    initialVal = this.GetFromSession(this.DescriptionFilter4);
                 
-                else
-                    
-                    initialVal = EvaluateFormula("URL(\"Description\")");
+                  if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                  {
+                  initialVal = "";
+                  }
                 
-                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
-                {
-                initialVal = "";
-                }
-              
+                if  (this.InSession(this.SortControl4)) 				
+                    initialVal = this.GetFromSession(this.SortControl4);
+                
                 if (initialVal != null && initialVal != "")		
                 {
                         
-                    this.DescriptionFilter4.Items.Add(new ListItem(initialVal, initialVal));
+                    this.SortControl4.Items.Add(new ListItem(initialVal, initialVal));
                         
-                    this.DescriptionFilter4.SelectedValue = initialVal;
+                    this.SortControl4.SelectedValue = initialVal;
                             
                     }
             }
@@ -27340,8 +31502,6 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
-              this.DescriptionSortLabel4.Click += DescriptionSortLabel4_Click;
-            
             // Setup the button events.
           
                     this.RentReviewsExportExcelButton.Click += RentReviewsExportExcelButton_Click;
@@ -27364,7 +31524,7 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
                         
                     this.RentReviewsFiltersButton.Button.Click += RentReviewsFiltersButton_Click;
                         
-            this.DescriptionFilter4.SelectedIndexChanged += new EventHandler(DescriptionFilter4_SelectedIndexChanged);
+            this.SortControl4.SelectedIndexChanged += new EventHandler(SortControl4_SelectedIndexChanged);
                     
         
          //' Setup events for others
@@ -27600,9 +31760,6 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Call the Set methods for each controls on the panel
         
-                SetDescriptionFilter4();
-                SetDescriptionLabel9();
-                SetDescriptionSortLabel4();
                 
                 SetExpiryDateLabel7();
                 
@@ -27620,7 +31777,8 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
                 
                 
                 
-                
+                SetSortByLabel4();
+                SetSortControl4();
                 SetRentReviewsExportExcelButton();
               
                 SetRentReviewsImportButton();
@@ -27928,12 +32086,6 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
             
       HttpContext.Current.Session["RentReviewsTableControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
     
-            if (MiscUtils.IsValueSelected(this.DescriptionFilter4)) {
-                        
-                wc.iAND(RentReviewsTable.Description, BaseFilter.ComparisonOperator.EqualsTo, MiscUtils.GetSelectedValue(this.DescriptionFilter4, this.GetFromSession(this.DescriptionFilter4)), false, false);
-                    
-            }
-                      
             if (MiscUtils.IsValueSelected(this.ExpiryDateFromFilter3)) {
                 string val = MiscUtils.GetSelectedValue(this.ExpiryDateFromFilter3, this.GetFromSession(this.ExpiryDateFromFilter3));
                 DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
@@ -28028,14 +32180,6 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
-      String DescriptionFilter4SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "DescriptionFilter4_Ajax"];
-            if (MiscUtils.IsValueSelected(DescriptionFilter4SelectedValue)) {
-
-              
-                wc.iAND(RentReviewsTable.Description, BaseFilter.ComparisonOperator.EqualsTo, DescriptionFilter4SelectedValue, false, false);
-                      
-      }
-                      
             string ExpiryDateFromFilter3SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "ExpiryDateFromFilter3_Ajax"];
             if (MiscUtils.IsValueSelected(ExpiryDateFromFilter3SelectedValue)) {
                 DateTime d = DateParser.ParseDate(ExpiryDateFromFilter3SelectedValue, DateColumn.DEFAULT_FORMAT);
@@ -28403,29 +32547,28 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
-        public virtual void SetDescriptionLabel9()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDescriptionSortLabel4()
-                  {
-                  
-                    
-        }
-                
         public virtual void SetExpiryDateLabel7()
                   {
                   
                     
         }
                 
-        public virtual void SetDescriptionFilter4()
+        public virtual void SetSortByLabel4()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.SortByLabel4.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetSortControl4()
         {
             
-            this.PopulateDescriptionFilter4(MiscUtils.GetSelectedValue(this.DescriptionFilter4,  GetFromSession(this.DescriptionFilter4)), 500);					
-                                     
+                this.PopulateSortControl4(MiscUtils.GetSelectedValue(this.SortControl4,  GetFromSession(this.SortControl4)), 500);					
+                    
+
         }
             
         public virtual void SetRentReviewsSearch1()
@@ -28436,108 +32579,43 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
                                    
         }
             
-        // Get the filters' data for DescriptionFilter4.
+        // Get the filters' data for SortControl4.
                 
-        protected virtual void PopulateDescriptionFilter4(string selectedValue, int maxItems)
+        protected virtual void PopulateSortControl4(string selectedValue, int maxItems)
                     
         {
-        
             
-            //Setup the WHERE clause.
-                        
-            this.DescriptionFilter4.Items.Clear();
-            WhereClause wc = this.CreateWhereClause_DescriptionFilter4();            
-            			  			
-            // Set up the WHERE and the ORDER BY clause by calling the CreateWhereClause_DescriptionFilter4 function.
-            // It is better to customize the where clause there.
-             
-            // Setup the static list items        
-            
-                // Add the All item.
-                this.DescriptionFilter4.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
               
-            
-            
-            OrderBy orderBy = new OrderBy(false, false);
-            orderBy.Add(RentReviewsTable.Description, OrderByItem.OrderDir.Asc);                
-            
-            
-            string[] values = new string[0];
-            if (wc.RunQuery)
-            {
-            
-                values = RentReviewsTable.GetValues(RentReviewsTable.Description, wc, orderBy, maxItems);
-            
-            }
-            
-            ArrayList listDuplicates = new ArrayList();
-            foreach (string cvalue in values)
-            {
-            // Create the item and add to the list.
-            string fvalue;
-            if ( RentReviewsTable.Description.IsColumnValueTypeBoolean()) {
-                    fvalue = cvalue;
-                }else {
-                    fvalue = RentReviewsTable.Description.Format(cvalue);
-                }
-                if (fvalue == null) {
-                    fvalue = "";
-                }
-
-                fvalue = fvalue.Trim();
-
-                if ( fvalue.Length > 50 ) {
-                    fvalue = fvalue.Substring(0, 50) + "...";
-                }
-
-                ListItem dupItem = this.DescriptionFilter4.Items.FindByText(fvalue);
-								
-                if (dupItem != null) {
-                    listDuplicates.Add(fvalue);
-                    if (!string.IsNullOrEmpty(dupItem.Value))
-                    {
-                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
-                    }
-                }
-
-                ListItem newItem = new ListItem(fvalue, cvalue);
-                this.DescriptionFilter4.Items.Add(newItem);
-
-                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                }
-            }
-
-                          
+                this.SortControl4.Items.Clear();
+                
+              // 1. Setup the static list items
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Ascending}"), "Description Asc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Descending}"), "Description Desc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Ascending}"), "ExpiryDate Asc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Descending}"), "ExpiryDate Desc"));
+              
             try
-            {
-      
-                
+            {          
                 // Set the selected value.
-                MiscUtils.SetSelectedValue(this.DescriptionFilter4, selectedValue);
-                
+                MiscUtils.SetSelectedValue(this.SortControl4, selectedValue);
+
+               
             }
             catch
             {
             }
-            
-            
-            if (this.DescriptionFilter4.SelectedValue != null && this.DescriptionFilter4.Items.FindByValue(this.DescriptionFilter4.SelectedValue) == null)
-                this.DescriptionFilter4.SelectedValue = null;
-                           
+              
+            if (this.SortControl4.SelectedValue != null && this.SortControl4.Items.FindByValue(this.SortControl4.SelectedValue) == null)
+                this.SortControl4.SelectedValue = null;
+              
         }
             
-        public virtual WhereClause CreateWhereClause_DescriptionFilter4()
-        {
-            // Create a where clause for the filter DescriptionFilter4.
-            // This function is called by the Populate method to load the items 
-            // in the DescriptionFilter4DropDownList
-        
-            WhereClause wc = new WhereClause();
-            return wc;
-            
-        }
-      
 
     
         protected virtual void Control_PreRender(object sender, System.EventArgs e)
@@ -28571,7 +32649,7 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
             base.SaveControlsToSession();
             // Save filter controls to values to session.
         
-            this.SaveToSession(this.DescriptionFilter4, this.DescriptionFilter4.SelectedValue);
+            this.SaveToSession(this.SortControl4, this.SortControl4.SelectedValue);
                   
             this.SaveToSession(this.ExpiryDateFromFilter3, this.ExpiryDateFromFilter3.Text);
                   
@@ -28606,8 +32684,8 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
         {
             // Save filter controls to values to session.
           
-      this.SaveToSession("DescriptionFilter4_Ajax", this.DescriptionFilter4.SelectedValue);
-              
+            this.SaveToSession(this.SortControl4, this.SortControl4.SelectedValue);
+                  
       this.SaveToSession("ExpiryDateFromFilter3_Ajax", this.ExpiryDateFromFilter3.Text);
               
       this.SaveToSession("ExpiryDateToFilter3_Ajax", this.ExpiryDateToFilter3.Text);
@@ -28624,7 +32702,7 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
             base.ClearControlsFromSession();
             // Clear filter controls values from the session.
         
-            this.RemoveFromSession(this.DescriptionFilter4);
+            this.RemoveFromSession(this.SortControl4);
             this.RemoveFromSession(this.ExpiryDateFromFilter3);
             this.RemoveFromSession(this.ExpiryDateToFilter3);
             this.RemoveFromSession(this.RentReviewsSearch1);
@@ -28787,9 +32865,6 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
          themeButtonRentReviewsFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonExpandArrow.png";
     
       
-            if (MiscUtils.IsValueSelected(DescriptionFilter4))
-                themeButtonRentReviewsFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonCheckmark.png";
-        
    
         }
                
@@ -28919,36 +32994,6 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
-        public virtual void DescriptionSortLabel4_Click(object sender, EventArgs args)
-        {
-            //Sorts by Description when clicked.
-              
-            // Get previous sorting state for Description.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(RentReviewsTable.Description);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for Description.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(RentReviewsTable.Description, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by Description, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
 
         // Generate the event handling functions for button events.
         
@@ -29287,8 +33332,9 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
               
             try {
                 
-              this.DescriptionFilter4.ClearSelection();
-            
+           
+            this.SortControl4.ClearSelection();
+          
               this.ExpiryDateFromFilter3.Text = "";
             
               this.ExpiryDateToFilter3.Text = "";
@@ -29499,15 +33545,56 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for filter and search events.
         
-        // event handler for FieldFilter
-        protected virtual void DescriptionFilter4_SelectedIndexChanged(object sender, EventArgs args)
+        // event handler for OrderSort
+        protected virtual void SortControl4_SelectedIndexChanged(object sender, EventArgs args)
         {
-            // Setting the DataChanged to True results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-            
-           				
+              
+                  string SelVal1 = this.SortControl4.SelectedValue.ToUpper();
+                  string[] words1 = SelVal1.Split(' ');
+                  if (SelVal1 != "" )
+                  {
+                  SelVal1 = SelVal1.Replace(words1[words1.Length - 1], "").TrimEnd();
+                  foreach (BaseClasses.Data.BaseColumn ColumnNam in RentReviewsTable.GetColumns())
+                  {
+                  if (ColumnNam.Name.ToUpper().Equals(SelVal1))
+                  {
+                  SelVal1 = ColumnNam.InternalName;
+                  }
+                  }
+                  }
+
+                
+                OrderByItem sd = this.CurrentSortOrder.Find(RentReviewsTable.GetColumnByName(SelVal1));
+                if (sd == null || this.CurrentSortOrder.Items != null)
+                {
+                // First time sort, so add sort order for Discontinued.
+                if (RentReviewsTable.GetColumnByName(SelVal1) != null)
+                {
+                  this.CurrentSortOrder.Reset();
+                }
+
+                //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+                if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+                
+                  if (SelVal1 != "--PLEASE_SELECT--" && RentReviewsTable.GetColumnByName(SelVal1) != null)
+                  {
+                    if (words1[words1.Length - 1].Contains("ASC"))
+                  {
+                  this.CurrentSortOrder.Add(RentReviewsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Asc);
+                    }
+                    else
+                    {
+                      if (words1[words1.Length - 1].Contains("DESC"))
+                  {
+                  this.CurrentSortOrder.Add(RentReviewsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Desc );
+                      }
+                    }
+                  }
+                
+                }
+                this.DataChanged = true;
+              				
         }
             
     
@@ -29583,24 +33670,6 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
         }
 
 #region "Helper Properties"
-        
-        public System.Web.UI.WebControls.DropDownList DescriptionFilter4 {
-            get {
-                return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionFilter4");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal DescriptionLabel9 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel9");
-            }
-        }
-        
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel4 {
-            get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionSortLabel4");
-            }
-        }
         
         public System.Web.UI.WebControls.TextBox ExpiryDateFromFilter3 {
             get {
@@ -29697,6 +33766,18 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewsWordButton");
             }
         }
+        
+        public System.Web.UI.WebControls.Label SortByLabel4 {
+            get {
+                return (System.Web.UI.WebControls.Label)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortByLabel4");
+            }
+        }
+        
+          public System.Web.UI.WebControls.DropDownList SortControl4 {
+          get {
+          return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortControl4");
+          }
+          }
         
 #endregion
 
@@ -29853,14 +33934,12 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
         // To customize, override this method in TermExpiresTableControlRow.
         protected virtual void Control_Load(object sender, System.EventArgs e)
         {      
-        
-              // Show confirmation message on Click
-              this.TermExpiresRowDeleteButton.Attributes.Add("onClick", "return (confirm(\"" + ((BaseApplicationPage)this.Page).GetResourceValue("DeleteRecordConfirm", "IPv5") + "\"));");            
+                    
         
               // Register the event handlers.
 
           
-                    this.TermExpiresRowDeleteButton.Click += TermExpiresRowDeleteButton_Click;
+                    this.EditRowButton2.Click += EditRowButton2_Click;
                         
         }
 
@@ -29919,10 +33998,10 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
         
                 SetDescription();
                 SetDescriptionLabel();
+                
                 SetExpiryDate();
                 SetExpiryDateLabel();
-                
-                SetTermExpiresRowDeleteButton();
+                SetEditRowButton2();
               
 
       
@@ -30232,14 +34311,11 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -30378,7 +34454,7 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
     
         // Generate set method for buttons
         
-        public virtual void SetTermExpiresRowDeleteButton()                
+        public virtual void SetEditRowButton2()                
               
         {
         
@@ -30386,22 +34462,35 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
         }
             
         // event handler for ImageButton
-        public virtual void TermExpiresRowDeleteButton_Click(object sender, ImageClickEventArgs args)
+        public virtual void EditRowButton2_Click(object sender, ImageClickEventArgs args)
         {
               
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../TermExpires/EditTermExpires.aspx?TermExpires={PK}";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
             try {
                 // Enclose all database retrieval/update code within a Transaction boundary
                 DbUtils.StartTransaction();
                 
-            if (!this.Page.IsPageRefresh) {
-        
-                this.Delete();
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
               
-            }
-      this.Page.CommitTransaction(sender);
             } catch (Exception ex) {
                   // Upon error, rollback the transaction
                   this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
                   this.Page.ErrorOnPage = true;
 
             // Report the error message to the end user
@@ -30410,7 +34499,12 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
             } finally {
                 DbUtils.EndTransaction();
             }
-    
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      this.Page.Response.Redirect(url);
+        
+            }
+        
         }
             
             
@@ -30516,6 +34610,12 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
             }
         }
         
+        public System.Web.UI.WebControls.ImageButton EditRowButton2 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "EditRowButton2");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal ExpiryDate {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDate");
@@ -30525,12 +34625,6 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
         public System.Web.UI.WebControls.Literal ExpiryDateLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton TermExpiresRowDeleteButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresRowDeleteButton");
             }
         }
         
@@ -30651,6 +34745,89 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
     
            // Setup the filter and search.
         
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                
+                  if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                  {
+                  initialVal = "";
+                  }
+                
+                if  (this.InSession(this.SortControl2)) 				
+                    initialVal = this.GetFromSession(this.SortControl2);
+                
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.SortControl2.Items.Add(new ListItem(initialVal, initialVal));
+                        
+                    this.SortControl2.SelectedValue = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.ExpiryDateFromFilter)) 				
+                    initialVal = this.GetFromSession(this.ExpiryDateFromFilter);
+                
+                else
+                    
+                    initialVal = EvaluateFormula("URL(\"ExpiryDateFrom\")");
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.ExpiryDateFromFilter.Text = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.ExpiryDateToFilter)) 				
+                    initialVal = this.GetFromSession(this.ExpiryDateToFilter);
+                
+                else
+                    
+                    initialVal = EvaluateFormula("URL(\"ExpiryDateTo\")");
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.ExpiryDateToFilter.Text = initialVal;
+                            
+                    }
+            }
+            if (!this.Page.IsPostBack)
+            {
+                string initialVal = "";
+                if  (this.InSession(this.TermExpiresSearchText)) 				
+                    initialVal = this.GetFromSession(this.TermExpiresSearchText);
+                
+                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                {
+                initialVal = "";
+                }
+              
+                if (initialVal != null && initialVal != "")		
+                {
+                        
+                    this.TermExpiresSearchText.Text = initialVal;
+                            
+                    }
+            }
 
 
       
@@ -30683,15 +34860,15 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
         
             // Setup the pagination events.
             
-                    this.TermExpiresPagination.FirstPage.Click += TermExpiresPagination_FirstPage_Click;
+                    this.Pagination1.FirstPage.Click += Pagination1_FirstPage_Click;
                         
-                    this.TermExpiresPagination.LastPage.Click += TermExpiresPagination_LastPage_Click;
+                    this.Pagination1.LastPage.Click += Pagination1_LastPage_Click;
                         
-                    this.TermExpiresPagination.NextPage.Click += TermExpiresPagination_NextPage_Click;
+                    this.Pagination1.NextPage.Click += Pagination1_NextPage_Click;
                         
-                    this.TermExpiresPagination.PageSizeButton.Click += TermExpiresPagination_PageSizeButton_Click;
+                    this.Pagination1.PageSizeButton.Click += Pagination1_PageSizeButton_Click;
                         
-                    this.TermExpiresPagination.PreviousPage.Click += TermExpiresPagination_PreviousPage_Click;
+                    this.Pagination1.PreviousPage.Click += Pagination1_PreviousPage_Click;
                         
 
             string url =""; //to avoid warning in VS as its not being used
@@ -30700,10 +34877,33 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
        // Setup the sorting events.
         
             // Setup the button events.
-                  
+          
+                    this.ExcelButton2.Click += ExcelButton2_Click;
+                        
+                    this.ImportButton1.Click += ImportButton1_Click;
+                        
+                    this.NewButton1.Click += NewButton1_Click;
+                        
+                    this.PDFButton2.Click += PDFButton2_Click;
+                        
+                    this.ResetButton2.Click += ResetButton2_Click;
+                        
+                    this.SearchButton3.Click += SearchButton3_Click;
+                        
+                    this.WordButton1.Click += WordButton1_Click;
+                        
+                    this.Actions1Button.Button.Click += Actions1Button_Click;
+                        
+                    this.FilterButton2.Button.Click += FilterButton2_Click;
+                        
+                    this.Filters2Button.Button.Click += Filters2Button_Click;
+                        
+            this.SortControl2.SelectedIndexChanged += new EventHandler(SortControl2_SelectedIndexChanged);
+                    
         
          //' Setup events for others
-               
+            AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "TermExpiresSearchTextSearchBoxText", "setSearchBoxText(\"" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "\", \"" + TermExpiresSearchText.ClientID + "\");", true);
+             
         }
 
         public virtual void LoadData()
@@ -30935,6 +35135,44 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             // Call the Set methods for each controls on the panel
         
                 
+                
+                
+                SetExpiryDateLabel5();
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                SetSortByLabel2();
+                SetSortControl2();
+                SetTermExpiresSearchText();
+                
+                
+                SetExcelButton2();
+              
+                SetImportButton1();
+              
+                SetNewButton1();
+              
+                SetPDFButton2();
+              
+                SetResetButton2();
+              
+                SetSearchButton3();
+              
+                SetWordButton1();
+              
+                SetActions1Button();
+              
+                SetFilterButton2();
+              
+                SetFilters2Button();
+              
             // setting the state of expand or collapse alternative rows
       
             // Load data for each record and table UI control.
@@ -30945,7 +35183,9 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             // this method calls the set method for controls with special formula like running total, sum, rank, etc
             SetFormulaControls();
             
-                    
+             
+              SetFilters2Button();
+                     
         }
         
         
@@ -30957,10 +35197,25 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
     }
 
         
+    public virtual void AddWarningMessageOnClick() {
+    
+        if (this.TotalRecords > 10000)
+          this.ExcelButton2.Attributes.Add("onClick", "return (confirm('" + ((BaseApplicationPage)this.Page).GetResourceValue("ExportConfirm", "IPv5") + "'));");
+        else
+          this.ExcelButton2.Attributes.Remove("onClick");
+      
+    }
+  
 
         public virtual void RegisterPostback()
         {
-                
+        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"ExcelButton2"));
+                        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"PDFButton2"));
+                        
+              this.Page.RegisterPostBackTrigger(MiscUtils.FindControlRecursively(this,"WordButton1"));
+                                
         }
         
 
@@ -31074,32 +35329,32 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             if (DbUtils.GetCreatedRecords(this.DataSource).Length > 0)                      
                     
             {
-                this.TermExpiresPagination.CurrentPage.Text = (this.PageIndex + 1).ToString();
+                this.Pagination1.CurrentPage.Text = (this.PageIndex + 1).ToString();
             } 
             else
             {
-                this.TermExpiresPagination.CurrentPage.Text = "0";
+                this.Pagination1.CurrentPage.Text = "0";
             }
-            this.TermExpiresPagination.PageSize.Text = this.PageSize.ToString();
+            this.Pagination1.PageSize.Text = this.PageSize.ToString();
     
             // Bind the buttons for TermExpiresTableControl pagination.
         
-            this.TermExpiresPagination.FirstPage.Enabled = !(this.PageIndex == 0);
+            this.Pagination1.FirstPage.Enabled = !(this.PageIndex == 0);
             if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
-                this.TermExpiresPagination.LastPage.Enabled = true;
+                this.Pagination1.LastPage.Enabled = true;
             else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
-                this.TermExpiresPagination.LastPage.Enabled = false;            
+                this.Pagination1.LastPage.Enabled = false;            
             else                                     // if the total pages is the last page, disable last and next buttons
-                this.TermExpiresPagination.LastPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
+                this.Pagination1.LastPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
           
             if (this._TotalPages < 0)             // if the total pages is not determined yet, enable last and next buttons
-                this.TermExpiresPagination.NextPage.Enabled = true;
+                this.Pagination1.NextPage.Enabled = true;
             else if (this._TotalPages == 0)          // if the total pages is determined and it is 0, enable last and next buttons
-                this.TermExpiresPagination.NextPage.Enabled = false;            
+                this.Pagination1.NextPage.Enabled = false;            
             else                                     // if the total pages is the last page, disable last and next buttons
-                this.TermExpiresPagination.NextPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
+                this.Pagination1.NextPage.Enabled = !(this.PageIndex == this.TotalPages - 1);            
           
-            this.TermExpiresPagination.PreviousPage.Enabled = !(this.PageIndex == 0);    
+            this.Pagination1.PreviousPage.Enabled = !(this.PageIndex == 0);    
         }
  
         public virtual void SaveData()
@@ -31204,7 +35459,69 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
               }
             
       HttpContext.Current.Session["TermExpiresTableControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
-         
+    
+            if (MiscUtils.IsValueSelected(this.ExpiryDateFromFilter)) {
+                string val = MiscUtils.GetSelectedValue(this.ExpiryDateFromFilter, this.GetFromSession(this.ExpiryDateFromFilter));
+                DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
+                    
+                val = d.ToShortDateString() + " " + "00:00:00";
+                wc.iAND(TermExpiresTable.ExpiryDate, BaseFilter.ComparisonOperator.Greater_Than_Or_Equal, val, false, false);
+                    
+            }
+                      
+            if (MiscUtils.IsValueSelected(this.ExpiryDateToFilter)) {
+                string val = MiscUtils.GetSelectedValue(this.ExpiryDateToFilter, this.GetFromSession(this.ExpiryDateToFilter));
+                DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
+                    
+                val = d.ToShortDateString() + " " + "23:59:59";
+                wc.iAND(TermExpiresTable.ExpiryDate, BaseFilter.ComparisonOperator.Less_Than_Or_Equal, val, false, false);
+                    
+            }
+                      
+            if (MiscUtils.IsValueSelected(this.TermExpiresSearchText)) {
+                if (this.TermExpiresSearchText.Text == BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) ) {
+                        this.TermExpiresSearchText.Text = "";
+                } else {
+                  // Strip "..." from begin and ending of the search text, otherwise the search will return 0 values as in database "..." is not stored.
+                  if (this.TermExpiresSearchText.Text.StartsWith("...")) {
+                      this.TermExpiresSearchText.Text = this.TermExpiresSearchText.Text.Substring(3,this.TermExpiresSearchText.Text.Length-3);
+                  }
+                  if (this.TermExpiresSearchText.Text.EndsWith("...")) {
+                      this.TermExpiresSearchText.Text = this.TermExpiresSearchText.Text.Substring(0,this.TermExpiresSearchText.Text.Length-3);
+                      // Strip the last word as well as it is likely only a partial word
+                      int endindex = this.TermExpiresSearchText.Text.Length - 1;
+                      while (!Char.IsWhiteSpace(TermExpiresSearchText.Text[endindex]) && endindex > 0) {
+                          endindex--;
+                      }
+                      if (endindex > 0) {
+                          this.TermExpiresSearchText.Text = this.TermExpiresSearchText.Text.Substring(0, endindex);
+                      }
+                  }
+                }
+                string formatedSearchText = MiscUtils.GetSelectedValue(this.TermExpiresSearchText, this.GetFromSession(this.TermExpiresSearchText));
+                // After stripping "..." see if the search text is null or empty.
+                if (MiscUtils.IsValueSelected(this.TermExpiresSearchText)) {
+                      
+                    // These clauses are added depending on operator and fields selected in Control's property page, bindings tab.
+                  
+                    WhereClause search = new WhereClause();
+                    
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(TermExpiresTable.Description, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+          search.iOR(col, BaseFilter.ComparisonOperator.Contains, MiscUtils.GetSelectedValue(this.TermExpiresSearchText, this.GetFromSession(this.TermExpiresSearchText)), true, false);
+        
+      }
+    
+                    wc.iAND(search);
+                  
+                }
+            }
+                       
             return wc;
         }
         
@@ -31237,11 +35554,122 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
+            string ExpiryDateFromFilterSelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "ExpiryDateFromFilter_Ajax"];
+            if (MiscUtils.IsValueSelected(ExpiryDateFromFilterSelectedValue)) {
+                DateTime d = DateParser.ParseDate(ExpiryDateFromFilterSelectedValue, DateColumn.DEFAULT_FORMAT);
+                ExpiryDateFromFilterSelectedValue = d.ToShortDateString() + " " + "00:00:00";
+                    
+                wc.iAND(TermExpiresTable.ExpiryDate, BaseFilter.ComparisonOperator.Greater_Than_Or_Equal, ExpiryDateFromFilterSelectedValue, false, false);
+                    
+            }         
+            string ExpiryDateToFilterSelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "ExpiryDateToFilter_Ajax"];
+            if (MiscUtils.IsValueSelected(ExpiryDateToFilterSelectedValue)) {
+                DateTime d = DateParser.ParseDate(ExpiryDateToFilterSelectedValue, DateColumn.DEFAULT_FORMAT);
+                ExpiryDateToFilterSelectedValue = d.ToShortDateString() + " " + "23:59:59";
+                    
+                wc.iAND(TermExpiresTable.ExpiryDate, BaseFilter.ComparisonOperator.Less_Than_Or_Equal, ExpiryDateToFilterSelectedValue, false, false);
+                    
+            }         
+            if (MiscUtils.IsValueSelected(searchText) && fromSearchControl == "TermExpiresSearchText") {
+                String formatedSearchText = searchText;
+                // strip "..." from begin and ending of the search text, otherwise the search will return 0 values as in database "..." is not stored.
+                if (searchText.StartsWith("...")) {
+                    formatedSearchText = searchText.Substring(3,searchText.Length-3);
+                }
+                if (searchText.EndsWith("...")) {
+                    formatedSearchText = searchText.Substring(0,searchText.Length-3);
+                }
+                // After stripping "...", trim any leading and trailing whitespaces 
+                formatedSearchText = formatedSearchText.Trim();
+                // After stripping "..." see if the search text is null or empty.
+                if (MiscUtils.IsValueSelected(searchText)) {
+                      
+                    // These clauses are added depending on operator and fields selected in Control's property page, bindings tab.
+                  
+                    WhereClause search = new WhereClause();
+                    
+                    if (StringUtils.InvariantLCase(AutoTypeAheadSearch).Equals("wordsstartingwithsearchstring")) {
+                
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(TermExpiresTable.Description, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+                  search.iOR(col, BaseFilter.ComparisonOperator.Starts_With, formatedSearchText, true, false);
+                  search.iOR(col, BaseFilter.ComparisonOperator.Contains, AutoTypeAheadWordSeparators + formatedSearchText, true, false);
+                
+      }
+    
+                    } else {
+                        
+        ColumnList cols = new ColumnList();
+      
+      cols.Add(TermExpiresTable.Description, true);
+      
+      foreach(BaseColumn col in cols)
+      {
+      
+                  search.iOR(col, BaseFilter.ComparisonOperator.Contains, formatedSearchText, true, false);
+      }
+    
+                    } 
+                    wc.iAND(search);
+                  
+                }
+            }
+                  
 
             return wc;
         }
 
         
+        public virtual string[] GetAutoCompletionList_TermExpiresSearchText(String prefixText,int count)
+        {
+            ArrayList resultList = new ArrayList();
+            ArrayList wordList= new ArrayList();
+            
+            CompoundFilter filterJoin = CreateCompoundJoinFilter();    
+            WhereClause wc = CreateWhereClause(prefixText,"TermExpiresSearchText", "WordsStartingWithSearchString", "[^a-zA-Z0-9]");
+            if(count==0) count = 10;
+            IPv5.Business.TermExpiresRecord[] recordList  = TermExpiresTable.GetRecords(filterJoin, wc, null, 0, count, ref count);
+            String resultItem = "";
+            if (resultItem == "") resultItem = "";
+            foreach (TermExpiresRecord rec in recordList ){
+                // Exit the loop if recordList count has reached AutoTypeAheadListSize.
+                if (resultList.Count >= count) {
+                    break;
+                }
+                // If the field is configured to Display as Foreign key, Format() method returns the 
+                // Display as Forien Key value instead of original field value.
+                // Since search had to be done in multiple fields (selected in Control's page property, binding tab) in a record,
+                // We need to find relevent field to display which matches the prefixText and is not already present in the result list.
+        
+                resultItem = rec.Format(TermExpiresTable.Description);
+  
+                if (resultItem != null) {
+                    string prText = prefixText;
+                    if(TermExpiresTable.Description.IsFullTextSearchable) {
+                        FullTextExpression ft = new FullTextExpression();
+                        prText = ft.GetFirstNonExcludedTerm(prText);
+                    }
+                    if (!string.IsNullOrEmpty(prText) && resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).Contains(prText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture))) {
+                        bool isAdded = FormatSuggestions(prText, resultItem, 50, "AtBeginningOfMatchedString", "WordsStartingWithSearchString", "[^a-zA-Z0-9]", resultList, TermExpiresTable.Description.IsFullTextSearchable);
+                        if (isAdded) {
+                            continue;
+                        }
+                    }
+                }
+                      
+            }
+              
+            resultList.Sort();
+            string[] result = new string[resultList.Count];
+            Array.Copy(resultList.ToArray(), result, resultList.Count);
+            return result;
+        }
+          
           
          public virtual bool FormatSuggestions(String prefixText, String resultItem,
                                               int columnLength, String AutoTypeAheadDisplayFoundText,
@@ -31387,9 +35815,9 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
         protected virtual void GetPageSize()
         {
         
-            if (this.TermExpiresPagination.PageSize.Text.Length > 0) {
+            if (this.Pagination1.PageSize.Text.Length > 0) {
                 try {
-                    // this.PageSize = Convert.ToInt32(this.TermExpiresPagination.PageSize.Text);
+                    // this.PageSize = Convert.ToInt32(this.Pagination1.PageSize.Text);
                 } catch (Exception ) {
                 }
             }
@@ -31493,6 +35921,75 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetExpiryDateLabel5()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetSortByLabel2()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.SortByLabel2.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetSortControl2()
+        {
+            
+                this.PopulateSortControl2(MiscUtils.GetSelectedValue(this.SortControl2,  GetFromSession(this.SortControl2)), 500);					
+                    
+
+        }
+            
+        public virtual void SetTermExpiresSearchText()
+        {
+                                            
+            this.TermExpiresSearchText.Attributes.Add("onfocus", "if(this.value=='" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "') {this.value='';this.className='Search_Input';}");
+            this.TermExpiresSearchText.Attributes.Add("onblur", "if(this.value=='') {this.value='" + BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null) + "';this.className='Search_InputHint';}");
+                                   
+        }
+            
+        // Get the filters' data for SortControl2.
+                
+        protected virtual void PopulateSortControl2(string selectedValue, int maxItems)
+                    
+        {
+            
+              
+                this.SortControl2.Items.Clear();
+                
+              // 1. Setup the static list items
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Ascending}"), "Description Asc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Descending}"), "Description Desc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Ascending}"), "ExpiryDate Asc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Descending}"), "ExpiryDate Desc"));
+              
+            try
+            {          
+                // Set the selected value.
+                MiscUtils.SetSelectedValue(this.SortControl2, selectedValue);
+
+               
+            }
+            catch
+            {
+            }
+              
+            if (this.SortControl2.SelectedValue != null && this.SortControl2.Items.FindByValue(this.SortControl2.SelectedValue) == null)
+                this.SortControl2.SelectedValue = null;
+              
+        }
+            
 
     
         protected virtual void Control_PreRender(object sender, System.EventArgs e)
@@ -31526,6 +36023,14 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             base.SaveControlsToSession();
             // Save filter controls to values to session.
         
+            this.SaveToSession(this.SortControl2, this.SortControl2.SelectedValue);
+                  
+            this.SaveToSession(this.ExpiryDateFromFilter, this.ExpiryDateFromFilter.Text);
+                  
+            this.SaveToSession(this.ExpiryDateToFilter, this.ExpiryDateToFilter.Text);
+                  
+            this.SaveToSession(this.TermExpiresSearchText, this.TermExpiresSearchText.Text);
+                  
             
                     
             // Save pagination state to session.
@@ -31553,6 +36058,14 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
         {
             // Save filter controls to values to session.
           
+            this.SaveToSession(this.SortControl2, this.SortControl2.SelectedValue);
+                  
+      this.SaveToSession("ExpiryDateFromFilter_Ajax", this.ExpiryDateFromFilter.Text);
+              
+      this.SaveToSession("ExpiryDateToFilter_Ajax", this.ExpiryDateToFilter.Text);
+              
+      this.SaveToSession("TermExpiresSearchText_Ajax", this.TermExpiresSearchText.Text);
+              
            HttpContext.Current.Session["AppRelativeVirtualPath"] = this.Page.AppRelativeVirtualPath;
          
         }
@@ -31563,6 +36076,10 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             base.ClearControlsFromSession();
             // Clear filter controls values from the session.
         
+            this.RemoveFromSession(this.SortControl2);
+            this.RemoveFromSession(this.ExpiryDateFromFilter);
+            this.RemoveFromSession(this.ExpiryDateToFilter);
+            this.RemoveFromSession(this.TermExpiresSearchText);
             
             // Clear pagination state from session.
          
@@ -31591,7 +36108,7 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             }
           
 
-            Control Pagination = this.FindControl("TermExpiresPagination");
+            Control Pagination = this.FindControl("Pagination1");
             String PaginationType = "";
             if (Pagination != null){
               Control Summary = Pagination.FindControl("_Summary");
@@ -31647,12 +36164,111 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
         }
 
         // Generate set method for buttons
-           
+        
+        public virtual void SetExcelButton2()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetImportButton1()                
+              
+        {
+        							
+                    this.ImportButton1.PostBackUrl = "../Shared/SelectFileToImport.aspx?TableName=TermExpires" ;
+                    this.ImportButton1.Attributes["onClick"] = "window.open('" + this.Page.EncryptUrlParameter(this.ImportButton1.PostBackUrl) + "','importWindow', 'width=700, height=500,top=' +(screen.availHeight-500)/2 + ',left=' + (screen.availWidth-700)/2+ ', resizable=yes, scrollbars=yes,modal=yes'); return false;";
+                        
+   
+        }
+            
+        public virtual void SetNewButton1()                
+              
+        {
+        
+              try
+              {
+                    string url = "../TermExpires/AddTermExpires.aspx?PropertyID={PropertiesTableControlRow:FV:PropertyID}&TabVisible=False&SaveAndNewVisible=False";
+              
+                      
+                    url = this.ModifyRedirectUrl(url, "", true);
+                    
+                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
+                    
+                    url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("Popup") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(MiscUtils.FindControlRecursively(this, "TermExpiresTableControl_PostbackTracker").ClientID);                           
+                                
+                string javascriptCall = "";
+                
+                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "TermExpiresTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                       
+                    this.NewButton1.Attributes["onClick"] = javascriptCall + "return false;";            
+                }
+                catch
+                {
+                    // do nothing.  If the code above fails, server side click event, NewButton1_ClickNewButton1_Click will be trigger when user click the button.
+                }
+                  
+   
+        }
+            
+        public virtual void SetPDFButton2()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetResetButton2()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetSearchButton3()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetWordButton1()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetActions1Button()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetFilterButton2()                
+              
+        {
+        
+   
+        }
+            
+        public virtual void SetFilters2Button()                
+              
+        {
+                
+         IThemeButtonWithArrow themeButtonFilters2Button = (IThemeButtonWithArrow)(MiscUtils.FindControlRecursively(this, "Filters2Button"));
+         themeButtonFilters2Button.ArrowImage.ImageUrl = "../Images/ButtonExpandArrow.png";
+    
+      
+   
+        }
+               
         
         // Generate the event handling functions for pagination events.
         
         // event handler for ImageButton
-        public virtual void TermExpiresPagination_FirstPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination1_FirstPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -31675,7 +36291,7 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void TermExpiresPagination_LastPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination1_LastPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -31698,7 +36314,7 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void TermExpiresPagination_NextPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination1_NextPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -31721,16 +36337,16 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for LinkButton
-        public virtual void TermExpiresPagination_PageSizeButton_Click(object sender, EventArgs args)
+        public virtual void Pagination1_PageSizeButton_Click(object sender, EventArgs args)
         {
               
             try {
                 
             this.DataChanged = true;
       
-            this.PageSize = this.TermExpiresPagination.GetCurrentPageSize();
+            this.PageSize = this.Pagination1.GetCurrentPageSize();
       
-            this.PageIndex = Convert.ToInt32(this.TermExpiresPagination.CurrentPage.Text) - 1;
+            this.PageIndex = Convert.ToInt32(this.Pagination1.CurrentPage.Text) - 1;
       
             } catch (Exception ex) {
                   this.Page.ErrorOnPage = true;
@@ -31747,7 +36363,7 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             
         
         // event handler for ImageButton
-        public virtual void TermExpiresPagination_PreviousPage_Click(object sender, ImageClickEventArgs args)
+        public virtual void Pagination1_PreviousPage_Click(object sender, ImageClickEventArgs args)
         {
               
             try {
@@ -31777,10 +36393,609 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for button events.
         
+        // event handler for ImageButton
+        public virtual void ExcelButton2_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            
+            // To customize the columns or the format, override this function in Section 1 of the page
+            // and modify it to your liking.
+            // Build the where clause based on the current filter and search criteria
+            // Create the Order By clause based on the user's current sorting preference.
+            
+                WhereClause wc = null;
+                wc = CreateWhereClause();
+                OrderBy orderBy = null;
+              
+                orderBy = CreateOrderBy();
+              
+              bool done = false;
+              object val = "";
+              CompoundFilter join = CreateCompoundJoinFilter();
+              
+              // Read pageSize records at a time and write out the Excel file.
+              int totalRowsReturned = 0;
+
+
+              this.TotalRecords = TermExpiresTable.GetRecordCount(join, wc);
+              if (this.TotalRecords > 10000)
+              {
+              
+                // Add each of the columns in order of export.
+                BaseColumn[] columns = new BaseColumn[] {
+                             TermExpiresTable.ExpiryDate,
+             TermExpiresTable.Description,
+             null};
+                ExportDataToCSV exportData = new ExportDataToCSV(TermExpiresTable.Instance,wc,orderBy,columns);
+                exportData.StartExport(this.Page.Response, true);
+
+                DataForExport dataForCSV = new DataForExport(TermExpiresTable.Instance, wc, orderBy, columns,join);
+
+                //  Read pageSize records at a time and write out the CSV file.
+                while (!done)
+                {
+                ArrayList recList = dataForCSV.GetRows(exportData.pageSize);
+                if (recList == null)
+                break; //we are done
+
+                totalRowsReturned = recList.Count;
+                foreach (BaseRecord rec in recList)
+                {
+                foreach (BaseColumn col in dataForCSV.ColumnList)
+                {
+                if (col == null)
+                continue;
+
+                if (!dataForCSV.IncludeInExport(col))
+                continue;
+
+                val = rec.GetValue(col).ToString();
+                exportData.WriteColumnData(val, dataForCSV.IsString(col));
+                }
+                exportData.WriteNewRow();
+                }
+
+                //  If we already are below the pageSize, then we are done.
+                if (totalRowsReturned < exportData.pageSize)
+                {
+                done = true;
+                }
+                }
+                exportData.FinishExport(this.Page.Response);
+              
+              }
+              else
+              {
+              // Create an instance of the ExportDataToExcel class with the table class, where clause and order by.
+              ExportDataToExcel excelReport = new ExportDataToExcel(TermExpiresTable.Instance, wc, orderBy);
+              // Add each of the columns in order of export.
+              // To customize the data type, change the second parameter of the new ExcelColumn to be
+              // a format string from Excel's Format Cell menu. For example "dddd, mmmm dd, yyyy h:mm AM/PM;@", "#,##0.00"
+
+              if (this.Page.Response == null)
+              return;
+
+              excelReport.CreateExcelBook();
+
+              int width = 0;
+              int columnCounter = 0;
+              DataForExport data = new DataForExport(TermExpiresTable.Instance, wc, orderBy, null,join);
+                           data.ColumnList.Add(new ExcelColumn(TermExpiresTable.ExpiryDate, "Short Date"));
+             data.ColumnList.Add(new ExcelColumn(TermExpiresTable.Description, "Default"));
+
+
+              //  First write out the Column Headers
+              foreach (ExcelColumn col in data.ColumnList)
+              {
+              width = excelReport.GetExcelCellWidth(col);
+              if (data.IncludeInExport(col))
+              {
+              excelReport.AddColumnToExcelBook(columnCounter, col.ToString(), excelReport.GetExcelDataType(col), width, excelReport.GetDisplayFormat(col));
+              columnCounter++;
+              }
+              }
+              
+              while (!done)
+              {
+              ArrayList recList = data.GetRows(excelReport.pageSize);
+
+              if (recList == null)
+              {
+              break;
+              }
+              totalRowsReturned = recList.Count;
+
+              foreach (BaseRecord rec in recList)
+              {
+              excelReport.AddRowToExcelBook();
+              columnCounter = 0;
+              foreach (ExcelColumn col in data.ColumnList)
+              {
+              if (!data.IncludeInExport(col))
+              continue;
+
+              Boolean _isExpandableNonCompositeForeignKey = col.DisplayColumn.TableDefinition.IsExpandableNonCompositeForeignKey(col.DisplayColumn);
+              if (_isExpandableNonCompositeForeignKey && col.DisplayColumn.IsApplyDisplayAs)
+              {
+                val = TermExpiresTable.GetDFKA(rec.GetValue(col.DisplayColumn).ToString(), col.DisplayColumn, null) as string;
+                if (String.IsNullOrEmpty(val as string))
+                {
+                  val = rec.Format(col.DisplayColumn);
+                }
+              }
+              else
+                val = excelReport.GetValueForExcelExport(col, rec);
+              
+              excelReport.AddCellToExcelRow(columnCounter, excelReport.GetExcelDataType(col), val, col.DisplayFormat);
+
+              columnCounter++;
+              }
+              }
+
+              // If we already are below the pageSize, then we are done.
+              if (totalRowsReturned < excelReport.pageSize)
+              {
+              done = true;
+              }
+              }
+              excelReport.SaveExcelBook(this.Page.Response);
+              }
+            
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ImportButton1_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void NewButton1_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../TermExpires/AddTermExpires.aspx?PropertyID={PropertiesTableControlRow:FV:PropertyID}&TabVisible=False&SaveAndNewVisible=False";
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      
+                    url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("Popup") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(MiscUtils.FindControlRecursively(this, "TermExpiresTableControl_PostbackTracker").ClientID);                           
+                                
+                string javascriptCall = "";
+                
+                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "TermExpiresTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "NewButton1_Click", javascriptCall, true);
+        
+            }
+        
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void PDFButton2_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+
+                PDFReport report = new PDFReport();
+
+                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.PDFButton2.report");
+                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
+                report.Title = "TermExpires";
+                // If GroupByPropertiesTable.PDFButton2.report specifies a valid report template,
+                // AddColumn methods will generate a report template.   
+                // Each AddColumn method-call specifies a column
+                // The 1st parameter represents the text of the column header
+                // The 2nd parameter represents the horizontal alignment of the column header
+                // The 3rd parameter represents the text format of the column detail
+                // The 4th parameter represents the horizontal alignment of the column detail
+                // The 5th parameter represents the relative width of the column
+                 report.AddColumn(TermExpiresTable.ExpiryDate.Name, ReportEnum.Align.Left, "${ExpiryDate}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(TermExpiresTable.Description.Name, ReportEnum.Align.Left, "${Description}", ReportEnum.Align.Left, 28);
+
+  
+                int rowsPerQuery = 5000;
+                int recordCount = 0;
+                                
+                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
+                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
+
+                
+                ColumnList columns = TermExpiresTable.GetColumnList();
+                
+                WhereClause whereClause = null;
+                whereClause = CreateWhereClause();
+                OrderBy orderBy = CreateOrderBy();
+                BaseFilter joinFilter = CreateCompoundJoinFilter();
+                
+                int pageNum = 0;
+                int totalRows = TermExpiresTable.GetRecordCount(joinFilter,whereClause);
+                TermExpiresRecord[] records = null;
+                
+                do
+                {
+                    
+                    records = TermExpiresTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
+                     if (records != null && records.Length > 0 && whereClause.RunQuery)
+                    {
+                        foreach ( TermExpiresRecord record in records)
+                    
+                        {
+                            // AddData method takes four parameters   
+                            // The 1st parameter represent the data format
+                            // The 2nd parameter represent the data value
+                            // The 3rd parameter represent the default alignment of column using the data
+                            // The 4th parameter represent the maximum length of the data value being shown
+                                                 report.AddData("${ExpiryDate}", record.Format(TermExpiresTable.ExpiryDate), ReportEnum.Align.Left, 100);
+                             report.AddData("${Description}", record.Format(TermExpiresTable.Description), ReportEnum.Align.Left, 100);
+
+                            report.WriteRow();
+                        }
+                        pageNum++;
+                        recordCount += records.Length;
+                    }
+                }
+                while (records != null && recordCount < totalRows && whereClause.RunQuery);
+                	
+                
+                report.Close();
+                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".pdf", report.ReportInByteArray, 0, true);
+            
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void ResetButton2_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+           
+            this.SortControl2.ClearSelection();
+          
+              this.ExpiryDateFromFilter.Text = "";
+            
+              this.ExpiryDateToFilter.Text = "";
+            
+              this.TermExpiresSearchText.Text = "";
+            
+              this.CurrentSortOrder.Reset();
+              if (this.InSession(this, "Order_By"))
+                  this.CurrentSortOrder = OrderBy.FromXmlString(this.GetFromSession(this, "Order_By", null));
+              else
+              {
+                  this.CurrentSortOrder = new OrderBy(true, false);
+                  
+              }
+                
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+                
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void SearchButton3_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                
+            this.DataChanged = true;
+          
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public virtual void WordButton1_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+
+                WordReport report = new WordReport();
+
+                report.SpecificReportFileName = Page.Server.MapPath("GroupByPropertiesTable.WordButton1.word");
+                // report.Title replaces the value tag of page header and footer containing ${ReportTitle}
+                report.Title = "TermExpires";
+                // If GroupByPropertiesTable.WordButton1.report specifies a valid report template,
+                // AddColumn methods will generate a report template.
+                // Each AddColumn method-call specifies a column
+                // The 1st parameter represents the text of the column header
+                // The 2nd parameter represents the horizontal alignment of the column header
+                // The 3rd parameter represents the text format of the column detail
+                // The 4th parameter represents the horizontal alignment of the column detail
+                // The 5th parameter represents the relative width of the column
+                 report.AddColumn(TermExpiresTable.ExpiryDate.Name, ReportEnum.Align.Left, "${ExpiryDate}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(TermExpiresTable.Description.Name, ReportEnum.Align.Left, "${Description}", ReportEnum.Align.Left, 28);
+
+                WhereClause whereClause = null;
+                whereClause = CreateWhereClause();
+            
+                OrderBy orderBy = CreateOrderBy();
+                BaseFilter joinFilter = CreateCompoundJoinFilter();
+                
+
+                int rowsPerQuery = 5000;
+                int pageNum = 0;
+                int recordCount = 0;
+                int totalRows = TermExpiresTable.GetRecordCount(joinFilter,whereClause);
+
+                report.Page = Page.GetResourceValue("Txt:Page", "IPv5");
+                report.ApplicationPath = this.Page.MapPath(Page.Request.ApplicationPath);
+
+                ColumnList columns = TermExpiresTable.GetColumnList();
+                TermExpiresRecord[] records = null;
+                do
+                {
+                    records = TermExpiresTable.GetRecords(joinFilter,whereClause, orderBy, pageNum, rowsPerQuery);
+                    if (records != null && records.Length > 0 && whereClause.RunQuery)
+                    {
+                        foreach ( TermExpiresRecord record in records)
+                        {
+                            // AddData method takes four parameters
+                            // The 1st parameter represents the data format
+                            // The 2nd parameter represents the data value
+                            // The 3rd parameter represents the default alignment of column using the data
+                            // The 4th parameter represents the maximum length of the data value being shown
+                             report.AddData("${ExpiryDate}", record.Format(TermExpiresTable.ExpiryDate), ReportEnum.Align.Left, 100);
+                             report.AddData("${Description}", record.Format(TermExpiresTable.Description), ReportEnum.Align.Left, 100);
+
+                            report.WriteRow();
+                        }
+                        pageNum++;
+                        recordCount += records.Length;
+                    }
+                }
+                while (records != null && recordCount < totalRows && whereClause.RunQuery);
+                report.save();
+                BaseClasses.Utils.NetUtils.WriteResponseBinaryAttachment(this.Page.Response, report.Title + ".doc", report.ReportInByteArray, 0, true);
+          
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void Actions1Button_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            //This method is initially empty to implement custom click handler.
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void FilterButton2_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            this.DataChanged = true;
+          
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
+        // event handler for Button
+        public virtual void Filters2Button_Click(object sender, EventArgs args)
+        {
+              
+            try {
+                
+            //This method is initially empty to implement custom click handler.
+      
+            } catch (Exception ex) {
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+    
+        }
+            
+            
+        
 
 
         // Generate the event handling functions for filter and search events.
         
+        // event handler for OrderSort
+        protected virtual void SortControl2_SelectedIndexChanged(object sender, EventArgs args)
+        {
+              
+                  string SelVal1 = this.SortControl2.SelectedValue.ToUpper();
+                  string[] words1 = SelVal1.Split(' ');
+                  if (SelVal1 != "" )
+                  {
+                  SelVal1 = SelVal1.Replace(words1[words1.Length - 1], "").TrimEnd();
+                  foreach (BaseClasses.Data.BaseColumn ColumnNam in TermExpiresTable.GetColumns())
+                  {
+                  if (ColumnNam.Name.ToUpper().Equals(SelVal1))
+                  {
+                  SelVal1 = ColumnNam.InternalName;
+                  }
+                  }
+                  }
+
+                
+                OrderByItem sd = this.CurrentSortOrder.Find(TermExpiresTable.GetColumnByName(SelVal1));
+                if (sd == null || this.CurrentSortOrder.Items != null)
+                {
+                // First time sort, so add sort order for Discontinued.
+                if (TermExpiresTable.GetColumnByName(SelVal1) != null)
+                {
+                  this.CurrentSortOrder.Reset();
+                }
+
+                //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+                if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+                
+                  if (SelVal1 != "--PLEASE_SELECT--" && TermExpiresTable.GetColumnByName(SelVal1) != null)
+                  {
+                    if (words1[words1.Length - 1].Contains("ASC"))
+                  {
+                  this.CurrentSortOrder.Add(TermExpiresTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Asc);
+                    }
+                    else
+                    {
+                      if (words1[words1.Length - 1].Contains("DESC"))
+                  {
+                  this.CurrentSortOrder.Add(TermExpiresTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Desc );
+                      }
+                    }
+                  }
+                
+                }
+                this.DataChanged = true;
+              				
+        }
+            
     
         // Generate the event handling functions for others
         	  
@@ -31855,9 +37070,111 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
 
 #region "Helper Properties"
         
-        public IPv5.UI.IPaginationModern TermExpiresPagination {
+        public IPv5.UI.IThemeButtonWithArrow Actions1Button {
             get {
-                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresPagination");
+                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Actions1Button");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ExcelButton2 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExcelButton2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox ExpiryDateFromFilter {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateFromFilter");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal ExpiryDateLabel5 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel5");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox ExpiryDateToFilter {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateToFilter");
+            }
+        }
+        
+        public IPv5.UI.IThemeButton FilterButton2 {
+            get {
+                return (IPv5.UI.IThemeButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FilterButton2");
+            }
+        }
+        
+        public IPv5.UI.IThemeButtonWithArrow Filters2Button {
+            get {
+                return (IPv5.UI.IThemeButtonWithArrow)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Filters2Button");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ImportButton1 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ImportButton1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton NewButton1 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NewButton1");
+            }
+        }
+        
+        public IPv5.UI.IPaginationModern Pagination1 {
+            get {
+                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Pagination1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton PDFButton2 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PDFButton2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton2 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ResetButton2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton3 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SearchButton3");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Label SortByLabel2 {
+            get {
+                return (System.Web.UI.WebControls.Label)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortByLabel2");
+            }
+        }
+        
+          public System.Web.UI.WebControls.DropDownList SortControl2 {
+          get {
+          return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortControl2");
+          }
+          }
+        
+        public System.Web.UI.WebControls.TextBox TermExpiresSearchText {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresSearchText");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal Title1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Title1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton WordButton1 {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "WordButton1");
             }
         }
         
@@ -32085,6 +37402,7 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
                 SetDescription2();
                 SetDescriptionLabel1();
                 SetRenewalDate();
+                SetRenewalDateLabel();
                 
                 
                 SetTermRenewalsRowDeleteButton();
@@ -32195,6 +37513,12 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
         }
                 
         public virtual void SetDescriptionLabel1()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetRenewalDateLabel()
                   {
                   
                     
@@ -32393,14 +37717,11 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
             bool hasFiltersBankLoansTableControl = false;
             hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
       
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
+            bool hasFiltersContactsTableControl1 = false;
+            hasFiltersContactsTableControl1 = hasFiltersContactsTableControl1 && false; // suppress warning
       
             bool hasFiltersDirectorsTableControl = false;
             hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
       
             bool hasFiltersMMContractsTableControl = false;
             hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
@@ -32738,6 +38059,12 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
             }
         }
             
+        public System.Web.UI.WebControls.Literal RenewalDateLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RenewalDateLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.ImageButton TermRenewalsRowDeleteButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermRenewalsRowDeleteButton");
@@ -32870,24 +38197,21 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
             if (!this.Page.IsPostBack)
             {
                 string initialVal = "";
-                if  (this.InSession(this.DescriptionFilter1)) 				
-                    initialVal = this.GetFromSession(this.DescriptionFilter1);
                 
-                else
-                    
-                    initialVal = EvaluateFormula("URL(\"Description\")");
+                  if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
+                  {
+                  initialVal = "";
+                  }
                 
-                if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
-                {
-                initialVal = "";
-                }
-              
+                if  (this.InSession(this.SortControl5)) 				
+                    initialVal = this.GetFromSession(this.SortControl5);
+                
                 if (initialVal != null && initialVal != "")		
                 {
                         
-                    this.DescriptionFilter1.Items.Add(new ListItem(initialVal, initialVal));
+                    this.SortControl5.Items.Add(new ListItem(initialVal, initialVal));
                         
-                    this.DescriptionFilter1.SelectedValue = initialVal;
+                    this.SortControl5.SelectedValue = initialVal;
                             
                     }
             }
@@ -33001,8 +38325,6 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
-              this.DescriptionSortLabel1.Click += DescriptionSortLabel1_Click;
-            
             // Setup the button events.
           
                     this.TermRenewalsExportExcelButton.Click += TermRenewalsExportExcelButton_Click;
@@ -33025,7 +38347,7 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
                         
                     this.TermRenewalsFiltersButton.Button.Click += TermRenewalsFiltersButton_Click;
                         
-            this.DescriptionFilter1.SelectedIndexChanged += new EventHandler(DescriptionFilter1_SelectedIndexChanged);
+            this.SortControl5.SelectedIndexChanged += new EventHandler(SortControl5_SelectedIndexChanged);
                     
         
          //' Setup events for others
@@ -33261,13 +38583,12 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Call the Set methods for each controls on the panel
         
-                SetDescriptionFilter1();
-                SetDescriptionLabel4();
-                SetDescriptionSortLabel1();
                 
                 SetRenewalDateLabel2();
                 
                 
+                SetSortByLabel5();
+                SetSortControl5();
                 
                 
                 
@@ -33278,7 +38599,6 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
                 
                 
                 SetTermRenewalsSearch1();
-                
                 
                 
                 
@@ -33589,12 +38909,6 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
             
       HttpContext.Current.Session["TermRenewalsTableControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
     
-            if (MiscUtils.IsValueSelected(this.DescriptionFilter1)) {
-                        
-                wc.iAND(TermRenewalsTable.Description, BaseFilter.ComparisonOperator.EqualsTo, MiscUtils.GetSelectedValue(this.DescriptionFilter1, this.GetFromSession(this.DescriptionFilter1)), false, false);
-                    
-            }
-                      
             if (MiscUtils.IsValueSelected(this.RenewalDateFromFilter1)) {
                 string val = MiscUtils.GetSelectedValue(this.RenewalDateFromFilter1, this.GetFromSession(this.RenewalDateFromFilter1));
                 DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
@@ -33689,14 +39003,6 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
-      String DescriptionFilter1SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "DescriptionFilter1_Ajax"];
-            if (MiscUtils.IsValueSelected(DescriptionFilter1SelectedValue)) {
-
-              
-                wc.iAND(TermRenewalsTable.Description, BaseFilter.ComparisonOperator.EqualsTo, DescriptionFilter1SelectedValue, false, false);
-                      
-      }
-                      
             string RenewalDateFromFilter1SelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "RenewalDateFromFilter1_Ajax"];
             if (MiscUtils.IsValueSelected(RenewalDateFromFilter1SelectedValue)) {
                 DateTime d = DateParser.ParseDate(RenewalDateFromFilter1SelectedValue, DateColumn.DEFAULT_FORMAT);
@@ -34064,29 +39370,28 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
-        public virtual void SetDescriptionLabel4()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDescriptionSortLabel1()
-                  {
-                  
-                    
-        }
-                
         public virtual void SetRenewalDateLabel2()
                   {
                   
                     
         }
                 
-        public virtual void SetDescriptionFilter1()
+        public virtual void SetSortByLabel5()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.SortByLabel5.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetSortControl5()
         {
             
-            this.PopulateDescriptionFilter1(MiscUtils.GetSelectedValue(this.DescriptionFilter1,  GetFromSession(this.DescriptionFilter1)), 500);					
-                                     
+                this.PopulateSortControl5(MiscUtils.GetSelectedValue(this.SortControl5,  GetFromSession(this.SortControl5)), 500);					
+                    
+
         }
             
         public virtual void SetTermRenewalsSearch1()
@@ -34097,108 +39402,43 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
                                    
         }
             
-        // Get the filters' data for DescriptionFilter1.
+        // Get the filters' data for SortControl5.
                 
-        protected virtual void PopulateDescriptionFilter1(string selectedValue, int maxItems)
+        protected virtual void PopulateSortControl5(string selectedValue, int maxItems)
                     
         {
-        
             
-            //Setup the WHERE clause.
-                        
-            this.DescriptionFilter1.Items.Clear();
-            WhereClause wc = this.CreateWhereClause_DescriptionFilter1();            
-            			  			
-            // Set up the WHERE and the ORDER BY clause by calling the CreateWhereClause_DescriptionFilter1 function.
-            // It is better to customize the where clause there.
-             
-            // Setup the static list items        
-            
-                // Add the All item.
-                this.DescriptionFilter1.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
               
-            
-            
-            OrderBy orderBy = new OrderBy(false, false);
-            orderBy.Add(TermRenewalsTable.Description, OrderByItem.OrderDir.Asc);                
-            
-            
-            string[] values = new string[0];
-            if (wc.RunQuery)
-            {
-            
-                values = TermRenewalsTable.GetValues(TermRenewalsTable.Description, wc, orderBy, maxItems);
-            
-            }
-            
-            ArrayList listDuplicates = new ArrayList();
-            foreach (string cvalue in values)
-            {
-            // Create the item and add to the list.
-            string fvalue;
-            if ( TermRenewalsTable.Description.IsColumnValueTypeBoolean()) {
-                    fvalue = cvalue;
-                }else {
-                    fvalue = TermRenewalsTable.Description.Format(cvalue);
-                }
-                if (fvalue == null) {
-                    fvalue = "";
-                }
-
-                fvalue = fvalue.Trim();
-
-                if ( fvalue.Length > 50 ) {
-                    fvalue = fvalue.Substring(0, 50) + "...";
-                }
-
-                ListItem dupItem = this.DescriptionFilter1.Items.FindByText(fvalue);
-								
-                if (dupItem != null) {
-                    listDuplicates.Add(fvalue);
-                    if (!string.IsNullOrEmpty(dupItem.Value))
-                    {
-                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
-                    }
-                }
-
-                ListItem newItem = new ListItem(fvalue, cvalue);
-                this.DescriptionFilter1.Items.Add(newItem);
-
-                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                }
-            }
-
-                          
+                this.SortControl5.Items.Clear();
+                
+              // 1. Setup the static list items
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Ascending}"), "Description Asc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Description {Txt:Descending}"), "Description Desc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Renewal Date {Txt:Ascending}"), "RenewalDate Asc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Renewal Date {Txt:Descending}"), "RenewalDate Desc"));
+              
             try
-            {
-      
-                
+            {          
                 // Set the selected value.
-                MiscUtils.SetSelectedValue(this.DescriptionFilter1, selectedValue);
-                
+                MiscUtils.SetSelectedValue(this.SortControl5, selectedValue);
+
+               
             }
             catch
             {
             }
-            
-            
-            if (this.DescriptionFilter1.SelectedValue != null && this.DescriptionFilter1.Items.FindByValue(this.DescriptionFilter1.SelectedValue) == null)
-                this.DescriptionFilter1.SelectedValue = null;
-                           
+              
+            if (this.SortControl5.SelectedValue != null && this.SortControl5.Items.FindByValue(this.SortControl5.SelectedValue) == null)
+                this.SortControl5.SelectedValue = null;
+              
         }
             
-        public virtual WhereClause CreateWhereClause_DescriptionFilter1()
-        {
-            // Create a where clause for the filter DescriptionFilter1.
-            // This function is called by the Populate method to load the items 
-            // in the DescriptionFilter1DropDownList
-        
-            WhereClause wc = new WhereClause();
-            return wc;
-            
-        }
-      
 
     
         protected virtual void Control_PreRender(object sender, System.EventArgs e)
@@ -34232,7 +39472,7 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
             base.SaveControlsToSession();
             // Save filter controls to values to session.
         
-            this.SaveToSession(this.DescriptionFilter1, this.DescriptionFilter1.SelectedValue);
+            this.SaveToSession(this.SortControl5, this.SortControl5.SelectedValue);
                   
             this.SaveToSession(this.RenewalDateFromFilter1, this.RenewalDateFromFilter1.Text);
                   
@@ -34267,8 +39507,8 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
         {
             // Save filter controls to values to session.
           
-      this.SaveToSession("DescriptionFilter1_Ajax", this.DescriptionFilter1.SelectedValue);
-              
+            this.SaveToSession(this.SortControl5, this.SortControl5.SelectedValue);
+                  
       this.SaveToSession("RenewalDateFromFilter1_Ajax", this.RenewalDateFromFilter1.Text);
               
       this.SaveToSession("RenewalDateToFilter1_Ajax", this.RenewalDateToFilter1.Text);
@@ -34285,7 +39525,7 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
             base.ClearControlsFromSession();
             // Clear filter controls values from the session.
         
-            this.RemoveFromSession(this.DescriptionFilter1);
+            this.RemoveFromSession(this.SortControl5);
             this.RemoveFromSession(this.RenewalDateFromFilter1);
             this.RemoveFromSession(this.RenewalDateToFilter1);
             this.RemoveFromSession(this.TermRenewalsSearch1);
@@ -34448,9 +39688,6 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
          themeButtonTermRenewalsFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonExpandArrow.png";
     
       
-            if (MiscUtils.IsValueSelected(DescriptionFilter1))
-                themeButtonTermRenewalsFiltersButton.ArrowImage.ImageUrl = "../Images/ButtonCheckmark.png";
-        
    
         }
                
@@ -34580,36 +39817,6 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
-        public virtual void DescriptionSortLabel1_Click(object sender, EventArgs args)
-        {
-            //Sorts by Description when clicked.
-              
-            // Get previous sorting state for Description.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(TermRenewalsTable.Description);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for Description.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(TermRenewalsTable.Description, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by Description, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
 
         // Generate the event handling functions for button events.
         
@@ -34948,8 +40155,9 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
               
             try {
                 
-              this.DescriptionFilter1.ClearSelection();
-            
+           
+            this.SortControl5.ClearSelection();
+          
               this.RenewalDateFromFilter1.Text = "";
             
               this.RenewalDateToFilter1.Text = "";
@@ -35160,15 +40368,56 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for filter and search events.
         
-        // event handler for FieldFilter
-        protected virtual void DescriptionFilter1_SelectedIndexChanged(object sender, EventArgs args)
+        // event handler for OrderSort
+        protected virtual void SortControl5_SelectedIndexChanged(object sender, EventArgs args)
         {
-            // Setting the DataChanged to True results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-            
-           				
+              
+                  string SelVal1 = this.SortControl5.SelectedValue.ToUpper();
+                  string[] words1 = SelVal1.Split(' ');
+                  if (SelVal1 != "" )
+                  {
+                  SelVal1 = SelVal1.Replace(words1[words1.Length - 1], "").TrimEnd();
+                  foreach (BaseClasses.Data.BaseColumn ColumnNam in TermRenewalsTable.GetColumns())
+                  {
+                  if (ColumnNam.Name.ToUpper().Equals(SelVal1))
+                  {
+                  SelVal1 = ColumnNam.InternalName;
+                  }
+                  }
+                  }
+
+                
+                OrderByItem sd = this.CurrentSortOrder.Find(TermRenewalsTable.GetColumnByName(SelVal1));
+                if (sd == null || this.CurrentSortOrder.Items != null)
+                {
+                // First time sort, so add sort order for Discontinued.
+                if (TermRenewalsTable.GetColumnByName(SelVal1) != null)
+                {
+                  this.CurrentSortOrder.Reset();
+                }
+
+                //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+                if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+                
+                  if (SelVal1 != "--PLEASE_SELECT--" && TermRenewalsTable.GetColumnByName(SelVal1) != null)
+                  {
+                    if (words1[words1.Length - 1].Contains("ASC"))
+                  {
+                  this.CurrentSortOrder.Add(TermRenewalsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Asc);
+                    }
+                    else
+                    {
+                      if (words1[words1.Length - 1].Contains("DESC"))
+                  {
+                  this.CurrentSortOrder.Add(TermRenewalsTable.GetColumnByName(SelVal1),OrderByItem.OrderDir.Desc );
+                      }
+                    }
+                  }
+                
+                }
+                this.DataChanged = true;
+              				
         }
             
     
@@ -35245,24 +40494,6 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
 
 #region "Helper Properties"
         
-        public System.Web.UI.WebControls.DropDownList DescriptionFilter1 {
-            get {
-                return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionFilter1");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal DescriptionLabel4 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel4");
-            }
-        }
-        
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel1 {
-            get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionSortLabel1");
-            }
-        }
-        
         public System.Web.UI.WebControls.TextBox RenewalDateFromFilter1 {
             get {
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RenewalDateFromFilter1");
@@ -35280,6 +40511,18 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RenewalDateToFilter1");
             }
         }
+        
+        public System.Web.UI.WebControls.Label SortByLabel5 {
+            get {
+                return (System.Web.UI.WebControls.Label)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortByLabel5");
+            }
+        }
+        
+          public System.Web.UI.WebControls.DropDownList SortControl5 {
+          get {
+          return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "SortControl5");
+          }
+          }
         
         public IPv5.UI.IThemeButtonWithArrow TermRenewalsButtonsButton {
             get {
@@ -35492,1965 +40735,6 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
 
 
     }
-  
-// Base class for the ContactsRecordControl control on the GroupByPropertiesTable page.
-// Do not modify this class. Instead override any method in ContactsRecordControl.
-public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
-{
-        public BaseContactsRecordControl()
-        {
-            this.Init += Control_Init;
-            this.Load += Control_Load;
-            this.PreRender += Control_PreRender;
-            this.EvaluateFormulaDelegate = new DataSource.EvaluateFormulaDelegate(this.EvaluateFormula);
-        }
-
-        // To customize, override this method in ContactsRecordControl.
-        protected virtual void Control_Init(object sender, System.EventArgs e)
-        {
-        
-            
-            string url = "";
-            if (url == null) url = ""; //avoid warning on VS
-            // Setup the filter and search events.
-                
-        }
-
-        // To customize, override this method in ContactsRecordControl.
-        protected virtual void Control_Load(object sender, System.EventArgs e)
-        {      
-        
-              // Setup the pagination events.	  
-                     
-        
-              // Register the event handlers.
-
-          
-        }
-
-        public virtual void LoadData()  
-        {
-            // Load the data from the database into the DataSource DatabaseMM_IP1%dbo.Contacts record.
-            // It is better to make changes to functions called by LoadData such as
-            // CreateWhereClause, rather than making changes here.
-            
-        
-            // This is the first time a record is being retrieved from the database.
-            // So create a Where Clause based on the staic Where clause specified
-            // on the Query wizard and the dynamic part specified by the end user
-            // on the search and filter controls (if any).
-            
-            WhereClause wc = this.CreateWhereClause();
-            
-            System.Web.UI.WebControls.Panel Panel = (System.Web.UI.WebControls.Panel)MiscUtils.FindControlRecursively(this, "ContactsRecordControlPanel");
-            if (Panel != null){
-                Panel.Visible = true;
-            }
-            
-            // If there is no Where clause, then simply create a new, blank record.
-            
-            if (wc == null || !(wc.RunQuery)) {
-                this.DataSource = new ContactsRecord();
-            
-                if (Panel != null){
-                    Panel.Visible = false;
-                }
-              
-                return;
-            }
-          
-            // Retrieve the record from the database.  It is possible
-            ContactsRecord[] recList = ContactsTable.GetRecords(wc, null, 0, 2);
-            if (recList.Length == 0) {
-                // There is no data for this Where clause.
-                wc.RunQuery = false;
-                
-                if (Panel != null){
-                    Panel.Visible = false;
-                }
-                
-                return;
-            }
-            
-            // Set DataSource based on record retrieved from the database.
-            this.DataSource = ContactsTable.GetRecord(recList[0].GetID().ToXmlString(), true);
-                  
-        }
-
-        public override void DataBind()
-        {
-            // The DataBind method binds the user interface controls to the values
-            // from the database record.  To do this, it calls the Set methods for 
-            // each of the field displayed on the webpage.  It is better to make 
-            // changes in the Set methods, rather than making changes here.
-            
-            base.DataBind();
-            
-            this.ClearControlsFromSession();
-            
-            // Make sure that the DataSource is initialized.
-            
-            if (this.DataSource == null) {
-             //This is to make sure all the controls will be invisible if no record is present in the cell
-             
-                return;
-            }
-              
-            // LoadData for DataSource for chart and report if they exist
-          
-            // Store the checksum. The checksum is used to
-            // ensure the record was not changed by another user.
-            if (this.DataSource.GetCheckSumValue() != null)
-                this.CheckSum = this.DataSource.GetCheckSumValue().Value;
-            
-
-            // Call the Set methods for each controls on the panel
-        
-                SetActive();
-                SetActiveLabel();
-                SetAddress12();
-                SetAddress1Label2();
-                SetAddress22();
-                SetAddress32();
-                SetBankAccount();
-                SetBankAccountLabel();
-                SetDateOfBirth();
-                SetDateOfBirthLabel();
-                SeteMail1();
-                SeteMailLabel();
-                SetFirstName1();
-                SetFirstName2();
-                SetFirstName2Label();
-                SetIrdNumber();
-                SetIrdNumberLabel();
-                SetLastName1();
-                SetLastName2();
-                
-                SetPhoneNumber();
-                SetPhoneNumberLabel();
-                SetPlaceOfBirth();
-                SetPlaceOfBirthLabel();
-                SetPostCode2();
-                SetPostCodeLabel1();
-                SetTitle0();
-                SetTrustName();
-                SetTrustNameLabel();
-
-      
-
-            this.IsNewRecord = true;
-          
-            if (this.DataSource.IsCreated) {
-                this.IsNewRecord = false;
-              
-                if (this.DataSource.GetID() != null)
-                    this.RecordUniqueId = this.DataSource.GetID().ToXmlString();
-              
-            }
-            
-
-            // Now load data for each record and table child UI controls.
-            // Ordering is important because child controls get 
-            // their parent ids from their parent UI controls.
-            bool shouldResetControl = false;
-            if (shouldResetControl) { }; // prototype usage to void compiler warnings
-            
-        }
-        
-        
-        public virtual void SetActive()
-        {
-            
-                    
-            // Set the Active Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.Active is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.ActiveSpecified) {
-                								
-                // If the Active is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.Active);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.Active.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // Active is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.Active.Text = ContactsTable.Active.Format(ContactsTable.Active.DefaultValue);
-            		
-            }
-            
-            // If the Active is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.Active.Text == null ||
-                this.Active.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.Active.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetAddress12()
-        {
-            
-                    
-            // Set the Address1 Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.Address12 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.Address1Specified) {
-                								
-                // If the Address1 is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.Address1);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.Address12.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // Address1 is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.Address12.Text = ContactsTable.Address1.Format(ContactsTable.Address1.DefaultValue);
-            		
-            }
-            
-            // If the Address1 is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.Address12.Text == null ||
-                this.Address12.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.Address12.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetAddress22()
-        {
-            
-                    
-            // Set the Address2 Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.Address22 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.Address2Specified) {
-                								
-                // If the Address2 is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.Address2);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.Address22.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // Address2 is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.Address22.Text = ContactsTable.Address2.Format(ContactsTable.Address2.DefaultValue);
-            		
-            }
-            
-            // If the Address2 is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.Address22.Text == null ||
-                this.Address22.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.Address22.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetAddress32()
-        {
-            
-                    
-            // Set the Address3 Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.Address32 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.Address3Specified) {
-                								
-                // If the Address3 is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.Address3);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.Address32.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // Address3 is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.Address32.Text = ContactsTable.Address3.Format(ContactsTable.Address3.DefaultValue);
-            		
-            }
-            
-            // If the Address3 is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.Address32.Text == null ||
-                this.Address32.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.Address32.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetBankAccount()
-        {
-            
-                    
-            // Set the BankAccount Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.BankAccount is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.BankAccountSpecified) {
-                								
-                // If the BankAccount is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.BankAccount);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.BankAccount.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // BankAccount is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.BankAccount.Text = ContactsTable.BankAccount.Format(ContactsTable.BankAccount.DefaultValue);
-            		
-            }
-            
-            // If the BankAccount is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.BankAccount.Text == null ||
-                this.BankAccount.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.BankAccount.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetDateOfBirth()
-        {
-            
-                    
-            // Set the DateOfBirth Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.DateOfBirth is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.DateOfBirthSpecified) {
-                								
-                // If the DateOfBirth is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.DateOfBirth, @"d");
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.DateOfBirth.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // DateOfBirth is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.DateOfBirth.Text = ContactsTable.DateOfBirth.Format(ContactsTable.DateOfBirth.DefaultValue, @"d");
-            		
-            }
-            
-            // If the DateOfBirth is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.DateOfBirth.Text == null ||
-                this.DateOfBirth.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.DateOfBirth.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SeteMail1()
-        {
-            
-                    
-            // Set the eMail Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.eMail1 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.eMailSpecified) {
-                								
-                // If the eMail is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.eMail);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.eMail1.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // eMail is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.eMail1.Text = ContactsTable.eMail.Format(ContactsTable.eMail.DefaultValue);
-            		
-            }
-            
-            // If the eMail is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.eMail1.Text == null ||
-                this.eMail1.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.eMail1.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetFirstName1()
-        {
-            
-                    
-            // Set the FirstName Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.FirstName1 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.FirstNameSpecified) {
-                								
-                // If the FirstName is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.FirstName);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.FirstName1.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // FirstName is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.FirstName1.Text = ContactsTable.FirstName.Format(ContactsTable.FirstName.DefaultValue);
-            		
-            }
-            
-            // If the FirstName is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.FirstName1.Text == null ||
-                this.FirstName1.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.FirstName1.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetFirstName2()
-        {
-            
-                    
-            // Set the FirstName2 Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.FirstName2 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.FirstName2Specified) {
-                								
-                // If the FirstName2 is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.FirstName2);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.FirstName2.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // FirstName2 is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.FirstName2.Text = ContactsTable.FirstName2.Format(ContactsTable.FirstName2.DefaultValue);
-            		
-            }
-            
-            // If the FirstName2 is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.FirstName2.Text == null ||
-                this.FirstName2.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.FirstName2.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetIrdNumber()
-        {
-            
-                    
-            // Set the IrdNumber Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.IrdNumber is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.IrdNumberSpecified) {
-                								
-                // If the IrdNumber is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.IrdNumber);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.IrdNumber.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // IrdNumber is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.IrdNumber.Text = ContactsTable.IrdNumber.Format(ContactsTable.IrdNumber.DefaultValue);
-            		
-            }
-            
-            // If the IrdNumber is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.IrdNumber.Text == null ||
-                this.IrdNumber.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.IrdNumber.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetLastName1()
-        {
-            
-                    
-            // Set the LastName Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.LastName1 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.LastNameSpecified) {
-                								
-                // If the LastName is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.LastName);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.LastName1.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // LastName is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.LastName1.Text = ContactsTable.LastName.Format(ContactsTable.LastName.DefaultValue);
-            		
-            }
-            
-            // If the LastName is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.LastName1.Text == null ||
-                this.LastName1.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.LastName1.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetLastName2()
-        {
-            
-                    
-            // Set the LastName2 Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.LastName2 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.LastName2Specified) {
-                								
-                // If the LastName2 is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.LastName2);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.LastName2.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // LastName2 is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.LastName2.Text = ContactsTable.LastName2.Format(ContactsTable.LastName2.DefaultValue);
-            		
-            }
-            
-            // If the LastName2 is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.LastName2.Text == null ||
-                this.LastName2.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.LastName2.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetPhoneNumber()
-        {
-            
-                    
-            // Set the PhoneNumber Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.PhoneNumber is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.PhoneNumberSpecified) {
-                								
-                // If the PhoneNumber is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.PhoneNumber);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.PhoneNumber.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // PhoneNumber is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.PhoneNumber.Text = ContactsTable.PhoneNumber.Format(ContactsTable.PhoneNumber.DefaultValue);
-            		
-            }
-            
-            // If the PhoneNumber is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.PhoneNumber.Text == null ||
-                this.PhoneNumber.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.PhoneNumber.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetPlaceOfBirth()
-        {
-            
-                    
-            // Set the PlaceOfBirth Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.PlaceOfBirth is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.PlaceOfBirthSpecified) {
-                								
-                // If the PlaceOfBirth is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.PlaceOfBirth);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.PlaceOfBirth.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // PlaceOfBirth is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.PlaceOfBirth.Text = ContactsTable.PlaceOfBirth.Format(ContactsTable.PlaceOfBirth.DefaultValue);
-            		
-            }
-            
-            // If the PlaceOfBirth is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.PlaceOfBirth.Text == null ||
-                this.PlaceOfBirth.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.PlaceOfBirth.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetPostCode2()
-        {
-            
-                    
-            // Set the PostCode Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.PostCode2 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.PostCodeSpecified) {
-                								
-                // If the PostCode is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.PostCode);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.PostCode2.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // PostCode is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.PostCode2.Text = ContactsTable.PostCode.Format(ContactsTable.PostCode.DefaultValue);
-            		
-            }
-            
-            // If the PostCode is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.PostCode2.Text == null ||
-                this.PostCode2.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.PostCode2.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetTitle0()
-        {
-            
-                    
-            // Set the Title Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.Title0 is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.Title0Specified) {
-                								
-                // If the Title is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.Title0);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.Title0.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // Title is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.Title0.Text = ContactsTable.Title0.Format(ContactsTable.Title0.DefaultValue);
-            		
-            }
-            
-            // If the Title is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.Title0.Text == null ||
-                this.Title0.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.Title0.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetTrustName()
-        {
-            
-                    
-            // Set the TrustName Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.Contacts database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
-            // this.TrustName is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.TrustNameSpecified) {
-                								
-                // If the TrustName is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactsTable.TrustName);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.TrustName.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // TrustName is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.TrustName.Text = ContactsTable.TrustName.Format(ContactsTable.TrustName.DefaultValue);
-            		
-            }
-            
-            // If the TrustName is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.TrustName.Text == null ||
-                this.TrustName.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.TrustName.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetActiveLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetAddress1Label2()
-                  {
-                  
-                        this.Address1Label2.Text = EvaluateFormula("\"Address\"");
-                      
-                    
-        }
-                
-        public virtual void SetBankAccountLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDateOfBirthLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SeteMailLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetFirstName2Label()
-                  {
-                  
-                        this.FirstName2Label.Text = EvaluateFormula("\"Second Contact\"");
-                      
-                    
-        }
-                
-        public virtual void SetIrdNumberLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPhoneNumberLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPlaceOfBirthLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPostCodeLabel1()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetTrustNameLabel()
-                  {
-                  
-                    
-        }
-                
-        public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS, FormulaEvaluator e)
-        {
-            if (e == null)
-                e = new FormulaEvaluator();
-
-            e.Variables.Clear();
-            // add variables for formula evaluation
-            if (variables != null)
-            {
-                System.Collections.Generic.IEnumerator<System.Collections.Generic.KeyValuePair<string, object>> enumerator = variables.GetEnumerator();
-                while (enumerator.MoveNext())
-                {
-                    e.Variables.Add(enumerator.Current.Key, enumerator.Current.Value);
-                }
-            }
-            
-            
-            if (includeDS)
-            {
-                
-            }
-            
-            // All variables referred to in the formula are expected to be
-            // properties of the DataSource.  For example, referring to
-            // UnitPrice as a variable will refer to DataSource.UnitPrice
-            if (dataSourceForEvaluate == null)
-                e.DataSource = this.DataSource;
-            else
-                e.DataSource = dataSourceForEvaluate;
-
-            // Define the calling control.  This is used to add other 
-            // related table and record controls as variables.
-            e.CallingControl = this;
-
-            object resultObj = e.Evaluate(formula);
-            if (resultObj == null)
-                return "";
-            
-            if ( !string.IsNullOrEmpty(format) && (string.IsNullOrEmpty(formula) || formula.IndexOf("Format(") < 0) )
-                return FormulaUtils.Format(resultObj, format);
-            else
-                return resultObj.ToString();
-        }
-                
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables, bool includeDS)
-        {
-          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, includeDS, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string, object> variables)
-        {
-          return EvaluateFormula(formula, dataSourceForEvaluate, format, variables, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, format, null, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, System.Collections.Generic.IDictionary<string, object> variables, FormulaEvaluator e)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, variables, true, e);
-        }
-
-        public virtual string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate)
-        {
-          return this.EvaluateFormula(formula, dataSourceForEvaluate, null, null, true, null);
-        }
-
-        public virtual string EvaluateFormula(string formula, bool includeDS)
-        {
-          return this.EvaluateFormula(formula, null, null, null, includeDS, null);
-        }
-
-        public virtual string EvaluateFormula(string formula)
-        {
-          return this.EvaluateFormula(formula, null, null, null, true, null);
-        }
-        
-      
-        public virtual void ResetControl()
-        {
-          
-        }
-        
-
-        public virtual void RegisterPostback()
-        {
-            
-        }
-    
-        
-
-        public virtual void SaveData()
-        {
-            // Saves the associated record in the database.
-            // SaveData calls Validate and Get methods - so it may be more appropriate to
-            // customize those methods.
-
-            // 1. Load the existing record from the database. Since we save the entire record, this ensures 
-            // that fields that are not displayed are also properly initialized.
-            this.LoadData();
-        
-            // The checksum is used to ensure the record was not changed by another user.
-            if (this.DataSource != null && this.DataSource.GetCheckSumValue() != null) {
-                if (this.CheckSum != null && this.CheckSum != this.DataSource.GetCheckSumValue().Value) {
-                    throw new Exception(Page.GetResourceValue("Err:RecChangedByOtherUser", "IPv5"));
-                }
-            }
-        
-            System.Web.UI.WebControls.Panel Panel = (System.Web.UI.WebControls.Panel)MiscUtils.FindControlRecursively(this, "ContactsRecordControlPanel");
-            if ( (Panel != null && !Panel.Visible) || this.DataSource == null){
-                return;
-            }
-          LinkTableTableControlRow parentCtrl;
-      
-            parentCtrl = (LinkTableTableControlRow)MiscUtils.GetParentControlObject(this, "LinkTableTableControlRow");
-          
-        if (parentCtrl != null && parentCtrl.DataSource == null) {
-        // Load the record if it is not loaded yet.
-        parentCtrl.LoadData();
-        }
-        if (parentCtrl == null || parentCtrl.DataSource == null) {
-        // Get the error message from the application resource file.
-        throw new Exception(Page.GetResourceValue("Err:NoParentRecId", "IPv5"));
-        }
-        
-          
-            // 2. Perform any custom validation.
-            this.Validate();
-
-            // 3. Set the values in the record with data from UI controls.
-            // This calls the Get() method for each of the user interface controls.
-            this.GetUIData();
-   
-            // 4. Save in the database.
-            // We should not save the record if the data did not change. This
-            // will save a database hit and avoid triggering any database triggers.
-            
-            if (this.DataSource.IsAnyValueChanged) {
-                // Save record to database but do not commit yet.
-                // Auto generated ids are available after saving for use by child (dependent) records.
-                this.DataSource.Save();
-                
-            }
-            
-      
-            // update session or cookie by formula
-             		  
-      
-            // Setting the DataChanged to True results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-            this.ResetData = true;
-            
-            this.CheckSum = "";
-            // For Master-Detail relationships, save data on the Detail table(s)            
-          
-        }
-
-        public virtual void GetUIData()
-        {
-            // The GetUIData method retrieves the updated values from the user interface 
-            // controls into a database record in preparation for saving or updating.
-            // To do this, it calls the Get methods for each of the field displayed on 
-            // the webpage.  It is better to make changes in the Get methods, rather 
-            // than making changes here.
-      
-            // Call the Get methods for each of the user interface controls.
-        
-            GetActive();
-            GetAddress12();
-            GetAddress22();
-            GetAddress32();
-            GetBankAccount();
-            GetDateOfBirth();
-            GeteMail1();
-            GetFirstName1();
-            GetFirstName2();
-            GetIrdNumber();
-            GetLastName1();
-            GetLastName2();
-            GetPhoneNumber();
-            GetPlaceOfBirth();
-            GetPostCode2();
-            GetTitle0();
-            GetTrustName();
-        }
-        
-        
-        public virtual void GetActive()
-        {
-            
-        }
-                
-        public virtual void GetAddress12()
-        {
-            
-        }
-                
-        public virtual void GetAddress22()
-        {
-            
-        }
-                
-        public virtual void GetAddress32()
-        {
-            
-        }
-                
-        public virtual void GetBankAccount()
-        {
-            
-        }
-                
-        public virtual void GetDateOfBirth()
-        {
-            
-        }
-                
-        public virtual void GeteMail1()
-        {
-            
-        }
-                
-        public virtual void GetFirstName1()
-        {
-            
-        }
-                
-        public virtual void GetFirstName2()
-        {
-            
-        }
-                
-        public virtual void GetIrdNumber()
-        {
-            
-        }
-                
-        public virtual void GetLastName1()
-        {
-            
-        }
-                
-        public virtual void GetLastName2()
-        {
-            
-        }
-                
-        public virtual void GetPhoneNumber()
-        {
-            
-        }
-                
-        public virtual void GetPlaceOfBirth()
-        {
-            
-        }
-                
-        public virtual void GetPostCode2()
-        {
-            
-        }
-                
-        public virtual void GetTitle0()
-        {
-            
-        }
-                
-        public virtual void GetTrustName()
-        {
-            
-        }
-                
-
-      // To customize, override this method in ContactsRecordControl.
-      
-        public virtual WhereClause CreateWhereClause()
-         
-        {
-    
-            bool hasFiltersBankLoansTableControl = false;
-            hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
-      
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
-      
-            bool hasFiltersDirectorsTableControl = false;
-            hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
-      
-            bool hasFiltersMMContractsTableControl = false;
-            hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertiesTableControl = false;
-            hasFiltersPropertiesTableControl = hasFiltersPropertiesTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertyContactsTableControl = false;
-            hasFiltersPropertyContactsTableControl = hasFiltersPropertyContactsTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertyNotesTableControl = false;
-            hasFiltersPropertyNotesTableControl = hasFiltersPropertyNotesTableControl && false; // suppress warning
-      
-            bool hasFiltersRentReviewsTableControl = false;
-            hasFiltersRentReviewsTableControl = hasFiltersRentReviewsTableControl && false; // suppress warning
-      
-            bool hasFiltersTermExpiresTableControl = false;
-            hasFiltersTermExpiresTableControl = hasFiltersTermExpiresTableControl && false; // suppress warning
-      
-            bool hasFiltersTermRenewalsTableControl = false;
-            hasFiltersTermRenewalsTableControl = hasFiltersTermRenewalsTableControl && false; // suppress warning
-      
-            WhereClause wc;
-            ContactsTable.Instance.InnerFilter = null;
-            wc = new WhereClause();
-            
-            // Compose the WHERE clause consist of:
-            // 1. Static clause defined at design time.
-            // 2. User selected search criteria.
-            // 3. User selected filter criteria.
-
-              
-      KeyValue selectedRecordKeyValue = new KeyValue();
-    
-          KeyValue linkTableRecordObj = null;
-          // make variable assignment here to avoid possible incorrect compiler warning
-          KeyValue tmp = linkTableRecordObj;
-          linkTableRecordObj = tmp;
-        LinkTableTableControlRow linkTableTableControlObjRow = (MiscUtils.GetParentControlObject(this, "LinkTableTableControlRow") as LinkTableTableControlRow);
-          
-              if (linkTableTableControlObjRow != null && linkTableTableControlObjRow.GetRecord() != null)
-              {
-              wc.iAND(ContactsTable.ContactID, BaseFilter.ComparisonOperator.EqualsTo, linkTableTableControlObjRow.GetRecord().ContactID.ToString());
-              }
-              else
-              {
-              wc.RunQuery = false;
-              return wc;
-              }
-            
-      HttpContext.Current.Session["ContactsRecordControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
-    
-            return wc;
-          
-        }
-        
-        
-        public virtual WhereClause CreateWhereClause(String searchText, String fromSearchControl, String AutoTypeAheadSearch, String AutoTypeAheadWordSeparators)
-        {
-            // This CreateWhereClause is used for loading list of suggestions for Auto Type-Ahead feature.
-            ContactsTable.Instance.InnerFilter = null;
-            WhereClause wc= new WhereClause();
-        
-            bool hasFiltersBankLoansTableControl = false;
-            hasFiltersBankLoansTableControl = hasFiltersBankLoansTableControl && false; // suppress warning
-      
-            bool hasFiltersContactsRecordControl = false;
-            hasFiltersContactsRecordControl = hasFiltersContactsRecordControl && false; // suppress warning
-      
-            bool hasFiltersDirectorsTableControl = false;
-            hasFiltersDirectorsTableControl = hasFiltersDirectorsTableControl && false; // suppress warning
-      
-            bool hasFiltersLinkTableTableControl = false;
-            hasFiltersLinkTableTableControl = hasFiltersLinkTableTableControl && false; // suppress warning
-      
-            bool hasFiltersMMContractsTableControl = false;
-            hasFiltersMMContractsTableControl = hasFiltersMMContractsTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertiesTableControl = false;
-            hasFiltersPropertiesTableControl = hasFiltersPropertiesTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertyContactsTableControl = false;
-            hasFiltersPropertyContactsTableControl = hasFiltersPropertyContactsTableControl && false; // suppress warning
-      
-            bool hasFiltersPropertyNotesTableControl = false;
-            hasFiltersPropertyNotesTableControl = hasFiltersPropertyNotesTableControl && false; // suppress warning
-      
-            bool hasFiltersRentReviewsTableControl = false;
-            hasFiltersRentReviewsTableControl = hasFiltersRentReviewsTableControl && false; // suppress warning
-      
-            bool hasFiltersTermExpiresTableControl = false;
-            hasFiltersTermExpiresTableControl = hasFiltersTermExpiresTableControl && false; // suppress warning
-      
-            bool hasFiltersTermRenewalsTableControl = false;
-            hasFiltersTermRenewalsTableControl = hasFiltersTermRenewalsTableControl && false; // suppress warning
-      
-            // Compose the WHERE clause consist of:
-            // 1. Static clause defined at design time.
-            // 2. User selected search criteria.
-            // 3. User selected filter criteria.
-            String appRelativeVirtualPath = (String)HttpContext.Current.Session["AppRelativeVirtualPath"];
-            
-      string selectedRecordInLinkTableTableControl = HttpContext.Current.Session["ContactsRecordControlWhereClause"] as string;
-      
-      if (selectedRecordInLinkTableTableControl != null && KeyValue.IsXmlKey(selectedRecordInLinkTableTableControl))
-      {
-      KeyValue selectedRecordKeyValue = KeyValue.XmlToKey(selectedRecordInLinkTableTableControl);
-      
-      if (selectedRecordKeyValue != null && selectedRecordKeyValue.ContainsColumn(ContactsTable.ContactID))
-      {
-      wc.iAND(ContactsTable.ContactID, BaseFilter.ComparisonOperator.EqualsTo, selectedRecordKeyValue.GetColumnValue(ContactsTable.ContactID).ToString());
-      }
-    
-      }
-    
-            // Adds clauses if values are selected in Filter controls which are configured in the page.
-                
-            return wc;
-        }
-
-        
-        
-         public virtual bool FormatSuggestions(String prefixText, String resultItem,
-                                              int columnLength, String AutoTypeAheadDisplayFoundText,
-                                              String autoTypeAheadSearch, String AutoTypeAheadWordSeparators,
-                                              ArrayList resultList)
-        {
-            return this.FormatSuggestions(prefixText, resultItem, columnLength, AutoTypeAheadDisplayFoundText,
-                                              autoTypeAheadSearch, AutoTypeAheadWordSeparators, resultList, false);
-        }                                              
-        
-        public virtual bool FormatSuggestions(String prefixText, String resultItem,
-                                              int columnLength, String AutoTypeAheadDisplayFoundText,
-                                              String autoTypeAheadSearch, String AutoTypeAheadWordSeparators,
-                                              ArrayList resultList, bool stripHTML)
-        {
-            if (stripHTML){
-                prefixText = StringUtils.ConvertHTMLToPlainText(prefixText);
-                resultItem = StringUtils.ConvertHTMLToPlainText(resultItem);
-            }
-            // Formats the result Item and adds it to the list of suggestions.
-            int index  = resultItem.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture).IndexOf(prefixText.ToUpper(System.Threading.Thread.CurrentThread.CurrentCulture));
-            String itemToAdd = null;
-            bool isFound = false;
-            bool isAdded = false;
-            if (StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("wordsstartingwithsearchstring") && !(index == 0)) {
-                // Expression to find word which contains AutoTypeAheadWordSeparators followed by prefixText
-                System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex( AutoTypeAheadWordSeparators + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-                if (regex1.IsMatch(resultItem)) {
-                    index = regex1.Match(resultItem).Index;
-                    isFound = true;
-                }
-                //If the prefixText is found immediatly after white space then starting of the word is found so don not search any further
-                if (resultItem[index].ToString() != " ") {
-                    // Expression to find beginning of the word which contains AutoTypeAheadWordSeparators followed by prefixText
-                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex("\\S*" + AutoTypeAheadWordSeparators + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-                    if (regex.IsMatch(resultItem)) {
-                        index = regex.Match(resultItem).Index;
-                        isFound = true;
-                    }
-                }
-            }
-            // If autoTypeAheadSearch value is wordsstartingwithsearchstring then, extract the substring only if the prefixText is found at the 
-            // beginning of the resultItem (index = 0) or a word in resultItem is found starts with prefixText. 
-            if (index == 0 || isFound || StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("anywhereinstring")) {
-                if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("atbeginningofmatchedstring")) {
-                    // Expression to find beginning of the word which contains prefixText
-                    System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex("\\S*" + prefixText, System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-                    //  Find the beginning of the word which contains prefexText
-                    if (StringUtils.InvariantLCase(autoTypeAheadSearch).Equals("anywhereinstring") && regex1.IsMatch(resultItem)) {
-                        index = regex1.Match(resultItem).Index;
-                        isFound = true;
-                    }
-                    // Display string from the index till end of the string if, sub string from index till end of string is less than columnLength value.
-                    if ((resultItem.Length - index) <= columnLength) {
-                        if (index == 0) {
-                            itemToAdd = resultItem;
-                        } else {
-                            itemToAdd = resultItem.Substring(index);
-                        }
-                    }
-                    else {
-                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index, index + columnLength, StringUtils.Direction.forward);
-                    }
-                }
-                else if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("inmiddleofmatchedstring")) {
-                    int subStringBeginIndex = (int)(columnLength / 2);
-                    if (resultItem.Length <= columnLength) {
-                        itemToAdd = resultItem;
-                    }
-                    else {
-                        // Sanity check at end of the string
-                        if (((index + prefixText.Length) >= resultItem.Length - 1)||(resultItem.Length - index < subStringBeginIndex)) {
-                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, resultItem.Length - 1 - columnLength, resultItem.Length - 1, StringUtils.Direction.backward);
-                        }
-                        else if (index <= subStringBeginIndex) {
-                            // Sanity check at beginning of the string
-                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, 0, columnLength, StringUtils.Direction.forward);
-                        } 
-                        else {
-                            // Display string containing text before the prefixText occures and text after the prefixText
-                            itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index - subStringBeginIndex, index - subStringBeginIndex + columnLength, StringUtils.Direction.both);
-                        }
-                    }
-                }
-                else if (StringUtils.InvariantLCase(AutoTypeAheadDisplayFoundText).Equals("atendofmatchedstring")) {
-                     // Expression to find ending of the word which contains prefexText
-                    System.Text.RegularExpressions.Regex regex1 = new System.Text.RegularExpressions.Regex("\\s", System.Text.RegularExpressions.RegexOptions.IgnoreCase); 
-                    // Find the ending of the word which contains prefexText
-                    if (regex1.IsMatch(resultItem, index + 1)) {
-                        index = regex1.Match(resultItem, index + 1).Index;
-                    }
-                    else{
-                        // If the word which contains prefexText is the last word in string, regex1.IsMatch returns false.
-                        index = resultItem.Length;
-                    }
-                    
-                    if (index > resultItem.Length) {
-                        index = resultItem.Length;
-                    }
-                    // If text from beginning of the string till index is less than columnLength value then, display string from the beginning till index.
-                    if (index <= columnLength) {
-                        itemToAdd = resultItem.Substring(0, index);
-                    } 
-                    else {
-                        // Truncate the string to show only columnLength has to be appended.
-                        itemToAdd = StringUtils.GetSubstringWithWholeWords(resultItem, index - columnLength, index, StringUtils.Direction.backward);
-                    }
-                }
-                
-                // Remove newline character from itemToAdd
-                int prefixTextIndex = itemToAdd.IndexOf(prefixText, StringComparison.CurrentCultureIgnoreCase);
-                if(prefixTextIndex < 0) return false;
-                // If itemToAdd contains any newline after the search text then show text only till newline
-                System.Text.RegularExpressions.Regex regex2 = new System.Text.RegularExpressions.Regex("(\r\n|\n)", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
-                int newLineIndexAfterPrefix = -1;
-                if (regex2.IsMatch(itemToAdd, prefixTextIndex)){
-                    newLineIndexAfterPrefix = regex2.Match(itemToAdd, prefixTextIndex).Index;
-                }
-                if ((newLineIndexAfterPrefix > -1)) {                   
-                    itemToAdd = itemToAdd.Substring(0, newLineIndexAfterPrefix);                   
-                }
-                // If itemToAdd contains any newline before search text then show text which comes after newline
-                System.Text.RegularExpressions.Regex regex3 = new System.Text.RegularExpressions.Regex("(\r\n|\n)", System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.RightToLeft );
-                int newLineIndexBeforePrefix = -1;
-                if (regex3.IsMatch(itemToAdd, prefixTextIndex)){
-                    newLineIndexBeforePrefix = regex3.Match(itemToAdd, prefixTextIndex).Index;
-                }
-                if ((newLineIndexBeforePrefix > -1)) {
-                    itemToAdd = itemToAdd.Substring(newLineIndexBeforePrefix +regex3.Match(itemToAdd, prefixTextIndex).Length);
-                }
-
-                if (!string.IsNullOrEmpty(itemToAdd) && !resultList.Contains(itemToAdd)) {
-                    resultList.Add(itemToAdd);
-                    isAdded = true;
-                }
-            }
-            return isAdded;
-        }
-        
-    
-        public virtual void Validate()
-        {
-            // Add custom validation for any control within this panel.
-            // Example.  If you have a State ASP:Textbox control
-            // if (this.State.Text != "CA")
-            //    throw new Exception("State must be CA (California).");
-            // The Validate method is common across all controls within
-            // this panel so you can validate multiple fields, but report
-            // one error message.
-            
-            
-            
-        }
-
-        public virtual void Delete()
-        {
-        
-            if (this.IsNewRecord) {
-                return;
-            }
-
-            KeyValue pkValue = KeyValue.XmlToKey(this.RecordUniqueId);
-          ContactsTable.DeleteRecord(pkValue);
-          
-        }
-
-        protected virtual void Control_PreRender(object sender, System.EventArgs e)
-        {
-            // PreRender event is raised just before page is being displayed.
-            try {
-                DbUtils.StartTransaction();
-                this.RegisterPostback();
-                if (!this.Page.ErrorOnPage && (this.Page.IsPageRefresh || this.DataChanged || this.ResetData)) {
-                  
-                
-                    // Re-load the data and update the web page if necessary.
-                    // This is typically done during a postback (filter, search button, sort, pagination button).
-                    // In each of the other click handlers, simply set DataChanged to True to reload the data.
-                    this.LoadData();
-                    this.DataBind();
-                }
-                				
-            } catch (Exception ex) {
-                BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-            } finally {
-                DbUtils.EndTransaction();
-            }
-        }
-        
-            
-        protected override void SaveControlsToSession()
-        {
-            base.SaveControlsToSession();
-        
-    
-            // Save pagination state to session.
-          
-        }
-        
-        
-    
-        protected override void ClearControlsFromSession()
-        {
-            base.ClearControlsFromSession();
-
-        
-
-            // Clear pagination state from session.
-        
-        }
-        
-        protected override void LoadViewState(object savedState)
-        {
-            base.LoadViewState(savedState);
-            string isNewRecord = (string)ViewState["IsNewRecord"];
-            if (isNewRecord != null && isNewRecord.Length > 0) {
-                this.IsNewRecord = Boolean.Parse(isNewRecord);
-            }
-        
-            string myCheckSum = (string)ViewState["CheckSum"];
-            if (myCheckSum != null && myCheckSum.Length > 0) {
-                this.CheckSum = myCheckSum;
-            }
-        
-    
-            // Load view state for pagination control.
-                 
-        }
-
-        protected override object SaveViewState()
-        {
-            ViewState["IsNewRecord"] = this.IsNewRecord.ToString();
-            ViewState["CheckSum"] = this.CheckSum;
-        
-
-            // Load view state for pagination control.
-               
-            return base.SaveViewState();
-        }
-
-        
-        // Generate the event handling functions for pagination events.
-            
-      
-        // Generate the event handling functions for filter and search events.
-            
-    
-        // Generate set method for buttons
-        
-  
-        private Hashtable _PreviousUIData = new Hashtable();
-        public virtual Hashtable PreviousUIData {
-            get {
-                return this._PreviousUIData;
-            }
-            set {
-                this._PreviousUIData = value;
-            }
-        }
-  
-
-        
-        public String RecordUniqueId {
-            get {
-                return (string)this.ViewState["BaseContactsRecordControl_Rec"];
-            }
-            set {
-                this.ViewState["BaseContactsRecordControl_Rec"] = value;
-            }
-        }
-        
-        public ContactsRecord DataSource {
-            get {
-                return (ContactsRecord)(this._DataSource);
-            }
-            set {
-                this._DataSource = value;
-            }
-        }
-        
-
-        private string _checkSum;
-        public virtual string CheckSum {
-            get {
-                return (this._checkSum);
-            }
-            set {
-                this._checkSum = value;
-            }
-        }
-    
-        private int _TotalPages;
-        public virtual int TotalPages {
-            get {
-                return (this._TotalPages);
-            }
-            set {
-                this._TotalPages = value;
-            }
-        }
-        
-        private int _PageIndex;
-        public virtual int PageIndex {
-            get {
-                return (this._PageIndex);
-            }
-            set {
-                this._PageIndex = value;
-            }
-        }
-        
-        private int _PageSize;
-        public int PageSize {
-          get {
-            return this._PageSize;
-          }
-          set {
-            this._PageSize = value;
-          }
-        }
-      
-        private int _TotalRecords;
-        public int TotalRecords {
-          get {
-            return (this._TotalRecords);
-          }
-          set {
-            if (this.PageSize > 0) {
-              this.TotalPages = Convert.ToInt32(Math.Ceiling(Convert.ToDouble(value) / Convert.ToDouble(this.PageSize)));
-            }
-            this._TotalRecords = value;
-          }
-        }
-        
-        private bool _DisplayLastPage;
-        public virtual bool DisplayLastPage {
-            get {
-                return (this._DisplayLastPage);
-            }
-            set {
-                this._DisplayLastPage = value;
-            }
-        }
-        
-        
-    
-        private KeyValue selectedParentKeyValue;
-        public KeyValue SelectedParentKeyValue
-        {
-            get
-            {
-                return this.selectedParentKeyValue;
-            }
-            set
-            {
-                this.selectedParentKeyValue = value;
-            }
-        }
-       
-#region "Helper Properties"
-        
-        public System.Web.UI.WebControls.Literal Active {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Active");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal ActiveLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ActiveLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal Address12 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address12");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal Address1Label2 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1Label2");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal Address22 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address22");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal Address32 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address32");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal BankAccount {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankAccount");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal BankAccountLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankAccountLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal DateOfBirth {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateOfBirth");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal DateOfBirthLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateOfBirthLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal eMail1 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMail1");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal eMailLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMailLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal FirstName1 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName1");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal FirstName2 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName2");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal FirstName2Label {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "FirstName2Label");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal IrdNumber {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "IrdNumber");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal IrdNumberLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "IrdNumberLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal LastName1 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastName1");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal LastName2 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastName2");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal PhoneNumber {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumber");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal PhoneNumberLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumberLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal PlaceOfBirth {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PlaceOfBirth");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal PlaceOfBirthLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PlaceOfBirthLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal PostCode2 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCode2");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal PostCodeLabel1 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCodeLabel1");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal Title0 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Title0");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal TrustName {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TrustName");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal TrustNameLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TrustNameLabel");
-            }
-        }
-        
-    #endregion
-
-    #region "Helper Functions"
-    public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt)
-    {
-        return this.Page.EvaluateExpressions(url, arg, bEncrypt, this);
-    }
-
-    public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt,bool includeSession)
-    {
-        return this.Page.EvaluateExpressions(url, arg, bEncrypt, this,includeSession);
-    }
-
-    public override string EvaluateExpressions(string url, string arg, bool bEncrypt)
-    {
-        ContactsRecord rec = null;
-             
-            try {
-                rec = this.GetRecord();
-            }
-            catch (Exception ) {
-                // Do Nothing
-            }
-            
-            if (rec == null && url.IndexOf("{") >= 0) {
-                // Localization.
-                
-                throw new Exception(Page.GetResourceValue("Err:RecDataSrcNotInitialized", "IPv5"));
-                    
-            }
-        
-            return EvaluateExpressions(url, arg, rec, bEncrypt);
-        
-    }
-
-
-    public override string EvaluateExpressions(string url, string arg, bool bEncrypt,bool includeSession)
-    {
-    ContactsRecord rec = null;
-    
-          try {
-               rec = this.GetRecord();
-          }
-          catch (Exception ) {
-          // Do Nothing
-          }
-
-          if (rec == null && url.IndexOf("{") >= 0) {
-          // Localization.
-    
-              throw new Exception(Page.GetResourceValue("Err:RecDataSrcNotInitialized", "IPv5"));
-      
-          }
-    
-          if (includeSession)
-          {
-              return EvaluateExpressions(url, arg, rec, bEncrypt);
-          }
-          else
-          {
-              return EvaluateExpressions(url, arg, rec, bEncrypt,includeSession);
-          }
-    
-    }
-
-        
-        public virtual ContactsRecord GetRecord()
-             
-        {
-        
-            if (this.DataSource != null) {
-                return this.DataSource;
-            }
-            
-              if (this.RecordUniqueId != null) {
-              
-                return ContactsTable.GetRecord(this.RecordUniqueId, true);
-              
-            }
-            
-            // Localization.
-            
-            return null;
-                
-        }
-
-        public new BaseApplicationPage Page
-        {
-            get {
-                return ((BaseApplicationPage)base.Page);
-            }
-        }
-
-#endregion
-
-}
-
   
 
 #endregion

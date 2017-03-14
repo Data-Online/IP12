@@ -295,6 +295,46 @@ public override void SetControl(string control)
       {
           this.SetControl_Base(control);
       }
+//[System.Web.Services.WebMethod]
+//        public static string[] GetAutoCompletionList_ContactsSearchText(string prefixText, int count)
+//        {
+//            // GetContactsSearchTextCompletionList gets the list of suggestions from the database.
+//            // prefixText is the search text typed by the user .
+//            // count specifies the number of suggestions to be returned.
+//            // Customize by adding code before or after the call to  GetAutoCompletionList_ContactsSearchText_Base()
+//            // or replace the call to GetAutoCompletionList_ContactsSearchText_Base().
+//            return GetAutoCompletionList_ContactsSearchText_Base(prefixText, count);
+//        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_ContactsSearchText1(string prefixText, int count)
+        {
+            // GetContactsSearchText1CompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_ContactsSearchText1_Base()
+            // or replace the call to GetAutoCompletionList_ContactsSearchText1_Base().
+            return GetAutoCompletionList_ContactsSearchText1_Base(prefixText, count);
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_TermExpiresSearchText(string prefixText, int count)
+        {
+            // GetTermExpiresSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_TermExpiresSearchText_Base()
+            // or replace the call to GetAutoCompletionList_TermExpiresSearchText_Base().
+            return GetAutoCompletionList_TermExpiresSearchText_Base(prefixText, count);
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_MMContractsSearchText(string prefixText, int count)
+        {
+            // GetMMContractsSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_MMContractsSearchText_Base()
+            // or replace the call to GetAutoCompletionList_MMContractsSearchText_Base().
+            return GetAutoCompletionList_MMContractsSearchText_Base(prefixText, count);
+        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -312,33 +352,21 @@ public override void SetControl(string control)
         }
         
     
-        public System.Web.UI.WebControls.Literal Active;
-            
-        public System.Web.UI.WebControls.Literal ActiveLabel;
-        
-        public System.Web.UI.WebControls.Literal Address12;
-            
+        public ThemeButtonWithArrow Actions1Button;
+                
+        public ThemeButtonWithArrow Actions2Button;
+                
+        public ThemeButtonWithArrow Actions3Button;
+                
+        public ThemeButtonWithArrow ActionsButton;
+                
         public System.Web.UI.WebControls.LinkButton Address1Label;
-        
-        public System.Web.UI.WebControls.Literal Address1Label2;
         
         public System.Web.UI.WebControls.LinkButton Address1SortLabel;
         
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel2;
-        
-        public System.Web.UI.WebControls.Literal Address22;
-            
         public System.Web.UI.WebControls.LinkButton Address2SortLabel;
         
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel2;
-        
-        public System.Web.UI.WebControls.Literal Address32;
-            
         public System.Web.UI.WebControls.LinkButton Address3SortLabel;
-        
-        public System.Web.UI.WebControls.Literal BankAccount;
-            
-        public System.Web.UI.WebControls.Literal BankAccountLabel;
         
         public ThemeButtonWithArrow BankLoansButtonsButton;
                 
@@ -378,25 +406,15 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal ContactIDLabel3;
         
-        public System.Web.UI.WebControls.Literal ContactIDLabel5;
+        public System.Web.UI.WebControls.TextBox ContactsSearchText1;
+        
+        public System.Web.UI.WebControls.Literal ContactTypeIDLabel1;
         
         public System.Web.UI.WebControls.LinkButton CountryIDSortLabel;
         
-        public System.Web.UI.WebControls.Literal DateOfBirth;
-            
-        public System.Web.UI.WebControls.Literal DateOfBirthLabel;
+        public System.Web.UI.WebControls.ImageButton CSVButton;
         
-        public System.Web.UI.WebControls.Literal DescriptionLabel4;
-        
-        public System.Web.UI.WebControls.Literal DescriptionLabel6;
-        
-        public System.Web.UI.WebControls.Literal DescriptionLabel9;
-        
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel2;
-        
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel4;
+        public System.Web.UI.WebControls.Literal DateRecordedLabel1;
         
         public ThemeButtonWithArrow DirectorsButtonsButton;
                 
@@ -420,73 +438,73 @@ public override void SetControl(string control)
             
         public System.Web.UI.WebControls.ImageButton DirectorsWordButton;
         
-        public System.Web.UI.WebControls.Literal eMail1;
-            
-        public System.Web.UI.WebControls.Literal eMailLabel;
+        public System.Web.UI.WebControls.ImageButton ExcelButton;
+        
+        public System.Web.UI.WebControls.ImageButton ExcelButton1;
+        
+        public System.Web.UI.WebControls.ImageButton ExcelButton2;
+        
+        public System.Web.UI.WebControls.ImageButton ExcelButton3;
         
         public System.Web.UI.WebControls.Literal ExpiryDateLabel4;
         
+        public System.Web.UI.WebControls.Literal ExpiryDateLabel5;
+        
+        public System.Web.UI.WebControls.Literal ExpiryDateLabel6;
+        
         public System.Web.UI.WebControls.Literal ExpiryDateLabel7;
         
-        public System.Web.UI.WebControls.Literal FirstName1;
-            
-        public System.Web.UI.WebControls.Literal FirstName2;
-            
-        public System.Web.UI.WebControls.Literal FirstName2Label;
-        
-        public System.Web.UI.WebControls.LinkButton FirstNameSortLabel1;
-        
-        public System.Web.UI.WebControls.Literal IrdNumber;
-            
-        public System.Web.UI.WebControls.Literal IrdNumberLabel;
-        
-        public System.Web.UI.WebControls.Literal LastName1;
-            
-        public System.Web.UI.WebControls.Literal LastName2;
-            
-        public System.Web.UI.WebControls.LinkButton LastNameSortLabel1;
-        
-        public ThemeButtonWithArrow LinkTableButtonsButton;
+        public ThemeButton FilterButton;
                 
-        public System.Web.UI.WebControls.ImageButton LinkTableExportExcelButton;
-        
-        public ThemeButton LinkTableFilterButton;
+        public ThemeButton FilterButton1;
                 
-        public ThemeButtonWithArrow LinkTableFiltersButton;
+        public ThemeButton FilterButton2;
                 
-        public System.Web.UI.WebControls.ImageButton LinkTableImportButton;
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableNewButton;
-        
-        public PaginationModern LinkTablePagination;
+        public ThemeButton FilterButton3;
                 
-        public System.Web.UI.WebControls.ImageButton LinkTablePDFButton;
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableResetButton;
-        
-        public System.Web.UI.WebControls.Literal LinkTableTitle;
-            
-        public System.Web.UI.WebControls.ImageButton LinkTableWordButton;
-        
-        public PaginationModern MMContractsPagination;
+        public ThemeButtonWithArrow Filters1Button;
                 
+        public ThemeButtonWithArrow Filters2Button;
+                
+        public ThemeButtonWithArrow Filters3Button;
+                
+        public ThemeButtonWithArrow FiltersButton;
+                
+        public System.Web.UI.WebControls.ImageButton ImportButton;
+        
+        public System.Web.UI.WebControls.ImageButton ImportButton1;
+        
+        public System.Web.UI.WebControls.ImageButton ImportButton2;
+        
+        public System.Web.UI.WebControls.TextBox MMContractsSearchText;
+        
+        public System.Web.UI.WebControls.ImageButton NewButton;
+        
+        public System.Web.UI.WebControls.ImageButton NewButton1;
+        
+        public System.Web.UI.WebControls.ImageButton NewButton2;
+        
+        public System.Web.UI.WebControls.ImageButton NewButton3;
+        
         public System.Web.UI.WebControls.Literal PageTitle;
         
-        public System.Web.UI.WebControls.Literal PhoneNumber;
-            
-        public System.Web.UI.WebControls.Literal PhoneNumberLabel;
+        public PaginationModern Pagination;
+                
+        public PaginationModern Pagination1;
+                
+        public PaginationModern Pagination2;
+                
+        public PaginationModern Pagination3;
+                
+        public System.Web.UI.WebControls.ImageButton PDFButton;
         
-        public System.Web.UI.WebControls.Literal PlaceOfBirth;
-            
-        public System.Web.UI.WebControls.Literal PlaceOfBirthLabel;
+        public System.Web.UI.WebControls.ImageButton PDFButton1;
         
-        public System.Web.UI.WebControls.Literal PostCode2;
-            
-        public System.Web.UI.WebControls.Literal PostCodeLabel1;
+        public System.Web.UI.WebControls.ImageButton PDFButton2;
+        
+        public System.Web.UI.WebControls.ImageButton PDFButton3;
         
         public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel2;
         
         public ThemeButtonWithArrow PropertiesButtonsButton;
                 
@@ -500,7 +518,7 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.ImageButton PropertiesNewButton;
         
-        public PaginationModern PropertiesPagination;
+        public PaginationMedium PropertiesPagination;
                 
         public System.Web.UI.WebControls.ImageButton PropertiesPDFButton;
         
@@ -542,8 +560,6 @@ public override void SetControl(string control)
             
         public System.Web.UI.WebControls.ImageButton PropertyContactsWordButton;
         
-        public PaginationModern PropertyNotesPagination;
-                
         public System.Web.UI.WebControls.Literal RegionIDLabel1;
         
         public System.Web.UI.WebControls.Literal RegionIDLabel3;
@@ -578,8 +594,42 @@ public override void SetControl(string control)
             
         public System.Web.UI.WebControls.ImageButton RentReviewsWordButton;
         
-        public PaginationModern TermExpiresPagination;
-                
+        public System.Web.UI.WebControls.ImageButton ResetButton;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton1;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton2;
+        
+        public System.Web.UI.WebControls.ImageButton ResetButton3;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton2;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton3;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton5;
+        
+        public System.Web.UI.WebControls.DropDownList ShowSelectedFilter;
+        
+        public System.Web.UI.WebControls.Literal ShowSelectedFilterLabel;
+        
+        public System.Web.UI.WebControls.Label SortByLabel;
+        
+        public System.Web.UI.WebControls.Label SortByLabel1;
+        
+        public System.Web.UI.WebControls.Label SortByLabel2;
+        
+        public System.Web.UI.WebControls.Label SortByLabel3;
+        
+        public System.Web.UI.WebControls.Label SortByLabel4;
+        
+        public System.Web.UI.WebControls.Label SortByLabel5;
+        
+        public System.Web.UI.WebControls.Label SortByLabel6;
+        
+        public System.Web.UI.WebControls.Label SortByLabel7;
+        
+        public System.Web.UI.WebControls.TextBox TermExpiresSearchText;
+        
         public ThemeButtonWithArrow TermRenewalsButtonsButton;
                 
         public System.Web.UI.WebControls.ImageButton TermRenewalsExportExcelButton;
@@ -608,11 +658,15 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal Title0;
             
-        public System.Web.UI.WebControls.LinkButton TitleSortLabel1;
-        
-        public System.Web.UI.WebControls.Literal TrustName;
+        public System.Web.UI.WebControls.Literal Title1;
             
-        public System.Web.UI.WebControls.Literal TrustNameLabel;
+        public System.Web.UI.WebControls.Literal Title2;
+            
+        public System.Web.UI.WebControls.ImageButton WordButton;
+        
+        public System.Web.UI.WebControls.ImageButton WordButton1;
+        
+        public System.Web.UI.WebControls.ImageButton WordButton2;
         
         public ValidationSummary ValidationSummary1;
 
@@ -675,7 +729,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("");
+            this.Authorize("NOT_ANONYMOUS");
              if (!this.IsPostBack)
              {
             
@@ -884,6 +938,28 @@ public override void SetControl(string control)
             
     }
       
+    public static string[] GetAutoCompletionList_ContactsSearchText1_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.GroupByPropertiesTable.ContactsTableControl1 control = new IPv5.UI.Controls.GroupByPropertiesTable.ContactsTableControl1();
+        
+        return control.GetAutoCompletionList_ContactsSearchText1(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_MMContractsSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.GroupByPropertiesTable.MMContractsTableControl control = new IPv5.UI.Controls.GroupByPropertiesTable.MMContractsTableControl();
+        
+        return control.GetAutoCompletionList_MMContractsSearchText(prefixText, count);
+            
+    }
+      
     public static string[] GetAutoCompletionList_PropertiesSearch_Base(string prefixText, int count)
     {
         // Since this method is a shared/static method it does not maintain information about page or controls within the page.
@@ -914,6 +990,17 @@ public override void SetControl(string control)
         IPv5.UI.Controls.GroupByPropertiesTable.RentReviewsTableControl control = new IPv5.UI.Controls.GroupByPropertiesTable.RentReviewsTableControl();
         
         return control.GetAutoCompletionList_RentReviewsSearch1(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_TermExpiresSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.GroupByPropertiesTable.TermExpiresTableControl control = new IPv5.UI.Controls.GroupByPropertiesTable.TermExpiresTableControl();
+        
+        return control.GetAutoCompletionList_TermExpiresSearchText(prefixText, count);
             
     }
       

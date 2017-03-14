@@ -238,18 +238,18 @@ public void SetCancelButton()
         {
             SetCancelButton_Base(); 
         }              
-public void SetPropertyContactsTableControl()
-        {
-            SetPropertyContactsTableControl_Base(); 
-        }
+//public void SetPropertyContactsTableControl()
+//        {
+//            SetPropertyContactsTableControl_Base(); 
+//        }
 public void SetContactTypesRecordControl()
         {
             SetContactTypesRecordControl_Base(); 
         }
-public void SetContactTypesTabContainer()
-        {
-            SetContactTypesTabContainer_Base(); 
-        }
+//public void SetContactTypesTabContainer()
+//        {
+//            SetContactTypesTabContainer_Base(); 
+//        }
 [System.Web.Services.WebMethod()]
         public static object[] GetImage(string contextName,
                                         string tableName,
@@ -308,56 +308,20 @@ public override void SetControl(string control)
         }
         
     
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton Address3SortLabel;
-        
         public ThemeButton CancelButton;
                 
-        public System.Web.UI.WebControls.LinkButton CityIDSortLabel;
-        
         public System.Web.UI.WebControls.Literal ContactTypeLabel;
         
         public IPv5.UI.Controls.AddContactTypes.ContactTypesRecordControl ContactTypesRecordControl;
           
-        public AjaxControlToolkit.TabContainer ContactTypesTabContainer;
-        
         public System.Web.UI.WebControls.Literal ContactTypesTitle;
             
-        public System.Web.UI.WebControls.LinkButton eMailSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton FirstNameSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton LastNameSortLabel;
-        
         public System.Web.UI.WebControls.Literal PageTitle;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
-        
-        public System.Web.UI.WebControls.ImageButton PropertyContactsAddButton;
-        
-        public ThemeButtonWithArrow PropertyContactsButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton PropertyContactsDeleteButton;
-        
-        public ThemeButtonWithArrow PropertyContactsFiltersButton;
-                
-        public PaginationModern PropertyContactsPagination;
-                
-        public IPv5.UI.Controls.AddContactTypes.PropertyContactsTableControl PropertyContactsTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox PropertyContactsToggleAll;
-        
-        public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel;
         
         public ThemeButton SaveAndNewButton;
                 
         public ThemeButton SaveButton;
                 
-        public System.Web.UI.WebControls.LinkButton TitleSortLabel;
-        
         public ValidationSummary ValidationSummary1;
 
   
@@ -429,7 +393,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("");
+            this.Authorize("NO_ACCESS");
              if (!this.IsPostBack)
              {
             
@@ -544,10 +508,6 @@ public override void SetControl(string control)
               case "ContactTypesRecordControl":
                  SetContactTypesRecordControl();
                  break;
-          
-              case "PropertyContactsTableControl":
-                 SetPropertyContactsTableControl();
-                 break;
                
           }
         
@@ -650,9 +610,7 @@ public override void SetControl(string control)
                 this.DataBind();
                 
                 
-                
-            SetContactTypesTabContainer(); 
-          
+                    
     
                 // Load and bind data for each record and table UI control.
                 
@@ -760,19 +718,6 @@ public override void SetControl(string control)
                 
         // Write out the Set methods
         
-        public void SetContactTypesTabContainer_Base()           
-        
-        {
-                            
-                   
-            if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "true") 
-                MiscUtils.FindControlRecursively(this, "ContactTypesTabContainer").Visible = true;
-            else if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "false") 
-                MiscUtils.FindControlRecursively(this, "ContactTypesTabContainer").Visible = false;
-         
-  
-        }      
-      
         public void SetContactTypesRecordControl_Base()           
         
         {        
@@ -780,16 +725,6 @@ public override void SetControl(string control)
             {
                 ContactTypesRecordControl.LoadData();
                 ContactTypesRecordControl.DataBind();
-            }
-        }
-      
-        public void SetPropertyContactsTableControl_Base()           
-        
-        {        
-            if (PropertyContactsTableControl.Visible)
-            {
-                PropertyContactsTableControl.LoadData();
-                PropertyContactsTableControl.DataBind();
             }
         }
       

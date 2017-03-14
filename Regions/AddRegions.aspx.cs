@@ -242,22 +242,22 @@ public void SetRegionsRecordControl()
         {
             SetRegionsRecordControl_Base(); 
         }
-public void SetPropertyContactsTableControl()
-        {
-            SetPropertyContactsTableControl_Base(); 
-        }
-public void SetPropertiesTableControl()
-        {
-            SetPropertiesTableControl_Base(); 
-        }
-public void SetContactsTableControl()
-        {
-            SetContactsTableControl_Base(); 
-        }
-public void SetRegionsTabContainer()
-        {
-            SetRegionsTabContainer_Base(); 
-        }
+//public void SetPropertyContactsTableControl()
+//        {
+//            SetPropertyContactsTableControl_Base(); 
+//        }
+//public void SetPropertiesTableControl()
+//        {
+//            SetPropertiesTableControl_Base(); 
+//        }
+//public void SetContactsTableControl()
+//        {
+//            SetContactsTableControl_Base(); 
+//        }
+//public void SetRegionsTabContainer()
+//        {
+//            SetRegionsTabContainer_Base(); 
+//        }
 [System.Web.Services.WebMethod()]
         public static object[] GetImage(string contextName,
                                         string tableName,
@@ -316,118 +316,20 @@ public override void SetControl(string control)
         }
         
     
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel2;
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel2;
-        
-        public System.Web.UI.WebControls.LinkButton Address3SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton Address3SortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton Address3SortLabel2;
-        
         public ThemeButton CancelButton;
                 
-        public System.Web.UI.WebControls.LinkButton CityIDSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton CompanyNameSortLabel;
-        
-        public System.Web.UI.WebControls.ImageButton ContactsAddButton;
-        
-        public ThemeButtonWithArrow ContactsButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton ContactsDeleteButton;
-        
-        public ThemeButtonWithArrow ContactsFiltersButton;
-                
-        public PaginationModern ContactsPagination;
-                
-        public IPv5.UI.Controls.AddRegions.ContactsTableControl ContactsTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox ContactsToggleAll;
-        
-        public System.Web.UI.WebControls.LinkButton ContactTypeIDSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton CountryIDSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton eMailSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton FirstName2SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton FirstNameSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton IrdNumberSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton LastName2SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton LastNameSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton LastNameSortLabel1;
-        
         public System.Web.UI.WebControls.Literal PageTitle;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel2;
-        
-        public System.Web.UI.WebControls.ImageButton PropertiesAddButton;
-        
-        public ThemeButtonWithArrow PropertiesButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton PropertiesDeleteButton;
-        
-        public ThemeButtonWithArrow PropertiesFiltersButton;
-                
-        public PaginationModern PropertiesPagination;
-                
-        public IPv5.UI.Controls.AddRegions.PropertiesTableControl PropertiesTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox PropertiesToggleAll;
-        
-        public System.Web.UI.WebControls.ImageButton PropertyContactsAddButton;
-        
-        public ThemeButtonWithArrow PropertyContactsButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton PropertyContactsDeleteButton;
-        
-        public ThemeButtonWithArrow PropertyContactsFiltersButton;
-                
-        public PaginationModern PropertyContactsPagination;
-                
-        public IPv5.UI.Controls.AddRegions.PropertyContactsTableControl PropertyContactsTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox PropertyContactsToggleAll;
-        
-        public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel;
         
         public System.Web.UI.WebControls.Literal RegionLabel;
         
         public IPv5.UI.Controls.AddRegions.RegionsRecordControl RegionsRecordControl;
           
-        public AjaxControlToolkit.TabContainer RegionsTabContainer;
-        
         public System.Web.UI.WebControls.Literal RegionsTitle;
             
         public ThemeButton SaveAndNewButton;
                 
         public ThemeButton SaveButton;
                 
-        public System.Web.UI.WebControls.LinkButton TitleSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton TitleSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton TrustNameSortLabel;
-        
         public ValidationSummary ValidationSummary1;
 
   
@@ -499,7 +401,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("");
+            this.Authorize("NO_ACCESS");
              if (!this.IsPostBack)
              {
             
@@ -611,18 +513,6 @@ public override void SetControl(string control)
           switch (control)
           {
           
-              case "ContactsTableControl":
-                 SetContactsTableControl();
-                 break;
-          
-              case "PropertiesTableControl":
-                 SetPropertiesTableControl();
-                 break;
-          
-              case "PropertyContactsTableControl":
-                 SetPropertyContactsTableControl();
-                 break;
-          
               case "RegionsRecordControl":
                  SetRegionsRecordControl();
                  break;
@@ -728,9 +618,7 @@ public override void SetControl(string control)
                 this.DataBind();
                 
                 
-                
-            SetRegionsTabContainer(); 
-          
+                    
     
                 // Load and bind data for each record and table UI control.
                 
@@ -838,49 +726,6 @@ public override void SetControl(string control)
                 
         // Write out the Set methods
         
-        public void SetRegionsTabContainer_Base()           
-        
-        {
-                            
-                   
-            if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "true") 
-                MiscUtils.FindControlRecursively(this, "RegionsTabContainer").Visible = true;
-            else if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "false") 
-                MiscUtils.FindControlRecursively(this, "RegionsTabContainer").Visible = false;
-         
-  
-        }      
-      
-        public void SetContactsTableControl_Base()           
-        
-        {        
-            if (ContactsTableControl.Visible)
-            {
-                ContactsTableControl.LoadData();
-                ContactsTableControl.DataBind();
-            }
-        }
-      
-        public void SetPropertiesTableControl_Base()           
-        
-        {        
-            if (PropertiesTableControl.Visible)
-            {
-                PropertiesTableControl.LoadData();
-                PropertiesTableControl.DataBind();
-            }
-        }
-      
-        public void SetPropertyContactsTableControl_Base()           
-        
-        {        
-            if (PropertyContactsTableControl.Visible)
-            {
-                PropertyContactsTableControl.LoadData();
-                PropertyContactsTableControl.DataBind();
-            }
-        }
-      
         public void SetRegionsRecordControl_Base()           
         
         {        

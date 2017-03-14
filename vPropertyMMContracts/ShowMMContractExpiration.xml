@@ -14,6 +14,7 @@
     <Layout>vPropertyMMContracts\ShowMMContractExpiration.xml</Layout>
     <DisplayName>ShowMMContractExpiration</DisplayName>
     <Description>This is a blank page.</Description>
+    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>1494253202-1166</CheckSum>
   </Self>
   <ComposedOf>

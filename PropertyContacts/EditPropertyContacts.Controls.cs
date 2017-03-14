@@ -97,8 +97,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                         
                     this.CountryIDAddRecordLink.Click += CountryIDAddRecordLink_Click;
                         
-                    this.PropertyIDAddRecordLink.Click += PropertyIDAddRecordLink_Click;
-                        
                     this.RegionIDAddRecordLink.Click += RegionIDAddRecordLink_Click;
                         
               this.CityID.SelectedIndexChanged += CityID_SelectedIndexChanged;
@@ -106,8 +104,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
               this.ContactTypeID.SelectedIndexChanged += ContactTypeID_SelectedIndexChanged;
             
               this.CountryID.SelectedIndexChanged += CountryID_SelectedIndexChanged;
-            
-              this.PropertyID.SelectedIndexChanged += PropertyID_SelectedIndexChanged;
             
               this.RegionID.SelectedIndexChanged += RegionID_SelectedIndexChanged;
             
@@ -240,9 +236,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                 SetPostCode();
                 SetPostCodeLabel();
                 
-                SetPropertyID();
-                
-                SetPropertyIDLabel();
                 SetRegionID();
                 
                 SetRegionIDLabel();
@@ -253,8 +246,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                 SetContactTypeIDAddRecordLink();
               
                 SetCountryIDAddRecordLink();
-              
-                SetPropertyIDAddRecordLink();
               
                 SetRegionIDAddRecordLink();
               
@@ -662,56 +653,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                                
         }
                 
-        public virtual void SetPropertyID()
-        {
-            				
-        
-        
-            string selectedValue = null;
-            
-            // figure out the selectedValue
-                  
-            
-            
-            // Set the PropertyID DropDownList on the webpage with value from the
-            // DatabaseMM_IP1%dbo.PropertyContacts database record.
-            
-            // this.DataSource is the DatabaseMM_IP1%dbo.PropertyContacts record retrieved from the database.
-            // this.PropertyID is the ASP:DropDownList on the webpage.
-            
-            // You can modify this method directly, or replace it with a call to
-            //     base.SetPropertyID();
-            // and add your own custom code before or after the call to the base function.
-
-            
-            if (this.DataSource != null && this.DataSource.PropertyIDSpecified)
-            {
-                            
-                // If the PropertyID is non-NULL, then format the value.
-                // The Format method will return the Display Foreign Key As (DFKA) value
-                selectedValue = this.DataSource.PropertyID.ToString();
-                
-            }
-            else
-            {
-                
-                // PropertyID is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-                if (this.DataSource != null && this.DataSource.IsCreated)
-                    selectedValue = null;
-                else
-                    selectedValue = PropertyContactsTable.PropertyID.DefaultValue;
-                				
-            }			
-                            
-                  
-            // Populate the item(s) to the control
-            
-            this.PopulatePropertyIDDropDownList(selectedValue, 100);              
-                
-                  
-        }
-                
         public virtual void SetRegionID()
         {
             				
@@ -850,12 +791,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         }
                 
         public virtual void SetPostCodeLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPropertyIDLabel()
                   {
                   
                     
@@ -1044,7 +979,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             GetFirstName();
             GetLastName();
             GetPostCode();
-            GetPropertyID();
             GetRegionID();
             GetTitle();
         }
@@ -1179,17 +1113,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             this.DataSource.Parse(this.PostCode.Text, PropertyContactsTable.PostCode);							
                           
                       
-        }
-                
-        public virtual void GetPropertyID()
-        {
-         // Retrieve the value entered by the user on the PropertyID ASP:DropDownList, and
-            // save it into the PropertyID field in DataSource DatabaseMM_IP1%dbo.PropertyContacts record.
-            
-            // Custom validation should be performed in Validate, not here.
-            
-            this.DataSource.Parse(MiscUtils.GetValueSelectedPageRequest(this.PropertyID), PropertyContactsTable.PropertyID);			
-                			 
         }
                 
         public virtual void GetRegionID()
@@ -1624,35 +1547,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
    
         }
             
-        public virtual void SetPropertyIDAddRecordLink()                
-              
-        {
-        
-              try
-              {
-                    string url = "../Properties/AddProperties.aspx";
-              
-                      
-                    url = this.ModifyRedirectUrl(url, "", true);
-                    
-                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
-                    
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.PropertyID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("CompanyName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("PropertyID");                      
-                              
-                string javascriptCall = "";
-                
-                    javascriptCall = "initializeNewWindow(this, '" + url + "', false, event);";                  
-                       
-                    this.PropertyIDAddRecordLink.Attributes["onClick"] = javascriptCall + "return false;";            
-                }
-                catch
-                {
-                    // do nothing.  If the code above fails, server side click event, PropertyIDAddRecordLink_ClickPropertyIDAddRecordLink_Click will be trigger when user click the button.
-                }
-                  
-   
-        }
-            
         public virtual void SetRegionIDAddRecordLink()                
               
         {
@@ -1721,21 +1615,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             // Examples:
             // wc.iAND(CountriesTable.Country, BaseFilter.ComparisonOperator.EqualsTo, "XYZ");
             // wc.iAND(CountriesTable.Active, BaseFilter.ComparisonOperator.EqualsTo, "1");
-            
-            WhereClause wc = new WhereClause();
-            return wc;
-            				
-        }
-        
-        public virtual WhereClause CreateWhereClause_PropertyIDDropDownList() 
-        {
-            // By default, we simply return a new WhereClause.
-            // Add additional where clauses to restrict the items shown in the dropdown list.
-            						
-            // This WhereClause is for the DatabaseMM_IP1%dbo.Properties table.
-            // Examples:
-            // wc.iAND(PropertiesTable.CompanyName, BaseFilter.ComparisonOperator.EqualsTo, "XYZ");
-            // wc.iAND(PropertiesTable.Active, BaseFilter.ComparisonOperator.EqualsTo, "1");
             
             WhereClause wc = new WhereClause();
             return wc;
@@ -2183,148 +2062,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                         
         }
                   
-        // Fill the PropertyID list.
-        protected virtual void PopulatePropertyIDDropDownList(string selectedValue, int maxItems) 
-        {
-            		  					                
-            this.PropertyID.Items.Clear();
-            
-            // 1. Setup the static list items        
-            
-              // Add the Please Select item.
-              this.PropertyID.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:PleaseSelect", "IPv5"), "--PLEASE_SELECT--"));
-            		  			
-            // 2. Set up the WHERE and the ORDER BY clause by calling the CreateWhereClause_PropertyIDDropDownList function.
-            // It is better to customize the where clause there.
-            
-                      
-            WhereClause wc = CreateWhereClause_PropertyIDDropDownList();
-                        
-                
-            // Create the ORDER BY clause to sort based on the displayed value.							
-                
-            OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(PropertiesTable.CompanyName, OrderByItem.OrderDir.Asc);
-
-            System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
-            FormulaEvaluator evaluator = new FormulaEvaluator();
-
-            // 3. Read a total of maxItems from the database and insert them into the PropertyIDDropDownList.
-            PropertiesRecord[] itemValues  = null;
-            if (wc.RunQuery)
-            {
-                int counter = 0;
-                int pageNum = 0;	
-                ArrayList listDuplicates = new ArrayList();
-
-                do
-                {
-                    itemValues = PropertiesTable.GetRecords(wc, orderBy, pageNum, maxItems);
-                    foreach (PropertiesRecord itemValue in itemValues) 
-                    {
-                        // Create the item and add to the list.
-                        string cvalue = null;
-                        string fvalue = null;
-                        if (itemValue.PropertyIDSpecified) 
-                        {
-                            cvalue = itemValue.PropertyID.ToString().ToString();
-                            if (counter < maxItems && this.PropertyID.Items.FindByValue(cvalue) == null)
-                            {
-                                     
-                                Boolean _isExpandableNonCompositeForeignKey = PropertyContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertyContactsTable.PropertyID);
-                                if(_isExpandableNonCompositeForeignKey && PropertyContactsTable.PropertyID.IsApplyDisplayAs)
-                                    fvalue = PropertyContactsTable.GetDFKA(itemValue, PropertyContactsTable.PropertyID);
-                                if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                    fvalue = itemValue.Format(PropertiesTable.CompanyName);
-                                    		
-
-                                if (fvalue == null || fvalue.Trim() == "") 
-                                    fvalue = cvalue;
-
-                                if (fvalue == null) {
-                                    fvalue = "";
-                                }
-
-                                fvalue = fvalue.Trim();
-
-                                if ( fvalue.Length > 50 ) {
-                                    fvalue = fvalue.Substring(0, 50) + "...";
-                                }
-
-                                ListItem dupItem = this.PropertyID.Items.FindByText(fvalue);
-								
-                                if (dupItem != null) {
-                                    listDuplicates.Add(fvalue);
-                                    if (!string.IsNullOrEmpty(dupItem.Value))
-                                    {
-                                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
-                                    }
-                                }
-
-                                ListItem newItem = new ListItem(fvalue, cvalue);
-                                this.PropertyID.Items.Add(newItem);
-
-                                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                                }
-
-                                counter += 1;
-                            }
-                        }
-                    }
-                    pageNum++;
-                }
-                while (itemValues.Length == maxItems && counter < maxItems);
-            }
-                        
-                                        
-            // 4. Set the selected value (insert if not already present).
-              
-            if (selectedValue != null &&
-                selectedValue.Trim() != "" &&
-                !MiscUtils.SetSelectedValue(this.PropertyID, selectedValue) &&
-                !MiscUtils.SetSelectedDisplayText(this.PropertyID, selectedValue))
-            {
-
-                // construct a whereclause to query a record with DatabaseMM_IP1%dbo.Properties.PropertyID = selectedValue
-                    
-                CompoundFilter filter2 = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
-                WhereClause whereClause2 = new WhereClause();
-                filter2.AddFilter(new BaseClasses.Data.ColumnValueFilter(PropertiesTable.PropertyID, selectedValue, BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
-                whereClause2.AddFilter(filter2, CompoundFilter.CompoundingOperators.And_Operator);
-
-                // Execute the query
-                try
-                {
-                    PropertiesRecord[] rc = PropertiesTable.GetRecords(whereClause2, new OrderBy(false, false), 0, 1);
-                    System.Collections.Generic.IDictionary<string, object> vars = new System.Collections.Generic.Dictionary<string, object> ();
-                    // if find a record, add it to the dropdown and set it as selected item
-                    if (rc != null && rc.Length == 1)
-                    {
-                        PropertiesRecord itemValue = rc[0];
-                        string cvalue = null;
-                        string fvalue = null;                        
-                        if (itemValue.PropertyIDSpecified)
-                            cvalue = itemValue.PropertyID.ToString(); 
-                        Boolean _isExpandableNonCompositeForeignKey = PropertyContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertyContactsTable.PropertyID);
-                        if(_isExpandableNonCompositeForeignKey && PropertyContactsTable.PropertyID.IsApplyDisplayAs)
-                            fvalue = PropertyContactsTable.GetDFKA(itemValue, PropertyContactsTable.PropertyID);
-                        if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                            fvalue = itemValue.Format(PropertiesTable.CompanyName);
-                            					
-                        if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
-                        MiscUtils.ResetSelectedItem(this.PropertyID, new ListItem(fvalue, cvalue));                      
-                    }
-                }
-                catch
-                {
-                }
-
-                    					
-            }					
-                        
-        }
-                  
         // Fill the RegionID list.
         protected virtual void PopulateRegionIDDropDownList(string selectedValue, int maxItems) 
         {
@@ -2621,57 +2358,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             
         
         // event handler for ImageButton
-        public virtual void PropertyIDAddRecordLink_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            // The redirect URL is set on the Properties, Custom Properties or Actions.
-            // The ModifyRedirectURL call resolves the parameters before the
-            // Response.Redirect redirects the page to the URL.  
-            // Any code after the Response.Redirect call will not be executed, since the page is
-            // redirected to the URL.
-            
-            string url = @"../Properties/AddProperties.aspx";
-            
-        bool shouldRedirect = true;
-        string target = null;
-        if (target == null) target = ""; // avoid warning on VS
-      
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-                url = this.ModifyRedirectUrl(url, "",true);
-                url = this.Page.ModifyRedirectUrl(url, "",true);
-              
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  shouldRedirect = false;
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-            if (shouldRedirect) {
-                this.Page.ShouldSaveControlsToSession = true;
-      
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.PropertyID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("CompanyName")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("PropertyID");                      
-                              
-                string javascriptCall = "";
-                
-                    javascriptCall = "initializeNewWindow(this, '" + url + "', false, event);";                  
-                AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "PropertyIDAddRecordLink_Click", javascriptCall, true);
-        
-            }
-        
-        }
-            
-            
-        
-        // event handler for ImageButton
         public virtual void RegionIDAddRecordLink_Click(object sender, ImageClickEventArgs args)
         {
               
@@ -2763,21 +2449,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
 	            this.CountryID.SelectedIndex = this.CountryID.Items.Count - 1;
 	            this.Page.Session.Remove(CountryID.ClientID + "_SelectedValue");
 	            this.Page.Session.Remove(CountryID.ClientID + "_SelectedDisplayText");
-            }
-           						
-        }
-            
-        protected virtual void PropertyID_SelectedIndexChanged(object sender, EventArgs args)
-        {
-            // for the value inserted by quick add button or large list selector, 
-            // the value is necessary to be inserted by this event during postback 
-            string val = (string)(this.Page.Session[PropertyID.ClientID + "_SelectedValue"]);
-            string displayText = (string)(this.Page.Session[PropertyID.ClientID + "_SelectedDisplayText"]);
-            if (!string.IsNullOrEmpty(displayText) && !string.IsNullOrEmpty(val)) {
-	            this.PropertyID.Items.Add(new ListItem(displayText, val));
-	            this.PropertyID.SelectedIndex = this.PropertyID.Items.Count - 1;
-	            this.Page.Session.Remove(PropertyID.ClientID + "_SelectedValue");
-	            this.Page.Session.Remove(PropertyID.ClientID + "_SelectedDisplayText");
             }
            						
         }
@@ -3090,24 +2761,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         public System.Web.UI.WebControls.Literal PropertyContactsTitle {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyContactsTitle");
-            }
-        }
-        
-        public System.Web.UI.WebControls.DropDownList PropertyID {
-            get {
-                return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyID");
-            }
-        }
-            
-        public System.Web.UI.WebControls.ImageButton PropertyIDAddRecordLink {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDAddRecordLink");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal PropertyIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDLabel");
             }
         }
         

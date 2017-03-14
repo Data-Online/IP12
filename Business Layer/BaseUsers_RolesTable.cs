@@ -29,15 +29,80 @@ namespace IPv5.Business
 /// </remarks>
 /// <seealso cref="Users_RolesTable"></seealso>
 [SerializableAttribute()]
-public class BaseUsers_RolesTable : PrimaryKeyTable
+public class BaseUsers_RolesTable : PrimaryKeyTable, IUserRoleTable
 {
 
     private readonly string TableDefinitionString = Users_RolesDefinition.GetXMLString();
 
+#region "IUserTable Members"
+
+	//Get the column that specifies the user's unique identifier
+	public virtual BaseClasses.Data.BaseColumn UserId
+	{
+		get
+		{
+			return (BaseClasses.Data.BaseColumn)this.TableDefinition.ColumnList[1];
+		}
+	}
+
+	//Use the "explicit interface member implementation" feature to make 
+	//the IUserTable.UserIdColumn Interface property an alias for the virtual UserId property. 
+	BaseClasses.Data.BaseColumn BaseClasses.IUserTable.UserIdColumn
+	{
+		get
+		{
+			return this.UserId;
+		}
+	}
+
+	//Get a list of records that match the criteria specified in a filter
+	public virtual ArrayList GetRecordList(
+		string userId, 
+		BaseClasses.Data.BaseFilter filter, 
+		BaseClasses.Data.OrderBy orderBy, 
+		int pageNumber, 
+		int batchSize, 
+		ref int totalRows)
+	{
+		if (userId != null)
+		{
+			filter = BaseFilter.CombineFilters(
+				CompoundFilter.CompoundingOperators.And_Operator, 
+				filter, 
+				BaseFilter.CreateUserIdFilter(((IUserTable)this), userId));
+		}
+		BaseClasses.Data.BaseFilter join = null;
+		return ((BaseClasses.ITable)this).GetRecordList(join, filter, null, orderBy, pageNumber, batchSize, ref totalRows);
+	}
+
+#endregion
 
 
 
 
+
+#region "IUserRoleTable Members"
+
+	//Get the column that specifies role values
+	public virtual BaseClasses.Data.BaseColumn UserRole
+	{
+		get
+		{
+			return (BaseClasses.Data.BaseColumn)this.TableDefinition.ColumnList[2];
+		}
+	}
+
+	//Use the "explicit interface member implementation" feature to make 
+	//the IUserRoleTable.UserRoleColumn Interface property an alias for the virtual UserRole property. 
+	BaseClasses.Data.BaseColumn BaseClasses.IUserRoleTable.UserRoleColumn
+	{
+		get
+		{
+			return this.UserRole;
+		}
+	}
+
+#endregion
 
 
     protected BaseUsers_RolesTable()

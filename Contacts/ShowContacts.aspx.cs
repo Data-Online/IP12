@@ -225,26 +225,26 @@ public void SetEditButton()
         {
             SetEditButton_Base(); 
         }              
-public void SetLinkTableTableControl()
-        {
-            SetLinkTableTableControl_Base(); 
-        }
-public void SetDirectorsTableControl()
-        {
-            SetDirectorsTableControl_Base(); 
-        }
+//public void SetLinkTableTableControl()
+//        {
+//            SetLinkTableTableControl_Base(); 
+//        }
+//public void SetDirectorsTableControl()
+//        {
+//            SetDirectorsTableControl_Base(); 
+//        }
 public void SetContactsRecordControl()
         {
             SetContactsRecordControl_Base(); 
         }
-public void SetContactNotesTableControl()
-        {
-            SetContactNotesTableControl_Base(); 
-        }
-public void SetContactsTabContainer()
-        {
-            SetContactsTabContainer_Base(); 
-        }
+//public void SetContactNotesTableControl()
+//        {
+//            SetContactNotesTableControl_Base(); 
+//        }
+//public void SetContactsTabContainer()
+//        {
+//            SetContactsTabContainer_Base(); 
+//        }
 [System.Web.Services.WebMethod()]
         public static object[] GetImage(string contextName,
                                         string tableName,
@@ -303,6 +303,8 @@ public override void SetControl(string control)
         }
         
     
+        public ThemeButtonWithArrow ActionsButton;
+                
         public System.Web.UI.WebControls.Literal Active;
             
         public System.Web.UI.WebControls.Literal ActiveLabel;
@@ -327,29 +329,13 @@ public override void SetControl(string control)
             
         public System.Web.UI.WebControls.Literal CityIDLabel;
         
-        public ThemeButtonWithArrow ContactNotesButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton ContactNotesExportExcelButton;
-        
-        public ThemeButtonWithArrow ContactNotesFiltersButton;
-                
-        public System.Web.UI.WebControls.ImageButton ContactNotesImportButton;
-        
-        public System.Web.UI.WebControls.ImageButton ContactNotesNewButton;
-        
-        public PaginationModern ContactNotesPagination;
-                
-        public System.Web.UI.WebControls.ImageButton ContactNotesPDFButton;
-        
-        public IPv5.UI.Controls.ShowContacts.ContactNotesTableControl ContactNotesTableControl;
+        public IPv5.UI.Controls.ShowContacts.ContactNotesTableControl1 ContactNotesTableControl1;
           
-        public System.Web.UI.WebControls.ImageButton ContactNotesWordButton;
-        
         public System.Web.UI.WebControls.ImageButton ContactsDialogEditButton;
         
         public IPv5.UI.Controls.ShowContacts.ContactsRecordControl ContactsRecordControl;
           
-        public AjaxControlToolkit.TabContainer ContactsTabContainer;
+        public AjaxControlToolkit.TabContainer ContactsRecordControlTabContainer;
         
         public System.Web.UI.WebControls.Literal ContactsTitle;
             
@@ -357,25 +343,9 @@ public override void SetControl(string control)
             
         public System.Web.UI.WebControls.Literal CountryIDLabel;
         
-        public System.Web.UI.WebControls.LinkButton DateRecordedSortLabel;
-        
-        public ThemeButtonWithArrow DirectorsButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton DirectorsExportExcelButton;
-        
-        public ThemeButtonWithArrow DirectorsFiltersButton;
-                
-        public System.Web.UI.WebControls.ImageButton DirectorsImportButton;
-        
-        public System.Web.UI.WebControls.ImageButton DirectorsNewButton;
-        
-        public PaginationModern DirectorsPagination;
-                
-        public System.Web.UI.WebControls.ImageButton DirectorsPDFButton;
-        
-        public IPv5.UI.Controls.ShowContacts.DirectorsTableControl DirectorsTableControl;
-          
-        public System.Web.UI.WebControls.ImageButton DirectorsWordButton;
+        public System.Web.UI.WebControls.Literal DateOfBirth;
+            
+        public System.Web.UI.WebControls.Literal DateOfBirthLabel;
         
         public ThemeButton EditButton;
                 
@@ -383,6 +353,12 @@ public override void SetControl(string control)
             
         public System.Web.UI.WebControls.Literal eMailLabel;
         
+        public System.Web.UI.WebControls.ImageButton ExcelButton;
+        
+        public ThemeButton FilterButton;
+                
+        public ThemeButtonWithArrow FiltersButton;
+                
         public System.Web.UI.WebControls.Literal FirstName;
             
         public System.Web.UI.WebControls.Literal FirstName2;
@@ -391,9 +367,15 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal FirstNameLabel;
         
+        public System.Web.UI.WebControls.ImageButton ImportButton;
+        
         public System.Web.UI.WebControls.Literal IrdNumber;
             
+        public System.Web.UI.WebControls.Literal IrdNumber1;
+            
         public System.Web.UI.WebControls.Literal IrdNumberLabel;
+        
+        public System.Web.UI.WebControls.Literal IrdNumberLabel1;
         
         public System.Web.UI.WebControls.Literal LastName;
             
@@ -403,51 +385,47 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal LastNameLabel;
         
-        public ThemeButtonWithArrow LinkTableButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton LinkTableExportExcelButton;
+        public System.Web.UI.WebControls.ImageButton NewButton;
         
-        public ThemeButtonWithArrow LinkTableFiltersButton;
-                
-        public System.Web.UI.WebControls.ImageButton LinkTableImportButton;
-        
-        public System.Web.UI.WebControls.ImageButton LinkTableNewButton;
-        
-        public PaginationModern LinkTablePagination;
-                
-        public System.Web.UI.WebControls.ImageButton LinkTablePDFButton;
-        
-        public IPv5.UI.Controls.ShowContacts.LinkTableTableControl LinkTableTableControl;
-          
-        public System.Web.UI.WebControls.ImageButton LinkTableWordButton;
-        
-        public System.Web.UI.WebControls.LinkButton NotesSortLabel;
+        public System.Web.UI.WebControls.Literal NotesLabel3;
         
         public ThemeButton OKButton;
                 
         public System.Web.UI.WebControls.Literal PageTitle;
         
+        public PaginationModern Pagination;
+                
+        public System.Web.UI.WebControls.ImageButton PDFButton;
+        
         public System.Web.UI.WebControls.Literal PhoneNumber;
             
         public System.Web.UI.WebControls.Literal PhoneNumberLabel;
+        
+        public System.Web.UI.WebControls.Literal PlaceOfBirth;
+            
+        public System.Web.UI.WebControls.Literal PlaceOfBirthLabel;
         
         public System.Web.UI.WebControls.Literal PostCode;
             
         public System.Web.UI.WebControls.Literal PostCodeLabel;
         
-        public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel1;
-        
         public System.Web.UI.WebControls.LinkButton RegionID;
             
         public System.Web.UI.WebControls.Literal RegionIDLabel;
         
+        public System.Web.UI.WebControls.ImageButton ResetButton;
+        
+        public System.Web.UI.WebControls.Label SortByLabel;
+        
+        public System.Web.UI.WebControls.Literal Title0;
+            
         public System.Web.UI.WebControls.Literal TitleLabel;
         
         public System.Web.UI.WebControls.Literal TrustName;
             
         public System.Web.UI.WebControls.Literal TrustNameLabel;
+        
+        public System.Web.UI.WebControls.ImageButton WordButton;
         
         public ValidationSummary ValidationSummary1;
 
@@ -514,7 +492,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("");
+            this.Authorize("NOT_ANONYMOUS");
              if (!this.IsPostBack)
              {
             
@@ -626,20 +604,8 @@ public override void SetControl(string control)
           switch (control)
           {
           
-              case "ContactNotesTableControl":
-                 SetContactNotesTableControl();
-                 break;
-          
               case "ContactsRecordControl":
                  SetContactsRecordControl();
-                 break;
-          
-              case "DirectorsTableControl":
-                 SetDirectorsTableControl();
-                 break;
-          
-              case "LinkTableTableControl":
-                 SetLinkTableTableControl();
                  break;
                
           }
@@ -743,9 +709,7 @@ public override void SetControl(string control)
                 this.DataBind();
                 
                 
-                
-            SetContactsTabContainer(); 
-          
+                    
     
                 // Load and bind data for each record and table UI control.
                 
@@ -851,29 +815,6 @@ public override void SetControl(string control)
                 
         // Write out the Set methods
         
-        public void SetContactsTabContainer_Base()           
-        
-        {
-                            
-                   
-            if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "true") 
-                MiscUtils.FindControlRecursively(this, "ContactsTabContainer").Visible = true;
-            else if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "false") 
-                MiscUtils.FindControlRecursively(this, "ContactsTabContainer").Visible = false;
-         
-  
-        }      
-      
-        public void SetContactNotesTableControl_Base()           
-        
-        {        
-            if (ContactNotesTableControl.Visible)
-            {
-                ContactNotesTableControl.LoadData();
-                ContactNotesTableControl.DataBind();
-            }
-        }
-      
         public void SetContactsRecordControl_Base()           
         
         {        
@@ -881,26 +822,6 @@ public override void SetControl(string control)
             {
                 ContactsRecordControl.LoadData();
                 ContactsRecordControl.DataBind();
-            }
-        }
-      
-        public void SetDirectorsTableControl_Base()           
-        
-        {        
-            if (DirectorsTableControl.Visible)
-            {
-                DirectorsTableControl.LoadData();
-                DirectorsTableControl.DataBind();
-            }
-        }
-      
-        public void SetLinkTableTableControl_Base()           
-        
-        {        
-            if (LinkTableTableControl.Visible)
-            {
-                LinkTableTableControl.LoadData();
-                LinkTableTableControl.DataBind();
             }
         }
       

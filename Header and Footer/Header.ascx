@@ -7,6 +7,6 @@
 	</asp:ImageButton></div/></td><td class="signInBar"><asp:LinkButton runat="server" id="_SignIn" causesvalidation="False" commandname="ShowSignIn" tooltip="SignIn">		
 	</asp:LinkButton></td><td>&nbsp;</td></tr></table>
 </td></tr></table>
-</td></tr><tr><td><asp:Image runat="server" id="_Logo" alt="&lt;%# GetResourceValue(&quot;Txt:PageHeader&quot;, &quot;IPv5&quot;) %>" imageurl="../Images/Logo.gif" style="border-width:0px;">		
+</td></tr><tr><td><asp:Image runat="server" id="_Logo" alt="&lt;%# GetResourceValue(&quot;Txt:PageHeader&quot;, &quot;IPv5&quot;) %>" imageurl="../Images/Logo.png" style="border-width:0px;">		
 	</asp:Image></td></tr><tr><td><div id="languagePanel" class="popupWrapper" runat="server"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="popupTableCellValue" style="text-align: right"><input type="image" src="../Images/closeButton.gif" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /><br /></td></tr><tr><td class="popupTableCellValue"><asp:dropdownlist id="LanguageSelector" runat="server" cssclass="Filter_Input" AutoPostBack="true"></asp:dropdownlist></td></tr><tr><td class="popupTableCellValue"><asp:dropdownlist id="ThemeSelector" runat="server" cssclass="Filter_Input" AutoPostBack="true"></asp:dropdownlist></td></tr></table>
 </div></td><td style="text-align:right; vertical-align:top;"></td></tr></table>

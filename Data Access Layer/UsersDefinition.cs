@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class UsersDefinition
 {
 #region "Definition (XML) for UsersDefinition table"
-	//Next 161 lines contain Table Definition (XML) for table "UsersDefinition"
+	//Next 166 lines contain Table Definition (XML) for table "UsersDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -29,7 +29,7 @@ public class UsersDefinition
 		if(_DefinitionString == "")
 		{
 			         System.Text.StringBuilder tbf = new System.Text.StringBuilder();
-         tbf.Append(@"<XMLDefinition Generator=""Iron Speed Designer"" Version=""12.2"" Type=""GENERIC"">");
+         tbf.Append(@"<XMLDefinition Generator=""Iron Speed Designer"" Version=""12.2"" Type=""USER"">");
          tbf.Append(  @"<ColumnDefinition>");
          tbf.Append(    @"<Column InternalName=""0"" Priority=""1"" ColumnNum=""0"">");
          tbf.Append(      @"<columnName>UserID</columnName>");
@@ -189,6 +189,11 @@ public class UsersDefinition
          tbf.Append(  @"<MenuName>Users</MenuName>");
          tbf.Append(  @"<QSPath>../Users/UsersQuickSelector.aspx</QSPath>");
          tbf.Append(  @"<TableStoredProcPrefix>pIPv5Users</TableStoredProcPrefix>");
+         tbf.Append(  @"<IsUserTable>Y</IsUserTable>");
+         tbf.Append(  @"<UserUserIDField>UserID</UserUserIDField>");
+         tbf.Append(  @"<UserEmailField>eMail</UserEmailField>");
+         tbf.Append(  @"<UserUserNameField>UserName</UserUserNameField>");
+         tbf.Append(  @"<UserPassword>Password</UserPassword>");
          tbf.Append("</XMLDefinition>");
          _DefinitionString = tbf.ToString();
 	

@@ -77,7 +77,9 @@
 	</asp:ImageButton><br /><br />
                                 </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PropertyIDLabel" Text="Property">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:LinkButton runat="server" id="PropertyID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="ContactIDLabel" Text="Contact">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:LinkButton runat="server" id="ContactID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="11">&nbsp;</td></tr></IPv5:DirectorsTableControlRow>
+</td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:LinkButton runat="server" id="ContactID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></span>
+ </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="11">&nbsp;</td></tr></IPv5:DirectorsTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>

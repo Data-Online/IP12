@@ -455,8 +455,19 @@ public override void SetControl(string control)
           this.HeaderSettings.Visible = false;
         
         this.UserStatusLbl.Visible = false; 
-        this.SignIn.Visible = false;
+        if(BaseClasses.Configuration.ApplicationSettings.Current.AuthenticationType == BaseClasses.Configuration.SecurityConstants.None){
         
+            this.SignIn.Visible = false; 
+            
+        }
+        else {
+        
+            this.SignIn.Visible = true; 
+          
+            this.UserStatusLbl.Visible = true;
+        
+        }
+  
         switch (((BaseApplicationPage)(this.Page)).CurrentSecurity.GetUserStatus()) {
           case null:
           case "":

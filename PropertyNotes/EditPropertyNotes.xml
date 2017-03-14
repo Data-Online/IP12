@@ -16,6 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>PropertyNotesMenuItem</MenuHiliteItem>
+    <LoginRequired>&lt;PRoles&gt;NO_ACCESS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>332575444-8993</CheckSum>
   </Self>
   <ComposedOf>
@@ -231,6 +232,10 @@
           <Name>PropertyIDRequiredFieldValidator:Text</Name>
           <Value>*</Value>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyNotesRecordControl</InsideControl>
     </ContainedComponent>
@@ -275,6 +280,10 @@
           <Value>Btn:Add</Value>
           <Type>ResourceReference</Type>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyNotesRecordControl</InsideControl>
     </ContainedComponent>
@@ -297,6 +306,10 @@
         <Attribute>
           <Name>Text</Name>
           <Value>%ISD_DEFAULT%PropertyNotes%PropertyID</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyNotesRecordControl</InsideControl>

@@ -301,7 +301,7 @@
       <columnLengthSet>50</columnLengthSet>
       <columnDefault>
       </columnDefault>
-      <columnDBDefault>
+      <columnDBDefault Source="User">
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
@@ -311,18 +311,18 @@
       </columnDBFormat>
       <columnPK>N</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
+      <columnComputed Source="User">N</columnComputed>
+      <columnIdentity Source="User">N</columnIdentity>
+      <columnReadOnly Source="User">N</columnReadOnly>
       <columnRequired>N</columnRequired>
       <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive Source="Database">N</columnCaseSensitive>
+      <columnCaseSensitive Source="User">N</columnCaseSensitive>
       <columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>
-      <columnFullText>N</columnFullText>
+      <columnFullText Source="User">N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
-      <applyLabelText>Y</applyLabelText>
+      <applyLabelText>N</applyLabelText>
       <applyDFKA>N</applyDFKA>
       <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
       <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
@@ -340,6 +340,9 @@
       </insertingFormula>
       <updatingFormula>
       </updatingFormula>
+      <InternalName>6</InternalName>
+      <columnTableClassName>
+      </columnTableClassName>
     </Column>
     <Column InternalName="7" Priority="8" ColumnNum="7">
       <columnName>Address3</columnName>
@@ -349,7 +352,7 @@
       <columnLengthSet>50</columnLengthSet>
       <columnDefault>
       </columnDefault>
-      <columnDBDefault>
+      <columnDBDefault Source="User">
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
@@ -359,18 +362,18 @@
       </columnDBFormat>
       <columnPK>N</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
+      <columnComputed Source="User">N</columnComputed>
+      <columnIdentity Source="User">N</columnIdentity>
+      <columnReadOnly Source="User">N</columnReadOnly>
       <columnRequired>N</columnRequired>
       <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive Source="Database">N</columnCaseSensitive>
+      <columnCaseSensitive Source="User">N</columnCaseSensitive>
       <columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>
-      <columnFullText>N</columnFullText>
+      <columnFullText Source="User">N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
-      <applyLabelText>Y</applyLabelText>
+      <applyLabelText>N</applyLabelText>
       <applyDFKA>N</applyDFKA>
       <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
       <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
@@ -388,6 +391,9 @@
       </insertingFormula>
       <updatingFormula>
       </updatingFormula>
+      <InternalName>7</InternalName>
+      <columnTableClassName>
+      </columnTableClassName>
     </Column>
     <Column InternalName="8" Priority="9" ColumnNum="8">
       <columnName>CityID</columnName>

@@ -124,11 +124,20 @@ public class BasePropertyNotesRecordControl : IPv5.UI.BaseApplicationRecordContr
             
             WhereClause wc = this.CreateWhereClause();
             
+            System.Web.UI.WebControls.Panel Panel = (System.Web.UI.WebControls.Panel)MiscUtils.FindControlRecursively(this, "PropertyNotesRecordControlPanel");
+            if (Panel != null){
+                Panel.Visible = true;
+            }
+            
             // If there is no Where clause, then simply create a new, blank record.
             
             if (wc == null || !(wc.RunQuery)) {
                 this.DataSource = new PropertyNotesRecord();
             
+                if (Panel != null){
+                    Panel.Visible = false;
+                }
+              
                 return;
             }
           
@@ -138,11 +147,15 @@ public class BasePropertyNotesRecordControl : IPv5.UI.BaseApplicationRecordContr
                 // There is no data for this Where clause.
                 wc.RunQuery = false;
                 
+                if (Panel != null){
+                    Panel.Visible = false;
+                }
+                
                 return;
             }
             
             // Set DataSource based on record retrieved from the database.
-            this.DataSource = (PropertyNotesRecord)PropertyNotesRecord.Copy(recList[0], false);
+            this.DataSource = PropertyNotesTable.GetRecord(recList[0].GetID().ToXmlString(), true);
                   
         }
 
@@ -454,6 +467,11 @@ public class BasePropertyNotesRecordControl : IPv5.UI.BaseApplicationRecordContr
                 }
             }
         
+            System.Web.UI.WebControls.Panel Panel = (System.Web.UI.WebControls.Panel)MiscUtils.FindControlRecursively(this, "PropertyNotesRecordControlPanel");
+            if ( (Panel != null && !Panel.Visible) || this.DataSource == null){
+                return;
+            }
+          
           
             // 2. Perform any custom validation.
             this.Validate();
@@ -565,44 +583,32 @@ public class BasePropertyNotesRecordControl : IPv5.UI.BaseApplicationRecordContr
             // 2. User selected search criteria.
             // 3. User selected filter criteria.
 
-            
-            // Retrieve the record id from the URL parameter.
-            string recId = this.Page.Request.QueryString["PropertyNotes"];
-            if (recId == null || recId.Length == 0) {
-                
-                return null;
-                
-            }
               
-            recId = ((BaseApplicationPage)(this.Page)).Decrypt(recId);
-            if (recId == null || recId.Length == 0) {
-                
-                return null;
-                
+            // Get the static clause defined at design time on the Record Panel Wizard
+            WhereClause qc = this.CreateQueryClause();
+            if (qc != null) {
+                wc.iAND(qc);
             }
-                       
-            HttpContext.Current.Session["QueryString in AddPropertyNotes"] = recId;
-              
-            if (KeyValue.IsXmlKey(recId)) {
-                // Keys are typically passed as XML structures to handle composite keys.
-                // If XML, then add a Where clause based on the Primary Key in the XML.
-                KeyValue pkValue = KeyValue.XmlToKey(recId);
             
-          wc.iAND(PropertyNotesTable.NoteID, BaseFilter.ComparisonOperator.EqualsTo, pkValue.GetColumnValueString(PropertyNotesTable.NoteID));
-             
-            }
-            else {
-                // The URL parameter contains the actual value, not an XML structure.
-            
-          wc.iAND(PropertyNotesTable.NoteID, BaseFilter.ComparisonOperator.EqualsTo, recId);
-             
-            }
-                
             return wc;
-            
+          
         }
         
         
+        protected virtual WhereClause CreateQueryClause()
+        {
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("URL(\"PropertyID\")", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.PropertyNotesTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"PropertyNotes_.PropertyID"), EvaluateFormula("URL(\"PropertyID\")", false), BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
+         if (EvaluateFormula("URL(\"PropertyID\")", false) == "--PLEASE_SELECT--" || EvaluateFormula("URL(\"PropertyID\")", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
         public virtual WhereClause CreateWhereClause(String searchText, String fromSearchControl, String AutoTypeAheadSearch, String AutoTypeAheadWordSeparators)
         {
             // This CreateWhereClause is used for loading list of suggestions for Auto Type-Ahead feature.
@@ -1369,8 +1375,16 @@ public class BasePropertyNotesRecordControl : IPv5.UI.BaseApplicationRecordContr
                 return this.DataSource;
             }
             
-            return new PropertyNotesRecord();
+              if (this.RecordUniqueId != null) {
+              
+                return PropertyNotesTable.GetRecord(this.RecordUniqueId, true);
+              
+            }
             
+            // Localization.
+            
+            throw new Exception(Page.GetResourceValue("Err:RetrieveRec", "IPv5"));
+                
         }
 
         public new BaseApplicationPage Page

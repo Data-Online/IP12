@@ -20,7 +20,7 @@ namespace IPv5.Business
 /// </remarks>
 /// <seealso cref="UsersTable"></seealso>
 /// <seealso cref="UsersRecord"></seealso>
-public class BaseUsersRecord : PrimaryKeyRecord
+public class BaseUsersRecord : PrimaryKeyRecord, IUserIdentityRecord
 {
 
 	public readonly static UsersTable TableUtils = UsersTable.Instance;
@@ -122,8 +122,78 @@ public class BaseUsersRecord : PrimaryKeyRecord
         return resultObj.ToString();
 	}
 
+#region "IUserRecord Members"
+
+	//Get the user's unique identifier
+	public string GetUserId()
+	{
+		return this.GetString(((BaseClasses.IUserTable)this.TableAccess).UserIdColumn);
+	}
+
+#endregion
 
 
+#region "IUserIdentityRecord Members"
+
+	//Get the user's name
+	public string GetUserName()
+	{
+		return this.GetString(((BaseClasses.IUserIdentityTable)this.TableAccess).UserNameColumn);
+	}
+
+	//Get the user's password
+	public string GetUserPassword()
+	{
+		return this.GetString(((BaseClasses.IUserIdentityTable)this.TableAccess).UserPasswordColumn);
+	}
+
+	//Get the user's email address
+	public string GetUserEmail()
+	{
+		return this.GetString(((BaseClasses.IUserIdentityTable)this.TableAccess).UserEmailColumn);
+	}
+
+	//Get a list of roles to which the user belongs
+	public string[] GetUserRoles()
+	{
+		string[] roles;
+		if ((this as BaseClasses.IUserRoleRecord) != null)
+		{
+			string role = ((BaseClasses.IUserRoleRecord)this).GetUserRole();
+			roles = new string[]{role};
+		}
+		else
+		{
+			BaseClasses.IUserRoleTable roleTable = 
+				((BaseClasses.IUserIdentityTable)this.TableAccess).GetUserRoleTable();
+			if (roleTable == null)
+			{
+				return null;
+			}
+			else
+			{
+				ColumnValueFilter filter = BaseFilter.CreateUserIdFilter(roleTable, this.GetUserId());
+				BaseClasses.Data.OrderBy order = new BaseClasses.Data.OrderBy(false, false);
+				BaseClasses.Data.BaseFilter join = null;
+				ArrayList roleRecords = roleTable.GetRecordList(
+					join, 
+					filter, 
+					null, 
+					order, 
+					BaseClasses.Data.BaseTable.MIN_PAGE_NUMBER, 
+					BaseClasses.Data.BaseTable.MAX_BATCH_SIZE);
+				ArrayList roleList = new ArrayList(roleRecords.Count);
+				foreach (BaseClasses.IUserRoleRecord roleRecord in roleRecords)
+				{
+					roleList.Add(roleRecord.GetUserRole());
+				}
+				roles = (string[])roleList.ToArray(typeof(string));
+			}
+		}
+		return roles;
+	}
+
+#endregion
 
 
 

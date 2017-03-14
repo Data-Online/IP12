@@ -327,12 +327,6 @@ public override void SetControl(string control)
           
         public System.Web.UI.WebControls.Literal PropertyContactsTitle;
             
-        public System.Web.UI.WebControls.DropDownList PropertyID;
-            
-        public System.Web.UI.WebControls.ImageButton PropertyIDAddRecordLink;
-        
-        public System.Web.UI.WebControls.Literal PropertyIDLabel;
-        
         public System.Web.UI.WebControls.DropDownList RegionID;
             
         public System.Web.UI.WebControls.ImageButton RegionIDAddRecordLink;
@@ -410,7 +404,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("");
+            this.Authorize("NO_ACCESS");
              if (!this.IsPostBack)
              {
             

@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class DirectorsDefinition
 {
 #region "Definition (XML) for DirectorsDefinition table"
-	//Next 116 lines contain Table Definition (XML) for table "DirectorsDefinition"
+	//Next 129 lines contain Table Definition (XML) for table "DirectorsDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -99,21 +99,21 @@ public class DirectorsDefinition
          tbf.Append(      @"<columnDBType>int</columnDBType>");
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
-         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnDBDefault Source=""User""></columnDBDefault>");
          tbf.Append(      @"<columnIndex>N</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
-         tbf.Append(      @"<columnFunction>notrim</columnFunction>");
+         tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
          tbf.Append(      @"<columnPermanent>N</columnPermanent>");
-         tbf.Append(      @"<columnComputed>N</columnComputed>");
-         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
-         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnComputed Source=""User"">N</columnComputed>");
+         tbf.Append(      @"<columnIdentity Source=""User"">N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly Source=""User"">N</columnReadOnly>");
          tbf.Append(      @"<columnRequired>N</columnRequired>");
          tbf.Append(      @"<columnNotNull>N</columnNotNull>");
-         tbf.Append(      @"<columnCaseSensitive>N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCaseSensitive Source=""User"">N</columnCaseSensitive>");
          tbf.Append(      @"<columnCollation></columnCollation>");
-         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnFullText Source=""User"">N</columnFullText>");
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
@@ -122,10 +122,23 @@ public class DirectorsDefinition
          tbf.Append(        @"<columnFKTable>IPv5.Business.ContactsTable, IPv5.Business</columnFKTable>");
          tbf.Append(        @"<columnFKOwner>dbo</columnFKOwner>");
          tbf.Append(        @"<columnFKColumn>ContactID</columnFKColumn>");
-         tbf.Append(        @"<columnFKColumnDisplay>LastName</columnFKColumnDisplay>");
+         tbf.Append(        @"<columnFKColumnDisplay>=  Contacts.FirstName + &#39; &#39; + Contacts.LastName</columnFKColumnDisplay>");
          tbf.Append(        @"<foreignKeyType>Explicit</foreignKeyType>");
          tbf.Append(      "</foreignKey>");
          tbf.Append(      @"<applyDFKA>Y</applyDFKA>");
+         tbf.Append(      @"<InternalName>2</InternalName>");
+         tbf.Append(      @"<columnTableClassName></columnTableClassName>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(  "</ColumnDefinition>");
          tbf.Append(  @"<TableName>Directors</TableName>");

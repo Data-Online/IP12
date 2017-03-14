@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<XMLDefinition Generator="Iron Speed Designer" Version="12.2" Type="GENERIC">
+<XMLDefinition Generator="Iron Speed Designer" Version="12.2" Type="USER">
   <ColumnDefinition>
     <Column InternalName="0" Priority="1" ColumnNum="0">
       <columnName>Users_RoleID</columnName>
@@ -130,4 +130,7 @@
   <FolderName>Users_Roles</FolderName>
   <MenuName>Users Roles</MenuName>
   <QSPath>../Users_Roles/Users_RolesQuickSelector.aspx</QSPath>
+  <IsRoleTable>Y</IsRoleTable>
+  <RoleRoleID>RoleID</RoleRoleID>
+  <RoleUserID>UserID</RoleUserID>
 </XMLDefinition>

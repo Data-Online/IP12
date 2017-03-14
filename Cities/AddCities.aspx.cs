@@ -238,26 +238,26 @@ public void SetCancelButton()
         {
             SetCancelButton_Base(); 
         }              
-public void SetSuppliersTableControl()
-        {
-            SetSuppliersTableControl_Base(); 
-        }
-public void SetPropertyContactsTableControl()
-        {
-            SetPropertyContactsTableControl_Base(); 
-        }
-public void SetContractorsTableControl()
-        {
-            SetContractorsTableControl_Base(); 
-        }
+//public void SetSuppliersTableControl()
+//        {
+//            SetSuppliersTableControl_Base(); 
+//        }
+//public void SetPropertyContactsTableControl()
+//        {
+//            SetPropertyContactsTableControl_Base(); 
+//        }
+//public void SetContractorsTableControl()
+//        {
+//            SetContractorsTableControl_Base(); 
+//        }
 public void SetCitiesRecordControl()
         {
             SetCitiesRecordControl_Base(); 
         }
-public void SetCitiesTabContainer()
-        {
-            SetCitiesTabContainer_Base(); 
-        }
+//public void SetCitiesTabContainer()
+//        {
+//            SetCitiesTabContainer_Base(); 
+//        }
 [System.Web.Services.WebMethod()]
         public static object[] GetImage(string contextName,
                                         string tableName,
@@ -316,122 +316,20 @@ public override void SetControl(string control)
         }
         
     
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel2;
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel2;
-        
-        public System.Web.UI.WebControls.LinkButton Address3SortLabel;
-        
         public ThemeButton CancelButton;
                 
-        public System.Web.UI.WebControls.LinkButton CellPhoneSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton CellPhoneSortLabel1;
-        
         public IPv5.UI.Controls.AddCities.CitiesRecordControl CitiesRecordControl;
           
-        public AjaxControlToolkit.TabContainer CitiesTabContainer;
-        
         public System.Web.UI.WebControls.Literal CitiesTitle;
             
         public System.Web.UI.WebControls.Literal CityLabel;
         
-        public System.Web.UI.WebControls.LinkButton CompanyNameSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton CompanyNameSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton ContactNameSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton ContactNameSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton ContactTypeIDSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton ContractorIDSortLabel;
-        
-        public System.Web.UI.WebControls.ImageButton ContractorsAddButton;
-        
-        public ThemeButtonWithArrow ContractorsButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton ContractorsDeleteButton;
-        
-        public ThemeButtonWithArrow ContractorsFiltersButton;
-                
-        public PaginationModern ContractorsPagination;
-                
-        public IPv5.UI.Controls.AddCities.ContractorsTableControl ContractorsTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox ContractorsToggleAll;
-        
-        public System.Web.UI.WebControls.LinkButton eMailSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton eMailSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton eMailSortLabel2;
-        
-        public System.Web.UI.WebControls.LinkButton FirstNameSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton LandPhoneSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton LandPhoneSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton LastNameSortLabel;
-        
         public System.Web.UI.WebControls.Literal PageTitle;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel2;
-        
-        public System.Web.UI.WebControls.ImageButton PropertyContactsAddButton;
-        
-        public ThemeButtonWithArrow PropertyContactsButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton PropertyContactsDeleteButton;
-        
-        public ThemeButtonWithArrow PropertyContactsFiltersButton;
-                
-        public PaginationModern PropertyContactsPagination;
-                
-        public IPv5.UI.Controls.AddCities.PropertyContactsTableControl PropertyContactsTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox PropertyContactsToggleAll;
-        
-        public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel;
         
         public ThemeButton SaveAndNewButton;
                 
         public ThemeButton SaveButton;
                 
-        public System.Web.UI.WebControls.LinkButton ServiceTypeIDSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton ServiceTypeIDSortLabel1;
-        
-        public System.Web.UI.WebControls.ImageButton SuppliersAddButton;
-        
-        public ThemeButtonWithArrow SuppliersButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton SuppliersDeleteButton;
-        
-        public ThemeButtonWithArrow SuppliersFiltersButton;
-                
-        public PaginationModern SuppliersPagination;
-                
-        public IPv5.UI.Controls.AddCities.SuppliersTableControl SuppliersTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox SuppliersToggleAll;
-        
-        public System.Web.UI.WebControls.LinkButton TitleSortLabel;
-        
         public ValidationSummary ValidationSummary1;
 
   
@@ -503,7 +401,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("");
+            this.Authorize("NO_ACCESS");
              if (!this.IsPostBack)
              {
             
@@ -618,18 +516,6 @@ public override void SetControl(string control)
               case "CitiesRecordControl":
                  SetCitiesRecordControl();
                  break;
-          
-              case "ContractorsTableControl":
-                 SetContractorsTableControl();
-                 break;
-          
-              case "PropertyContactsTableControl":
-                 SetPropertyContactsTableControl();
-                 break;
-          
-              case "SuppliersTableControl":
-                 SetSuppliersTableControl();
-                 break;
                
           }
         
@@ -732,9 +618,7 @@ public override void SetControl(string control)
                 this.DataBind();
                 
                 
-                
-            SetCitiesTabContainer(); 
-          
+                    
     
                 // Load and bind data for each record and table UI control.
                 
@@ -842,19 +726,6 @@ public override void SetControl(string control)
                 
         // Write out the Set methods
         
-        public void SetCitiesTabContainer_Base()           
-        
-        {
-                            
-                   
-            if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "true") 
-                MiscUtils.FindControlRecursively(this, "CitiesTabContainer").Visible = true;
-            else if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "false") 
-                MiscUtils.FindControlRecursively(this, "CitiesTabContainer").Visible = false;
-         
-  
-        }      
-      
         public void SetCitiesRecordControl_Base()           
         
         {        
@@ -862,36 +733,6 @@ public override void SetControl(string control)
             {
                 CitiesRecordControl.LoadData();
                 CitiesRecordControl.DataBind();
-            }
-        }
-      
-        public void SetContractorsTableControl_Base()           
-        
-        {        
-            if (ContractorsTableControl.Visible)
-            {
-                ContractorsTableControl.LoadData();
-                ContractorsTableControl.DataBind();
-            }
-        }
-      
-        public void SetPropertyContactsTableControl_Base()           
-        
-        {        
-            if (PropertyContactsTableControl.Visible)
-            {
-                PropertyContactsTableControl.LoadData();
-                PropertyContactsTableControl.DataBind();
-            }
-        }
-      
-        public void SetSuppliersTableControl_Base()           
-        
-        {        
-            if (SuppliersTableControl.Visible)
-            {
-                SuppliersTableControl.LoadData();
-                SuppliersTableControl.DataBind();
             }
         }
       

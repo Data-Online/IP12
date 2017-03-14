@@ -2149,7 +2149,8 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                 this.ContactIDFilter.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
               
             OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
+                          orderBy.Add(ContactsTable.FirstName, OrderByItem.OrderDir.Asc);
+              orderBy.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
 
 
             System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
@@ -2186,7 +2187,7 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                                 if(_isExpandableNonCompositeForeignKey && DirectorsTable.ContactID.IsApplyDisplayAs)
                                      fvalue = DirectorsTable.GetDFKA(itemValue, DirectorsTable.ContactID);
                                 if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                     fvalue = itemValue.Format(ContactsTable.LastName);
+                                     fvalue = itemValue.Format(ContactsTable.ContactID);
                                    					
                                 if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
 
@@ -3077,7 +3078,7 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(DirectorsTable.PropertyID.Name, ReportEnum.Align.Left, "${PropertyID}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(DirectorsTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(DirectorsTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 27);
 
   
                 int rowsPerQuery = 5000;
@@ -3229,7 +3230,7 @@ public class BaseDirectorsTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(DirectorsTable.PropertyID.Name, ReportEnum.Align.Left, "${PropertyID}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(DirectorsTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(DirectorsTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 27);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();

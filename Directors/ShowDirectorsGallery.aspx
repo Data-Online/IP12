@@ -68,7 +68,9 @@
                   <asp:panel id="DirectorsTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="DirectorsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" style="display:none" colspan="3">&nbsp;</th></tr><asp:Repeater runat="server" id="DirectorsTableControlRepeater">		<ITEMTEMPLATE>
 <tr><asp:Repeater runat="server" id="DirectorsTableControlCellRepeater">		<ITEMTEMPLATE>		<IPv5:DirectorsTableControlRow runat="server" id="DirectorsTableControlRow">
 <td class="galleryttc" style="width:33%;"><asp:Literal runat="server" id="PropertyID"></asp:Literal> <br />
-<asp:LinkButton runat="server" id="ContactID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> <br />
+<span style="white-space:nowrap;">
+<asp:LinkButton runat="server" id="ContactID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></span>
+ <br />
 </td></IPv5:DirectorsTableControlRow>
 </ITEMTEMPLATE>
 

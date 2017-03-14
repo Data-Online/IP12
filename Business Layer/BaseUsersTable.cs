@@ -29,13 +29,144 @@ namespace IPv5.Business
 /// </remarks>
 /// <seealso cref="UsersTable"></seealso>
 [SerializableAttribute()]
-public class BaseUsersTable : PrimaryKeyTable
+public class BaseUsersTable : PrimaryKeyTable, IUserIdentityTable
 {
 
     private readonly string TableDefinitionString = UsersDefinition.GetXMLString();
 
+#region "IUserTable Members"
+
+	//Get the column that specifies the user's unique identifier
+	public virtual BaseClasses.Data.BaseColumn UserId
+	{
+		get
+		{
+			return (BaseClasses.Data.BaseColumn)this.TableDefinition.ColumnList[0];
+		}
+	}
+
+	//Use the "explicit interface member implementation" feature to make 
+	//the IUserTable.UserIdColumn Interface property an alias for the virtual UserId property. 
+	BaseClasses.Data.BaseColumn BaseClasses.IUserTable.UserIdColumn
+	{
+		get
+		{
+			return this.UserId;
+		}
+	}
+
+	//Get a list of records that match the criteria specified in a filter
+	public virtual ArrayList GetRecordList(
+		string userId, 
+		BaseClasses.Data.BaseFilter filter, 
+		BaseClasses.Data.OrderBy orderBy, 
+		int pageNumber, 
+		int batchSize, 
+		ref int totalRows)
+	{
+		if (userId != null)
+		{
+			filter = BaseFilter.CombineFilters(
+				CompoundFilter.CompoundingOperators.And_Operator, 
+				filter, 
+				BaseFilter.CreateUserIdFilter(((IUserTable)this), userId));
+		}
+		BaseClasses.Data.BaseFilter join = null;
+		return ((BaseClasses.ITable)this).GetRecordList(join, filter, null, orderBy, pageNumber, batchSize, ref totalRows);
+	}
+
+#endregion
 
 
+
+#region "IUserIdentityTable Members"
+
+	//Get the column that specifies the user's name
+	public virtual BaseClasses.Data.BaseColumn UserName
+	{
+		get
+		{
+			return (BaseClasses.Data.BaseColumn)this.TableDefinition.ColumnList[1];
+		}
+	}
+
+	//Use the "explicit interface member implementation" feature to make 
+	//the IUserIdentityTable.UserNameColumn Interface property an alias for the virtual UserName property. 
+	BaseClasses.Data.BaseColumn BaseClasses.IUserIdentityTable.UserNameColumn
+	{
+		get
+		{
+			return this.UserName;
+		}
+	}
+
+	//Get the column that specifies the user's password
+	public virtual BaseClasses.Data.BaseColumn UserPassword
+	{
+		get
+		{
+			return (BaseClasses.Data.BaseColumn)this.TableDefinition.ColumnList[2];
+		}
+	}
+
+	//Use the "explicit interface member implementation" feature to make 
+	//the IUserIdentityTable.UserPasswordColumn Interface property an alias for the virtual UserPassword property. 
+	BaseClasses.Data.BaseColumn BaseClasses.IUserIdentityTable.UserPasswordColumn
+	{
+		get
+		{
+			return this.UserPassword;
+		}
+	}
+
+	//Get the column that specifies the user's email address
+	public virtual BaseClasses.Data.BaseColumn UserEmail
+	{
+		get
+		{
+			return (BaseClasses.Data.BaseColumn)this.TableDefinition.ColumnList[3];;
+		}
+	}
+
+	//Use the "explicit interface member implementation" feature to make 
+	//the IUserIdentityTable.UserEmailColumn Interface property an alias for the virtual UserEmail property. 
+	BaseClasses.Data.BaseColumn BaseClasses.IUserIdentityTable.UserEmailColumn
+	{
+		get
+		{
+			return this.UserEmail;
+		}
+	}
+
+	//Get a role table object
+	public virtual BaseClasses.IUserRoleTable GetUserRoleTable()
+	{
+		return (BaseClasses.IUserRoleTable)Users_RolesTable.Instance;
+	}
+
+	//Get a list of records that match the user's name/password
+	public virtual ArrayList GetRecordList(
+		string userName, 
+		string userPassword, 
+		BaseClasses.Data.BaseFilter filter, 
+		BaseClasses.Data.OrderBy orderBy, 
+		int pageNumber, 
+		int batchSize, 
+		ref int totalRows)
+	{
+		//Set up a name/password filter   
+		if ((userName != null) || (userPassword != null))
+		{
+			filter = BaseFilter.CombineFilters(
+				CompoundFilter.CompoundingOperators.And_Operator,
+				filter,
+				BaseFilter.CreateUserAuthenticationFilter(((IUserIdentityTable)this), userName, userPassword));
+		}
+		BaseClasses.Data.BaseFilter join = null;
+		return ((BaseClasses.ITable)this).GetRecordList(join, filter, null, orderBy, pageNumber, batchSize, ref totalRows);
+	}
+
+#endregion
 
 
 
