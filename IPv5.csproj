@@ -1594,26 +1594,6 @@
     <Content Include="Shared\SelectFileToImport.aspx" />
     <Content Include="Shared\Show_Error.aspx" />
     <Content Include="Shared\ThemeButton.ascx" />
-    <Content Include="Troubleshooting\default.aspx" />
-    <Content Include="Troubleshooting\default.htm" />
-    <Content Include="Troubleshooting\default.html" />
-    <Content Include="Troubleshooting\OnlineHelp.js" />
-    <Content Include="Troubleshooting\Readme.txt" />
-    <Content Include="Troubleshooting\Test0.html" />
-    <Content Include="Troubleshooting\Test0Do.aspx" />
-    <Content Include="Troubleshooting\Test1.html" />
-    <Content Include="Troubleshooting\Test1Do.aspx" />
-    <Content Include="Troubleshooting\Test2.html" />
-    <Content Include="Troubleshooting\Test2Do.aspx" />
-    <Content Include="Troubleshooting\Test3.aspx" />
-    <Content Include="Troubleshooting\Test3Do.aspx" />
-    <Content Include="Troubleshooting\Test4.aspx" />
-    <Content Include="Troubleshooting\Test4Do.aspx" />
-    <Content Include="Troubleshooting\Test5.aspx" />
-    <Content Include="Troubleshooting\Test5Do.aspx" />
-    <Content Include="Troubleshooting\TestConfiguration.css" />
-    <Content Include="Troubleshooting\TestConfiguration.mdb">
-    </Content>
     <Content Include="BankLoans\AddBankLoans.aspx" />
     <Content Include="BankLoans\EditBankLoans.aspx" />
     <Content Include="BankLoans\EditBankLoansTable.aspx" />
