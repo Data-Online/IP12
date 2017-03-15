@@ -687,7 +687,8 @@ namespace IPv5.UI
 		public virtual string GetResourceValue(string keyVal, string appName)
 		{
             return(AppResources.GetResourceValue(keyVal, appName));
-		}
+		}
+
         public virtual string GetResourceValue(string keyVal)
         {
             return(AppResources.GetResourceValue(keyVal, null));

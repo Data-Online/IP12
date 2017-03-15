@@ -1530,19 +1530,19 @@
     <Compile Include="Cities\CitiesQuickSelector.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Security\ForgotUser.aspx.cs" >
+    <Compile Include="Security\ForgotUser.aspx.cs">
       <DependentUpon>ForgotUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Security\SendUserInfo.aspx.cs" >
+    <Compile Include="Security\SendUserInfo.aspx.cs">
       <DependentUpon>SendUserInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Security\SignIn.aspx.cs" >
+    <Compile Include="Security\SignIn.aspx.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Security\SignOut.aspx.cs" >
+    <Compile Include="Security\SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -1550,6 +1550,10 @@
   <ItemGroup>
     <Content Include="BaseClasses\Readme.txt" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\eMail-over.png" />
+    <Content Include="Images\eMail.png" />
+    <Content Include="Images\home.png" />
+    <Content Include="Images\Properties.png" />
     <Content Include="Web.config" />
     <Content Include="Header and Footer\EmailHeader.ascx" />
     <Content Include="Header and Footer\Footer.ascx" />
@@ -1987,10 +1991,10 @@
     <Content Include="Dashboard\LandingPage.aspx" />
     <Content Include="Contacts\ContactsQuickSelector.aspx" />
     <Content Include="Cities\CitiesQuickSelector.aspx" />
-    <Content Include="Security\ForgotUser.aspx"  />
-    <Content Include="Security\SendUserInfo.aspx"  />
-    <Content Include="Security\SignIn.aspx"  />
-    <Content Include="Security\SignOut.aspx"  />
+    <Content Include="Security\ForgotUser.aspx" />
+    <Content Include="Security\SendUserInfo.aspx" />
+    <Content Include="Security\SignIn.aspx" />
+    <Content Include="Security\SignOut.aspx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">
@@ -2016,9 +2020,7 @@
       <Name>IPv5.Data</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dashboard\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

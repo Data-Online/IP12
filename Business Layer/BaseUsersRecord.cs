@@ -50,7 +50,8 @@ public class BaseUsersRecord : PrimaryKeyRecord, IUserIdentityRecord
         //Apply Initialize->Reading record formula only if validation is successful.
                 UsersRecord UsersRec = (UsersRecord)sender;
         if(UsersRec != null && !UsersRec.IsReadOnly ){
-                }
+               UsersRec.Parse(EvaluateFormula("DecryptData(Password)",this,null),UsersTable.Password);
+        }
     
     }
         
@@ -61,7 +62,8 @@ public class BaseUsersRecord : PrimaryKeyRecord, IUserIdentityRecord
                 UsersRecord UsersRec = (UsersRecord)sender;
         Validate_Inserting();
         if(UsersRec != null && !UsersRec.IsReadOnly ){
-                }
+               UsersRec.Parse(EvaluateFormula("EncryptData(Password)",this,null),UsersTable.Password);
+        }
     
     }
     
@@ -72,7 +74,8 @@ public class BaseUsersRecord : PrimaryKeyRecord, IUserIdentityRecord
                 UsersRecord UsersRec = (UsersRecord)sender;
         Validate_Updating();
         if(UsersRec != null && !UsersRec.IsReadOnly ){
-                }
+               UsersRec.Parse(EvaluateFormula("EncryptData(Password)",this,null),UsersTable.Password);
+        }
     
     }
 

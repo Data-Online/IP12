@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class UsersDefinition
 {
 #region "Definition (XML) for UsersDefinition table"
-	//Next 166 lines contain Table Definition (XML) for table "UsersDefinition"
+	//Next 168 lines contain Table Definition (XML) for table "UsersDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -114,36 +114,38 @@ public class UsersDefinition
          tbf.Append(      @"<columnDBType>nvarchar</columnDBType>");
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
-         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnDBDefault Source=""User""></columnDBDefault>");
          tbf.Append(      @"<columnIndex>N</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
          tbf.Append(      @"<columnPermanent>N</columnPermanent>");
-         tbf.Append(      @"<columnComputed>N</columnComputed>");
-         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
-         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnComputed Source=""User"">N</columnComputed>");
+         tbf.Append(      @"<columnIdentity Source=""User"">N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly Source=""User"">N</columnReadOnly>");
          tbf.Append(      @"<columnRequired>N</columnRequired>");
          tbf.Append(      @"<columnNotNull>N</columnNotNull>");
-         tbf.Append(      @"<columnCaseSensitive Source=""Database"">N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCaseSensitive Source=""User"">N</columnCaseSensitive>");
          tbf.Append(      @"<columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>");
-         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnFullText Source=""User"">N</columnFullText>");
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
          tbf.Append(      @"<applyDFKA>N</applyDFKA>");
-         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
-         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
-         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>Y</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>Y</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>Y</applyInitializeUpdatingRecord>");
          tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
          tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
          tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
-         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
-         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
-         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingRecordFormula>= EncryptData(Password)</insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula>= DecryptData(Password)</readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula>= EncryptData(Password)</updatingRecordFormula>");
          tbf.Append(      @"<insertingFormula></insertingFormula>");
          tbf.Append(      @"<updatingFormula></updatingFormula>");
+         tbf.Append(      @"<InternalName>2</InternalName>");
+         tbf.Append(      @"<columnTableClassName></columnTableClassName>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""3"" Priority=""4"" ColumnNum=""3"">");
          tbf.Append(      @"<columnName>eMail</columnName>");
