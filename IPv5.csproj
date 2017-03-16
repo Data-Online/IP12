@@ -51,7 +51,7 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=3.0.30930.28736, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CarlosAg.ExcelXmlWriter, Version=1.0.0.6, Culture=neutral">
       <SpecificVersion>False</SpecificVersion>
@@ -1983,6 +1983,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\PublishProfiles\mhpl - Web Deploy %282%29.pubxml" />
+    <None Include="My Project\PublishProfiles\mhpl - Web Deploy %283%29.pubxml" />
+    <None Include="My Project\PublishProfiles\MHPL - Web Deploy.pubxml" />
     <None Include="Reports\PDF.en-US.report" />
     <None Include="Reports\PDF.en.report" />
     <None Include="Reports\PDF.report" />
