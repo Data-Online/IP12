@@ -67,6 +67,10 @@ public class BasePropertiesTable : PrimaryKeyTable
         RegionIDColumn.CodeName = "RegionID";
         CountryIDColumn.CodeName = "CountryID";
         PostCodeColumn.CodeName = "PostCode";
+        CreatedByColumn.CodeName = "CreatedBy";
+        UpdatedByColumn.CodeName = "UpdatedBy";
+        CreatedOnColumn.CodeName = "CreatedOn";
+        UpdatedOnColumn.CodeName = "UpdatedOn";
 
         
     }
@@ -298,6 +302,106 @@ public class BasePropertiesTable : PrimaryKeyTable
         get
         {
             return PropertiesTable.Instance.PostCodeColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.CreatedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn CreatedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[9];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.CreatedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn CreatedBy
+    {
+        get
+        {
+            return PropertiesTable.Instance.CreatedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.UpdatedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn UpdatedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[10];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.UpdatedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn UpdatedBy
+    {
+        get
+        {
+            return PropertiesTable.Instance.UpdatedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.CreatedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn CreatedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[11];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.CreatedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn CreatedOn
+    {
+        get
+        {
+            return PropertiesTable.Instance.CreatedOnColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.UpdatedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn UpdatedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[12];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.UpdatedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn UpdatedOn
+    {
+        get
+        {
+            return PropertiesTable.Instance.UpdatedOnColumn;
         }
     }
     
@@ -834,7 +938,11 @@ public class BasePropertiesTable : PrimaryKeyTable
         string CityIDValue, 
         string RegionIDValue, 
         string CountryIDValue, 
-        string PostCodeValue
+        string PostCodeValue, 
+        string CreatedByValue, 
+        string UpdatedByValue, 
+        string CreatedOnValue, 
+        string UpdatedOnValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
@@ -846,6 +954,10 @@ public class BasePropertiesTable : PrimaryKeyTable
         rec.SetString(RegionIDValue, RegionIDColumn);
         rec.SetString(CountryIDValue, CountryIDColumn);
         rec.SetString(PostCodeValue, PostCodeColumn);
+        rec.SetString(CreatedByValue, CreatedByColumn);
+        rec.SetString(UpdatedByValue, UpdatedByColumn);
+        rec.SetString(CreatedOnValue, CreatedOnColumn);
+        rec.SetString(UpdatedOnValue, UpdatedOnColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

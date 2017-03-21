@@ -296,7 +296,7 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.ImageButton ContactsNewButton;
         
-        public PaginationModern ContactsPagination;
+        public PaginationMedium ContactsPagination;
                 
         public System.Web.UI.WebControls.ImageButton ContactsPDFButton;
         
@@ -322,9 +322,19 @@ public override void SetControl(string control)
         
         public PaginationModern LinkTablePagination;
                 
+        public System.Web.UI.WebControls.LinkButton NotesLabel;
+        
+        public System.Web.UI.WebControls.Literal NotesLabel1;
+        
         public System.Web.UI.WebControls.Literal PageTitle;
         
+        public PaginationModern Pagination;
+                
         public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
+        
+        public System.Web.UI.WebControls.LinkButton PropertyIDLabel;
+        
+        public System.Web.UI.WebControls.LinkButton PropertyIDLabel2;
         
         public System.Web.UI.WebControls.Literal RegionIDLabel1;
         
@@ -393,7 +403,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("NOT_ANONYMOUS");
+            this.Authorize("1;2;NOT_ANONYMOUS");
              if (!this.IsPostBack)
              {
             

@@ -61,6 +61,10 @@ public class BaseLinkTableTable : PrimaryKeyTable
         LinkIDColumn.CodeName = "LinkID";
         PropertyIDColumn.CodeName = "PropertyID";
         ContactIDColumn.CodeName = "ContactID";
+        CreatedByColumn.CodeName = "CreatedBy";
+        UpdatedByColumn.CodeName = "UpdatedBy";
+        CreatedOnColumn.CodeName = "CreatedOn";
+        UpdatedOnColumn.CodeName = "UpdatedOn";
 
         
     }
@@ -142,6 +146,106 @@ public class BaseLinkTableTable : PrimaryKeyTable
         get
         {
             return LinkTableTable.Instance.ContactIDColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's LinkTable_.CreatedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn CreatedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[3];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's LinkTable_.CreatedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn CreatedBy
+    {
+        get
+        {
+            return LinkTableTable.Instance.CreatedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's LinkTable_.UpdatedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn UpdatedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[4];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's LinkTable_.UpdatedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn UpdatedBy
+    {
+        get
+        {
+            return LinkTableTable.Instance.UpdatedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's LinkTable_.CreatedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn CreatedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[5];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's LinkTable_.CreatedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn CreatedOn
+    {
+        get
+        {
+            return LinkTableTable.Instance.CreatedOnColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's LinkTable_.UpdatedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn UpdatedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[6];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's LinkTable_.UpdatedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn UpdatedOn
+    {
+        get
+        {
+            return LinkTableTable.Instance.UpdatedOnColumn;
         }
     }
     
@@ -672,12 +776,20 @@ public class BaseLinkTableTable : PrimaryKeyTable
         //Convenience method for creating a record
         public KeyValue NewRecord(
         string PropertyIDValue, 
-        string ContactIDValue
+        string ContactIDValue, 
+        string CreatedByValue, 
+        string UpdatedByValue, 
+        string CreatedOnValue, 
+        string UpdatedOnValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
                     rec.SetString(PropertyIDValue, PropertyIDColumn);
         rec.SetString(ContactIDValue, ContactIDColumn);
+        rec.SetString(CreatedByValue, CreatedByColumn);
+        rec.SetString(UpdatedByValue, UpdatedByColumn);
+        rec.SetString(CreatedOnValue, CreatedOnColumn);
+        rec.SetString(UpdatedOnValue, UpdatedOnColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

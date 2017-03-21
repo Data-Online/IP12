@@ -14,7 +14,7 @@
     <Layout>vPropertyTermExpires\ShowVPropertyTermExpiresTable2.html</Layout>
     <DisplayName>ShowVPropertyTermExpiresTable2</DisplayName>
     <Description>Table view to show or edit multiple records.</Description>
-    <LoginRequired>&lt;PRoles&gt;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;2;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>835531250-44443</CheckSum>
   </Self>
   <ComposedOf>

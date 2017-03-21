@@ -60,6 +60,10 @@ public class BaseCitiesTable : PrimaryKeyTable
         this.TableDefinition.AdapterMetaData = this.DataAdapter.AdapterMetaData;
         CityIDColumn.CodeName = "CityID";
         CityColumn.CodeName = "City";
+        CreatedByColumn.CodeName = "CreatedBy";
+        UpdatedByColumn.CodeName = "UpdatedBy";
+        CreatedOnColumn.CodeName = "CreatedOn";
+        UpdatedOnColumn.CodeName = "UpdatedOn";
 
         
     }
@@ -116,6 +120,106 @@ public class BaseCitiesTable : PrimaryKeyTable
         get
         {
             return CitiesTable.Instance.CityColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Cities_.CreatedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn CreatedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[2];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Cities_.CreatedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn CreatedBy
+    {
+        get
+        {
+            return CitiesTable.Instance.CreatedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Cities_.UpdatedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn UpdatedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[3];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Cities_.UpdatedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn UpdatedBy
+    {
+        get
+        {
+            return CitiesTable.Instance.UpdatedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Cities_.CreatedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn CreatedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[4];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Cities_.CreatedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn CreatedOn
+    {
+        get
+        {
+            return CitiesTable.Instance.CreatedOnColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Cities_.UpdatedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn UpdatedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[5];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Cities_.UpdatedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn UpdatedOn
+    {
+        get
+        {
+            return CitiesTable.Instance.UpdatedOnColumn;
         }
     }
     
@@ -645,11 +749,19 @@ public class BaseCitiesTable : PrimaryKeyTable
 
         //Convenience method for creating a record
         public KeyValue NewRecord(
-        string CityValue
+        string CityValue, 
+        string CreatedByValue, 
+        string UpdatedByValue, 
+        string CreatedOnValue, 
+        string UpdatedOnValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
                     rec.SetString(CityValue, CityColumn);
+        rec.SetString(CreatedByValue, CreatedByColumn);
+        rec.SetString(UpdatedByValue, UpdatedByColumn);
+        rec.SetString(CreatedOnValue, CreatedOnColumn);
+        rec.SetString(UpdatedOnValue, UpdatedOnColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

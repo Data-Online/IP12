@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="DatabaseMM_IP1-Web.config Connection String" description="DatabaseMM_IP1 Connection String used in web.config by the application to access the database." defaultValue="Data Source=DEVELOP02\SQLSERVER2012;Database=MHPL;Trusted_Connection=yes;User Id=;Password=" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="P:\\Projects\\Cloud_Development\\GitHub\\IP12\.2\\IPv5\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DatabaseMM_IP1']/@connectionString" />
-  </parameter>
-</parameters>

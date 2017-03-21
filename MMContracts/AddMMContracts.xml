@@ -16,7 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>MMContractsMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;NO_ACCESS&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>-1404285109-9374</CheckSum>
   </Self>
   <ComposedOf>

@@ -62,6 +62,10 @@ public class BaseRentReviewsTable : PrimaryKeyTable
         ExpiryDateColumn.CodeName = "ExpiryDate";
         PropertyIDColumn.CodeName = "PropertyID";
         DescriptionColumn.CodeName = "Description";
+        CreatedByColumn.CodeName = "CreatedBy";
+        UpdatedByColumn.CodeName = "UpdatedBy";
+        CreatedOnColumn.CodeName = "CreatedOn";
+        UpdatedOnColumn.CodeName = "UpdatedOn";
 
         
     }
@@ -168,6 +172,106 @@ public class BaseRentReviewsTable : PrimaryKeyTable
         get
         {
             return RentReviewsTable.Instance.DescriptionColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's RentReviews_.CreatedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn CreatedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[4];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's RentReviews_.CreatedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn CreatedBy
+    {
+        get
+        {
+            return RentReviewsTable.Instance.CreatedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's RentReviews_.UpdatedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn UpdatedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[5];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's RentReviews_.UpdatedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn UpdatedBy
+    {
+        get
+        {
+            return RentReviewsTable.Instance.UpdatedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's RentReviews_.CreatedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn CreatedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[6];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's RentReviews_.CreatedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn CreatedOn
+    {
+        get
+        {
+            return RentReviewsTable.Instance.CreatedOnColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's RentReviews_.UpdatedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn UpdatedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[7];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's RentReviews_.UpdatedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn UpdatedOn
+    {
+        get
+        {
+            return RentReviewsTable.Instance.UpdatedOnColumn;
         }
     }
     
@@ -699,13 +803,21 @@ public class BaseRentReviewsTable : PrimaryKeyTable
         public KeyValue NewRecord(
         string ExpiryDateValue, 
         string PropertyIDValue, 
-        string DescriptionValue
+        string DescriptionValue, 
+        string CreatedByValue, 
+        string UpdatedByValue, 
+        string CreatedOnValue, 
+        string UpdatedOnValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
                     rec.SetString(ExpiryDateValue, ExpiryDateColumn);
         rec.SetString(PropertyIDValue, PropertyIDColumn);
         rec.SetString(DescriptionValue, DescriptionColumn);
+        rec.SetString(CreatedByValue, CreatedByColumn);
+        rec.SetString(UpdatedByValue, UpdatedByColumn);
+        rec.SetString(CreatedOnValue, CreatedOnColumn);
+        rec.SetString(UpdatedOnValue, UpdatedOnColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

@@ -168,17 +168,17 @@ public class PropertiesTableControlRow : BasePropertiesTableControlRow
 
     public class PropertiesTableControl : BasePropertiesTableControl
 {
-    // The BasePropertiesTableControl class implements the LoadData, DataBind, CreateWhereClause
-    // and other methods to load and display the data in a table control.
+        // The BasePropertiesTableControl class implements the LoadData, DataBind, CreateWhereClause
+        // and other methods to load and display the data in a table control.
 
-    // This is the ideal place to add your code customizations. You can override the LoadData and CreateWhereClause,
-    // The PropertiesTableControlRow class offers another place where you can customize
-    // the DataBind, GetUIData, SaveData and Validate methods specific to each row displayed on the table.
+        // This is the ideal place to add your code customizations. You can override the LoadData and CreateWhereClause,
+        // The PropertiesTableControlRow class offers another place where you can customize
+        // the DataBind, GetUIData, SaveData and Validate methods specific to each row displayed on the table.
 
 }
 
-  
-public class PropertyNotesTableControlRow : BasePropertyNotesTableControlRow
+
+    public class PropertyNotesTableControlRow : BasePropertyNotesTableControlRow
 {
       
         // The BasePropertyNotesTableControlRow implements code for a ROW within the
@@ -472,8 +472,23 @@ public class BankLoansTableControlRow : BaseBankLoansTableControlRow
             this.ShowSelectedFilter.SelectedValue = initialVal;
 
         }
-    
-		public override string[] GetAutoCompletionList_ContactsSearchText1(String prefixText,int count)
+
+        protected override void Control_Init(object sender, System.EventArgs e)
+        {
+            base.Control_Init(sender, e);
+
+
+            string initialVal = EvaluateFormula("\"--Included--\"");
+            if (initialVal != "")
+            {
+
+                this.ShowSelectedFilter.Items.Add(new ListItem(initialVal, initialVal));
+                this.ShowSelectedFilter.SelectedValue = initialVal;
+
+            }
+        }
+
+        public override string[] GetAutoCompletionList_ContactsSearchText1(String prefixText,int count)
         {
             ArrayList resultList = new ArrayList();
             ArrayList wordList= new ArrayList();
@@ -2699,6 +2714,22 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                 this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Ascending}"), "ExpiryDate Asc"));
               
                 this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Descending}"), "ExpiryDate Desc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl7.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
               
             try
             {          
@@ -6277,6 +6308,7 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                 
                 
                 
+                
                 SetShowSelectedFilterLabel();
                 SetSortByLabel1();
                 SetSortControl1();
@@ -7348,6 +7380,22 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                 this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Second Contact Last Name {Txt:Ascending}"), "LastName2 Asc"));
               
                 this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Second Contact Last Name {Txt:Descending}"), "LastName2 Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
               
             try
             {          
@@ -8583,6 +8631,12 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
         public System.Web.UI.WebControls.ImageButton CSVButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CSVButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal DirectorsTitle1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DirectorsTitle1");
             }
         }
         
@@ -13988,6 +14042,22 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
               
                 this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Descending}"), "ExpiryDate Desc"));
               
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
+              
             try
             {          
                 // Set the selected value.
@@ -15421,6 +15491,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
 
             // Call the Set methods for each controls on the panel
         
+                SetAccordion1();
+                SetAccordionPaneA1();
                 SetAddress1();
                 SetAddress2();
                 SetAddress3();
@@ -15433,6 +15505,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 SetCompanyName();
                 
                 SetCountryID();
+                SetCreatedBy1();
+                SetCreatedOn1();
                 SetDirectorsCountControl();
                 
                 SetLinkTableCountControl();
@@ -15464,6 +15538,8 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 SetTermRenewalsCountControl2();
                 SetTermRenewalsCountControl3();
                 
+                SetUpdatedBy1();
+                SetUpdatedOn1();
                 SetPropertiesRowDeleteButton();
               
                 SetPropertiesRowEditButton();
@@ -15763,6 +15839,140 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                                
         }
                 
+        public virtual void SetCreatedBy1()
+        {
+            
+                    
+            // Set the CreatedBy Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Properties database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Properties record retrieved from the database.
+            // this.CreatedBy1 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.CreatedBySpecified) {
+                								
+                // If the CreatedBy is non-NULL, then format the value.
+                // The Format method will return the Display Foreign Key As (DFKA) value
+               string formattedValue = "";
+               Boolean _isExpandableNonCompositeForeignKey = PropertiesTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertiesTable.CreatedBy);
+               if(_isExpandableNonCompositeForeignKey &&PropertiesTable.CreatedBy.IsApplyDisplayAs)
+                                  
+                     formattedValue = PropertiesTable.GetDFKA(this.DataSource.CreatedBy.ToString(),PropertiesTable.CreatedBy, null);
+                                    
+               if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(formattedValue)))
+                     formattedValue = this.DataSource.Format(PropertiesTable.CreatedBy);
+                                  
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                if(formattedValue != null){
+                    int popupThreshold = (int)(1);
+                              
+                    int maxLength = formattedValue.Length;
+                    int originalLength = maxLength;
+                    if (maxLength >= (int)(100)){
+                        // Truncate based on FieldMaxLength on Properties.
+                        maxLength = (int)(100);
+                        //First strip of all html tags:
+                        formattedValue = StringUtils.ConvertHTMLToPlainText(formattedValue);
+                        
+                    }
+                                
+                              
+                    // For fields values larger than the PopupTheshold on Properties, display a popup.
+                    if (originalLength >= popupThreshold) {
+                        String name = HttpUtility.HtmlEncode(PropertiesTable.CreatedBy.Name);
+
+                        if (!HttpUtility.HtmlEncode("%ISD_DEFAULT%").Equals("%ISD_DEFAULT%")) {
+                           name = HttpUtility.HtmlEncode(this.Page.GetResourceValue("%ISD_DEFAULT%"));
+                        }
+
+                        formattedValue = "<a onclick=\'gPersist=true;\' class=\'truncatedText\' onmouseout=\'detailRolloverPopupClose();\' " +
+                            "onmouseover=\'SaveMousePosition(event); delayRolloverPopup(\"PageMethods.GetRecordFieldValue(\\\"" + "NULL" + "\\\", \\\"IPv5.Business.PropertiesTable, IPv5.Business\\\",\\\"" +
+                              (HttpUtility.UrlEncode(this.DataSource.GetID().ToString())).Replace("\\","\\\\\\\\") + "\\\", \\\"CreatedBy\\\", \\\"CreatedBy1\\\", \\\"" +NetUtils.EncodeStringForHtmlDisplay(name.Substring(0, name.Length)) + "\\\",\\\"" + Page.GetResourceValue("Btn:Close", "IPv5") + "\\\", " +
+                        " false, 200," +
+                            " 300, true, PopupDisplayWindowCallBackWith20);\", 500);'>" + NetUtils.EncodeStringForHtmlDisplay(formattedValue.Substring(0, Math.Min(maxLength, formattedValue.Length)));
+                        if (maxLength == (int)(100))
+                            {
+                            formattedValue = formattedValue + "..." + "</a>";
+                        }
+                        else
+                        {
+                            formattedValue = formattedValue + "</a>";
+                            
+                        }
+                    }
+                    else{
+                        if (maxLength == (int)(100)) {
+                          formattedValue = NetUtils.EncodeStringForHtmlDisplay(formattedValue.Substring(0,Math.Min(maxLength, formattedValue.Length)));
+                          formattedValue = formattedValue + "...";
+                        }
+                        
+                    }
+                }
+                
+                this.CreatedBy1.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // CreatedBy is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.CreatedBy1.Text = PropertiesTable.CreatedBy.Format(PropertiesTable.CreatedBy.DefaultValue);
+            		
+            }
+            
+            // If the CreatedBy is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.CreatedBy1.Text == null ||
+                this.CreatedBy1.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.CreatedBy1.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetCreatedOn1()
+        {
+            
+                    
+            // Set the CreatedOn Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Properties database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Properties record retrieved from the database.
+            // this.CreatedOn1 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.CreatedOnSpecified) {
+                								
+                // If the CreatedOn is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertiesTable.CreatedOn, @"g");
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.CreatedOn1.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // CreatedOn is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.CreatedOn1.Text = PropertiesTable.CreatedOn.Format(PropertiesTable.CreatedOn.DefaultValue, @"g");
+            		
+            }
+            
+            // If the CreatedOn is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.CreatedOn1.Text == null ||
+                this.CreatedOn1.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.CreatedOn1.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SetPostCode()
         {
             
@@ -15842,6 +16052,106 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             		
             }
                                
+        }
+                
+        public virtual void SetUpdatedBy1()
+        {
+            
+                    
+            // Set the UpdatedBy Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Properties database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Properties record retrieved from the database.
+            // this.UpdatedBy1 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.UpdatedBySpecified) {
+                								
+                // If the UpdatedBy is non-NULL, then format the value.
+                // The Format method will return the Display Foreign Key As (DFKA) value
+               string formattedValue = "";
+               Boolean _isExpandableNonCompositeForeignKey = PropertiesTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertiesTable.UpdatedBy);
+               if(_isExpandableNonCompositeForeignKey &&PropertiesTable.UpdatedBy.IsApplyDisplayAs)
+                                  
+                     formattedValue = PropertiesTable.GetDFKA(this.DataSource.UpdatedBy.ToString(),PropertiesTable.UpdatedBy, null);
+                                    
+               if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(formattedValue)))
+                     formattedValue = this.DataSource.Format(PropertiesTable.UpdatedBy);
+                                  
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.UpdatedBy1.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // UpdatedBy is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.UpdatedBy1.Text = PropertiesTable.UpdatedBy.Format(PropertiesTable.UpdatedBy.DefaultValue);
+            		
+            }
+            
+            // If the UpdatedBy is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.UpdatedBy1.Text == null ||
+                this.UpdatedBy1.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.UpdatedBy1.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetUpdatedOn1()
+        {
+            
+                    
+            // Set the UpdatedOn Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Properties database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Properties record retrieved from the database.
+            // this.UpdatedOn1 is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.UpdatedOnSpecified) {
+                								
+                // If the UpdatedOn is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertiesTable.UpdatedOn, @"g");
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.UpdatedOn1.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // UpdatedOn is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.UpdatedOn1.Text = PropertiesTable.UpdatedOn.Format(PropertiesTable.UpdatedOn.DefaultValue, @"g");
+            		
+            }
+            
+            // If the UpdatedOn is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.UpdatedOn1.Text == null ||
+                this.UpdatedOn1.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.UpdatedOn1.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SetAccordion1()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetAccordionPaneA1()
+                  {
+                  
+                    
         }
                 
         public virtual void SetBankLoansCountControl()
@@ -16349,8 +16659,12 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             GetCityID();
             GetCompanyName();
             GetCountryID();
+            GetCreatedBy1();
+            GetCreatedOn1();
             GetPostCode();
             GetRegionID();
+            GetUpdatedBy1();
+            GetUpdatedOn1();
         }
         
         
@@ -16384,12 +16698,32 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             
         }
                 
+        public virtual void GetCreatedBy1()
+        {
+            
+        }
+                
+        public virtual void GetCreatedOn1()
+        {
+            
+        }
+                
         public virtual void GetPostCode()
         {
             
         }
                 
         public virtual void GetRegionID()
+        {
+            
+        }
+                
+        public virtual void GetUpdatedBy1()
+        {
+            
+        }
+                
+        public virtual void GetUpdatedOn1()
         {
             
         }
@@ -16933,6 +17267,18 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
        
 #region "Helper Properties"
         
+        public AjaxControlToolkit.Accordion Accordion1 {
+            get {
+                return (AjaxControlToolkit.Accordion)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Accordion1");
+            }
+        }
+        
+        public AjaxControlToolkit.AccordionPane AccordionPaneA1 {
+            get {
+                return (AjaxControlToolkit.AccordionPane)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "AccordionPaneA1");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal Address1 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1");
@@ -17002,6 +17348,18 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         public System.Web.UI.WebControls.LinkButton CountryID {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryID");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal CreatedBy1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CreatedBy1");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal CreatedOn1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CreatedOn1");
             }
         }
             
@@ -17191,6 +17549,18 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             }
         }
         
+        public System.Web.UI.WebControls.Literal UpdatedBy1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "UpdatedBy1");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal UpdatedOn1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "UpdatedOn1");
+            }
+        }
+            
     #endregion
 
     #region "Helper Functions"
@@ -17892,7 +18262,9 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
           
             this.Page.PregetDfkaRecords(PropertiesTable.CityID, this.DataSource);
             this.Page.PregetDfkaRecords(PropertiesTable.CountryID, this.DataSource);
+            this.Page.PregetDfkaRecords(PropertiesTable.CreatedBy, this.DataSource);
             this.Page.PregetDfkaRecords(PropertiesTable.RegionID, this.DataSource);
+            this.Page.PregetDfkaRecords(PropertiesTable.UpdatedBy, this.DataSource);
         }
         
 
@@ -18182,6 +18554,12 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
             // 3. User selected filter criteria.
             
         
+            // Get the static clause defined at design time on the Table Panel Wizard
+            WhereClause qc = this.CreateQueryClause();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+          
             if (MiscUtils.IsValueSelected(this.CityIDFilter)) {
                         
                 wc.iAND(PropertiesTable.CityID, BaseFilter.ComparisonOperator.EqualsTo, MiscUtils.GetSelectedValue(this.CityIDFilter, this.GetFromSession(this.CityIDFilter)), false, false);
@@ -18256,6 +18634,12 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
             // 3. User selected filter criteria.
             
             String appRelativeVirtualPath = (String)HttpContext.Current.Session["AppRelativeVirtualPath"];
+            
+            // Get the static clause defined at design time on the Table Panel Wizard
+            WhereClause qc = this.CreateQueryClause();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
             
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
@@ -18334,6 +18718,20 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
         }
 
         
+        protected virtual WhereClause CreateQueryClause()
+        {
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("URL(\"Properties\")", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.PropertiesTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"Properties_.PropertyID"), EvaluateFormula("URL(\"Properties\")", false), BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
+         if (EvaluateFormula("URL(\"Properties\")", false) == "--PLEASE_SELECT--" || EvaluateFormula("URL(\"Properties\")", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
         public virtual string[] GetAutoCompletionList_PropertiesSearch(String prefixText,int count)
         {
             ArrayList resultList = new ArrayList();
@@ -18595,12 +18993,28 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                             rec.Parse(recControl.CountryID.Text, PropertiesTable.CountryID);
                   }
                 
+                        if (recControl.CreatedBy1.Text != "") {
+                            rec.Parse(recControl.CreatedBy1.Text, PropertiesTable.CreatedBy);
+                  }
+                
+                        if (recControl.CreatedOn1.Text != "") {
+                            rec.Parse(recControl.CreatedOn1.Text, PropertiesTable.CreatedOn);
+                  }
+                
                         if (recControl.PostCode.Text != "") {
                             rec.Parse(recControl.PostCode.Text, PropertiesTable.PostCode);
                   }
                 
                         if (recControl.RegionID.Text != "") {
                             rec.Parse(recControl.RegionID.Text, PropertiesTable.RegionID);
+                  }
+                
+                        if (recControl.UpdatedBy1.Text != "") {
+                            rec.Parse(recControl.UpdatedBy1.Text, PropertiesTable.UpdatedBy);
+                  }
+                
+                        if (recControl.UpdatedOn1.Text != "") {
+                            rec.Parse(recControl.UpdatedOn1.Text, PropertiesTable.UpdatedOn);
                   }
                 
               newUIDataList.Add(recControl.PreservedUIData());
@@ -21220,6 +21634,10 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
              PropertiesTable.RegionID,
              PropertiesTable.CountryID,
              PropertiesTable.PostCode,
+             PropertiesTable.CreatedBy,
+             PropertiesTable.UpdatedBy,
+             PropertiesTable.CreatedOn,
+             PropertiesTable.UpdatedOn,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(PropertiesTable.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -21283,6 +21701,10 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.RegionID, "Default"));
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.CountryID, "Default"));
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.PostCode, "Default"));
+             data.ColumnList.Add(new ExcelColumn(PropertiesTable.CreatedBy, "Default"));
+             data.ColumnList.Add(new ExcelColumn(PropertiesTable.UpdatedBy, "Default"));
+             data.ColumnList.Add(new ExcelColumn(PropertiesTable.CreatedOn, "Short Date"));
+             data.ColumnList.Add(new ExcelColumn(PropertiesTable.UpdatedOn, "Short Date"));
 
 
               //  First write out the Column Headers
@@ -21460,6 +21882,10 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(PropertiesTable.RegionID.Name, ReportEnum.Align.Left, "${RegionID}", ReportEnum.Align.Left, 28);
                  report.AddColumn(PropertiesTable.CountryID.Name, ReportEnum.Align.Left, "${CountryID}", ReportEnum.Align.Left, 28);
                  report.AddColumn(PropertiesTable.PostCode.Name, ReportEnum.Align.Left, "${PostCode}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(PropertiesTable.CreatedBy.Name, ReportEnum.Align.Left, "${CreatedBy}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(PropertiesTable.UpdatedBy.Name, ReportEnum.Align.Left, "${UpdatedBy}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(PropertiesTable.CreatedOn.Name, ReportEnum.Align.Left, "${CreatedOn}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(PropertiesTable.UpdatedOn.Name, ReportEnum.Align.Left, "${UpdatedOn}", ReportEnum.Align.Left, 20);
 
   
                 int rowsPerQuery = 5000;
@@ -21538,6 +21964,34 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                                  }
                              }
                              report.AddData("${PostCode}", record.Format(PropertiesTable.PostCode), ReportEnum.Align.Left, 100);
+                             if (BaseClasses.Utils.MiscUtils.IsNull(record.CreatedBy)){
+                                 report.AddData("${CreatedBy}", "",ReportEnum.Align.Left, 100);
+                             }else{
+                                 Boolean _isExpandableNonCompositeForeignKey;
+                                 String _DFKA = "";
+                                 _isExpandableNonCompositeForeignKey = PropertiesTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertiesTable.CreatedBy);
+                                 _DFKA = PropertiesTable.GetDFKA(record.CreatedBy.ToString(), PropertiesTable.CreatedBy,null);
+                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  PropertiesTable.CreatedBy.IsApplyDisplayAs){
+                                     report.AddData("${CreatedBy}", _DFKA,ReportEnum.Align.Left, 100);
+                                 }else{
+                                     report.AddData("${CreatedBy}", record.Format(PropertiesTable.CreatedBy), ReportEnum.Align.Left, 100);
+                                 }
+                             }
+                             if (BaseClasses.Utils.MiscUtils.IsNull(record.UpdatedBy)){
+                                 report.AddData("${UpdatedBy}", "",ReportEnum.Align.Left, 100);
+                             }else{
+                                 Boolean _isExpandableNonCompositeForeignKey;
+                                 String _DFKA = "";
+                                 _isExpandableNonCompositeForeignKey = PropertiesTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertiesTable.UpdatedBy);
+                                 _DFKA = PropertiesTable.GetDFKA(record.UpdatedBy.ToString(), PropertiesTable.UpdatedBy,null);
+                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  PropertiesTable.UpdatedBy.IsApplyDisplayAs){
+                                     report.AddData("${UpdatedBy}", _DFKA,ReportEnum.Align.Left, 100);
+                                 }else{
+                                     report.AddData("${UpdatedBy}", record.Format(PropertiesTable.UpdatedBy), ReportEnum.Align.Left, 100);
+                                 }
+                             }
+                             report.AddData("${CreatedOn}", record.Format(PropertiesTable.CreatedOn), ReportEnum.Align.Left, 100);
+                             report.AddData("${UpdatedOn}", record.Format(PropertiesTable.UpdatedOn), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -21660,6 +22114,10 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(PropertiesTable.RegionID.Name, ReportEnum.Align.Left, "${RegionID}", ReportEnum.Align.Left, 28);
                  report.AddColumn(PropertiesTable.CountryID.Name, ReportEnum.Align.Left, "${CountryID}", ReportEnum.Align.Left, 28);
                  report.AddColumn(PropertiesTable.PostCode.Name, ReportEnum.Align.Left, "${PostCode}", ReportEnum.Align.Left, 24);
+                 report.AddColumn(PropertiesTable.CreatedBy.Name, ReportEnum.Align.Left, "${CreatedBy}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(PropertiesTable.UpdatedBy.Name, ReportEnum.Align.Left, "${UpdatedBy}", ReportEnum.Align.Left, 15);
+                 report.AddColumn(PropertiesTable.CreatedOn.Name, ReportEnum.Align.Left, "${CreatedOn}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(PropertiesTable.UpdatedOn.Name, ReportEnum.Align.Left, "${UpdatedOn}", ReportEnum.Align.Left, 20);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -21734,6 +22192,34 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                                  }
                              }
                              report.AddData("${PostCode}", record.Format(PropertiesTable.PostCode), ReportEnum.Align.Left, 100);
+                             if (BaseClasses.Utils.MiscUtils.IsNull(record.CreatedBy)){
+                                 report.AddData("${CreatedBy}", "",ReportEnum.Align.Left, 100);
+                             }else{
+                                 Boolean _isExpandableNonCompositeForeignKey;
+                                 String _DFKA = "";
+                                 _isExpandableNonCompositeForeignKey = PropertiesTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertiesTable.CreatedBy);
+                                 _DFKA = PropertiesTable.GetDFKA(record.CreatedBy.ToString(), PropertiesTable.CreatedBy,null);
+                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  PropertiesTable.CreatedBy.IsApplyDisplayAs){
+                                     report.AddData("${CreatedBy}", _DFKA,ReportEnum.Align.Left, 100);
+                                 }else{
+                                     report.AddData("${CreatedBy}", record.Format(PropertiesTable.CreatedBy), ReportEnum.Align.Left, 100);
+                                 }
+                             }
+                             if (BaseClasses.Utils.MiscUtils.IsNull(record.UpdatedBy)){
+                                 report.AddData("${UpdatedBy}", "",ReportEnum.Align.Left, 100);
+                             }else{
+                                 Boolean _isExpandableNonCompositeForeignKey;
+                                 String _DFKA = "";
+                                 _isExpandableNonCompositeForeignKey = PropertiesTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertiesTable.UpdatedBy);
+                                 _DFKA = PropertiesTable.GetDFKA(record.UpdatedBy.ToString(), PropertiesTable.UpdatedBy,null);
+                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  PropertiesTable.UpdatedBy.IsApplyDisplayAs){
+                                     report.AddData("${UpdatedBy}", _DFKA,ReportEnum.Align.Left, 100);
+                                 }else{
+                                     report.AddData("${UpdatedBy}", record.Format(PropertiesTable.UpdatedBy), ReportEnum.Align.Left, 100);
+                                 }
+                             }
+                             report.AddData("${CreatedOn}", record.Format(PropertiesTable.CreatedOn), ReportEnum.Align.Left, 100);
+                             report.AddData("${UpdatedOn}", record.Format(PropertiesTable.UpdatedOn), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -25368,6 +25854,38 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                 this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Title {Txt:Ascending}"), "Title Asc"));
               
                 this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Title {Txt:Descending}"), "Title Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
               
             try
             {          
@@ -29224,6 +29742,22 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
               
                 this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Notes {Txt:Descending}"), "Notes Desc"));
               
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
+              
             try
             {          
                 // Set the selected value.
@@ -32600,6 +33134,22 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
               
                 this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Descending}"), "ExpiryDate Desc"));
               
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl4.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
+              
             try
             {          
                 // Set the selected value.
@@ -35973,6 +36523,22 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
                 this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Ascending}"), "ExpiryDate Asc"));
               
                 this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Expiration Date {Txt:Descending}"), "ExpiryDate Desc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
               
             try
             {          
@@ -39422,6 +39988,22 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
                 this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Renewal Date {Txt:Ascending}"), "RenewalDate Asc"));
               
                 this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Renewal Date {Txt:Descending}"), "RenewalDate Desc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Descending}"), "UpdatedOn Desc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Ascending}"), "CreatedBy Asc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created By {Txt:Descending}"), "CreatedBy Desc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Ascending}"), "CreatedOn Asc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Created On {Txt:Descending}"), "CreatedOn Desc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
+              
+                this.SortControl5.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
               
             try
             {          

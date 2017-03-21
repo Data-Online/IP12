@@ -1,12 +1,3 @@
-E:\Projects\InvestmentProperties\IPv5\bin\IPv5.dll
-E:\Projects\InvestmentProperties\IPv5\bin\IPv5.Business.dll
-E:\Projects\InvestmentProperties\IPv5\bin\IPv5.Data.dll
-E:\Projects\InvestmentProperties\IPv5\obj\Release\IPv5.csprojResolveAssemblyReference.cache
-E:\Projects\InvestmentProperties\IPv5\obj\Release\IPv5.Global.resources
-E:\Projects\InvestmentProperties\IPv5\obj\Release\IPv5.csproj.GenerateResource.Cache
-E:\Projects\InvestmentProperties\IPv5\obj\Release\IPv5.dll
-E:\Projects\InvestmentProperties\IPv5\bin\IPv5.Business.pdb
-E:\Projects\InvestmentProperties\IPv5\bin\IPv5.Data.pdb
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\bin\IPv5.dll.config
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\bin\IPv5.dll
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\bin\IPv5.Business.dll

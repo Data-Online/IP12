@@ -17,8 +17,9 @@
 		<asp:UpdatePanel runat="server" id="UpdatePanel1" UpdateMode="Conditional">
 			<ContentTemplate>
 
-                <table cellpadding="0" cellspacing="0" border="0" class="updatePanelContent"><tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr><tr><td style="text-align:center;"><asp:ImageButton runat="server" id="PropertiesButton" causesvalidation="False" commandname="Redirect" imageurl="../Images/Properties.png">		
-	</asp:ImageButton></td></tr><tr><td style="text-align:center;"><asp:Label runat="server" id="Label" Text="Properties">	</asp:Label></td></tr></table>
+                <table cellpadding="0" cellspacing="0" border="0" class="updatePanelContent"><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td></tr><tr><td style="text-align:center;"><asp:ImageButton runat="server" id="PropertiesButton" causesvalidation="False" commandname="Redirect" imageurl="../Images/Properties.png">		
+	</asp:ImageButton></td><td>&nbsp;</td><td style="text-align:center;"><asp:ImageButton runat="server" id="InvestorsButton" causesvalidation="False" commandname="Redirect" imageurl="../Images/People.png">		
+	</asp:ImageButton></td></tr><tr><td style="text-align:center;"><asp:Label runat="server" id="Label" Text="Properties">	</asp:Label></td><td style="text-align:center;"></td><td style="text-align:center;"><asp:Label runat="server" id="Label1" Text="Investors">	</asp:Label></td></tr></table>
       </ContentTemplate>
 </asp:UpdatePanel>
 

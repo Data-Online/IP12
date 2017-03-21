@@ -335,6 +335,30 @@ public override void SetControl(string control)
             // or replace the call to GetAutoCompletionList_MMContractsSearchText_Base().
             return GetAutoCompletionList_MMContractsSearchText_Base(prefixText, count);
         }
+public void SetOKButton()
+        {
+            SetOKButton_Base(); 
+        }              
+//public void SetEditButton()
+//        {
+//            SetEditButton_Base(); 
+//        }              
+public void OKButton_Click(object sender, EventArgs args)
+        {
+
+          // Click handler for OKButton.
+          // Customize by adding code before the call or replace the call to the Base function with your own code.
+          OKButton_Click_Base(sender, args);
+          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+        }
+//public void EditButton_Click(object sender, EventArgs args)
+//        {
+//
+//          // Click handler for EditButton.
+//          // Customize by adding code before the call or replace the call to the Base function with your own code.
+//          EditButton_Click_Base(sender, args);
+//          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+//        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -436,6 +460,8 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal DirectorsTitle;
             
+        public System.Web.UI.WebControls.Literal DirectorsTitle1;
+            
         public System.Web.UI.WebControls.ImageButton DirectorsWordButton;
         
         public System.Web.UI.WebControls.ImageButton ExcelButton;
@@ -486,6 +512,8 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.ImageButton NewButton3;
         
+        public ThemeButton OKButton;
+                
         public System.Web.UI.WebControls.Literal PageTitle;
         
         public PaginationModern Pagination;
@@ -689,6 +717,8 @@ public override void SetControl(string control)
 
           // Setup the pagination events.
         
+                    this.OKButton.Button.Click += OKButton_Click;
+                        
           this.ClearControlsFromSession();    
     
           System.Web.HttpContext.Current.Session["isd_geo_location"] = "<location><error>LOCATION_ERROR_DISABLED</error></location>";
@@ -729,7 +759,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("NOT_ANONYMOUS");
+            this.Authorize("1;2;NOT_ANONYMOUS");
              if (!this.IsPostBack)
              {
             
@@ -1046,6 +1076,8 @@ public override void SetControl(string control)
             
                 // initialize aspx controls
                 
+                SetOKButton();
+              
                 //Set the corresponding menu item to be highlighted for this page
                 System.Web.UI.MasterPage pageMaster = this.Master;
                 if (!(pageMaster == null)) {
@@ -1145,12 +1177,57 @@ public override void SetControl(string control)
                 PropertiesTableControl.DataBind();
             }
         }
-          
+      
+        public void SetOKButton_Base()                
+              
+        {
+        
+   
+        }
+                
 
         // Write out the DataSource properties and methods
                 
 
         // Write out event methods for the page events
+        
+        // event handler for Button
+        public void OKButton_Click_Base(object sender, EventArgs args)
+        {
+              
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                
+          
+                // if target is specified meaning that is opened on popup or new window
+                if (!string.IsNullOrEmpty(Page.Request["target"]))
+                {
+                    shouldRedirect = false;
+                    AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "ClosePopup", "closePopupPage();", true);                   
+                }
+      
+            } catch (Exception ex) {
+                  shouldRedirect = false;
+                  this.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+    
+            }
+            if (shouldRedirect) {
+                this.ShouldSaveControlsToSession = true;
+      this.RedirectBack();
+        
+            }
+        
+        }
+            
+            
         
       
 

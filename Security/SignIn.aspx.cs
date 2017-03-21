@@ -288,10 +288,11 @@ public partial class SignIn
         {
            if (this.Password.Text != "**********" && (!string.IsNullOrEmpty(this.Password.Text.Trim())))
                 this.Password.Text = BaseFormulaUtils.EncryptData(this.Password.Text);
-            string pwd = "test";
-            var zz = BaseFormulaUtils.EncryptData(pwd);
-            var zzz = BaseFormulaUtils.DecryptData(zz);
+            //string pwd = "test";
+            //var zz = BaseFormulaUtils.EncryptData(pwd);
+            //var zzz = BaseFormulaUtils.DecryptData(zz);
             // Click handler for OKButton.
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "Page_Load_Error_Message", "Password " + this.Password.Text);
             // Customize by adding code before the call or replace the call to the Base function with your own code.
             OKButton_Click_Base(sender, args);
           // NOTE: If the Base function redirects to another page, any code here will not be executed.

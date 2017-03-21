@@ -208,6 +208,17 @@ public void PropertiesButton_Click(object sender, ImageClickEventArgs args)
           PropertiesButton_Click_Base(sender, args);
           // NOTE: If the Base function redirects to another page, any code here will not be executed.
         }
+public void SetInvestorsButton()
+        {
+            SetInvestorsButton_Base(); 
+        }              
+public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
+        {
+          // Click handler for InvestorsButton.
+          // Customize by adding code before the call or replace the call to the Base function with your own code.
+          InvestorsButton_Click_Base(sender, args);
+          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -225,7 +236,11 @@ public void PropertiesButton_Click(object sender, ImageClickEventArgs args)
         }
         
     
+        public System.Web.UI.WebControls.ImageButton InvestorsButton;
+        
         public System.Web.UI.WebControls.Label Label;
+        
+        public System.Web.UI.WebControls.Label Label1;
         
         public System.Web.UI.WebControls.Literal PageTitle;
         
@@ -252,6 +267,8 @@ public void PropertiesButton_Click(object sender, ImageClickEventArgs args)
 
           // Setup the pagination events.
         
+                    this.InvestorsButton.Click += InvestorsButton_Click;
+                        
                     this.PropertiesButton.Click += PropertiesButton_Click;
                         
           this.ClearControlsFromSession();    
@@ -294,7 +311,7 @@ public void PropertiesButton_Click(object sender, ImageClickEventArgs args)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("NOT_ANONYMOUS");
+            this.Authorize("1;2;NOT_ANONYMOUS");
              if (!this.IsPostBack)
              {
             
@@ -510,6 +527,8 @@ public void PropertiesButton_Click(object sender, ImageClickEventArgs args)
             
                 // initialize aspx controls
                 
+                SetInvestorsButton();
+              
                 SetPropertiesButton();
               
     } catch (Exception ex) {
@@ -593,6 +612,13 @@ public void PropertiesButton_Click(object sender, ImageClickEventArgs args)
                 
         // Write out the Set methods
         
+        public void SetInvestorsButton_Base()                
+              
+        {
+        
+   
+        }
+            
         public void SetPropertiesButton_Base()                
               
         {
@@ -605,6 +631,53 @@ public void PropertiesButton_Click(object sender, ImageClickEventArgs args)
                 
 
         // Write out event methods for the page events
+        
+        // event handler for ImageButton
+        public void InvestorsButton_Click_Base(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../Contacts/GroupByContactsTable.aspx";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"])) 
+                url += "?RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.ShouldSaveControlsToSession = true;
+      this.Response.Redirect(url);
+        
+            }
+        
+        }
+            
+            
         
         // event handler for ImageButton
         public void PropertiesButton_Click_Base(object sender, ImageClickEventArgs args)

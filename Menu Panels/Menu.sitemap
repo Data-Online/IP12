@@ -33,5 +33,6 @@ The tags are case-sensitive and should contain the following case-sensitive attr
   <siteMapNode>
     <siteMapNode title="" description="Home" url="~/Dashboard/LandingPage.aspx" imageUrl="../Images/home.png" roles="" order="1" />
     <siteMapNode title="Properties" description="Properties" url="~/Properties/GroupByPropertiesTable.aspx" imageUrl="" roles="" order="2" />
+    <siteMapNode title="Investors" description="Investors" url="~/Contacts/GroupByContactsTable.aspx" imageUrl="" roles="" order="3" />
   </siteMapNode>
 </siteMap>

@@ -112,10 +112,34 @@ Next month<br />
 <asp:Literal runat="server" id="MMContractsCountControl3">	</asp:Literal>  <br />
 <asp:Literal runat="server" id="MMContractsCountControl">	</asp:Literal></td></tr><tr><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"><asp:LinkButton runat="server" id="CityID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> <br />
 <asp:LinkButton runat="server" id="RegionID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> <br />
-<asp:LinkButton runat="server" id="CountryID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PostCode"></asp:Literal></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr runat="server"><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr id="PropertiesTableControlAltRow" runat="server"><td class="tableCellValue" colspan="14"><BaseClasses:TabContainer runat="server" id="PropertiesTableControlTabContainer" onclientactivetabchanged="fixedHeaderTab" panellayout="Tabbed"> 
+<asp:LinkButton runat="server" id="CountryID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PostCode"></asp:Literal></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr runat="server"><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableCellValue" scope="col" colspan="5"><asp:accordion id="Accordion1" runat="server" requireopenedpane="false" suppressheaderpostbacks="true" selectedindex="1">
+    <panes>
+        <asp:accordionpane id="AccordionPaneA1" runat="server">
+            <header><a href=""><img src="../Images/Audit.png"></a></header>  
+			<content>
+			<p class="auditText">
+			Created by: <span style="white-space:nowrap;">
+<asp:Literal runat="server" id="CreatedBy1"></asp:Literal></span>
+
+			On: <span style="white-space:nowrap;">
+<asp:Literal runat="server" id="CreatedOn1"></asp:Literal></span>
+
+			<br>
+			Last update by: <span style="white-space:nowrap;">
+<asp:Literal runat="server" id="UpdatedBy1"></asp:Literal></span>
+ 
+			On: <span style="white-space:nowrap;">
+<asp:Literal runat="server" id="UpdatedOn1"></asp:Literal></span>
+
+			</p>
+			</content>			
+        </asp:accordionpane>
+		
+	</panes>    
+</asp:accordion></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr id="PropertiesTableControlAltRow" runat="server"><td class="tableCellValue" colspan="14"><BaseClasses:TabContainer runat="server" id="PropertiesTableControlTabContainer" onclientactivetabchanged="fixedHeaderTab" panellayout="Tabbed"> 
  <BaseClasses:TabPanel runat="server" id="TabPanel" HeaderText="Investors">	<ContentTemplate> 
   <IPv5:ContactsTableControl1 runat="server" id="ContactsTableControl1">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb"></td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="Actions2Div" runat="server" class="popupWrapper">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dht" valign="middle"><asp:Literal runat="server" id="DirectorsTitle1" Text="&lt;%#String.Concat(&quot;Investors&quot;) %>">	</asp:Literal></td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="Actions2Div" runat="server" class="popupWrapper">
                 <table border="0" cellpadding="0" cellspacing="0"><tr><td></td><td></td><td style="text-align: right;" class="popupTableCellValue"></td><td style="text-align: right;" class="popupTableCellValue"></td><td style="text-align: right;" class="popupTableCellValue"><input type="image" src="../Images/closeButton.gif" onmouseover="this.src='../Images/closeButtonOver.gif'" onmouseout="this.src='../Images/closeButton.gif'" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /><br /></td></tr><tr><td></td><td>
                     <asp:ImageButton runat="server" id="NewButton2" causesvalidation="false" commandname="Redirect" imageurl="../Images/ButtonBarNew.gif" onmouseout="this.src=&#39;../Images/ButtonBarNew.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarNewOver.gif&#39;" redirectstyle="Popup" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton>
@@ -799,7 +823,8 @@ Next month<br />
 	<asp:hiddenfield id="PropertiesTableControl_PostbackTracker" runat="server" />
 </IPv5:PropertiesTableControl>
 
-            </td></tr></table>
+            </td></tr><tr><td class="recordPanelButtonsAlignment"><table cellpadding="0" cellspacing="0" border="0"><tr><td><IPv5:ThemeButton runat="server" id="OKButton" button-causesvalidation="False" button-commandname="Redirect" button-text="&lt;%# GetResourceValue(&quot;Btn:OK&quot;, &quot;IPv5&quot;) %>" button-tooltip="&lt;%# GetResourceValue(&quot;Btn:OK&quot;, &quot;IPv5&quot;) %>" postback="False"></IPv5:ThemeButton></td></tr></table>
+</td></tr></table>
     </ContentTemplate>
 </asp:UpdatePanel>
 </div>

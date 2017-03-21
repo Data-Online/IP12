@@ -238,10 +238,10 @@ public void SetCancelButton()
         {
             SetCancelButton_Base(); 
         }              
-public void SetTermExpiresTableControl()
-        {
-            SetTermExpiresTableControl_Base(); 
-        }
+//public void SetTermExpiresTableControl()
+//        {
+//            SetTermExpiresTableControl_Base(); 
+//        }
 public void SetPropertyNotesTableControl()
         {
             SetPropertyNotesTableControl_Base(); 
@@ -250,14 +250,14 @@ public void SetPropertiesRecordControl()
         {
             SetPropertiesRecordControl_Base(); 
         }
-public void SetMMContractsTableControl()
-        {
-            SetMMContractsTableControl_Base(); 
-        }
-public void SetPropertiesTabContainer()
-        {
-            SetPropertiesTabContainer_Base(); 
-        }
+//public void SetMMContractsTableControl()
+//        {
+//            SetMMContractsTableControl_Base(); 
+//        }
+//public void SetPropertiesTabContainer()
+//        {
+//            SetPropertiesTabContainer_Base(); 
+//        }
 [System.Web.Services.WebMethod()]
         public static object[] GetImage(string contextName,
                                         string tableName,
@@ -299,6 +299,10 @@ public override void SetControl(string control)
       {
           this.SetControl_Base(control);
       }
+public void SetTabContainer()
+        {
+            SetTabContainer_Base(); 
+        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -340,28 +344,6 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.LinkButton DateRecordedSortLabel;
         
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton DescriptionSortLabel1;
-        
-        public System.Web.UI.WebControls.LinkButton ExpiryDateSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton ExpiryDateSortLabel1;
-        
-        public System.Web.UI.WebControls.ImageButton MMContractsAddButton;
-        
-        public ThemeButtonWithArrow MMContractsButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton MMContractsDeleteButton;
-        
-        public ThemeButtonWithArrow MMContractsFiltersButton;
-                
-        public PaginationModern MMContractsPagination;
-                
-        public IPv5.UI.Controls.AddProperties.MMContractsTableControl MMContractsTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox MMContractsToggleAll;
-        
         public System.Web.UI.WebControls.LinkButton NotesSortLabel;
         
         public System.Web.UI.WebControls.Literal PageTitle;
@@ -370,8 +352,6 @@ public override void SetControl(string control)
         
         public IPv5.UI.Controls.AddProperties.PropertiesRecordControl PropertiesRecordControl;
           
-        public AjaxControlToolkit.TabContainer PropertiesTabContainer;
-        
         public System.Web.UI.WebControls.Literal PropertiesTitle;
             
         public System.Web.UI.WebControls.ImageButton PropertyNotesAddButton;
@@ -398,19 +378,7 @@ public override void SetControl(string control)
                 
         public ThemeButton SaveButton;
                 
-        public System.Web.UI.WebControls.ImageButton TermExpiresAddButton;
-        
-        public ThemeButtonWithArrow TermExpiresButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton TermExpiresDeleteButton;
-        
-        public ThemeButtonWithArrow TermExpiresFiltersButton;
-                
-        public PaginationModern TermExpiresPagination;
-                
-        public IPv5.UI.Controls.AddProperties.TermExpiresTableControl TermExpiresTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox TermExpiresToggleAll;
+        public AjaxControlToolkit.TabContainer TabContainer;
         
         public ValidationSummary ValidationSummary1;
 
@@ -483,7 +451,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("NO_ACCESS");
+            this.Authorize("1");
              if (!this.IsPostBack)
              {
             
@@ -595,20 +563,12 @@ public override void SetControl(string control)
           switch (control)
           {
           
-              case "MMContractsTableControl":
-                 SetMMContractsTableControl();
-                 break;
-          
               case "PropertiesRecordControl":
                  SetPropertiesRecordControl();
                  break;
           
               case "PropertyNotesTableControl":
                  SetPropertyNotesTableControl();
-                 break;
-          
-              case "TermExpiresTableControl":
-                 SetTermExpiresTableControl();
                  break;
                
           }
@@ -713,7 +673,7 @@ public override void SetControl(string control)
                 
                 
                 
-            SetPropertiesTabContainer(); 
+            SetTabContainer(); 
           
     
                 // Load and bind data for each record and table UI control.
@@ -822,28 +782,18 @@ public override void SetControl(string control)
                 
         // Write out the Set methods
         
-        public void SetPropertiesTabContainer_Base()           
+        public void SetTabContainer_Base()           
         
         {
                             
                    
             if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "true") 
-                MiscUtils.FindControlRecursively(this, "PropertiesTabContainer").Visible = true;
+                MiscUtils.FindControlRecursively(this, "TabContainer").Visible = true;
             else if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "false") 
-                MiscUtils.FindControlRecursively(this, "PropertiesTabContainer").Visible = false;
+                MiscUtils.FindControlRecursively(this, "TabContainer").Visible = false;
          
   
         }      
-      
-        public void SetMMContractsTableControl_Base()           
-        
-        {        
-            if (MMContractsTableControl.Visible)
-            {
-                MMContractsTableControl.LoadData();
-                MMContractsTableControl.DataBind();
-            }
-        }
       
         public void SetPropertiesRecordControl_Base()           
         
@@ -862,16 +812,6 @@ public override void SetControl(string control)
             {
                 PropertyNotesTableControl.LoadData();
                 PropertyNotesTableControl.DataBind();
-            }
-        }
-      
-        public void SetTermExpiresTableControl_Base()           
-        
-        {        
-            if (TermExpiresTableControl.Visible)
-            {
-                TermExpiresTableControl.LoadData();
-                TermExpiresTableControl.DataBind();
             }
         }
       
