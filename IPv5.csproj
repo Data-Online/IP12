@@ -1464,7 +1464,7 @@
       <DependentUpon>Reports.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard\Administration.aspx.cs" >
+    <Compile Include="Dashboard\Administration.aspx.cs">
       <DependentUpon>Administration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -1885,11 +1885,10 @@
     <Content Include="Security\SendUserInfo.aspx" />
     <Content Include="Security\SignIn.aspx" />
     <Content Include="Security\SignOut.aspx" />
-    <Content Include="Menu Panels\temp" />
     <Content Include="vPropertyDirectors\ShowVPropertyDirectorsTable.aspx" />
     <Content Include="Dashboard\Reports.aspx" />
     <Content Include="Master Pages\HorizontalNoMenu.master" />
-    <Content Include="Dashboard\Administration.aspx"  />
+    <Content Include="Dashboard\Administration.aspx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">
