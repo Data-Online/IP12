@@ -1472,10 +1472,18 @@
   <ItemGroup>
     <Content Include="BaseClasses\Readme.txt" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\Admin.png" />
+    <Content Include="Images\Audit.png" />
+    <Content Include="Images\Director Listing.png" />
+    <Content Include="Images\Directors.png" />
     <Content Include="Images\eMail-over.png" />
     <Content Include="Images\eMail.png" />
     <Content Include="Images\home.png" />
+    <Content Include="Images\Logins.png" />
+    <Content Include="Images\People.png" />
     <Content Include="Images\Properties.png" />
+    <Content Include="Images\Reports.png" />
+    <Content Include="Images\Suppliers.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
