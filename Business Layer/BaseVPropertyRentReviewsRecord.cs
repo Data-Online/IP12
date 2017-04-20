@@ -1,5 +1,5 @@
 ﻿// This class is "generated" and will be overwritten.
-// Your customizations should be made in VPropertyRentReviewsRecord.vb
+// Your customizations should be made in VPropertyRentReviewsRecord.cs
 
 using System;
 using System.Collections;
@@ -20,7 +20,7 @@ namespace IPv5.Business
 /// </remarks>
 /// <seealso cref="VPropertyRentReviewsView"></seealso>
 /// <seealso cref="VPropertyRentReviewsRecord"></seealso>
-public class BaseVPropertyRentReviewsRecord : KeylessRecord
+public class BaseVPropertyRentReviewsRecord : PrimaryKeyRecord
 {
 
 	public readonly static VPropertyRentReviewsView TableUtils = VPropertyRentReviewsView.Instance;
@@ -29,15 +29,18 @@ public class BaseVPropertyRentReviewsRecord : KeylessRecord
  
 	protected BaseVPropertyRentReviewsRecord() : base(TableUtils)
 	{
+		this.InsertingRecord += 
+			new BaseClasses.IRecordWithTriggerEvents.InsertingRecordEventHandler(this.VPropertyRentReviewsRecord_InsertingRecord); 
+		this.UpdatingRecord += 
+			new BaseClasses.IRecordWithTriggerEvents.UpdatingRecordEventHandler(this.VPropertyRentReviewsRecord_UpdatingRecord); 
 		this.ReadRecord +=
             new BaseClasses.IRecordWithTriggerEvents.ReadRecordEventHandler(this.VPropertyRentReviewsRecord_ReadRecord); 
-        this.InsertingRecord += 
-			new BaseClasses.IRecordWithTriggerEvents.InsertingRecordEventHandler(this.VPropertyRentReviewsRecord_InsertingRecord);     
 	}
 
-	protected BaseVPropertyRentReviewsRecord(KeylessRecord record) : base(record, TableUtils)
+	protected BaseVPropertyRentReviewsRecord(PrimaryKeyRecord record) : base(record, TableUtils)
 	{
 	}
+	
 	
 	//Audit Trail methods
 	
@@ -50,8 +53,8 @@ public class BaseVPropertyRentReviewsRecord : KeylessRecord
                 }
     
     }
-    
-    	//Evaluates Initialize when->Inserting formulas specified at the data access layer
+        
+	//Evaluates Initialize when->Inserting formulas specified at the data access layer
     protected virtual void VPropertyRentReviewsRecord_InsertingRecord(Object sender,System.ComponentModel.CancelEventArgs e)
     {
         //Apply Initialize->Inserting formula only if validation is successful.
@@ -61,8 +64,19 @@ public class BaseVPropertyRentReviewsRecord : KeylessRecord
                 }
     
     }
-        
-     //Evaluates Validate when->Inserting formulas specified at the data access layer
+    
+    //Evaluates Initialize when->Updating formulas specified at the data access layer
+    protected virtual void VPropertyRentReviewsRecord_UpdatingRecord(Object sender,System.ComponentModel.CancelEventArgs e)
+    {
+        //Apply Initialize->Updating formula only if validation is successful.
+                VPropertyRentReviewsRecord VPropertyRentReviewsRec = (VPropertyRentReviewsRecord)sender;
+        Validate_Updating();
+        if(VPropertyRentReviewsRec != null && !VPropertyRentReviewsRec.IsReadOnly ){
+                }
+    
+    }
+
+   //Evaluates Validate when->Inserting formulas specified at the data access layer
 	protected virtual void Validate_Inserting()
 	{
 		string fullValidationMessage = "";
@@ -77,7 +91,22 @@ public class BaseVPropertyRentReviewsRecord : KeylessRecord
         if(fullValidationMessage != "")
 			throw new Exception(fullValidationMessage);
 	}
-	    
+ 
+	//Evaluates Validate when->Updating formulas specified at the data access layer
+	protected virtual void Validate_Updating()
+	{
+		string fullValidationMessage = "";
+		string validationMessage = "";
+		
+		string formula = "";if (formula == "") formula = "";
+
+
+		if(validationMessage != "" && validationMessage.ToLower() != "true")
+            fullValidationMessage = fullValidationMessage + validationMessage + "\r\n"; 
+		
+        if(fullValidationMessage != "")
+			throw new Exception(fullValidationMessage);
+	}
 	public virtual string EvaluateFormula(string formula, BaseRecord  dataSourceForEvaluate, string format)
     {
         Data.BaseFormulaEvaluator e = new Data.BaseFormulaEvaluator();
@@ -1149,7 +1178,6 @@ public class BaseVPropertyRentReviewsRecord : KeylessRecord
 
 
 #endregion
-
 }
 
 }

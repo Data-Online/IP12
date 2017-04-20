@@ -16,7 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>CitiesMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;1&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>190288616-96766</CheckSum>
   </Self>
   <ComposedOf>

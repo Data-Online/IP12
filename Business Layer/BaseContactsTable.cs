@@ -85,12 +85,29 @@ public class BaseContactsTable : PrimaryKeyTable
         UpdatedByColumn.CodeName = "UpdatedBy";
         CreatedOnColumn.CodeName = "CreatedOn";
         UpdatedOnColumn.CodeName = "UpdatedOn";
+        DeletedColumn.CodeName = "Deleted";
+        DeletedColumn.DefaultValue = EvaluateFormula("\"0\"");
+        DeletedByColumn.CodeName = "DeletedBy";
+        DeletedOnColumn.CodeName = "DeletedOn";
 
         
     }
     
 #region "Overriden methods"
-	
+	public override WhereClause AddGlobalWhereClause()
+    {
+        CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+        WhereClause wc = new WhereClause();
+        String formula;
+
+        if(BaseFormulaEvaluator.ShouldApplyGlobalWhereClause("0")){
+            formula = EvaluateFormula("0");
+            if (formula != "") filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(ContactsTable.Deleted, formula, BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
+            wc.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+        }
+
+        return wc;
+    }
 #endregion    
 
 #region "Properties for columns"
@@ -720,6 +737,81 @@ public class BaseContactsTable : PrimaryKeyTable
     }
     
     
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.Deleted column object.
+    /// </summary>
+    public BaseClasses.Data.BooleanColumn DeletedColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.BooleanColumn)this.TableDefinition.ColumnList[25];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.Deleted column object.
+    /// </summary>
+    public static BaseClasses.Data.BooleanColumn Deleted
+    {
+        get
+        {
+            return ContactsTable.Instance.DeletedColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.DeletedBy column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn DeletedByColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[26];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.DeletedBy column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn DeletedBy
+    {
+        get
+        {
+            return ContactsTable.Instance.DeletedByColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.DeletedOn column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn DeletedOnColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[27];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.DeletedOn column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn DeletedOn
+    {
+        get
+        {
+            return ContactsTable.Instance.DeletedOnColumn;
+        }
+    }
+    
+    
 
 
 #endregion
@@ -1268,7 +1360,10 @@ public class BaseContactsTable : PrimaryKeyTable
         string CreatedByValue, 
         string UpdatedByValue, 
         string CreatedOnValue, 
-        string UpdatedOnValue
+        string UpdatedOnValue, 
+        string DeletedValue, 
+        string DeletedByValue, 
+        string DeletedOnValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
@@ -1296,6 +1391,9 @@ public class BaseContactsTable : PrimaryKeyTable
         rec.SetString(UpdatedByValue, UpdatedByColumn);
         rec.SetString(CreatedOnValue, CreatedOnColumn);
         rec.SetString(UpdatedOnValue, UpdatedOnColumn);
+        rec.SetString(DeletedValue, DeletedColumn);
+        rec.SetString(DeletedByValue, DeletedByColumn);
+        rec.SetString(DeletedOnValue, DeletedOnColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

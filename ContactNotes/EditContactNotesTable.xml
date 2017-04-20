@@ -16,7 +16,7 @@
     <Description>Table view to show or edit multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>ContactNotesMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;1&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>574668250-26186</CheckSum>
   </Self>
   <ComposedOf>
@@ -860,92 +860,6 @@
         <Attribute>
           <Name>onclick</Name>
           <Value>toggleAllCheckboxes(this);</Value>
-        </Attribute>
-      </PassthroughAttributes>
-      <InsideControl>ContactNotesTableControl</InsideControl>
-    </ContainedComponent>
-    <ContainedComponent>
-      <Name>DateRecorded</Name>
-      <Type>FieldValue</Type>
-      <Field>DateRecorded</Field>
-      <FieldValueStyle>TextBox</FieldValueStyle>
-      <Table>DatabaseMM_IP1%dbo.ContactNotes</Table>
-      <PassthroughAttributes>
-        <Attribute>
-          <Name>CssClass</Name>
-          <Value>field_input</Value>
-        </Attribute>
-        <Attribute>
-          <Name>DateRecordedRequiredFieldValidator:Enabled</Name>
-          <Value>False</Value>
-        </Attribute>
-        <Attribute>
-          <Name>DateRecordedRequiredFieldValidator:Text</Name>
-          <Value>*</Value>
-        </Attribute>
-        <Attribute>
-          <Name>DateSelectorType</Name>
-          <Value>Default</Value>
-        </Attribute>
-        <Attribute>
-          <Name>EnableIncrementDecrementButtons</Name>
-          <Value>Default</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:DataSource</Name>
-          <Value>Parent</Value>
-        </Attribute>
-      </PassthroughAttributes>
-      <InsideControl>ContactNotesTableControl</InsideControl>
-      <InsideItemTemplate>true</InsideItemTemplate>
-    </ContainedComponent>
-    <ContainedComponent>
-      <Name>DateRecordedLabel</Name>
-      <Type>Literal</Type>
-      <PassthroughAttributes>
-        <Attribute>
-          <Name>Consumers</Name>
-          <Value>ContactNotesTableControl</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Field</Name>
-          <Value>DateRecorded</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Table</Name>
-          <Value>DatabaseMM_IP1%dbo.ContactNotes</Value>
-        </Attribute>
-        <Attribute>
-          <Name>Text</Name>
-          <Value>%ISD_DEFAULT%ContactNotes%DateRecorded</Value>
-        </Attribute>
-      </PassthroughAttributes>
-      <InsideControl>ContactNotesTableControl</InsideControl>
-      <InsideItemTemplate>true</InsideItemTemplate>
-    </ContainedComponent>
-    <ContainedComponent>
-      <Name>DateRecordedSortLabel</Name>
-      <Type>FieldSort</Type>
-      <PassthroughAttributes>
-        <Attribute>
-          <Name>Consumers</Name>
-          <Value>ContactNotesTableControl</Value>
-        </Attribute>
-        <Attribute>
-          <Name>Field</Name>
-          <Value>DateRecorded</Value>
-        </Attribute>
-        <Attribute>
-          <Name>Table</Name>
-          <Value>DatabaseMM_IP1%dbo.ContactNotes</Value>
-        </Attribute>
-        <Attribute>
-          <Name>Text</Name>
-          <Value>%ISD_DEFAULT%ContactNotes%DateRecorded</Value>
-        </Attribute>
-        <Attribute>
-          <Name>ToolTip</Name>
-          <Value>Sort by DateRecorded</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>ContactNotesTableControl</InsideControl>

@@ -156,105 +156,6 @@
       </updatingFormula>
     </Column>
     <Column InternalName="3" Priority="4" ColumnNum="3">
-      <columnName>DateRecorded</columnName>
-      <columnUIName>%ISD_DEFAULT%</columnUIName>
-      <columnType>Date</columnType>
-      <columnDBType>datetime</columnDBType>
-      <columnLengthSet>
-      </columnLengthSet>
-      <columnDefault>
-      </columnDefault>
-      <columnDBDefault>
-      </columnDBDefault>
-      <columnIndex>N</columnIndex>
-      <columnUnique>N</columnUnique>
-      <columnFunction>
-      </columnFunction>
-      <columnFormat>g</columnFormat>
-      <columnDBFormat>g</columnDBFormat>
-      <columnPK>N</columnPK>
-      <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
-      <columnRequired>N</columnRequired>
-      <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive>N</columnCaseSensitive>
-      <columnCollation>
-      </columnCollation>
-      <columnFullText>N</columnFullText>
-      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
-      <columnTableAliasName>
-      </columnTableAliasName>
-      <applyLabelText>Y</applyLabelText>
-      <applyDFKA>N</applyDFKA>
-      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
-      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
-      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
-      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
-      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
-      <applyDefaultValue>N</applyDefaultValue>
-      <insertingRecordFormula>
-      </insertingRecordFormula>
-      <readingRecordFormula>
-      </readingRecordFormula>
-      <updatingRecordFormula>
-      </updatingRecordFormula>
-      <insertingFormula>
-      </insertingFormula>
-      <updatingFormula>
-      </updatingFormula>
-    </Column>
-    <Column InternalName="4" Priority="5" ColumnNum="4">
-      <columnName>NoteType</columnName>
-      <columnUIName>%ISD_DEFAULT%</columnUIName>
-      <columnType>Number</columnType>
-      <columnDBType>int</columnDBType>
-      <columnLengthSet>10.0</columnLengthSet>
-      <columnDefault>
-      </columnDefault>
-      <columnDBDefault>
-      </columnDBDefault>
-      <columnIndex>N</columnIndex>
-      <columnUnique>N</columnUnique>
-      <columnFunction>
-      </columnFunction>
-      <columnDBFormat>
-      </columnDBFormat>
-      <columnPK>N</columnPK>
-      <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
-      <columnRequired>N</columnRequired>
-      <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive>N</columnCaseSensitive>
-      <columnCollation>
-      </columnCollation>
-      <columnFullText>N</columnFullText>
-      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
-      <columnTableAliasName>
-      </columnTableAliasName>
-      <applyLabelText>Y</applyLabelText>
-      <applyDFKA>N</applyDFKA>
-      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
-      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
-      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
-      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
-      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
-      <applyDefaultValue>N</applyDefaultValue>
-      <insertingRecordFormula>
-      </insertingRecordFormula>
-      <readingRecordFormula>
-      </readingRecordFormula>
-      <updatingRecordFormula>
-      </updatingRecordFormula>
-      <insertingFormula>
-      </insertingFormula>
-      <updatingFormula>
-      </updatingFormula>
-    </Column>
-    <Column InternalName="5" Priority="6" ColumnNum="5">
       <columnName>CreatedBy</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -262,7 +163,7 @@
       <columnLengthSet>10.0</columnLengthSet>
       <columnDefault>
       </columnDefault>
-      <columnDBDefault Source="User">
+      <columnDBDefault>
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
@@ -272,33 +173,30 @@
       </columnDBFormat>
       <columnPK>N</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed Source="User">N</columnComputed>
-      <columnIdentity Source="User">N</columnIdentity>
-      <columnReadOnly Source="User">N</columnReadOnly>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
       <columnRequired>N</columnRequired>
       <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive Source="User">N</columnCaseSensitive>
+      <columnCaseSensitive>N</columnCaseSensitive>
       <columnCollation>
       </columnCollation>
-      <columnFullText Source="User">N</columnFullText>
+      <columnFullText>N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
-      <InternalName>5</InternalName>
-      <columnTableClassName>
-      </columnTableClassName>
-      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyDFKA>Y</applyDFKA>
       <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
       <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
       <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
       <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
       <applyDefaultValue>N</applyDefaultValue>
-      <applyDFKA>Y</applyDFKA>
-      <readingRecordFormula>
-      </readingRecordFormula>
       <insertingRecordFormula>
       </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
       <updatingRecordFormula>
       </updatingRecordFormula>
       <insertingFormula>
@@ -314,7 +212,7 @@
         <foreignKeyType>Implicit</foreignKeyType>
       </foreignKey>
     </Column>
-    <Column InternalName="6" Priority="7" ColumnNum="6">
+    <Column InternalName="4" Priority="5" ColumnNum="4">
       <columnName>UpdatedBy</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -322,7 +220,7 @@
       <columnLengthSet>10.0</columnLengthSet>
       <columnDefault>
       </columnDefault>
-      <columnDBDefault Source="User">
+      <columnDBDefault>
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
@@ -332,33 +230,30 @@
       </columnDBFormat>
       <columnPK>N</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed Source="User">N</columnComputed>
-      <columnIdentity Source="User">N</columnIdentity>
-      <columnReadOnly Source="User">N</columnReadOnly>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
       <columnRequired>N</columnRequired>
       <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive Source="User">N</columnCaseSensitive>
+      <columnCaseSensitive>N</columnCaseSensitive>
       <columnCollation>
       </columnCollation>
-      <columnFullText Source="User">N</columnFullText>
+      <columnFullText>N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
-      <InternalName>6</InternalName>
-      <columnTableClassName>
-      </columnTableClassName>
-      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyDFKA>Y</applyDFKA>
       <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
       <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
       <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
       <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
       <applyDefaultValue>N</applyDefaultValue>
-      <applyDFKA>Y</applyDFKA>
-      <readingRecordFormula>
-      </readingRecordFormula>
       <insertingRecordFormula>
       </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
       <updatingRecordFormula>
       </updatingRecordFormula>
       <insertingFormula>
@@ -374,7 +269,7 @@
         <foreignKeyType>Implicit</foreignKeyType>
       </foreignKey>
     </Column>
-    <Column InternalName="7" Priority="8" ColumnNum="7">
+    <Column InternalName="5" Priority="6" ColumnNum="5">
       <columnName>CreatedOn</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -387,7 +282,8 @@
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
-      <columnFunction>notrim</columnFunction>
+      <columnFunction>
+      </columnFunction>
       <columnFormat>g</columnFormat>
       <columnDBFormat>g</columnDBFormat>
       <columnPK>N</columnPK>
@@ -405,8 +301,25 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <applyDFKA>N</applyDFKA>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
     </Column>
-    <Column InternalName="8" Priority="9" ColumnNum="8">
+    <Column InternalName="6" Priority="7" ColumnNum="6">
       <columnName>UpdatedOn</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -419,7 +332,8 @@
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
-      <columnFunction>notrim</columnFunction>
+      <columnFunction>
+      </columnFunction>
       <columnFormat>g</columnFormat>
       <columnDBFormat>g</columnDBFormat>
       <columnPK>N</columnPK>
@@ -437,10 +351,27 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <applyDFKA>N</applyDFKA>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
     </Column>
   </ColumnDefinition>
   <TableName>ContactNotes</TableName>
-  <Version>2</Version>
+  <Version>4</Version>
   <Owner>dbo</Owner>
   <TableAliasName>ContactNotes_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

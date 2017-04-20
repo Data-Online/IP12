@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class SuppliersDefinition
 {
 #region "Definition (XML) for SuppliersDefinition table"
-	//Next 553 lines contain Table Definition (XML) for table "SuppliersDefinition"
+	//Next 563 lines contain Table Definition (XML) for table "SuppliersDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -228,21 +228,21 @@ public class SuppliersDefinition
          tbf.Append(      @"<columnDBType>int</columnDBType>");
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
-         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnDBDefault Source=""User""></columnDBDefault>");
          tbf.Append(      @"<columnIndex>N</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
          tbf.Append(      @"<columnPermanent>N</columnPermanent>");
-         tbf.Append(      @"<columnComputed>N</columnComputed>");
-         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
-         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnComputed Source=""User"">N</columnComputed>");
+         tbf.Append(      @"<columnIdentity Source=""User"">N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly Source=""User"">N</columnReadOnly>");
          tbf.Append(      @"<columnRequired>N</columnRequired>");
          tbf.Append(      @"<columnNotNull>N</columnNotNull>");
-         tbf.Append(      @"<columnCaseSensitive>N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCaseSensitive Source=""User"">N</columnCaseSensitive>");
          tbf.Append(      @"<columnCollation></columnCollation>");
-         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnFullText Source=""User"">N</columnFullText>");
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
@@ -258,6 +258,16 @@ public class SuppliersDefinition
          tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
          tbf.Append(      @"<insertingFormula></insertingFormula>");
          tbf.Append(      @"<updatingFormula></updatingFormula>");
+         tbf.Append(      @"<InternalName>5</InternalName>");
+         tbf.Append(      @"<columnTableClassName></columnTableClassName>");
+         tbf.Append(      @"<foreignKey>");
+         tbf.Append(        @"<columnFKName>VFK_Suppliers_CityID_1</columnFKName>");
+         tbf.Append(        @"<columnFKTable>IPv5.Business.CitiesTable, IPv5.Business</columnFKTable>");
+         tbf.Append(        @"<columnFKOwner>dbo</columnFKOwner>");
+         tbf.Append(        @"<columnFKColumn>CityID</columnFKColumn>");
+         tbf.Append(        @"<columnFKColumnDisplay>= Cities.City</columnFKColumnDisplay>");
+         tbf.Append(        @"<foreignKeyType>Implicit</foreignKeyType>");
+         tbf.Append(      "</foreignKey>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""6"" Priority=""7"" ColumnNum=""6"">");
          tbf.Append(      @"<columnName>PostCode</columnName>");

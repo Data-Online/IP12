@@ -79,14 +79,19 @@
 
                 </td><td class="panelHeaderR"></td></tr><tr><td class="panelL"></td><td>
                   <asp:panel id="ContactsTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="ContactsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="3" style="display:none"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th></tr><asp:Repeater runat="server" id="ContactsTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:ContactsTableControlRow runat="server" id="ContactsTableControlRow">
-<tr><td class="tableCellSelectCheckbox" colspan="2"><asp:ImageButton runat="server" id="EditRowButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton> 
+<tr><td class="tableCellSelectCheckbox" colspan="3" rowspan="2"><asp:ImageButton runat="server" id="EditRowButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>">		
+	</asp:ImageButton> <br />
 <asp:ImageButton runat="server" id="ViewRowButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_view.gif" onmouseout="this.src=&#39;../Images/icon_view.gif&#39;" onmouseover="this.src=&#39;../Images/icon_view_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:ViewRecord&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton> 
+	</asp:ImageButton> <br />
+<asp:ImageButton runat="server" id="DeleteRowButton" causesvalidation="False" commandname="DeleteRecord" cssclass="button_link" imageurl="../Images/icon_delete.gif" onmouseout="this.src=&#39;../Images/icon_delete.gif&#39;" onmouseover="this.src=&#39;../Images/icon_delete_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:DeleteRecord&quot;, &quot;IPv5&quot;) %>">		
+	</asp:ImageButton> <br />
 <asp:ImageButton runat="server" id="ExpandRowButton" causesvalidation="False" commandname="ExpandCollapseRow" cssclass="button_link" imageurl="../Images/icon_expandcollapserow.gif" onmouseout="this.src=&#39;../Images/icon_expandcollapserow.gif&#39;" onmouseover="this.src=&#39;../Images/icon_expandcollapserow_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:ExpandCollapseRow&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton></td><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;"></td><td class="largeText" colspan="2"><asp:Literal runat="server" id="FirstName4"></asp:Literal> 
-<asp:Literal runat="server" id="LastName4"></asp:Literal></td><td class="tableCellLabel" style="font-weight:bold"><asp:Literal runat="server" id="FirstName2Label" Text="EvaluateFormula(&quot;= \&quot;Second Contact\&quot;&quot;, true)">	</asp:Literal></td><td class="tableCellValue" colspan="3"><asp:Literal runat="server" id="FirstName22"></asp:Literal> 
-<asp:Literal runat="server" id="LastName22"></asp:Literal></td><td class="tableCellLabel" style="text-align:right;"><asp:Literal runat="server" id="Literal" Text="eMail">	</asp:Literal></td><td class="tableCellValue"></td></tr><tr><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;"></td><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;"></td><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;"></td><td class="tableCellLabel"><asp:Literal runat="server" id="Address1Label11" Text="EvaluateFormula(&quot;= \&quot;Address\&quot;&quot;, true)">	</asp:Literal></td><td class="tableCellValue" rowspan="2"><asp:Literal runat="server" id="Address14"></asp:Literal> <br>
+	</asp:ImageButton></td><td class="largeText" colspan="2"><asp:Literal runat="server" id="FirstName4"></asp:Literal> 
+<asp:Literal runat="server" id="LastName4"></asp:Literal> 
+<span style="white-space:nowrap;">
+<asp:Literal runat="server" id="ContactID" visible="False"></asp:Literal></span>
+</td><td class="tableCellLabel" style="font-weight:bold"><asp:Literal runat="server" id="FirstName2Label" Text="EvaluateFormula(&quot;= \&quot;Second Contact\&quot;&quot;, true)">	</asp:Literal></td><td class="tableCellValue" colspan="3"><asp:Literal runat="server" id="FirstName22"></asp:Literal> 
+<asp:Literal runat="server" id="LastName22"></asp:Literal></td><td class="tableCellLabel" style="text-align:right;"><asp:Literal runat="server" id="Literal" Text="eMail">	</asp:Literal></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel"><asp:Literal runat="server" id="Address1Label11" Text="EvaluateFormula(&quot;= \&quot;Address\&quot;&quot;, true)">	</asp:Literal></td><td class="tableCellValue" rowspan="2"><asp:Literal runat="server" id="Address14"></asp:Literal> <br>
 <asp:Literal runat="server" id="Address24"></asp:Literal> <br>
 <asp:Literal runat="server" id="Address34"></asp:Literal> <br> 
 <asp:Literal runat="server" id="CityID3"></asp:Literal> <br>
@@ -216,7 +221,8 @@
 	<asp:hiddenfield id="ContactsTableControl_PostbackTracker" runat="server" />
 </IPv5:ContactsTableControl>
 
-            </td></tr></table>
+            </td></tr><tr><td class="recordPanelButtonsAlignment"><table cellpadding="0" cellspacing="0" border="0"><tr><td><IPv5:ThemeButton runat="server" id="OKButton" button-causesvalidation="False" button-commandname="Redirect" button-text="&lt;%# GetResourceValue(&quot;Btn:OK&quot;, &quot;IPv5&quot;) %>" button-tooltip="&lt;%# GetResourceValue(&quot;Btn:OK&quot;, &quot;IPv5&quot;) %>" postback="False"></IPv5:ThemeButton></td></tr></table>
+</td></tr></table>
     </ContentTemplate>
 </asp:UpdatePanel>
 </div>

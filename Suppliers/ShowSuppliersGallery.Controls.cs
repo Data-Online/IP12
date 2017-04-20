@@ -203,8 +203,16 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
             if (this.DataSource != null && this.DataSource.CityIDSpecified) {
                 								
                 // If the CityID is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(SuppliersTable.CityID);
+                // The Format method will return the Display Foreign Key As (DFKA) value
+               string formattedValue = "";
+               Boolean _isExpandableNonCompositeForeignKey = SuppliersTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(SuppliersTable.CityID);
+               if(_isExpandableNonCompositeForeignKey &&SuppliersTable.CityID.IsApplyDisplayAs)
+                                  
+                     formattedValue = SuppliersTable.GetDFKA(this.DataSource.CityID.ToString(),SuppliersTable.CityID, null);
+                                    
+               if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(formattedValue)))
+                     formattedValue = this.DataSource.Format(SuppliersTable.CityID);
+                                  
                                 
                 formattedValue = HttpUtility.HtmlEncode(formattedValue);
                 this.CityID.Text = formattedValue;
@@ -1184,7 +1192,9 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
           }
           
           //  LoadData for DataSource for chart and report if they exist
-               
+          
+            // Improve performance by prefetching display as records.
+            this.PreFetchForeignKeyValues();     
 
             // Setup the pagination controls.
             BindPaginationControls();
@@ -1338,6 +1348,14 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
       
     }
   
+        public void PreFetchForeignKeyValues() {
+            if (this.DataSource == null) {
+                return;
+            }
+          
+            this.Page.PregetDfkaRecords(SuppliersTable.CityID, this.DataSource);
+        }
+        
 
         public virtual void RegisterPostback()
         {
@@ -2115,59 +2133,85 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
                 // Add the All item.
                 this.CityIDFilter.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:All", "IPv5"), "--ANY--"));
               
-            
-            
             OrderBy orderBy = new OrderBy(false, false);
-            orderBy.Add(SuppliersTable.CityID, OrderByItem.OrderDir.Asc);                
+                          orderBy.Add(CitiesTable.City, OrderByItem.OrderDir.Asc);
+
+
+            System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
+
             
-            
-            string[] values = new string[0];
+ 
+            string noValueFormat = Page.GetResourceValue("Txt:Other", "IPv5");
+
+            CitiesRecord[] itemValues  = null;
             if (wc.RunQuery)
             {
-            
-                values = SuppliersTable.GetValues(SuppliersTable.CityID, wc, orderBy, maxItems);
-            
-            }
-            
-            ArrayList listDuplicates = new ArrayList();
-            foreach (string cvalue in values)
-            {
-            // Create the item and add to the list.
-            string fvalue;
-            if ( SuppliersTable.CityID.IsColumnValueTypeBoolean()) {
-                    fvalue = cvalue;
-                }else {
-                    fvalue = SuppliersTable.CityID.Format(cvalue);
-                }
-                if (fvalue == null) {
-                    fvalue = "";
-                }
-
-                fvalue = fvalue.Trim();
-
-                if ( fvalue.Length > 50 ) {
-                    fvalue = fvalue.Substring(0, 50) + "...";
-                }
-
-                ListItem dupItem = this.CityIDFilter.Items.FindByText(fvalue);
-								
-                if (dupItem != null) {
-                    listDuplicates.Add(fvalue);
-                    if (!string.IsNullOrEmpty(dupItem.Value))
+                int counter = 0;
+                int pageNum = 0;
+                FormulaEvaluator evaluator = new FormulaEvaluator();
+                ArrayList listDuplicates = new ArrayList();
+                
+                do
+                {
+                    
+                    itemValues = CitiesTable.GetRecords(wc, orderBy, pageNum, maxItems);
+                                    
+                    foreach (CitiesRecord itemValue in itemValues) 
                     {
-                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
+                        // Create the item and add to the list.
+                        string cvalue = null;
+                        string fvalue = null;
+                        if (itemValue.CityIDSpecified) 
+                        {
+                            cvalue = itemValue.CityID.ToString();
+                            if (counter < maxItems && this.CityIDFilter.Items.FindByValue(cvalue) == null)
+                            {
+                                    
+                                Boolean _isExpandableNonCompositeForeignKey = SuppliersTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(SuppliersTable.CityID);
+                                if(_isExpandableNonCompositeForeignKey && SuppliersTable.CityID.IsApplyDisplayAs)
+                                     fvalue = SuppliersTable.GetDFKA(itemValue, SuppliersTable.CityID);
+                                if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
+                                     fvalue = itemValue.Format(CitiesTable.CityID);
+                                   					
+                                if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
+
+                                if (fvalue == null) {
+                                    fvalue = "";
+                                }
+
+                                fvalue = fvalue.Trim();
+
+                                if ( fvalue.Length > 50 ) {
+                                   fvalue = fvalue.Substring(0, 50) + "...";
+                                }
+
+                                ListItem dupItem = this.CityIDFilter.Items.FindByText(fvalue);
+								
+                                if (dupItem != null) {
+                                    listDuplicates.Add(fvalue);
+                                    if (!string.IsNullOrEmpty(dupItem.Value))
+                                    {
+                                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
+                                    }
+                                }
+
+                                ListItem newItem = new ListItem(fvalue, cvalue);
+                                this.CityIDFilter.Items.Add(newItem);
+
+                                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
+                                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
+                                }
+
+                                counter += 1;
+                            }
+                        }
                     }
+                    pageNum++;
                 }
-
-                ListItem newItem = new ListItem(fvalue, cvalue);
-                this.CityIDFilter.Items.Add(newItem);
-
-                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                }
+                while (itemValues.Length == maxItems && counter < maxItems);
             }
-
-                          
+        
+                      
             try
             {
       
@@ -2869,7 +2913,7 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
               int columnCounter = 0;
               DataForExport data = new DataForExport(SuppliersTable.Instance, wc, orderBy, null,join);
                            data.ColumnList.Add(new ExcelColumn(SuppliersTable.CompanyName, "Default"));
-             data.ColumnList.Add(new ExcelColumn(SuppliersTable.CityID, "0"));
+             data.ColumnList.Add(new ExcelColumn(SuppliersTable.CityID, "Default"));
 
 
               //  First write out the Column Headers
@@ -3040,7 +3084,7 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(SuppliersTable.CompanyName.Name, ReportEnum.Align.Left, "${CompanyName}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(SuppliersTable.CityID.Name, ReportEnum.Align.Right, "${CityID}", ReportEnum.Align.Right, 15);
+                 report.AddColumn(SuppliersTable.CityID.Name, ReportEnum.Align.Left, "${CityID}", ReportEnum.Align.Left, 15);
 
   
                 int rowsPerQuery = 5000;
@@ -3076,7 +3120,19 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 3rd parameter represent the default alignment of column using the data
                             // The 4th parameter represent the maximum length of the data value being shown
                                                  report.AddData("${CompanyName}", record.Format(SuppliersTable.CompanyName), ReportEnum.Align.Left);
-                             report.AddData("${CityID}", record.Format(SuppliersTable.CityID), ReportEnum.Align.Right, 100);
+                             if (BaseClasses.Utils.MiscUtils.IsNull(record.CityID)){
+                                 report.AddData("${CityID}", "",ReportEnum.Align.Left, 100);
+                             }else{
+                                 Boolean _isExpandableNonCompositeForeignKey;
+                                 String _DFKA = "";
+                                 _isExpandableNonCompositeForeignKey = SuppliersTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(SuppliersTable.CityID);
+                                 _DFKA = SuppliersTable.GetDFKA(record.CityID.ToString(), SuppliersTable.CityID,null);
+                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  SuppliersTable.CityID.IsApplyDisplayAs){
+                                     report.AddData("${CityID}", _DFKA,ReportEnum.Align.Left, 100);
+                                 }else{
+                                     report.AddData("${CityID}", record.Format(SuppliersTable.CityID), ReportEnum.Align.Left, 100);
+                                 }
+                             }
 
                             report.WriteRow();
                         }
@@ -3192,7 +3248,7 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(SuppliersTable.CompanyName.Name, ReportEnum.Align.Left, "${CompanyName}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(SuppliersTable.CityID.Name, ReportEnum.Align.Right, "${CityID}", ReportEnum.Align.Right, 15);
+                 report.AddColumn(SuppliersTable.CityID.Name, ReportEnum.Align.Left, "${CityID}", ReportEnum.Align.Left, 15);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -3224,7 +3280,19 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 3rd parameter represents the default alignment of column using the data
                             // The 4th parameter represents the maximum length of the data value being shown
                              report.AddData("${CompanyName}", record.Format(SuppliersTable.CompanyName), ReportEnum.Align.Left);
-                             report.AddData("${CityID}", record.Format(SuppliersTable.CityID), ReportEnum.Align.Right, 100);
+                             if (BaseClasses.Utils.MiscUtils.IsNull(record.CityID)){
+                                 report.AddData("${CityID}", "",ReportEnum.Align.Left, 100);
+                             }else{
+                                 Boolean _isExpandableNonCompositeForeignKey;
+                                 String _DFKA = "";
+                                 _isExpandableNonCompositeForeignKey = SuppliersTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(SuppliersTable.CityID);
+                                 _DFKA = SuppliersTable.GetDFKA(record.CityID.ToString(), SuppliersTable.CityID,null);
+                                 if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  SuppliersTable.CityID.IsApplyDisplayAs){
+                                     report.AddData("${CityID}", _DFKA,ReportEnum.Align.Left, 100);
+                                 }else{
+                                     report.AddData("${CityID}", record.Format(SuppliersTable.CityID), ReportEnum.Align.Left, 100);
+                                 }
+                             }
 
                             report.WriteRow();
                         }

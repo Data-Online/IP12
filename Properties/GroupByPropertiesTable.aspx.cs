@@ -436,9 +436,21 @@ public void OKButton_Click(object sender, EventArgs args)
         
         public System.Web.UI.WebControls.LinkButton CountryIDSortLabel;
         
+        public System.Web.UI.WebControls.LinkButton CreatedOnLabel;
+        
+        public System.Web.UI.WebControls.Literal CreatedOnLabel1;
+        
         public System.Web.UI.WebControls.ImageButton CSVButton;
         
-        public System.Web.UI.WebControls.Literal DateRecordedLabel1;
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel;
+        
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel1;
+        
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel2;
+        
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel3;
+        
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel7;
         
         public ThemeButtonWithArrow DirectorsButtonsButton;
                 
@@ -471,6 +483,14 @@ public void OKButton_Click(object sender, EventArgs args)
         public System.Web.UI.WebControls.ImageButton ExcelButton2;
         
         public System.Web.UI.WebControls.ImageButton ExcelButton3;
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel;
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel1;
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel2;
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel3;
         
         public System.Web.UI.WebControls.Literal ExpiryDateLabel4;
         
@@ -511,6 +531,8 @@ public void OKButton_Click(object sender, EventArgs args)
         public System.Web.UI.WebControls.ImageButton NewButton2;
         
         public System.Web.UI.WebControls.ImageButton NewButton3;
+        
+        public System.Web.UI.WebControls.LinkButton NotesLabel;
         
         public ThemeButton OKButton;
                 
@@ -593,6 +615,8 @@ public void OKButton_Click(object sender, EventArgs args)
         public System.Web.UI.WebControls.Literal RegionIDLabel3;
         
         public System.Web.UI.WebControls.LinkButton RegionIDSortLabel;
+        
+        public System.Web.UI.WebControls.LinkButton RenewalDateLabel;
         
         public System.Web.UI.WebControls.Literal RenewalDateLabel2;
         
@@ -759,7 +783,7 @@ public void OKButton_Click(object sender, EventArgs args)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("1;2;NOT_ANONYMOUS");
+            this.Authorize("1;2;3");
              if (!this.IsPostBack)
              {
             

@@ -1,6 +1,7 @@
 ﻿// This class is "generated" and will be overwritten.
 // Your customizations should be made in VPropertyMMContractsView.cs
 
+
 using System;
 using System.Data;
 using System.Collections;
@@ -28,10 +29,10 @@ namespace IPv5.Business
 /// </remarks>
 /// <seealso cref="VPropertyMMContractsView"></seealso>
 [SerializableAttribute()]
-public class BaseVPropertyMMContractsView : KeylessTable
+public class BaseVPropertyMMContractsView : PrimaryKeyTable
 {
 
-	private readonly string TableDefinitionString = VPropertyMMContractsDefinition.GetXMLString();
+    private readonly string TableDefinitionString = VPropertyMMContractsDefinition.GetXMLString();
 
 
 
@@ -39,24 +40,24 @@ public class BaseVPropertyMMContractsView : KeylessTable
 
 
 
-	protected BaseVPropertyMMContractsView()
-	{
-		this.Initialize();
-	}
+    protected BaseVPropertyMMContractsView()
+    {
+        this.Initialize();
+    }
 
-	protected virtual void Initialize()
-	{
-		XmlTableDefinition def = new XmlTableDefinition(TableDefinitionString);
-		this.TableDefinition = new TableDefinition();
-		this.TableDefinition.TableClassName = System.Reflection.Assembly.CreateQualifiedName("IPv5.Business", "IPv5.Business.VPropertyMMContractsView");
-		def.InitializeTableDefinition(this.TableDefinition);
-		this.ConnectionName = def.GetConnectionName();
-		this.RecordClassName = System.Reflection.Assembly.CreateQualifiedName("IPv5.Business", "IPv5.Business.VPropertyMMContractsRecord");
-		this.ApplicationName = "IPv5";
-		this.DataAdapter = new VPropertyMMContractsSqlView();
-		((VPropertyMMContractsSqlView)this.DataAdapter).ConnectionName = this.ConnectionName;
+    protected virtual void Initialize()
+    {
+        XmlTableDefinition def = new XmlTableDefinition(TableDefinitionString);
+        this.TableDefinition = new TableDefinition();
+        this.TableDefinition.TableClassName = System.Reflection.Assembly.CreateQualifiedName("IPv5.Business", "IPv5.Business.VPropertyMMContractsView");
+        def.InitializeTableDefinition(this.TableDefinition);
+        this.ConnectionName = def.GetConnectionName();
+        this.RecordClassName = System.Reflection.Assembly.CreateQualifiedName("IPv5.Business", "IPv5.Business.VPropertyMMContractsRecord");
+        this.ApplicationName = "IPv5";
+        this.DataAdapter = new VPropertyMMContractsSqlView();
+        ((VPropertyMMContractsSqlView)this.DataAdapter).ConnectionName = this.ConnectionName;
 		
-		this.TableDefinition.AdapterMetaData = this.DataAdapter.AdapterMetaData;
+        this.TableDefinition.AdapterMetaData = this.DataAdapter.AdapterMetaData;
         PropertyIDColumn.CodeName = "PropertyID";
         CompanyNameColumn.CodeName = "CompanyName";
         Address1Column.CodeName = "Address1";
@@ -69,12 +70,13 @@ public class BaseVPropertyMMContractsView : KeylessTable
         ExpiryDateColumn.CodeName = "ExpiryDate";
         DescriptionColumn.CodeName = "Description";
         MMContractIDColumn.CodeName = "MMContractID";
-		
-	}
 
-#region "Overriden methods"
+        
+    }
     
-#endregion
+#region "Overriden methods"
+	
+#endregion    
 
 #region "Properties for columns"
 
@@ -382,6 +384,7 @@ public class BaseVPropertyMMContractsView : KeylessTable
 
 #endregion
 
+    
 #region "Shared helper methods"
 
     /// <summary>
@@ -888,6 +891,142 @@ public class BaseVPropertyMMContractsView : KeylessTable
         return column;
     } 
 
+        //Convenience method for getting a record using a string-based record identifier
+        public static VPropertyMMContractsRecord GetRecord(string id, bool bMutable)
+        {
+            return (VPropertyMMContractsRecord)VPropertyMMContractsView.Instance.GetRecordData(id, bMutable);
+        }
+
+        //Convenience method for getting a record using a KeyValue record identifier
+        public static VPropertyMMContractsRecord GetRecord(KeyValue id, bool bMutable)
+        {
+            return (VPropertyMMContractsRecord)VPropertyMMContractsView.Instance.GetRecordData(id, bMutable);
+        }
+
+        //Convenience method for creating a record
+        public KeyValue NewRecord(
+        string PropertyIDValue, 
+        string CompanyNameValue, 
+        string Address1Value, 
+        string Address2Value, 
+        string Address3Value, 
+        string CityIDValue, 
+        string RegionIDValue, 
+        string CountryIDValue, 
+        string PostCodeValue, 
+        string ExpiryDateValue, 
+        string DescriptionValue, 
+        string MMContractIDValue
+    )
+        {
+            IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
+                    rec.SetString(PropertyIDValue, PropertyIDColumn);
+        rec.SetString(CompanyNameValue, CompanyNameColumn);
+        rec.SetString(Address1Value, Address1Column);
+        rec.SetString(Address2Value, Address2Column);
+        rec.SetString(Address3Value, Address3Column);
+        rec.SetString(CityIDValue, CityIDColumn);
+        rec.SetString(RegionIDValue, RegionIDColumn);
+        rec.SetString(CountryIDValue, CountryIDColumn);
+        rec.SetString(PostCodeValue, PostCodeColumn);
+        rec.SetString(ExpiryDateValue, ExpiryDateColumn);
+        rec.SetString(DescriptionValue, DescriptionColumn);
+        rec.SetString(MMContractIDValue, MMContractIDColumn);
+
+
+            rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized
+
+            return rec.GetID();
+        }
+        
+        /// <summary>
+		///  This method deletes a specified record
+		/// </summary>
+		/// <param name="kv">Keyvalue of the record to be deleted.</param>
+		public static void DeleteRecord(KeyValue kv)
+		{
+			VPropertyMMContractsView.Instance.DeleteOneRecord(kv);
+		}
+
+		/// <summary>
+		/// This method checks if record exist in the database using the keyvalue provided.
+		/// </summary>
+		/// <param name="kv">Key value of the record.</param>
+		public static bool DoesRecordExist(KeyValue kv)
+		{
+			bool recordExist = true;
+			try
+			{
+				VPropertyMMContractsView.GetRecord(kv, false);
+			}
+			catch (Exception)
+			{
+				recordExist = false;
+			}
+			return recordExist;
+		}
+
+        /// <summary>
+        ///  This method returns all the primary columns in the table.
+        /// </summary>
+        public static ColumnList GetPrimaryKeyColumns() 
+        {
+            if (!(VPropertyMMContractsView.Instance.TableDefinition.PrimaryKey == null)) 
+            {
+                return VPropertyMMContractsView.Instance.TableDefinition.PrimaryKey.Columns;
+            }
+            else 
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// This method takes a key and returns a keyvalue.
+        /// </summary>
+        /// <param name="key">key could be array of primary key values in case of composite primary key or a string containing single primary key value in case of non-composite primary key.</param>
+        public static KeyValue GetKeyValue(object key) 
+        {
+            KeyValue kv = null;
+            if (!(VPropertyMMContractsView.Instance.TableDefinition.PrimaryKey == null)) 
+            {
+                bool isCompositePrimaryKey = false;
+                isCompositePrimaryKey = VPropertyMMContractsView.Instance.TableDefinition.PrimaryKey.IsCompositeKey;
+                if ((isCompositePrimaryKey && key.GetType().IsArray)) 
+                {
+                    //  If the key is composite, then construct a key value.
+                    kv = new KeyValue();
+                    Array keyArray = ((Array)(key));
+                    if (!(keyArray == null)) 
+                    {
+                        int length = keyArray.Length;
+                        ColumnList pkColumns = VPropertyMMContractsView.Instance.TableDefinition.PrimaryKey.Columns;
+                        int index = 0;
+                        foreach (BaseColumn pkColumn in pkColumns) 
+                        {
+                            string keyString = ((keyArray.GetValue(index)).ToString());
+                            if (VPropertyMMContractsView.Instance.TableDefinition.TableType == BaseClasses.Data.TableDefinition.TableTypes.Virtual)
+                            {
+                                kv.AddElement(pkColumn.UniqueName, keyString);
+                            }
+                            else 
+                            {
+                                kv.AddElement(pkColumn.InternalName, keyString);
+                            }
+
+                            index = (index + 1);
+                        }
+                    }
+                }
+                else 
+                {
+                    //  If the key is not composite, then get the key value.
+                    kv = VPropertyMMContractsView.Instance.TableDefinition.PrimaryKey.ParseValue(((key).ToString()));
+                }
+            }
+            return kv;
+        }
+        
         /// <summary>
         /// This method takes a record and a Column and returns an evaluated value of DFKA formula.
         /// </summary>
@@ -1000,7 +1139,9 @@ public class BaseVPropertyMMContractsView : KeylessTable
 		{
 			return EvaluateFormula(formula,null,null,null);
 		}
-#endregion
-}
+		
+				
+	#endregion
+	}
 
 }

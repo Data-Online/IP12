@@ -16234,6 +16234,18 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
               
                 this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
               
+                this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted {Txt:Ascending}"), "Deleted Asc"));
+              
+                this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted {Txt:Descending}"), "Deleted Desc"));
+              
+                this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted By {Txt:Ascending}"), "DeletedBy Asc"));
+              
+                this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted By {Txt:Descending}"), "DeletedBy Desc"));
+              
+                this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Ascending}"), "DeletedOn Asc"));
+              
+                this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Descending}"), "DeletedOn Desc"));
+              
             try
             {          
                 // Set the selected value.

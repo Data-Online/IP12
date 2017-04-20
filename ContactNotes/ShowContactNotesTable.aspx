@@ -70,7 +70,7 @@
 	</asp:ImageButton>
                                 </td></tr><tr><td class="popupTableCellLabel"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td></tr><tr><td class="popupTableCellLabel">
                 <%# GetResourceValue("Txt:SortBy", "IPv5") %>
-              </td><td class="popupTableCellValue"><asp:LinkButton runat="server" id="DateRecordedSortLabel" tooltip="Sort by DateRecorded" Text="Date Recorded" CausesValidation="False">	</asp:LinkButton>&nbsp;&nbsp;</td><td class="popupTableCellValue"><asp:LinkButton runat="server" id="NotesSortLabel" tooltip="Sort by Notes" Text="Notes" CausesValidation="False">	</asp:LinkButton>&nbsp;&nbsp;</td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td></tr></table>
+              </td><td class="popupTableCellValue">&nbsp;&nbsp;</td><td class="popupTableCellValue"><asp:LinkButton runat="server" id="NotesSortLabel" tooltip="Sort by Notes" Text="Notes" CausesValidation="False">	</asp:LinkButton>&nbsp;&nbsp;</td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td></tr></table>
 
                           </div>
                         </td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
@@ -86,10 +86,8 @@
                                 
                                   <asp:ImageButton runat="server" id="ContactNotesRowExpandCollapseRowButton" causesvalidation="False" commandname="ExpandCollapseRow" cssclass="button_link" imageurl="../Images/icon_expandcollapserow.gif" tooltip="&lt;%# GetResourceValue(&quot;Txt:ExpandCollapseRow&quot;, &quot;IPv5&quot;) %>">		
 	</asp:ImageButton><br /><br />
-                                </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="DateRecordedLabel" Text="Date Recorded">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
-<asp:Literal runat="server" id="DateRecorded"></asp:Literal></span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="NotesLabel" Text="Notes">	</asp:Literal> 
+                                </td><td class="tableCellLabel" scope="col"> 
+</td><td class="tableCellValue"> </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="NotesLabel" Text="Notes">	</asp:Literal> 
 </td><td class="tableCellValue" colspan="3"><asp:Literal runat="server" id="Notes"></asp:Literal> </td></tr><tr id="ContactNotesTableControlAltRow" runat="server"><td class="tableRowButton" scope="row">&nbsp;</td><td class="tableRowButton" scope="row">&nbsp;</td><td class="tableRowButton" scope="row">&nbsp;</td><td class="tableCellValue" colspan="8"><%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("CancelButton"))%>
 <%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("EditButton"))%>
 <%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("OKButton"))%>

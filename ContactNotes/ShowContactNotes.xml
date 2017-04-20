@@ -16,7 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>ContactNotesMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;1;2;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;2;3&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>2129201097-9451</CheckSum>
   </Self>
   <ComposedOf>
@@ -152,91 +152,6 @@
         <Attribute>
           <Name>Text</Name>
           <Value>&lt;%#String.Concat("Contact Notes") %&gt;</Value>
-        </Attribute>
-      </PassthroughAttributes>
-      <InsideControl>ContactNotesRecordControl</InsideControl>
-    </ContainedComponent>
-    <ContainedComponent>
-      <Name>DateRecorded</Name>
-      <Type>FieldValue</Type>
-      <Field>DateRecorded</Field>
-      <FieldValueStyle>Literal</FieldValueStyle>
-      <Table>DatabaseMM_IP1%dbo.ContactNotes</Table>
-      <PassthroughAttributes>
-        <Attribute>
-          <Name>FieldMaxLength</Name>
-          <Value>Default</Value>
-        </Attribute>
-        <Attribute>
-          <Name>HTMLEncodeValue</Name>
-          <Value>Default</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:ApplySaveToField</Name>
-          <Value>False</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:DataSource</Name>
-          <Value>Parent</Value>
-        </Attribute>
-        <Attribute>
-          <Name>NullValueText</Name>
-          <Value>&amp;nbsp;</Value>
-        </Attribute>
-        <Attribute>
-          <Name>PopupDisplay</Name>
-          <Value>Default</Value>
-        </Attribute>
-        <Attribute>
-          <Name>PopupThreshold</Name>
-          <Value>Default</Value>
-        </Attribute>
-        <Attribute>
-          <Name>PopupWindowHeight</Name>
-          <Value>200</Value>
-        </Attribute>
-        <Attribute>
-          <Name>PopupWindowPersist</Name>
-          <Value>False</Value>
-        </Attribute>
-        <Attribute>
-          <Name>PopupWindowScrollBar</Name>
-          <Value>True</Value>
-        </Attribute>
-        <Attribute>
-          <Name>PopupWindowTitle</Name>
-          <Value>%ISD_DEFAULT%</Value>
-        </Attribute>
-        <Attribute>
-          <Name>PopupWindowWidth</Name>
-          <Value>300</Value>
-        </Attribute>
-        <Attribute>
-          <Name>TextFormat</Name>
-          <Value>{0}</Value>
-        </Attribute>
-      </PassthroughAttributes>
-      <InsideControl>ContactNotesRecordControl</InsideControl>
-    </ContainedComponent>
-    <ContainedComponent>
-      <Name>DateRecordedLabel</Name>
-      <Type>Literal</Type>
-      <PassthroughAttributes>
-        <Attribute>
-          <Name>Consumers</Name>
-          <Value>ContactNotesRecordControl</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Field</Name>
-          <Value>DateRecorded</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Table</Name>
-          <Value>DatabaseMM_IP1%dbo.ContactNotes</Value>
-        </Attribute>
-        <Attribute>
-          <Name>Text</Name>
-          <Value>%ISD_DEFAULT%ContactNotes%DateRecorded</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>ContactNotesRecordControl</InsideControl>

@@ -404,6 +404,30 @@
     <Compile Include="BaseVPropertyTermRenewalsRecord.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ContactBackgroundTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactBackgroundTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactBackgroundRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactBackgroundRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyDirectorsView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyDirectorsView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyDirectorsRecord.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyDirectorsRecord.cs" >
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data Access Layer\IPv5.Data.csproj">

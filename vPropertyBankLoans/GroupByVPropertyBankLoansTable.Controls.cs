@@ -26,11 +26,13 @@ using IPv5.Business;
 using IPv5.Data;
 using IPv5.UI;
 using IPv5;
-		
+
+using IPv5.UI.Tools;
+
 
 #endregion
 
-  
+
 namespace IPv5.UI.Controls.GroupByVPropertyBankLoansTable
 {
   
@@ -40,19 +42,62 @@ namespace IPv5.UI.Controls.GroupByVPropertyBankLoansTable
     
 public class VPropertyBankLoansTableControlRow : BaseVPropertyBankLoansTableControlRow
 {
-      
+        public VPropertyBankLoansTableControlRow()
+        {
+            #region "Code Customization"
+
+            // The following line will be inserted inside the
+            // constructor for page class.
+            this.PreRender += new System.EventHandler(RecordControl_PreRender);
+
+            #endregion
+        }
+
         // The BaseVPropertyBankLoansTableControlRow implements code for a ROW within the
         // the VPropertyBankLoansTableControl table.  The BaseVPropertyBankLoansTableControlRow implements the DataBind and SaveData methods.
         // The loading of data is actually performed by the LoadData method in the base class of VPropertyBankLoansTableControl.
 
         // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
         // SaveData, GetUIData, and Validate methods.
-        
-}
+        #region "Code Customization"
 
-  
+        /// <summary>
+        /// Highlights the record in the PreRender event
+        /// </summary>
+        private void RecordControl_PreRender(object sender, System.EventArgs e)
+        {
+            // Compare value to determine if you want to highlight the background of the row.
+            // For example, if ExpiryDate > 25, then, highlight.
+            // Note: You can also check if the field value equals a certain string,
+            // e.g, ExpiryDate.Text = "Yes". -- double.Parse(this.OverdueCount.Text)
+            string applyToRow = "";
+           // DateTime currentDate;
+            try
+            {
+                applyToRow = CustomTools.SetCSSclass(Convert.ToDateTime(this.ExpiryDate.Text));
+            }
+            catch
+            { }  // No date specified .. so just ignore.
 
-public class VPropertyBankLoansTableControl : BaseVPropertyBankLoansTableControl
+            // Find the record row the field value is on.
+            System.Web.UI.HtmlControls.HtmlTableRow recordRow;
+            recordRow = (System.Web.UI.HtmlControls.HtmlTableRow)this.FindControl("MyTR");
+
+            // For each cell, set the background color.
+            foreach (System.Web.UI.HtmlControls.HtmlTableCell recordRowCell in recordRow.Cells)
+            {
+                // Override the record row background color -- since each data cell uses a 
+                // style (by default: table_cell or table_cellr)
+                recordRowCell.Attributes.Add("class", "alerts" + applyToRow);
+            }
+        }
+
+        #endregion
+    }
+
+
+
+    public class VPropertyBankLoansTableControl : BaseVPropertyBankLoansTableControl
 {
     // The BaseVPropertyBankLoansTableControl class implements the LoadData, DataBind, CreateWhereClause
     // and other methods to load and display the data in a table control.
@@ -98,7 +143,7 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
               // Register the event handlers.
 
           
-                    this.VPropertyBankLoansRowExpandCollapseRowButton.Click += VPropertyBankLoansRowExpandCollapseRowButton_Click;
+                    this.PropertyID.Click += PropertyID_Click;
                         
         }
 
@@ -109,6 +154,15 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
             // CreateWhereClause, rather than making changes here.
             
         
+            // The RecordUniqueId is set the first time a record is loaded, and is
+            // used during a PostBack to load the record.
+            if (this.RecordUniqueId != null && this.RecordUniqueId.Length > 0) {
+              
+                this.DataSource = VPropertyBankLoansView.GetRecord(this.RecordUniqueId, true);
+              
+                return;
+            }
+      
             // Since this is a row in the table, the data for this row is loaded by the 
             // LoadData method of the BaseVPropertyBankLoansTableControl when the data for the entire
             // table is loaded.
@@ -138,36 +192,24 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
               
             // LoadData for DataSource for chart and report if they exist
           
+            // Store the checksum. The checksum is used to
+            // ensure the record was not changed by another user.
+            if (this.DataSource.GetCheckSumValue() != null)
+                this.CheckSum = this.DataSource.GetCheckSumValue().Value;
+            
 
             // Call the Set methods for each controls on the panel
         
                 SetAddress1();
-                SetAddress1Label();
                 SetAddress2();
-                SetAddress2Label();
                 SetAddress3();
-                SetAddress3Label();
-                SetBankLoanID();
-                SetBankLoanIDLabel();
                 SetCityID();
-                SetCityIDLabel();
-                SetCompanyName();
-                SetCompanyNameLabel();
                 SetCountryID();
-                SetCountryIDLabel();
                 SetDescription();
-                SetDescriptionLabel();
                 SetExpiryDate();
-                SetExpiryDateLabel();
                 SetPostCode();
-                SetPostCodeLabel();
                 SetPropertyID();
-                SetPropertyIDLabel();
                 SetRegionID();
-                SetRegionIDLabel();
-                
-                SetVPropertyBankLoansRowExpandCollapseRowButton();
-              
 
       
 
@@ -175,6 +217,9 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
           
             if (this.DataSource.IsCreated) {
                 this.IsNewRecord = false;
+              
+                if (this.DataSource.GetID() != null)
+                    this.RecordUniqueId = this.DataSource.GetID().ToXmlString();
               
             }
             
@@ -308,46 +353,6 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
                                      
         }
                 
-        public virtual void SetBankLoanID()
-        {
-            
-                    
-            // Set the BankLoanID Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.vPropertyBankLoans database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.vPropertyBankLoans record retrieved from the database.
-            // this.BankLoanID is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.BankLoanIDSpecified) {
-                								
-                // If the BankLoanID is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(VPropertyBankLoansView.BankLoanID);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.BankLoanID.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // BankLoanID is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.BankLoanID.Text = VPropertyBankLoansView.BankLoanID.Format(VPropertyBankLoansView.BankLoanID.DefaultValue);
-            		
-            }
-            
-            // If the BankLoanID is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.BankLoanID.Text == null ||
-                this.BankLoanID.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.BankLoanID.Text = "&nbsp;";
-            }
-                                     
-        }
-                
         public virtual void SetCityID()
         {
             
@@ -392,46 +397,6 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
                 this.CityID.Text.Trim().Length == 0) {
                 // Set the value specified on the Properties.
                 this.CityID.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetCompanyName()
-        {
-            
-                    
-            // Set the CompanyName Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.vPropertyBankLoans database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.vPropertyBankLoans record retrieved from the database.
-            // this.CompanyName is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.CompanyNameSpecified) {
-                								
-                // If the CompanyName is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(VPropertyBankLoansView.CompanyName);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.CompanyName.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // CompanyName is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.CompanyName.Text = VPropertyBankLoansView.CompanyName.Format(VPropertyBankLoansView.CompanyName.DefaultValue);
-            		
-            }
-            
-            // If the CompanyName is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.CompanyName.Text == null ||
-                this.CompanyName.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.CompanyName.Text = "&nbsp;";
             }
                                      
         }
@@ -501,6 +466,52 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
                string formattedValue = this.DataSource.Format(VPropertyBankLoansView.Description);
                                 
                 formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                if(formattedValue != null){
+                    int popupThreshold = (int)(15);
+                              
+                    int maxLength = formattedValue.Length;
+                    int originalLength = maxLength;
+                    if (maxLength >= (int)(15)){
+                        // Truncate based on FieldMaxLength on Properties.
+                        maxLength = (int)(15);
+                        //First strip of all html tags:
+                        formattedValue = StringUtils.ConvertHTMLToPlainText(formattedValue);
+                        
+                    }
+                                
+                              
+                    // For fields values larger than the PopupTheshold on Properties, display a popup.
+                    if (originalLength >= popupThreshold) {
+                        String name = HttpUtility.HtmlEncode(VPropertyBankLoansView.Description.Name);
+
+                        if (!HttpUtility.HtmlEncode("%ISD_DEFAULT%").Equals("%ISD_DEFAULT%")) {
+                           name = HttpUtility.HtmlEncode(this.Page.GetResourceValue("%ISD_DEFAULT%"));
+                        }
+
+                        formattedValue = "<a onclick=\'gPersist=true;\' class=\'truncatedText\' onmouseout=\'detailRolloverPopupClose();\' " +
+                            "onmouseover=\'SaveMousePosition(event); delayRolloverPopup(\"PageMethods.GetRecordFieldValue(\\\"" + "NULL" + "\\\", \\\"IPv5.Business.VPropertyBankLoansView, IPv5.Business\\\",\\\"" +
+                              (HttpUtility.UrlEncode(this.DataSource.GetID().ToString())).Replace("\\","\\\\\\\\") + "\\\", \\\"Description\\\", \\\"Description\\\", \\\"" +NetUtils.EncodeStringForHtmlDisplay(name.Substring(0, name.Length)) + "\\\",\\\"" + Page.GetResourceValue("Btn:Close", "IPv5") + "\\\", " +
+                        " false, 200," +
+                            " 300, true, PopupDisplayWindowCallBackWith20);\", 500);'>" + NetUtils.EncodeStringForHtmlDisplay(formattedValue.Substring(0, Math.Min(maxLength, formattedValue.Length)));
+                        if (maxLength == (int)(15))
+                            {
+                            formattedValue = formattedValue + "..." + "</a>";
+                        }
+                        else
+                        {
+                            formattedValue = formattedValue + "</a>";
+                            
+                        }
+                    }
+                    else{
+                        if (maxLength == (int)(15)) {
+                          formattedValue = NetUtils.EncodeStringForHtmlDisplay(formattedValue.Substring(0,Math.Min(maxLength, formattedValue.Length)));
+                          formattedValue = formattedValue + "...";
+                        }
+                        
+                    }
+                }
+                
                 this.Description.Text = formattedValue;
                    
             } 
@@ -608,11 +619,11 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
         {
             
                     
-            // Set the PropertyID Literal on the webpage with value from the
+            // Set the PropertyID LinkButton on the webpage with value from the
             // DatabaseMM_IP1%dbo.vPropertyBankLoans database record.
 
             // this.DataSource is the DatabaseMM_IP1%dbo.vPropertyBankLoans record retrieved from the database.
-            // this.PropertyID is the ASP:Literal on the webpage.
+            // this.PropertyID is the ASP:LinkButton on the webpage.
                   
             if (this.DataSource != null && this.DataSource.PropertyIDSpecified) {
                 								
@@ -628,7 +639,6 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
                      formattedValue = this.DataSource.Format(VPropertyBankLoansView.PropertyID);
                                   
                                 
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
                 this.PropertyID.Text = formattedValue;
                    
             } 
@@ -641,15 +651,7 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
               this.PropertyID.Text = VPropertyBankLoansView.PropertyID.Format(VPropertyBankLoansView.PropertyID.DefaultValue);
             		
             }
-            
-            // If the PropertyID is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.PropertyID.Text == null ||
-                this.PropertyID.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.PropertyID.Text = "&nbsp;";
-            }
-                                     
+                               
         }
                 
         public virtual void SetRegionID()
@@ -698,78 +700,6 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
                 this.RegionID.Text = "&nbsp;";
             }
                                      
-        }
-                
-        public virtual void SetAddress1Label()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetAddress2Label()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetAddress3Label()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetBankLoanIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetCityIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetCompanyNameLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetCountryIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDescriptionLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetExpiryDateLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPostCodeLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPropertyIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetRegionIDLabel()
-                  {
-                  
-                    
         }
                 
         public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
@@ -872,6 +802,13 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
             // that fields that are not displayed are also properly initialized.
             this.LoadData();
         
+            // The checksum is used to ensure the record was not changed by another user.
+            if (this.DataSource != null && this.DataSource.GetCheckSumValue() != null) {
+                if (this.CheckSum != null && this.CheckSum != this.DataSource.GetCheckSumValue().Value) {
+                    throw new Exception(Page.GetResourceValue("Err:RecChangedByOtherUser", "IPv5"));
+                }
+            }
+        
           
             // 2. Perform any custom validation.
             this.Validate();
@@ -904,6 +841,7 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
             this.DataChanged = true;
             this.ResetData = true;
             
+            this.CheckSum = "";
             // For Master-Detail relationships, save data on the Detail table(s)            
           
         }
@@ -921,9 +859,7 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
             GetAddress1();
             GetAddress2();
             GetAddress3();
-            GetBankLoanID();
             GetCityID();
-            GetCompanyName();
             GetCountryID();
             GetDescription();
             GetExpiryDate();
@@ -948,17 +884,7 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
             
         }
                 
-        public virtual void GetBankLoanID()
-        {
-            
-        }
-                
         public virtual void GetCityID()
-        {
-            
-        }
-                
-        public virtual void GetCompanyName()
         {
             
         }
@@ -1026,6 +952,19 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
         public virtual void Delete()
         {
         
+            if (this.IsNewRecord) {
+                return;
+            }
+
+            KeyValue pkValue = KeyValue.XmlToKey(this.RecordUniqueId);
+          VPropertyBankLoansView.DeleteRecord(pkValue);
+          
+              
+            // Setting the DataChanged to True results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            ((VPropertyBankLoansTableControl)MiscUtils.GetParentControlObject(this, "VPropertyBankLoansTableControl")).DataChanged = true;
+            ((VPropertyBankLoansTableControl)MiscUtils.GetParentControlObject(this, "VPropertyBankLoansTableControl")).ResetData = true;
         }
 
         protected virtual void Control_PreRender(object sender, System.EventArgs e)
@@ -1106,63 +1045,50 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
     
         // Generate set method for buttons
         
-        public virtual void SetVPropertyBankLoansRowExpandCollapseRowButton()                
-              
+        // event handler for LinkButton
+        public virtual void PropertyID_Click(object sender, EventArgs args)
         {
-        
-   
-        }
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
             
-        // event handler for ImageButton
-        public virtual void VPropertyBankLoansRowExpandCollapseRowButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
+            string url = @"../Properties/GroupByPropertiesTable.aspx?Properties={VPropertyBankLoansTableControlRow:FV:PropertyID}";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
             try {
-                VPropertyBankLoansTableControl panelControl = (MiscUtils.GetParentControlObject(this, "VPropertyBankLoansTableControl") as VPropertyBankLoansTableControl);
-
-          VPropertyBankLoansTableControlRow[] repeatedRows = panelControl.GetRecordControls();
-          foreach (VPropertyBankLoansTableControlRow repeatedRow in repeatedRows)
-          {
-              System.Web.UI.Control altRow = (MiscUtils.FindControlRecursively(repeatedRow, "VPropertyBankLoansTableControlAltRow") as System.Web.UI.Control);
-              if (altRow != null)
-              {
-                  if (sender == repeatedRow.VPropertyBankLoansRowExpandCollapseRowButton)
-                      altRow.Visible = !altRow.Visible;
-                  
-                  if (altRow.Visible)
-                  {
-                   
-                     repeatedRow.VPropertyBankLoansRowExpandCollapseRowButton.ImageUrl = "../Images/icon_expandcollapserow.gif";
-                     repeatedRow.VPropertyBankLoansRowExpandCollapseRowButton.Attributes.Add("onmouseover", "");
-                     repeatedRow.VPropertyBankLoansRowExpandCollapseRowButton.Attributes.Add("onmouseout", "");
-                           
-                  }
-                  else
-                  {
-                   
-                     repeatedRow.VPropertyBankLoansRowExpandCollapseRowButton.ImageUrl = "../Images/icon_expandcollapserow2.gif";
-                     repeatedRow.VPropertyBankLoansRowExpandCollapseRowButton.Attributes.Add("onmouseover", "");
-                     repeatedRow.VPropertyBankLoansRowExpandCollapseRowButton.Attributes.Add("onmouseout", "");
-                   
-                  }
-            
-              }
-              else
-              {
-                  this.Page.Response.Redirect("../Shared/ConfigureCollapseExpandRowBtn.aspx");
-              }
-          }
-          
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
+              
             } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
                   this.Page.ErrorOnPage = true;
 
             // Report the error message to the end user
             BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
     
             } finally {
-    
+                DbUtils.EndTransaction();
             }
-    
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      this.Page.Response.Redirect(url);
+        
+            }
+        
         }
             
             
@@ -1179,6 +1105,15 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
         }
   
 
+        
+        public String RecordUniqueId {
+            get {
+                return (string)this.ViewState["BaseVPropertyBankLoansTableControlRow_Rec"];
+            }
+            set {
+                this.ViewState["BaseVPropertyBankLoansTableControlRow_Rec"] = value;
+            }
+        }
         
         public VPropertyBankLoansRecord DataSource {
             get {
@@ -1253,150 +1188,60 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
             }
         }
             
-        public System.Web.UI.WebControls.Literal Address1Label {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1Label");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal Address2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address2");
             }
         }
             
-        public System.Web.UI.WebControls.Literal Address2Label {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address2Label");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal Address3 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address3");
             }
         }
             
-        public System.Web.UI.WebControls.Literal Address3Label {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address3Label");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal BankLoanID {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankLoanID");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal BankLoanIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "BankLoanIDLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal CityID {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityID");
             }
         }
             
-        public System.Web.UI.WebControls.Literal CityIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal CompanyName {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CompanyName");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal CompanyNameLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CompanyNameLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal CountryID {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryID");
             }
         }
             
-        public System.Web.UI.WebControls.Literal CountryIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryIDLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal Description {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Description");
             }
         }
             
-        public System.Web.UI.WebControls.Literal DescriptionLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal ExpiryDate {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDate");
             }
         }
             
-        public System.Web.UI.WebControls.Literal ExpiryDateLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal PostCode {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCode");
             }
         }
             
-        public System.Web.UI.WebControls.Literal PostCodeLabel {
+        public System.Web.UI.WebControls.LinkButton PropertyID {
             get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCodeLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal PropertyID {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyID");
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyID");
             }
         }
             
-        public System.Web.UI.WebControls.Literal PropertyIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal RegionID {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionID");
             }
         }
             
-        public System.Web.UI.WebControls.Literal RegionIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionIDLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton VPropertyBankLoansRowExpandCollapseRowButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "VPropertyBankLoansRowExpandCollapseRowButton");
-            }
-        }
-        
     #endregion
 
     #region "Helper Functions"
@@ -1469,6 +1314,12 @@ public class BaseVPropertyBankLoansTableControlRow : IPv5.UI.BaseApplicationReco
         
             if (this.DataSource != null) {
                 return this.DataSource;
+            }
+            
+              if (this.RecordUniqueId != null) {
+              
+                return VPropertyBankLoansView.GetRecord(this.RecordUniqueId, true);
+              
             }
             
             // Localization.
@@ -1594,7 +1445,7 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
 
     // Setup default pagination settings.
     
-            this.PageSize = Convert.ToInt32(this.GetFromSession(this, "Page_Size", "10"));
+            this.PageSize = Convert.ToInt32(this.GetFromSession(this, "Page_Size", "20"));
             this.PageIndex = Convert.ToInt32(this.GetFromSession(this, "Page_Index", "0"));
                      
         }
@@ -1622,6 +1473,8 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
         
        // Setup the sorting events.
         
+              this.Address1Label.Click += Address1Label_Click;
+            
               this.Address1SortLabel.Click += Address1SortLabel_Click;
             
               this.Address2SortLabel.Click += Address2SortLabel_Click;
@@ -1630,17 +1483,31 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             
               this.BankLoanIDSortLabel.Click += BankLoanIDSortLabel_Click;
             
+              this.CityIDLabel.Click += CityIDLabel_Click;
+            
               this.CityIDSortLabel.Click += CityIDSortLabel_Click;
             
               this.CompanyNameSortLabel.Click += CompanyNameSortLabel_Click;
             
+              this.CountryIDLabel.Click += CountryIDLabel_Click;
+            
+              this.DescriptionLabel.Click += DescriptionLabel_Click;
+            
               this.DescriptionSortLabel.Click += DescriptionSortLabel_Click;
+            
+              this.ExpiryDateLabel.Click += ExpiryDateLabel_Click;
             
               this.ExpiryDateSortLabel.Click += ExpiryDateSortLabel_Click;
             
+              this.PostCodeLabel.Click += PostCodeLabel_Click;
+            
               this.PostCodeSortLabel.Click += PostCodeSortLabel_Click;
             
+              this.PropertyIDLabel.Click += PropertyIDLabel_Click;
+            
               this.PropertyIDSortLabel.Click += PropertyIDSortLabel_Click;
+            
+              this.RegionIDLabel.Click += RegionIDLabel_Click;
             
             // Setup the button events.
           
@@ -1892,26 +1759,40 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             recControl.DataBind();
             
            
+            recControl.Visible = !this.InDeletedRecordIds(recControl);
+        
             index++;
         }
            
     
             // Call the Set methods for each controls on the panel
         
+                SetAddress1Label();
                 SetAddress1SortLabel();
                 SetAddress2SortLabel();
                 SetAddress3SortLabel();
                 SetBankLoanIDSortLabel();
                 SetCityIDFilter();
+                SetCityIDLabel();
                 SetCityIDLabel1();
                 SetCityIDSortLabel();
                 SetCompanyNameSortLabel();
+                SetCountryIDLabel();
+                SetDescriptionLabel();
                 SetDescriptionSortLabel();
+                SetDueNow();
+                SetExpiryDateLabel();
                 SetExpiryDateSortLabel();
+                SetLiteral();
+                SetNextMonth();
+                SetOverdue();
+                SetPostCodeLabel();
                 SetPostCodeSortLabel();
                 SetPropertyIDFilter();
+                SetPropertyIDLabel();
                 SetPropertyIDLabel1();
                 SetPropertyIDSortLabel();
+                SetRegionIDLabel();
                 
                 
                 
@@ -1942,31 +1823,6 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
               
             // setting the state of expand or collapse alternative rows
       
-            bool expandFirstRow = true;
-        VPropertyBankLoansTableControlRow[] recControls = this.GetRecordControls();
-            for (int i = 0; i < recControls.Length; i++)
-            {
-                System.Web.UI.Control altRow = (MiscUtils.FindControlRecursively(recControls[i], "VPropertyBankLoansTableControlAltRow") as System.Web.UI.Control);
-                if (altRow != null){
-                    if (expandFirstRow && i == 0){
-                        altRow.Visible = true;
-                   
-                         recControls[i].VPropertyBankLoansRowExpandCollapseRowButton.ImageUrl = "../Images/icon_expandcollapserow.gif";
-                         recControls[i].VPropertyBankLoansRowExpandCollapseRowButton.Attributes.Add("onmouseover", "");
-                         recControls[i].VPropertyBankLoansRowExpandCollapseRowButton.Attributes.Add("onmouseout", "");
-                   
-                    }
-                    else{
-                        altRow.Visible = false;
-                   
-                         recControls[i].VPropertyBankLoansRowExpandCollapseRowButton.ImageUrl = "../Images/icon_expandcollapserow2.gif";
-                         recControls[i].VPropertyBankLoansRowExpandCollapseRowButton.Attributes.Add("onmouseover", "");
-                         recControls[i].VPropertyBankLoansRowExpandCollapseRowButton.Attributes.Add("onmouseout", "");
-                   
-                    }
-                }
-            }
-    
             // Load data for each record and table UI control.
             // Ordering is important because child controls get 
             // their parent ids from their parent UI controls.
@@ -2145,6 +2001,7 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                 this.VPropertyBankLoansPagination.CurrentPage.Text = "0";
             }
             this.VPropertyBankLoansPagination.PageSize.Text = this.PageSize.ToString();
+            this.VPropertyBankLoansPagination.TotalPages.Text = this.TotalPages.ToString();
     
             // Bind the buttons for VPropertyBankLoansTableControl pagination.
         
@@ -2175,8 +2032,14 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             foreach (VPropertyBankLoansTableControlRow recCtl in this.GetRecordControls())
             {
         
-                if (recCtl.Visible) {
-                    recCtl.SaveData();
+                if (this.InDeletedRecordIds(recCtl)) {
+                    // Delete any pending deletes. 
+                    recCtl.Delete();
+                }
+                else {
+                    if (recCtl.Visible) {
+                        recCtl.SaveData();
+                    }
                 }
           
             }
@@ -2193,6 +2056,9 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             foreach (VPropertyBankLoansTableControlRow recCtl in this.GetRecordControls()){
                 recCtl.IsNewRecord = false;
             }
+      
+            // Set DeletedRecordsIds to Nothing since we have deleted all pending deletes.
+            this.DeletedRecordIds = null;
                 
         }
         
@@ -2641,16 +2507,8 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                             rec.Parse(recControl.Address3.Text, VPropertyBankLoansView.Address3);
                   }
                 
-                        if (recControl.BankLoanID.Text != "") {
-                            rec.Parse(recControl.BankLoanID.Text, VPropertyBankLoansView.BankLoanID);
-                  }
-                
                         if (recControl.CityID.Text != "") {
                             rec.Parse(recControl.CityID.Text, VPropertyBankLoansView.CityID);
-                  }
-                
-                        if (recControl.CompanyName.Text != "") {
-                            rec.Parse(recControl.CompanyName.Text, VPropertyBankLoansView.CompanyName);
                   }
                 
                         if (recControl.CountryID.Text != "") {
@@ -2709,9 +2567,51 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
         }
 
         
+        public void AddToDeletedRecordIds(VPropertyBankLoansTableControlRow rec)
+        {
+            if (rec.IsNewRecord) {
+                return;
+            }
+
+            if (this.DeletedRecordIds != null && this.DeletedRecordIds.Length > 0) {
+                this.DeletedRecordIds += ",";
+            }
+
+            this.DeletedRecordIds += "[" + rec.RecordUniqueId + "]";
+        }
+
+        protected virtual bool InDeletedRecordIds(VPropertyBankLoansTableControlRow rec)            
+        {
+            if (this.DeletedRecordIds == null || this.DeletedRecordIds.Length == 0) {
+                return (false);
+            }
+
+            return (this.DeletedRecordIds.IndexOf("[" + rec.RecordUniqueId + "]") >= 0);
+        }
+
+        private String _DeletedRecordIds;
+        public String DeletedRecordIds {
+            get {
+                return (this._DeletedRecordIds);
+            }
+            set {
+                this._DeletedRecordIds = value;
+            }
+        }
+        
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetAddress1Label()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.Address1Label.Text = "Some value";
+                    
+                    
+        }
+                
         public virtual void SetAddress1SortLabel()
                   {
                   
@@ -2736,6 +2636,12 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                     
         }
                 
+        public virtual void SetCityIDLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetCityIDLabel1()
                   {
                   
@@ -2754,7 +2660,35 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                     
         }
                 
+        public virtual void SetCountryIDLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetDescriptionLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetDescriptionSortLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetDueNow()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.DueNow.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetExpiryDateLabel()
                   {
                   
                     
@@ -2766,9 +2700,55 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                     
         }
                 
+        public virtual void SetLiteral()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.Literal.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetNextMonth()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.NextMonth.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetOverdue()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.Overdue.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetPostCodeLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetPostCodeSortLabel()
                   {
                   
+                    
+        }
+                
+        public virtual void SetPropertyIDLabel()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.PropertyIDLabel.Text = "Some value";
+                    
                     
         }
                 
@@ -2779,6 +2759,12 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
         }
                 
         public virtual void SetPropertyIDSortLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetRegionIDLabel()
                   {
                   
                     
@@ -2981,7 +2967,7 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                                 if(_isExpandableNonCompositeForeignKey && VPropertyBankLoansView.PropertyID.IsApplyDisplayAs)
                                      fvalue = VPropertyBankLoansView.GetDFKA(itemValue, VPropertyBankLoansView.PropertyID);
                                 if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                     fvalue = itemValue.Format(PropertiesTable.CompanyName);
+                                     fvalue = itemValue.Format(PropertiesTable.PropertyID);
                                    					
                                 if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
 
@@ -3119,6 +3105,8 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             this.SaveToSession(this, "Page_Index", this.PageIndex.ToString());
             this.SaveToSession(this, "Page_Size", this.PageSize.ToString());
           
+            this.SaveToSession(this, "DeletedRecordIds", this.DeletedRecordIds);
+        
         }
         
         
@@ -3154,6 +3142,8 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
     this.RemoveFromSession(this, "Page_Index");
     this.RemoveFromSession(this, "Page_Size");
     
+            this.RemoveFromSession(this, "DeletedRecordIds");
+            
         }
 
         protected override void LoadViewState(object savedState)
@@ -3203,6 +3193,8 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
           
             // Load view state for pagination control.
     
+            this.DeletedRecordIds = (string)this.ViewState["DeletedRecordIds"];
+        
         }
 
         protected override object SaveViewState()
@@ -3216,6 +3208,8 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
     this.ViewState["Page_Index"] = this.PageIndex;
     this.ViewState["Page_Size"] = this.PageSize;
     
+            this.ViewState["DeletedRecordIds"] = this.DeletedRecordIds;
+        
     
             // Load view state for pagination control.
               
@@ -3416,6 +3410,36 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void Address1Label_Click(object sender, EventArgs args)
+        {
+            //Sorts by Address1 when clicked.
+              
+            // Get previous sorting state for Address1.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyBankLoansView.Address1);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Address1.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyBankLoansView.Address1, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Address1, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void Address1SortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by Address1 when clicked.
@@ -3536,6 +3560,36 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
               
         }
             
+        public virtual void CityIDLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by CityID when clicked.
+              
+            // Get previous sorting state for CityID.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyBankLoansView.CityID);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for CityID.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyBankLoansView.CityID, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by CityID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void CityIDSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by CityID when clicked.
@@ -3596,6 +3650,66 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
               
         }
             
+        public virtual void CountryIDLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by CountryID when clicked.
+              
+            // Get previous sorting state for CountryID.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyBankLoansView.CountryID);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for CountryID.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyBankLoansView.CountryID, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by CountryID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void DescriptionLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by Description when clicked.
+              
+            // Get previous sorting state for Description.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyBankLoansView.Description);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Description.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyBankLoansView.Description, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void DescriptionSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by Description when clicked.
@@ -3615,6 +3729,36 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             
             } else {
                 // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void ExpiryDateLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by ExpiryDate when clicked.
+              
+            // Get previous sorting state for ExpiryDate.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyBankLoansView.ExpiryDate);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for ExpiryDate.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyBankLoansView.ExpiryDate, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by ExpiryDate, so just reverse.
                 sd.Reverse();
             }
         
@@ -3656,6 +3800,36 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
               
         }
             
+        public virtual void PostCodeLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by PostCode when clicked.
+              
+            // Get previous sorting state for PostCode.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyBankLoansView.PostCode);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for PostCode.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyBankLoansView.PostCode, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by PostCode, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void PostCodeSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by PostCode when clicked.
@@ -3686,6 +3860,36 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
               
         }
             
+        public virtual void PropertyIDLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by PropertyID when clicked.
+              
+            // Get previous sorting state for PropertyID.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyBankLoansView.PropertyID);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for PropertyID.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyBankLoansView.PropertyID, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by PropertyID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void PropertyIDSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by PropertyID when clicked.
@@ -3705,6 +3909,36 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             
             } else {
                 // Previously sorted by PropertyID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void RegionIDLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by RegionID when clicked.
+              
+            // Get previous sorting state for RegionID.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyBankLoansView.RegionID);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for RegionID.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyBankLoansView.RegionID, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by RegionID, so just reverse.
                 sd.Reverse();
             }
         
@@ -3754,7 +3988,6 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                 // Add each of the columns in order of export.
                 BaseColumn[] columns = new BaseColumn[] {
                              VPropertyBankLoansView.PropertyID,
-             VPropertyBankLoansView.CompanyName,
              VPropertyBankLoansView.Address1,
              VPropertyBankLoansView.Address2,
              VPropertyBankLoansView.Address3,
@@ -3764,7 +3997,6 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
              VPropertyBankLoansView.PostCode,
              VPropertyBankLoansView.ExpiryDate,
              VPropertyBankLoansView.Description,
-             VPropertyBankLoansView.BankLoanID,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(VPropertyBankLoansView.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -3821,7 +4053,6 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
               int columnCounter = 0;
               DataForExport data = new DataForExport(VPropertyBankLoansView.Instance, wc, orderBy, null,join);
                            data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.PropertyID, "Default"));
-             data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.CompanyName, "Default"));
              data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.Address1, "Default"));
              data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.Address2, "Default"));
              data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.Address3, "Default"));
@@ -3831,7 +4062,6 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
              data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.PostCode, "Default"));
              data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.ExpiryDate, "Short Date"));
              data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.Description, "Default"));
-             data.ColumnList.Add(new ExcelColumn(VPropertyBankLoansView.BankLoanID, "0"));
 
 
               //  First write out the Column Headers
@@ -3929,8 +4159,7 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                 // The 3rd parameter represents the text format of the column detail
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
-                 report.AddColumn(VPropertyBankLoansView.PropertyID.Name, ReportEnum.Align.Left, "${PropertyID}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(VPropertyBankLoansView.CompanyName.Name, ReportEnum.Align.Left, "${CompanyName}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(VPropertyBankLoansView.PropertyID.Name, ReportEnum.Align.Left, "${PropertyID}", ReportEnum.Align.Left, 18);
                  report.AddColumn(VPropertyBankLoansView.Address1.Name, ReportEnum.Align.Left, "${Address1}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyBankLoansView.Address2.Name, ReportEnum.Align.Left, "${Address2}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyBankLoansView.Address3.Name, ReportEnum.Align.Left, "${Address3}", ReportEnum.Align.Left, 28);
@@ -3940,7 +4169,6 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                  report.AddColumn(VPropertyBankLoansView.PostCode.Name, ReportEnum.Align.Left, "${PostCode}", ReportEnum.Align.Left, 24);
                  report.AddColumn(VPropertyBankLoansView.ExpiryDate.Name, ReportEnum.Align.Left, "${ExpiryDate}", ReportEnum.Align.Left, 20);
                  report.AddColumn(VPropertyBankLoansView.Description.Name, ReportEnum.Align.Left, "${Description}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(VPropertyBankLoansView.BankLoanID.Name, ReportEnum.Align.Right, "${BankLoanID}", ReportEnum.Align.Right, 15);
 
   
                 int rowsPerQuery = 5000;
@@ -3976,19 +4204,18 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                             // The 3rd parameter represent the default alignment of column using the data
                             // The 4th parameter represent the maximum length of the data value being shown
                                                  if (BaseClasses.Utils.MiscUtils.IsNull(record.PropertyID)){
-                                 report.AddData("${PropertyID}", "",ReportEnum.Align.Left, 100);
+                                 report.AddData("${PropertyID}", "",ReportEnum.Align.Left);
                              }else{
                                  Boolean _isExpandableNonCompositeForeignKey;
                                  String _DFKA = "";
                                  _isExpandableNonCompositeForeignKey = VPropertyBankLoansView.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(VPropertyBankLoansView.PropertyID);
                                  _DFKA = VPropertyBankLoansView.GetDFKA(record.PropertyID.ToString(), VPropertyBankLoansView.PropertyID,null);
                                  if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  VPropertyBankLoansView.PropertyID.IsApplyDisplayAs){
-                                     report.AddData("${PropertyID}", _DFKA,ReportEnum.Align.Left, 100);
+                                     report.AddData("${PropertyID}", _DFKA,ReportEnum.Align.Left);
                                  }else{
-                                     report.AddData("${PropertyID}", record.Format(VPropertyBankLoansView.PropertyID), ReportEnum.Align.Left, 100);
+                                     report.AddData("${PropertyID}", record.Format(VPropertyBankLoansView.PropertyID), ReportEnum.Align.Left);
                                  }
                              }
-                             report.AddData("${CompanyName}", record.Format(VPropertyBankLoansView.CompanyName), ReportEnum.Align.Left, 100);
                              report.AddData("${Address1}", record.Format(VPropertyBankLoansView.Address1), ReportEnum.Align.Left, 100);
                              report.AddData("${Address2}", record.Format(VPropertyBankLoansView.Address2), ReportEnum.Align.Left, 100);
                              report.AddData("${Address3}", record.Format(VPropertyBankLoansView.Address3), ReportEnum.Align.Left, 100);
@@ -4033,8 +4260,7 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                              }
                              report.AddData("${PostCode}", record.Format(VPropertyBankLoansView.PostCode), ReportEnum.Align.Left, 100);
                              report.AddData("${ExpiryDate}", record.Format(VPropertyBankLoansView.ExpiryDate), ReportEnum.Align.Left, 100);
-                             report.AddData("${Description}", record.Format(VPropertyBankLoansView.Description), ReportEnum.Align.Left, 100);
-                             report.AddData("${BankLoanID}", record.Format(VPropertyBankLoansView.BankLoanID), ReportEnum.Align.Right, 100);
+                             report.AddData("${Description}", record.Format(VPropertyBankLoansView.Description), ReportEnum.Align.Left, 15);
 
                             report.WriteRow();
                         }
@@ -4149,8 +4375,7 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                 // The 3rd parameter represents the text format of the column detail
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
-                 report.AddColumn(VPropertyBankLoansView.PropertyID.Name, ReportEnum.Align.Left, "${PropertyID}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(VPropertyBankLoansView.CompanyName.Name, ReportEnum.Align.Left, "${CompanyName}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(VPropertyBankLoansView.PropertyID.Name, ReportEnum.Align.Left, "${PropertyID}", ReportEnum.Align.Left, 18);
                  report.AddColumn(VPropertyBankLoansView.Address1.Name, ReportEnum.Align.Left, "${Address1}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyBankLoansView.Address2.Name, ReportEnum.Align.Left, "${Address2}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyBankLoansView.Address3.Name, ReportEnum.Align.Left, "${Address3}", ReportEnum.Align.Left, 28);
@@ -4160,7 +4385,6 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                  report.AddColumn(VPropertyBankLoansView.PostCode.Name, ReportEnum.Align.Left, "${PostCode}", ReportEnum.Align.Left, 24);
                  report.AddColumn(VPropertyBankLoansView.ExpiryDate.Name, ReportEnum.Align.Left, "${ExpiryDate}", ReportEnum.Align.Left, 20);
                  report.AddColumn(VPropertyBankLoansView.Description.Name, ReportEnum.Align.Left, "${Description}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(VPropertyBankLoansView.BankLoanID.Name, ReportEnum.Align.Right, "${BankLoanID}", ReportEnum.Align.Right, 15);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -4192,19 +4416,18 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                             // The 3rd parameter represents the default alignment of column using the data
                             // The 4th parameter represents the maximum length of the data value being shown
                              if (BaseClasses.Utils.MiscUtils.IsNull(record.PropertyID)){
-                                 report.AddData("${PropertyID}", "",ReportEnum.Align.Left, 100);
+                                 report.AddData("${PropertyID}", "",ReportEnum.Align.Left);
                              }else{
                                  Boolean _isExpandableNonCompositeForeignKey;
                                  String _DFKA = "";
                                  _isExpandableNonCompositeForeignKey = VPropertyBankLoansView.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(VPropertyBankLoansView.PropertyID);
                                  _DFKA = VPropertyBankLoansView.GetDFKA(record.PropertyID.ToString(), VPropertyBankLoansView.PropertyID,null);
                                  if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  VPropertyBankLoansView.PropertyID.IsApplyDisplayAs){
-                                     report.AddData("${PropertyID}", _DFKA,ReportEnum.Align.Left, 100);
+                                     report.AddData("${PropertyID}", _DFKA,ReportEnum.Align.Left);
                                  }else{
-                                     report.AddData("${PropertyID}", record.Format(VPropertyBankLoansView.PropertyID), ReportEnum.Align.Left, 100);
+                                     report.AddData("${PropertyID}", record.Format(VPropertyBankLoansView.PropertyID), ReportEnum.Align.Left);
                                  }
                              }
-                             report.AddData("${CompanyName}", record.Format(VPropertyBankLoansView.CompanyName), ReportEnum.Align.Left, 100);
                              report.AddData("${Address1}", record.Format(VPropertyBankLoansView.Address1), ReportEnum.Align.Left, 100);
                              report.AddData("${Address2}", record.Format(VPropertyBankLoansView.Address2), ReportEnum.Align.Left, 100);
                              report.AddData("${Address3}", record.Format(VPropertyBankLoansView.Address3), ReportEnum.Align.Left, 100);
@@ -4249,8 +4472,7 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                              }
                              report.AddData("${PostCode}", record.Format(VPropertyBankLoansView.PostCode), ReportEnum.Align.Left, 100);
                              report.AddData("${ExpiryDate}", record.Format(VPropertyBankLoansView.ExpiryDate), ReportEnum.Align.Left, 100);
-                             report.AddData("${Description}", record.Format(VPropertyBankLoansView.Description), ReportEnum.Align.Left, 100);
-                             report.AddData("${BankLoanID}", record.Format(VPropertyBankLoansView.BankLoanID), ReportEnum.Align.Right, 100);
+                             report.AddData("${Description}", record.Format(VPropertyBankLoansView.Description), ReportEnum.Align.Left, 15);
 
                             report.WriteRow();
                         }
@@ -4444,6 +4666,12 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
 
 #region "Helper Properties"
         
+        public System.Web.UI.WebControls.LinkButton Address1Label {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1Label");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton Address1SortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1SortLabel");
@@ -4474,6 +4702,12 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton CityIDLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal CityIDLabel1 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDLabel1");
@@ -4492,15 +4726,63 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton CountryIDLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryIDLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton DescriptionSortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionSortLabel");
             }
         }
         
+        public System.Web.UI.WebControls.Literal DueNow {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DueNow");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton ExpiryDateSortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateSortLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal Literal {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Literal");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal NextMonth {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NextMonth");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal Overdue {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Overdue");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton PostCodeLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCodeLabel");
             }
         }
         
@@ -4516,6 +4798,12 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton PropertyIDLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal PropertyIDLabel1 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDLabel1");
@@ -4525,6 +4813,12 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
         public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDSortLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton RegionIDLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionIDLabel");
             }
         }
         
@@ -4552,9 +4846,9 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
             }
         }
         
-        public IPv5.UI.IPaginationModern VPropertyBankLoansPagination {
+        public IPv5.UI.IPaginationMedium VPropertyBankLoansPagination {
             get {
-                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "VPropertyBankLoansPagination");
+                return (IPv5.UI.IPaginationMedium)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "VPropertyBankLoansPagination");
             }
         }
         
@@ -4600,22 +4894,61 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
         
         public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt)
         {
-            return EvaluateExpressions(url, arg, null, bEncrypt);
+            return this.Page.EvaluateExpressions(url, arg, bEncrypt, this);
         }
         
         public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt,bool includeSession)
         {
-            return EvaluateExpressions(url, arg, null, bEncrypt,includeSession);
+            return this.Page.EvaluateExpressions(url, arg, bEncrypt, this,includeSession);
         }
         
         public override string EvaluateExpressions(string url, string arg, bool bEncrypt)
         {
-            return EvaluateExpressions(url, arg, null, bEncrypt);
+            bool needToProcess = AreAnyUrlParametersForMe(url, arg);
+            if (needToProcess) {
+                VPropertyBankLoansTableControlRow recCtl = this.GetSelectedRecordControl();
+                if (recCtl == null && url.IndexOf("{") >= 0) {
+                    // Localization.
+                    throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
+                }
+
+        VPropertyBankLoansRecord rec = null;
+                if (recCtl != null) {
+                    rec = recCtl.GetRecord();
+                }
+                return EvaluateExpressions(url, arg, rec, bEncrypt);
+             
+            }
+            return url;
         }
         
-        public override string EvaluateExpressions(string url, string arg, bool bEncrypt,bool includeSession)
+        
+        public override string EvaluateExpressions(string url, string arg, bool bEncrypt, bool includeSession)
         {
-            return EvaluateExpressions(url, arg, null, bEncrypt);
+            bool needToProcess = AreAnyUrlParametersForMe(url, arg);
+            if (needToProcess) {
+                VPropertyBankLoansTableControlRow recCtl = this.GetSelectedRecordControl();
+                if (recCtl == null && url.IndexOf("{") >= 0) {
+                    // Localization.
+                    throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
+                }
+
+        VPropertyBankLoansRecord rec = null;
+                if (recCtl != null) {
+                    rec = recCtl.GetRecord();
+                }
+                
+                if (includeSession)
+                {
+                    return EvaluateExpressions(url, arg, rec, bEncrypt);
+                }
+                else
+                {
+                    return EvaluateExpressions(url, arg, rec, bEncrypt,false);
+                }
+             
+            }
+            return url;
         }
           
         public virtual VPropertyBankLoansTableControlRow GetSelectedRecordControl()
@@ -4645,16 +4978,19 @@ public class BaseVPropertyBankLoansTableControl : IPv5.UI.BaseApplicationTableCo
                 if (deferDeletion) {
                     if (!recCtl.IsNewRecord) {
                 
-                        // Localization.
-                        throw new Exception(Page.GetResourceValue("Err:CannotDelRecs", "IPv5"));
+                        this.AddToDeletedRecordIds(recCtl);
                   
                     }
                     recCtl.Visible = false;
                 
                 } else {
                 
-                    // Localization.
-                    throw new Exception(Page.GetResourceValue("Err:CannotDelRecs", "IPv5"));
+                    recCtl.Delete();
+                    // Setting the DataChanged to True results in the page being refreshed with
+                    // the most recent data from the database.  This happens in PreRender event
+                    // based on the current sort, search and filter criteria.
+                    this.DataChanged = true;
+                    this.ResetData = true;
                   
                 }
             }

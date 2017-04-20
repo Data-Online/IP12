@@ -16,7 +16,7 @@
     <Description>Table view to show or edit multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>RentReviewsMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;1&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>2053792782-27569</CheckSum>
   </Self>
   <ComposedOf>

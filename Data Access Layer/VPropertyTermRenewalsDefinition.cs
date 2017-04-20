@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class VPropertyTermRenewalsDefinition
 {
 #region "Definition (XML) for VPropertyTermRenewalsDefinition table"
-	//Next 368 lines contain Table Definition (XML) for table "VPropertyTermRenewalsDefinition"
+	//Next 383 lines contain Table Definition (XML) for table "VPropertyTermRenewalsDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -356,29 +356,44 @@ public class VPropertyTermRenewalsDefinition
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""11"" Priority=""12"" ColumnNum=""11"">");
          tbf.Append(      @"<columnName>TermRenewalID</columnName>");
-         tbf.Append(      @"<columnUIName>Term Renewal</columnUIName>");
+         tbf.Append(      @"<columnUIName Source=""User"">Term Renewal</columnUIName>");
          tbf.Append(      @"<columnType>Number</columnType>");
          tbf.Append(      @"<columnDBType>int</columnDBType>");
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
-         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnDBDefault Source=""User""></columnDBDefault>");
          tbf.Append(      @"<columnIndex>N</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
-         tbf.Append(      @"<columnPK>N</columnPK>");
+         tbf.Append(      @"<columnPK>Y</columnPK>");
          tbf.Append(      @"<columnPermanent>N</columnPermanent>");
-         tbf.Append(      @"<columnComputed>N</columnComputed>");
-         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
-         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnComputed Source=""User"">N</columnComputed>");
+         tbf.Append(      @"<columnIdentity Source=""User"">N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly Source=""User"">N</columnReadOnly>");
          tbf.Append(      @"<columnRequired>Y</columnRequired>");
          tbf.Append(      @"<columnNotNull>Y</columnNotNull>");
-         tbf.Append(      @"<columnCaseSensitive>N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCaseSensitive Source=""User"">N</columnCaseSensitive>");
          tbf.Append(      @"<columnCollation></columnCollation>");
-         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnFullText Source=""User"">N</columnFullText>");
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<InternalName>11</InternalName>");
+         tbf.Append(      @"<columnTableClassName></columnTableClassName>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
+         tbf.Append(      @"<columnVirtualPK Source=""User"">Y</columnVirtualPK>");
          tbf.Append(    "</Column>");
          tbf.Append(  "</ColumnDefinition>");
          tbf.Append(  @"<TableName>vPropertyTermRenewals</TableName>");
@@ -388,10 +403,10 @@ public class VPropertyTermRenewalsDefinition
          tbf.Append(  @"<TableAliasName>VPropertyTermRenewals_</TableAliasName>");
          tbf.Append(  @"<ConnectionName>DatabaseMM_IP1</ConnectionName>");
          tbf.Append(  @"<PagingMethod>RowNum</PagingMethod>");
-         tbf.Append(  @"<canCreateRecords Source=""Database"">N</canCreateRecords>");
-         tbf.Append(  @"<canEditRecords Source=""Database"">N</canEditRecords>");
-         tbf.Append(  @"<canDeleteRecords Source=""Database"">N</canDeleteRecords>");
-         tbf.Append(  @"<canViewRecords Source=""Database"">N</canViewRecords>");
+         tbf.Append(  @"<canCreateRecords Source=""User"">Y</canCreateRecords>");
+         tbf.Append(  @"<canEditRecords Source=""User"">Y</canEditRecords>");
+         tbf.Append(  @"<canDeleteRecords Source=""User"">Y</canDeleteRecords>");
+         tbf.Append(  @"<canViewRecords Source=""Database"">Y</canViewRecords>");
          tbf.Append(  @"<AppShortName>IPv5</AppShortName>");
          tbf.Append(  @"<FolderName>vPropertyTermRenewals</FolderName>");
          tbf.Append(  @"<MenuName>Property Term Renewals</MenuName>");

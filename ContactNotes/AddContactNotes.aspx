@@ -35,19 +35,7 @@
 <asp:DropDownList runat="server" id="ContactID" cssclass="field_input" onkeypress="dropDownListTypeAhead(this,false)"></asp:DropDownList></span>
  
 <asp:ImageButton runat="server" id="ContactIDAddRecordLink" causesvalidation="False" commandname="Redirect" imageurl="../Images/iconNewFlat.gif" redirectstyle="NewWindow" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton> </td></tr><tr><td class="fls"><asp:Literal runat="server" id="DateRecordedLabel" Text="Date Recorded">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
-<table border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td style="padding-right: 5px; vertical-align:top">
-<asp:TextBox runat="server" id="DateRecorded" Columns="20" MaxLength="30" cssclass="field_input"></asp:TextBox></td>
-<td>
-<Selectors:CalendarExtendarClass runat="server" ID="DateRecordedCalendarExtender" TargetControlID="DateRecorded" CssClass="MyCalendar" Format="d">
-</Selectors:CalendarExtendarClass>&nbsp;
-<BaseClasses:TextBoxMaxLengthValidator runat="server" id="DateRecordedTextBoxMaxLengthValidator" ControlToValidate="DateRecorded" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Date Recorded&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></td>
-</tr>
-</table>
-</span>
- </td></tr><tr><td class="fls"><asp:Literal runat="server" id="NotesLabel" Text="Notes">	</asp:Literal></td><td class="dfv"><asp:TextBox runat="server" id="Notes" MaxLength="200" columns="60" cssclass="field_input" rows="4" textmode="MultiLine"></asp:TextBox>&nbsp;
+	</asp:ImageButton> </td></tr><tr><td class="fls"></td><td class="dfv"> </td></tr><tr><td class="fls"><asp:Literal runat="server" id="NotesLabel" Text="Notes">	</asp:Literal></td><td class="dfv"><asp:TextBox runat="server" id="Notes" MaxLength="200" columns="60" cssclass="field_input" rows="4" textmode="MultiLine"></asp:TextBox>&nbsp;
 <BaseClasses:TextBoxMaxLengthValidator runat="server" id="NotesTextBoxMaxLengthValidator" ControlToValidate="Notes" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Notes&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator> </td></tr></table></asp:panel>
 </td></tr></table>
 </asp:panel>

@@ -197,11 +197,7 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
                         
                     this.ViewRowButton.Click += ViewRowButton_Click;
                         
-              this.DateRecorded1.TextChanged += DateRecorded1_TextChanged;
-            
               this.Notes1.TextChanged += Notes1_TextChanged;
-            
-              this.NoteType.TextChanged += NoteType_TextChanged;
             
         }
 
@@ -258,14 +254,10 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
 
             // Call the Set methods for each controls on the panel
         
-                SetDateRecorded1();
-                SetDateRecordedLabel1();
                 
                 
                 SetNotes1();
                 SetNotesLabel1();
-                SetNoteType();
-                SetNoteTypeLabel();
                 
                 
                 SetDeleteRowButton();
@@ -297,48 +289,6 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
         }
         
         
-        public virtual void SetDateRecorded1()
-        {
-            
-            // If data was retrieved from UI previously, restore it
-            if (this.PreviousUIData.ContainsKey(this.DateRecorded1.ID))
-            {
-            
-                this.DateRecorded1.Text = this.PreviousUIData[this.DateRecorded1.ID].ToString();
-              
-                return;
-            }
-            
-                    
-            // Set the DateRecorded TextBox on the webpage with value from the
-            // DatabaseMM_IP1%dbo.ContactNotes database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.ContactNotes record retrieved from the database.
-            // this.DateRecorded1 is the ASP:TextBox on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.DateRecordedSpecified) {
-                								
-                // If the DateRecorded is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactNotesTable.DateRecorded, @"g");
-                                
-                this.DateRecorded1.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // DateRecorded is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.DateRecorded1.Text = ContactNotesTable.DateRecorded.Format(ContactNotesTable.DateRecorded.DefaultValue, @"g");
-            		
-            }
-            
-              this.DateRecorded1.TextChanged += DateRecorded1_TextChanged;
-                               
-        }
-                
         public virtual void SetNotes1()
         {
             
@@ -381,61 +331,7 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
                                
         }
                 
-        public virtual void SetNoteType()
-        {
-            
-            // If data was retrieved from UI previously, restore it
-            if (this.PreviousUIData.ContainsKey(this.NoteType.ID))
-            {
-            
-                this.NoteType.Text = this.PreviousUIData[this.NoteType.ID].ToString();
-              
-                return;
-            }
-            
-                    
-            // Set the NoteType TextBox on the webpage with value from the
-            // DatabaseMM_IP1%dbo.ContactNotes database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.ContactNotes record retrieved from the database.
-            // this.NoteType is the ASP:TextBox on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.NoteTypeSpecified) {
-                								
-                // If the NoteType is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactNotesTable.NoteType);
-                                
-                this.NoteType.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // NoteType is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.NoteType.Text = ContactNotesTable.NoteType.Format(ContactNotesTable.NoteType.DefaultValue);
-            		
-            }
-            
-              this.NoteType.TextChanged += NoteType_TextChanged;
-                               
-        }
-                
-        public virtual void SetDateRecordedLabel1()
-                  {
-                  
-                    
-        }
-                
         public virtual void SetNotesLabel1()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetNoteTypeLabel()
                   {
                   
                     
@@ -609,29 +505,10 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
       
             // Call the Get methods for each of the user interface controls.
         
-            GetDateRecorded1();
             GetNotes1();
-            GetNoteType();
         }
         
         
-        public virtual void GetDateRecorded1()
-        {
-            
-            // Retrieve the value entered by the user on the DateRecorded ASP:TextBox, and
-            // save it into the DateRecorded field in DataSource DatabaseMM_IP1%dbo.ContactNotes record.
-            // Parse will also validate the date to ensure it is of the proper format
-            // and a valid date.  The format is verified based on the current culture 
-            // settings including the order of month, day and year and the separator character.
-            // Parse throws an exception if the date is invalid.
-            // Custom validation should be performed in Validate, not here.
-                    
-            // Save the value to data source
-            this.DataSource.Parse(this.DateRecorded1.Text, ContactNotesTable.DateRecorded);							
-                          
-                      
-        }
-                
         public virtual void GetNotes1()
         {
             
@@ -642,20 +519,6 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
                     
             // Save the value to data source
             this.DataSource.Parse(this.Notes1.Text, ContactNotesTable.Notes);							
-                          
-                      
-        }
-                
-        public virtual void GetNoteType()
-        {
-            
-            // Retrieve the value entered by the user on the NoteType ASP:TextBox, and
-            // save it into the NoteType field in DataSource DatabaseMM_IP1%dbo.ContactNotes record.
-            
-            // Custom validation should be performed in Validate, not here.
-                    
-            // Save the value to data source
-            this.DataSource.Parse(this.NoteType.Text, ContactNotesTable.NoteType);							
                           
                       
         }
@@ -942,17 +805,7 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
             
             
         
-        protected virtual void DateRecorded1_TextChanged(object sender, EventArgs args)
-        {
-                    
-              }
-            
         protected virtual void Notes1_TextChanged(object sender, EventArgs args)
-        {
-                    
-              }
-            
-        protected virtual void NoteType_TextChanged(object sender, EventArgs args)
         {
                     
               }
@@ -1046,18 +899,6 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
        
 #region "Helper Properties"
         
-        public System.Web.UI.WebControls.TextBox DateRecorded1 {
-            get {
-                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecorded1");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal DateRecordedLabel1 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedLabel1");
-            }
-        }
-        
         public System.Web.UI.WebControls.ImageButton DeleteRowButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DeleteRowButton");
@@ -1079,18 +920,6 @@ public class BaseContactNotesTableControl1Row : IPv5.UI.BaseApplicationRecordCon
         public System.Web.UI.WebControls.Literal NotesLabel1 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NotesLabel1");
-            }
-        }
-        
-        public System.Web.UI.WebControls.TextBox NoteType {
-            get {
-                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NoteType");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal NoteTypeLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NoteTypeLabel");
             }
         }
         
@@ -2100,16 +1929,8 @@ public class BaseContactNotesTableControl1 : IPv5.UI.BaseApplicationTableControl
             if (recControl.Visible && recControl.IsNewRecord) {
       ContactNotesRecord rec = new ContactNotesRecord();
         
-                        if (recControl.DateRecorded1.Text != "") {
-                            rec.Parse(recControl.DateRecorded1.Text, ContactNotesTable.DateRecorded);
-                  }
-                
                         if (recControl.Notes1.Text != "") {
                             rec.Parse(recControl.Notes1.Text, ContactNotesTable.Notes);
-                  }
-                
-                        if (recControl.NoteType.Text != "") {
-                            rec.Parse(recControl.NoteType.Text, ContactNotesTable.NoteType);
                   }
                 
               newUIDataList.Add(recControl.PreservedUIData());
@@ -2223,17 +2044,9 @@ public class BaseContactNotesTableControl1 : IPv5.UI.BaseApplicationTableControl
               
                 this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("{Txt:PleaseSelect}"), "--PLEASE_SELECT--"));
               
-                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Date Recorded {Txt:Ascending}"), "DateRecorded Asc"));
-              
-                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Date Recorded {Txt:Descending}"), "DateRecorded Desc"));
-              
                 this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Notes {Txt:Ascending}"), "Notes Asc"));
               
                 this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Notes {Txt:Descending}"), "Notes Desc"));
-              
-                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Note Type {Txt:Ascending}"), "NoteType Asc"));
-              
-                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Note Type {Txt:Descending}"), "NoteType Desc"));
               
                 this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated On {Txt:Ascending}"), "UpdatedOn Asc"));
               

@@ -188,8 +188,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
                 SetContactIDLabel();
                 
                 
-                SetDateRecorded();
-                SetDateRecordedLabel();
                 SetNotes();
                 SetNotesLabel();
                 SetContactNotesDialogEditButton();
@@ -256,46 +254,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
             		
             }
                                
-        }
-                
-        public virtual void SetDateRecorded()
-        {
-            
-                    
-            // Set the DateRecorded Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.ContactNotes database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.ContactNotes record retrieved from the database.
-            // this.DateRecorded is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.DateRecordedSpecified) {
-                								
-                // If the DateRecorded is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactNotesTable.DateRecorded, @"g");
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.DateRecorded.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // DateRecorded is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.DateRecorded.Text = ContactNotesTable.DateRecorded.Format(ContactNotesTable.DateRecorded.DefaultValue, @"g");
-            		
-            }
-            
-            // If the DateRecorded is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.DateRecorded.Text == null ||
-                this.DateRecorded.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.DateRecorded.Text = "&nbsp;";
-            }
-                                     
         }
                 
         public virtual void SetNotes()
@@ -385,12 +343,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
         }
                 
         public virtual void SetContactIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDateRecordedLabel()
                   {
                   
                     
@@ -564,17 +516,11 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
             // Call the Get methods for each of the user interface controls.
         
             GetContactID();
-            GetDateRecorded();
             GetNotes();
         }
         
         
         public virtual void GetContactID()
-        {
-            
-        }
-                
-        public virtual void GetDateRecorded()
         {
             
         }
@@ -1140,18 +1086,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
         public System.Web.UI.WebControls.Literal ContactNotesTitle {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactNotesTitle");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal DateRecorded {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecorded");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal DateRecordedLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedLabel");
             }
         }
         

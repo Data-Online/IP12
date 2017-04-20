@@ -16,7 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>RentReviewsMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;1&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>571561769-9374</CheckSum>
   </Self>
   <ComposedOf>

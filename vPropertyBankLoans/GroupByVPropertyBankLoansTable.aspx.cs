@@ -272,6 +272,8 @@ public override void SetControl(string control)
         }
         
     
+        public System.Web.UI.WebControls.LinkButton Address1Label;
+        
         public System.Web.UI.WebControls.LinkButton Address1SortLabel;
         
         public System.Web.UI.WebControls.LinkButton Address2SortLabel;
@@ -280,23 +282,45 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.LinkButton BankLoanIDSortLabel;
         
+        public System.Web.UI.WebControls.LinkButton CityIDLabel;
+        
         public System.Web.UI.WebControls.Literal CityIDLabel1;
         
         public System.Web.UI.WebControls.LinkButton CityIDSortLabel;
         
         public System.Web.UI.WebControls.LinkButton CompanyNameSortLabel;
         
+        public System.Web.UI.WebControls.LinkButton CountryIDLabel;
+        
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel;
+        
         public System.Web.UI.WebControls.LinkButton DescriptionSortLabel;
+        
+        public System.Web.UI.WebControls.Literal DueNow;
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel;
         
         public System.Web.UI.WebControls.LinkButton ExpiryDateSortLabel;
         
+        public System.Web.UI.WebControls.Literal Literal;
+        
+        public System.Web.UI.WebControls.Literal NextMonth;
+        
+        public System.Web.UI.WebControls.Literal Overdue;
+        
         public System.Web.UI.WebControls.Literal PageTitle;
         
+        public System.Web.UI.WebControls.LinkButton PostCodeLabel;
+        
         public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
+        
+        public System.Web.UI.WebControls.LinkButton PropertyIDLabel;
         
         public System.Web.UI.WebControls.Literal PropertyIDLabel1;
         
         public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel;
+        
+        public System.Web.UI.WebControls.LinkButton RegionIDLabel;
         
         public ThemeButtonWithArrow VPropertyBankLoansButtonsButton;
                 
@@ -306,7 +330,7 @@ public override void SetControl(string control)
                 
         public ThemeButtonWithArrow VPropertyBankLoansFiltersButton;
                 
-        public PaginationModern VPropertyBankLoansPagination;
+        public PaginationMedium VPropertyBankLoansPagination;
                 
         public System.Web.UI.WebControls.ImageButton VPropertyBankLoansPDFButton;
         
@@ -383,7 +407,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("1;2;NOT_ANONYMOUS");
+            this.Authorize("1;2;3");
              if (!this.IsPostBack)
              {
             

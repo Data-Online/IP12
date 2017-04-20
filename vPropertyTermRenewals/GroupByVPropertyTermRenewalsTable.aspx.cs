@@ -272,6 +272,8 @@ public override void SetControl(string control)
         }
         
     
+        public System.Web.UI.WebControls.LinkButton Address1Label1;
+        
         public System.Web.UI.WebControls.LinkButton Address1SortLabel;
         
         public System.Web.UI.WebControls.LinkButton Address2SortLabel;
@@ -280,19 +282,41 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal CityIDLabel1;
         
+        public System.Web.UI.WebControls.LinkButton CityIDLabel11;
+        
         public System.Web.UI.WebControls.LinkButton CityIDSortLabel;
         
         public System.Web.UI.WebControls.LinkButton CompanyNameSortLabel;
         
+        public System.Web.UI.WebControls.LinkButton CountryIDLabel;
+        
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel1;
+        
         public System.Web.UI.WebControls.LinkButton DescriptionSortLabel;
+        
+        public System.Web.UI.WebControls.Literal DueNow;
+        
+        public System.Web.UI.WebControls.Literal Literal;
+        
+        public System.Web.UI.WebControls.Literal NextMonth;
+        
+        public System.Web.UI.WebControls.Literal Overdue;
         
         public System.Web.UI.WebControls.Literal PageTitle;
         
+        public System.Web.UI.WebControls.LinkButton PostCodeLabel1;
+        
         public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
+        
+        public System.Web.UI.WebControls.LinkButton PropertyIDLabel1;
         
         public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel;
         
+        public System.Web.UI.WebControls.LinkButton RegionIDLabel;
+        
         public System.Web.UI.WebControls.Literal RegionIDLabel1;
+        
+        public System.Web.UI.WebControls.LinkButton RenewalDateLabel1;
         
         public System.Web.UI.WebControls.LinkButton RenewalDateSortLabel;
         
@@ -306,7 +330,7 @@ public override void SetControl(string control)
                 
         public ThemeButtonWithArrow VPropertyTermRenewalsFiltersButton;
                 
-        public PaginationModern VPropertyTermRenewalsPagination;
+        public PaginationMedium VPropertyTermRenewalsPagination;
                 
         public System.Web.UI.WebControls.ImageButton VPropertyTermRenewalsPDFButton;
         
@@ -383,7 +407,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("1;2;NOT_ANONYMOUS");
+            this.Authorize("1;2;3");
              if (!this.IsPostBack)
              {
             

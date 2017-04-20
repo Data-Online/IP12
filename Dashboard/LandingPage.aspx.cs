@@ -219,6 +219,39 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
           InvestorsButton_Click_Base(sender, args);
           // NOTE: If the Base function redirects to another page, any code here will not be executed.
         }
+public void SetInvestorsButton1()
+        {
+            SetInvestorsButton1_Base(); 
+        }              
+public void InvestorsButton1_Click(object sender, ImageClickEventArgs args)
+        {
+          // Click handler for InvestorsButton1.
+          // Customize by adding code before the call or replace the call to the Base function with your own code.
+          InvestorsButton1_Click_Base(sender, args);
+          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+        }
+public void SetReportsButton()
+        {
+            SetReportsButton_Base(); 
+        }              
+public void ReportsButton_Click(object sender, ImageClickEventArgs args)
+        {
+          // Click handler for ReportsButton.
+          // Customize by adding code before the call or replace the call to the Base function with your own code.
+          ReportsButton_Click_Base(sender, args);
+          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+        }
+public void SetAdminButton()
+        {
+            SetAdminButton_Base(); 
+        }              
+public void AdminButton_Click(object sender, ImageClickEventArgs args)
+        {
+          // Click handler for AdminButton.
+          // Customize by adding code before the call or replace the call to the Base function with your own code.
+          AdminButton_Click_Base(sender, args);
+          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -236,15 +269,27 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
         }
         
     
+        public System.Web.UI.WebControls.ImageButton AdminButton;
+        
         public System.Web.UI.WebControls.ImageButton InvestorsButton;
+        
+        public System.Web.UI.WebControls.ImageButton InvestorsButton1;
         
         public System.Web.UI.WebControls.Label Label;
         
         public System.Web.UI.WebControls.Label Label1;
         
+        public System.Web.UI.WebControls.Label Label2;
+        
+        public System.Web.UI.WebControls.Label Label3;
+        
+        public System.Web.UI.WebControls.Label Label4;
+        
         public System.Web.UI.WebControls.Literal PageTitle;
         
         public System.Web.UI.WebControls.ImageButton PropertiesButton;
+        
+        public System.Web.UI.WebControls.ImageButton ReportsButton;
         
         public ValidationSummary ValidationSummary1;
 
@@ -267,9 +312,15 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
 
           // Setup the pagination events.
         
+                    this.AdminButton.Click += AdminButton_Click;
+                        
                     this.InvestorsButton.Click += InvestorsButton_Click;
                         
+                    this.InvestorsButton1.Click += InvestorsButton1_Click;
+                        
                     this.PropertiesButton.Click += PropertiesButton_Click;
+                        
+                    this.ReportsButton.Click += ReportsButton_Click;
                         
           this.ClearControlsFromSession();    
     
@@ -311,7 +362,7 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("1;2;NOT_ANONYMOUS");
+            this.Authorize("1;2;3");
              if (!this.IsPostBack)
              {
             
@@ -527,9 +578,15 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
             
                 // initialize aspx controls
                 
+                SetAdminButton();
+              
                 SetInvestorsButton();
               
+                SetInvestorsButton1();
+              
                 SetPropertiesButton();
+              
+                SetReportsButton();
               
     } catch (Exception ex) {
     // An error has occured so display an error message.
@@ -612,7 +669,21 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
                 
         // Write out the Set methods
         
+        public void SetAdminButton_Base()                
+              
+        {
+        
+   
+        }
+            
         public void SetInvestorsButton_Base()                
+              
+        {
+        
+   
+        }
+            
+        public void SetInvestorsButton1_Base()                
               
         {
         
@@ -625,12 +696,66 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
         
    
         }
+            
+        public void SetReportsButton_Base()                
+              
+        {
+        
+   
+        }
                 
 
         // Write out the DataSource properties and methods
                 
 
         // Write out event methods for the page events
+        
+        // event handler for ImageButton
+        public void AdminButton_Click_Base(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../Dashboard/Administration.aspx";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"])) 
+                url += "?RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.ShouldSaveControlsToSession = true;
+      this.Response.Redirect(url);
+        
+            }
+        
+        }
+            
+            
         
         // event handler for ImageButton
         public void InvestorsButton_Click_Base(object sender, ImageClickEventArgs args)
@@ -680,6 +805,53 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
             
         
         // event handler for ImageButton
+        public void InvestorsButton1_Click_Base(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../Suppliers/GroupBySuppliersTable.aspx";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"])) 
+                url += "?RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.ShouldSaveControlsToSession = true;
+      this.Response.Redirect(url);
+        
+            }
+        
+        }
+            
+            
+        
+        // event handler for ImageButton
         public void PropertiesButton_Click_Base(object sender, ImageClickEventArgs args)
         {
               
@@ -690,6 +862,53 @@ public void InvestorsButton_Click(object sender, ImageClickEventArgs args)
             // redirected to the URL.
             
             string url = @"../Properties/GroupByPropertiesTable.aspx";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"])) 
+                url += "?RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  this.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                this.ShouldSaveControlsToSession = true;
+      this.Response.Redirect(url);
+        
+            }
+        
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public void ReportsButton_Click_Base(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../Dashboard/Reports.aspx";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"])) 
                 url += "?RedirectStyle=" + this.Page.Request["RedirectStyle"];

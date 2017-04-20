@@ -3747,8 +3747,16 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
             if (this.DataSource != null && this.DataSource.CityIDSpecified) {
                 								
                 // If the CityID is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(SuppliersTable.CityID);
+                // The Format method will return the Display Foreign Key As (DFKA) value
+               string formattedValue = "";
+               Boolean _isExpandableNonCompositeForeignKey = SuppliersTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(SuppliersTable.CityID);
+               if(_isExpandableNonCompositeForeignKey &&SuppliersTable.CityID.IsApplyDisplayAs)
+                                  
+                     formattedValue = SuppliersTable.GetDFKA(this.DataSource.CityID.ToString(),SuppliersTable.CityID, null);
+                                    
+               if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(formattedValue)))
+                     formattedValue = this.DataSource.Format(SuppliersTable.CityID);
+                                  
                                 
                 this.CityID.Text = formattedValue;
                 
@@ -5074,7 +5082,9 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
           }
           
           //  LoadData for DataSource for chart and report if they exist
-               
+          
+            // Improve performance by prefetching display as records.
+            this.PreFetchForeignKeyValues();     
 
             // Setup the pagination controls.
             BindPaginationControls();
@@ -5131,6 +5141,14 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
 
     }
 
+        
+        public void PreFetchForeignKeyValues() {
+            if (this.DataSource == null) {
+                return;
+            }
+          
+            this.Page.PregetDfkaRecords(SuppliersTable.CityID, this.DataSource);
+        }
         
 
         public virtual void RegisterPostback()

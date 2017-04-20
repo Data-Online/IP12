@@ -144,32 +144,9 @@
                         
                           <asp:ImageButton runat="server" id="DeleteRowButton" causesvalidation="False" commandargument="DeleteOnUpdate" commandname="DeleteRecord" cssclass="button_link" imageurl="../Images/icon_delete.gif" onmouseout="this.src=&#39;../Images/icon_delete.gif&#39;" onmouseover="this.src=&#39;../Images/icon_delete_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:DeleteRecord&quot;, &quot;IPv5&quot;) %>">		
 	</asp:ImageButton>
-                        </td><td class="tableCellLabel"><asp:Literal runat="server" id="NoteTypeLabel" Text="Note Type">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
-<table border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td style="padding-right: 5px; vertical-align:top">
-<asp:TextBox runat="server" id="NoteType" Columns="14" MaxLength="14" cssclass="field_input"></asp:TextBox></td>
-<td>
-&nbsp;
-<BaseClasses:TextBoxMaxLengthValidator runat="server" id="NoteTypeTextBoxMaxLengthValidator" ControlToValidate="NoteType" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Note Type&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></td>
-</tr>
-</table>
-</span>
- </td><td class="tableCellLabel"><asp:Literal runat="server" id="DateRecordedLabel1" Text="Date Recorded">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
-<table border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td style="padding-right: 5px; vertical-align:top">
-<asp:TextBox runat="server" id="DateRecorded1" Columns="20" MaxLength="30" cssclass="field_input"></asp:TextBox></td>
-<td>
-<Selectors:CalendarExtendarClass runat="server" ID="DateRecorded1CalendarExtender" TargetControlID="DateRecorded1" CssClass="MyCalendar" Format="d">
-</Selectors:CalendarExtendarClass>&nbsp;
-<BaseClasses:TextBoxMaxLengthValidator runat="server" id="DateRecorded1TextBoxMaxLengthValidator" ControlToValidate="DateRecorded1" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Date Recorded&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></td>
-</tr>
-</table>
-</span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel"><asp:Literal runat="server" id="NotesLabel1" Text="Notes">	</asp:Literal> 
+                        </td><td class="tableCellLabel"> 
+</td><td class="tableCellValue"> </td><td class="tableCellLabel"> 
+</td><td class="tableCellValue"> </td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel"><asp:Literal runat="server" id="NotesLabel1" Text="Notes">	</asp:Literal> 
 </td><td class="tableCellValue" colspan="5"><asp:TextBox runat="server" id="Notes1" MaxLength="200" columns="60" cssclass="field_input" rows="4" textmode="MultiLine"></asp:TextBox>&nbsp;
 <BaseClasses:TextBoxMaxLengthValidator runat="server" id="Notes1TextBoxMaxLengthValidator" ControlToValidate="Notes1" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Notes&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator> </td></tr><tr><td class="tableRowDivider" colspan="10"></td></tr></IPv5:ContactNotesTableControl1Row>
 </ITEMTEMPLATE>

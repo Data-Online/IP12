@@ -168,8 +168,6 @@ public class BaseContactNotesTableControlRow : IPv5.UI.BaseApplicationRecordCont
                 
                 
                 
-                SetDateRecorded();
-                SetDateRecordedLabel();
                 SetNotes();
                 SetNotesLabel();
                 SetContactNotesRowDeleteButton();
@@ -240,46 +238,6 @@ public class BaseContactNotesTableControlRow : IPv5.UI.BaseApplicationRecordCont
             		
             }
                                
-        }
-                
-        public virtual void SetDateRecorded()
-        {
-            
-                    
-            // Set the DateRecorded Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.ContactNotes database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.ContactNotes record retrieved from the database.
-            // this.DateRecorded is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.DateRecordedSpecified) {
-                								
-                // If the DateRecorded is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactNotesTable.DateRecorded, @"g");
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.DateRecorded.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // DateRecorded is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.DateRecorded.Text = ContactNotesTable.DateRecorded.Format(ContactNotesTable.DateRecorded.DefaultValue, @"g");
-            		
-            }
-            
-            // If the DateRecorded is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.DateRecorded.Text == null ||
-                this.DateRecorded.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.DateRecorded.Text = "&nbsp;";
-            }
-                                     
         }
                 
         public virtual void SetNotes()
@@ -369,12 +327,6 @@ public class BaseContactNotesTableControlRow : IPv5.UI.BaseApplicationRecordCont
         }
                 
         public virtual void SetContactIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDateRecordedLabel()
                   {
                   
                     
@@ -541,17 +493,11 @@ public class BaseContactNotesTableControlRow : IPv5.UI.BaseApplicationRecordCont
             // Call the Get methods for each of the user interface controls.
         
             GetContactID();
-            GetDateRecorded();
             GetNotes();
         }
         
         
         public virtual void GetContactID()
-        {
-            
-        }
-                
-        public virtual void GetDateRecorded()
         {
             
         }
@@ -1007,18 +953,6 @@ public class BaseContactNotesTableControlRow : IPv5.UI.BaseApplicationRecordCont
             }
         }
         
-        public System.Web.UI.WebControls.Literal DateRecorded {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecorded");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal DateRecordedLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal Notes {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Notes");
@@ -1263,8 +1197,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
        // Setup the sorting events.
         
               this.ContactIDSortLabel.Click += ContactIDSortLabel_Click;
-            
-              this.DateRecordedSortLabel.Click += DateRecordedSortLabel_Click;
             
               this.NotesSortLabel.Click += NotesSortLabel_Click;
             
@@ -1547,7 +1479,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 
                 
                 
-                SetDateRecordedSortLabel();
                 SetNotesFilter();
                 SetNotesLabel1();
                 SetNotesSortLabel();
@@ -2248,10 +2179,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
                             rec.Parse(recControl.ContactID.Text, ContactNotesTable.ContactID);
                   }
                 
-                        if (recControl.DateRecorded.Text != "") {
-                            rec.Parse(recControl.DateRecorded.Text, ContactNotesTable.DateRecorded);
-                  }
-                
                         if (recControl.Notes.Text != "") {
                             rec.Parse(recControl.Notes.Text, ContactNotesTable.Notes);
                   }
@@ -2330,12 +2257,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
         }
                 
         public virtual void SetContactIDSortLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDateRecordedSortLabel()
                   {
                   
                     
@@ -3014,36 +2935,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
               
         }
             
-        public virtual void DateRecordedSortLabel_Click(object sender, EventArgs args)
-        {
-            //Sorts by DateRecorded when clicked.
-              
-            // Get previous sorting state for DateRecorded.
-        
-            OrderByItem sd = this.CurrentSortOrder.Find(ContactNotesTable.DateRecorded);
-            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
-                // First time sort, so add sort order for DateRecorded.
-                this.CurrentSortOrder.Reset();
-
-    
-              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
-              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
-
-              this.CurrentSortOrder.Add(ContactNotesTable.DateRecorded, OrderByItem.OrderDir.Asc);
-            
-            } else {
-                // Previously sorted by DateRecorded, so just reverse.
-                sd.Reverse();
-            }
-        
-
-            // Setting the DataChanged to true results in the page being refreshed with
-            // the most recent data from the database.  This happens in PreRender event
-            // based on the current sort, search and filter criteria.
-            this.DataChanged = true;
-              
-        }
-            
         public virtual void NotesSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by Notes when clicked.
@@ -3113,7 +3004,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 BaseColumn[] columns = new BaseColumn[] {
                              ContactNotesTable.ContactID,
              ContactNotesTable.Notes,
-             ContactNotesTable.DateRecorded,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(ContactNotesTable.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -3171,7 +3061,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
               DataForExport data = new DataForExport(ContactNotesTable.Instance, wc, orderBy, null,join);
                            data.ColumnList.Add(new ExcelColumn(ContactNotesTable.ContactID, "Default"));
              data.ColumnList.Add(new ExcelColumn(ContactNotesTable.Notes, "Default"));
-             data.ColumnList.Add(new ExcelColumn(ContactNotesTable.DateRecorded, "Short Date"));
 
 
               //  First write out the Column Headers
@@ -3343,7 +3232,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(ContactNotesTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactNotesTable.Notes.Name, ReportEnum.Align.Left, "${Notes}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(ContactNotesTable.DateRecorded.Name, ReportEnum.Align.Left, "${DateRecorded}", ReportEnum.Align.Left, 20);
 
   
                 int rowsPerQuery = 5000;
@@ -3392,7 +3280,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
                                  }
                              }
                              report.AddData("${Notes}", record.Format(ContactNotesTable.Notes), ReportEnum.Align.Left, 100);
-                             report.AddData("${DateRecorded}", record.Format(ContactNotesTable.DateRecorded), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -3509,7 +3396,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(ContactNotesTable.ContactID.Name, ReportEnum.Align.Left, "${ContactID}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactNotesTable.Notes.Name, ReportEnum.Align.Left, "${Notes}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(ContactNotesTable.DateRecorded.Name, ReportEnum.Align.Left, "${DateRecorded}", ReportEnum.Align.Left, 20);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -3554,7 +3440,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
                                  }
                              }
                              report.AddData("${Notes}", record.Format(ContactNotesTable.Notes), ReportEnum.Align.Left, 100);
-                             report.AddData("${DateRecorded}", record.Format(ContactNotesTable.DateRecorded), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -3841,12 +3726,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
         public System.Web.UI.WebControls.ImageButton ContactNotesWordButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactNotesWordButton");
-            }
-        }
-        
-        public System.Web.UI.WebControls.LinkButton DateRecordedSortLabel {
-            get {
-                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedSortLabel");
             }
         }
         

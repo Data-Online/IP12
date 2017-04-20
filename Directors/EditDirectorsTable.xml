@@ -16,7 +16,7 @@
     <Description>Table view to show or edit multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>DirectorsMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;1&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>1180576822-22829</CheckSum>
   </Self>
   <ComposedOf>

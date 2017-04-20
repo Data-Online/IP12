@@ -3,13 +3,13 @@
   <ColumnDefinition>
     <Column InternalName="0" Priority="1" ColumnNum="0">
       <columnName>PropertyID</columnName>
-      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnUIName Source="User">%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
       <columnDBType>int</columnDBType>
       <columnLengthSet>10.0</columnLengthSet>
       <columnDefault>
       </columnDefault>
-      <columnDBDefault>
+      <columnDBDefault Source="User">
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
@@ -19,15 +19,15 @@
       </columnDBFormat>
       <columnPK>N</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
+      <columnComputed Source="User">N</columnComputed>
+      <columnIdentity Source="User">N</columnIdentity>
+      <columnReadOnly Source="User">N</columnReadOnly>
       <columnRequired>Y</columnRequired>
       <columnNotNull>Y</columnNotNull>
-      <columnCaseSensitive>N</columnCaseSensitive>
+      <columnCaseSensitive Source="User">N</columnCaseSensitive>
       <columnCollation>
       </columnCollation>
-      <columnFullText>N</columnFullText>
+      <columnFullText Source="User">N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
@@ -37,10 +37,30 @@
         <columnFKTable>Properties</columnFKTable>
         <columnFKOwner>dbo</columnFKOwner>
         <columnFKColumn>PropertyID</columnFKColumn>
-        <columnFKColumnDisplay>CompanyName</columnFKColumnDisplay>
+        <columnFKColumnDisplay>=Properties.CompanyName</columnFKColumnDisplay>
         <foreignKeyType>Implicit</foreignKeyType>
       </foreignKey>
       <applyDFKA>Y</applyDFKA>
+      <InternalName>0</InternalName>
+      <columnTableClassName>
+      </columnTableClassName>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
+      <columnVirtualPK Source="User">N</columnVirtualPK>
     </Column>
     <Column InternalName="1" Priority="2" ColumnNum="1">
       <columnName>CompanyName</columnName>
@@ -385,13 +405,13 @@
     </Column>
     <Column InternalName="11" Priority="12" ColumnNum="11">
       <columnName>BankLoanID</columnName>
-      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnUIName Source="User">%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
       <columnDBType>int</columnDBType>
       <columnLengthSet>10.0</columnLengthSet>
       <columnDefault>
       </columnDefault>
-      <columnDBDefault>
+      <columnDBDefault Source="User">
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
@@ -399,21 +419,42 @@
       </columnFunction>
       <columnDBFormat>
       </columnDBFormat>
-      <columnPK>N</columnPK>
+      <columnPK>Y</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed>N</columnComputed>
-      <columnIdentity>N</columnIdentity>
-      <columnReadOnly>N</columnReadOnly>
+      <columnComputed Source="User">N</columnComputed>
+      <columnIdentity Source="User">N</columnIdentity>
+      <columnReadOnly Source="User">N</columnReadOnly>
       <columnRequired>Y</columnRequired>
       <columnNotNull>Y</columnNotNull>
-      <columnCaseSensitive>N</columnCaseSensitive>
+      <columnCaseSensitive Source="User">N</columnCaseSensitive>
       <columnCollation>
       </columnCollation>
-      <columnFullText>N</columnFullText>
+      <columnFullText Source="User">N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <InternalName>11</InternalName>
+      <columnTableClassName>
+      </columnTableClassName>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <applyDFKA>N</applyDFKA>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
+      <columnVirtualPK Source="User">Y</columnVirtualPK>
     </Column>
   </ColumnDefinition>
   <TableName>vPropertyBankLoans</TableName>
@@ -424,10 +465,10 @@
   <TableAliasName>VPropertyBankLoans_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>
   <PagingMethod>RowNum</PagingMethod>
-  <canCreateRecords Source="Database">N</canCreateRecords>
-  <canEditRecords Source="Database">N</canEditRecords>
-  <canDeleteRecords Source="Database">N</canDeleteRecords>
-  <canViewRecords Source="Database">N</canViewRecords>
+  <canCreateRecords Source="User">Y</canCreateRecords>
+  <canEditRecords Source="User">Y</canEditRecords>
+  <canDeleteRecords Source="User">Y</canDeleteRecords>
+  <canViewRecords Source="Database">Y</canViewRecords>
   <AppShortName>IPv5</AppShortName>
   <FolderName>vPropertyBankLoans</FolderName>
   <MenuName>Property Bank Loans</MenuName>

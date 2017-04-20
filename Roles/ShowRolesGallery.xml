@@ -16,7 +16,7 @@
     <Description>Gallery to show multiple records.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>RolesMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;1;2;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>1259481306-16161</CheckSum>
   </Self>
   <ComposedOf>

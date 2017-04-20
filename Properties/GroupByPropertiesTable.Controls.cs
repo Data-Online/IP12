@@ -73,6 +73,45 @@ public class PropertiesTableControlRow : BasePropertiesTableControlRow
 
         // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
         // SaveData, GetUIData, and Validate methods.
+        public override void PropertiesRowDeleteButton_Click(object sender, ImageClickEventArgs args)
+        {
+
+            string propertyId = ((PropertiesTableControlRow)this).PropertyID.Text;
+
+            try
+            {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                MarkPropertyDeleted(propertyId);
+                this.Page.CommitTransaction(sender);
+            }
+            catch (Exception ex)
+            {
+                // Upon error, rollback the transaction
+                this.Page.RollBackTransaction(sender);
+                this.Page.ErrorOnPage = true;
+
+                // Report the error message to the end user
+                BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+
+            }
+            finally
+            {
+                DbUtils.EndTransaction();
+            }
+            this.Visible = false;
+
+        }
+
+        private void MarkPropertyDeleted(string propertyId)
+        {
+            PropertiesRecord rec = PropertiesTable.GetRecord(propertyId, true);
+            rec.Deleted = true;
+            rec.DeletedBy = Convert.ToInt32(SecurityControls.GetCurrentUserID());
+            rec.DeletedOn = DateTime.Now;
+            rec.Save();
+        }
+
         public PropertiesTableControlRow()
         {
 
@@ -669,9 +708,7 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 
                 
                 SetDescription3();
-                SetDescriptionLabel3();
                 SetExpiryDate2();
-                SetExpiryDateLabel1();
                 SetBankLoansRowDeleteButton();
               
                 SetBankLoansRowEditButton();
@@ -777,18 +814,6 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 this.ExpiryDate2.Text = "&nbsp;";
             }
                                      
-        }
-                
-        public virtual void SetDescriptionLabel3()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetExpiryDateLabel1()
-                  {
-                  
-                    
         }
                 
         public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
@@ -1351,24 +1376,12 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
             }
         }
             
-        public System.Web.UI.WebControls.Literal DescriptionLabel3 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel3");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal ExpiryDate2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDate2");
             }
         }
             
-        public System.Web.UI.WebControls.Literal ExpiryDateLabel1 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel1");
-            }
-        }
-        
     #endregion
 
     #region "Helper Functions"
@@ -1617,6 +1630,10 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
+              this.DescriptionLabel3.Click += DescriptionLabel3_Click;
+            
+              this.ExpiryDateLabel1.Click += ExpiryDateLabel1_Click;
+            
             // Setup the button events.
           
                     this.BankLoansExportExcelButton.Click += BankLoansExportExcelButton_Click;
@@ -1888,7 +1905,9 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
                 
                 
                 
+                SetDescriptionLabel3();
                 
+                SetExpiryDateLabel1();
                 SetExpiryDateLabel4();
                 
                 
@@ -2662,6 +2681,18 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetDescriptionLabel3()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetExpiryDateLabel1()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetExpiryDateLabel4()
                   {
                   
@@ -3125,6 +3156,66 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void DescriptionLabel3_Click(object sender, EventArgs args)
+        {
+            //Sorts by Description when clicked.
+              
+            // Get previous sorting state for Description.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(BankLoansTable.Description);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Description.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(BankLoansTable.Description, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void ExpiryDateLabel1_Click(object sender, EventArgs args)
+        {
+            //Sorts by ExpiryDate when clicked.
+              
+            // Get previous sorting state for ExpiryDate.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(BankLoansTable.ExpiryDate);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for ExpiryDate.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(BankLoansTable.ExpiryDate, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by ExpiryDate, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
 
         // Generate the event handling functions for button events.
         
@@ -3880,9 +3971,21 @@ public class BaseBankLoansTableControl : IPv5.UI.BaseApplicationTableControl
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel3 {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel3");
+            }
+        }
+        
         public System.Web.UI.WebControls.TextBox ExpiryDateFromFilter1 {
             get {
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateFromFilter1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel1 {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel1");
             }
         }
         
@@ -7396,6 +7499,18 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                 this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Ascending}"), "UpdatedBy Asc"));
               
                 this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted {Txt:Ascending}"), "Deleted Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted {Txt:Descending}"), "Deleted Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted By {Txt:Ascending}"), "DeletedBy Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted By {Txt:Descending}"), "DeletedBy Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Ascending}"), "DeletedOn Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Descending}"), "DeletedOn Desc"));
               
             try
             {          
@@ -12065,10 +12180,8 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             // Call the Set methods for each controls on the panel
         
                 SetDescription1();
-                SetDescriptionLabel2();
                 
                 SetExpiryDate1();
-                SetExpiryDateLabel2();
                 SetEditRowButton3();
               
 
@@ -12172,18 +12285,6 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 this.ExpiryDate1.Text = "&nbsp;";
             }
                                      
-        }
-                
-        public virtual void SetDescriptionLabel2()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetExpiryDateLabel2()
-                  {
-                  
-                    
         }
                 
         public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
@@ -12672,12 +12773,6 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             }
         }
             
-        public System.Web.UI.WebControls.Literal DescriptionLabel2 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel2");
-            }
-        }
-        
         public System.Web.UI.WebControls.ImageButton EditRowButton3 {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "EditRowButton3");
@@ -12690,12 +12785,6 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             }
         }
             
-        public System.Web.UI.WebControls.Literal ExpiryDateLabel2 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel2");
-            }
-        }
-        
     #endregion
 
     #region "Helper Functions"
@@ -12944,6 +13033,10 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
+              this.DescriptionLabel2.Click += DescriptionLabel2_Click;
+            
+              this.ExpiryDateLabel2.Click += ExpiryDateLabel2_Click;
+            
             // Setup the button events.
           
                     this.ExcelButton3.Click += ExcelButton3_Click;
@@ -13203,8 +13296,10 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             // Call the Set methods for each controls on the panel
         
                 
+                SetDescriptionLabel2();
                 
                 
+                SetExpiryDateLabel2();
                 SetExpiryDateLabel6();
                 
                 
@@ -13989,6 +14084,18 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetDescriptionLabel2()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetExpiryDateLabel2()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetExpiryDateLabel6()
                   {
                   
@@ -14474,6 +14581,66 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void DescriptionLabel2_Click(object sender, EventArgs args)
+        {
+            //Sorts by Description when clicked.
+              
+            // Get previous sorting state for Description.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(MMContractsTable.Description);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Description.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(MMContractsTable.Description, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void ExpiryDateLabel2_Click(object sender, EventArgs args)
+        {
+            //Sorts by ExpiryDate when clicked.
+              
+            // Get previous sorting state for ExpiryDate.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(MMContractsTable.ExpiryDate);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for ExpiryDate.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(MMContractsTable.ExpiryDate, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by ExpiryDate, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
 
         // Generate the event handling functions for button events.
         
@@ -15160,6 +15327,12 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel2 {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel2");
+            }
+        }
+        
         public System.Web.UI.WebControls.ImageButton ExcelButton3 {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExcelButton3");
@@ -15169,6 +15342,12 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
         public System.Web.UI.WebControls.TextBox ExpiryDateFromFilter2 {
             get {
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateFromFilter2");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel2 {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel2");
             }
         }
         
@@ -15521,6 +15700,7 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 
                 SetPropertiesTableControlTabContainer();
                 
+                SetPropertyID();
                 
                 SetRegionID();
                 SetRentReviewsCountControl();
@@ -16011,6 +16191,38 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 this.PostCode.Text = "&nbsp;";
             }
                                      
+        }
+                
+        public virtual void SetPropertyID()
+        {
+            
+                    
+            // Set the PropertyID Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Properties database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Properties record retrieved from the database.
+            // this.PropertyID is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PropertyIDSpecified) {
+                								
+                // If the PropertyID is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertiesTable.PropertyID);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.PropertyID.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PropertyID is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PropertyID.Text = PropertiesTable.PropertyID.Format(PropertiesTable.PropertyID.DefaultValue);
+            		
+            }
+                               
         }
                 
         public virtual void SetRegionID()
@@ -16662,6 +16874,7 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             GetCreatedBy1();
             GetCreatedOn1();
             GetPostCode();
+            GetPropertyID();
             GetRegionID();
             GetUpdatedBy1();
             GetUpdatedOn1();
@@ -16709,6 +16922,11 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         }
                 
         public virtual void GetPostCode()
+        {
+            
+        }
+                
+        public virtual void GetPropertyID()
         {
             
         }
@@ -17447,6 +17665,12 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             }
         }
         
+        public System.Web.UI.WebControls.Literal PropertyID {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyID");
+            }
+        }
+            
         public PropertyNotesTableControl PropertyNotesTableControl {
             get {
                 return (PropertyNotesTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyNotesTableControl");
@@ -19003,6 +19227,10 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                 
                         if (recControl.PostCode.Text != "") {
                             rec.Parse(recControl.PostCode.Text, PropertiesTable.PostCode);
+                  }
+                
+                        if (recControl.PropertyID.Text != "") {
+                            rec.Parse(recControl.PropertyID.Text, PropertiesTable.PropertyID);
                   }
                 
                         if (recControl.RegionID.Text != "") {
@@ -21626,7 +21854,8 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
               
                 // Add each of the columns in order of export.
                 BaseColumn[] columns = new BaseColumn[] {
-                             PropertiesTable.CompanyName,
+                             PropertiesTable.PropertyID,
+             PropertiesTable.CompanyName,
              PropertiesTable.Address1,
              PropertiesTable.Address2,
              PropertiesTable.Address3,
@@ -21693,7 +21922,8 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
               int width = 0;
               int columnCounter = 0;
               DataForExport data = new DataForExport(PropertiesTable.Instance, wc, orderBy, null,join);
-                           data.ColumnList.Add(new ExcelColumn(PropertiesTable.CompanyName, "Default"));
+                           data.ColumnList.Add(new ExcelColumn(PropertiesTable.PropertyID, "0"));
+             data.ColumnList.Add(new ExcelColumn(PropertiesTable.CompanyName, "Default"));
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.Address1, "Default"));
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.Address2, "Default"));
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.Address3, "Default"));
@@ -21874,6 +22104,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 3rd parameter represents the text format of the column detail
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
+                 report.AddColumn(PropertiesTable.PropertyID.Name, ReportEnum.Align.Right, "${PropertyID}", ReportEnum.Align.Right, 15);
                  report.AddColumn(PropertiesTable.CompanyName.Name, ReportEnum.Align.Left, "${CompanyName}", ReportEnum.Align.Left, 28);
                  report.AddColumn(PropertiesTable.Address1.Name, ReportEnum.Align.Left, "${Address1}", ReportEnum.Align.Left, 28);
                  report.AddColumn(PropertiesTable.Address2.Name, ReportEnum.Align.Left, "${Address2}", ReportEnum.Align.Left, 28);
@@ -21920,7 +22151,8 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 2nd parameter represent the data value
                             // The 3rd parameter represent the default alignment of column using the data
                             // The 4th parameter represent the maximum length of the data value being shown
-                                                 report.AddData("${CompanyName}", record.Format(PropertiesTable.CompanyName), ReportEnum.Align.Left, 100);
+                                                 report.AddData("${PropertyID}", record.Format(PropertiesTable.PropertyID), ReportEnum.Align.Right, 100);
+                             report.AddData("${CompanyName}", record.Format(PropertiesTable.CompanyName), ReportEnum.Align.Left, 100);
                              report.AddData("${Address1}", record.Format(PropertiesTable.Address1), ReportEnum.Align.Left, 100);
                              report.AddData("${Address2}", record.Format(PropertiesTable.Address2), ReportEnum.Align.Left, 100);
                              report.AddData("${Address3}", record.Format(PropertiesTable.Address3), ReportEnum.Align.Left, 100);
@@ -22106,6 +22338,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 3rd parameter represents the text format of the column detail
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
+                 report.AddColumn(PropertiesTable.PropertyID.Name, ReportEnum.Align.Right, "${PropertyID}", ReportEnum.Align.Right, 15);
                  report.AddColumn(PropertiesTable.CompanyName.Name, ReportEnum.Align.Left, "${CompanyName}", ReportEnum.Align.Left, 28);
                  report.AddColumn(PropertiesTable.Address1.Name, ReportEnum.Align.Left, "${Address1}", ReportEnum.Align.Left, 28);
                  report.AddColumn(PropertiesTable.Address2.Name, ReportEnum.Align.Left, "${Address2}", ReportEnum.Align.Left, 28);
@@ -22148,6 +22381,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 2nd parameter represents the data value
                             // The 3rd parameter represents the default alignment of column using the data
                             // The 4th parameter represents the maximum length of the data value being shown
+                             report.AddData("${PropertyID}", record.Format(PropertiesTable.PropertyID), ReportEnum.Align.Right, 100);
                              report.AddData("${CompanyName}", record.Format(PropertiesTable.CompanyName), ReportEnum.Align.Left, 100);
                              report.AddData("${Address1}", record.Format(PropertiesTable.Address1), ReportEnum.Align.Left, 100);
                              report.AddData("${Address2}", record.Format(PropertiesTable.Address2), ReportEnum.Align.Left, 100);
@@ -25887,6 +26121,18 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
               
                 this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
               
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted {Txt:Ascending}"), "Deleted Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted {Txt:Descending}"), "Deleted Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted By {Txt:Ascending}"), "DeletedBy Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted By {Txt:Descending}"), "DeletedBy Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Ascending}"), "DeletedOn Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Descending}"), "DeletedOn Desc"));
+              
             try
             {          
                 // Set the selected value.
@@ -27890,11 +28136,9 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
 
             // Call the Set methods for each controls on the panel
         
-                SetDateRecorded();
-                SetDateRecordedLabel();
+                SetCreatedOn();
                 
                 SetNotes();
-                SetNotesLabel();
                 SetEditRowButton1();
               
 
@@ -27920,42 +28164,42 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
         }
         
         
-        public virtual void SetDateRecorded()
+        public virtual void SetCreatedOn()
         {
             
                     
-            // Set the DateRecorded Literal on the webpage with value from the
+            // Set the CreatedOn Literal on the webpage with value from the
             // DatabaseMM_IP1%dbo.PropertyNotes database record.
 
             // this.DataSource is the DatabaseMM_IP1%dbo.PropertyNotes record retrieved from the database.
-            // this.DateRecorded is the ASP:Literal on the webpage.
+            // this.CreatedOn is the ASP:Literal on the webpage.
                   
-            if (this.DataSource != null && this.DataSource.DateRecordedSpecified) {
+            if (this.DataSource != null && this.DataSource.CreatedOnSpecified) {
                 								
-                // If the DateRecorded is non-NULL, then format the value.
+                // If the CreatedOn is non-NULL, then format the value.
                 // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(PropertyNotesTable.DateRecorded, @"g");
+               string formattedValue = this.DataSource.Format(PropertyNotesTable.CreatedOn, @"g");
                                 
                 formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.DateRecorded.Text = formattedValue;
+                this.CreatedOn.Text = formattedValue;
                    
             } 
             
             else {
             
-                // DateRecorded is NULL in the database, so use the Default Value.  
+                // CreatedOn is NULL in the database, so use the Default Value.  
                 // Default Value could also be NULL.
         
-              this.DateRecorded.Text = PropertyNotesTable.DateRecorded.Format(PropertyNotesTable.DateRecorded.DefaultValue, @"g");
+              this.CreatedOn.Text = PropertyNotesTable.CreatedOn.Format(PropertyNotesTable.CreatedOn.DefaultValue, @"g");
             		
             }
             
-            // If the DateRecorded is NULL or blank, then use the value specified  
+            // If the CreatedOn is NULL or blank, then use the value specified  
             // on Properties.
-            if (this.DateRecorded.Text == null ||
-                this.DateRecorded.Text.Trim().Length == 0) {
+            if (this.CreatedOn.Text == null ||
+                this.CreatedOn.Text.Trim().Length == 0) {
                 // Set the value specified on the Properties.
-                this.DateRecorded.Text = "&nbsp;";
+                this.CreatedOn.Text = "&nbsp;";
             }
                                      
         }
@@ -28044,18 +28288,6 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
                 this.Notes.Text = "&nbsp;";
             }
                                      
-        }
-                
-        public virtual void SetDateRecordedLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetNotesLabel()
-                  {
-                  
-                    
         }
                 
         public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
@@ -28226,12 +28458,12 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
       
             // Call the Get methods for each of the user interface controls.
         
-            GetDateRecorded();
+            GetCreatedOn();
             GetNotes();
         }
         
         
-        public virtual void GetDateRecorded()
+        public virtual void GetCreatedOn()
         {
             
         }
@@ -28538,18 +28770,12 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
        
 #region "Helper Properties"
         
-        public System.Web.UI.WebControls.Literal DateRecorded {
+        public System.Web.UI.WebControls.Literal CreatedOn {
             get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecorded");
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CreatedOn");
             }
         }
             
-        public System.Web.UI.WebControls.Literal DateRecordedLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.ImageButton EditRowButton1 {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "EditRowButton1");
@@ -28562,12 +28788,6 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
             }
         }
             
-        public System.Web.UI.WebControls.Literal NotesLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NotesLabel");
-            }
-        }
-        
     #endregion
 
     #region "Helper Functions"
@@ -28709,12 +28929,12 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             if (!this.Page.IsPostBack)
             {
                 string initialVal = "";
-                if  (this.InSession(this.DateRecordedFromFilter)) 				
-                    initialVal = this.GetFromSession(this.DateRecordedFromFilter);
+                if  (this.InSession(this.CreatedOnFromFilter)) 				
+                    initialVal = this.GetFromSession(this.CreatedOnFromFilter);
                 
                 else
                     
-                    initialVal = EvaluateFormula("URL(\"DateRecordedFrom\")");
+                    initialVal = EvaluateFormula("URL(\"CreatedOnFrom\")");
                 
                 if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
                 {
@@ -28724,19 +28944,19 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 if (initialVal != null && initialVal != "")		
                 {
                         
-                    this.DateRecordedFromFilter.Text = initialVal;
+                    this.CreatedOnFromFilter.Text = initialVal;
                             
                     }
             }
             if (!this.Page.IsPostBack)
             {
                 string initialVal = "";
-                if  (this.InSession(this.DateRecordedToFilter)) 				
-                    initialVal = this.GetFromSession(this.DateRecordedToFilter);
+                if  (this.InSession(this.CreatedOnToFilter)) 				
+                    initialVal = this.GetFromSession(this.CreatedOnToFilter);
                 
                 else
                     
-                    initialVal = EvaluateFormula("URL(\"DateRecordedTo\")");
+                    initialVal = EvaluateFormula("URL(\"CreatedOnTo\")");
                 
                 if(StringUtils.InvariantEquals(initialVal, "Search for", true) || StringUtils.InvariantEquals(initialVal, BaseClasses.Resources.AppResources.GetResourceValue("Txt:SearchForEllipsis", null), true))
                 {
@@ -28746,7 +28966,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 if (initialVal != null && initialVal != "")		
                 {
                         
-                    this.DateRecordedToFilter.Text = initialVal;
+                    this.CreatedOnToFilter.Text = initialVal;
                             
                     }
             }
@@ -28798,6 +29018,10 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
+              this.CreatedOnLabel.Click += CreatedOnLabel_Click;
+            
+              this.NotesLabel.Click += NotesLabel_Click;
+            
             // Setup the button events.
           
                     this.ExcelButton1.Click += ExcelButton1_Click;
@@ -29055,7 +29279,8 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
         
                 
                 
-                SetDateRecordedLabel1();
+                SetCreatedOnLabel();
+                SetCreatedOnLabel1();
                 
                 
                 
@@ -29063,6 +29288,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 
                 
                 
+                SetNotesLabel();
                 
                 
                 
@@ -29374,25 +29600,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
               }
             
       HttpContext.Current.Session["PropertyNotesTableControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
-    
-            if (MiscUtils.IsValueSelected(this.DateRecordedFromFilter)) {
-                string val = MiscUtils.GetSelectedValue(this.DateRecordedFromFilter, this.GetFromSession(this.DateRecordedFromFilter));
-                DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
-                    
-                val = d.ToShortDateString() + " " + "00:00:00";
-                wc.iAND(PropertyNotesTable.DateRecorded, BaseFilter.ComparisonOperator.Greater_Than_Or_Equal, val, false, false);
-                    
-            }
-                      
-            if (MiscUtils.IsValueSelected(this.DateRecordedToFilter)) {
-                string val = MiscUtils.GetSelectedValue(this.DateRecordedToFilter, this.GetFromSession(this.DateRecordedToFilter));
-                DateTime d = DateParser.ParseDate(val, DateColumn.DEFAULT_FORMAT);
-                    
-                val = d.ToShortDateString() + " " + "23:59:59";
-                wc.iAND(PropertyNotesTable.DateRecorded, BaseFilter.ComparisonOperator.Less_Than_Or_Equal, val, false, false);
-                    
-            }
-                           
+         
             return wc;
         }
         
@@ -29425,22 +29633,6 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
-            string DateRecordedFromFilterSelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "DateRecordedFromFilter_Ajax"];
-            if (MiscUtils.IsValueSelected(DateRecordedFromFilterSelectedValue)) {
-                DateTime d = DateParser.ParseDate(DateRecordedFromFilterSelectedValue, DateColumn.DEFAULT_FORMAT);
-                DateRecordedFromFilterSelectedValue = d.ToShortDateString() + " " + "00:00:00";
-                    
-                wc.iAND(PropertyNotesTable.DateRecorded, BaseFilter.ComparisonOperator.Greater_Than_Or_Equal, DateRecordedFromFilterSelectedValue, false, false);
-                    
-            }         
-            string DateRecordedToFilterSelectedValue = (String)HttpContext.Current.Session[HttpContext.Current.Session.SessionID + appRelativeVirtualPath + "DateRecordedToFilter_Ajax"];
-            if (MiscUtils.IsValueSelected(DateRecordedToFilterSelectedValue)) {
-                DateTime d = DateParser.ParseDate(DateRecordedToFilterSelectedValue, DateColumn.DEFAULT_FORMAT);
-                DateRecordedToFilterSelectedValue = d.ToShortDateString() + " " + "23:59:59";
-                    
-                wc.iAND(PropertyNotesTable.DateRecorded, BaseFilter.ComparisonOperator.Less_Than_Or_Equal, DateRecordedToFilterSelectedValue, false, false);
-                    
-            }         
 
             return wc;
         }
@@ -29622,8 +29814,8 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             if (recControl.Visible && recControl.IsNewRecord) {
       PropertyNotesRecord rec = new PropertyNotesRecord();
         
-                        if (recControl.DateRecorded.Text != "") {
-                            rec.Parse(recControl.DateRecorded.Text, PropertyNotesTable.DateRecorded);
+                        if (recControl.CreatedOn.Text != "") {
+                            rec.Parse(recControl.CreatedOn.Text, PropertyNotesTable.CreatedOn);
                   }
                 
                         if (recControl.Notes.Text != "") {
@@ -29697,7 +29889,19 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
-        public virtual void SetDateRecordedLabel1()
+        public virtual void SetCreatedOnLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetCreatedOnLabel1()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetNotesLabel()
                   {
                   
                     
@@ -29809,9 +30013,9 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
         
             this.SaveToSession(this.SortControl, this.SortControl.SelectedValue);
                   
-            this.SaveToSession(this.DateRecordedFromFilter, this.DateRecordedFromFilter.Text);
+            this.SaveToSession(this.CreatedOnFromFilter, this.CreatedOnFromFilter.Text);
                   
-            this.SaveToSession(this.DateRecordedToFilter, this.DateRecordedToFilter.Text);
+            this.SaveToSession(this.CreatedOnToFilter, this.CreatedOnToFilter.Text);
                   
             
                     
@@ -29842,9 +30046,9 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
           
             this.SaveToSession(this.SortControl, this.SortControl.SelectedValue);
                   
-      this.SaveToSession("DateRecordedFromFilter_Ajax", this.DateRecordedFromFilter.Text);
+      this.SaveToSession("CreatedOnFromFilter_Ajax", this.CreatedOnFromFilter.Text);
               
-      this.SaveToSession("DateRecordedToFilter_Ajax", this.DateRecordedToFilter.Text);
+      this.SaveToSession("CreatedOnToFilter_Ajax", this.CreatedOnToFilter.Text);
               
            HttpContext.Current.Session["AppRelativeVirtualPath"] = this.Page.AppRelativeVirtualPath;
          
@@ -29857,8 +30061,8 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             // Clear filter controls values from the session.
         
             this.RemoveFromSession(this.SortControl);
-            this.RemoveFromSession(this.DateRecordedFromFilter);
-            this.RemoveFromSession(this.DateRecordedToFilter);
+            this.RemoveFromSession(this.CreatedOnFromFilter);
+            this.RemoveFromSession(this.CreatedOnToFilter);
             
             // Clear pagination state from session.
          
@@ -30140,6 +30344,66 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void CreatedOnLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by CreatedOn when clicked.
+              
+            // Get previous sorting state for CreatedOn.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(PropertyNotesTable.CreatedOn);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for CreatedOn.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(PropertyNotesTable.CreatedOn, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by CreatedOn, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void NotesLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by Notes when clicked.
+              
+            // Get previous sorting state for Notes.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(PropertyNotesTable.Notes);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Notes.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(PropertyNotesTable.Notes, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Notes, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
 
         // Generate the event handling functions for button events.
         
@@ -30178,7 +30442,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 // Add each of the columns in order of export.
                 BaseColumn[] columns = new BaseColumn[] {
                              PropertyNotesTable.Notes,
-             PropertyNotesTable.DateRecorded,
+             PropertyNotesTable.CreatedOn,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(PropertyNotesTable.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -30235,7 +30499,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
               int columnCounter = 0;
               DataForExport data = new DataForExport(PropertyNotesTable.Instance, wc, orderBy, null,join);
                            data.ColumnList.Add(new ExcelColumn(PropertyNotesTable.Notes, "Default"));
-             data.ColumnList.Add(new ExcelColumn(PropertyNotesTable.DateRecorded, "Short Date"));
+             data.ColumnList.Add(new ExcelColumn(PropertyNotesTable.CreatedOn, "Short Date"));
 
 
               //  First write out the Column Headers
@@ -30406,7 +30670,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(PropertyNotesTable.Notes.Name, ReportEnum.Align.Left, "${Notes}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(PropertyNotesTable.DateRecorded.Name, ReportEnum.Align.Left, "${DateRecorded}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(PropertyNotesTable.CreatedOn.Name, ReportEnum.Align.Left, "${CreatedOn}", ReportEnum.Align.Left, 20);
 
   
                 int rowsPerQuery = 5000;
@@ -30442,7 +30706,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 3rd parameter represent the default alignment of column using the data
                             // The 4th parameter represent the maximum length of the data value being shown
                                                  report.AddData("${Notes}", record.Format(PropertyNotesTable.Notes), ReportEnum.Align.Left, 100);
-                             report.AddData("${DateRecorded}", record.Format(PropertyNotesTable.DateRecorded), ReportEnum.Align.Left, 100);
+                             report.AddData("${CreatedOn}", record.Format(PropertyNotesTable.CreatedOn), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -30481,9 +30745,9 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
            
             this.SortControl.ClearSelection();
           
-              this.DateRecordedFromFilter.Text = "";
+              this.CreatedOnFromFilter.Text = "";
             
-              this.DateRecordedToFilter.Text = "";
+              this.CreatedOnToFilter.Text = "";
             
               this.CurrentSortOrder.Reset();
               if (this.InSession(this, "Order_By"))
@@ -30537,7 +30801,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(PropertyNotesTable.Notes.Name, ReportEnum.Align.Left, "${Notes}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(PropertyNotesTable.DateRecorded.Name, ReportEnum.Align.Left, "${DateRecorded}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(PropertyNotesTable.CreatedOn.Name, ReportEnum.Align.Left, "${CreatedOn}", ReportEnum.Align.Left, 20);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -30569,7 +30833,7 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 3rd parameter represents the default alignment of column using the data
                             // The 4th parameter represents the maximum length of the data value being shown
                              report.AddData("${Notes}", record.Format(PropertyNotesTable.Notes), ReportEnum.Align.Left, 100);
-                             report.AddData("${DateRecorded}", record.Format(PropertyNotesTable.DateRecorded), ReportEnum.Align.Left, 100);
+                             report.AddData("${CreatedOn}", record.Format(PropertyNotesTable.CreatedOn), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -30799,21 +31063,27 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
             }
         }
         
-        public System.Web.UI.WebControls.TextBox DateRecordedFromFilter {
+        public System.Web.UI.WebControls.TextBox CreatedOnFromFilter {
             get {
-                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedFromFilter");
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CreatedOnFromFilter");
             }
         }
         
-        public System.Web.UI.WebControls.Literal DateRecordedLabel1 {
+        public System.Web.UI.WebControls.LinkButton CreatedOnLabel {
             get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedLabel1");
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CreatedOnLabel");
             }
         }
         
-        public System.Web.UI.WebControls.TextBox DateRecordedToFilter {
+        public System.Web.UI.WebControls.Literal CreatedOnLabel1 {
             get {
-                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedToFilter");
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CreatedOnLabel1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox CreatedOnToFilter {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CreatedOnToFilter");
             }
         }
         
@@ -30844,6 +31114,12 @@ public class BasePropertyNotesTableControl : IPv5.UI.BaseApplicationTableControl
         public System.Web.UI.WebControls.ImageButton NewButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NewButton");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton NotesLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NotesLabel");
             }
         }
         
@@ -31111,9 +31387,7 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             // Call the Set methods for each controls on the panel
         
                 SetDescription4();
-                SetDescriptionLabel7();
                 SetExpiryDate3();
-                SetExpiryDateLabel3();
                 
                 
                 SetRentReviewsRowDeleteButton();
@@ -31221,18 +31495,6 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 this.ExpiryDate3.Text = "&nbsp;";
             }
                                      
-        }
-                
-        public virtual void SetDescriptionLabel7()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetExpiryDateLabel3()
-                  {
-                  
-                    
         }
                 
         public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
@@ -31758,24 +32020,12 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
             }
         }
             
-        public System.Web.UI.WebControls.Literal DescriptionLabel7 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel7");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal ExpiryDate3 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDate3");
             }
         }
             
-        public System.Web.UI.WebControls.Literal ExpiryDateLabel3 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel3");
-            }
-        }
-        
         public System.Web.UI.WebControls.ImageButton RentReviewsRowDeleteButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewsRowDeleteButton");
@@ -32036,6 +32286,10 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
+              this.DescriptionLabel7.Click += DescriptionLabel7_Click;
+            
+              this.ExpiryDateLabel3.Click += ExpiryDateLabel3_Click;
+            
             // Setup the button events.
           
                     this.RentReviewsExportExcelButton.Click += RentReviewsExportExcelButton_Click;
@@ -32294,7 +32548,9 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Call the Set methods for each controls on the panel
         
+                SetDescriptionLabel7();
                 
+                SetExpiryDateLabel3();
                 SetExpiryDateLabel7();
                 
                 
@@ -33081,6 +33337,18 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetDescriptionLabel7()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetExpiryDateLabel3()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetExpiryDateLabel7()
                   {
                   
@@ -33544,6 +33812,66 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void DescriptionLabel7_Click(object sender, EventArgs args)
+        {
+            //Sorts by Description when clicked.
+              
+            // Get previous sorting state for Description.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(RentReviewsTable.Description);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Description.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(RentReviewsTable.Description, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void ExpiryDateLabel3_Click(object sender, EventArgs args)
+        {
+            //Sorts by ExpiryDate when clicked.
+              
+            // Get previous sorting state for ExpiryDate.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(RentReviewsTable.ExpiryDate);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for ExpiryDate.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(RentReviewsTable.ExpiryDate, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by ExpiryDate, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
 
         // Generate the event handling functions for button events.
         
@@ -34221,9 +34549,21 @@ public class BaseRentReviewsTableControl : IPv5.UI.BaseApplicationTableControl
 
 #region "Helper Properties"
         
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel7 {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel7");
+            }
+        }
+        
         public System.Web.UI.WebControls.TextBox ExpiryDateFromFilter3 {
             get {
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateFromFilter3");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel3 {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel3");
             }
         }
         
@@ -34547,10 +34887,8 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
             // Call the Set methods for each controls on the panel
         
                 SetDescription();
-                SetDescriptionLabel();
                 
                 SetExpiryDate();
-                SetExpiryDateLabel();
                 SetEditRowButton2();
               
 
@@ -34654,18 +34992,6 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
                 this.ExpiryDate.Text = "&nbsp;";
             }
                                      
-        }
-                
-        public virtual void SetDescriptionLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetExpiryDateLabel()
-                  {
-                  
-                    
         }
                 
         public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
@@ -35154,12 +35480,6 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
             }
         }
             
-        public System.Web.UI.WebControls.Literal DescriptionLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.ImageButton EditRowButton2 {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "EditRowButton2");
@@ -35172,12 +35492,6 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
             }
         }
             
-        public System.Web.UI.WebControls.Literal ExpiryDateLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel");
-            }
-        }
-        
     #endregion
 
     #region "Helper Functions"
@@ -35426,6 +35740,10 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
+              this.DescriptionLabel.Click += DescriptionLabel_Click;
+            
+              this.ExpiryDateLabel.Click += ExpiryDateLabel_Click;
+            
             // Setup the button events.
           
                     this.ExcelButton2.Click += ExcelButton2_Click;
@@ -35685,8 +36003,10 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             // Call the Set methods for each controls on the panel
         
                 
+                SetDescriptionLabel();
                 
                 
+                SetExpiryDateLabel();
                 SetExpiryDateLabel5();
                 
                 
@@ -36471,6 +36791,18 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetDescriptionLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetExpiryDateLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetExpiryDateLabel5()
                   {
                   
@@ -36956,6 +37288,66 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void DescriptionLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by Description when clicked.
+              
+            // Get previous sorting state for Description.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(TermExpiresTable.Description);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Description.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(TermExpiresTable.Description, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void ExpiryDateLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by ExpiryDate when clicked.
+              
+            // Get previous sorting state for ExpiryDate.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(TermExpiresTable.ExpiryDate);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for ExpiryDate.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(TermExpiresTable.ExpiryDate, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by ExpiryDate, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
 
         // Generate the event handling functions for button events.
         
@@ -37642,6 +38034,12 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.ImageButton ExcelButton2 {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExcelButton2");
@@ -37651,6 +38049,12 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
         public System.Web.UI.WebControls.TextBox ExpiryDateFromFilter {
             get {
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateFromFilter");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel");
             }
         }
         
@@ -37966,9 +38370,7 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
             // Call the Set methods for each controls on the panel
         
                 SetDescription2();
-                SetDescriptionLabel1();
                 SetRenewalDate();
-                SetRenewalDateLabel();
                 
                 
                 SetTermRenewalsRowDeleteButton();
@@ -38076,18 +38478,6 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
                 this.RenewalDate.Text = "&nbsp;";
             }
                                      
-        }
-                
-        public virtual void SetDescriptionLabel1()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetRenewalDateLabel()
-                  {
-                  
-                    
         }
                 
         public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
@@ -38613,24 +39003,12 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
             }
         }
             
-        public System.Web.UI.WebControls.Literal DescriptionLabel1 {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel1");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal RenewalDate {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RenewalDate");
             }
         }
             
-        public System.Web.UI.WebControls.Literal RenewalDateLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RenewalDateLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.ImageButton TermRenewalsRowDeleteButton {
             get {
                 return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermRenewalsRowDeleteButton");
@@ -38891,6 +39269,10 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
         
        // Setup the sorting events.
         
+              this.DescriptionLabel1.Click += DescriptionLabel1_Click;
+            
+              this.RenewalDateLabel.Click += RenewalDateLabel_Click;
+            
             // Setup the button events.
           
                     this.TermRenewalsExportExcelButton.Click += TermRenewalsExportExcelButton_Click;
@@ -39149,7 +39531,9 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
     
             // Call the Set methods for each controls on the panel
         
+                SetDescriptionLabel1();
                 
+                SetRenewalDateLabel();
                 SetRenewalDateLabel2();
                 
                 
@@ -39936,6 +40320,18 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetDescriptionLabel1()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetRenewalDateLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetRenewalDateLabel2()
                   {
                   
@@ -40399,6 +40795,66 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void DescriptionLabel1_Click(object sender, EventArgs args)
+        {
+            //Sorts by Description when clicked.
+              
+            // Get previous sorting state for Description.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(TermRenewalsTable.Description);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Description.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(TermRenewalsTable.Description, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void RenewalDateLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by RenewalDate when clicked.
+              
+            // Get previous sorting state for RenewalDate.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(TermRenewalsTable.RenewalDate);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for RenewalDate.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(TermRenewalsTable.RenewalDate, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by RenewalDate, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
 
         // Generate the event handling functions for button events.
         
@@ -41076,9 +41532,21 @@ public class BaseTermRenewalsTableControl : IPv5.UI.BaseApplicationTableControl
 
 #region "Helper Properties"
         
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel1 {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel1");
+            }
+        }
+        
         public System.Web.UI.WebControls.TextBox RenewalDateFromFilter1 {
             get {
                 return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RenewalDateFromFilter1");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton RenewalDateLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RenewalDateLabel");
             }
         }
         

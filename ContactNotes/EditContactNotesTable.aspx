@@ -64,7 +64,7 @@
 	</asp:ImageButton>
                                 </td></tr><tr><td class="popupTableCellLabel"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td></tr><tr><td class="popupTableCellLabel">
                 <%# GetResourceValue("Txt:SortBy", "IPv5") %>
-              </td><td class="popupTableCellValue"><asp:LinkButton runat="server" id="ContactIDSortLabel" tooltip="Sort by ContactID" Text="Contact" CausesValidation="False">	</asp:LinkButton>&nbsp;&nbsp;</td><td class="popupTableCellValue"><asp:LinkButton runat="server" id="DateRecordedSortLabel" tooltip="Sort by DateRecorded" Text="Date Recorded" CausesValidation="False">	</asp:LinkButton>&nbsp;&nbsp;</td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td></tr><tr><td class="popupTableCellLabel"></td><td class="popupTableCellValue"><asp:LinkButton runat="server" id="NotesSortLabel" tooltip="Sort by Notes" Text="Notes" CausesValidation="False">	</asp:LinkButton>&nbsp;&nbsp;</td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td></tr></table>
+              </td><td class="popupTableCellValue"><asp:LinkButton runat="server" id="ContactIDSortLabel" tooltip="Sort by ContactID" Text="Contact" CausesValidation="False">	</asp:LinkButton>&nbsp;&nbsp;</td><td class="popupTableCellValue">&nbsp;&nbsp;</td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td></tr><tr><td class="popupTableCellLabel"></td><td class="popupTableCellValue"><asp:LinkButton runat="server" id="NotesSortLabel" tooltip="Sort by Notes" Text="Notes" CausesValidation="False">	</asp:LinkButton>&nbsp;&nbsp;</td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td></tr></table>
 
                           </div>
                         </td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
@@ -87,20 +87,8 @@
 <asp:DropDownList runat="server" id="ContactID" cssclass="field_input" onkeypress="dropDownListTypeAhead(this,false)"></asp:DropDownList></span>
  
 <asp:ImageButton runat="server" id="ContactIDAddRecordLink" causesvalidation="False" commandname="Redirect" imageurl="../Images/iconNewFlat.gif" redirectstyle="NewWindow" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="DateRecordedLabel" Text="Date Recorded">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
-<table border="0" cellpadding="0" cellspacing="0">
-<tr>
-<td style="padding-right: 5px; vertical-align:top">
-<asp:TextBox runat="server" id="DateRecorded" Columns="20" MaxLength="30" cssclass="field_input"></asp:TextBox></td>
-<td>
-<Selectors:CalendarExtendarClass runat="server" ID="DateRecordedCalendarExtender" TargetControlID="DateRecorded" CssClass="MyCalendar" Format="d">
-</Selectors:CalendarExtendarClass>&nbsp;
-<BaseClasses:TextBoxMaxLengthValidator runat="server" id="DateRecordedTextBoxMaxLengthValidator" ControlToValidate="DateRecorded" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Date Recorded&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></td>
-</tr>
-</table>
-</span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="NotesLabel" Text="Notes">	</asp:Literal> 
+	</asp:ImageButton> </td><td class="tableCellLabel" scope="col"> 
+</td><td class="tableCellValue"> </td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="NotesLabel" Text="Notes">	</asp:Literal> 
 </td><td class="tableCellValue" colspan="3"><asp:TextBox runat="server" id="Notes" MaxLength="200" columns="20" cssclass="field_input" rows="4" textmode="MultiLine"></asp:TextBox>&nbsp;
 <BaseClasses:TextBoxMaxLengthValidator runat="server" id="NotesTextBoxMaxLengthValidator" ControlToValidate="Notes" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Notes&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator> </td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="10">&nbsp;</td></tr></IPv5:ContactNotesTableControlRow>
 </ITEMTEMPLATE>

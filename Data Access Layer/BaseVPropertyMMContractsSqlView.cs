@@ -1,5 +1,5 @@
 ﻿// This class is "generated" and will be overwritten.
-// Your customizations should be made in VPropertyMMContractsSqlView.cs 
+// Your customizations should be made in VPropertyMMContractsSqlView.cs
 
 using BaseClasses.Data.SqlProvider;
 

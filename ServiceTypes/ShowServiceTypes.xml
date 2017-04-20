@@ -16,7 +16,7 @@
     <Description>Standard record panel.</Description>
     <MenuFileToHilite>Menu</MenuFileToHilite>
     <MenuHiliteItem>ServiceTypesMenuItem</MenuHiliteItem>
-    <LoginRequired>&lt;PRoles&gt;1;2;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;2;3&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>-1170528243-38802</CheckSum>
   </Self>
   <ComposedOf>
@@ -391,31 +391,7 @@
         </Attribute>
         <Attribute>
           <Name>RedirectURL</Name>
-          <Value>../Cities/ShowCities.aspx?Cities={SuppliersTableControlRow:FK:FK_Suppliers_Cities}</Value>
-        </Attribute>
-      </PassthroughAttributes>
-      <InsideControl>SuppliersTableControl</InsideControl>
-      <InsideItemTemplate>true</InsideItemTemplate>
-    </ContainedComponent>
-    <ContainedComponent>
-      <Name>CityIDLabel</Name>
-      <Type>Literal</Type>
-      <PassthroughAttributes>
-        <Attribute>
-          <Name>Consumers</Name>
-          <Value>SuppliersTableControl</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Field</Name>
-          <Value>CityID</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Table</Name>
-          <Value>DatabaseMM_IP1%dbo.Suppliers</Value>
-        </Attribute>
-        <Attribute>
-          <Name>Text</Name>
-          <Value>%ISD_DEFAULT%Suppliers%CityID</Value>
+          <Value>../Cities/ShowCities.aspx?Cities={SuppliersTableControlRow:FV:CityID}</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>SuppliersTableControl</InsideControl>
@@ -506,30 +482,6 @@
         <Attribute>
           <Name>TextFormat</Name>
           <Value>{0}</Value>
-        </Attribute>
-      </PassthroughAttributes>
-      <InsideControl>SuppliersTableControl</InsideControl>
-      <InsideItemTemplate>true</InsideItemTemplate>
-    </ContainedComponent>
-    <ContainedComponent>
-      <Name>CompanyNameLabel</Name>
-      <Type>Literal</Type>
-      <PassthroughAttributes>
-        <Attribute>
-          <Name>Consumers</Name>
-          <Value>SuppliersTableControl</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Field</Name>
-          <Value>CompanyName</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:Table</Name>
-          <Value>DatabaseMM_IP1%dbo.Suppliers</Value>
-        </Attribute>
-        <Attribute>
-          <Name>Text</Name>
-          <Value>%ISD_DEFAULT%Suppliers%CompanyName</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>SuppliersTableControl</InsideControl>
@@ -1783,7 +1735,7 @@
       </PassthroughAttributes>
     </ContainedComponent>
   </ComposedOf>
-  <LayoutDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+  <LayoutDefinition>&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;LayoutDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;Layout Name="Page" Type="RootLayout"&gt;
     &lt;Prolog&gt;
@@ -1797,7 +1749,9 @@
         &lt;Value&gt;
                         &amp;lt;GEN:RECORD NAME="ServiceTypesRecordControl"&amp;gt;&amp;lt;/GEN:RECORD&amp;gt;
             &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1806,7 +1760,9 @@
   &amp;lt;GEN:TABLE NAME="SuppliersTableControl"/&amp;gt;
  &amp;lt;/GEN:TABPANEL&amp;gt;
 &amp;lt;/GEN:TABCONTAINER&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1818,6 +1774,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Epilog&gt;
       &lt;Value&gt;
@@ -1847,6 +1804,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="ServiceTypesRecordControl" Type="RecordPanel" PanelControlName="ServiceTypesRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelTLSpace" alt="" /&amp;gt;&lt;/Value&gt;
@@ -1874,6 +1832,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1903,6 +1862,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1917,6 +1877,7 @@
         &lt;Value&gt;
                   &amp;lt;asp:panel id="ServiceTypesRecordControlCollapsibleRegion" runat="server"&amp;gt;&amp;lt;GEN:PANEL NAME="ServiceTypesPanel"/&amp;gt;&amp;lt;/asp:panel&amp;gt;
                 &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;CellAttributes&gt;
@@ -1926,6 +1887,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1954,7 +1916,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;class&lt;/Name&gt;
@@ -1975,6 +1939,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="ServiceTypesPanelHeader" Type="PanelHeader" PanelControlName="ServiceTypesRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
@@ -2003,7 +1968,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -2024,6 +1991,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="ServiceTypesTitleRegion" PanelControlName="ServiceTypesRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:HTML NAME="ServiceTypesTitle"/&amp;gt;&lt;/Value&gt;
@@ -2047,7 +2015,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -2064,12 +2034,15 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="ServiceTypesPanel" PanelControlName="ServiceTypesRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:PANEL NAME="ServiceTypesFields"/&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;class&lt;/Name&gt;
@@ -2094,6 +2067,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="ServiceTypesFields" Type="RecordGrid" PanelControlName="ServiceTypesRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="ServiceTypeLabel"/&amp;gt;&lt;/Value&gt;
@@ -2113,7 +2087,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -2130,6 +2106,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="SuppliersTableControl" Type="TablePanel" PanelControlName="SuppliersTableControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelTLSpace" alt="" /&amp;gt;&lt;/Value&gt;
@@ -2157,6 +2134,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2186,6 +2164,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2200,6 +2179,7 @@
         &lt;Value&gt;
                   &amp;lt;asp:panel id="SuppliersTableControlCollapsibleRegion" runat="server"&amp;gt;&amp;lt;GEN:PANEL NAME="SuppliersPanel"/&amp;gt;&amp;lt;/asp:panel&amp;gt;
                 &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;CellAttributes&gt;
@@ -2209,6 +2189,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2239,6 +2220,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2267,7 +2249,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;class&lt;/Name&gt;
@@ -2288,6 +2272,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="SuppliersPanelHeader" Type="PanelHeader" PanelControlName="SuppliersTableControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
@@ -2325,6 +2310,7 @@
                           &amp;lt;GEN:PANEL NAME="SuppliersFilters"/&amp;gt;
                           &amp;lt;/div&amp;gt;
                         &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
@@ -2335,7 +2321,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -2355,22 +2343,93 @@
       &lt;/Attribute&gt;
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
-  &lt;Layout Name="SuppliersTitleRegion" PanelControlName="SuppliersTableControl"&gt;
+  &lt;Layout Name="SuppliersButtons" Type="PanelButton" PanelControlName="SuppliersTableControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:HTML NAME="SuppliersTitle"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dht&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;valign&lt;/Name&gt;
-            &lt;AttributeValue&gt;middle&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;div id="SuppliersButtonsDiv" runat="server" class="popupWrapper" &amp;gt;
+                &amp;lt;GEN:PANEL NAME="SuppliersButtonsInside"/&amp;gt;
+                &amp;lt;/div&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prspace&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:Button NAME="SuppliersButtonsButton" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:right&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+            &amp;lt;GEN:Button NAME="SuppliersFiltersButton"  /&amp;gt;
+          &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:right&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt="" style="width: 10px" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -2383,25 +2442,113 @@
       &lt;Attribute&gt;
         &lt;Name&gt;border&lt;/Name&gt;
         &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;style&lt;/Name&gt;
+        &lt;AttributeValue&gt;width: 100%;&lt;/AttributeValue&gt;
       &lt;/Attribute&gt;
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
-  &lt;Layout Name="SuppliersPanel" PanelControlName="SuppliersTableControl"&gt;
+  &lt;Layout Name="SuppliersButtonsInside" Type="BlankPanel" PanelControlName="SuppliersTableControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="SuppliersFields"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;input type="image" src="../Images/closeButton.gif" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /&amp;gt;&amp;lt;br/&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tre&lt;/AttributeValue&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align: right;&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:ImageButton NAME="SuppliersNewButton" /&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:ImageButton NAME="SuppliersPDFButton" /&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:ImageButton NAME="SuppliersWordButton" /&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:ImageButton NAME="SuppliersExportExcelButton" /&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:ImageButton NAME="SuppliersImportButton" /&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
-        &lt;Name&gt;class&lt;/Name&gt;
-        &lt;AttributeValue&gt;dBody&lt;/AttributeValue&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
       &lt;/Attribute&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -2410,18 +2557,11 @@
       &lt;Attribute&gt;
         &lt;Name&gt;cellspacing&lt;/Name&gt;
         &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;border&lt;/Name&gt;
-        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;width&lt;/Name&gt;
-        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
       &lt;/Attribute&gt;
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="SuppliersFilters" Type="SearchAndFilter" PanelControlName="SuppliersTableControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;CellAttributes&gt;
@@ -2511,6 +2651,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2558,6 +2699,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2602,6 +2744,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2646,6 +2789,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2690,6 +2834,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -2733,181 +2878,43 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
-    &lt;/Row&gt;
-    &lt;TableAttributes&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;cellpadding&lt;/Name&gt;
-        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;cellspacing&lt;/Name&gt;
-        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;border&lt;/Name&gt;
-        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-    &lt;/TableAttributes&gt;
-  &lt;/Layout&gt;
-  &lt;Layout Name="SuppliersButtons" Type="PanelButton" PanelControlName="SuppliersTableControl"&gt;
-    &lt;Row&gt;
-      &lt;Cell /&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;div id="SuppliersButtonsDiv" runat="server" class="popupWrapper" &amp;gt;
-                &amp;lt;GEN:PANEL NAME="SuppliersButtonsInside"/&amp;gt;
-                &amp;lt;/div&amp;gt;&lt;/Value&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;prspace&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:Button NAME="SuppliersButtonsButton" /&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;text-align:right&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;
-            &amp;lt;GEN:Button NAME="SuppliersFiltersButton"  /&amp;gt;
-          &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;text-align:right&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt="" style="width: 10px" /&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell /&gt;
-    &lt;/Row&gt;
-    &lt;TableAttributes&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;cellpadding&lt;/Name&gt;
-        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;cellspacing&lt;/Name&gt;
-        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;border&lt;/Name&gt;
-        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-      &lt;Attribute&gt;
-        &lt;Name&gt;style&lt;/Name&gt;
-        &lt;AttributeValue&gt;width: 100%;&lt;/AttributeValue&gt;
-      &lt;/Attribute&gt;
-    &lt;/TableAttributes&gt;
-  &lt;/Layout&gt;
-  &lt;Layout Name="SuppliersButtonsInside" Type="BlankPanel" PanelControlName="SuppliersTableControl"&gt;
-    &lt;Row&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;input type="image" src="../Images/closeButton.gif" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /&amp;gt;&amp;lt;br/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;text-align: right;&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-    &lt;/Row&gt;
-    &lt;Row&gt;
-      &lt;Cell /&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;
-                    &amp;lt;GEN:ImageButton NAME="SuppliersNewButton" /&amp;gt;
-                  &lt;/Value&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;
-                    &amp;lt;GEN:ImageButton NAME="SuppliersPDFButton" /&amp;gt;
-                  &lt;/Value&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;
-                    &amp;lt;GEN:ImageButton NAME="SuppliersWordButton" /&amp;gt;
-                  &lt;/Value&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;
-                    &amp;lt;GEN:ImageButton NAME="SuppliersExportExcelButton" /&amp;gt;
-                  &lt;/Value&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;
-                    &amp;lt;GEN:ImageButton NAME="SuppliersImportButton" /&amp;gt;
-                  &lt;/Value&gt;
-      &lt;/Cell&gt;
-      &lt;Cell /&gt;
-    &lt;/Row&gt;
-    &lt;Row&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
-      &lt;Cell /&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
         &lt;Name&gt;border&lt;/Name&gt;
         &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="SuppliersPanel" PanelControlName="SuppliersTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="SuppliersFields"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tre&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;class&lt;/Name&gt;
+        &lt;AttributeValue&gt;dBody&lt;/AttributeValue&gt;
       &lt;/Attribute&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -2917,9 +2924,18 @@
         &lt;Name&gt;cellspacing&lt;/Name&gt;
         &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
       &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;width&lt;/Name&gt;
+        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="SuppliersFields" Type="TableGridRegular" PanelControlName="SuppliersTableControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row Type="Header"&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;img src="../Images/space.gif" height="1" width="1" alt=""/&amp;gt;&lt;/Value&gt;
@@ -3051,11 +3067,9 @@
     &lt;/Row&gt;
     &lt;Row Type="Repeater"&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;
-                                  &amp;lt;GEN:IMAGEBUTTON NAME="SuppliersRowEditButton"&amp;gt;&amp;lt;/GEN:IMAGEBUTTON&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;
+        &lt;Value&gt;&amp;lt;GEN:IMAGEBUTTON NAME="SuppliersRowEditButton"&amp;gt;&amp;lt;/GEN:IMAGEBUTTON&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;
                                 
-                                  &amp;lt;GEN:IMAGEBUTTON NAME="SuppliersRowDeleteButton"&amp;gt;&amp;lt;/GEN:IMAGEBUTTON&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;
-                                &lt;/Value&gt;
+                                  &amp;lt;GEN:IMAGEBUTTON NAME="SuppliersRowDeleteButton"&amp;gt;&amp;lt;/GEN:IMAGEBUTTON&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;br/&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -3071,7 +3085,7 @@
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;rowspan&lt;/Name&gt;
-            &lt;AttributeValue&gt;3&lt;/AttributeValue&gt;
+            &lt;AttributeValue&gt;4&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;colspan&lt;/Name&gt;
@@ -3079,6 +3093,75 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CompanyName" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;largeText&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;colspan&lt;/Name&gt;
+            &lt;AttributeValue&gt;3&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CityID" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row Type="Repeater"&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="ContactNameLabel"/&amp;gt; 
 &lt;/Value&gt;
@@ -3126,54 +3209,6 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="PostCodeLabel"/&amp;gt; 
-&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="PostCode"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="LandPhoneLabel"/&amp;gt; 
-&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;scope&lt;/Name&gt;
-            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="LandPhone"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-    &lt;/Row&gt;
-    &lt;Row Type="Repeater"&gt;
-      &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="CellPhoneLabel"/&amp;gt; 
 &lt;/Value&gt;
         &lt;CellAttributes&gt;
@@ -3197,8 +3232,6 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="eMailLabel"/&amp;gt; 
-&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -3211,7 +3244,29 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="eMail"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row Type="Repeater"&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -3243,7 +3298,7 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="CityIDLabel"/&amp;gt; 
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="LandPhoneLabel"/&amp;gt; 
 &lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
@@ -3257,7 +3312,7 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CityID"/&amp;gt; &lt;/Value&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="LandPhone"/&amp;gt; &lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -3265,10 +3320,51 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row Type="Repeater"&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="CompanyNameLabel"/&amp;gt; 
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="PostCodeLabel"/&amp;gt; 
 &lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
@@ -3282,15 +3378,34 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CompanyName"/&amp;gt; &lt;/Value&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="PostCode"/&amp;gt; &lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
             &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="eMailLabel"/&amp;gt; 
+&lt;/Value&gt;
+        &lt;CellAttributes&gt;
           &lt;Attribute&gt;
-            &lt;Name&gt;colspan&lt;/Name&gt;
-            &lt;AttributeValue&gt;3&lt;/AttributeValue&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="eMail"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
@@ -3300,21 +3415,9 @@
             &lt;Name&gt;class&lt;/Name&gt;
             &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
           &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;col&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
@@ -3326,6 +3429,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row Type="Repeater"&gt;
       &lt;Cell&gt;
@@ -3341,7 +3445,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -3366,14 +3472,19 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="PageButtons" Type="PageButton"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:BUTTON NAME="OKButton"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:BUTTON NAME="EditButton"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -3389,5 +3500,5 @@
       &lt;/Attribute&gt;
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
-&lt;/LayoutDefinition&gt;</LayoutDefinition>
+&lt;/LayoutDefinition&gt;]]&gt;</LayoutDefinition>
 </ComponentDefinition>

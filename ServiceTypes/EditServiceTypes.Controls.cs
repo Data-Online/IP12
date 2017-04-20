@@ -403,7 +403,7 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
             {
                             
                 // If the CityID is non-NULL, then format the value.
-                // The Format method will use the Display Format
+                // The Format method will return the Display Foreign Key As (DFKA) value
                 selectedValue = this.DataSource.CityID.ToString();
                 
             }
@@ -1136,7 +1136,7 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
                     
                     url = this.Page.ModifyRedirectUrl(url, "", true);                                  
                     
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
+                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&Formula=" + (this.Page as BaseApplicationPage).Encrypt("= Cities.City")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
                               
                 string javascriptCall = "";
                 
@@ -1170,6 +1170,11 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         {
             // By default, we simply return a new WhereClause.
             // Add additional where clauses to restrict the items shown in the dropdown list.
+            						
+            // This WhereClause is for the DatabaseMM_IP1%dbo.Cities table.
+            // Examples:
+            // wc.iAND(CitiesTable.CityID, BaseFilter.ComparisonOperator.EqualsTo, "XYZ");
+            // wc.iAND(CitiesTable.Active, BaseFilter.ComparisonOperator.EqualsTo, "1");
             
             WhereClause wc = new WhereClause();
             return wc;
@@ -1196,48 +1201,78 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 
             // Create the ORDER BY clause to sort based on the displayed value.							
                 
-
-            // Create the ORDER BY clause to sort based on the displayed value.
             OrderBy orderBy = new OrderBy(false, false);
-            orderBy.Add(SuppliersTable.CityID, OrderByItem.OrderDir.Asc);
+                          orderBy.Add(CitiesTable.City, OrderByItem.OrderDir.Asc);
 
-            ArrayList listDuplicates = new ArrayList();
+            System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
+            FormulaEvaluator evaluator = new FormulaEvaluator();
 
-            // Populate the dropdown list in the sort order specified above.
+            // 3. Read a total of maxItems from the database and insert them into the CityIDDropDownList.
+            CitiesRecord[] itemValues  = null;
             if (wc.RunQuery)
             {
-                foreach (string itemValue in SuppliersTable.GetValues(SuppliersTable.CityID, wc, orderBy, maxItems)) {
-                    // Create the dropdown list item and add it to the list.
-                    string fvalue = SuppliersTable.CityID.Format(itemValue);
-                    if (fvalue == null || fvalue.Trim() == "") fvalue = itemValue;				
+                int counter = 0;
+                int pageNum = 0;	
+                ArrayList listDuplicates = new ArrayList();
 
-                    if (fvalue == null) {
-                        fvalue = "";
-                    }
-
-                    fvalue = fvalue.Trim();
-
-                    if ( fvalue.Length > 50 ) {
-                         fvalue = fvalue.Substring(0, 50) + "...";
-                    }
-
-                    ListItem dupItem = this.CityID.Items.FindByText(fvalue);
-								
-                    if (dupItem != null) {
-                        listDuplicates.Add(fvalue);
-                        if (!string.IsNullOrEmpty(dupItem.Value))
+                do
+                {
+                    itemValues = CitiesTable.GetRecords(wc, orderBy, pageNum, maxItems);
+                    foreach (CitiesRecord itemValue in itemValues) 
+                    {
+                        // Create the item and add to the list.
+                        string cvalue = null;
+                        string fvalue = null;
+                        if (itemValue.CityIDSpecified) 
                         {
-                            dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
+                            cvalue = itemValue.CityID.ToString().ToString();
+                            if (counter < maxItems && this.CityID.Items.FindByValue(cvalue) == null)
+                            {
+                                     
+                                Boolean _isExpandableNonCompositeForeignKey = SuppliersTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(SuppliersTable.CityID);
+                                if(_isExpandableNonCompositeForeignKey && SuppliersTable.CityID.IsApplyDisplayAs)
+                                    fvalue = SuppliersTable.GetDFKA(itemValue, SuppliersTable.CityID);
+                                if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
+                                    fvalue = itemValue.Format(CitiesTable.CityID);
+                                    		
+
+                                if (fvalue == null || fvalue.Trim() == "") 
+                                    fvalue = cvalue;
+
+                                if (fvalue == null) {
+                                    fvalue = "";
+                                }
+
+                                fvalue = fvalue.Trim();
+
+                                if ( fvalue.Length > 50 ) {
+                                    fvalue = fvalue.Substring(0, 50) + "...";
+                                }
+
+                                ListItem dupItem = this.CityID.Items.FindByText(fvalue);
+								
+                                if (dupItem != null) {
+                                    listDuplicates.Add(fvalue);
+                                    if (!string.IsNullOrEmpty(dupItem.Value))
+                                    {
+                                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
+                                    }
+                                }
+
+                                ListItem newItem = new ListItem(fvalue, cvalue);
+                                this.CityID.Items.Add(newItem);
+
+                                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
+                                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
+                                }
+
+                                counter += 1;
+                            }
                         }
                     }
-
-                    ListItem newItem = new ListItem(fvalue, itemValue);
-                    this.CityID.Items.Add(newItem);
-
-                    if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(itemValue)) {
-                        newItem.Text = fvalue + " (ID " + itemValue.Substring(0, Math.Min(itemValue.Length,38)) + ")";
-                    }
+                    pageNum++;
                 }
+                while (itemValues.Length == maxItems && counter < maxItems);
             }
                         
                                         
@@ -1246,14 +1281,46 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
             if (selectedValue != null &&
                 selectedValue.Trim() != "" &&
                 !MiscUtils.SetSelectedValue(this.CityID, selectedValue) &&
-                !MiscUtils.SetSelectedDisplayText(this.CityID, selectedValue) &&
-                !MiscUtils.SetSelectedDisplayText(this.CityID, SuppliersTable.CityID.Format(selectedValue)))
+                !MiscUtils.SetSelectedDisplayText(this.CityID, selectedValue))
             {
-                string fvalue = SuppliersTable.CityID.Format(selectedValue);
-                if (fvalue == null || fvalue.Trim() == "") fvalue = selectedValue;
-                MiscUtils.ResetSelectedItem(this.CityID, new ListItem(fvalue, selectedValue));
-            }
+
+                // construct a whereclause to query a record with DatabaseMM_IP1%dbo.Cities.CityID = selectedValue
                     
+                CompoundFilter filter2 = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+                WhereClause whereClause2 = new WhereClause();
+                filter2.AddFilter(new BaseClasses.Data.ColumnValueFilter(CitiesTable.CityID, selectedValue, BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
+                whereClause2.AddFilter(filter2, CompoundFilter.CompoundingOperators.And_Operator);
+
+                // Execute the query
+                try
+                {
+                    CitiesRecord[] rc = CitiesTable.GetRecords(whereClause2, new OrderBy(false, false), 0, 1);
+                    System.Collections.Generic.IDictionary<string, object> vars = new System.Collections.Generic.Dictionary<string, object> ();
+                    // if find a record, add it to the dropdown and set it as selected item
+                    if (rc != null && rc.Length == 1)
+                    {
+                        CitiesRecord itemValue = rc[0];
+                        string cvalue = null;
+                        string fvalue = null;                        
+                        if (itemValue.CityIDSpecified)
+                            cvalue = itemValue.CityID.ToString(); 
+                        Boolean _isExpandableNonCompositeForeignKey = SuppliersTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(SuppliersTable.CityID);
+                        if(_isExpandableNonCompositeForeignKey && SuppliersTable.CityID.IsApplyDisplayAs)
+                            fvalue = SuppliersTable.GetDFKA(itemValue, SuppliersTable.CityID);
+                        if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
+                            fvalue = itemValue.Format(CitiesTable.CityID);
+                            					
+                        if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
+                        MiscUtils.ResetSelectedItem(this.CityID, new ListItem(fvalue, cvalue));                      
+                    }
+                }
+                catch
+                {
+                }
+
+                    					
+            }					
+                        
         }
                   
         // event handler for ImageButton
@@ -1294,7 +1361,7 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
             if (shouldRedirect) {
                 this.Page.ShouldSaveControlsToSession = true;
       
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
+                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.CityID.ClientID) + "&Formula=" + (this.Page as BaseApplicationPage).Encrypt("= Cities.City")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("CityID");                      
                               
                 string javascriptCall = "";
                 
@@ -2060,7 +2127,9 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
           }
           
           //  LoadData for DataSource for chart and report if they exist
-               
+          
+            // Improve performance by prefetching display as records.
+            this.PreFetchForeignKeyValues();     
 
             // Setup the pagination controls.
             BindPaginationControls();
@@ -2142,6 +2211,14 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
 
     }
 
+        
+        public void PreFetchForeignKeyValues() {
+            if (this.DataSource == null) {
+                return;
+            }
+          
+            this.Page.PregetDfkaRecords(SuppliersTable.CityID, this.DataSource);
+        }
         
 
         public virtual void RegisterPostback()

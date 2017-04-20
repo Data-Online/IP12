@@ -14,7 +14,7 @@
     <Layout>Cities\CitiesQuickSelector.html</Layout>
     <DisplayName>CitiesQuickSelector</DisplayName>
     <Description>Table view to show or edit multiple records.</Description>
-    <LoginRequired>&lt;PRoles&gt;1;2;NOT_ANONYMOUS&lt;/PRoles&gt;</LoginRequired>
+    <LoginRequired>&lt;PRoles&gt;1;2;3&lt;/PRoles&gt;</LoginRequired>
   </Self>
   <ComposedOf>
     <ContainedComponent>

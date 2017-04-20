@@ -1,5 +1,5 @@
 ﻿// This class is "generated" and will be overwritten.
-// Your customizations should be made in VPropertyTermRenewalsRecord.vb
+// Your customizations should be made in VPropertyTermRenewalsRecord.cs
 
 using System;
 using System.Collections;
@@ -20,7 +20,7 @@ namespace IPv5.Business
 /// </remarks>
 /// <seealso cref="VPropertyTermRenewalsView"></seealso>
 /// <seealso cref="VPropertyTermRenewalsRecord"></seealso>
-public class BaseVPropertyTermRenewalsRecord : KeylessRecord
+public class BaseVPropertyTermRenewalsRecord : PrimaryKeyRecord
 {
 
 	public readonly static VPropertyTermRenewalsView TableUtils = VPropertyTermRenewalsView.Instance;
@@ -29,15 +29,18 @@ public class BaseVPropertyTermRenewalsRecord : KeylessRecord
  
 	protected BaseVPropertyTermRenewalsRecord() : base(TableUtils)
 	{
+		this.InsertingRecord += 
+			new BaseClasses.IRecordWithTriggerEvents.InsertingRecordEventHandler(this.VPropertyTermRenewalsRecord_InsertingRecord); 
+		this.UpdatingRecord += 
+			new BaseClasses.IRecordWithTriggerEvents.UpdatingRecordEventHandler(this.VPropertyTermRenewalsRecord_UpdatingRecord); 
 		this.ReadRecord +=
             new BaseClasses.IRecordWithTriggerEvents.ReadRecordEventHandler(this.VPropertyTermRenewalsRecord_ReadRecord); 
-        this.InsertingRecord += 
-			new BaseClasses.IRecordWithTriggerEvents.InsertingRecordEventHandler(this.VPropertyTermRenewalsRecord_InsertingRecord);     
 	}
 
-	protected BaseVPropertyTermRenewalsRecord(KeylessRecord record) : base(record, TableUtils)
+	protected BaseVPropertyTermRenewalsRecord(PrimaryKeyRecord record) : base(record, TableUtils)
 	{
 	}
+	
 	
 	//Audit Trail methods
 	
@@ -50,8 +53,8 @@ public class BaseVPropertyTermRenewalsRecord : KeylessRecord
                 }
     
     }
-    
-    	//Evaluates Initialize when->Inserting formulas specified at the data access layer
+        
+	//Evaluates Initialize when->Inserting formulas specified at the data access layer
     protected virtual void VPropertyTermRenewalsRecord_InsertingRecord(Object sender,System.ComponentModel.CancelEventArgs e)
     {
         //Apply Initialize->Inserting formula only if validation is successful.
@@ -61,8 +64,19 @@ public class BaseVPropertyTermRenewalsRecord : KeylessRecord
                 }
     
     }
-        
-     //Evaluates Validate when->Inserting formulas specified at the data access layer
+    
+    //Evaluates Initialize when->Updating formulas specified at the data access layer
+    protected virtual void VPropertyTermRenewalsRecord_UpdatingRecord(Object sender,System.ComponentModel.CancelEventArgs e)
+    {
+        //Apply Initialize->Updating formula only if validation is successful.
+                VPropertyTermRenewalsRecord VPropertyTermRenewalsRec = (VPropertyTermRenewalsRecord)sender;
+        Validate_Updating();
+        if(VPropertyTermRenewalsRec != null && !VPropertyTermRenewalsRec.IsReadOnly ){
+                }
+    
+    }
+
+   //Evaluates Validate when->Inserting formulas specified at the data access layer
 	protected virtual void Validate_Inserting()
 	{
 		string fullValidationMessage = "";
@@ -77,7 +91,22 @@ public class BaseVPropertyTermRenewalsRecord : KeylessRecord
         if(fullValidationMessage != "")
 			throw new Exception(fullValidationMessage);
 	}
-	    
+ 
+	//Evaluates Validate when->Updating formulas specified at the data access layer
+	protected virtual void Validate_Updating()
+	{
+		string fullValidationMessage = "";
+		string validationMessage = "";
+		
+		string formula = "";if (formula == "") formula = "";
+
+
+		if(validationMessage != "" && validationMessage.ToLower() != "true")
+            fullValidationMessage = fullValidationMessage + validationMessage + "\r\n"; 
+		
+        if(fullValidationMessage != "")
+			throw new Exception(fullValidationMessage);
+	}
 	public virtual string EvaluateFormula(string formula, BaseRecord  dataSourceForEvaluate, string format)
     {
         Data.BaseFormulaEvaluator e = new Data.BaseFormulaEvaluator();
@@ -1149,7 +1178,6 @@ public class BaseVPropertyTermRenewalsRecord : KeylessRecord
 
 
 #endregion
-
 }
 
 }

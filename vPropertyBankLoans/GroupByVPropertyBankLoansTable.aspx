@@ -1,6 +1,6 @@
 ﻿<%@ Register Tagprefix="IPv5" TagName="ThemeButtonWithArrow" Src="../Shared/ThemeButtonWithArrow.ascx" %>
 
-<%@ Register Tagprefix="IPv5" TagName="PaginationModern" Src="../Shared/PaginationModern.ascx" %>
+<%@ Register Tagprefix="IPv5" TagName="PaginationMedium" Src="../Shared/PaginationMedium.ascx" %>
 
 <%@ Register Tagprefix="IPv5" Namespace="IPv5.UI.Controls.GroupByVPropertyBankLoansTable" Assembly="IPv5" %>
 
@@ -25,8 +25,9 @@
 			<ContentTemplate>
 
                 <table cellpadding="0" cellspacing="0" border="0" style="width: 100%"><tr><td>
-                        <IPv5:VPropertyBankLoansTableControl runat="server" id="VPropertyBankLoansTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td class="panelTL"><img src="../Images/space.gif" class="panelTLSpace" alt="" /></td><td class="panelT"></td><td class="panelTR"><img src="../Images/space.gif" class="panelTRSpace" alt="" /></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
-                  <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb" style="width: 100%"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle"><asp:Literal runat="server" id="VPropertyBankLoansTitle" Text="&lt;%#String.Concat(&quot;Property Bank Loans&quot;) %>">	</asp:Literal></td></tr></table>
+                        <IPv5:VPropertyBankLoansTableControl runat="server" id="VPropertyBankLoansTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td class="panelTL"><img src="../Images/space.gif" class="panelTLSpace" alt="" /></td><td class="panelT" style="text-align:right;"><table><tr><td class="filbc" style="text-align:center;width:150px;"></td><td class="filbc, alerts_overdue" style="text-align:center;width:150px;"></td><td class="filbc" style="text-align:center;width:150px;"><asp:Literal runat="server" id="Literal" Text="Key:">	</asp:Literal></td><td class="filbc, alerts_overdue" style="text-align:center;width:150px;"><asp:Literal runat="server" id="Overdue" Text="Overdue">	</asp:Literal></td><td class="filbc, alerts_duenow" style="text-align:center;width:150px;"><asp:Literal runat="server" id="DueNow" Text="Due Now">	</asp:Literal></td><td class="filbc, alerts_nextmonth" style="text-align:center;width:150px;"><asp:Literal runat="server" id="NextMonth" Text="Due Next Month">	</asp:Literal></td></tr></table>
+</td><td class="panelTR"><img src="../Images/space.gif" class="panelTRSpace" alt="" /></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb" style="width: 100%"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle"><asp:Literal runat="server" id="VPropertyBankLoansTitle" Text="&lt;%#String.Concat(&quot;Bank Loans&quot;) %>">	</asp:Literal></td></tr></table>
 </td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="VPropertyBankLoansButtonsDiv" runat="server" class="popupWrapper">
                 <table border="0" cellpadding="0" cellspacing="0"><tr><td></td><td></td><td></td><td></td><td style="text-align: right;"><input type="image" src="../Images/closeButton.gif" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /><br /></td></tr><tr><td></td><td>
                     <asp:ImageButton runat="server" id="VPropertyBankLoansPDFButton" causesvalidation="False" commandname="ReportData" imageurl="../Images/ButtonBarPDFExport.gif" onmouseout="this.src=&#39;../Images/ButtonBarPDFExport.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarPDFExportOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:PDF&quot;, &quot;IPv5&quot;) %>">		
@@ -70,27 +71,18 @@
                         </td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
 
                 </td><td class="panelHeaderR"></td></tr><tr><td class="panelL"></td><td>
-                  <asp:panel id="VPropertyBankLoansTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="VPropertyBankLoansTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="1" style="display:none"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th></tr><asp:Repeater runat="server" id="VPropertyBankLoansTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:VPropertyBankLoansTableControlRow runat="server" id="VPropertyBankLoansTableControlRow">
-<tr><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;" rowspan="3">
-                                  <asp:ImageButton runat="server" id="VPropertyBankLoansRowExpandCollapseRowButton" causesvalidation="False" commandname="ExpandCollapseRow" cssclass="button_link" imageurl="../Images/icon_expandcollapserow.gif" tooltip="&lt;%# GetResourceValue(&quot;Txt:ExpandCollapseRow&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton><br /><br />
-                                </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CompanyNameLabel" Text="Company Name">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="CompanyName"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address1Label" Text="Address 1">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Address1"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="ExpiryDateLabel" Text="Expiration Date">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
+                  <asp:panel id="VPropertyBankLoansTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="VPropertyBankLoansTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="PropertyIDLabel" width="175px" Text="Company Name" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="Address1Label" Text="Address" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="CityIDLabel" Text="City" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="RegionIDLabel" Text="Region" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="CountryIDLabel" Text="Country" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="PostCodeLabel" Text="Post Code" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ExpiryDateLabel" Text="Expiration Date" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="DescriptionLabel" causesvalidation="True" width="120px" Text="Description">	</asp:LinkButton></th></tr><asp:Repeater runat="server" id="VPropertyBankLoansTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:VPropertyBankLoansTableControlRow runat="server" id="VPropertyBankLoansTableControlRow">
+<tr id="MyTR" runat="server"><td class="tableCellValue" scope="col"><span style="white-space:nowrap;">
+<asp:LinkButton runat="server" id="PropertyID" CommandName="Redirect"></asp:LinkButton></span>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="Address1"></asp:Literal> 
+<asp:Literal runat="server" id="Address2"></asp:Literal> 
+<asp:Literal runat="server" id="Address3"></asp:Literal></td><td class="tableCellValue" scope="col"></td><td class="tableCellValue"></td><td class="tableCellValue" scope="col"><asp:Literal runat="server" id="CityID"></asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="RegionID"></asp:Literal></td><td class="tableCellValue" scope="col"><asp:Literal runat="server" id="CountryID"></asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="PostCode"></asp:Literal></td><td class="tableCellValue" scope="col"><span style="white-space:nowrap;">
 <asp:Literal runat="server" id="ExpiryDate"></asp:Literal></span>
- </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="BankLoanIDLabel" Text="Bank Loan">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
-<asp:Literal runat="server" id="BankLoanID"></asp:Literal></span>
- </td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PropertyIDLabel" Text="Property">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="PropertyID"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address2Label" Text="Address 2">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Address2"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PostCodeLabel" Text="Post Code">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="PostCode"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="DescriptionLabel" Text="Description">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Description"></asp:Literal> </td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address3Label" Text="Address 3">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Address3"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CityIDLabel" Text="City">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="CityID"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="RegionIDLabel" Text="Region">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="RegionID"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CountryIDLabel" Text="Country">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="CountryID"></asp:Literal> </td></tr><tr><td class="tableRowDivider" colspan="9">&nbsp;</td></tr></IPv5:VPropertyBankLoansTableControlRow>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="Description"></asp:Literal></td></tr><tr><td class="tableRowDivider" colspan="8">&nbsp;</td><td class="tableRowDivider"></td><td class="tableRowDivider"></td></tr></IPv5:VPropertyBankLoansTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>
@@ -98,7 +90,7 @@
 </td></tr></table>
 </asp:panel>
                 </td><td class="panelR"></td></tr><tr><td class="panelL"></td><td class="panelPaginationC">
-                    <IPv5:PaginationModern runat="server" id="VPropertyBankLoansPagination"></IPv5:PaginationModern>
+                    <IPv5:PaginationMedium runat="server" id="VPropertyBankLoansPagination"></IPv5:PaginationMedium>
                     <!--To change the position of the pagination control, please search for "prspace" on the Online Help for instruction. -->
                   </td><td class="panelR"></td></tr><tr><td class="panelBL"><img src="../Images/space.gif" class="panelBLSpace" alt="" /></td><td class="panelB"></td><td class="panelBR"><img src="../Images/space.gif" class="panelBRSpace" alt="" /></td></tr></table>
 	<asp:hiddenfield id="VPropertyBankLoansTableControl_PostbackTracker" runat="server" />

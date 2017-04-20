@@ -1,5 +1,5 @@
 ﻿// This class is "generated" and will be overwritten.
-// Your customizations should be made in VPropertyTermExpiresSqlView.cs 
+// Your customizations should be made in VPropertyTermExpiresSqlView.cs
 
 using BaseClasses.Data.SqlProvider;
 

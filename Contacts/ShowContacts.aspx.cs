@@ -303,32 +303,28 @@ public override void SetControl(string control)
         }
         
     
-        public ThemeButtonWithArrow ActionsButton;
-                
         public System.Web.UI.WebControls.Literal Active;
             
         public System.Web.UI.WebControls.Literal ActiveLabel;
         
-        public System.Web.UI.WebControls.Literal Address1;
+        public System.Web.UI.WebControls.Literal Address11;
             
-        public System.Web.UI.WebControls.Literal Address1Label;
+        public System.Web.UI.WebControls.Literal Address1Label1;
         
-        public System.Web.UI.WebControls.Literal Address2;
+        public System.Web.UI.WebControls.Literal Address21;
             
-        public System.Web.UI.WebControls.Literal Address2Label;
-        
-        public System.Web.UI.WebControls.Literal Address3;
+        public System.Web.UI.WebControls.Literal Address31;
             
-        public System.Web.UI.WebControls.Literal Address3Label;
-        
-        public System.Web.UI.WebControls.Literal BankAccount;
+        public System.Web.UI.WebControls.Literal BankAccount1;
             
-        public System.Web.UI.WebControls.Literal BankAccountLabel;
+        public System.Web.UI.WebControls.Literal BankAccountLabel1;
         
-        public System.Web.UI.WebControls.LinkButton CityID;
+        public System.Web.UI.WebControls.Literal CityID1;
             
-        public System.Web.UI.WebControls.Literal CityIDLabel;
+        public System.Web.UI.WebControls.Literal CityIDLabel1;
         
+        public IPv5.UI.Controls.ShowContacts.ContactBackgroundTableControl ContactBackgroundTableControl;
+          
         public IPv5.UI.Controls.ShowContacts.ContactNotesTableControl1 ContactNotesTableControl1;
           
         public System.Web.UI.WebControls.ImageButton ContactsDialogEditButton;
@@ -339,26 +335,28 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal ContactsTitle;
             
-        public System.Web.UI.WebControls.LinkButton CountryID;
+        public System.Web.UI.WebControls.Literal CountryID1;
             
-        public System.Web.UI.WebControls.Literal CountryIDLabel;
+        public System.Web.UI.WebControls.Literal CountryIDLabel1;
         
-        public System.Web.UI.WebControls.Literal DateOfBirth;
+        public System.Web.UI.WebControls.LinkButton CreatedOnLabel;
+        
+        public System.Web.UI.WebControls.LinkButton CreatedOnLabel1;
+        
+        public System.Web.UI.WebControls.Literal DateOfBirth1;
             
-        public System.Web.UI.WebControls.Literal DateOfBirthLabel;
+        public System.Web.UI.WebControls.Literal DateOfBirthLabel1;
         
+        public PaginationModern DirectorsPagination;
+                
+        public IPv5.UI.Controls.ShowContacts.DirectorsTableControl DirectorsTableControl;
+          
         public ThemeButton EditButton;
                 
-        public System.Web.UI.WebControls.Literal eMail;
+        public System.Web.UI.WebControls.Literal eMail1;
             
-        public System.Web.UI.WebControls.Literal eMailLabel;
+        public System.Web.UI.WebControls.Literal eMailLabel1;
         
-        public System.Web.UI.WebControls.ImageButton ExcelButton;
-        
-        public ThemeButton FilterButton;
-                
-        public ThemeButtonWithArrow FiltersButton;
-                
         public System.Web.UI.WebControls.Literal FirstName;
             
         public System.Web.UI.WebControls.Literal FirstName2;
@@ -367,15 +365,9 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal FirstNameLabel;
         
-        public System.Web.UI.WebControls.ImageButton ImportButton;
-        
-        public System.Web.UI.WebControls.Literal IrdNumber;
+        public System.Web.UI.WebControls.Literal IrdNumber2;
             
-        public System.Web.UI.WebControls.Literal IrdNumber1;
-            
-        public System.Web.UI.WebControls.Literal IrdNumberLabel;
-        
-        public System.Web.UI.WebControls.Literal IrdNumberLabel1;
+        public System.Web.UI.WebControls.Literal IrdNumberLabel2;
         
         public System.Web.UI.WebControls.Literal LastName;
             
@@ -385,9 +377,11 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal LastNameLabel;
         
-        public System.Web.UI.WebControls.ImageButton NewButton;
+        public IPv5.UI.Controls.ShowContacts.LinkTableTableControl LinkTableTableControl;
+          
+        public System.Web.UI.WebControls.LinkButton NotesLabel;
         
-        public System.Web.UI.WebControls.Literal NotesLabel3;
+        public System.Web.UI.WebControls.LinkButton NotesLabel1;
         
         public ThemeButton OKButton;
                 
@@ -395,37 +389,31 @@ public override void SetControl(string control)
         
         public PaginationModern Pagination;
                 
-        public System.Web.UI.WebControls.ImageButton PDFButton;
-        
-        public System.Web.UI.WebControls.Literal PhoneNumber;
+        public PaginationModern Pagination1;
+                
+        public PaginationModern Pagination2;
+                
+        public System.Web.UI.WebControls.Literal PlaceOfBirth1;
             
-        public System.Web.UI.WebControls.Literal PhoneNumberLabel;
+        public System.Web.UI.WebControls.Literal PlaceOfBirthLabel1;
         
-        public System.Web.UI.WebControls.Literal PlaceOfBirth;
+        public System.Web.UI.WebControls.Literal PostCode1;
             
-        public System.Web.UI.WebControls.Literal PlaceOfBirthLabel;
+        public System.Web.UI.WebControls.Literal PostCodeLabel1;
         
-        public System.Web.UI.WebControls.Literal PostCode;
+        public System.Web.UI.WebControls.LinkButton PropertyIDLabel;
+        
+        public System.Web.UI.WebControls.LinkButton PropertyIDLabel1;
+        
+        public System.Web.UI.WebControls.Literal RegionID1;
             
-        public System.Web.UI.WebControls.Literal PostCodeLabel;
+        public System.Web.UI.WebControls.Literal RegionIDLabel1;
         
-        public System.Web.UI.WebControls.LinkButton RegionID;
-            
-        public System.Web.UI.WebControls.Literal RegionIDLabel;
-        
-        public System.Web.UI.WebControls.ImageButton ResetButton;
-        
-        public System.Web.UI.WebControls.Label SortByLabel;
-        
-        public System.Web.UI.WebControls.Literal Title0;
-            
         public System.Web.UI.WebControls.Literal TitleLabel;
         
         public System.Web.UI.WebControls.Literal TrustName;
             
         public System.Web.UI.WebControls.Literal TrustNameLabel;
-        
-        public System.Web.UI.WebControls.ImageButton WordButton;
         
         public ValidationSummary ValidationSummary1;
 
@@ -492,7 +480,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("1;2;NOT_ANONYMOUS");
+            this.Authorize("1;2;3");
              if (!this.IsPostBack)
              {
             

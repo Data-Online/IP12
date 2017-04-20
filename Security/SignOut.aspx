@@ -1,9 +1,9 @@
 ﻿<%@ Register Tagprefix="IPv5" TagName="ThemeButton" Src="../Shared/ThemeButton.ascx" %>
 
-<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<%@ Page Language="C#" EnableEventValidation="false" AutoEventWireup="false" Codebehind="SignOut.aspx.cs" Culture="en-NZ" MasterPageFile="../Master Pages/HorizontalNoMenu.master" Inherits="IPv5.UI.SignOut" %>
 <%@ Register Tagprefix="Selectors" Namespace="IPv5" Assembly="IPv5" %>
 
-<%@ Page Language="C#" EnableEventValidation="false" AutoEventWireup="false" Codebehind="SignOut.aspx.cs" Culture="en-NZ" MasterPageFile="../Master Pages/HorizontalMenu.master" Inherits="IPv5.UI.SignOut" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Tagprefix="BaseClasses" Namespace="BaseClasses.Web.UI.WebControls" Assembly="BaseClasses" %><asp:Content id="Content" ContentPlaceHolderID="PageContent" runat="server">
      <a id="StartOfPageContent"></a>
     <div id="scrollRegion" class="scrollRegion">

@@ -1216,6 +1216,7 @@
     <Compile Include="TermRenewals\ShowTermRenewalsTable.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Tools\CustomTools.cs" />
     <Compile Include="Users\AddUsers.aspx.cs">
       <DependentUpon>AddUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1321,39 +1322,11 @@
     <Compile Include="vPropertyBankLoans\GroupByVPropertyBankLoansTable.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="vPropertyBankLoans\ShowVPropertyBankLoansGallery.aspx.cs">
-      <DependentUpon>ShowVPropertyBankLoansGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyBankLoans\ShowVPropertyBankLoansGallery.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyBankLoans\ShowVPropertyBankLoansTable.aspx.cs">
-      <DependentUpon>ShowVPropertyBankLoansTable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyBankLoans\ShowVPropertyBankLoansTable.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="vPropertyContacts\GroupByVPropertyContactsTable.aspx.cs">
       <DependentUpon>GroupByVPropertyContactsTable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vPropertyContacts\GroupByVPropertyContactsTable.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyContacts\ShowVPropertyContactsGallery.aspx.cs">
-      <DependentUpon>ShowVPropertyContactsGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyContacts\ShowVPropertyContactsGallery.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyContacts\ShowVPropertyContactsTable.aspx.cs">
-      <DependentUpon>ShowVPropertyContactsTable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyContacts\ShowVPropertyContactsTable.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="vPropertyMMContracts\GroupByVPropertyMMContractsTable.aspx.cs">
@@ -1363,39 +1336,11 @@
     <Compile Include="vPropertyMMContracts\GroupByVPropertyMMContractsTable.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="vPropertyMMContracts\ShowVPropertyMMContractsGallery.aspx.cs">
-      <DependentUpon>ShowVPropertyMMContractsGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyMMContracts\ShowVPropertyMMContractsGallery.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyMMContracts\ShowVPropertyMMContractsTable.aspx.cs">
-      <DependentUpon>ShowVPropertyMMContractsTable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyMMContracts\ShowVPropertyMMContractsTable.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="vPropertyRentReviews\GroupByVPropertyRentReviewsTable.aspx.cs">
       <DependentUpon>GroupByVPropertyRentReviewsTable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vPropertyRentReviews\GroupByVPropertyRentReviewsTable.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyRentReviews\ShowVPropertyRentReviewsGallery.aspx.cs">
-      <DependentUpon>ShowVPropertyRentReviewsGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyRentReviews\ShowVPropertyRentReviewsGallery.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyRentReviews\ShowVPropertyRentReviewsTable.aspx.cs">
-      <DependentUpon>ShowVPropertyRentReviewsTable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyRentReviews\ShowVPropertyRentReviewsTable.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="vPropertyTermExpires\GroupByVPropertyTermExpiresTable.aspx.cs">
@@ -1405,51 +1350,12 @@
     <Compile Include="vPropertyTermExpires\GroupByVPropertyTermExpiresTable.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresGallery.aspx.cs">
-      <DependentUpon>ShowVPropertyTermExpiresGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresGallery.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable.aspx.cs">
-      <DependentUpon>ShowVPropertyTermExpiresTable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="vPropertyTermRenewals\GroupByVPropertyTermRenewalsTable.aspx.cs">
       <DependentUpon>GroupByVPropertyTermRenewalsTable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="vPropertyTermRenewals\GroupByVPropertyTermRenewalsTable.Controls.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsGallery.aspx.cs">
-      <DependentUpon>ShowVPropertyTermRenewalsGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsGallery.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsTable.aspx.cs">
-      <DependentUpon>ShowVPropertyTermRenewalsTable.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsTable.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable2.aspx.cs">
-      <DependentUpon>ShowVPropertyTermExpiresTable2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable2.Controls.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="vPropertyMMContracts\ShowMMContractExpiration.aspx.cs">
-      <DependentUpon>ShowMMContractExpiration.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Header and Footer\EmailFooter.ascx.cs">
       <DependentUpon>EmailFooter.ascx</DependentUpon>
@@ -1545,6 +1451,21 @@
     </Compile>
     <Compile Include="Security\SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyDirectors\ShowVPropertyDirectorsTable.aspx.cs">
+      <DependentUpon>ShowVPropertyDirectorsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertyDirectors\ShowVPropertyDirectorsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Administration.aspx.cs" >
+      <DependentUpon>Administration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
@@ -1755,25 +1676,11 @@
     <Content Include="Users_Roles\ShowUsers_RolesGallery.aspx" />
     <Content Include="Users_Roles\ShowUsers_RolesTable.aspx" />
     <Content Include="vPropertyBankLoans\GroupByVPropertyBankLoansTable.aspx" />
-    <Content Include="vPropertyBankLoans\ShowVPropertyBankLoansGallery.aspx" />
-    <Content Include="vPropertyBankLoans\ShowVPropertyBankLoansTable.aspx" />
     <Content Include="vPropertyContacts\GroupByVPropertyContactsTable.aspx" />
-    <Content Include="vPropertyContacts\ShowVPropertyContactsGallery.aspx" />
-    <Content Include="vPropertyContacts\ShowVPropertyContactsTable.aspx" />
     <Content Include="vPropertyMMContracts\GroupByVPropertyMMContractsTable.aspx" />
-    <Content Include="vPropertyMMContracts\ShowVPropertyMMContractsGallery.aspx" />
-    <Content Include="vPropertyMMContracts\ShowVPropertyMMContractsTable.aspx" />
     <Content Include="vPropertyRentReviews\GroupByVPropertyRentReviewsTable.aspx" />
-    <Content Include="vPropertyRentReviews\ShowVPropertyRentReviewsGallery.aspx" />
-    <Content Include="vPropertyRentReviews\ShowVPropertyRentReviewsTable.aspx" />
     <Content Include="vPropertyTermExpires\GroupByVPropertyTermExpiresTable.aspx" />
-    <Content Include="vPropertyTermExpires\ShowVPropertyTermExpiresGallery.aspx" />
-    <Content Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable.aspx" />
     <Content Include="vPropertyTermRenewals\GroupByVPropertyTermRenewalsTable.aspx" />
-    <Content Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsGallery.aspx" />
-    <Content Include="vPropertyTermRenewals\ShowVPropertyTermRenewalsTable.aspx" />
-    <Content Include="vPropertyTermExpires\ShowVPropertyTermExpiresTable2.aspx" />
-    <Content Include="vPropertyMMContracts\ShowMMContractExpiration.aspx" />
     <Content Include="JQuery.js" />
     <Content Include="Header and Footer\EmailFooter.ascx" />
     <Content Include="Master Pages\Popup.master" />
@@ -1978,6 +1885,11 @@
     <Content Include="Security\SendUserInfo.aspx" />
     <Content Include="Security\SignIn.aspx" />
     <Content Include="Security\SignOut.aspx" />
+    <Content Include="Menu Panels\temp" />
+    <Content Include="vPropertyDirectors\ShowVPropertyDirectorsTable.aspx" />
+    <Content Include="Dashboard\Reports.aspx" />
+    <Content Include="Master Pages\HorizontalNoMenu.master" />
+    <Content Include="Dashboard\Administration.aspx"  />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">

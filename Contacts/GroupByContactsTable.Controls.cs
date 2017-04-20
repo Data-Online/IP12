@@ -107,15 +107,52 @@ public class ContactNotesTableControl : BaseContactNotesTableControl
   
 public class ContactsTableControlRow : BaseContactsTableControlRow
 {
-      
+
         // The BaseContactsTableControlRow implements code for a ROW within the
         // the ContactsTableControl table.  The BaseContactsTableControlRow implements the DataBind and SaveData methods.
         // The loading of data is actually performed by the LoadData method in the base class of ContactsTableControl.
 
         // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
         // SaveData, GetUIData, and Validate methods.
-        
-}
+        public override void DeleteRowButton_Click(object sender, ImageClickEventArgs args)
+        {
+
+            string contactId = ((ContactsTableControlRow)this).ContactID.Text;
+
+            try
+            {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                MarkContactDeleted(contactId);
+                DbUtils.CommitTransaction();
+            }
+            catch (Exception ex)
+            {
+                // Upon error, rollback the transaction
+                this.Page.RollBackTransaction(sender);
+                this.Page.ErrorOnPage = true;
+
+                // Report the error message to the end user
+                BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+
+            }
+            finally
+            {
+                DbUtils.EndTransaction();
+            }
+            this.Visible = false;
+
+        }
+
+        private void MarkContactDeleted(string contactId)
+        {
+            ContactsRecord rec = ContactsTable.GetRecord(contactId, true);
+            rec.Deleted = true;
+            rec.DeletedBy = Convert.ToInt32(SecurityControls.GetCurrentUserID());
+            rec.DeletedOn = DateTime.Now;
+            rec.Save();
+        }
+    }
 
   
 
@@ -1486,13 +1523,7 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
               }
             
       HttpContext.Current.Session["ContactNotesTableControlWhereClause"] = selectedRecordKeyValue.ToXmlString();
-    
-            // Get the static clause defined at design time on the Table Panel Wizard
-            WhereClause qc = this.CreateQueryClause();
-            if (qc != null) {
-                wc.iAND(qc);
-            }
-               
+         
             return wc;
         }
         
@@ -1523,12 +1554,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
     
       }
     
-            // Get the static clause defined at design time on the Table Panel Wizard
-            WhereClause qc = this.CreateQueryClause();
-            if (qc != null) {
-                wc.iAND(qc);
-            }
-            
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
 
@@ -1536,20 +1561,6 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
         }
 
         
-        protected virtual WhereClause CreateQueryClause()
-        {
-            // Create a where clause for the Static clause defined at design time.
-            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
-            WhereClause whereClause = new WhereClause();
-            
-            if (EvaluateFormula("1", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.ContactNotesTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"ContactNotes_.NoteType"), EvaluateFormula("1", false), BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
-         if (EvaluateFormula("1", false) == "--PLEASE_SELECT--" || EvaluateFormula("1", false) == "--ANY--") whereClause.RunQuery = false;
-
-            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
-    
-            return whereClause;
-        }
-          
           
          public virtual bool FormatSuggestions(String prefixText, String resultItem,
                                               int columnLength, String AutoTypeAheadDisplayFoundText,
@@ -3613,13 +3624,7 @@ public class BaseContactNotesTableControl1 : IPv5.UI.BaseApplicationTableControl
               }
             
       HttpContext.Current.Session["ContactNotesTableControl1WhereClause"] = selectedRecordKeyValue.ToXmlString();
-    
-            // Get the static clause defined at design time on the Table Panel Wizard
-            WhereClause qc = this.CreateQueryClause();
-            if (qc != null) {
-                wc.iAND(qc);
-            }
-               
+         
             return wc;
         }
         
@@ -3650,12 +3655,6 @@ public class BaseContactNotesTableControl1 : IPv5.UI.BaseApplicationTableControl
     
       }
     
-            // Get the static clause defined at design time on the Table Panel Wizard
-            WhereClause qc = this.CreateQueryClause();
-            if (qc != null) {
-                wc.iAND(qc);
-            }
-            
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
 
@@ -3663,20 +3662,6 @@ public class BaseContactNotesTableControl1 : IPv5.UI.BaseApplicationTableControl
         }
 
         
-        protected virtual WhereClause CreateQueryClause()
-        {
-            // Create a where clause for the Static clause defined at design time.
-            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
-            WhereClause whereClause = new WhereClause();
-            
-            if (EvaluateFormula("2", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.ContactNotesTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"ContactNotes_.NoteType"), EvaluateFormula("2", false), BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
-         if (EvaluateFormula("2", false) == "--PLEASE_SELECT--" || EvaluateFormula("2", false) == "--ANY--") whereClause.RunQuery = false;
-
-            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
-    
-            return whereClause;
-        }
-          
           
          public virtual bool FormatSuggestions(String prefixText, String resultItem,
                                               int columnLength, String AutoTypeAheadDisplayFoundText,
@@ -4459,11 +4444,15 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
         // To customize, override this method in ContactsTableControlRow.
         protected virtual void Control_Load(object sender, System.EventArgs e)
         {      
-                    
+        
+              // Show confirmation message on Click
+              this.DeleteRowButton.Attributes.Add("onClick", "return (confirm(\"" + ((BaseApplicationPage)this.Page).GetResourceValue("DeleteRecordConfirm", "IPv5") + "\"));");            
         
               // Register the event handlers.
 
           
+                    this.DeleteRowButton.Click += DeleteRowButton_Click;
+                        
                     this.EditRowButton.Click += EditRowButton_Click;
                         
                     this.ExpandRowButton.Click += ExpandRowButton_Click;
@@ -4534,6 +4523,7 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 SetBankAccount2();
                 SetBankAccountLabel();
                 SetCityID3();
+                SetContactID();
                 
                 
                 SetContactsTableControlTabContainer();
@@ -4542,6 +4532,7 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 SetCreatedOn1();
                 SetDateOfBirth2();
                 SetDateOfBirthLabel();
+                
                 
                 
                 SeteMail3();
@@ -4566,6 +4557,8 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 SetUpdatedBy1();
                 SetUpdatedOn1();
                 
+                SetDeleteRowButton();
+              
                 SetEditRowButton();
               
                 SetExpandRowButton();
@@ -4813,6 +4806,38 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 this.CityID3.Text = "&nbsp;";
             }
                                      
+        }
+                
+        public virtual void SetContactID()
+        {
+            
+                    
+            // Set the ContactID Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.ContactID is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.ContactIDSpecified) {
+                								
+                // If the ContactID is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.ContactID);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.ContactID.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // ContactID is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.ContactID.Text = ContactsTable.ContactID.Format(ContactsTable.ContactID.DefaultValue);
+            		
+            }
+                               
         }
                 
         public virtual void SetCountryID3()
@@ -5823,6 +5848,7 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             GetAddress34();
             GetBankAccount2();
             GetCityID3();
+            GetContactID();
             GetCountryID3();
             GetCreatedBy1();
             GetCreatedOn1();
@@ -5863,6 +5889,11 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void GetCityID3()
+        {
+            
+        }
+                
+        public virtual void GetContactID()
         {
             
         }
@@ -6085,6 +6116,13 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
     
         // Generate set method for buttons
         
+        public virtual void SetDeleteRowButton()                
+              
+        {
+        
+   
+        }
+            
         public virtual void SetEditRowButton()                
               
         {
@@ -6106,6 +6144,36 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
    
         }
             
+        // event handler for ImageButton
+        public virtual void DeleteRowButton_Click(object sender, ImageClickEventArgs args)
+        {
+              
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+            if (!this.Page.IsPageRefresh) {
+        
+                this.Delete();
+              
+            }
+      this.Page.CommitTransaction(sender);
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  this.Page.ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+    
+        }
+            
+            
+        
         // event handler for ImageButton
         public virtual void EditRowButton_Click(object sender, ImageClickEventArgs args)
         {
@@ -6402,6 +6470,12 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             }
         }
             
+        public System.Web.UI.WebControls.Literal ContactID {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactID");
+            }
+        }
+            
         public ContactNotesTableControl ContactNotesTableControl {
             get {
                 return (ContactNotesTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactNotesTableControl");
@@ -6447,6 +6521,12 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
         public System.Web.UI.WebControls.Literal DateOfBirthLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateOfBirthLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.ImageButton DeleteRowButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DeleteRowButton");
             }
         }
         
@@ -7469,6 +7549,12 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
             // 3. User selected filter criteria.
             
         
+            // Get the static clause defined at design time on the Table Panel Wizard
+            WhereClause qc = this.CreateQueryClause();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
+          
             if (MiscUtils.IsValueSelected(this.CityIDFilter)) {
                         
                 wc.iAND(ContactsTable.CityID, BaseFilter.ComparisonOperator.EqualsTo, MiscUtils.GetSelectedValue(this.CityIDFilter, this.GetFromSession(this.CityIDFilter)), false, false);
@@ -7547,6 +7633,12 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
             // 3. User selected filter criteria.
             
             String appRelativeVirtualPath = (String)HttpContext.Current.Session["AppRelativeVirtualPath"];
+            
+            // Get the static clause defined at design time on the Table Panel Wizard
+            WhereClause qc = this.CreateQueryClause();
+            if (qc != null) {
+                wc.iAND(qc);
+            }
             
             // Adds clauses if values are selected in Filter controls which are configured in the page.
           
@@ -7633,6 +7725,20 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
         }
 
         
+        protected virtual WhereClause CreateQueryClause()
+        {
+            // Create a where clause for the Static clause defined at design time.
+            CompoundFilter filter = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
+            WhereClause whereClause = new WhereClause();
+            
+            if (EvaluateFormula("URL(\"Contacts\")", false) != "")filter.AddFilter(new BaseClasses.Data.ColumnValueFilter(BaseClasses.Data.BaseTable.CreateInstance(@"IPv5.Business.ContactsTable, IPv5.Business").TableDefinition.ColumnList.GetByUniqueName(@"Contacts_.ContactID"), EvaluateFormula("URL(\"Contacts\")", false), BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
+         if (EvaluateFormula("URL(\"Contacts\")", false) == "--PLEASE_SELECT--" || EvaluateFormula("URL(\"Contacts\")", false) == "--ANY--") whereClause.RunQuery = false;
+
+            whereClause.AddFilter(filter, CompoundFilter.CompoundingOperators.And_Operator);
+    
+            return whereClause;
+        }
+          
         public virtual string[] GetAutoCompletionList_ContactsSearch(String prefixText,int count)
         {
             ArrayList resultList = new ArrayList();
@@ -7920,6 +8026,10 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                 
                         if (recControl.CityID3.Text != "") {
                             rec.Parse(recControl.CityID3.Text, ContactsTable.CityID);
+                  }
+                
+                        if (recControl.ContactID.Text != "") {
+                            rec.Parse(recControl.ContactID.Text, ContactsTable.ContactID);
                   }
                 
                         if (recControl.CountryID3.Text != "") {
@@ -9123,7 +9233,8 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
               
                 // Add each of the columns in order of export.
                 BaseColumn[] columns = new BaseColumn[] {
-                             ContactsTable.FirstName,
+                             ContactsTable.ContactID,
+             ContactsTable.FirstName,
              ContactsTable.LastName,
              ContactsTable.eMail,
              ContactsTable.Address1,
@@ -9199,7 +9310,8 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
               int width = 0;
               int columnCounter = 0;
               DataForExport data = new DataForExport(ContactsTable.Instance, wc, orderBy, null,join);
-                           data.ColumnList.Add(new ExcelColumn(ContactsTable.FirstName, "Default"));
+                           data.ColumnList.Add(new ExcelColumn(ContactsTable.ContactID, "0"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.FirstName, "Default"));
              data.ColumnList.Add(new ExcelColumn(ContactsTable.LastName, "Default"));
              data.ColumnList.Add(new ExcelColumn(ContactsTable.eMail, "Default"));
              data.ColumnList.Add(new ExcelColumn(ContactsTable.Address1, "Default"));
@@ -9389,6 +9501,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 3rd parameter represents the text format of the column detail
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
+                 report.AddColumn(ContactsTable.ContactID.Name, ReportEnum.Align.Right, "${ContactID}", ReportEnum.Align.Right, 15);
                  report.AddColumn(ContactsTable.FirstName.Name, ReportEnum.Align.Left, "${FirstName}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactsTable.LastName.Name, ReportEnum.Align.Left, "${LastName}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactsTable.eMail.Name, ReportEnum.Align.Left, "${eMail}", ReportEnum.Align.Left, 28);
@@ -9444,7 +9557,8 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 2nd parameter represent the data value
                             // The 3rd parameter represent the default alignment of column using the data
                             // The 4th parameter represent the maximum length of the data value being shown
-                                                 report.AddData("${FirstName}", record.Format(ContactsTable.FirstName), ReportEnum.Align.Left, 100);
+                                                 report.AddData("${ContactID}", record.Format(ContactsTable.ContactID), ReportEnum.Align.Right, 100);
+                             report.AddData("${FirstName}", record.Format(ContactsTable.FirstName), ReportEnum.Align.Left, 100);
                              report.AddData("${LastName}", record.Format(ContactsTable.LastName), ReportEnum.Align.Left, 100);
                              report.AddData("${eMail}", record.Format(ContactsTable.eMail), ReportEnum.Align.Left, 100);
                              report.AddData("${Address1}", record.Format(ContactsTable.Address1), ReportEnum.Align.Left, 100);
@@ -9627,6 +9741,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 3rd parameter represents the text format of the column detail
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
+                 report.AddColumn(ContactsTable.ContactID.Name, ReportEnum.Align.Right, "${ContactID}", ReportEnum.Align.Right, 15);
                  report.AddColumn(ContactsTable.FirstName.Name, ReportEnum.Align.Left, "${FirstName}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactsTable.LastName.Name, ReportEnum.Align.Left, "${LastName}", ReportEnum.Align.Left, 24);
                  report.AddColumn(ContactsTable.eMail.Name, ReportEnum.Align.Left, "${eMail}", ReportEnum.Align.Left, 28);
@@ -9678,6 +9793,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 2nd parameter represents the data value
                             // The 3rd parameter represents the default alignment of column using the data
                             // The 4th parameter represents the maximum length of the data value being shown
+                             report.AddData("${ContactID}", record.Format(ContactsTable.ContactID), ReportEnum.Align.Right, 100);
                              report.AddData("${FirstName}", record.Format(ContactsTable.FirstName), ReportEnum.Align.Left, 100);
                              report.AddData("${LastName}", record.Format(ContactsTable.LastName), ReportEnum.Align.Left, 100);
                              report.AddData("${eMail}", record.Format(ContactsTable.eMail), ReportEnum.Align.Left, 100);

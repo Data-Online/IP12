@@ -324,6 +324,24 @@
     <Compile Include="BaseVPropertyTermRenewalsSqlView.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ContactBackgroundDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ContactBackgroundSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseContactBackgroundSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyDirectorsDefinition.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertyDirectorsSqlView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertyDirectorsSqlView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

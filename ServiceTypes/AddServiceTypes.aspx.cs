@@ -238,18 +238,18 @@ public void SetCancelButton()
         {
             SetCancelButton_Base(); 
         }              
-public void SetSuppliersTableControl()
-        {
-            SetSuppliersTableControl_Base(); 
-        }
+//public void SetSuppliersTableControl()
+//        {
+//            SetSuppliersTableControl_Base(); 
+//        }
 public void SetServiceTypesRecordControl()
         {
             SetServiceTypesRecordControl_Base(); 
         }
-public void SetServiceTypesTabContainer()
-        {
-            SetServiceTypesTabContainer_Base(); 
-        }
+//public void SetServiceTypesTabContainer()
+//        {
+//            SetServiceTypesTabContainer_Base(); 
+//        }
 [System.Web.Services.WebMethod()]
         public static object[] GetImage(string contextName,
                                         string tableName,
@@ -308,27 +308,9 @@ public override void SetControl(string control)
         }
         
     
-        public System.Web.UI.WebControls.LinkButton Address1SortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton Address2SortLabel;
-        
         public ThemeButton CancelButton;
                 
-        public System.Web.UI.WebControls.LinkButton CellPhoneSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton CityIDSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton CompanyNameSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton ContactNameSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton eMailSortLabel;
-        
-        public System.Web.UI.WebControls.LinkButton LandPhoneSortLabel;
-        
         public System.Web.UI.WebControls.Literal PageTitle;
-        
-        public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
         
         public ThemeButton SaveAndNewButton;
                 
@@ -338,24 +320,8 @@ public override void SetControl(string control)
         
         public IPv5.UI.Controls.AddServiceTypes.ServiceTypesRecordControl ServiceTypesRecordControl;
           
-        public AjaxControlToolkit.TabContainer ServiceTypesTabContainer;
-        
         public System.Web.UI.WebControls.Literal ServiceTypesTitle;
             
-        public System.Web.UI.WebControls.ImageButton SuppliersAddButton;
-        
-        public ThemeButtonWithArrow SuppliersButtonsButton;
-                
-        public System.Web.UI.WebControls.ImageButton SuppliersDeleteButton;
-        
-        public ThemeButtonWithArrow SuppliersFiltersButton;
-                
-        public PaginationModern SuppliersPagination;
-                
-        public IPv5.UI.Controls.AddServiceTypes.SuppliersTableControl SuppliersTableControl;
-          
-        public System.Web.UI.WebControls.CheckBox SuppliersToggleAll;
-        
         public ValidationSummary ValidationSummary1;
 
   
@@ -427,7 +393,7 @@ public override void SetControl(string control)
             // Check if user has access to this page.  Redirects to either sign-in page
             // or 'no access' page if not. Does not do anything if role-based security
             // is not turned on, but you can override to add your own security.
-            this.Authorize("1");
+            this.Authorize("1;3");
              if (!this.IsPostBack)
              {
             
@@ -542,10 +508,6 @@ public override void SetControl(string control)
               case "ServiceTypesRecordControl":
                  SetServiceTypesRecordControl();
                  break;
-          
-              case "SuppliersTableControl":
-                 SetSuppliersTableControl();
-                 break;
                
           }
         
@@ -648,9 +610,7 @@ public override void SetControl(string control)
                 this.DataBind();
                 
                 
-                
-            SetServiceTypesTabContainer(); 
-          
+                    
     
                 // Load and bind data for each record and table UI control.
                 
@@ -758,19 +718,6 @@ public override void SetControl(string control)
                 
         // Write out the Set methods
         
-        public void SetServiceTypesTabContainer_Base()           
-        
-        {
-                            
-                   
-            if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "true") 
-                MiscUtils.FindControlRecursively(this, "ServiceTypesTabContainer").Visible = true;
-            else if (EvaluateFormula("URL(\"TabVisible\")").ToLower() == "false") 
-                MiscUtils.FindControlRecursively(this, "ServiceTypesTabContainer").Visible = false;
-         
-  
-        }      
-      
         public void SetServiceTypesRecordControl_Base()           
         
         {        
@@ -778,16 +725,6 @@ public override void SetControl(string control)
             {
                 ServiceTypesRecordControl.LoadData();
                 ServiceTypesRecordControl.DataBind();
-            }
-        }
-      
-        public void SetSuppliersTableControl_Base()           
-        
-        {        
-            if (SuppliersTableControl.Visible)
-            {
-                SuppliersTableControl.LoadData();
-                SuppliersTableControl.DataBind();
             }
         }
       

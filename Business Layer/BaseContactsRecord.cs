@@ -1080,6 +1080,144 @@ public class BaseContactsRecord : PrimaryKeyRecord
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.UpdatedOnColumn);
 	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.Deleted field.
+	/// </summary>
+	public ColumnValue GetDeletedValue()
+	{
+		return this.GetValue(TableUtils.DeletedColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.Deleted field.
+	/// </summary>
+	public bool GetDeletedFieldValue()
+	{
+		return this.GetValue(TableUtils.DeletedColumn).ToBoolean();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.Deleted field.
+	/// </summary>
+	public void SetDeletedFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.DeletedColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.Deleted field.
+	/// </summary>
+	public void SetDeletedFieldValue(string val)
+	{
+		this.SetString(val, TableUtils.DeletedColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.Deleted field.
+	/// </summary>
+	public void SetDeletedFieldValue(bool val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.DeletedColumn);
+	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public ColumnValue GetDeletedByValue()
+	{
+		return this.GetValue(TableUtils.DeletedByColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public Int32 GetDeletedByFieldValue()
+	{
+		return this.GetValue(TableUtils.DeletedByColumn).ToInt32();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public void SetDeletedByFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.DeletedByColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public void SetDeletedByFieldValue(string val)
+	{
+		this.SetString(val, TableUtils.DeletedByColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public void SetDeletedByFieldValue(double val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.DeletedByColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public void SetDeletedByFieldValue(decimal val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.DeletedByColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public void SetDeletedByFieldValue(long val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.DeletedByColumn);
+	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.DeletedOn field.
+	/// </summary>
+	public ColumnValue GetDeletedOnValue()
+	{
+		return this.GetValue(TableUtils.DeletedOnColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.DeletedOn field.
+	/// </summary>
+	public DateTime GetDeletedOnFieldValue()
+	{
+		return this.GetValue(TableUtils.DeletedOnColumn).ToDateTime();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedOn field.
+	/// </summary>
+	public void SetDeletedOnFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.DeletedOnColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedOn field.
+	/// </summary>
+	public void SetDeletedOnFieldValue(string val)
+	{
+		this.SetString(val, TableUtils.DeletedOnColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedOn field.
+	/// </summary>
+	public void SetDeletedOnFieldValue(DateTime val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.DeletedOnColumn);
+	}
 
 
 #endregion
@@ -2163,6 +2301,137 @@ public class BaseContactsRecord : PrimaryKeyRecord
 		get
 		{
 			return TableUtils.UpdatedOnColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Contacts_.Deleted field.
+	/// </summary>
+	public bool Deleted
+	{
+		get
+		{
+			return this.GetValue(TableUtils.DeletedColumn).ToBoolean();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+	   		this.SetValue(cv, TableUtils.DeletedColumn);
+		}
+	}
+	
+	
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool DeletedSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.DeletedColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.Deleted field.
+	/// </summary>
+	public string DeletedDefault
+	{
+		get
+		{
+			return TableUtils.DeletedColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public Int32 DeletedBy
+	{
+		get
+		{
+			return this.GetValue(TableUtils.DeletedByColumn).ToInt32();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.DeletedByColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool DeletedBySpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.DeletedByColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedBy field.
+	/// </summary>
+	public string DeletedByDefault
+	{
+		get
+		{
+			return TableUtils.DeletedByColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Contacts_.DeletedOn field.
+	/// </summary>
+	public DateTime DeletedOn
+	{
+		get
+		{
+			return this.GetValue(TableUtils.DeletedOnColumn).ToDateTime();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.DeletedOnColumn);
+			
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool DeletedOnSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.DeletedOnColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.DeletedOn field.
+	/// </summary>
+	public string DeletedOnDefault
+	{
+		get
+		{
+			return TableUtils.DeletedOnColumn.DefaultValue;
 		}
 	}
 

@@ -3,7 +3,7 @@
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <%@ Register Tagprefix="Selectors" Namespace="IPv5" Assembly="IPv5" %>
 
-<%@ Page Language="C#" EnableEventValidation="false" AutoEventWireup="false" Codebehind="SignIn.aspx.cs" Culture="en-NZ" MasterPageFile="../Master Pages/HorizontalMenu.master" Inherits="IPv5.UI.SignIn" %>
+<%@ Page Language="C#" EnableEventValidation="false" AutoEventWireup="false" Codebehind="SignIn.aspx.cs" Culture="en-NZ" MasterPageFile="../Master Pages/HorizontalNoMenu.master" Inherits="IPv5.UI.SignIn" %>
 <%@ Register Tagprefix="BaseClasses" Namespace="BaseClasses.Web.UI.WebControls" Assembly="BaseClasses" %><asp:Content id="Content" ContentPlaceHolderID="PageContent" runat="server">
      <a id="StartOfPageContent"></a>
     <div id="scrollRegion" class="scrollRegion">

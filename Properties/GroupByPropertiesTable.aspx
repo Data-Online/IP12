@@ -90,7 +90,10 @@
                                 
                                   <asp:ImageButton runat="server" id="PropertiesRowExpandCollapseRowButton" causesvalidation="False" commandname="ExpandCollapseRow" cssclass="button_link" imageurl="../Images/icon_expandcollapserow.gif" tooltip="&lt;%# GetResourceValue(&quot;Txt:ExpandCollapseRow&quot;, &quot;IPv5&quot;) %>">		
 	</asp:ImageButton><br /><br />
-                                </td><td class="largeText" scope="col"><asp:Literal runat="server" id="CompanyName"></asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="Address1"></asp:Literal> <br />
+                                </td><td class="largeText" scope="col"><asp:Literal runat="server" id="CompanyName"></asp:Literal> 
+<span style="white-space:nowrap;">
+<asp:Literal runat="server" id="PropertyID" visible="False"></asp:Literal></span>
+</td><td class="tableCellValue"><asp:Literal runat="server" id="Address1"></asp:Literal> <br />
 <asp:Literal runat="server" id="Address2"></asp:Literal> <br />
 <asp:Literal runat="server" id="Address3"></asp:Literal></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue" style="text-align:center;"><asp:Literal runat="server" id="LinkTableCountControl">	</asp:Literal></td><td class="tableCellValue" scope="col" style="text-align:center;"><asp:Literal runat="server" id="DirectorsCountControl">	</asp:Literal></td><td class="tableCellValue"><i>> 60 days<br />
 Now<br />
@@ -301,10 +304,10 @@ Next month<br />
           </td><td class="prbbc"><img src="../Images/space.gif" alt="" style="width: 10px" /></td><td class="prspaceEnd">&nbsp;</td><td></td></tr></table>
 </td><td class="dher"><img src="../Images/space.gif" alt="" /></td><td>
                           <div id="FiltersDiv" runat="server" class="popupWrapper">
-                          <table cellpadding="0" cellspacing="0" border="0"><tr><td class="popupTableCellLabel"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td style="text-align: right;" class="popupTableCellValue"><input type="image" src="../Images/closeButton.gif" onmouseover="this.src='../Images/closeButtonOver.gif'" onmouseout="this.src='../Images/closeButton.gif'" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /><br /></td></tr><tr><td class="popupTableCellLabel"><asp:Literal runat="server" id="DateRecordedLabel1" Text="Date Recorded">	</asp:Literal></td><td class="popupTableCellValue"><asp:TextBox runat="server" id="DateRecordedFromFilter" columns="15" cssclass="Filter_Input" onkeyup="DateFormat(this, this.value, event.keyCode, &#39;d/mm/yyyy&#39;)" timestring="&quot;00:00:00&quot;" AutoPostback="False" style="vertical-align:middle">	</asp:TextBox>
-	<Selectors:CalendarExtendarClass runat="server" ID="DateRecordedFromFilterCalenderExtender" TargetControlID="DateRecordedFromFilter" CssClass="MyCalendar" Format="d">
-	</Selectors:CalendarExtendarClass> <span class="rft"><%# GetResourceValue("Txt:To", "IPv5") %></span> <asp:TextBox runat="server" id="DateRecordedToFilter" columns="15" cssclass="Filter_Input" onkeyup="DateFormat(this, this.value, event.keyCode, &#39;d/mm/yyyy&#39;)" timestring="&quot;23:59:59&quot;" AutoPostback="False" style="vertical-align:middle">	</asp:TextBox>
-	<Selectors:CalendarExtendarClass runat="server" ID="DateRecordedToFilterCalenderExtender" TargetControlID="DateRecordedToFilter" CssClass="MyCalendar" Format="d">
+                          <table cellpadding="0" cellspacing="0" border="0"><tr><td class="popupTableCellLabel"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td style="text-align: right;" class="popupTableCellValue"><input type="image" src="../Images/closeButton.gif" onmouseover="this.src='../Images/closeButtonOver.gif'" onmouseout="this.src='../Images/closeButton.gif'" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /><br /></td></tr><tr><td class="popupTableCellLabel"><asp:Literal runat="server" id="CreatedOnLabel1" Text="Created On">	</asp:Literal></td><td class="popupTableCellValue"><asp:TextBox runat="server" id="CreatedOnFromFilter" columns="15" cssclass="Filter_Input" onkeyup="DateFormat(this, this.value, event.keyCode, &#39;d/mm/yyyy&#39;)" timestring="&quot;00:00:00&quot;" AutoPostback="False" style="vertical-align:middle">	</asp:TextBox>
+	<Selectors:CalendarExtendarClass runat="server" ID="CreatedOnFromFilterCalenderExtender" TargetControlID="CreatedOnFromFilter" CssClass="MyCalendar" Format="d">
+	</Selectors:CalendarExtendarClass> <span class="rft"><%# GetResourceValue("Txt:To", "IPv5") %></span> <asp:TextBox runat="server" id="CreatedOnToFilter" columns="15" cssclass="Filter_Input" onkeyup="DateFormat(this, this.value, event.keyCode, &#39;d/mm/yyyy&#39;)" timestring="&quot;23:59:59&quot;" AutoPostback="False" style="vertical-align:middle">	</asp:TextBox>
+	<Selectors:CalendarExtendarClass runat="server" ID="CreatedOnToFilterCalenderExtender" TargetControlID="CreatedOnToFilter" CssClass="MyCalendar" Format="d">
 	</Selectors:CalendarExtendarClass> </td><td class="popupTableCellValue"></td><td class="popupTableCellValue"><IPv5:ThemeButton runat="server" id="FilterButton" button-causesvalidation="False" button-commandname="Search" button-text="&lt;%# GetResourceValue(&quot;Btn:SearchGoButtonText&quot;, &quot;IPv5&quot;) %>" button-tooltip="&lt;%# GetResourceValue(&quot;Btn:SearchGoButtonText&quot;, &quot;IPv5&quot;) %>" postback="False"></IPv5:ThemeButton></td><td class="popupTableCellValue">
                                   <asp:ImageButton runat="server" id="ResetButton" causesvalidation="false" commandname="ResetFilters" imageurl="../Images/ButtonBarReset.gif" onmouseout="this.src=&#39;../Images/ButtonBarReset.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarResetOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:Reset&quot;, &quot;IPv5&quot;) %>">		
 	</asp:ImageButton>
@@ -315,15 +318,13 @@ Next month<br />
 
                 </td><td class="panelHeaderR"></td></tr><tr><td></td><td>
                   <asp:panel id="CollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre">
-                    <table id="PropertyNotesTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="1" style="display:none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th></tr><asp:Repeater runat="server" id="PropertyNotesTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:PropertyNotesTableControlRow runat="server" id="PropertyNotesTableControlRow">
+                    <table id="PropertyNotesTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="1"></th><th class="thc"><asp:LinkButton runat="server" id="NotesLabel" Text="Notes" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="CreatedOnLabel" tooltip="Sort by CreatedOn" Text="Created On" CausesValidation="False">	</asp:LinkButton></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th></tr><asp:Repeater runat="server" id="PropertyNotesTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:PropertyNotesTableControlRow runat="server" id="PropertyNotesTableControlRow">
 <tr><td class="tableRowButtonsCellVertical" scope="row" style="font-size: 5px;">
                                   <asp:ImageButton runat="server" id="EditRowButton1" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton>                                 
-                                </td><td class="tableCellLabel"><asp:Literal runat="server" id="DateRecordedLabel" Text="Date Recorded">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
-<asp:Literal runat="server" id="DateRecorded"></asp:Literal></span>
- </td><td class="tableCellLabel"><asp:Literal runat="server" id="NotesLabel" Text="Notes">	</asp:Literal> 
-</td><td class="tableCellValue" colspan="5"><asp:Literal runat="server" id="Notes"></asp:Literal> </td></tr><tr><td class="tableRowDivider" colspan="9"></td></tr></IPv5:PropertyNotesTableControlRow>
+                                </td><td class="tableCellValue"><asp:Literal runat="server" id="Notes"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="CreatedOn"></asp:Literal></span>
+</td><td class="tableCellLabel"></td><td class="tableCellValue" colspan="5"></td></tr><tr><td class="tableRowDivider" colspan="9"></td></tr></IPv5:PropertyNotesTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>
@@ -394,17 +395,18 @@ Next month<br />
                         </td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
 
                 </td><td class="panelHeaderR"></td></tr><tr><td></td><td>
-                  <asp:panel id="BankLoansTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="BankLoansTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="2" style="display:none"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th></tr><asp:Repeater runat="server" id="BankLoansTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:BankLoansTableControlRow runat="server" id="BankLoansTableControlRow">
+                  <asp:panel id="BankLoansTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="BankLoansTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="2"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="DescriptionLabel3" Text="Description" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="ExpiryDateLabel1" Text="Expiration Date" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th></tr><asp:Repeater runat="server" id="BankLoansTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:BankLoansTableControlRow runat="server" id="BankLoansTableControlRow">
 <tr><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;" colspan="2">
                                   <asp:ImageButton runat="server" id="BankLoansRowEditButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" redirectstyle="NewWindow" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton><br /><br />
                                 
                                   <asp:ImageButton runat="server" id="BankLoansRowDeleteButton" causesvalidation="False" commandname="DeleteRecord" cssclass="button_link" imageurl="../Images/icon_delete.gif" onmouseout="this.src=&#39;../Images/icon_delete.gif&#39;" onmouseover="this.src=&#39;../Images/icon_delete_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:DeleteRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton><br /><br />
-                                </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="DescriptionLabel3" Text="Description">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Description3"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="ExpiryDateLabel1" Text="Expiration Date">	</asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+                                </td><td class="tableCellValue" scope="col"><asp:Literal runat="server" id="Description3"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
 <asp:Literal runat="server" id="ExpiryDate2"></asp:Literal></span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="10">&nbsp;</td></tr></IPv5:BankLoansTableControlRow>
+</td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="10">&nbsp;</td></tr></IPv5:BankLoansTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>
@@ -474,17 +476,18 @@ Next month<br />
                         </td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
 
                 </td><td class="panelHeaderR"></td></tr><tr><td></td><td>
-                  <asp:panel id="RentReviewsTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="RentReviewsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="2" style="display:none"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th></tr><asp:Repeater runat="server" id="RentReviewsTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:RentReviewsTableControlRow runat="server" id="RentReviewsTableControlRow">
+                  <asp:panel id="RentReviewsTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="RentReviewsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="2"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="DescriptionLabel7" Text="Description" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="ExpiryDateLabel3" Text="Expiration Date" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th></tr><asp:Repeater runat="server" id="RentReviewsTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:RentReviewsTableControlRow runat="server" id="RentReviewsTableControlRow">
 <tr><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;" colspan="2">
                                   <asp:ImageButton runat="server" id="RentReviewsRowEditButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton><br /><br />
                                 
                                   <asp:ImageButton runat="server" id="RentReviewsRowDeleteButton" causesvalidation="False" commandname="DeleteRecord" cssclass="button_link" imageurl="../Images/icon_delete.gif" onmouseout="this.src=&#39;../Images/icon_delete.gif&#39;" onmouseover="this.src=&#39;../Images/icon_delete_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:DeleteRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton><br /><br />
-                                </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="DescriptionLabel7" Text="Description">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Description4"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="ExpiryDateLabel3" Text="Expiration Date">	</asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+                                </td><td class="tableCellValue" scope="col"><asp:Literal runat="server" id="Description4"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
 <asp:Literal runat="server" id="ExpiryDate3"></asp:Literal></span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="10">&nbsp;</td></tr></IPv5:RentReviewsTableControlRow>
+</td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="10">&nbsp;</td></tr></IPv5:RentReviewsTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>
@@ -552,15 +555,13 @@ Next month<br />
 
                 </td><td class="panelHeaderR"></td></tr><tr><td></td><td>
                   <asp:panel id="CollapsibleRegion1" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre">
-                    <table id="TermExpiresTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="1" style="display:none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th></tr><asp:Repeater runat="server" id="TermExpiresTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:TermExpiresTableControlRow runat="server" id="TermExpiresTableControlRow">
+                    <table id="TermExpiresTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="1"></th><th class="thc"><asp:LinkButton runat="server" id="DescriptionLabel" Text="Description" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ExpiryDateLabel" Text="Expiration Date" CausesValidation="False">	</asp:LinkButton></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th></tr><asp:Repeater runat="server" id="TermExpiresTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:TermExpiresTableControlRow runat="server" id="TermExpiresTableControlRow">
 <tr><td class="tableRowButtonsCellVertical" scope="row" style="font-size: 5px;">
                                   <asp:ImageButton runat="server" id="EditRowButton2" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton>                                 
-                                </td><td class="tableCellLabel"><asp:Literal runat="server" id="DescriptionLabel" Text="Description">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Description"></asp:Literal> </td><td class="tableCellLabel"><asp:Literal runat="server" id="ExpiryDateLabel" Text="Expiration Date">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
+                                </td><td class="tableCellValue"><asp:Literal runat="server" id="Description"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
 <asp:Literal runat="server" id="ExpiryDate"></asp:Literal></span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="9"></td></tr></IPv5:TermExpiresTableControlRow>
+</td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="9"></td></tr></IPv5:TermExpiresTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>
@@ -631,17 +632,18 @@ Next month<br />
                         </td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
 
                 </td><td class="panelHeaderR"></td></tr><tr><td></td><td>
-                  <asp:panel id="TermRenewalsTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="TermRenewalsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="2" style="display:none"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th></tr><asp:Repeater runat="server" id="TermRenewalsTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:TermRenewalsTableControlRow runat="server" id="TermRenewalsTableControlRow">
+                  <asp:panel id="TermRenewalsTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="TermRenewalsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="2"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="DescriptionLabel1" Text="Description" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp; 
+<asp:LinkButton runat="server" id="RenewalDateLabel" Text="Renewal Date" CausesValidation="False">	</asp:LinkButton></th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th><th class="thc">&nbsp;</th></tr><asp:Repeater runat="server" id="TermRenewalsTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:TermRenewalsTableControlRow runat="server" id="TermRenewalsTableControlRow">
 <tr><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;" colspan="2">
                                   <asp:ImageButton runat="server" id="TermRenewalsRowEditButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton><br /><br />
                                 
                                   <asp:ImageButton runat="server" id="TermRenewalsRowDeleteButton" causesvalidation="False" commandname="DeleteRecord" cssclass="button_link" imageurl="../Images/icon_delete.gif" onmouseout="this.src=&#39;../Images/icon_delete.gif&#39;" onmouseover="this.src=&#39;../Images/icon_delete_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:DeleteRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton><br /><br />
-                                </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="DescriptionLabel1" Text="Description">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Description2"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="RenewalDateLabel" Text="Renewal Date">	</asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+                                </td><td class="tableCellValue" scope="col"><asp:Literal runat="server" id="Description2"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
 <asp:Literal runat="server" id="RenewalDate"></asp:Literal></span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="10">&nbsp;</td></tr></IPv5:TermRenewalsTableControlRow>
+</td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="10">&nbsp;</td></tr></IPv5:TermRenewalsTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>
@@ -709,15 +711,13 @@ Next month<br />
 
                 </td><td class="panelHeaderR"></td></tr><tr><td></td><td>
                   <asp:panel id="CollapsibleRegion3" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre">
-                    <table id="MMContractsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="1" style="display:none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th></tr><asp:Repeater runat="server" id="MMContractsTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:MMContractsTableControlRow runat="server" id="MMContractsTableControlRow">
+                    <table id="MMContractsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="1"></th><th class="thc"><asp:LinkButton runat="server" id="DescriptionLabel2" Text="Description" CausesValidation="False">	</asp:LinkButton></th><th class="thc"><asp:LinkButton runat="server" id="ExpiryDateLabel2" Text="Expiration Date" CausesValidation="False">	</asp:LinkButton></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th><th class="thc"></th></tr><asp:Repeater runat="server" id="MMContractsTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:MMContractsTableControlRow runat="server" id="MMContractsTableControlRow">
 <tr><td class="tableRowButtonsCellVertical" scope="row" style="font-size: 5px;">
                                   <asp:ImageButton runat="server" id="EditRowButton3" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton>                                 
-                                </td><td class="tableCellLabel"><asp:Literal runat="server" id="DescriptionLabel2" Text="Description">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Description1"></asp:Literal> </td><td class="tableCellLabel"><asp:Literal runat="server" id="ExpiryDateLabel2" Text="Expiration Date">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
+                                </td><td class="tableCellValue"><asp:Literal runat="server" id="Description1"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
 <asp:Literal runat="server" id="ExpiryDate1"></asp:Literal></span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="9"></td></tr></IPv5:MMContractsTableControlRow>
+</td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="9"></td></tr></IPv5:MMContractsTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>

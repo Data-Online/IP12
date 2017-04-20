@@ -41,24 +41,24 @@
  </td><td class="fls"></td><td class="dfv"></td></tr><tr><td class="fls"><asp:Literal runat="server" id="Address1Label" Text="Address 1">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
 <asp:TextBox runat="server" id="Address1" Columns="40" MaxLength="50" cssclass="field_input"></asp:TextBox>&nbsp;
 <BaseClasses:TextBoxMaxLengthValidator runat="server" id="Address1TextBoxMaxLengthValidator" ControlToValidate="Address1" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Address 1&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
- </td><td class="fls"></td><td class="dfv"></td></tr><tr><td class="fls"><asp:Literal runat="server" id="Address2Label" Text="Address 2">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
-<asp:TextBox runat="server" id="Address2" Columns="40" MaxLength="50" cssclass="field_input"></asp:TextBox>&nbsp;
-<BaseClasses:TextBoxMaxLengthValidator runat="server" id="Address2TextBoxMaxLengthValidator" ControlToValidate="Address2" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Address 2&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
- </td><td class="fls"></td><td class="dfv" style="white-space:nowrap;"></td></tr><tr><td class="fls"><asp:Literal runat="server" id="Address3Label" Text="Address 3">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
-<asp:TextBox runat="server" id="Address3" Columns="40" MaxLength="50" cssclass="field_input"></asp:TextBox>&nbsp;
-<BaseClasses:TextBoxMaxLengthValidator runat="server" id="Address3TextBoxMaxLengthValidator" ControlToValidate="Address3" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Address 3&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
- </td><td class="fls"></td><td class="dfv" style="white-space:nowrap;"></td></tr><tr><td class="fls"><asp:Literal runat="server" id="CityIDLabel" Text="City">	</asp:Literal></td><td class="dfv" style="white-space:nowrap;"><span style="white-space:nowrap;">
+ </td><td class="fls"><asp:Literal runat="server" id="CityIDLabel" Text="City">	</asp:Literal></td><td class="dfv" style="white-space:nowrap;"><span style="white-space:nowrap;">
 <asp:DropDownList runat="server" id="CityID" cssclass="field_input" onkeypress="dropDownListTypeAhead(this,false)"></asp:DropDownList></span>
  
 <asp:ImageButton runat="server" id="CityIDAddRecordLink" causesvalidation="False" commandname="Redirect" imageurl="../Images/iconNewFlat.gif" redirectstyle="NewWindow" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton> </td><td class="fls"><asp:Literal runat="server" id="RegionIDLabel" Text="Region">	</asp:Literal></td><td class="dfv" style="white-space:nowrap;"><span style="white-space:nowrap;">
+	</asp:ImageButton> </td></tr><tr><td class="fls"><asp:Literal runat="server" id="Address2Label" Text="Address 2">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
+<asp:TextBox runat="server" id="Address2" Columns="40" MaxLength="50" cssclass="field_input"></asp:TextBox>&nbsp;
+<BaseClasses:TextBoxMaxLengthValidator runat="server" id="Address2TextBoxMaxLengthValidator" ControlToValidate="Address2" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Address 2&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+ </td><td class="fls"><asp:Literal runat="server" id="PostCodeLabel" Text="Post Code">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
+<asp:TextBox runat="server" id="PostCode" Columns="35" MaxLength="35" cssclass="field_input"></asp:TextBox>&nbsp;
+<BaseClasses:TextBoxMaxLengthValidator runat="server" id="PostCodeTextBoxMaxLengthValidator" ControlToValidate="PostCode" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Post Code&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+ </td></tr><tr><td class="fls"><asp:Literal runat="server" id="Address3Label" Text="Address 3">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
+<asp:TextBox runat="server" id="Address3" Columns="40" MaxLength="50" cssclass="field_input"></asp:TextBox>&nbsp;
+<BaseClasses:TextBoxMaxLengthValidator runat="server" id="Address3TextBoxMaxLengthValidator" ControlToValidate="Address3" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Address 3&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
+ </td><td class="fls"><asp:Literal runat="server" id="RegionIDLabel" Text="Region">	</asp:Literal></td><td class="dfv" style="white-space:nowrap;"><span style="white-space:nowrap;">
 <asp:DropDownList runat="server" id="RegionID" cssclass="field_input" onkeypress="dropDownListTypeAhead(this,false)"></asp:DropDownList></span>
  
 <asp:ImageButton runat="server" id="RegionIDAddRecordLink" causesvalidation="False" commandname="Redirect" imageurl="../Images/iconNewFlat.gif" redirectstyle="NewWindow" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton> </td></tr><tr><td class="fls"><asp:Literal runat="server" id="PostCodeLabel" Text="Post Code">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
-<asp:TextBox runat="server" id="PostCode" Columns="35" MaxLength="35" cssclass="field_input"></asp:TextBox>&nbsp;
-<BaseClasses:TextBoxMaxLengthValidator runat="server" id="PostCodeTextBoxMaxLengthValidator" ControlToValidate="PostCode" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Post Code&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
- </td><td class="fls"><asp:Literal runat="server" id="CountryIDLabel" Text="Country">	</asp:Literal></td><td class="dfv" style="white-space:nowrap;"><span style="white-space:nowrap;">
+	</asp:ImageButton> </td></tr><tr><td class="fls"></td><td class="dfv" style="white-space:nowrap;"></td><td class="fls"><asp:Literal runat="server" id="CountryIDLabel" Text="Country">	</asp:Literal></td><td class="dfv" style="white-space:nowrap;"><span style="white-space:nowrap;">
 <asp:DropDownList runat="server" id="CountryID" cssclass="field_input" onkeypress="dropDownListTypeAhead(this,false)"></asp:DropDownList></span>
  
 <asp:ImageButton runat="server" id="CountryIDAddRecordLink" causesvalidation="False" commandname="Redirect" imageurl="../Images/iconNewFlat.gif" redirectstyle="NewWindow" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>">		

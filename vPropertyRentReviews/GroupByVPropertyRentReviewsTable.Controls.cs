@@ -21,16 +21,17 @@ using BaseClasses.Utils;
 using ReportTools.ReportCreator;
 using ReportTools.Shared;
 
-        
+
 using IPv5.Business;
 using IPv5.Data;
 using IPv5.UI;
 using IPv5;
-		
+using IPv5.UI.Tools;
+
 
 #endregion
 
-  
+
 namespace IPv5.UI.Controls.GroupByVPropertyRentReviewsTable
 {
   
@@ -40,19 +41,65 @@ namespace IPv5.UI.Controls.GroupByVPropertyRentReviewsTable
     
 public class VPropertyRentReviewsTableControlRow : BaseVPropertyRentReviewsTableControlRow
 {
-      
+
         // The BaseVPropertyRentReviewsTableControlRow implements code for a ROW within the
         // the VPropertyRentReviewsTableControl table.  The BaseVPropertyRentReviewsTableControlRow implements the DataBind and SaveData methods.
         // The loading of data is actually performed by the LoadData method in the base class of VPropertyRentReviewsTableControl.
 
         // This is the ideal place to add your code customizations. For example, you can override the DataBind, 
         // SaveData, GetUIData, and Validate methods.
-        
-}
+        public VPropertyRentReviewsTableControlRow()
+        {
+            #region "Code Customization"
 
-  
+            // The following line will be inserted inside the
+            // constructor for page class.
+            this.PreRender += new System.EventHandler(RecordControl_PreRender);
 
-public class VPropertyRentReviewsTableControl : BaseVPropertyRentReviewsTableControl
+            #endregion
+        }
+        #region "Code Customization"
+
+        /// <summary>
+        /// Highlights the record in the PreRender event
+        /// </summary>
+        private void RecordControl_PreRender(object sender, System.EventArgs e)
+        {
+            // Compare value to determine if you want to highlight the background of the row.
+            // For example, if ExpiryDate > 25, then, highlight.
+            // Note: You can also check if the field value equals a certain string,
+            // e.g, ExpiryDate.Text = "Yes". -- double.Parse(this.OverdueCount.Text)
+            string applyToRow = "";
+            // DateTime currentDate;
+            try
+            {
+                applyToRow = CustomTools.SetCSSclass(Convert.ToDateTime(this.ExpiryDate.Text));
+            }
+            catch
+            { }  // No date specified .. so just ignore.
+
+            // Find the record row the field value is on.
+            System.Web.UI.HtmlControls.HtmlTableRow recordRow;
+            recordRow = (System.Web.UI.HtmlControls.HtmlTableRow)this.FindControl("MyTR");
+
+            // For each cell, set the background color.
+            foreach (System.Web.UI.HtmlControls.HtmlTableCell recordRowCell in recordRow.Cells)
+            {
+                // Override the record row background color -- since each data cell uses a 
+                // style (by default: table_cell or table_cellr)
+                recordRowCell.Attributes.Add("class", "alerts" + applyToRow);
+            }
+        }
+
+        #endregion
+
+
+
+    }
+
+
+
+    public class VPropertyRentReviewsTableControl : BaseVPropertyRentReviewsTableControl
 {
     // The BaseVPropertyRentReviewsTableControl class implements the LoadData, DataBind, CreateWhereClause
     // and other methods to load and display the data in a table control.
@@ -98,7 +145,7 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
               // Register the event handlers.
 
           
-                    this.VPropertyRentReviewsRowExpandCollapseRowButton.Click += VPropertyRentReviewsRowExpandCollapseRowButton_Click;
+                    this.PropertyID.Click += PropertyID_Click;
                         
         }
 
@@ -109,6 +156,15 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
             // CreateWhereClause, rather than making changes here.
             
         
+            // The RecordUniqueId is set the first time a record is loaded, and is
+            // used during a PostBack to load the record.
+            if (this.RecordUniqueId != null && this.RecordUniqueId.Length > 0) {
+              
+                this.DataSource = VPropertyRentReviewsView.GetRecord(this.RecordUniqueId, true);
+              
+                return;
+            }
+      
             // Since this is a row in the table, the data for this row is loaded by the 
             // LoadData method of the BaseVPropertyRentReviewsTableControl when the data for the entire
             // table is loaded.
@@ -138,36 +194,24 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
               
             // LoadData for DataSource for chart and report if they exist
           
+            // Store the checksum. The checksum is used to
+            // ensure the record was not changed by another user.
+            if (this.DataSource.GetCheckSumValue() != null)
+                this.CheckSum = this.DataSource.GetCheckSumValue().Value;
+            
 
             // Call the Set methods for each controls on the panel
         
                 SetAddress1();
-                SetAddress1Label();
                 SetAddress2();
-                SetAddress2Label();
                 SetAddress3();
-                SetAddress3Label();
                 SetCityID();
-                SetCityIDLabel();
-                SetCompanyName();
-                SetCompanyNameLabel();
                 SetCountryID();
-                SetCountryIDLabel();
                 SetDescription();
-                SetDescriptionLabel();
                 SetExpiryDate();
-                SetExpiryDateLabel();
                 SetPostCode();
-                SetPostCodeLabel();
                 SetPropertyID();
-                SetPropertyIDLabel();
                 SetRegionID();
-                SetRegionIDLabel();
-                SetRentReviewID();
-                SetRentReviewIDLabel();
-                
-                SetVPropertyRentReviewsRowExpandCollapseRowButton();
-              
 
       
 
@@ -175,6 +219,9 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
           
             if (this.DataSource.IsCreated) {
                 this.IsNewRecord = false;
+              
+                if (this.DataSource.GetID() != null)
+                    this.RecordUniqueId = this.DataSource.GetID().ToXmlString();
               
             }
             
@@ -356,46 +403,6 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
                                      
         }
                 
-        public virtual void SetCompanyName()
-        {
-            
-                    
-            // Set the CompanyName Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.vPropertyRentReviews database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.vPropertyRentReviews record retrieved from the database.
-            // this.CompanyName is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.CompanyNameSpecified) {
-                								
-                // If the CompanyName is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(VPropertyRentReviewsView.CompanyName);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.CompanyName.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // CompanyName is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.CompanyName.Text = VPropertyRentReviewsView.CompanyName.Format(VPropertyRentReviewsView.CompanyName.DefaultValue);
-            		
-            }
-            
-            // If the CompanyName is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.CompanyName.Text == null ||
-                this.CompanyName.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.CompanyName.Text = "&nbsp;";
-            }
-                                     
-        }
-                
         public virtual void SetCountryID()
         {
             
@@ -461,6 +468,52 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
                string formattedValue = this.DataSource.Format(VPropertyRentReviewsView.Description);
                                 
                 formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                if(formattedValue != null){
+                    int popupThreshold = (int)(10);
+                              
+                    int maxLength = formattedValue.Length;
+                    int originalLength = maxLength;
+                    if (maxLength >= (int)(15)){
+                        // Truncate based on FieldMaxLength on Properties.
+                        maxLength = (int)(15);
+                        //First strip of all html tags:
+                        formattedValue = StringUtils.ConvertHTMLToPlainText(formattedValue);
+                        
+                    }
+                                
+                              
+                    // For fields values larger than the PopupTheshold on Properties, display a popup.
+                    if (originalLength >= popupThreshold) {
+                        String name = HttpUtility.HtmlEncode(VPropertyRentReviewsView.Description.Name);
+
+                        if (!HttpUtility.HtmlEncode("%ISD_DEFAULT%").Equals("%ISD_DEFAULT%")) {
+                           name = HttpUtility.HtmlEncode(this.Page.GetResourceValue("%ISD_DEFAULT%"));
+                        }
+
+                        formattedValue = "<a onclick=\'gPersist=true;\' class=\'truncatedText\' onmouseout=\'detailRolloverPopupClose();\' " +
+                            "onmouseover=\'SaveMousePosition(event); delayRolloverPopup(\"PageMethods.GetRecordFieldValue(\\\"" + "NULL" + "\\\", \\\"IPv5.Business.VPropertyRentReviewsView, IPv5.Business\\\",\\\"" +
+                              (HttpUtility.UrlEncode(this.DataSource.GetID().ToString())).Replace("\\","\\\\\\\\") + "\\\", \\\"Description\\\", \\\"Description\\\", \\\"" +NetUtils.EncodeStringForHtmlDisplay(name.Substring(0, name.Length)) + "\\\",\\\"" + Page.GetResourceValue("Btn:Close", "IPv5") + "\\\", " +
+                        " false, 200," +
+                            " 300, true, PopupDisplayWindowCallBackWith20);\", 500);'>" + NetUtils.EncodeStringForHtmlDisplay(formattedValue.Substring(0, Math.Min(maxLength, formattedValue.Length)));
+                        if (maxLength == (int)(15))
+                            {
+                            formattedValue = formattedValue + "..." + "</a>";
+                        }
+                        else
+                        {
+                            formattedValue = formattedValue + "</a>";
+                            
+                        }
+                    }
+                    else{
+                        if (maxLength == (int)(15)) {
+                          formattedValue = NetUtils.EncodeStringForHtmlDisplay(formattedValue.Substring(0,Math.Min(maxLength, formattedValue.Length)));
+                          formattedValue = formattedValue + "...";
+                        }
+                        
+                    }
+                }
+                
                 this.Description.Text = formattedValue;
                    
             } 
@@ -568,11 +621,11 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
         {
             
                     
-            // Set the PropertyID Literal on the webpage with value from the
+            // Set the PropertyID LinkButton on the webpage with value from the
             // DatabaseMM_IP1%dbo.vPropertyRentReviews database record.
 
             // this.DataSource is the DatabaseMM_IP1%dbo.vPropertyRentReviews record retrieved from the database.
-            // this.PropertyID is the ASP:Literal on the webpage.
+            // this.PropertyID is the ASP:LinkButton on the webpage.
                   
             if (this.DataSource != null && this.DataSource.PropertyIDSpecified) {
                 								
@@ -588,7 +641,6 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
                      formattedValue = this.DataSource.Format(VPropertyRentReviewsView.PropertyID);
                                   
                                 
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
                 this.PropertyID.Text = formattedValue;
                    
             } 
@@ -601,15 +653,7 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
               this.PropertyID.Text = VPropertyRentReviewsView.PropertyID.Format(VPropertyRentReviewsView.PropertyID.DefaultValue);
             		
             }
-            
-            // If the PropertyID is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.PropertyID.Text == null ||
-                this.PropertyID.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.PropertyID.Text = "&nbsp;";
-            }
-                                     
+                               
         }
                 
         public virtual void SetRegionID()
@@ -658,118 +702,6 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
                 this.RegionID.Text = "&nbsp;";
             }
                                      
-        }
-                
-        public virtual void SetRentReviewID()
-        {
-            
-                    
-            // Set the RentReviewID Literal on the webpage with value from the
-            // DatabaseMM_IP1%dbo.vPropertyRentReviews database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.vPropertyRentReviews record retrieved from the database.
-            // this.RentReviewID is the ASP:Literal on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.RentReviewIDSpecified) {
-                								
-                // If the RentReviewID is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(VPropertyRentReviewsView.RentReviewID);
-                                
-                formattedValue = HttpUtility.HtmlEncode(formattedValue);
-                this.RentReviewID.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // RentReviewID is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.RentReviewID.Text = VPropertyRentReviewsView.RentReviewID.Format(VPropertyRentReviewsView.RentReviewID.DefaultValue);
-            		
-            }
-            
-            // If the RentReviewID is NULL or blank, then use the value specified  
-            // on Properties.
-            if (this.RentReviewID.Text == null ||
-                this.RentReviewID.Text.Trim().Length == 0) {
-                // Set the value specified on the Properties.
-                this.RentReviewID.Text = "&nbsp;";
-            }
-                                     
-        }
-                
-        public virtual void SetAddress1Label()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetAddress2Label()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetAddress3Label()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetCityIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetCompanyNameLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetCountryIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDescriptionLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetExpiryDateLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPostCodeLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetPropertyIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetRegionIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetRentReviewIDLabel()
-                  {
-                  
-                    
         }
                 
         public BaseClasses.Data.DataSource.EvaluateFormulaDelegate EvaluateFormulaDelegate;
@@ -872,6 +804,13 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
             // that fields that are not displayed are also properly initialized.
             this.LoadData();
         
+            // The checksum is used to ensure the record was not changed by another user.
+            if (this.DataSource != null && this.DataSource.GetCheckSumValue() != null) {
+                if (this.CheckSum != null && this.CheckSum != this.DataSource.GetCheckSumValue().Value) {
+                    throw new Exception(Page.GetResourceValue("Err:RecChangedByOtherUser", "IPv5"));
+                }
+            }
+        
           
             // 2. Perform any custom validation.
             this.Validate();
@@ -904,6 +843,7 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
             this.DataChanged = true;
             this.ResetData = true;
             
+            this.CheckSum = "";
             // For Master-Detail relationships, save data on the Detail table(s)            
           
         }
@@ -922,14 +862,12 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
             GetAddress2();
             GetAddress3();
             GetCityID();
-            GetCompanyName();
             GetCountryID();
             GetDescription();
             GetExpiryDate();
             GetPostCode();
             GetPropertyID();
             GetRegionID();
-            GetRentReviewID();
         }
         
         
@@ -949,11 +887,6 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
         }
                 
         public virtual void GetCityID()
-        {
-            
-        }
-                
-        public virtual void GetCompanyName()
         {
             
         }
@@ -984,11 +917,6 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
         }
                 
         public virtual void GetRegionID()
-        {
-            
-        }
-                
-        public virtual void GetRentReviewID()
         {
             
         }
@@ -1026,6 +954,19 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
         public virtual void Delete()
         {
         
+            if (this.IsNewRecord) {
+                return;
+            }
+
+            KeyValue pkValue = KeyValue.XmlToKey(this.RecordUniqueId);
+          VPropertyRentReviewsView.DeleteRecord(pkValue);
+          
+              
+            // Setting the DataChanged to True results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            ((VPropertyRentReviewsTableControl)MiscUtils.GetParentControlObject(this, "VPropertyRentReviewsTableControl")).DataChanged = true;
+            ((VPropertyRentReviewsTableControl)MiscUtils.GetParentControlObject(this, "VPropertyRentReviewsTableControl")).ResetData = true;
         }
 
         protected virtual void Control_PreRender(object sender, System.EventArgs e)
@@ -1106,63 +1047,50 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
     
         // Generate set method for buttons
         
-        public virtual void SetVPropertyRentReviewsRowExpandCollapseRowButton()                
-              
+        // event handler for LinkButton
+        public virtual void PropertyID_Click(object sender, EventArgs args)
         {
-        
-   
-        }
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
             
-        // event handler for ImageButton
-        public virtual void VPropertyRentReviewsRowExpandCollapseRowButton_Click(object sender, ImageClickEventArgs args)
-        {
-              
+            string url = @"../Properties/GroupByPropertiesTable.aspx?Properties={VPropertyRentReviewsTableControlRow:FV:PropertyID}";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
             try {
-                VPropertyRentReviewsTableControl panelControl = (MiscUtils.GetParentControlObject(this, "VPropertyRentReviewsTableControl") as VPropertyRentReviewsTableControl);
-
-          VPropertyRentReviewsTableControlRow[] repeatedRows = panelControl.GetRecordControls();
-          foreach (VPropertyRentReviewsTableControlRow repeatedRow in repeatedRows)
-          {
-              System.Web.UI.Control altRow = (MiscUtils.FindControlRecursively(repeatedRow, "VPropertyRentReviewsTableControlAltRow") as System.Web.UI.Control);
-              if (altRow != null)
-              {
-                  if (sender == repeatedRow.VPropertyRentReviewsRowExpandCollapseRowButton)
-                      altRow.Visible = !altRow.Visible;
-                  
-                  if (altRow.Visible)
-                  {
-                   
-                     repeatedRow.VPropertyRentReviewsRowExpandCollapseRowButton.ImageUrl = "../Images/icon_expandcollapserow.gif";
-                     repeatedRow.VPropertyRentReviewsRowExpandCollapseRowButton.Attributes.Add("onmouseover", "");
-                     repeatedRow.VPropertyRentReviewsRowExpandCollapseRowButton.Attributes.Add("onmouseout", "");
-                           
-                  }
-                  else
-                  {
-                   
-                     repeatedRow.VPropertyRentReviewsRowExpandCollapseRowButton.ImageUrl = "../Images/icon_expandcollapserow2.gif";
-                     repeatedRow.VPropertyRentReviewsRowExpandCollapseRowButton.Attributes.Add("onmouseover", "");
-                     repeatedRow.VPropertyRentReviewsRowExpandCollapseRowButton.Attributes.Add("onmouseout", "");
-                   
-                  }
-            
-              }
-              else
-              {
-                  this.Page.Response.Redirect("../Shared/ConfigureCollapseExpandRowBtn.aspx");
-              }
-          }
-          
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = this.ModifyRedirectUrl(url, "",true);
+                url = this.Page.ModifyRedirectUrl(url, "",true);
+              
             } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  this.Page.RollBackTransaction(sender);
+                  shouldRedirect = false;
                   this.Page.ErrorOnPage = true;
 
             // Report the error message to the end user
             BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
     
             } finally {
-    
+                DbUtils.EndTransaction();
             }
-    
+            if (shouldRedirect) {
+                this.Page.ShouldSaveControlsToSession = true;
+      this.Page.Response.Redirect(url);
+        
+            }
+        
         }
             
             
@@ -1179,6 +1107,15 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
         }
   
 
+        
+        public String RecordUniqueId {
+            get {
+                return (string)this.ViewState["BaseVPropertyRentReviewsTableControlRow_Rec"];
+            }
+            set {
+                this.ViewState["BaseVPropertyRentReviewsTableControlRow_Rec"] = value;
+            }
+        }
         
         public VPropertyRentReviewsRecord DataSource {
             get {
@@ -1253,150 +1190,60 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
             }
         }
             
-        public System.Web.UI.WebControls.Literal Address1Label {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1Label");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal Address2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address2");
             }
         }
             
-        public System.Web.UI.WebControls.Literal Address2Label {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address2Label");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal Address3 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address3");
             }
         }
             
-        public System.Web.UI.WebControls.Literal Address3Label {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address3Label");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal CityID {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityID");
             }
         }
             
-        public System.Web.UI.WebControls.Literal CityIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal CompanyName {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CompanyName");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal CompanyNameLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CompanyNameLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal CountryID {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryID");
             }
         }
             
-        public System.Web.UI.WebControls.Literal CountryIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryIDLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal Description {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Description");
             }
         }
             
-        public System.Web.UI.WebControls.Literal DescriptionLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal ExpiryDate {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDate");
             }
         }
             
-        public System.Web.UI.WebControls.Literal ExpiryDateLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal PostCode {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCode");
             }
         }
             
-        public System.Web.UI.WebControls.Literal PostCodeLabel {
+        public System.Web.UI.WebControls.LinkButton PropertyID {
             get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCodeLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal PropertyID {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyID");
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyID");
             }
         }
             
-        public System.Web.UI.WebControls.Literal PropertyIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.Literal RegionID {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionID");
             }
         }
             
-        public System.Web.UI.WebControls.Literal RegionIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionIDLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal RentReviewID {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewID");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal RentReviewIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RentReviewIDLabel");
-            }
-        }
-        
-        public System.Web.UI.WebControls.ImageButton VPropertyRentReviewsRowExpandCollapseRowButton {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "VPropertyRentReviewsRowExpandCollapseRowButton");
-            }
-        }
-        
     #endregion
 
     #region "Helper Functions"
@@ -1469,6 +1316,12 @@ public class BaseVPropertyRentReviewsTableControlRow : IPv5.UI.BaseApplicationRe
         
             if (this.DataSource != null) {
                 return this.DataSource;
+            }
+            
+              if (this.RecordUniqueId != null) {
+              
+                return VPropertyRentReviewsView.GetRecord(this.RecordUniqueId, true);
+              
             }
             
             // Localization.
@@ -1594,7 +1447,7 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
 
     // Setup default pagination settings.
     
-            this.PageSize = Convert.ToInt32(this.GetFromSession(this, "Page_Size", "10"));
+            this.PageSize = Convert.ToInt32(this.GetFromSession(this, "Page_Size", "20"));
             this.PageIndex = Convert.ToInt32(this.GetFromSession(this, "Page_Index", "0"));
                      
         }
@@ -1622,23 +1475,39 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
         
        // Setup the sorting events.
         
+              this.Address1Label.Click += Address1Label_Click;
+            
               this.Address1SortLabel.Click += Address1SortLabel_Click;
             
               this.Address2SortLabel.Click += Address2SortLabel_Click;
             
               this.Address3SortLabel.Click += Address3SortLabel_Click;
             
+              this.CityIDLabel.Click += CityIDLabel_Click;
+            
               this.CityIDSortLabel.Click += CityIDSortLabel_Click;
             
               this.CompanyNameSortLabel.Click += CompanyNameSortLabel_Click;
             
+              this.CountryIDLabel.Click += CountryIDLabel_Click;
+            
+              this.DescriptionLabel.Click += DescriptionLabel_Click;
+            
               this.DescriptionSortLabel.Click += DescriptionSortLabel_Click;
+            
+              this.ExpiryDateLabel.Click += ExpiryDateLabel_Click;
             
               this.ExpiryDateSortLabel.Click += ExpiryDateSortLabel_Click;
             
+              this.PostCodeLabel.Click += PostCodeLabel_Click;
+            
               this.PostCodeSortLabel.Click += PostCodeSortLabel_Click;
             
+              this.PropertyIDLabel.Click += PropertyIDLabel_Click;
+            
               this.PropertyIDSortLabel.Click += PropertyIDSortLabel_Click;
+            
+              this.RegionIDLabel.Click += RegionIDLabel_Click;
             
               this.RentReviewIDSortLabel.Click += RentReviewIDSortLabel_Click;
             
@@ -1892,25 +1761,39 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             recControl.DataBind();
             
            
+            recControl.Visible = !this.InDeletedRecordIds(recControl);
+        
             index++;
         }
            
     
             // Call the Set methods for each controls on the panel
         
+                SetAddress1Label();
                 SetAddress1SortLabel();
                 SetAddress2SortLabel();
                 SetAddress3SortLabel();
                 SetCityIDFilter();
+                SetCityIDLabel();
                 SetCityIDLabel1();
                 SetCityIDSortLabel();
                 SetCompanyNameSortLabel();
+                SetCountryIDLabel();
+                SetDescriptionLabel();
                 SetDescriptionSortLabel();
+                SetDueNow();
+                SetExpiryDateLabel();
                 SetExpiryDateSortLabel();
+                SetLiteral();
+                SetNextMonth();
+                SetOverdue();
+                SetPostCodeLabel();
                 SetPostCodeSortLabel();
                 SetPropertyIDFilter();
+                SetPropertyIDLabel();
                 SetPropertyIDLabel1();
                 SetPropertyIDSortLabel();
+                SetRegionIDLabel();
                 SetRentReviewIDSortLabel();
                 
                 
@@ -1942,31 +1825,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
               
             // setting the state of expand or collapse alternative rows
       
-            bool expandFirstRow = true;
-        VPropertyRentReviewsTableControlRow[] recControls = this.GetRecordControls();
-            for (int i = 0; i < recControls.Length; i++)
-            {
-                System.Web.UI.Control altRow = (MiscUtils.FindControlRecursively(recControls[i], "VPropertyRentReviewsTableControlAltRow") as System.Web.UI.Control);
-                if (altRow != null){
-                    if (expandFirstRow && i == 0){
-                        altRow.Visible = true;
-                   
-                         recControls[i].VPropertyRentReviewsRowExpandCollapseRowButton.ImageUrl = "../Images/icon_expandcollapserow.gif";
-                         recControls[i].VPropertyRentReviewsRowExpandCollapseRowButton.Attributes.Add("onmouseover", "");
-                         recControls[i].VPropertyRentReviewsRowExpandCollapseRowButton.Attributes.Add("onmouseout", "");
-                   
-                    }
-                    else{
-                        altRow.Visible = false;
-                   
-                         recControls[i].VPropertyRentReviewsRowExpandCollapseRowButton.ImageUrl = "../Images/icon_expandcollapserow2.gif";
-                         recControls[i].VPropertyRentReviewsRowExpandCollapseRowButton.Attributes.Add("onmouseover", "");
-                         recControls[i].VPropertyRentReviewsRowExpandCollapseRowButton.Attributes.Add("onmouseout", "");
-                   
-                    }
-                }
-            }
-    
             // Load data for each record and table UI control.
             // Ordering is important because child controls get 
             // their parent ids from their parent UI controls.
@@ -2145,6 +2003,7 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                 this.VPropertyRentReviewsPagination.CurrentPage.Text = "0";
             }
             this.VPropertyRentReviewsPagination.PageSize.Text = this.PageSize.ToString();
+            this.VPropertyRentReviewsPagination.TotalPages.Text = this.TotalPages.ToString();
     
             // Bind the buttons for VPropertyRentReviewsTableControl pagination.
         
@@ -2175,8 +2034,14 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             foreach (VPropertyRentReviewsTableControlRow recCtl in this.GetRecordControls())
             {
         
-                if (recCtl.Visible) {
-                    recCtl.SaveData();
+                if (this.InDeletedRecordIds(recCtl)) {
+                    // Delete any pending deletes. 
+                    recCtl.Delete();
+                }
+                else {
+                    if (recCtl.Visible) {
+                        recCtl.SaveData();
+                    }
                 }
           
             }
@@ -2193,6 +2058,9 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             foreach (VPropertyRentReviewsTableControlRow recCtl in this.GetRecordControls()){
                 recCtl.IsNewRecord = false;
             }
+      
+            // Set DeletedRecordsIds to Nothing since we have deleted all pending deletes.
+            this.DeletedRecordIds = null;
                 
         }
         
@@ -2645,10 +2513,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                             rec.Parse(recControl.CityID.Text, VPropertyRentReviewsView.CityID);
                   }
                 
-                        if (recControl.CompanyName.Text != "") {
-                            rec.Parse(recControl.CompanyName.Text, VPropertyRentReviewsView.CompanyName);
-                  }
-                
                         if (recControl.CountryID.Text != "") {
                             rec.Parse(recControl.CountryID.Text, VPropertyRentReviewsView.CountryID);
                   }
@@ -2671,10 +2535,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                 
                         if (recControl.RegionID.Text != "") {
                             rec.Parse(recControl.RegionID.Text, VPropertyRentReviewsView.RegionID);
-                  }
-                
-                        if (recControl.RentReviewID.Text != "") {
-                            rec.Parse(recControl.RentReviewID.Text, VPropertyRentReviewsView.RentReviewID);
                   }
                 
               newUIDataList.Add(recControl.PreservedUIData());
@@ -2709,9 +2569,51 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
         }
 
         
+        public void AddToDeletedRecordIds(VPropertyRentReviewsTableControlRow rec)
+        {
+            if (rec.IsNewRecord) {
+                return;
+            }
+
+            if (this.DeletedRecordIds != null && this.DeletedRecordIds.Length > 0) {
+                this.DeletedRecordIds += ",";
+            }
+
+            this.DeletedRecordIds += "[" + rec.RecordUniqueId + "]";
+        }
+
+        protected virtual bool InDeletedRecordIds(VPropertyRentReviewsTableControlRow rec)            
+        {
+            if (this.DeletedRecordIds == null || this.DeletedRecordIds.Length == 0) {
+                return (false);
+            }
+
+            return (this.DeletedRecordIds.IndexOf("[" + rec.RecordUniqueId + "]") >= 0);
+        }
+
+        private String _DeletedRecordIds;
+        public String DeletedRecordIds {
+            get {
+                return (this._DeletedRecordIds);
+            }
+            set {
+                this._DeletedRecordIds = value;
+            }
+        }
+        
       
         // Create Set, WhereClause, and Populate Methods
         
+        public virtual void SetAddress1Label()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.Address1Label.Text = "Some value";
+                    
+                    
+        }
+                
         public virtual void SetAddress1SortLabel()
                   {
                   
@@ -2725,6 +2627,12 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
         }
                 
         public virtual void SetAddress3SortLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetCityIDLabel()
                   {
                   
                     
@@ -2748,7 +2656,35 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                     
         }
                 
+        public virtual void SetCountryIDLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetDescriptionLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetDescriptionSortLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetDueNow()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.DueNow.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetExpiryDateLabel()
                   {
                   
                     
@@ -2760,9 +2696,55 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                     
         }
                 
+        public virtual void SetLiteral()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.Literal.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetNextMonth()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.NextMonth.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetOverdue()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.Overdue.Text = "Some value";
+                    
+                    
+        }
+                
+        public virtual void SetPostCodeLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetPostCodeSortLabel()
                   {
                   
+                    
+        }
+                
+        public virtual void SetPropertyIDLabel()
+                  {
+                  
+                      //Code for the text property is generated inside the .aspx file. 
+                      //To override this property you can uncomment the following property and add you own value.
+                      //this.PropertyIDLabel.Text = "Some value";
+                    
                     
         }
                 
@@ -2773,6 +2755,12 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
         }
                 
         public virtual void SetPropertyIDSortLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetRegionIDLabel()
                   {
                   
                     
@@ -3119,6 +3107,8 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             this.SaveToSession(this, "Page_Index", this.PageIndex.ToString());
             this.SaveToSession(this, "Page_Size", this.PageSize.ToString());
           
+            this.SaveToSession(this, "DeletedRecordIds", this.DeletedRecordIds);
+        
         }
         
         
@@ -3154,6 +3144,8 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
     this.RemoveFromSession(this, "Page_Index");
     this.RemoveFromSession(this, "Page_Size");
     
+            this.RemoveFromSession(this, "DeletedRecordIds");
+            
         }
 
         protected override void LoadViewState(object savedState)
@@ -3203,6 +3195,8 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
           
             // Load view state for pagination control.
     
+            this.DeletedRecordIds = (string)this.ViewState["DeletedRecordIds"];
+        
         }
 
         protected override object SaveViewState()
@@ -3216,6 +3210,8 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
     this.ViewState["Page_Index"] = this.PageIndex;
     this.ViewState["Page_Size"] = this.PageSize;
     
+            this.ViewState["DeletedRecordIds"] = this.DeletedRecordIds;
+        
     
             // Load view state for pagination control.
               
@@ -3416,6 +3412,36 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
 
         // Generate the event handling functions for sorting events.
         
+        public virtual void Address1Label_Click(object sender, EventArgs args)
+        {
+            //Sorts by Address1 when clicked.
+              
+            // Get previous sorting state for Address1.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyRentReviewsView.Address1);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Address1.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyRentReviewsView.Address1, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Address1, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void Address1SortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by Address1 when clicked.
@@ -3506,6 +3532,36 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
               
         }
             
+        public virtual void CityIDLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by CityID when clicked.
+              
+            // Get previous sorting state for CityID.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyRentReviewsView.CityID);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for CityID.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyRentReviewsView.CityID, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by CityID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void CityIDSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by CityID when clicked.
@@ -3566,6 +3622,66 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
               
         }
             
+        public virtual void CountryIDLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by CountryID when clicked.
+              
+            // Get previous sorting state for CountryID.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyRentReviewsView.CountryID);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for CountryID.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyRentReviewsView.CountryID, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by CountryID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void DescriptionLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by Description when clicked.
+              
+            // Get previous sorting state for Description.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyRentReviewsView.Description);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for Description.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyRentReviewsView.Description, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void DescriptionSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by Description when clicked.
@@ -3585,6 +3701,36 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             
             } else {
                 // Previously sorted by Description, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void ExpiryDateLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by ExpiryDate when clicked.
+              
+            // Get previous sorting state for ExpiryDate.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyRentReviewsView.ExpiryDate);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for ExpiryDate.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyRentReviewsView.ExpiryDate, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by ExpiryDate, so just reverse.
                 sd.Reverse();
             }
         
@@ -3626,6 +3772,36 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
               
         }
             
+        public virtual void PostCodeLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by PostCode when clicked.
+              
+            // Get previous sorting state for PostCode.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyRentReviewsView.PostCode);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for PostCode.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyRentReviewsView.PostCode, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by PostCode, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void PostCodeSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by PostCode when clicked.
@@ -3656,6 +3832,36 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
               
         }
             
+        public virtual void PropertyIDLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by PropertyID when clicked.
+              
+            // Get previous sorting state for PropertyID.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyRentReviewsView.PropertyID);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for PropertyID.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyRentReviewsView.PropertyID, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by PropertyID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
         public virtual void PropertyIDSortLabel_Click(object sender, EventArgs args)
         {
             //Sorts by PropertyID when clicked.
@@ -3675,6 +3881,36 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             
             } else {
                 // Previously sorted by PropertyID, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
+        public virtual void RegionIDLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by RegionID when clicked.
+              
+            // Get previous sorting state for RegionID.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(VPropertyRentReviewsView.RegionID);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for RegionID.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(VPropertyRentReviewsView.RegionID, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by RegionID, so just reverse.
                 sd.Reverse();
             }
         
@@ -3754,7 +3990,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                 // Add each of the columns in order of export.
                 BaseColumn[] columns = new BaseColumn[] {
                              VPropertyRentReviewsView.PropertyID,
-             VPropertyRentReviewsView.CompanyName,
              VPropertyRentReviewsView.Address1,
              VPropertyRentReviewsView.Address2,
              VPropertyRentReviewsView.Address3,
@@ -3764,7 +3999,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
              VPropertyRentReviewsView.PostCode,
              VPropertyRentReviewsView.ExpiryDate,
              VPropertyRentReviewsView.Description,
-             VPropertyRentReviewsView.RentReviewID,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(VPropertyRentReviewsView.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -3821,7 +4055,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
               int columnCounter = 0;
               DataForExport data = new DataForExport(VPropertyRentReviewsView.Instance, wc, orderBy, null,join);
                            data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.PropertyID, "Default"));
-             data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.CompanyName, "Default"));
              data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.Address1, "Default"));
              data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.Address2, "Default"));
              data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.Address3, "Default"));
@@ -3831,7 +4064,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
              data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.PostCode, "Default"));
              data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.ExpiryDate, "Short Date"));
              data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.Description, "Default"));
-             data.ColumnList.Add(new ExcelColumn(VPropertyRentReviewsView.RentReviewID, "0"));
 
 
               //  First write out the Column Headers
@@ -3930,7 +4162,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(VPropertyRentReviewsView.PropertyID.Name, ReportEnum.Align.Left, "${PropertyID}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(VPropertyRentReviewsView.CompanyName.Name, ReportEnum.Align.Left, "${CompanyName}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyRentReviewsView.Address1.Name, ReportEnum.Align.Left, "${Address1}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyRentReviewsView.Address2.Name, ReportEnum.Align.Left, "${Address2}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyRentReviewsView.Address3.Name, ReportEnum.Align.Left, "${Address3}", ReportEnum.Align.Left, 28);
@@ -3940,7 +4171,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                  report.AddColumn(VPropertyRentReviewsView.PostCode.Name, ReportEnum.Align.Left, "${PostCode}", ReportEnum.Align.Left, 24);
                  report.AddColumn(VPropertyRentReviewsView.ExpiryDate.Name, ReportEnum.Align.Left, "${ExpiryDate}", ReportEnum.Align.Left, 20);
                  report.AddColumn(VPropertyRentReviewsView.Description.Name, ReportEnum.Align.Left, "${Description}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(VPropertyRentReviewsView.RentReviewID.Name, ReportEnum.Align.Right, "${RentReviewID}", ReportEnum.Align.Right, 15);
 
   
                 int rowsPerQuery = 5000;
@@ -3976,19 +4206,18 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                             // The 3rd parameter represent the default alignment of column using the data
                             // The 4th parameter represent the maximum length of the data value being shown
                                                  if (BaseClasses.Utils.MiscUtils.IsNull(record.PropertyID)){
-                                 report.AddData("${PropertyID}", "",ReportEnum.Align.Left, 100);
+                                 report.AddData("${PropertyID}", "",ReportEnum.Align.Left);
                              }else{
                                  Boolean _isExpandableNonCompositeForeignKey;
                                  String _DFKA = "";
                                  _isExpandableNonCompositeForeignKey = VPropertyRentReviewsView.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(VPropertyRentReviewsView.PropertyID);
                                  _DFKA = VPropertyRentReviewsView.GetDFKA(record.PropertyID.ToString(), VPropertyRentReviewsView.PropertyID,null);
                                  if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  VPropertyRentReviewsView.PropertyID.IsApplyDisplayAs){
-                                     report.AddData("${PropertyID}", _DFKA,ReportEnum.Align.Left, 100);
+                                     report.AddData("${PropertyID}", _DFKA,ReportEnum.Align.Left);
                                  }else{
-                                     report.AddData("${PropertyID}", record.Format(VPropertyRentReviewsView.PropertyID), ReportEnum.Align.Left, 100);
+                                     report.AddData("${PropertyID}", record.Format(VPropertyRentReviewsView.PropertyID), ReportEnum.Align.Left);
                                  }
                              }
-                             report.AddData("${CompanyName}", record.Format(VPropertyRentReviewsView.CompanyName), ReportEnum.Align.Left, 100);
                              report.AddData("${Address1}", record.Format(VPropertyRentReviewsView.Address1), ReportEnum.Align.Left, 100);
                              report.AddData("${Address2}", record.Format(VPropertyRentReviewsView.Address2), ReportEnum.Align.Left, 100);
                              report.AddData("${Address3}", record.Format(VPropertyRentReviewsView.Address3), ReportEnum.Align.Left, 100);
@@ -4033,8 +4262,7 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                              }
                              report.AddData("${PostCode}", record.Format(VPropertyRentReviewsView.PostCode), ReportEnum.Align.Left, 100);
                              report.AddData("${ExpiryDate}", record.Format(VPropertyRentReviewsView.ExpiryDate), ReportEnum.Align.Left, 100);
-                             report.AddData("${Description}", record.Format(VPropertyRentReviewsView.Description), ReportEnum.Align.Left, 100);
-                             report.AddData("${RentReviewID}", record.Format(VPropertyRentReviewsView.RentReviewID), ReportEnum.Align.Right, 100);
+                             report.AddData("${Description}", record.Format(VPropertyRentReviewsView.Description), ReportEnum.Align.Left, 15);
 
                             report.WriteRow();
                         }
@@ -4150,7 +4378,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                 // The 4th parameter represents the horizontal alignment of the column detail
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(VPropertyRentReviewsView.PropertyID.Name, ReportEnum.Align.Left, "${PropertyID}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(VPropertyRentReviewsView.CompanyName.Name, ReportEnum.Align.Left, "${CompanyName}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyRentReviewsView.Address1.Name, ReportEnum.Align.Left, "${Address1}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyRentReviewsView.Address2.Name, ReportEnum.Align.Left, "${Address2}", ReportEnum.Align.Left, 28);
                  report.AddColumn(VPropertyRentReviewsView.Address3.Name, ReportEnum.Align.Left, "${Address3}", ReportEnum.Align.Left, 28);
@@ -4160,7 +4387,6 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                  report.AddColumn(VPropertyRentReviewsView.PostCode.Name, ReportEnum.Align.Left, "${PostCode}", ReportEnum.Align.Left, 24);
                  report.AddColumn(VPropertyRentReviewsView.ExpiryDate.Name, ReportEnum.Align.Left, "${ExpiryDate}", ReportEnum.Align.Left, 20);
                  report.AddColumn(VPropertyRentReviewsView.Description.Name, ReportEnum.Align.Left, "${Description}", ReportEnum.Align.Left, 28);
-                 report.AddColumn(VPropertyRentReviewsView.RentReviewID.Name, ReportEnum.Align.Right, "${RentReviewID}", ReportEnum.Align.Right, 15);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -4192,19 +4418,18 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                             // The 3rd parameter represents the default alignment of column using the data
                             // The 4th parameter represents the maximum length of the data value being shown
                              if (BaseClasses.Utils.MiscUtils.IsNull(record.PropertyID)){
-                                 report.AddData("${PropertyID}", "",ReportEnum.Align.Left, 100);
+                                 report.AddData("${PropertyID}", "",ReportEnum.Align.Left);
                              }else{
                                  Boolean _isExpandableNonCompositeForeignKey;
                                  String _DFKA = "";
                                  _isExpandableNonCompositeForeignKey = VPropertyRentReviewsView.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(VPropertyRentReviewsView.PropertyID);
                                  _DFKA = VPropertyRentReviewsView.GetDFKA(record.PropertyID.ToString(), VPropertyRentReviewsView.PropertyID,null);
                                  if (_isExpandableNonCompositeForeignKey &&  ( _DFKA  != null)  &&  VPropertyRentReviewsView.PropertyID.IsApplyDisplayAs){
-                                     report.AddData("${PropertyID}", _DFKA,ReportEnum.Align.Left, 100);
+                                     report.AddData("${PropertyID}", _DFKA,ReportEnum.Align.Left);
                                  }else{
-                                     report.AddData("${PropertyID}", record.Format(VPropertyRentReviewsView.PropertyID), ReportEnum.Align.Left, 100);
+                                     report.AddData("${PropertyID}", record.Format(VPropertyRentReviewsView.PropertyID), ReportEnum.Align.Left);
                                  }
                              }
-                             report.AddData("${CompanyName}", record.Format(VPropertyRentReviewsView.CompanyName), ReportEnum.Align.Left, 100);
                              report.AddData("${Address1}", record.Format(VPropertyRentReviewsView.Address1), ReportEnum.Align.Left, 100);
                              report.AddData("${Address2}", record.Format(VPropertyRentReviewsView.Address2), ReportEnum.Align.Left, 100);
                              report.AddData("${Address3}", record.Format(VPropertyRentReviewsView.Address3), ReportEnum.Align.Left, 100);
@@ -4249,8 +4474,7 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                              }
                              report.AddData("${PostCode}", record.Format(VPropertyRentReviewsView.PostCode), ReportEnum.Align.Left, 100);
                              report.AddData("${ExpiryDate}", record.Format(VPropertyRentReviewsView.ExpiryDate), ReportEnum.Align.Left, 100);
-                             report.AddData("${Description}", record.Format(VPropertyRentReviewsView.Description), ReportEnum.Align.Left, 100);
-                             report.AddData("${RentReviewID}", record.Format(VPropertyRentReviewsView.RentReviewID), ReportEnum.Align.Right, 100);
+                             report.AddData("${Description}", record.Format(VPropertyRentReviewsView.Description), ReportEnum.Align.Left, 15);
 
                             report.WriteRow();
                         }
@@ -4444,6 +4668,12 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
 
 #region "Helper Properties"
         
+        public System.Web.UI.WebControls.LinkButton Address1Label {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1Label");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton Address1SortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Address1SortLabel");
@@ -4468,6 +4698,12 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton CityIDLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal CityIDLabel1 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CityIDLabel1");
@@ -4486,15 +4722,63 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton CountryIDLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryIDLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton DescriptionLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton DescriptionSortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DescriptionSortLabel");
             }
         }
         
+        public System.Web.UI.WebControls.Literal DueNow {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DueNow");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton ExpiryDateLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.LinkButton ExpiryDateSortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ExpiryDateSortLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal Literal {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Literal");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal NextMonth {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "NextMonth");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal Overdue {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Overdue");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton PostCodeLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PostCodeLabel");
             }
         }
         
@@ -4510,6 +4794,12 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             }
         }
         
+        public System.Web.UI.WebControls.LinkButton PropertyIDLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDLabel");
+            }
+        }
+        
         public System.Web.UI.WebControls.Literal PropertyIDLabel1 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDLabel1");
@@ -4519,6 +4809,12 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
         public System.Web.UI.WebControls.LinkButton PropertyIDSortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PropertyIDSortLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton RegionIDLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionIDLabel");
             }
         }
         
@@ -4552,9 +4848,9 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
             }
         }
         
-        public IPv5.UI.IPaginationModern VPropertyRentReviewsPagination {
+        public IPv5.UI.IPaginationMedium VPropertyRentReviewsPagination {
             get {
-                return (IPv5.UI.IPaginationModern)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "VPropertyRentReviewsPagination");
+                return (IPv5.UI.IPaginationMedium)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "VPropertyRentReviewsPagination");
             }
         }
         
@@ -4600,22 +4896,61 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
         
         public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt)
         {
-            return EvaluateExpressions(url, arg, null, bEncrypt);
+            return this.Page.EvaluateExpressions(url, arg, bEncrypt, this);
         }
         
         public override string ModifyRedirectUrl(string url, string arg, bool bEncrypt,bool includeSession)
         {
-            return EvaluateExpressions(url, arg, null, bEncrypt,includeSession);
+            return this.Page.EvaluateExpressions(url, arg, bEncrypt, this,includeSession);
         }
         
         public override string EvaluateExpressions(string url, string arg, bool bEncrypt)
         {
-            return EvaluateExpressions(url, arg, null, bEncrypt);
+            bool needToProcess = AreAnyUrlParametersForMe(url, arg);
+            if (needToProcess) {
+                VPropertyRentReviewsTableControlRow recCtl = this.GetSelectedRecordControl();
+                if (recCtl == null && url.IndexOf("{") >= 0) {
+                    // Localization.
+                    throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
+                }
+
+        VPropertyRentReviewsRecord rec = null;
+                if (recCtl != null) {
+                    rec = recCtl.GetRecord();
+                }
+                return EvaluateExpressions(url, arg, rec, bEncrypt);
+             
+            }
+            return url;
         }
         
-        public override string EvaluateExpressions(string url, string arg, bool bEncrypt,bool includeSession)
+        
+        public override string EvaluateExpressions(string url, string arg, bool bEncrypt, bool includeSession)
         {
-            return EvaluateExpressions(url, arg, null, bEncrypt);
+            bool needToProcess = AreAnyUrlParametersForMe(url, arg);
+            if (needToProcess) {
+                VPropertyRentReviewsTableControlRow recCtl = this.GetSelectedRecordControl();
+                if (recCtl == null && url.IndexOf("{") >= 0) {
+                    // Localization.
+                    throw new Exception(Page.GetResourceValue("Err:NoRecSelected", "IPv5"));
+                }
+
+        VPropertyRentReviewsRecord rec = null;
+                if (recCtl != null) {
+                    rec = recCtl.GetRecord();
+                }
+                
+                if (includeSession)
+                {
+                    return EvaluateExpressions(url, arg, rec, bEncrypt);
+                }
+                else
+                {
+                    return EvaluateExpressions(url, arg, rec, bEncrypt,false);
+                }
+             
+            }
+            return url;
         }
           
         public virtual VPropertyRentReviewsTableControlRow GetSelectedRecordControl()
@@ -4645,16 +4980,19 @@ public class BaseVPropertyRentReviewsTableControl : IPv5.UI.BaseApplicationTable
                 if (deferDeletion) {
                     if (!recCtl.IsNewRecord) {
                 
-                        // Localization.
-                        throw new Exception(Page.GetResourceValue("Err:CannotDelRecs", "IPv5"));
+                        this.AddToDeletedRecordIds(recCtl);
                   
                     }
                     recCtl.Visible = false;
                 
                 } else {
                 
-                    // Localization.
-                    throw new Exception(Page.GetResourceValue("Err:CannotDelRecs", "IPv5"));
+                    recCtl.Delete();
+                    // Setting the DataChanged to True results in the page being refreshed with
+                    // the most recent data from the database.  This happens in PreRender event
+                    // based on the current sort, search and filter criteria.
+                    this.DataChanged = true;
+                    this.ResetData = true;
                   
                 }
             }

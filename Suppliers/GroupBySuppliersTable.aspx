@@ -2,7 +2,7 @@
 
 <%@ Register Tagprefix="IPv5" TagName="ThemeButtonWithArrow" Src="../Shared/ThemeButtonWithArrow.ascx" %>
 
-<%@ Register Tagprefix="IPv5" TagName="PaginationModern" Src="../Shared/PaginationModern.ascx" %>
+<%@ Register Tagprefix="IPv5" TagName="PaginationMedium" Src="../Shared/PaginationMedium.ascx" %>
 
 <%@ Register Tagprefix="IPv5" Namespace="IPv5.UI.Controls.GroupBySuppliersTable" Assembly="IPv5" %>
 
@@ -77,28 +77,23 @@
 
                 </td><td class="panelHeaderR"></td></tr><tr><td class="panelL"></td><td>
                   <asp:panel id="SuppliersTableControlCollapsibleRegion" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre"><table id="SuppliersTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" colspan="3" style="display:none"><img src="../Images/space.gif" height="1" width="1" alt="" /></th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th><th class="thc" style="display: none">&nbsp;</th></tr><asp:Repeater runat="server" id="SuppliersTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:SuppliersTableControlRow runat="server" id="SuppliersTableControlRow">
-<tr><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;" rowspan="3" colspan="3">
-                                  <asp:ImageButton runat="server" id="SuppliersRowEditButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>">		
+<tr><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;" rowspan="4" colspan="3"><asp:ImageButton runat="server" id="SuppliersRowEditButton" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:EditRecord&quot;, &quot;IPv5&quot;) %>">		
 	</asp:ImageButton><br /><br />
                                 
                                   <asp:ImageButton runat="server" id="SuppliersRowDeleteButton" causesvalidation="False" commandname="DeleteRecord" cssclass="button_link" imageurl="../Images/icon_delete.gif" onmouseout="this.src=&#39;../Images/icon_delete.gif&#39;" onmouseover="this.src=&#39;../Images/icon_delete_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:DeleteRecord&quot;, &quot;IPv5&quot;) %>">		
 	</asp:ImageButton><br /><br />
                                 
-                                  <asp:ImageButton runat="server" id="SuppliersRowExpandCollapseRowButton" causesvalidation="False" commandname="ExpandCollapseRow" cssclass="button_link" imageurl="../Images/icon_expandcollapserow.gif" tooltip="&lt;%# GetResourceValue(&quot;Txt:ExpandCollapseRow&quot;, &quot;IPv5&quot;) %>">		
-	</asp:ImageButton><br /><br />
-                                </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="ContactNameLabel" Text="Contact Name">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="ContactName"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address1Label" Text="Address 1">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Address1"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PostCodeLabel" Text="Post Code">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="PostCode"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="ServiceTypeIDLabel" Text="Service Type">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:LinkButton runat="server" id="ServiceTypeID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> </td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="LandPhoneLabel" Text="Land Phone">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="LandPhone"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CellPhoneLabel" Text="Cell Phone">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="CellPhone"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="eMailLabel" Text="Email">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="eMail"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address2Label" Text="Address 2">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="Address2"></asp:Literal> </td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CityIDLabel" Text="City">	</asp:Literal> 
-</td><td class="tableCellValue"><span style="white-space:nowrap;">
+                                  <asp:ImageButton runat="server" id="SuppliersRowExpandCollapseRowButton" causesvalidation="False" commandname="ExpandCollapseRow" cssclass="button_link" imageurl="../Images/icon_expandcollapserow.gif" tooltip="&lt;%# GetResourceValue(&quot;Txt:ExpandCollapseRow&quot;, &quot;IPv5&quot;) %>" visible="False">		
+	</asp:ImageButton><br /><br /></td><td class="largeText" colspan="3"><asp:Literal runat="server" id="CompanyName"></asp:Literal></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"><span style="white-space:nowrap;">
 <asp:LinkButton runat="server" id="CityID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></span>
- </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CompanyNameLabel" Text="Company Name">	</asp:Literal> 
-</td><td class="tableCellValue" colspan="3"><asp:Literal runat="server" id="CompanyName"></asp:Literal> </td></tr><tr><td class="tableRowDivider" colspan="11">&nbsp;</td></tr></IPv5:SuppliersTableControlRow>
+</td><td class="thc" style="display: none">&nbsp;</td><td class="tableCellLabel" scope="col"><asp:LinkButton runat="server" id="ServiceTypeID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="ContactNameLabel" Text="Contact Name">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="ContactName"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address1Label" Text="Address 1">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="Address1"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CellPhoneLabel" Text="Cell Phone">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="CellPhone"></asp:Literal> </td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address2Label" Text="Address 2">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="Address2"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="LandPhoneLabel" Text="Land Phone">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="LandPhone"></asp:Literal> </td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PostCodeLabel" Text="Post Code">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="PostCode"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="eMailLabel" Text="Email">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="eMail"></asp:Literal> </td><td class="tableCellLabel" style="text-align:right;"><asp:Literal runat="server" id="Literal" Text="eMail">	</asp:Literal></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="11">&nbsp;</td></tr></IPv5:SuppliersTableControlRow>
 </ITEMTEMPLATE>
 
 </asp:Repeater>
@@ -106,7 +101,7 @@
 </td></tr></table>
 </asp:panel>
                 </td><td class="panelR"></td></tr><tr><td class="panelL"></td><td class="panelPaginationC">
-                    <IPv5:PaginationModern runat="server" id="SuppliersPagination"></IPv5:PaginationModern>
+                    <IPv5:PaginationMedium runat="server" id="SuppliersPagination"></IPv5:PaginationMedium>
                     <!--To change the position of the pagination control, please search for "prspace" on the Online Help for instruction. -->
                   </td><td class="panelR"></td></tr><tr><td class="panelBL"><img src="../Images/space.gif" class="panelBLSpace" alt="" /></td><td class="panelB"></td><td class="panelBR"><img src="../Images/space.gif" class="panelBRSpace" alt="" /></td></tr></table>
 	<asp:hiddenfield id="SuppliersTableControl_PostbackTracker" runat="server" />

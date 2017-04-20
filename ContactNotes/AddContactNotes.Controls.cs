@@ -95,8 +95,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
                         
               this.ContactID.SelectedIndexChanged += ContactID_SelectedIndexChanged;
             
-              this.DateRecorded.TextChanged += DateRecorded_TextChanged;
-            
               this.Notes.TextChanged += Notes_TextChanged;
             
         }
@@ -179,8 +177,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
                 
                 SetContactIDLabel();
                 
-                SetDateRecorded();
-                SetDateRecordedLabel();
                 SetNotes();
                 SetNotesLabel();
                 SetContactIDAddRecordLink();
@@ -258,39 +254,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
                   
         }
                 
-        public virtual void SetDateRecorded()
-        {
-            
-                    
-            // Set the DateRecorded TextBox on the webpage with value from the
-            // DatabaseMM_IP1%dbo.ContactNotes database record.
-
-            // this.DataSource is the DatabaseMM_IP1%dbo.ContactNotes record retrieved from the database.
-            // this.DateRecorded is the ASP:TextBox on the webpage.
-                  
-            if (this.DataSource != null && this.DataSource.DateRecordedSpecified) {
-                								
-                // If the DateRecorded is non-NULL, then format the value.
-                // The Format method will use the Display Format
-               string formattedValue = this.DataSource.Format(ContactNotesTable.DateRecorded, @"g");
-                                
-                this.DateRecorded.Text = formattedValue;
-                   
-            } 
-            
-            else {
-            
-                // DateRecorded is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-        
-              this.DateRecorded.Text = ContactNotesTable.DateRecorded.Format(ContactNotesTable.DateRecorded.DefaultValue, @"g");
-            		
-            }
-            
-              this.DateRecorded.TextChanged += DateRecorded_TextChanged;
-                               
-        }
-                
         public virtual void SetNotes()
         {
             
@@ -325,12 +288,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
         }
                 
         public virtual void SetContactIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetDateRecordedLabel()
                   {
                   
                     
@@ -499,7 +456,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
             // Call the Get methods for each of the user interface controls.
         
             GetContactID();
-            GetDateRecorded();
             GetNotes();
         }
         
@@ -513,23 +469,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
             
             this.DataSource.Parse(MiscUtils.GetValueSelectedPageRequest(this.ContactID), ContactNotesTable.ContactID);			
                 			 
-        }
-                
-        public virtual void GetDateRecorded()
-        {
-            
-            // Retrieve the value entered by the user on the DateRecorded ASP:TextBox, and
-            // save it into the DateRecorded field in DataSource DatabaseMM_IP1%dbo.ContactNotes record.
-            // Parse will also validate the date to ensure it is of the proper format
-            // and a valid date.  The format is verified based on the current culture 
-            // settings including the order of month, day and year and the separator character.
-            // Parse throws an exception if the date is invalid.
-            // Custom validation should be performed in Validate, not here.
-                    
-            // Save the value to data source
-            this.DataSource.Parse(this.DateRecorded.Text, ContactNotesTable.DateRecorded);							
-                          
-                      
         }
                 
         public virtual void GetNotes()
@@ -1125,11 +1064,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
            						
         }
             
-        protected virtual void DateRecorded_TextChanged(object sender, EventArgs args)
-        {
-                    
-              }
-            
         protected virtual void Notes_TextChanged(object sender, EventArgs args)
         {
                     
@@ -1268,18 +1202,6 @@ public class BaseContactNotesRecordControl : IPv5.UI.BaseApplicationRecordContro
         public System.Web.UI.WebControls.Literal ContactNotesTitle {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactNotesTitle");
-            }
-        }
-        
-        public System.Web.UI.WebControls.TextBox DateRecorded {
-            get {
-                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecorded");
-            }
-        }
-            
-        public System.Web.UI.WebControls.Literal DateRecordedLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "DateRecordedLabel");
             }
         }
         
