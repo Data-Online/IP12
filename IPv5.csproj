@@ -1471,6 +1471,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BaseClasses\Readme.txt" />
+    <Content Include="Bin\NPOI.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Default.aspx" />
     <Content Include="Images\Admin.png" />
     <Content Include="Images\Audit.png" />
