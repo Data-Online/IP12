@@ -21,11 +21,12 @@ using BaseClasses.Web.UI.WebControls;
         
 using IPv5.Business;
 using IPv5.Data;
-        
+using IPv5.UI.Tools;
+
 
 #endregion
 
-  
+
 namespace IPv5.UI
 {
   
@@ -205,7 +206,11 @@ public partial class SignIn
       // This method is called when login is succeeded. 
       protected void RedirectOnSuccess()
       {
-          this.RedirectOnSuccess_Base();
+            if (UserSecurityTools.PasswordUpdateRequired())
+            {
+                // Update password
+            }
+            this.RedirectOnSuccess_Base();
       }
       
 #region "Ajax Functions"
@@ -292,7 +297,7 @@ public partial class SignIn
             //var zz = BaseFormulaUtils.EncryptData(pwd);
             //var zzz = BaseFormulaUtils.DecryptData(zz);
             // Click handler for OKButton.
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "Page_Load_Error_Message", "Password " + this.Password.Text);
+            //BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "Page_Load_Error_Message", "Password " + this.Password.Text);
             // Customize by adding code before the call or replace the call to the Base function with your own code.
             OKButton_Click_Base(sender, args);
           // NOTE: If the Base function redirects to another page, any code here will not be executed.

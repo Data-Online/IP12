@@ -2283,6 +2283,10 @@ public class BaseContactBackgroundTableControl : IPv5.UI.BaseApplicationTableCon
               
                 this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Notes {Txt:Descending}"), "Notes Desc"));
               
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Note Type {Txt:Ascending}"), "NoteType Asc"));
+              
+                this.SortControl3.Items.Add(new ListItem(this.Page.ExpandResourceValue("Note Type {Txt:Descending}"), "NoteType Desc"));
+              
             try
             {          
                 // Set the selected value.
@@ -5173,6 +5177,14 @@ public class BaseContactNotesTableControl : IPv5.UI.BaseApplicationTableControl
               
                 this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Notes {Txt:Descending}"), "Notes Desc"));
               
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Date Recorded {Txt:Ascending}"), "DateRecorded Asc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Date Recorded {Txt:Descending}"), "DateRecorded Desc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Note Type {Txt:Ascending}"), "NoteType Asc"));
+              
+                this.SortControl2.Items.Add(new ListItem(this.Page.ExpandResourceValue("Note Type {Txt:Descending}"), "NoteType Desc"));
+              
             try
             {          
                 // Set the selected value.
@@ -6626,7 +6638,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                        
                     this.PropertyID1AddRecordLink.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -6928,7 +6940,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "PropertyID1AddRecordLink_Click", javascriptCall, true);
         
             }
@@ -9434,7 +9446,7 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                        
                     this.PropertyIDAddRecordLink.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -9736,7 +9748,7 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "PropertyIDAddRecordLink_Click", javascriptCall, true);
         
             }

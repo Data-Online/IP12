@@ -156,6 +156,70 @@
       </updatingFormula>
     </Column>
     <Column InternalName="3" Priority="4" ColumnNum="3">
+      <columnName>DateRecorded</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>Date</columnType>
+      <columnDBType>datetime</columnDBType>
+      <columnLengthSet>
+      </columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>notrim</columnFunction>
+      <columnFormat>g</columnFormat>
+      <columnDBFormat>g</columnDBFormat>
+      <columnPK>N</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>N</columnRequired>
+      <columnNotNull>N</columnNotNull>
+      <columnCaseSensitive>N</columnCaseSensitive>
+      <columnCollation>
+      </columnCollation>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+    </Column>
+    <Column InternalName="4" Priority="5" ColumnNum="4">
+      <columnName>NoteType</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>Number</columnType>
+      <columnDBType>int</columnDBType>
+      <columnLengthSet>10.0</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>
+      </columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>N</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>N</columnRequired>
+      <columnNotNull>N</columnNotNull>
+      <columnCaseSensitive>N</columnCaseSensitive>
+      <columnCollation>
+      </columnCollation>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+    </Column>
+    <Column InternalName="5" Priority="6" ColumnNum="5">
       <columnName>CreatedBy</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -212,7 +276,7 @@
         <foreignKeyType>Implicit</foreignKeyType>
       </foreignKey>
     </Column>
-    <Column InternalName="4" Priority="5" ColumnNum="4">
+    <Column InternalName="6" Priority="7" ColumnNum="6">
       <columnName>UpdatedBy</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -269,7 +333,7 @@
         <foreignKeyType>Implicit</foreignKeyType>
       </foreignKey>
     </Column>
-    <Column InternalName="5" Priority="6" ColumnNum="5">
+    <Column InternalName="7" Priority="8" ColumnNum="7">
       <columnName>CreatedOn</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -319,7 +383,7 @@
       <updatingFormula>
       </updatingFormula>
     </Column>
-    <Column InternalName="6" Priority="7" ColumnNum="6">
+    <Column InternalName="8" Priority="9" ColumnNum="8">
       <columnName>UpdatedOn</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -371,7 +435,7 @@
     </Column>
   </ColumnDefinition>
   <TableName>ContactNotes</TableName>
-  <Version>4</Version>
+  <Version>5</Version>
   <Owner>dbo</Owner>
   <TableAliasName>ContactNotes_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

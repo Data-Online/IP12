@@ -61,6 +61,8 @@ public class BaseContactNotesTable : PrimaryKeyTable
         NoteIDColumn.CodeName = "NoteID";
         ContactIDColumn.CodeName = "ContactID";
         NotesColumn.CodeName = "Notes";
+        DateRecordedColumn.CodeName = "DateRecorded";
+        NoteTypeColumn.CodeName = "NoteType";
         CreatedByColumn.CodeName = "CreatedBy";
         UpdatedByColumn.CodeName = "UpdatedBy";
         CreatedOnColumn.CodeName = "CreatedOn";
@@ -151,13 +153,63 @@ public class BaseContactNotesTable : PrimaryKeyTable
     
     
     /// <summary>
+    /// This is a convenience property that provides direct access to the table's ContactNotes_.DateRecorded column object.
+    /// </summary>
+    public BaseClasses.Data.DateColumn DateRecordedColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[3];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's ContactNotes_.DateRecorded column object.
+    /// </summary>
+    public static BaseClasses.Data.DateColumn DateRecorded
+    {
+        get
+        {
+            return ContactNotesTable.Instance.DateRecordedColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's ContactNotes_.NoteType column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn NoteTypeColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[4];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's ContactNotes_.NoteType column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn NoteType
+    {
+        get
+        {
+            return ContactNotesTable.Instance.NoteTypeColumn;
+        }
+    }
+    
+    
+    /// <summary>
     /// This is a convenience property that provides direct access to the table's ContactNotes_.CreatedBy column object.
     /// </summary>
     public BaseClasses.Data.NumberColumn CreatedByColumn
     {
         get
         {
-            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[3];
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[5];
         }
     }
     
@@ -182,7 +234,7 @@ public class BaseContactNotesTable : PrimaryKeyTable
     {
         get
         {
-            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[4];
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[6];
         }
     }
     
@@ -207,7 +259,7 @@ public class BaseContactNotesTable : PrimaryKeyTable
     {
         get
         {
-            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[5];
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[7];
         }
     }
     
@@ -232,7 +284,7 @@ public class BaseContactNotesTable : PrimaryKeyTable
     {
         get
         {
-            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[6];
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[8];
         }
     }
     
@@ -777,6 +829,8 @@ public class BaseContactNotesTable : PrimaryKeyTable
         public KeyValue NewRecord(
         string ContactIDValue, 
         string NotesValue, 
+        string DateRecordedValue, 
+        string NoteTypeValue, 
         string CreatedByValue, 
         string UpdatedByValue, 
         string CreatedOnValue, 
@@ -786,6 +840,8 @@ public class BaseContactNotesTable : PrimaryKeyTable
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
                     rec.SetString(ContactIDValue, ContactIDColumn);
         rec.SetString(NotesValue, NotesColumn);
+        rec.SetString(DateRecordedValue, DateRecordedColumn);
+        rec.SetString(NoteTypeValue, NoteTypeColumn);
         rec.SetString(CreatedByValue, CreatedByColumn);
         rec.SetString(UpdatedByValue, UpdatedByColumn);
         rec.SetString(CreatedOnValue, CreatedOnColumn);

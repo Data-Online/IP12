@@ -3993,6 +3993,22 @@
           <Name>Notes Desc</Name>
           <Value>Notes {Txt:Descending}</Value>
         </Item>
+        <Item>
+          <Name>DateRecorded Asc</Name>
+          <Value>Date Recorded {Txt:Ascending}</Value>
+        </Item>
+        <Item>
+          <Name>DateRecorded Desc</Name>
+          <Value>Date Recorded {Txt:Descending}</Value>
+        </Item>
+        <Item>
+          <Name>NoteType Asc</Name>
+          <Value>Note Type {Txt:Ascending}</Value>
+        </Item>
+        <Item>
+          <Name>NoteType Desc</Name>
+          <Value>Note Type {Txt:Descending}</Value>
+        </Item>
       </SpecifiedItems>
       <PassthroughAttributes>
         <Attribute>
@@ -4054,6 +4070,14 @@
         <Item>
           <Name>Notes Desc</Name>
           <Value>Notes {Txt:Descending}</Value>
+        </Item>
+        <Item>
+          <Name>NoteType Asc</Name>
+          <Value>Note Type {Txt:Ascending}</Value>
+        </Item>
+        <Item>
+          <Name>NoteType Desc</Name>
+          <Value>Note Type {Txt:Descending}</Value>
         </Item>
       </SpecifiedItems>
       <PassthroughAttributes>

@@ -515,6 +515,86 @@ public class BaseUsersRecord : PrimaryKeyRecord, IUserIdentityRecord
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.UpdatedOnColumn);
 	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Users_.Active field.
+	/// </summary>
+	public ColumnValue GetActiveValue()
+	{
+		return this.GetValue(TableUtils.ActiveColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Users_.Active field.
+	/// </summary>
+	public bool GetActiveFieldValue()
+	{
+		return this.GetValue(TableUtils.ActiveColumn).ToBoolean();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.Active field.
+	/// </summary>
+	public void SetActiveFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.ActiveColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.Active field.
+	/// </summary>
+	public void SetActiveFieldValue(string val)
+	{
+		this.SetString(val, TableUtils.ActiveColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.Active field.
+	/// </summary>
+	public void SetActiveFieldValue(bool val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.ActiveColumn);
+	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Users_.PwdExp field.
+	/// </summary>
+	public ColumnValue GetPwdExpValue()
+	{
+		return this.GetValue(TableUtils.PwdExpColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Users_.PwdExp field.
+	/// </summary>
+	public bool GetPwdExpFieldValue()
+	{
+		return this.GetValue(TableUtils.PwdExpColumn).ToBoolean();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.PwdExp field.
+	/// </summary>
+	public void SetPwdExpFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.PwdExpColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.PwdExp field.
+	/// </summary>
+	public void SetPwdExpFieldValue(string val)
+	{
+		this.SetString(val, TableUtils.PwdExpColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.PwdExp field.
+	/// </summary>
+	public void SetPwdExpFieldValue(bool val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.PwdExpColumn);
+	}
 
 
 #endregion
@@ -865,6 +945,94 @@ public class BaseUsersRecord : PrimaryKeyRecord, IUserIdentityRecord
 		get
 		{
 			return TableUtils.UpdatedOnColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Users_.Active field.
+	/// </summary>
+	public bool Active
+	{
+		get
+		{
+			return this.GetValue(TableUtils.ActiveColumn).ToBoolean();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+	   		this.SetValue(cv, TableUtils.ActiveColumn);
+		}
+	}
+	
+	
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool ActiveSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.ActiveColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.Active field.
+	/// </summary>
+	public string ActiveDefault
+	{
+		get
+		{
+			return TableUtils.ActiveColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Users_.PwdExp field.
+	/// </summary>
+	public bool PwdExp
+	{
+		get
+		{
+			return this.GetValue(TableUtils.PwdExpColumn).ToBoolean();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+	   		this.SetValue(cv, TableUtils.PwdExpColumn);
+		}
+	}
+	
+	
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool PwdExpSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.PwdExpColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Users_.PwdExp field.
+	/// </summary>
+	public string PwdExpDefault
+	{
+		get
+		{
+			return TableUtils.PwdExpColumn.DefaultValue;
 		}
 	}
 

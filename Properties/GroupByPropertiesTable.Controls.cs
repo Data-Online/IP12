@@ -7742,7 +7742,7 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                                 
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "ContactsTableControl1_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                    javascriptCall = "initializePopupPage(document.getElementById('" + MiscUtils.FindControlRecursively(this, "ContactsTableControl1_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
                        
                     this.NewButton2.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -8277,7 +8277,7 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                                 
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "ContactsTableControl1_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                    javascriptCall = "initializePopupPage(document.getElementById('" + MiscUtils.FindControlRecursively(this, "ContactsTableControl1_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "NewButton2_Click", javascriptCall, true);
         
             }
@@ -14390,7 +14390,7 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
                                 
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "MMContractsTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                    javascriptCall = "initializePopupPage(document.getElementById('" + MiscUtils.FindControlRecursively(this, "MMContractsTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
                        
                     this.NewButton3.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -14878,7 +14878,7 @@ public class BaseMMContractsTableControl : IPv5.UI.BaseApplicationTableControl
                                 
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "MMContractsTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                    javascriptCall = "initializePopupPage(document.getElementById('" + MiscUtils.FindControlRecursively(this, "MMContractsTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "NewButton3_Click", javascriptCall, true);
         
             }
@@ -37097,7 +37097,7 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
                                 
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "TermExpiresTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                    javascriptCall = "initializePopupPage(document.getElementById('" + MiscUtils.FindControlRecursively(this, "TermExpiresTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
                        
                     this.NewButton1.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -37585,7 +37585,7 @@ public class BaseTermExpiresTableControl : IPv5.UI.BaseApplicationTableControl
                                 
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(document.getElementById('" + MiscUtils.FindControlRecursively(this, "TermExpiresTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
+                    javascriptCall = "initializePopupPage(document.getElementById('" + MiscUtils.FindControlRecursively(this, "TermExpiresTableControl_PostbackTracker").ClientID + "'), '" + url + "', true, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "NewButton1_Click", javascriptCall, true);
         
             }

@@ -1917,6 +1917,12 @@
     <None Include="Reports\WordReport.en-US.word" />
     <None Include="Reports\WordReport.en.word" />
     <None Include="Reports\WordReport.word" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Business Layer\IPv5.Business.csproj">

@@ -156,14 +156,14 @@
       </updatingFormula>
     </Column>
     <Column InternalName="3" Priority="4" ColumnNum="3">
-      <columnName>CreatedBy</columnName>
-      <columnUIName Source="User">%ISD_DEFAULT%</columnUIName>
+      <columnName>NoteType</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
       <columnDBType>int</columnDBType>
       <columnLengthSet>10.0</columnLengthSet>
       <columnDefault>
       </columnDefault>
-      <columnDBDefault Source="User">
+      <columnDBDefault>
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
@@ -173,15 +173,47 @@
       </columnDBFormat>
       <columnPK>N</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed Source="User">N</columnComputed>
-      <columnIdentity Source="User">N</columnIdentity>
-      <columnReadOnly Source="User">N</columnReadOnly>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
       <columnRequired>N</columnRequired>
       <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive Source="User">N</columnCaseSensitive>
+      <columnCaseSensitive>N</columnCaseSensitive>
       <columnCollation>
       </columnCollation>
-      <columnFullText Source="User">N</columnFullText>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
+    </Column>
+    <Column InternalName="4" Priority="5" ColumnNum="4">
+      <columnName>CreatedBy</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>Number</columnType>
+      <columnDBType>int</columnDBType>
+      <columnLengthSet>10.0</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>
+      </columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>N</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>N</columnRequired>
+      <columnNotNull>N</columnNotNull>
+      <columnCaseSensitive>N</columnCaseSensitive>
+      <columnCollation>
+      </columnCollation>
+      <columnFullText>N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
@@ -203,9 +235,6 @@
       </insertingFormula>
       <updatingFormula>
       </updatingFormula>
-      <InternalName>3</InternalName>
-      <columnTableClassName>
-      </columnTableClassName>
       <foreignKey>
         <columnFKName>VFK_ContactBackground_CreatedBy_2</columnFKName>
         <columnFKTable>Users</columnFKTable>
@@ -215,7 +244,7 @@
         <foreignKeyType>Implicit</foreignKeyType>
       </foreignKey>
     </Column>
-    <Column InternalName="4" Priority="5" ColumnNum="4">
+    <Column InternalName="5" Priority="6" ColumnNum="5">
       <columnName>UpdatedBy</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Number</columnType>
@@ -264,7 +293,7 @@
       <updatingFormula>
       </updatingFormula>
     </Column>
-    <Column InternalName="5" Priority="6" ColumnNum="5">
+    <Column InternalName="6" Priority="7" ColumnNum="6">
       <columnName>CreatedOn</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -314,7 +343,7 @@
       <updatingFormula>
       </updatingFormula>
     </Column>
-    <Column InternalName="6" Priority="7" ColumnNum="6">
+    <Column InternalName="7" Priority="8" ColumnNum="7">
       <columnName>UpdatedOn</columnName>
       <columnUIName>%ISD_DEFAULT%</columnUIName>
       <columnType>Date</columnType>
@@ -366,7 +395,7 @@
     </Column>
   </ColumnDefinition>
   <TableName>ContactBackground</TableName>
-  <Version>3</Version>
+  <Version>4</Version>
   <Owner>dbo</Owner>
   <TableAliasName>ContactBackground_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

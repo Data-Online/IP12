@@ -197,6 +197,8 @@ public class BaseUsersTable : PrimaryKeyTable, IUserIdentityTable
         UpdatedByColumn.CodeName = "UpdatedBy";
         CreatedOnColumn.CodeName = "CreatedOn";
         UpdatedOnColumn.CodeName = "UpdatedOn";
+        ActiveColumn.CodeName = "Active";
+        PwdExpColumn.CodeName = "PwdExp";
 
         
     }
@@ -403,6 +405,56 @@ public class BaseUsersTable : PrimaryKeyTable, IUserIdentityTable
         get
         {
             return UsersTable.Instance.UpdatedOnColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Users_.Active column object.
+    /// </summary>
+    public BaseClasses.Data.BooleanColumn ActiveColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.BooleanColumn)this.TableDefinition.ColumnList[8];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Users_.Active column object.
+    /// </summary>
+    public static BaseClasses.Data.BooleanColumn Active
+    {
+        get
+        {
+            return UsersTable.Instance.ActiveColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Users_.PwdExp column object.
+    /// </summary>
+    public BaseClasses.Data.BooleanColumn PwdExpColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.BooleanColumn)this.TableDefinition.ColumnList[9];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Users_.PwdExp column object.
+    /// </summary>
+    public static BaseClasses.Data.BooleanColumn PwdExp
+    {
+        get
+        {
+            return UsersTable.Instance.PwdExpColumn;
         }
     }
     
@@ -938,7 +990,9 @@ public class BaseUsersTable : PrimaryKeyTable, IUserIdentityTable
         string CreatedByValue, 
         string UpdatedByValue, 
         string CreatedOnValue, 
-        string UpdatedOnValue
+        string UpdatedOnValue, 
+        string ActiveValue, 
+        string PwdExpValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
@@ -949,6 +1003,8 @@ public class BaseUsersTable : PrimaryKeyTable, IUserIdentityTable
         rec.SetString(UpdatedByValue, UpdatedByColumn);
         rec.SetString(CreatedOnValue, CreatedOnColumn);
         rec.SetString(UpdatedOnValue, UpdatedOnColumn);
+        rec.SetString(ActiveValue, ActiveColumn);
+        rec.SetString(PwdExpValue, PwdExpColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

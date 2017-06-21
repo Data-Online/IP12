@@ -61,6 +61,7 @@ public class BaseContactBackgroundTable : PrimaryKeyTable
         NoteIDColumn.CodeName = "NoteID";
         ContactIDColumn.CodeName = "ContactID";
         NotesColumn.CodeName = "Notes";
+        NoteTypeColumn.CodeName = "NoteType";
         CreatedByColumn.CodeName = "CreatedBy";
         UpdatedByColumn.CodeName = "UpdatedBy";
         CreatedOnColumn.CodeName = "CreatedOn";
@@ -151,13 +152,38 @@ public class BaseContactBackgroundTable : PrimaryKeyTable
     
     
     /// <summary>
+    /// This is a convenience property that provides direct access to the table's ContactBackground_.NoteType column object.
+    /// </summary>
+    public BaseClasses.Data.NumberColumn NoteTypeColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[3];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's ContactBackground_.NoteType column object.
+    /// </summary>
+    public static BaseClasses.Data.NumberColumn NoteType
+    {
+        get
+        {
+            return ContactBackgroundTable.Instance.NoteTypeColumn;
+        }
+    }
+    
+    
+    /// <summary>
     /// This is a convenience property that provides direct access to the table's ContactBackground_.CreatedBy column object.
     /// </summary>
     public BaseClasses.Data.NumberColumn CreatedByColumn
     {
         get
         {
-            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[3];
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[4];
         }
     }
     
@@ -182,7 +208,7 @@ public class BaseContactBackgroundTable : PrimaryKeyTable
     {
         get
         {
-            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[4];
+            return (BaseClasses.Data.NumberColumn)this.TableDefinition.ColumnList[5];
         }
     }
     
@@ -207,7 +233,7 @@ public class BaseContactBackgroundTable : PrimaryKeyTable
     {
         get
         {
-            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[5];
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[6];
         }
     }
     
@@ -232,7 +258,7 @@ public class BaseContactBackgroundTable : PrimaryKeyTable
     {
         get
         {
-            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[6];
+            return (BaseClasses.Data.DateColumn)this.TableDefinition.ColumnList[7];
         }
     }
     
@@ -777,6 +803,7 @@ public class BaseContactBackgroundTable : PrimaryKeyTable
         public KeyValue NewRecord(
         string ContactIDValue, 
         string NotesValue, 
+        string NoteTypeValue, 
         string CreatedByValue, 
         string UpdatedByValue, 
         string CreatedOnValue, 
@@ -786,6 +813,7 @@ public class BaseContactBackgroundTable : PrimaryKeyTable
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
                     rec.SetString(ContactIDValue, ContactIDColumn);
         rec.SetString(NotesValue, NotesColumn);
+        rec.SetString(NoteTypeValue, NoteTypeColumn);
         rec.SetString(CreatedByValue, CreatedByColumn);
         rec.SetString(UpdatedByValue, UpdatedByColumn);
         rec.SetString(CreatedOnValue, CreatedOnColumn);

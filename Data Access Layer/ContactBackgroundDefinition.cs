@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class ContactBackgroundDefinition
 {
 #region "Definition (XML) for ContactBackgroundDefinition table"
-	//Next 307 lines contain Table Definition (XML) for table "ContactBackgroundDefinition"
+	//Next 331 lines contain Table Definition (XML) for table "ContactBackgroundDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -154,27 +154,53 @@ public class ContactBackgroundDefinition
          tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""3"" Priority=""4"" ColumnNum=""3"">");
-         tbf.Append(      @"<columnName>CreatedBy</columnName>");
-         tbf.Append(      @"<columnUIName Source=""User"">Created By</columnUIName>");
+         tbf.Append(      @"<columnName>NoteType</columnName>");
+         tbf.Append(      @"<columnUIName>Note Type</columnUIName>");
          tbf.Append(      @"<columnType>Number</columnType>");
          tbf.Append(      @"<columnDBType>int</columnDBType>");
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
-         tbf.Append(      @"<columnDBDefault Source=""User""></columnDBDefault>");
+         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
          tbf.Append(      @"<columnIndex>N</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
          tbf.Append(      @"<columnPermanent>N</columnPermanent>");
-         tbf.Append(      @"<columnComputed Source=""User"">N</columnComputed>");
-         tbf.Append(      @"<columnIdentity Source=""User"">N</columnIdentity>");
-         tbf.Append(      @"<columnReadOnly Source=""User"">N</columnReadOnly>");
+         tbf.Append(      @"<columnComputed>N</columnComputed>");
+         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
          tbf.Append(      @"<columnRequired>N</columnRequired>");
          tbf.Append(      @"<columnNotNull>N</columnNotNull>");
-         tbf.Append(      @"<columnCaseSensitive Source=""User"">N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCaseSensitive>N</columnCaseSensitive>");
          tbf.Append(      @"<columnCollation></columnCollation>");
-         tbf.Append(      @"<columnFullText Source=""User"">N</columnFullText>");
+         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
+         tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
+         tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(    "</Column>");
+         tbf.Append(    @"<Column InternalName=""4"" Priority=""5"" ColumnNum=""4"">");
+         tbf.Append(      @"<columnName>CreatedBy</columnName>");
+         tbf.Append(      @"<columnUIName>Created By</columnUIName>");
+         tbf.Append(      @"<columnType>Number</columnType>");
+         tbf.Append(      @"<columnDBType>int</columnDBType>");
+         tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
+         tbf.Append(      @"<columnDefault></columnDefault>");
+         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnUnique>N</columnUnique>");
+         tbf.Append(      @"<columnFunction></columnFunction>");
+         tbf.Append(      @"<columnDBFormat></columnDBFormat>");
+         tbf.Append(      @"<columnPK>N</columnPK>");
+         tbf.Append(      @"<columnPermanent>N</columnPermanent>");
+         tbf.Append(      @"<columnComputed>N</columnComputed>");
+         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnRequired>N</columnRequired>");
+         tbf.Append(      @"<columnNotNull>N</columnNotNull>");
+         tbf.Append(      @"<columnCaseSensitive>N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCollation></columnCollation>");
+         tbf.Append(      @"<columnFullText>N</columnFullText>");
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
@@ -190,8 +216,6 @@ public class ContactBackgroundDefinition
          tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
          tbf.Append(      @"<insertingFormula></insertingFormula>");
          tbf.Append(      @"<updatingFormula></updatingFormula>");
-         tbf.Append(      @"<InternalName>3</InternalName>");
-         tbf.Append(      @"<columnTableClassName></columnTableClassName>");
          tbf.Append(      @"<foreignKey>");
          tbf.Append(        @"<columnFKName>VFK_ContactBackground_CreatedBy_2</columnFKName>");
          tbf.Append(        @"<columnFKTable>IPv5.Business.UsersTable, IPv5.Business</columnFKTable>");
@@ -201,7 +225,7 @@ public class ContactBackgroundDefinition
          tbf.Append(        @"<foreignKeyType>Implicit</foreignKeyType>");
          tbf.Append(      "</foreignKey>");
          tbf.Append(    "</Column>");
-         tbf.Append(    @"<Column InternalName=""4"" Priority=""5"" ColumnNum=""4"">");
+         tbf.Append(    @"<Column InternalName=""5"" Priority=""6"" ColumnNum=""5"">");
          tbf.Append(      @"<columnName>UpdatedBy</columnName>");
          tbf.Append(      @"<columnUIName>Updated By</columnUIName>");
          tbf.Append(      @"<columnType>Number</columnType>");
@@ -239,7 +263,7 @@ public class ContactBackgroundDefinition
          tbf.Append(      @"<insertingFormula></insertingFormula>");
          tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
-         tbf.Append(    @"<Column InternalName=""5"" Priority=""6"" ColumnNum=""5"">");
+         tbf.Append(    @"<Column InternalName=""6"" Priority=""7"" ColumnNum=""6"">");
          tbf.Append(      @"<columnName>CreatedOn</columnName>");
          tbf.Append(      @"<columnUIName>Created On</columnUIName>");
          tbf.Append(      @"<columnType>Date</columnType>");
@@ -278,7 +302,7 @@ public class ContactBackgroundDefinition
          tbf.Append(      @"<insertingFormula></insertingFormula>");
          tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
-         tbf.Append(    @"<Column InternalName=""6"" Priority=""7"" ColumnNum=""6"">");
+         tbf.Append(    @"<Column InternalName=""7"" Priority=""8"" ColumnNum=""7"">");
          tbf.Append(      @"<columnName>UpdatedOn</columnName>");
          tbf.Append(      @"<columnUIName>Updated On</columnUIName>");
          tbf.Append(      @"<columnType>Date</columnType>");
@@ -319,7 +343,7 @@ public class ContactBackgroundDefinition
          tbf.Append(    "</Column>");
          tbf.Append(  "</ColumnDefinition>");
          tbf.Append(  @"<TableName>ContactBackground</TableName>");
-         tbf.Append(  @"<Version>3</Version>");
+         tbf.Append(  @"<Version>4</Version>");
          tbf.Append(  @"<Owner>dbo</Owner>");
          tbf.Append(  @"<TableAliasName>ContactBackground_</TableAliasName>");
          tbf.Append(  @"<ConnectionName>DatabaseMM_IP1</ConnectionName>");

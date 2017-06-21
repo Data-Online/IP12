@@ -4279,7 +4279,7 @@ public class BaseDirectorsTableControl1Row : IPv5.UI.BaseApplicationRecordContro
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                        
                     this.ContactID2AddRecordLink.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -4354,7 +4354,7 @@ public class BaseDirectorsTableControl1Row : IPv5.UI.BaseApplicationRecordContro
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "ContactID2AddRecordLink_Click", javascriptCall, true);
         
             }
@@ -7479,7 +7479,7 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                        
                     this.ContactIDAddRecordLink.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -7554,7 +7554,7 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "ContactIDAddRecordLink_Click", javascriptCall, true);
         
             }
@@ -14035,7 +14035,7 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                        
                     this.CityID1AddRecordLink.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -14064,7 +14064,7 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                        
                     this.ContactTypeIDAddRecordLink.Attributes["onClick"] = javascriptCall + "return false;";            
                 }
@@ -14453,7 +14453,7 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "CityID1AddRecordLink_Click", javascriptCall, true);
         
             }
@@ -14504,7 +14504,7 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                               
                 string javascriptCall = "";
                 
-                    javascriptCall = "initializePopupPage2(this, '" + url + "', false, event);";                                      
+                    javascriptCall = "initializePopupPage(this, '" + url + "', false, event);";                                      
                 AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "ContactTypeIDAddRecordLink_Click", javascriptCall, true);
         
             }

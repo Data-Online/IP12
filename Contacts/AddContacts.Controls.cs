@@ -2064,6 +2064,14 @@ public class BaseContactNotesTableControl1 : IPv5.UI.BaseApplicationTableControl
               
                 this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Updated By {Txt:Descending}"), "UpdatedBy Desc"));
               
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Date Recorded {Txt:Ascending}"), "DateRecorded Asc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Date Recorded {Txt:Descending}"), "DateRecorded Desc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Note Type {Txt:Ascending}"), "NoteType Asc"));
+              
+                this.SortControl.Items.Add(new ListItem(this.Page.ExpandResourceValue("Note Type {Txt:Descending}"), "NoteType Desc"));
+              
             try
             {          
                 // Set the selected value.
