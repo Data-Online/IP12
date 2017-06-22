@@ -1515,6 +1515,8 @@
     <Content Include="Images\Properties.png" />
     <Content Include="Images\Reports.png" />
     <Content Include="Images\Suppliers.png" />
+    <Content Include="Images\UpdPwd-over.png" />
+    <Content Include="Images\UpdPwd.png" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
