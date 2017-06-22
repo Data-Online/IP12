@@ -21,3 +21,4 @@ C:\Users\atkin\Source\Repos\IP12\Data Access Layer\bin\IPv5.Data.dll
 C:\Users\atkin\Source\Repos\IP12\Data Access Layer\bin\IPv5.Data.pdb
 C:\Users\atkin\Source\Repos\IP12\Data Access Layer\obj\Debug\IPv5.Data.dll
 C:\Users\atkin\Source\Repos\IP12\Data Access Layer\obj\Debug\IPv5.Data.pdb
+C:\Users\atkin\Source\Repos\IP12\Data Access Layer\obj\Debug\IPv5.Data.csprojResolveAssemblyReference.cache
