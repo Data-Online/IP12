@@ -14,9 +14,10 @@ using BaseClasses.Web.UI.WebControls;
         
 using IPv5.Business;
 using IPv5.Data;
-        
-#endregion	  
-  
+using IPv5.UI.Tools;
+
+#endregion
+
 namespace IPv5.UI
 {
 
@@ -28,6 +29,8 @@ public partial class Header : BaseApplicationUserControl , IHeader
 
       public Header()
         {
+            this.Load += new EventHandler(Page_Load_Custom);
+
             this.Initialize();
     
 
@@ -40,8 +43,22 @@ public partial class Header : BaseApplicationUserControl , IHeader
             // or replace the call to LoadData_Base().
             LoadData_Base();            
         }
-        
-      private string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string,object> variables, bool includeDS)
+
+        protected virtual void Page_Load_Custom(object sender, EventArgs e)
+        {
+            // Handle icon display
+            switch (((BaseApplicationPage)(this.Page)).CurrentSecurity.GetUserStatus())
+            {
+                case null:
+                case "":
+                    this.UpdatePwdButton.Visible = false;
+                    break;
+                default:
+                    this.UpdatePwdButton.Visible = true;
+                    break;
+            }
+        }
+            private string EvaluateFormula(string formula, BaseClasses.Data.BaseRecord dataSourceForEvaluate, string format, System.Collections.Generic.IDictionary<string,object> variables, bool includeDS)
       {
           return EvaluateFormula_Base(formula, dataSourceForEvaluate, format, variables, includeDS);
       }
@@ -88,7 +105,7 @@ public partial class Header : BaseApplicationUserControl , IHeader
            // uncomment the following call to security layer:
            // ((BaseApplicationPage)(this.Page)).CurrentSecurity.Logout((BaseApplicationPage)(this.Page));
         }
-      
+
     
 //      public override void SetChartControl(string chartCtrlName)
 //      {
@@ -216,9 +233,101 @@ public override void SetControl(string control)
       {
           this.SetControl_Base(control);
       }
+//public void SetImageButton()
+//        {
+//            SetImageButton_Base(); 
+//        }              
+//public void ImageButton_Click(object sender, ImageClickEventArgs args)
+//        {
+//          // Click handler for ImageButton.
+//          // Customize by adding code before the call or replace the call to the Base function with your own code.
+//          ImageButton_Click_Base(sender, args);
+//          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+//        }
+//public void SetUpdatePwdButton()
+//        {
+//            // Copied from BASE
+//            try
+//            {
+//                //string url = "../Users/EditUsers1.aspx?TabVisible=False";
+//                string url = UserSecurityTools.PasswordUpdateRedirect();
+//               // url = url + "?TabVisible=False"; 
+
+//                url = this.ModifyRedirectUrl(url, "", true);
+
+//                url = url + "&RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("Popup") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt("null");
+
+//                // Add userId
+//                string javascriptCall = "";
+
+//                javascriptCall = "initializePopupPage(null, '" + url + "', false, event);";
+
+//                this.UpdatePwdButton.Attributes["onClick"] = javascriptCall + "return false;";
+//            }
+//            catch
+//            {
+//                // do nothing.  If the code above fails, server side click event, UpdatePwdButton_ClickUpdatePwdButton_Click will be trigger when user click the button.
+//            }
+
+//           // SetUpdatePwdButton_Base(); 
+//        }     
+        
+public void UpdatePwdButton_Click(object sender, ImageClickEventArgs args)
+        {
+            //string url = @"../Users/EditUsers1.aspx";
+            string url = UserSecurityTools.PasswordUpdateRedirect();  // << Only change from generated code
+
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                url += "?RedirectStyle=" + this.Page.Request["RedirectStyle"];
+
+            bool shouldRedirect = true;
+            string target = null;
+            if (target == null) target = ""; // avoid warning on VS
+
+            try
+            {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+
+                url = ((BaseApplicationPage)this.Page).ModifyRedirectUrl(url, "", true);
+
+            }
+            catch (Exception ex)
+            {
+                // Upon error, rollback the transaction
+                ((BaseApplicationPage)this.Page).RollBackTransaction(sender);
+                shouldRedirect = false;
+                ((BaseApplicationPage)this.Page).ErrorOnPage = true;
+
+                // Report the error message to the end user
+                BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+
+            }
+            finally
+            {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect)
+            {
+                ((BaseApplicationPage)this.Page).ShouldSaveControlsToSession = true;
+                ((BaseApplicationPage)this.Page).Response.Redirect(url);
+
+            }
+
+            // Click handler for UpdatePwdButton.
+            // Customize by adding code before the call or replace the call to the Base function with your own code.
+           // UpdatePwdButton_Click_Base(sender, args);
+          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+        }
+
+
+            public void SetUpdatePwdButton()
+        {
+            SetUpdatePwdButton_Base(); 
+        }              
 #endregion
 
-#region "Section 2: Do not modify this section."
+            #region "Section 2: Do not modify this section."
 
       
         private void Initialize()
@@ -248,6 +357,8 @@ public override void SetControl(string control)
           // Setup the pagination events.
         
                     this.HeaderSettings.Click += HeaderSettings_Click;
+                        
+                    this.UpdatePwdButton.Click += UpdatePwdButton_Click;
                         
                     this.SignIn.Click += SignIn_Click;
                         
@@ -609,6 +720,8 @@ public override void SetControl(string control)
                 
                 SetHeaderSettings();
               
+                SetUpdatePwdButton();
+              
                 SetSignIn();
               
     } catch (Exception ex) {
@@ -699,6 +812,13 @@ public override void SetControl(string control)
    
         }
             
+        public void SetUpdatePwdButton_Base()                
+              
+        {
+        
+   
+        }
+            
         public void SetSignIn_Base()                
               
         {
@@ -730,6 +850,53 @@ public override void SetControl(string control)
     
             }
     
+        }
+            
+            
+        
+        // event handler for ImageButton
+        public void UpdatePwdButton_Click_Base(object sender, ImageClickEventArgs args)
+        {
+              
+            // The redirect URL is set on the Properties, Custom Properties or Actions.
+            // The ModifyRedirectURL call resolves the parameters before the
+            // Response.Redirect redirects the page to the URL.  
+            // Any code after the Response.Redirect call will not be executed, since the page is
+            // redirected to the URL.
+            
+            string url = @"../Users/EditUsers1.aspx";
+            
+            if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"])) 
+                url += "?RedirectStyle=" + this.Page.Request["RedirectStyle"];
+            
+        bool shouldRedirect = true;
+        string target = null;
+        if (target == null) target = ""; // avoid warning on VS
+      
+            try {
+                // Enclose all database retrieval/update code within a Transaction boundary
+                DbUtils.StartTransaction();
+                
+                url = ((BaseApplicationPage)this.Page).ModifyRedirectUrl(url, "",true);
+              
+            } catch (Exception ex) {
+                  // Upon error, rollback the transaction
+                  ((BaseApplicationPage)this.Page).RollBackTransaction(sender);
+                  shouldRedirect = false;
+                  ((BaseApplicationPage)this.Page).ErrorOnPage = true;
+
+            // Report the error message to the end user
+            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
+    
+            } finally {
+                DbUtils.EndTransaction();
+            }
+            if (shouldRedirect) {
+                ((BaseApplicationPage)this.Page).ShouldSaveControlsToSession = true;
+      ((BaseApplicationPage)this.Page).Response.Redirect(url);
+        
+            }
+        
         }
             
             
@@ -821,6 +988,17 @@ public override void SetControl(string control)
         public System.Web.UI.WebControls.DropDownList ThemeSelector {
                   get {
                   return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ThemeSelector"); 
+            }
+        }
+                
+        [Bindable(true),
+        Category("Behavior"),
+        DefaultValue(""),
+        NotifyParentProperty(true),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        public System.Web.UI.WebControls.ImageButton UpdatePwdButton {
+            get {
+                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "_UpdatePwdButton");
             }
         }
                 

@@ -199,6 +199,8 @@ public class BaseUsersTable : PrimaryKeyTable, IUserIdentityTable
         UpdatedOnColumn.CodeName = "UpdatedOn";
         ActiveColumn.CodeName = "Active";
         PwdExpColumn.CodeName = "PwdExp";
+        PwdExpColumn.DefaultValue = EvaluateFormula("true");
+        PwdExpColumn.Name = EvaluateFormula("\"Prompt user to update password at next login ?\"");
 
         
     }

@@ -2839,6 +2839,8 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
               // Register the event handlers.
 
           
+              this.PwdExp.CheckedChanged += PwdExp_CheckedChanged;
+            
               this.Password.TextChanged += Password_TextChanged;
             
               this.UserName0.TextChanged += UserName0_TextChanged;
@@ -2934,6 +2936,8 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         
                 SetPassword();
                 SetPasswordLabel();
+                SetPwdExp();
+                SetPwdExpLabel();
                 SetUserName0();
                 SetUserNameLabel();
                 
@@ -3001,6 +3005,36 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
                                
         }
                 
+        public virtual void SetPwdExp()
+        {
+            
+                    
+            // Set the PwdExp CheckBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Users database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Users record retrieved from the database.
+            // this.PwdExp is the ASP:CheckBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.IsCreated) {					
+                							
+                // If the PwdExp is non-NULL, then format the value.
+                // The Format method will use the Display Format	
+                if (StringUtils.InvariantLCase(EvaluateFormula("true")).Equals("true"))
+                    this.PwdExp.Checked = true;
+                else
+                    this.PwdExp.Checked = false;
+                    				
+            } else {
+            
+                // PwdExp is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+                if (!this.DataSource.IsCreated) 
+                    this.PwdExp.Checked = UsersTable.PwdExp.ParseValue(UsersTable.PwdExp.DefaultValue).ToBoolean();                
+                    									
+            }
+            
+        }
+                
         public virtual void SetUserName0()
         {
             
@@ -3037,6 +3071,14 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetPasswordLabel()
                   {
                   
+                    
+        }
+                
+        public virtual void SetPwdExpLabel()
+                  {
+                  
+                        this.PwdExpLabel.Text = EvaluateFormula("\"Prompt user to update password at next login ?\"");
+                      
                     
         }
                 
@@ -3210,6 +3252,7 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
             // Call the Get methods for each of the user interface controls.
         
             GetPassword();
+            GetPwdExp();
             GetUserName0();
         }
         
@@ -3232,6 +3275,17 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
                 }
             }
                       
+        }
+                
+        public virtual void GetPwdExp()
+        {	
+        		
+            // Retrieve the value entered by the user on the PwdExp ASP:CheckBox, and
+            // save it into the PwdExp field in DataSource DatabaseMM_IP1%dbo.Users record.
+            // Custom validation should be performed in Validate, not here.
+            
+            this.DataSource.PwdExp = this.PwdExp.Checked;						
+                    
         }
                 
         public virtual void GetUserName0()
@@ -3574,6 +3628,11 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
     
         // Generate set method for buttons
         
+        protected virtual void PwdExp_CheckedChanged(object sender, EventArgs args)
+        {
+           						
+        }
+            
         protected virtual void Password_TextChanged(object sender, EventArgs args)
         {
                     
@@ -3705,6 +3764,18 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         public System.Web.UI.WebControls.Literal PasswordLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PasswordLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.CheckBox PwdExp {
+            get {
+                return (System.Web.UI.WebControls.CheckBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PwdExp");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PwdExpLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PwdExpLabel");
             }
         }
         

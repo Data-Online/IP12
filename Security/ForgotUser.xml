@@ -1,14 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<ComponentDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ironspeed.com/designer">
+<ComponentDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.ironspeed.com/designer">
   <Generator>Iron Speed Designer</Generator>
   <Version>12.2.0</Version>
   <Self>
     <Name>ForgotUser</Name>
     <Type>Page</Type>
     <SubType>DotNet</SubType>
-    <MasterLayout>../Master Pages/HorizontalMenu.master</MasterLayout>
+    <MasterLayout>../Master Pages/HorizontalNoMenu.master</MasterLayout>
     <NewWindowMasterLayout>../Master Pages/Blank.master</NewWindowMasterLayout>
     <PopupMasterLayout>../Master Pages/Popup.master</PopupMasterLayout>
+    <PopupCssClass>QPageSize</PopupCssClass>
     <GenerateDirectory>Security</GenerateDirectory>
     <Layout>Security\ForgotUser.xml</Layout>
     <DisplayName>ForgotUser</DisplayName>
@@ -145,7 +146,7 @@
     </ContainedComponent>
   </ComposedOf>
   <LayoutDefinition>&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;LayoutDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+&lt;LayoutDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;Layout Name="Page" Type="RootLayout"&gt;
     &lt;Prolog&gt;
       &lt;Value&gt;&amp;lt;%@ Register TagPrefix="asp" Namespace="Recaptcha" Assembly="Recaptcha" %&amp;gt;
@@ -319,7 +320,7 @@
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:LABEL Name="FillRecaptchaLabel" /&amp;gt; 
 &amp;lt;br /&amp;gt;&amp;lt;br /&amp;gt;
-&amp;lt;asp:RecaptchaControl ID="recaptcha" runat="server" theme="clean" PublicKey="Enter your key here" PrivateKey="Enter your key here" /&amp;gt;&lt;/Value&gt;
+&amp;lt;asp:RecaptchaControl ID="recaptcha" runat="server" theme="clean" PublicKey="6LeFp9sSAAAAAKjEO2QQ8qAVgqD2q7BdvDNMZFkQ" PrivateKey="6LeFp9sSAAAAAPXXxTmdfi_fpaz2tkEesjL8Vz-n" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;RowAttributes /&gt;

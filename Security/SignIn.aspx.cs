@@ -208,7 +208,19 @@ public partial class SignIn
       {
             if (UserSecurityTools.PasswordUpdateRequired())
             {
-                // Update password
+                //string encryptFrom = BaseClasses.Utils.SecurityControls.GetCurrentUserID();
+                //string encryptTo = (this.Page as BaseApplicationPage).Encrypt(encryptFrom as string);
+                //string url = @"../Users/EditUsers1.aspx?Users="+encryptTo;
+
+                //if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
+                //    url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
+                ////else
+                ////    url += "&RedirectStyle=" + "Popup";
+                //url = this.ModifyRedirectUrl(url, "", true);
+
+                string url = UserSecurityTools.PasswordUpdateRedirect();
+                this.Page.Response.Redirect(url);
+
             }
             this.RedirectOnSuccess_Base();
       }

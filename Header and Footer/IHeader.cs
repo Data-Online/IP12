@@ -20,6 +20,8 @@ namespace IPv5.UI
         System.Web.UI.WebControls.HyperLink SkipNavigationLinks {get;}
                 System.Web.UI.WebControls.DropDownList ThemeSelector {get;}
                 
+        System.Web.UI.WebControls.ImageButton UpdatePwdButton {get;}
+                
         System.Web.UI.WebControls.Label UserStatusLbl {get;}
                 
       bool Visible {get; set;}

@@ -12,11 +12,12 @@
     <AssemblyName>IPv5.Business</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <OptionExplicit>On</OptionExplicit>
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +29,7 @@
     </DocumentationFile>
     <NoWarn>
     </NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>None</DebugType>
@@ -39,6 +41,7 @@
     </DocumentationFile>
     <NoWarn>
     </NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BaseClasses">
@@ -416,16 +419,16 @@
     <Compile Include="BaseContactBackgroundRecord.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VPropertyDirectorsView.cs" >
+    <Compile Include="VPropertyDirectorsView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseVPropertyDirectorsView.cs" >
+    <Compile Include="BaseVPropertyDirectorsView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VPropertyDirectorsRecord.cs" >
+    <Compile Include="VPropertyDirectorsRecord.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseVPropertyDirectorsRecord.cs" >
+    <Compile Include="BaseVPropertyDirectorsRecord.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

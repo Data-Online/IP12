@@ -19,6 +19,5 @@ C:\Users\atkin\Documents\GitHub\IP12\Data Access Layer\obj\Debug\IPv5.Data.pdb
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Data Access Layer\obj\Debug\IPv5.Data.csprojResolveAssemblyReference.cache
 C:\Users\atkin\Source\Repos\IP12\Data Access Layer\bin\IPv5.Data.dll
 C:\Users\atkin\Source\Repos\IP12\Data Access Layer\bin\IPv5.Data.pdb
-C:\Users\atkin\Source\Repos\IP12\Data Access Layer\obj\Debug\IPv5.Data.csprojResolveAssemblyReference.cache
 C:\Users\atkin\Source\Repos\IP12\Data Access Layer\obj\Debug\IPv5.Data.dll
 C:\Users\atkin\Source\Repos\IP12\Data Access Layer\obj\Debug\IPv5.Data.pdb

@@ -301,6 +301,10 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal PasswordLabel;
         
+        public System.Web.UI.WebControls.CheckBox PwdExp;
+            
+        public System.Web.UI.WebControls.Literal PwdExpLabel;
+        
         public System.Web.UI.WebControls.LinkButton RoleIDSortLabel;
         
         public ThemeButton SaveButton;

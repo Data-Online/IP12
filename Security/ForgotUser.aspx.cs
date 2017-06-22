@@ -21,11 +21,19 @@ using BaseClasses.Web.UI.WebControls;
         
 using IPv5.Business;
 using IPv5.Data;
-        
+using IPv5.UI.Tools;
+using System.Net;
+using System.IO;
+using System.Net.Mail;
+using SendGrid;
+using System.Text;
+
+
+
 
 #endregion
 
-  
+
 namespace IPv5.UI
 {
   
@@ -193,10 +201,11 @@ public partial class ForgotUser
       
         public void SendButton_Click(object sender, EventArgs args)
         {
+            SendPasswordToUser_SendGrid(true);
 
-          // Click handler for SendButton.
-          // Customize by adding code before the call or replace the call to the Base function with your own code.
-          SendButton_Click_Base(sender, args);
+            // Click handler for SendButton.
+            // Customize by adding code before the call or replace the call to the Base function with your own code.
+            //SendButton_Click_Base(sender, args);
           // NOTE: If the Base function redirects to another page, any code here will not be executed.
         }
             
@@ -205,10 +214,80 @@ public partial class ForgotUser
       //Customize by adding code before the call or replace the call to the Base function with your own code.
       SendEmailOnSendButton_Click_Base();
     }
-      
-    
+        private void SendPasswordToUser_SendGrid(bool usecaptcha)
+        {
+            //if there is a user identity table, with an email address field,
+            //then send the user name and password to the user email
+
+            if (usecaptcha)
+            {
+                if (!(this.Page.IsValid))
+                {
+                    Exception exc = new Exception(this.recaptcha.ErrorMessage);
+                    throw exc;
+                }
+            }
+
+            // The email address is required by validation
+            string uemail = this.Emailaddress.Text;
+
+            // lookup the email address in the user identity table and abort if not present
+            IUserIdentityRecord userRecord = SystemUtils.GetUserInfoEmailAddr(uemail);
+            if (userRecord == null)
+            {
+                string msg = GetResourceValue("Msg:InvalidEmail") + "<br />";
+                Exception exc = new Exception(msg);
+                throw exc;
+            }
+
+            string _sendGridApiKey = CustomTools.GetAppSetting("SendGridApi");
+            string _sourceEmail = CustomTools.GetAppSetting("SendGridFromMail");
+            string _subject = GetResourceValue("Txt:GetSignin");
+
+            try
+            {
+                var myMessage = new SendGrid.SendGridMessage();
+
+                myMessage.From = new MailAddress(_sourceEmail);
+                List<String> _recipients = new List<string>();
+
+                _recipients.Add(uemail);
+
+                myMessage.AddTo(_recipients); // _emailAddress
+
+
+                RecoverPasswordTools.CreateRecoverPasswordMessage(myMessage, _subject, userRecord);
+
+                // Create a Web transport, using API Key
+                var transportWeb = new Web(_sendGridApiKey);
+
+                // Send the email. Wait needed to prevent "object referance not set to instance of object" error
+                transportWeb.DeliverAsync(myMessage).Wait();
+            }
+            catch (Exception ex)
+            {
+                string msg = GetResourceValue("Msg:SendToFailed") + " " + uemail + "<br />" + ex.Message;
+                Exception exc = new Exception(msg);
+                throw exc;
+            }
+
+            this.ForgotUserInfoLabel.Visible = true;
+            this.ForgotUserInfoLabel.Text = GetResourceValue("Msg:PwdEmailed") + " " + uemail;
+            this.ForgotUserErrorLabel.Text = "";
+            this.ForgotUserErrorLabel.Visible = false;
+            this.EnterEmailLabel.Visible = false;
+            this.Emailaddress.Visible = false;
+
+            this.FillRecaptchaLabel.Visible = false;
+
+            this.recaptcha.SkipRecaptcha = true;
+            this.recaptcha.Visible = false;
+
+            this.SendButton.Visible = false;
+        }
+
         // Write out the Set methods
-        
+
         public void SetSendButton()
         {
             SetSendButton_Base(); 

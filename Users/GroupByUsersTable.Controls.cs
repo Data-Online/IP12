@@ -2316,6 +2316,8 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         
                 SetPassword();
                 SetPasswordLabel();
+                SetPwdExp();
+                SetPwdExpLabel();
                 SetUserName0();
                 SetUserNameLabel();
                 
@@ -2396,6 +2398,46 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
                                      
         }
                 
+        public virtual void SetPwdExp()
+        {
+            
+                    
+            // Set the PwdExp Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Users database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Users record retrieved from the database.
+            // this.PwdExp is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PwdExpSpecified) {
+                								
+                // If the PwdExp is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(UsersTable.PwdExp);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.PwdExp.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PwdExp is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PwdExp.Text = UsersTable.PwdExp.Format(UsersTable.PwdExp.DefaultValue);
+            		
+            }
+            
+            // If the PwdExp is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.PwdExp.Text == null ||
+                this.PwdExp.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.PwdExp.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SetUserName0()
         {
             
@@ -2439,6 +2481,14 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetPasswordLabel()
                   {
                   
+                    
+        }
+                
+        public virtual void SetPwdExpLabel()
+                  {
+                  
+                        this.PwdExpLabel.Text = EvaluateFormula("\"Prompt user to update password at next login ?\"");
+                      
                     
         }
                 
@@ -2628,11 +2678,17 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Call the Get methods for each of the user interface controls.
         
             GetPassword();
+            GetPwdExp();
             GetUserName0();
         }
         
         
         public virtual void GetPassword()
+        {
+            
+        }
+                
+        public virtual void GetPwdExp()
         {
             
         }
@@ -3022,6 +3078,18 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         public System.Web.UI.WebControls.Literal PasswordLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PasswordLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal PwdExp {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PwdExp");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PwdExpLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PwdExpLabel");
             }
         }
         
@@ -4224,6 +4292,10 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                             rec.Parse(recControl.Password.Text, UsersTable.Password);
                   }
                 
+                        if (recControl.PwdExp.Text != "") {
+                            rec.Parse(recControl.PwdExp.Text, UsersTable.PwdExp);
+                  }
+                
                         if (recControl.UserName0.Text != "") {
                             rec.Parse(recControl.UserName0.Text, UsersTable.UserName0);
                   }
@@ -4864,6 +4936,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 BaseColumn[] columns = new BaseColumn[] {
                              UsersTable.UserName0,
              UsersTable.Password,
+             UsersTable.PwdExp,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(UsersTable.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -4921,6 +4994,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
               DataForExport data = new DataForExport(UsersTable.Instance, wc, orderBy, null,join);
                            data.ColumnList.Add(new ExcelColumn(UsersTable.UserName0, "Default"));
              data.ColumnList.Add(new ExcelColumn(UsersTable.Password, "Default"));
+             data.ColumnList.Add(new ExcelColumn(UsersTable.PwdExp, "Default"));
 
 
               //  First write out the Column Headers
@@ -5092,6 +5166,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(UsersTable.UserName0.Name, ReportEnum.Align.Left, "${UserName0}", ReportEnum.Align.Left, 28);
                  report.AddColumn(UsersTable.Password.Name, ReportEnum.Align.Left, "${Password}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(UsersTable.PwdExp.Name, ReportEnum.Align.Left, "${PwdExp}", ReportEnum.Align.Left, 15);
 
   
                 int rowsPerQuery = 5000;
@@ -5128,6 +5203,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 4th parameter represent the maximum length of the data value being shown
                                                  report.AddData("${UserName0}", record.Format(UsersTable.UserName0), ReportEnum.Align.Left, 100);
                              report.AddData("${Password}", record.Format(UsersTable.Password), ReportEnum.Align.Left, 100);
+                             report.AddData("${PwdExp}", record.Format(UsersTable.PwdExp), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -5242,6 +5318,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(UsersTable.UserName0.Name, ReportEnum.Align.Left, "${UserName0}", ReportEnum.Align.Left, 28);
                  report.AddColumn(UsersTable.Password.Name, ReportEnum.Align.Left, "${Password}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(UsersTable.PwdExp.Name, ReportEnum.Align.Left, "${PwdExp}", ReportEnum.Align.Left, 15);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -5274,6 +5351,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 4th parameter represents the maximum length of the data value being shown
                              report.AddData("${UserName0}", record.Format(UsersTable.UserName0), ReportEnum.Align.Left, 100);
                              report.AddData("${Password}", record.Format(UsersTable.Password), ReportEnum.Align.Left, 100);
+                             report.AddData("${PwdExp}", record.Format(UsersTable.PwdExp), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }

@@ -39,10 +39,10 @@
 <asp:TextBox runat="server" id="UserName0" Columns="40" MaxLength="50" cssclass="field_input"></asp:TextBox>&nbsp;
 <asp:RequiredFieldValidator runat="server" id="UserName0RequiredFieldValidator" ControlToValidate="UserName0" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueIsRequired&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;User Name&quot;) %>" enabled="True" text="*"></asp:RequiredFieldValidator>&nbsp;
 <BaseClasses:TextBoxMaxLengthValidator runat="server" id="UserName0TextBoxMaxLengthValidator" ControlToValidate="UserName0" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;User Name&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
- </td></tr><tr><td class="fls"><asp:Literal runat="server" id="PasswordLabel" Text="Password">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
+ </td><td class="dfv"></td><td class="dfv"></td><td class="dfv"></td></tr><tr><td class="fls"><asp:Literal runat="server" id="PasswordLabel" Text="Password">	</asp:Literal></td><td class="dfv"><span style="white-space:nowrap;">
 <asp:TextBox runat="server" id="Password" Columns="40" MaxLength="50" cssclass="field_input" textmode="Password"></asp:TextBox>&nbsp;
 <BaseClasses:TextBoxMaxLengthValidator runat="server" id="PasswordTextBoxMaxLengthValidator" ControlToValidate="Password" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueTooLong&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Password&quot;) %>"></BaseClasses:TextBoxMaxLengthValidator></span>
- </td></tr></table></asp:panel>
+ </td><td class="dfv"></td><td class="dfv"><asp:Literal runat="server" id="PwdExpLabel" Text="EvaluateFormula(&quot;= \&quot;Prompt user to update password at next login ?\&quot;&quot;, true)">	</asp:Literal></td><td class="dfv"><asp:CheckBox runat="server" id="PwdExp"></asp:CheckBox></td></tr></table></asp:panel>
 </td></tr></table>
 </asp:panel>
                 </td><td class="panelR"></td></tr><tr><td class="panelBL"><img src="../Images/space.gif" class="panelBLSpace" alt="" /></td><td class="panelB"></td><td class="panelBR"><img src="../Images/space.gif" class="panelBRSpace" alt="" /></td></tr></table>
@@ -93,7 +93,7 @@
 <asp:DropDownList runat="server" id="RoleID" cssclass="field_input" onkeypress="dropDownListTypeAhead(this,false)"></asp:DropDownList>&nbsp;
 <asp:RequiredFieldValidator runat="server" id="RoleIDRequiredFieldValidator" ControlToValidate="RoleID" ErrorMessage="&lt;%# GetResourceValue(&quot;Val:ValueIsRequired&quot;, &quot;IPv5&quot;).Replace(&quot;{FieldName}&quot;, &quot;Role&quot;) %>" enabled="True" initialvalue="--PLEASE_SELECT--" text="*"></asp:RequiredFieldValidator></span>
  
-<asp:ImageButton runat="server" id="RoleIDAddRecordLink" causesvalidation="False" commandname="Redirect" imageurl="../Images/iconNewFlat.gif" redirectstyle="NewWindow" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>">		
+<asp:ImageButton runat="server" id="RoleIDAddRecordLink" causesvalidation="False" commandname="Redirect" imageurl="../Images/iconNewFlat.gif" redirectstyle="NewWindow" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>" visible="False">		
 	</asp:ImageButton> </td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="9">&nbsp;</td></tr></IPv5:Users_RolesTableControlRow>
 </ITEMTEMPLATE>
 

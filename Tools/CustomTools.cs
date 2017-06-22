@@ -4,6 +4,10 @@ namespace IPv5.UI.Tools
 {
     public class CustomTools
     {
+        public CustomTools()
+        {
+
+        }
         public static string SetCSSclass(DateTime currentDate)
         {
             if (currentDate < DateTime.Today.AddDays(-60)) // Overdue 
@@ -13,6 +17,18 @@ namespace IPv5.UI.Tools
             else if ((currentDate > DateTime.Today) && (currentDate < DateTime.Today.AddDays(60))) // Due next month
                 return "_nextmonth";
             return "";
+        }
+
+        public static string GetAppSetting(string setting)
+        {
+            try
+            {
+                return System.Web.Configuration.WebConfigurationManager.AppSettings[setting];
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 
@@ -35,6 +51,41 @@ namespace IPv5.UI.Tools
             string userId = BaseClasses.Utils.SecurityControls.GetCurrentUserID();
             return IPv5.Business.UsersTable.GetRecord(userId, false).PwdExp;
         }
+
+        public static string PasswordUpdateRedirect()
+        {
+            string encryptFrom = BaseClasses.Utils.SecurityControls.GetCurrentUserID();
+            string encryptTo = Data.BaseFormulaUtils.Encrypt(encryptFrom as string);
+            string url = @"../Users/EditUsers1.aspx?Users=" + encryptTo;
+
+            return url;
+        }
+
+    }
+
+    public class RecoverPasswordTools
+    {
+        public RecoverPasswordTools()
+        {
+
+        }
+
+        public static void CreateRecoverPasswordMessage(SendGrid.SendGridMessage myMessage, string subject, BaseClasses.IUserIdentityRecord userRecord)
+        {
+            myMessage.Subject = subject;
+            System.Text.StringBuilder _sb = new System.Text.StringBuilder();
+            string _text;
+            _text = string.Format("Password recovery for {0} ({1})", userRecord.GetUserName(), userRecord.GetUserEmail());
+            _sb.Append(_text + "\n");
+            _text = string.Format("     Username : {0}", userRecord.GetUserName());
+            _sb.Append(_text + "\n");
+            _text = string.Format("     Password : {0}", userRecord.GetUserPassword());
+            _sb.Append(_text + "\n");
+
+            myMessage.Text = _sb.ToString();
+        }
+
+
 
     }
 
