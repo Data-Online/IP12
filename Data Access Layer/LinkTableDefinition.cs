@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class LinkTableDefinition
 {
 #region "Definition (XML) for LinkTableDefinition table"
-	//Next 257 lines contain Table Definition (XML) for table "LinkTableDefinition"
+	//Next 305 lines contain Table Definition (XML) for table "LinkTableDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -77,7 +77,7 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -123,7 +123,7 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -169,7 +169,7 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -186,6 +186,18 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""4"" Priority=""5"" ColumnNum=""4"">");
          tbf.Append(      @"<columnName>UpdatedBy</columnName>");
@@ -195,7 +207,7 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -212,6 +224,18 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""5"" Priority=""6"" ColumnNum=""5"">");
          tbf.Append(      @"<columnName>CreatedOn</columnName>");
@@ -221,9 +245,9 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
-         tbf.Append(      @"<columnFunction>notrim</columnFunction>");
+         tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnFormat>g</columnFormat>");
          tbf.Append(      @"<columnDBFormat>g</columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
@@ -239,6 +263,18 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""6"" Priority=""7"" ColumnNum=""6"">");
          tbf.Append(      @"<columnName>UpdatedOn</columnName>");
@@ -248,9 +284,9 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
-         tbf.Append(      @"<columnFunction>notrim</columnFunction>");
+         tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnFormat>g</columnFormat>");
          tbf.Append(      @"<columnDBFormat>g</columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
@@ -266,10 +302,22 @@ public class LinkTableDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(  "</ColumnDefinition>");
          tbf.Append(  @"<TableName>LinkTable</TableName>");
-         tbf.Append(  @"<Version>1</Version>");
+         tbf.Append(  @"<Version>2</Version>");
          tbf.Append(  @"<Owner>dbo</Owner>");
          tbf.Append(  @"<TableAliasName>LinkTable_</TableAliasName>");
          tbf.Append(  @"<ConnectionName>DatabaseMM_IP1</ConnectionName>");

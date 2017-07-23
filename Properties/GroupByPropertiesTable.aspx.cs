@@ -680,6 +680,8 @@ public void OKButton_Click(object sender, EventArgs args)
         
         public System.Web.UI.WebControls.Label SortByLabel7;
         
+        public System.Web.UI.WebControls.LinkButton TenantNameLabel;
+        
         public System.Web.UI.WebControls.TextBox TermExpiresSearchText;
         
         public ThemeButtonWithArrow TermRenewalsButtonsButton;

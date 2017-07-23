@@ -1438,6 +1438,8 @@ public class BaseVPropertyTermRenewalsTableControl : IPv5.UI.BaseApplicationTabl
                    
                 this.CurrentSortOrder = new OrderBy(true, false);
             
+                this.CurrentSortOrder.Add(VPropertyTermRenewalsView.CompanyName, OrderByItem.OrderDir.Asc);
+              
         }
 
 
@@ -1973,7 +1975,9 @@ public class BaseVPropertyTermRenewalsTableControl : IPv5.UI.BaseApplicationTabl
             else {
             
                 this.CurrentSortOrder = new OrderBy(true, false);
-               
+            
+                this.CurrentSortOrder.Add(VPropertyTermRenewalsView.CompanyName, OrderByItem.OrderDir.Asc);
+                 
             }
                 
             this.PageIndex = 0;
@@ -4307,7 +4311,9 @@ public class BaseVPropertyTermRenewalsTableControl : IPv5.UI.BaseApplicationTabl
               else
               {
                   this.CurrentSortOrder = new OrderBy(true, false);
-                  
+              
+                  this.CurrentSortOrder.Add(VPropertyTermRenewalsView.CompanyName, OrderByItem.OrderDir.Asc);          
+                      
               }
                 
 

@@ -385,6 +385,8 @@ public override void SetControl(string control)
         
         public IPv5.UI.Controls.EditContacts.LinkTableTableControl LinkTableTableControl;
           
+        public System.Web.UI.WebControls.Literal MiddleNameLabel;
+        
         public System.Web.UI.WebControls.Literal NotesLabel;
         
         public System.Web.UI.WebControls.Literal NotesLabel1;
@@ -549,7 +551,7 @@ public override void SetControl(string control)
     }
 
     
-            Page.Title = ExpandResourceValue("{Title:Edit} Contacts");
+            Page.Title = ExpandResourceValue("{Title:Edit} Investors");
         
         if (!IsPostBack)
             AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "PopupScript", "openPopupPage('QPageSize');", true);

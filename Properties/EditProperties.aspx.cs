@@ -661,6 +661,8 @@ public void SetTabContainer()
         
         public AjaxControlToolkit.TabContainer TabContainer;
         
+        public System.Web.UI.WebControls.Literal TenantNameLabel;
+        
         public System.Web.UI.WebControls.TextBox TermExpiresSearchText;
         
         public IPv5.UI.Controls.EditProperties.TermExpiresTableControl TermExpiresTableControl;

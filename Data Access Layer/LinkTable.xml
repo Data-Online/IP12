@@ -60,7 +60,7 @@
       </columnDefault>
       <columnDBDefault>
       </columnDBDefault>
-      <columnIndex>N</columnIndex>
+      <columnIndex>Y</columnIndex>
       <columnUnique>N</columnUnique>
       <columnFunction>
       </columnFunction>
@@ -117,7 +117,7 @@
       </columnDefault>
       <columnDBDefault>
       </columnDBDefault>
-      <columnIndex>N</columnIndex>
+      <columnIndex>Y</columnIndex>
       <columnUnique>N</columnUnique>
       <columnFunction>
       </columnFunction>
@@ -174,7 +174,7 @@
       </columnDefault>
       <columnDBDefault>
       </columnDBDefault>
-      <columnIndex>N</columnIndex>
+      <columnIndex>Y</columnIndex>
       <columnUnique>N</columnUnique>
       <columnFunction>
       </columnFunction>
@@ -195,6 +195,23 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <applyDFKA>N</applyDFKA>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
     </Column>
     <Column InternalName="4" Priority="5" ColumnNum="4">
       <columnName>UpdatedBy</columnName>
@@ -206,7 +223,7 @@
       </columnDefault>
       <columnDBDefault>
       </columnDBDefault>
-      <columnIndex>N</columnIndex>
+      <columnIndex>Y</columnIndex>
       <columnUnique>N</columnUnique>
       <columnFunction>
       </columnFunction>
@@ -227,6 +244,23 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <applyDFKA>N</applyDFKA>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
     </Column>
     <Column InternalName="5" Priority="6" ColumnNum="5">
       <columnName>CreatedOn</columnName>
@@ -239,9 +273,10 @@
       </columnDefault>
       <columnDBDefault>
       </columnDBDefault>
-      <columnIndex>N</columnIndex>
+      <columnIndex>Y</columnIndex>
       <columnUnique>N</columnUnique>
-      <columnFunction>notrim</columnFunction>
+      <columnFunction>
+      </columnFunction>
       <columnFormat>g</columnFormat>
       <columnDBFormat>g</columnDBFormat>
       <columnPK>N</columnPK>
@@ -259,6 +294,23 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <applyDFKA>N</applyDFKA>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
     </Column>
     <Column InternalName="6" Priority="7" ColumnNum="6">
       <columnName>UpdatedOn</columnName>
@@ -271,9 +323,10 @@
       </columnDefault>
       <columnDBDefault>
       </columnDBDefault>
-      <columnIndex>N</columnIndex>
+      <columnIndex>Y</columnIndex>
       <columnUnique>N</columnUnique>
-      <columnFunction>notrim</columnFunction>
+      <columnFunction>
+      </columnFunction>
       <columnFormat>g</columnFormat>
       <columnDBFormat>g</columnDBFormat>
       <columnPK>N</columnPK>
@@ -291,10 +344,27 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <applyDFKA>N</applyDFKA>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
     </Column>
   </ColumnDefinition>
   <TableName>LinkTable</TableName>
-  <Version>1</Version>
+  <Version>2</Version>
   <Owner>dbo</Owner>
   <TableAliasName>LinkTable_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

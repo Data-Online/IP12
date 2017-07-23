@@ -4409,7 +4409,7 @@ public class BaseDirectorsTableControl1Row : IPv5.UI.BaseApplicationRecordContro
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../Directors/EditDirectors.aspx?Directors={PK}";
+            string url = @"../Contacts/EditContacts.aspx?Contacts={DirectorsTableControl1Row:FK:FK_Directors_Contacts}";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
                 url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
@@ -4457,7 +4457,7 @@ public class BaseDirectorsTableControl1Row : IPv5.UI.BaseApplicationRecordContro
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../Directors/ShowDirectors.aspx?Directors={PK}";
+            string url = @"../Contacts/GroupByContactsTable.aspx?Contacts={DirectorsTableControl1Row:FK:FK_Directors_Contacts}";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
                 url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
@@ -7657,7 +7657,7 @@ public class BaseLinkTableTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../Contacts/ShowContacts.aspx?Contacts={LinkTableTableControlRow:FK:FK_LinkTable_Contacts}";
+            string url = @"../Contacts/GroupByContactsTable.aspx?Contacts={LinkTableTableControlRow:FK:FK_LinkTable_Contacts}";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
                 url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
@@ -16245,6 +16245,10 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                 this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Ascending}"), "DeletedOn Asc"));
               
                 this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Descending}"), "DeletedOn Desc"));
+              
+                this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Middle Name {Txt:Ascending}"), "MiddleName Asc"));
+              
+                this.SortControl8.Items.Add(new ListItem(this.Page.ExpandResourceValue("Middle Name {Txt:Descending}"), "MiddleName Desc"));
               
             try
             {          
@@ -30505,6 +30509,8 @@ public class BasePropertiesRecordControl : IPv5.UI.BaseApplicationRecordControl
             
               this.PostCode.TextChanged += PostCode_TextChanged;
             
+              this.TenantName.TextChanged += TenantName_TextChanged;
+            
         }
 
         public virtual void LoadData()  
@@ -30614,6 +30620,8 @@ public class BasePropertiesRecordControl : IPv5.UI.BaseApplicationRecordControl
                 SetRegionID();
                 
                 SetRegionIDLabel();
+                SetTenantName();
+                SetTenantNameLabel();
                 SetCityIDAddRecordLink();
               
                 SetCountryIDAddRecordLink();
@@ -31030,6 +31038,39 @@ public class BasePropertiesRecordControl : IPv5.UI.BaseApplicationRecordControl
                   
         }
                 
+        public virtual void SetTenantName()
+        {
+            
+                    
+            // Set the TenantName TextBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Properties database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Properties record retrieved from the database.
+            // this.TenantName is the ASP:TextBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.TenantNameSpecified) {
+                								
+                // If the TenantName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertiesTable.TenantName);
+                                
+                this.TenantName.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // TenantName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.TenantName.Text = PropertiesTable.TenantName.Format(PropertiesTable.TenantName.DefaultValue);
+            		
+            }
+            
+              this.TenantName.TextChanged += TenantName_TextChanged;
+                               
+        }
+                
         public virtual void SetAddress1Label()
                   {
                   
@@ -31073,6 +31114,12 @@ public class BasePropertiesRecordControl : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void SetRegionIDLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetTenantNameLabel()
                   {
                   
                     
@@ -31265,6 +31312,7 @@ public class BasePropertiesRecordControl : IPv5.UI.BaseApplicationRecordControl
             GetCountryID();
             GetPostCode();
             GetRegionID();
+            GetTenantName();
         }
         
         
@@ -31369,6 +31417,20 @@ public class BasePropertiesRecordControl : IPv5.UI.BaseApplicationRecordControl
             
             this.DataSource.Parse(MiscUtils.GetValueSelectedPageRequest(this.RegionID), PropertiesTable.RegionID);			
                 			 
+        }
+                
+        public virtual void GetTenantName()
+        {
+            
+            // Retrieve the value entered by the user on the TenantName ASP:TextBox, and
+            // save it into the TenantName field in DataSource DatabaseMM_IP1%dbo.Properties record.
+            
+            // Custom validation should be performed in Validate, not here.
+                    
+            // Save the value to data source
+            this.DataSource.Parse(this.TenantName.Text, PropertiesTable.TenantName);							
+                          
+                      
         }
                 
 
@@ -32526,6 +32588,11 @@ public class BasePropertiesRecordControl : IPv5.UI.BaseApplicationRecordControl
                     
               }
             
+        protected virtual void TenantName_TextChanged(object sender, EventArgs args)
+        {
+                    
+              }
+            
   
         private Hashtable _PreviousUIData = new Hashtable();
         public virtual Hashtable PreviousUIData {
@@ -32755,6 +32822,18 @@ public class BasePropertiesRecordControl : IPv5.UI.BaseApplicationRecordControl
         public System.Web.UI.WebControls.Literal RegionIDLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionIDLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox TenantName {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TenantName");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal TenantNameLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TenantNameLabel");
             }
         }
         

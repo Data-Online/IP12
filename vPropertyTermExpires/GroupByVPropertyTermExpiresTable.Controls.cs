@@ -1392,6 +1392,8 @@ public class BaseVPropertyTermExpiresTableControl : IPv5.UI.BaseApplicationTable
                    
                 this.CurrentSortOrder = new OrderBy(true, false);
             
+                this.CurrentSortOrder.Add(VPropertyTermExpiresView.CompanyName, OrderByItem.OrderDir.Asc);
+              
         }
 
 
@@ -1927,7 +1929,9 @@ public class BaseVPropertyTermExpiresTableControl : IPv5.UI.BaseApplicationTable
             else {
             
                 this.CurrentSortOrder = new OrderBy(true, false);
-               
+            
+                this.CurrentSortOrder.Add(VPropertyTermExpiresView.CompanyName, OrderByItem.OrderDir.Asc);
+                 
             }
                 
             this.PageIndex = 0;
@@ -4261,7 +4265,9 @@ public class BaseVPropertyTermExpiresTableControl : IPv5.UI.BaseApplicationTable
               else
               {
                   this.CurrentSortOrder = new OrderBy(true, false);
-                  
+              
+                  this.CurrentSortOrder.Add(VPropertyTermExpiresView.CompanyName, OrderByItem.OrderDir.Asc);          
+                      
               }
                 
 

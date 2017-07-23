@@ -1218,6 +1218,38 @@ public class BaseContactsRecord : PrimaryKeyRecord
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.DeletedOnColumn);
 	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.MiddleName field.
+	/// </summary>
+	public ColumnValue GetMiddleNameValue()
+	{
+		return this.GetValue(TableUtils.MiddleNameColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Contacts_.MiddleName field.
+	/// </summary>
+	public string GetMiddleNameFieldValue()
+	{
+		return this.GetValue(TableUtils.MiddleNameColumn).ToString();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.MiddleName field.
+	/// </summary>
+	public void SetMiddleNameFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.MiddleNameColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.MiddleName field.
+	/// </summary>
+	public void SetMiddleNameFieldValue(string val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.MiddleNameColumn);
+	}
 
 
 #endregion
@@ -2432,6 +2464,49 @@ public class BaseContactsRecord : PrimaryKeyRecord
 		get
 		{
 			return TableUtils.DeletedOnColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Contacts_.MiddleName field.
+	/// </summary>
+	public string MiddleName
+	{
+		get
+		{
+			return this.GetValue(TableUtils.MiddleNameColumn).ToString();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.MiddleNameColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool MiddleNameSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.MiddleNameColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Contacts_.MiddleName field.
+	/// </summary>
+	public string MiddleNameDefault
+	{
+		get
+		{
+			return TableUtils.MiddleNameColumn.DefaultValue;
 		}
 	}
 

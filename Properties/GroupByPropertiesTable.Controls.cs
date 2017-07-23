@@ -4255,6 +4255,7 @@ public class BaseContactsTableControl1Row : IPv5.UI.BaseApplicationRecordControl
                 SetLastName22();
                 SetLastName4();
                 SetLiteral();
+                SetMiddleName();
                 SetPhoneNumber2();
                 SetPhoneNumberLabel();
                 SetPlaceOfBirth2();
@@ -4844,6 +4845,46 @@ public class BaseContactsTableControl1Row : IPv5.UI.BaseApplicationRecordControl
                                      
         }
                 
+        public virtual void SetMiddleName()
+        {
+            
+                    
+            // Set the MiddleName Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.MiddleName is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.MiddleNameSpecified) {
+                								
+                // If the MiddleName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.MiddleName);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.MiddleName.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // MiddleName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.MiddleName.Text = ContactsTable.MiddleName.Format(ContactsTable.MiddleName.DefaultValue);
+            		
+            }
+            
+            // If the MiddleName is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.MiddleName.Text == null ||
+                this.MiddleName.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.MiddleName.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SetPhoneNumber2()
         {
             
@@ -5237,6 +5278,7 @@ public class BaseContactsTableControl1Row : IPv5.UI.BaseApplicationRecordControl
             GetIrdNumber2();
             GetLastName22();
             GetLastName4();
+            GetMiddleName();
             GetPhoneNumber2();
             GetPlaceOfBirth2();
             GetPostCode4();
@@ -5305,6 +5347,11 @@ public class BaseContactsTableControl1Row : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void GetLastName4()
+        {
+            
+        }
+                
+        public virtual void GetMiddleName()
         {
             
         }
@@ -5812,6 +5859,12 @@ public class BaseContactsTableControl1Row : IPv5.UI.BaseApplicationRecordControl
             }
         }
         
+        public System.Web.UI.WebControls.Literal MiddleName {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MiddleName");
+            }
+        }
+            
         public System.Web.UI.WebControls.Literal PhoneNumber2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumber2");
@@ -7323,6 +7376,10 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                             rec.Parse(recControl.LastName4.Text, ContactsTable.LastName);
                   }
                 
+                        if (recControl.MiddleName.Text != "") {
+                            rec.Parse(recControl.MiddleName.Text, ContactsTable.MiddleName);
+                  }
+                
                         if (recControl.PhoneNumber2.Text != "") {
                             rec.Parse(recControl.PhoneNumber2.Text, ContactsTable.PhoneNumber);
                   }
@@ -7511,6 +7568,10 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                 this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Ascending}"), "DeletedOn Asc"));
               
                 this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Descending}"), "DeletedOn Desc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Middle Name {Txt:Ascending}"), "MiddleName Asc"));
+              
+                this.SortControl1.Items.Add(new ListItem(this.Page.ExpandResourceValue("Middle Name {Txt:Descending}"), "MiddleName Desc"));
               
             try
             {          
@@ -7964,6 +8025,7 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
              ContactsTable.BankAccount,
              ContactsTable.DateOfBirth,
              ContactsTable.PlaceOfBirth,
+             ContactsTable.MiddleName,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(ContactsTable.Instance,wc,orderBy,columns);
                 
@@ -8088,6 +8150,7 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
              ContactsTable.BankAccount,
              ContactsTable.DateOfBirth,
              ContactsTable.PlaceOfBirth,
+             ContactsTable.MiddleName,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(ContactsTable.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -8160,6 +8223,7 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
              data.ColumnList.Add(new ExcelColumn(ContactsTable.BankAccount, "Default"));
              data.ColumnList.Add(new ExcelColumn(ContactsTable.DateOfBirth, "Short Date"));
              data.ColumnList.Add(new ExcelColumn(ContactsTable.PlaceOfBirth, "Default"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.MiddleName, "Default"));
 
 
               //  First write out the Column Headers
@@ -8325,6 +8389,7 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(ContactsTable.BankAccount.Name, ReportEnum.Align.Left, "${BankAccount}", ReportEnum.Align.Left, 17);
                  report.AddColumn(ContactsTable.DateOfBirth.Name, ReportEnum.Align.Left, "${DateOfBirth}", ReportEnum.Align.Left, 20);
                  report.AddColumn(ContactsTable.PlaceOfBirth.Name, ReportEnum.Align.Left, "${PlaceOfBirth}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(ContactsTable.MiddleName.Name, ReportEnum.Align.Left, "${MiddleName}", ReportEnum.Align.Left, 24);
 
   
                 int rowsPerQuery = 5000;
@@ -8400,6 +8465,7 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                              report.AddData("${BankAccount}", record.Format(ContactsTable.BankAccount), ReportEnum.Align.Left, 100);
                              report.AddData("${DateOfBirth}", record.Format(ContactsTable.DateOfBirth), ReportEnum.Align.Left, 100);
                              report.AddData("${PlaceOfBirth}", record.Format(ContactsTable.PlaceOfBirth), ReportEnum.Align.Left, 100);
+                             report.AddData("${MiddleName}", record.Format(ContactsTable.MiddleName), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -9543,7 +9609,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../Directors/ShowDirectors.aspx?Directors={PK}";
+            string url = @"../Contacts/ShowContacts.aspx?Contacts={DirectorsTableControlRow:PK}";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
                 url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];
@@ -15708,6 +15774,7 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                 SetRentReviewsCountControl2();
                 SetRentReviewsCountControl3();
                 
+                SetTenantName();
                 SetTermExpiresCountControl();
                 SetTermExpiresCountControl1();
                 SetTermExpiresCountControl2();
@@ -16264,6 +16331,46 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             		
             }
                                
+        }
+                
+        public virtual void SetTenantName()
+        {
+            
+                    
+            // Set the TenantName Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Properties database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Properties record retrieved from the database.
+            // this.TenantName is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.TenantNameSpecified) {
+                								
+                // If the TenantName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertiesTable.TenantName);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.TenantName.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // TenantName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.TenantName.Text = PropertiesTable.TenantName.Format(PropertiesTable.TenantName.DefaultValue);
+            		
+            }
+            
+            // If the TenantName is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.TenantName.Text == null ||
+                this.TenantName.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.TenantName.Text = "&nbsp;";
+            }
+                                     
         }
                 
         public virtual void SetUpdatedBy1()
@@ -16876,6 +16983,7 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             GetPostCode();
             GetPropertyID();
             GetRegionID();
+            GetTenantName();
             GetUpdatedBy1();
             GetUpdatedOn1();
         }
@@ -16932,6 +17040,11 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
         }
                 
         public virtual void GetRegionID()
+        {
+            
+        }
+                
+        public virtual void GetTenantName()
         {
             
         }
@@ -17713,6 +17826,12 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
             }
         }
         
+        public System.Web.UI.WebControls.Literal TenantName {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TenantName");
+            }
+        }
+            
         public System.Web.UI.WebControls.Literal TermExpiresCountControl {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TermExpiresCountControl");
@@ -17982,6 +18101,8 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                    
                 this.CurrentSortOrder = new OrderBy(true, false);
             
+                this.CurrentSortOrder.Add(PropertiesTable.CompanyName, OrderByItem.OrderDir.Asc);
+              
         }
 
 
@@ -18035,6 +18156,8 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
               this.PostCodeSortLabel.Click += PostCodeSortLabel_Click;
             
               this.RegionIDSortLabel.Click += RegionIDSortLabel_Click;
+            
+              this.TenantNameLabel.Click += TenantNameLabel_Click;
             
             // Setup the button events.
           
@@ -18393,6 +18516,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                 
                 
                 
+                SetTenantNameLabel();
                 
                 
                 
@@ -18646,7 +18770,9 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
             else {
             
                 this.CurrentSortOrder = new OrderBy(true, false);
-               
+            
+                this.CurrentSortOrder.Add(PropertiesTable.CompanyName, OrderByItem.OrderDir.Asc);
+                 
             }
                 
             this.PageIndex = 0;
@@ -19237,6 +19363,10 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                             rec.Parse(recControl.RegionID.Text, PropertiesTable.RegionID);
                   }
                 
+                        if (recControl.TenantName.Text != "") {
+                            rec.Parse(recControl.TenantName.Text, PropertiesTable.TenantName);
+                  }
+                
                         if (recControl.UpdatedBy1.Text != "") {
                             rec.Parse(recControl.UpdatedBy1.Text, PropertiesTable.UpdatedBy);
                   }
@@ -19383,6 +19513,12 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
         }
                 
         public virtual void SetRegionIDSortLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetTenantNameLabel()
                   {
                   
                     
@@ -21817,6 +21953,36 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
               
         }
             
+        public virtual void TenantNameLabel_Click(object sender, EventArgs args)
+        {
+            //Sorts by TenantName when clicked.
+              
+            // Get previous sorting state for TenantName.
+        
+            OrderByItem sd = this.CurrentSortOrder.Find(PropertiesTable.TenantName);
+            if (sd == null || (this.CurrentSortOrder.Items != null && this.CurrentSortOrder.Items.Length > 1)) {
+                // First time sort, so add sort order for TenantName.
+                this.CurrentSortOrder.Reset();
+
+    
+              //If default sort order was GeoProximity, create new CurrentSortOrder of OrderBy type
+              if ((this.CurrentSortOrder).GetType() == typeof(GeoOrderBy)) this.CurrentSortOrder = new OrderBy(true, false);
+
+              this.CurrentSortOrder.Add(PropertiesTable.TenantName, OrderByItem.OrderDir.Asc);
+            
+            } else {
+                // Previously sorted by TenantName, so just reverse.
+                sd.Reverse();
+            }
+        
+
+            // Setting the DataChanged to true results in the page being refreshed with
+            // the most recent data from the database.  This happens in PreRender event
+            // based on the current sort, search and filter criteria.
+            this.DataChanged = true;
+              
+        }
+            
 
         // Generate the event handling functions for button events.
         
@@ -21867,6 +22033,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
              PropertiesTable.UpdatedBy,
              PropertiesTable.CreatedOn,
              PropertiesTable.UpdatedOn,
+             PropertiesTable.TenantName,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(PropertiesTable.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -21935,6 +22102,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.UpdatedBy, "Default"));
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.CreatedOn, "Short Date"));
              data.ColumnList.Add(new ExcelColumn(PropertiesTable.UpdatedOn, "Short Date"));
+             data.ColumnList.Add(new ExcelColumn(PropertiesTable.TenantName, "Default"));
 
 
               //  First write out the Column Headers
@@ -22117,6 +22285,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(PropertiesTable.UpdatedBy.Name, ReportEnum.Align.Left, "${UpdatedBy}", ReportEnum.Align.Left, 15);
                  report.AddColumn(PropertiesTable.CreatedOn.Name, ReportEnum.Align.Left, "${CreatedOn}", ReportEnum.Align.Left, 20);
                  report.AddColumn(PropertiesTable.UpdatedOn.Name, ReportEnum.Align.Left, "${UpdatedOn}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(PropertiesTable.TenantName.Name, ReportEnum.Align.Left, "${TenantName}", ReportEnum.Align.Left, 28);
 
   
                 int rowsPerQuery = 5000;
@@ -22224,6 +22393,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                              }
                              report.AddData("${CreatedOn}", record.Format(PropertiesTable.CreatedOn), ReportEnum.Align.Left, 100);
                              report.AddData("${UpdatedOn}", record.Format(PropertiesTable.UpdatedOn), ReportEnum.Align.Left, 100);
+                             report.AddData("${TenantName}", record.Format(PropertiesTable.TenantName), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -22271,7 +22441,9 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
               else
               {
                   this.CurrentSortOrder = new OrderBy(true, false);
-                  
+              
+                  this.CurrentSortOrder.Add(PropertiesTable.CompanyName, OrderByItem.OrderDir.Asc);          
+                      
               }
                 
 
@@ -22351,6 +22523,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(PropertiesTable.UpdatedBy.Name, ReportEnum.Align.Left, "${UpdatedBy}", ReportEnum.Align.Left, 15);
                  report.AddColumn(PropertiesTable.CreatedOn.Name, ReportEnum.Align.Left, "${CreatedOn}", ReportEnum.Align.Left, 20);
                  report.AddColumn(PropertiesTable.UpdatedOn.Name, ReportEnum.Align.Left, "${UpdatedOn}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(PropertiesTable.TenantName.Name, ReportEnum.Align.Left, "${TenantName}", ReportEnum.Align.Left, 28);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -22454,6 +22627,7 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
                              }
                              report.AddData("${CreatedOn}", record.Format(PropertiesTable.CreatedOn), ReportEnum.Align.Left, 100);
                              report.AddData("${UpdatedOn}", record.Format(PropertiesTable.UpdatedOn), ReportEnum.Align.Left, 100);
+                             report.AddData("${TenantName}", record.Format(PropertiesTable.TenantName), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -22806,6 +22980,12 @@ public class BasePropertiesTableControl : IPv5.UI.BaseApplicationTableControl
         public System.Web.UI.WebControls.LinkButton RegionIDSortLabel {
             get {
                 return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "RegionIDSortLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.LinkButton TenantNameLabel {
+            get {
+                return (System.Web.UI.WebControls.LinkButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "TenantNameLabel");
             }
         }
         
@@ -26132,6 +26312,10 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
                 this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Ascending}"), "DeletedOn Asc"));
               
                 this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Deleted On {Txt:Descending}"), "DeletedOn Desc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Middle Name {Txt:Ascending}"), "MiddleName Asc"));
+              
+                this.SortControl6.Items.Add(new ListItem(this.Page.ExpandResourceValue("Middle Name {Txt:Descending}"), "MiddleName Desc"));
               
             try
             {          

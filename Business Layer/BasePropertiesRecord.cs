@@ -818,6 +818,38 @@ public class BasePropertiesRecord : PrimaryKeyRecord
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.DeletedOnColumn);
 	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Properties_.TenantName field.
+	/// </summary>
+	public ColumnValue GetTenantNameValue()
+	{
+		return this.GetValue(TableUtils.TenantNameColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's Properties_.TenantName field.
+	/// </summary>
+	public string GetTenantNameFieldValue()
+	{
+		return this.GetValue(TableUtils.TenantNameColumn).ToString();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Properties_.TenantName field.
+	/// </summary>
+	public void SetTenantNameFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.TenantNameColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Properties_.TenantName field.
+	/// </summary>
+	public void SetTenantNameFieldValue(string val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.TenantNameColumn);
+	}
 
 
 #endregion
@@ -1514,6 +1546,49 @@ public class BasePropertiesRecord : PrimaryKeyRecord
 		get
 		{
 			return TableUtils.DeletedOnColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's Properties_.TenantName field.
+	/// </summary>
+	public string TenantName
+	{
+		get
+		{
+			return this.GetValue(TableUtils.TenantNameColumn).ToString();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.TenantNameColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool TenantNameSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.TenantNameColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's Properties_.TenantName field.
+	/// </summary>
+	public string TenantNameDefault
+	{
+		get
+		{
+			return TableUtils.TenantNameColumn.DefaultValue;
 		}
 	}
 

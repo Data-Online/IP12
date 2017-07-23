@@ -683,7 +683,7 @@
       <columnLengthSet>
       </columnLengthSet>
       <columnDefault>= "0"</columnDefault>
-      <columnDBDefault Source="User">
+      <columnDBDefault>
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
@@ -693,33 +693,30 @@
       </columnDBFormat>
       <columnPK>N</columnPK>
       <columnPermanent>N</columnPermanent>
-      <columnComputed Source="User">N</columnComputed>
-      <columnIdentity Source="User">N</columnIdentity>
-      <columnReadOnly Source="User">N</columnReadOnly>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
       <columnRequired>N</columnRequired>
       <columnNotNull>N</columnNotNull>
-      <columnCaseSensitive Source="User">N</columnCaseSensitive>
+      <columnCaseSensitive>N</columnCaseSensitive>
       <columnCollation>
       </columnCollation>
-      <columnFullText Source="User">N</columnFullText>
+      <columnFullText>N</columnFullText>
       <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
-      <applyDefaultValue>Y</applyDefaultValue>
-      <InternalName>13</InternalName>
-      <columnTableClassName>
-      </columnTableClassName>
-      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyDFKA>N</applyDFKA>
       <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
       <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
       <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
       <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
-      <applyDFKA>N</applyDFKA>
-      <readingRecordFormula>
-      </readingRecordFormula>
+      <applyDefaultValue>Y</applyDefaultValue>
       <insertingRecordFormula>
       </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
       <updatingRecordFormula>
       </updatingRecordFormula>
       <insertingFormula>
@@ -758,6 +755,23 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <applyDFKA>N</applyDFKA>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
     </Column>
     <Column InternalName="15" Priority="16" ColumnNum="15">
       <columnName>DeletedOn</columnName>
@@ -772,7 +786,8 @@
       </columnDBDefault>
       <columnIndex>N</columnIndex>
       <columnUnique>N</columnUnique>
-      <columnFunction>notrim</columnFunction>
+      <columnFunction>
+      </columnFunction>
       <columnFormat>g</columnFormat>
       <columnDBFormat>g</columnDBFormat>
       <columnPK>N</columnPK>
@@ -790,10 +805,58 @@
       <columnTableAliasName>
       </columnTableAliasName>
       <applyLabelText>Y</applyLabelText>
+      <applyDFKA>N</applyDFKA>
+      <applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>
+      <applyInitializeReadingRecord>N</applyInitializeReadingRecord>
+      <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
+      <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
+      <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
+      <applyDefaultValue>N</applyDefaultValue>
+      <insertingRecordFormula>
+      </insertingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
+      <updatingRecordFormula>
+      </updatingRecordFormula>
+      <insertingFormula>
+      </insertingFormula>
+      <updatingFormula>
+      </updatingFormula>
+    </Column>
+    <Column InternalName="16" Priority="17" ColumnNum="16">
+      <columnName>TenantName</columnName>
+      <columnUIName>%ISD_DEFAULT%</columnUIName>
+      <columnType>String</columnType>
+      <columnDBType>nvarchar</columnDBType>
+      <columnLengthSet>50</columnLengthSet>
+      <columnDefault>
+      </columnDefault>
+      <columnDBDefault>
+      </columnDBDefault>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
+      <columnFunction>
+      </columnFunction>
+      <columnDBFormat>
+      </columnDBFormat>
+      <columnPK>N</columnPK>
+      <columnPermanent>N</columnPermanent>
+      <columnComputed>N</columnComputed>
+      <columnIdentity>N</columnIdentity>
+      <columnReadOnly>N</columnReadOnly>
+      <columnRequired>N</columnRequired>
+      <columnNotNull>N</columnNotNull>
+      <columnCaseSensitive Source="Database">N</columnCaseSensitive>
+      <columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>
+      <columnFullText>N</columnFullText>
+      <columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>
+      <columnTableAliasName>
+      </columnTableAliasName>
+      <applyLabelText>Y</applyLabelText>
     </Column>
   </ColumnDefinition>
   <TableName>Properties</TableName>
-  <Version>2</Version>
+  <Version>5</Version>
   <Owner>dbo</Owner>
   <TableAliasName>Properties_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

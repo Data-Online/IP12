@@ -1717,6 +1717,8 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
                    
                 this.CurrentSortOrder = new OrderBy(true, false);
             
+                this.CurrentSortOrder.Add(SuppliersTable.CompanyName, OrderByItem.OrderDir.Asc);
+              
         }
 
 
@@ -2257,7 +2259,9 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
             else {
             
                 this.CurrentSortOrder = new OrderBy(true, false);
-               
+            
+                this.CurrentSortOrder.Add(SuppliersTable.CompanyName, OrderByItem.OrderDir.Asc);
+                 
             }
                 
             this.PageIndex = 0;
@@ -4320,7 +4324,9 @@ public class BaseSuppliersTableControl : IPv5.UI.BaseApplicationTableControl
               else
               {
                   this.CurrentSortOrder = new OrderBy(true, false);
-                  
+              
+                  this.CurrentSortOrder.Add(SuppliersTable.CompanyName, OrderByItem.OrderDir.Asc);          
+                      
               }
                 
 

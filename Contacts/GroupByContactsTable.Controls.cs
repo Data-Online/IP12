@@ -4547,6 +4547,7 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 SetLastName4();
                 
                 SetLiteral();
+                SetMiddleName();
                 SetPhoneNumber2();
                 SetPhoneNumberLabel();
                 SetPlaceOfBirth2();
@@ -5302,6 +5303,46 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                                      
         }
                 
+        public virtual void SetMiddleName()
+        {
+            
+                    
+            // Set the MiddleName Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.MiddleName is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.MiddleNameSpecified) {
+                								
+                // If the MiddleName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.MiddleName);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.MiddleName.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // MiddleName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.MiddleName.Text = ContactsTable.MiddleName.Format(ContactsTable.MiddleName.DefaultValue);
+            		
+            }
+            
+            // If the MiddleName is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.MiddleName.Text == null ||
+                this.MiddleName.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.MiddleName.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SetPhoneNumber2()
         {
             
@@ -5859,6 +5900,7 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             GetIrdNumber2();
             GetLastName22();
             GetLastName4();
+            GetMiddleName();
             GetPhoneNumber2();
             GetPlaceOfBirth2();
             GetPostCode4();
@@ -5944,6 +5986,11 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void GetLastName4()
+        {
+            
+        }
+                
+        public virtual void GetMiddleName()
         {
             
         }
@@ -6614,6 +6661,12 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             }
         }
         
+        public System.Web.UI.WebControls.Literal MiddleName {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MiddleName");
+            }
+        }
+            
         public System.Web.UI.WebControls.Literal PhoneNumber2 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumber2");
@@ -6871,6 +6924,8 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                    
                 this.CurrentSortOrder = new OrderBy(true, false);
             
+                this.CurrentSortOrder.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
+              
         }
 
 
@@ -7417,7 +7472,9 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
             else {
             
                 this.CurrentSortOrder = new OrderBy(true, false);
-               
+            
+                this.CurrentSortOrder.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);
+                 
             }
                 
             this.PageIndex = 0;
@@ -8070,6 +8127,10 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                 
                         if (recControl.LastName4.Text != "") {
                             rec.Parse(recControl.LastName4.Text, ContactsTable.LastName);
+                  }
+                
+                        if (recControl.MiddleName.Text != "") {
+                            rec.Parse(recControl.MiddleName.Text, ContactsTable.MiddleName);
                   }
                 
                         if (recControl.PhoneNumber2.Text != "") {
@@ -9255,6 +9316,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
              ContactsTable.UpdatedBy,
              ContactsTable.CreatedOn,
              ContactsTable.UpdatedOn,
+             ContactsTable.MiddleName,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(ContactsTable.Instance,wc,orderBy,columns);
                 exportData.StartExport(this.Page.Response, true);
@@ -9332,6 +9394,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
              data.ColumnList.Add(new ExcelColumn(ContactsTable.UpdatedBy, "Default"));
              data.ColumnList.Add(new ExcelColumn(ContactsTable.CreatedOn, "Short Date"));
              data.ColumnList.Add(new ExcelColumn(ContactsTable.UpdatedOn, "Short Date"));
+             data.ColumnList.Add(new ExcelColumn(ContactsTable.MiddleName, "Default"));
 
 
               //  First write out the Column Headers
@@ -9523,6 +9586,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(ContactsTable.UpdatedBy.Name, ReportEnum.Align.Left, "${UpdatedBy}", ReportEnum.Align.Left, 15);
                  report.AddColumn(ContactsTable.CreatedOn.Name, ReportEnum.Align.Left, "${CreatedOn}", ReportEnum.Align.Left, 20);
                  report.AddColumn(ContactsTable.UpdatedOn.Name, ReportEnum.Align.Left, "${UpdatedOn}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(ContactsTable.MiddleName.Name, ReportEnum.Align.Left, "${MiddleName}", ReportEnum.Align.Left, 24);
 
   
                 int rowsPerQuery = 5000;
@@ -9627,6 +9691,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                              }
                              report.AddData("${CreatedOn}", record.Format(ContactsTable.CreatedOn), ReportEnum.Align.Left, 100);
                              report.AddData("${UpdatedOn}", record.Format(ContactsTable.UpdatedOn), ReportEnum.Align.Left, 100);
+                             report.AddData("${MiddleName}", record.Format(ContactsTable.MiddleName), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }
@@ -9674,7 +9739,9 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
               else
               {
                   this.CurrentSortOrder = new OrderBy(true, false);
-                  
+              
+                  this.CurrentSortOrder.Add(ContactsTable.LastName, OrderByItem.OrderDir.Asc);          
+                      
               }
                 
 
@@ -9763,6 +9830,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                  report.AddColumn(ContactsTable.UpdatedBy.Name, ReportEnum.Align.Left, "${UpdatedBy}", ReportEnum.Align.Left, 15);
                  report.AddColumn(ContactsTable.CreatedOn.Name, ReportEnum.Align.Left, "${CreatedOn}", ReportEnum.Align.Left, 20);
                  report.AddColumn(ContactsTable.UpdatedOn.Name, ReportEnum.Align.Left, "${UpdatedOn}", ReportEnum.Align.Left, 20);
+                 report.AddColumn(ContactsTable.MiddleName.Name, ReportEnum.Align.Left, "${MiddleName}", ReportEnum.Align.Left, 24);
 
                 WhereClause whereClause = null;
                 whereClause = CreateWhereClause();
@@ -9863,6 +9931,7 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                              }
                              report.AddData("${CreatedOn}", record.Format(ContactsTable.CreatedOn), ReportEnum.Align.Left, 100);
                              report.AddData("${UpdatedOn}", record.Format(ContactsTable.UpdatedOn), ReportEnum.Align.Left, 100);
+                             report.AddData("${MiddleName}", record.Format(ContactsTable.MiddleName), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
                         }

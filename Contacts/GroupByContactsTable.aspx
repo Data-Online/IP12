@@ -87,6 +87,7 @@
 	</asp:ImageButton> <br />
 <asp:ImageButton runat="server" id="ExpandRowButton" causesvalidation="False" commandname="ExpandCollapseRow" cssclass="button_link" imageurl="../Images/icon_expandcollapserow.gif" onmouseout="this.src=&#39;../Images/icon_expandcollapserow.gif&#39;" onmouseover="this.src=&#39;../Images/icon_expandcollapserow_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:ExpandCollapseRow&quot;, &quot;IPv5&quot;) %>">		
 	</asp:ImageButton></td><td class="largeText" colspan="2"><asp:Literal runat="server" id="FirstName4"></asp:Literal> 
+<asp:Literal runat="server" id="MiddleName"></asp:Literal> 
 <asp:Literal runat="server" id="LastName4"></asp:Literal> 
 <span style="white-space:nowrap;">
 <asp:Literal runat="server" id="ContactID" visible="False"></asp:Literal></span>

@@ -75,6 +75,7 @@ public class BasePropertiesTable : PrimaryKeyTable
         DeletedColumn.DefaultValue = EvaluateFormula("\"0\"");
         DeletedByColumn.CodeName = "DeletedBy";
         DeletedOnColumn.CodeName = "DeletedOn";
+        TenantNameColumn.CodeName = "TenantName";
 
         
     }
@@ -494,6 +495,31 @@ public class BasePropertiesTable : PrimaryKeyTable
         get
         {
             return PropertiesTable.Instance.DeletedOnColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.TenantName column object.
+    /// </summary>
+    public BaseClasses.Data.StringColumn TenantNameColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.StringColumn)this.TableDefinition.ColumnList[16];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Properties_.TenantName column object.
+    /// </summary>
+    public static BaseClasses.Data.StringColumn TenantName
+    {
+        get
+        {
+            return PropertiesTable.Instance.TenantNameColumn;
         }
     }
     
@@ -1037,7 +1063,8 @@ public class BasePropertiesTable : PrimaryKeyTable
         string UpdatedOnValue, 
         string DeletedValue, 
         string DeletedByValue, 
-        string DeletedOnValue
+        string DeletedOnValue, 
+        string TenantNameValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
@@ -1056,6 +1083,7 @@ public class BasePropertiesTable : PrimaryKeyTable
         rec.SetString(DeletedValue, DeletedColumn);
         rec.SetString(DeletedByValue, DeletedByColumn);
         rec.SetString(DeletedOnValue, DeletedOnColumn);
+        rec.SetString(TenantNameValue, TenantNameColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

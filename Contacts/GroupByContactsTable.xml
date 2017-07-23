@@ -1291,6 +1291,10 @@
       </QueryDefinition>
       <PassthroughAttributes>
         <Attribute>
+          <Name>DataReaderSortBy</Name>
+          <Value>LastName Asc</Value>
+        </Attribute>
+        <Attribute>
           <Name>HideDataUntilSearched</Name>
           <Value>False</Value>
         </Attribute>
@@ -1331,7 +1335,13 @@
           <Value>ContactsPagination-TotalPages</Value>
         </Attribute>
       </PassthroughAttributes>
-      <OrderBys />
+      <OrderBys>
+        <OrderBy>
+          <Position>0</Position>
+          <ColumnName>LastName</ColumnName>
+          <Direction>Asc</Direction>
+        </OrderBy>
+      </OrderBys>
     </ContainedComponent>
     <ContainedComponent>
       <Name>ContactsTableControlSortByText</Name>
@@ -2596,6 +2606,69 @@
         <Attribute>
           <Name>Text</Name>
           <Value>eMail</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>ContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MiddleName</Name>
+      <Type>FieldValue</Type>
+      <Field>MiddleName</Field>
+      <FieldValueStyle>Literal</FieldValueStyle>
+      <Table>DatabaseMM_IP1%dbo.Contacts</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>FieldMaxLength</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>HTMLEncodeValue</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:ApplySaveToField</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>Parent</Value>
+        </Attribute>
+        <Attribute>
+          <Name>NullValueText</Name>
+          <Value>&amp;nbsp;</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PopupDisplay</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PopupThreshold</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PopupWindowHeight</Name>
+          <Value>200</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PopupWindowPersist</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PopupWindowScrollBar</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PopupWindowTitle</Name>
+          <Value>%ISD_DEFAULT%</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PopupWindowWidth</Name>
+          <Value>300</Value>
+        </Attribute>
+        <Attribute>
+          <Name>TextFormat</Name>
+          <Value>{0}</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>ContactsTableControl</InsideControl>
@@ -4900,6 +4973,7 @@
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="FirstName4" /&amp;gt; 
+&amp;lt;GEN:FIELDVALUE NAME="MiddleName" /&amp;gt; 
 &amp;lt;GEN:FIELDVALUE NAME="LastName4" /&amp;gt; 
 &amp;lt;GEN:FIELDVALUE NAME="ContactID" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;

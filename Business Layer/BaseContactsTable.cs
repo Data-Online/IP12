@@ -89,6 +89,7 @@ public class BaseContactsTable : PrimaryKeyTable
         DeletedColumn.DefaultValue = EvaluateFormula("\"0\"");
         DeletedByColumn.CodeName = "DeletedBy";
         DeletedOnColumn.CodeName = "DeletedOn";
+        MiddleNameColumn.CodeName = "MiddleName";
 
         
     }
@@ -812,6 +813,31 @@ public class BaseContactsTable : PrimaryKeyTable
     }
     
     
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.MiddleName column object.
+    /// </summary>
+    public BaseClasses.Data.StringColumn MiddleNameColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.StringColumn)this.TableDefinition.ColumnList[28];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's Contacts_.MiddleName column object.
+    /// </summary>
+    public static BaseClasses.Data.StringColumn MiddleName
+    {
+        get
+        {
+            return ContactsTable.Instance.MiddleNameColumn;
+        }
+    }
+    
+    
 
 
 #endregion
@@ -1363,7 +1389,8 @@ public class BaseContactsTable : PrimaryKeyTable
         string UpdatedOnValue, 
         string DeletedValue, 
         string DeletedByValue, 
-        string DeletedOnValue
+        string DeletedOnValue, 
+        string MiddleNameValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
@@ -1394,6 +1421,7 @@ public class BaseContactsTable : PrimaryKeyTable
         rec.SetString(DeletedValue, DeletedColumn);
         rec.SetString(DeletedByValue, DeletedByColumn);
         rec.SetString(DeletedOnValue, DeletedOnColumn);
+        rec.SetString(MiddleNameValue, MiddleNameColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

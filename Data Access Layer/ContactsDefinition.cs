@@ -12,7 +12,7 @@ namespace IPv5.Business
 public class ContactsDefinition
 {
 #region "Definition (XML) for ContactsDefinition table"
-	//Next 1105 lines contain Table Definition (XML) for table "ContactsDefinition"
+	//Next 1155 lines contain Table Definition (XML) for table "ContactsDefinition"
 	private static string _DefinitionString = "";
 	
 #endregion
@@ -77,7 +77,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>10</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -115,7 +115,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>30</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -153,7 +153,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>30</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -191,7 +191,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -229,7 +229,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -267,7 +267,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -305,7 +305,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -343,7 +343,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -389,7 +389,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -435,7 +435,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>35</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -473,7 +473,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -519,7 +519,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -557,7 +557,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>15</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -595,7 +595,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -633,7 +633,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>30</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -671,7 +671,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>30</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -709,7 +709,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>30</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -747,7 +747,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>17</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -785,7 +785,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnFormat>d</columnFormat>");
@@ -824,7 +824,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>50</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -862,7 +862,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -908,7 +908,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -954,7 +954,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnFormat>g</columnFormat>");
@@ -993,7 +993,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnFormat>g</columnFormat>");
@@ -1032,7 +1032,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
          tbf.Append(      @"<columnDefault>= &quot;0&quot;</columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -1070,7 +1070,7 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet>10.0</columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
          tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnDBFormat></columnDBFormat>");
@@ -1087,6 +1087,18 @@ public class ContactsDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""27"" Priority=""28"" ColumnNum=""27"">");
          tbf.Append(      @"<columnName>DeletedOn</columnName>");
@@ -1096,9 +1108,9 @@ public class ContactsDefinition
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
          tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault></columnDBDefault>");
-         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnIndex>Y</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
-         tbf.Append(      @"<columnFunction>notrim</columnFunction>");
+         tbf.Append(      @"<columnFunction></columnFunction>");
          tbf.Append(      @"<columnFormat>g</columnFormat>");
          tbf.Append(      @"<columnDBFormat>g</columnDBFormat>");
          tbf.Append(      @"<columnPK>N</columnPK>");
@@ -1114,10 +1126,48 @@ public class ContactsDefinition
          tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
          tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
          tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
+         tbf.Append(      @"<applyDFKA>N</applyDFKA>");
+         tbf.Append(      @"<applyInitializeInsertingRecord>N</applyInitializeInsertingRecord>");
+         tbf.Append(      @"<applyInitializeReadingRecord>N</applyInitializeReadingRecord>");
+         tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
+         tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
+         tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
+         tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
+         tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
+         tbf.Append(      @"<insertingFormula></insertingFormula>");
+         tbf.Append(      @"<updatingFormula></updatingFormula>");
+         tbf.Append(    "</Column>");
+         tbf.Append(    @"<Column InternalName=""28"" Priority=""29"" ColumnNum=""28"">");
+         tbf.Append(      @"<columnName>MiddleName</columnName>");
+         tbf.Append(      @"<columnUIName>Middle Name</columnUIName>");
+         tbf.Append(      @"<columnType>String</columnType>");
+         tbf.Append(      @"<columnDBType>nvarchar</columnDBType>");
+         tbf.Append(      @"<columnLengthSet>30</columnLengthSet>");
+         tbf.Append(      @"<columnDefault></columnDefault>");
+         tbf.Append(      @"<columnDBDefault></columnDBDefault>");
+         tbf.Append(      @"<columnIndex>N</columnIndex>");
+         tbf.Append(      @"<columnUnique>N</columnUnique>");
+         tbf.Append(      @"<columnFunction></columnFunction>");
+         tbf.Append(      @"<columnDBFormat></columnDBFormat>");
+         tbf.Append(      @"<columnPK>N</columnPK>");
+         tbf.Append(      @"<columnPermanent>N</columnPermanent>");
+         tbf.Append(      @"<columnComputed>N</columnComputed>");
+         tbf.Append(      @"<columnIdentity>N</columnIdentity>");
+         tbf.Append(      @"<columnReadOnly>N</columnReadOnly>");
+         tbf.Append(      @"<columnRequired>N</columnRequired>");
+         tbf.Append(      @"<columnNotNull>N</columnNotNull>");
+         tbf.Append(      @"<columnCaseSensitive Source=""Database"">N</columnCaseSensitive>");
+         tbf.Append(      @"<columnCollation>SQL_Latin1_General_CP1_CI_AS</columnCollation>");
+         tbf.Append(      @"<columnFullText>N</columnFullText>");
+         tbf.Append(      @"<columnVisibleWidth>%ISD_DEFAULT%</columnVisibleWidth>");
+         tbf.Append(      @"<columnTableAliasName></columnTableAliasName>");
+         tbf.Append(      @"<applyLabelText>Y</applyLabelText>");
          tbf.Append(    "</Column>");
          tbf.Append(  "</ColumnDefinition>");
          tbf.Append(  @"<TableName>Contacts</TableName>");
-         tbf.Append(  @"<Version>4</Version>");
+         tbf.Append(  @"<Version>5</Version>");
          tbf.Append(  @"<Owner>dbo</Owner>");
          tbf.Append(  @"<TableAliasName>Contacts_</TableAliasName>");
          tbf.Append(  @"<ConnectionName>DatabaseMM_IP1</ConnectionName>");

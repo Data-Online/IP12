@@ -1690,6 +1690,10 @@
       <Table>DatabaseMM_IP1%dbo.vPropertyTermExpires</Table>
       <PassthroughAttributes>
         <Attribute>
+          <Name>DataReaderSortBy</Name>
+          <Value>CompanyName Asc</Value>
+        </Attribute>
+        <Attribute>
           <Name>HideDataUntilSearched</Name>
           <Value>False</Value>
         </Attribute>
@@ -1700,6 +1704,10 @@
         <Attribute>
           <Name>InternalUse:DataSource</Name>
           <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSourceArg</Name>
+          <Value />
         </Attribute>
         <Attribute>
           <Name>NumberOfColumns</Name>
@@ -1726,6 +1734,13 @@
           <Value>VPropertyTermExpiresPagination-TotalPages</Value>
         </Attribute>
       </PassthroughAttributes>
+      <OrderBys>
+        <OrderBy>
+          <Position>0</Position>
+          <ColumnName>CompanyName</ColumnName>
+          <Direction>Asc</Direction>
+        </OrderBy>
+      </OrderBys>
     </ContainedComponent>
     <ContainedComponent>
       <Name>VPropertyTermExpiresTableControlSortByText</Name>

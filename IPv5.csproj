@@ -1496,6 +1496,13 @@
     <Compile Include="Users\EditUsers1.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Properties\ShowPropertiesQuickList.aspx.cs" >
+      <DependentUpon>ShowPropertiesQuickList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Properties\ShowPropertiesQuickList.Controls.cs" >
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="BaseClasses\Readme.txt" />
@@ -1931,6 +1938,7 @@
     <Content Include="Master Pages\HorizontalNoMenu.master" />
     <Content Include="Dashboard\Administration.aspx" />
     <Content Include="Users\EditUsers1.aspx" />
+    <Content Include="Properties\ShowPropertiesQuickList.aspx"  />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">

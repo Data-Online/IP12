@@ -33,11 +33,12 @@ The tags are case-sensitive and should contain the following case-sensitive attr
   <siteMapNode>
     <siteMapNode title="" description="Home" url="~/Dashboard/LandingPage.aspx" imageUrl="../Images/home.png" roles="" order="1" />
     <siteMapNode title="Properties" description="Properties" url="~/Properties/GroupByPropertiesTable.aspx" imageUrl="" roles="" order="2">
-      <siteMapNode title="Bank Loans" description="Bank Loans" url="~/vPropertyBankLoans/GroupByVPropertyBankLoansTable.aspx" imageUrl="" roles="" order="1" />
-      <siteMapNode title="Rent Reviews" description="Rent Reviews" url="~/vPropertyRentReviews/GroupByVPropertyRentReviewsTable.aspx" imageUrl="" roles="" order="2" />
-      <siteMapNode title="MM Contracts" description="MM Contracts" url="~/vPropertyMMContracts/GroupByVPropertyMMContractsTable.aspx" imageUrl="" roles="" order="3" />
-      <siteMapNode title="Term Expires" description="Term Expires" url="~/vPropertyTermExpires/GroupByVPropertyTermExpiresTable.aspx" imageUrl="" roles="" order="4" />
-      <siteMapNode title="Term Renewals" description="Term Renewals" url="~/vPropertyTermRenewals/GroupByVPropertyTermRenewalsTable.aspx" imageUrl="" roles="" order="5" />
+      <siteMapNode title="Quick Select" description="Quick Select" url="~/Properties/ShowPropertiesQuickList.aspx" imageUrl="" roles="" order="1" />
+      <siteMapNode title="Bank Loans" description="Bank Loans" url="~/vPropertyBankLoans/GroupByVPropertyBankLoansTable.aspx" imageUrl="" roles="" order="2" />
+      <siteMapNode title="Rent Reviews" description="Rent Reviews" url="~/vPropertyRentReviews/GroupByVPropertyRentReviewsTable.aspx" imageUrl="" roles="" order="3" />
+      <siteMapNode title="MM Contracts" description="MM Contracts" url="~/vPropertyMMContracts/GroupByVPropertyMMContractsTable.aspx" imageUrl="" roles="" order="4" />
+      <siteMapNode title="Term Expires" description="Term Expires" url="~/vPropertyTermExpires/GroupByVPropertyTermExpiresTable.aspx" imageUrl="" roles="" order="5" />
+      <siteMapNode title="Term Renewals" description="Term Renewals" url="~/vPropertyTermRenewals/GroupByVPropertyTermRenewalsTable.aspx" imageUrl="" roles="" order="6" />
     </siteMapNode>
     <siteMapNode title="Investors" description="Investors" url="~/Contacts/GroupByContactsTable.aspx" imageUrl="" roles="" order="3" />
     <siteMapNode title="Suppliers" description="Suppliers" url="~/Suppliers/GroupBySuppliersTable.aspx" imageUrl="" roles="" order="4" />

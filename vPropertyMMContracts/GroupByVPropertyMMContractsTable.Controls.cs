@@ -1439,6 +1439,8 @@ public class BaseVPropertyMMContractsTableControl : IPv5.UI.BaseApplicationTable
                    
                 this.CurrentSortOrder = new OrderBy(true, false);
             
+                this.CurrentSortOrder.Add(VPropertyMMContractsView.CompanyName, OrderByItem.OrderDir.Asc);
+              
         }
 
 
@@ -1974,7 +1976,9 @@ public class BaseVPropertyMMContractsTableControl : IPv5.UI.BaseApplicationTable
             else {
             
                 this.CurrentSortOrder = new OrderBy(true, false);
-               
+            
+                this.CurrentSortOrder.Add(VPropertyMMContractsView.CompanyName, OrderByItem.OrderDir.Asc);
+                 
             }
                 
             this.PageIndex = 0;
@@ -4308,7 +4312,9 @@ public class BaseVPropertyMMContractsTableControl : IPv5.UI.BaseApplicationTable
               else
               {
                   this.CurrentSortOrder = new OrderBy(true, false);
-                  
+              
+                  this.CurrentSortOrder.Add(VPropertyMMContractsView.CompanyName, OrderByItem.OrderDir.Asc);          
+                      
               }
                 
 

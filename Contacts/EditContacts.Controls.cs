@@ -11782,6 +11782,8 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             
               this.LastName2.TextChanged += LastName2_TextChanged;
             
+              this.MiddleName.TextChanged += MiddleName_TextChanged;
+            
               this.PlaceOfBirth.TextChanged += PlaceOfBirth_TextChanged;
             
               this.PostCode.TextChanged += PostCode_TextChanged;
@@ -11913,6 +11915,8 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                 SetLastName2Label();
                 SetLastNameLabel();
                 
+                SetMiddleName();
+                SetMiddleNameLabel();
                 SetPlaceOfBirth();
                 SetPlaceOfBirthLabel();
                 SetPostCode();
@@ -12471,6 +12475,39 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                                
         }
                 
+        public virtual void SetMiddleName()
+        {
+            
+                    
+            // Set the MiddleName TextBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.MiddleName is the ASP:TextBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.MiddleNameSpecified) {
+                								
+                // If the MiddleName is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.MiddleName);
+                                
+                this.MiddleName.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // MiddleName is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.MiddleName.Text = ContactsTable.MiddleName.Format(ContactsTable.MiddleName.DefaultValue);
+            		
+            }
+            
+              this.MiddleName.TextChanged += MiddleName_TextChanged;
+                               
+        }
+                
         public virtual void SetPlaceOfBirth()
         {
             
@@ -12724,6 +12761,12 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void SetLastNameLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetMiddleNameLabel()
                   {
                   
                     
@@ -12995,6 +13038,7 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             GetIrdNumber();
             GetLastName();
             GetLastName2();
+            GetMiddleName();
             GetPlaceOfBirth();
             GetPostCode();
             GetRegionID();
@@ -13189,6 +13233,20 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                     
             // Save the value to data source
             this.DataSource.Parse(this.LastName2.Text, ContactsTable.LastName2);							
+                          
+                      
+        }
+                
+        public virtual void GetMiddleName()
+        {
+            
+            // Retrieve the value entered by the user on the MiddleName ASP:TextBox, and
+            // save it into the MiddleName field in DataSource DatabaseMM_IP1%dbo.Contacts record.
+            
+            // Custom validation should be performed in Validate, not here.
+                    
+            // Save the value to data source
+            this.DataSource.Parse(this.MiddleName.Text, ContactsTable.MiddleName);							
                           
                       
         }
@@ -14420,6 +14478,11 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                     
               }
             
+        protected virtual void MiddleName_TextChanged(object sender, EventArgs args)
+        {
+                    
+              }
+            
         protected virtual void PlaceOfBirth_TextChanged(object sender, EventArgs args)
         {
                     
@@ -14753,6 +14816,18 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         public LinkTableTableControl LinkTableTableControl {
             get {
                 return (LinkTableTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableTableControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox MiddleName {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MiddleName");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal MiddleNameLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MiddleNameLabel");
             }
         }
         
