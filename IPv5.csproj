@@ -70,7 +70,7 @@
     <Reference Include="Recaptcha, Version=1.0.5.0, Culture=neutral, PublicKeyToken=9afc4d65b28c38c2, processorArchitecture=MSIL" />
     <Reference Include="Report, Version=3.1.8.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Ciloci.Flee, Version=0.9.26.0, Culture=neutral, PublicKeyToken=c8526a021ef298ed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -1510,7 +1510,7 @@
     <Compile Include="vUserRoleSummary\ShowVUserRoleSummaryTable.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Security\InactiveAccount.aspx.cs" >
+    <Compile Include="Security\InactiveAccount.aspx.cs">
       <DependentUpon>InactiveAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -1951,7 +1951,7 @@
     <Content Include="Users\EditUsers1.aspx" />
     <Content Include="Properties\ShowPropertiesQuickList.aspx" />
     <Content Include="vUserRoleSummary\ShowVUserRoleSummaryTable.aspx" />
-    <Content Include="Security\InactiveAccount.aspx"  />
+    <Content Include="Security\InactiveAccount.aspx" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">
