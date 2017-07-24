@@ -402,7 +402,7 @@ public class ContactNotesDefinition
          tbf.Append(    "</Column>");
          tbf.Append(  "</ColumnDefinition>");
          tbf.Append(  @"<TableName>ContactNotes</TableName>");
-         tbf.Append(  @"<Version>6</Version>");
+         tbf.Append(  @"<Version>8</Version>");
          tbf.Append(  @"<Owner>dbo</Owner>");
          tbf.Append(  @"<TableAliasName>ContactNotes_</TableAliasName>");
          tbf.Append(  @"<ConnectionName>DatabaseMM_IP1</ConnectionName>");

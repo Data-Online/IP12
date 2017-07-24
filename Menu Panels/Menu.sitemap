@@ -47,6 +47,7 @@ The tags are case-sensitive and should contain the following case-sensitive attr
     </siteMapNode>
     <siteMapNode title="Administration" description="Administration" url="~/Dashboard/Administration.aspx" imageUrl="" roles="" order="6">
       <siteMapNode title="Manage User Accounts" description="Manage User Accounts" url="~/Users/GroupByUsersTable.aspx" imageUrl="" roles="" order="1" />
+      <siteMapNode title="User Summary Report" description="User Summary Report" url="~/vUserRoleSummary/ShowVUserRoleSummaryTable.aspx" imageUrl="" roles="" order="2" />
     </siteMapNode>
   </siteMapNode>
 </siteMap>

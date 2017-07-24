@@ -470,7 +470,7 @@
     </Column>
   </ColumnDefinition>
   <TableName>ContactNotes</TableName>
-  <Version>6</Version>
+  <Version>8</Version>
   <Owner>dbo</Owner>
   <TableAliasName>ContactNotes_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

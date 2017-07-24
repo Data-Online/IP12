@@ -424,12 +424,13 @@
     </Column>
     <Column InternalName="9" Priority="10" ColumnNum="9">
       <columnName>PwdExp</columnName>
-      <columnUIName Source="User">= "Prompt user to update password at next login ?"</columnUIName>
+      <columnUIName Source="User">= "Prompt for new Password"</columnUIName>
       <columnType>Boolean</columnType>
       <columnDBType>bit</columnDBType>
       <columnLengthSet>
       </columnLengthSet>
-      <columnDefault>= true</columnDefault>
+      <columnDefault>
+      </columnDefault>
       <columnDBDefault Source="User">
       </columnDBDefault>
       <columnIndex>N</columnIndex>
@@ -461,9 +462,10 @@
       <applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>
       <applyValidateInsertingRecord>N</applyValidateInsertingRecord>
       <applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>
-      <applyDefaultValue>Y</applyDefaultValue>
+      <applyDefaultValue>N</applyDefaultValue>
       <applyDFKA>N</applyDFKA>
-      <readingRecordFormula>= true</readingRecordFormula>
+      <readingRecordFormula>
+      </readingRecordFormula>
       <insertingRecordFormula>
       </insertingRecordFormula>
       <updatingRecordFormula>
@@ -475,7 +477,7 @@
     </Column>
   </ColumnDefinition>
   <TableName>Users</TableName>
-  <Version>3</Version>
+  <Version>5</Version>
   <Owner>dbo</Owner>
   <TableAliasName>Users_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

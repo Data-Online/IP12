@@ -254,44 +254,6 @@
       <InsideControl>UsersRecordControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
-      <Name>PwdExp</Name>
-      <Type>FieldValue</Type>
-      <Field>PwdExp</Field>
-      <FieldValueStyle>CheckBox</FieldValueStyle>
-      <Table>DatabaseMM_IP1%dbo.Users</Table>
-      <PassthroughAttributes>
-        <Attribute>
-          <Name>CheckedValue</Name>
-          <Value>Yes</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:ApplyExistingRecordFormula</Name>
-          <Value>true</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:DataSource</Name>
-          <Value>Parent</Value>
-        </Attribute>
-        <Attribute>
-          <Name>InternalUse:ExistingRecordFormula</Name>
-          <Value>false</Value>
-        </Attribute>
-        <Attribute>
-          <Name>TreatOtherValuesAsChecked</Name>
-          <Value>True</Value>
-        </Attribute>
-        <Attribute>
-          <Name>UncheckedValue</Name>
-          <Value>No</Value>
-        </Attribute>
-        <Attribute>
-          <Name>Visible</Name>
-          <Value>False</Value>
-        </Attribute>
-      </PassthroughAttributes>
-      <InsideControl>UsersRecordControl</InsideControl>
-    </ContainedComponent>
-    <ContainedComponent>
       <Name>SaveButton</Name>
       <Type>Button</Type>
       <Layout>..\Shared\ThemeButton.ascx</Layout>

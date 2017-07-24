@@ -1496,12 +1496,23 @@
     <Compile Include="Users\EditUsers1.Controls.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\ShowPropertiesQuickList.aspx.cs" >
+    <Compile Include="Properties\ShowPropertiesQuickList.aspx.cs">
       <DependentUpon>ShowPropertiesQuickList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Properties\ShowPropertiesQuickList.Controls.cs" >
+    <Compile Include="Properties\ShowPropertiesQuickList.Controls.cs">
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vUserRoleSummary\ShowVUserRoleSummaryTable.aspx.cs">
+      <DependentUpon>ShowVUserRoleSummaryTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vUserRoleSummary\ShowVUserRoleSummaryTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Security\InactiveAccount.aspx.cs" >
+      <DependentUpon>InactiveAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1938,7 +1949,9 @@
     <Content Include="Master Pages\HorizontalNoMenu.master" />
     <Content Include="Dashboard\Administration.aspx" />
     <Content Include="Users\EditUsers1.aspx" />
-    <Content Include="Properties\ShowPropertiesQuickList.aspx"  />
+    <Content Include="Properties\ShowPropertiesQuickList.aspx" />
+    <Content Include="vUserRoleSummary\ShowVUserRoleSummaryTable.aspx" />
+    <Content Include="Security\InactiveAccount.aspx"  />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">

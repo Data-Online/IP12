@@ -2839,6 +2839,8 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
               // Register the event handlers.
 
           
+              this.Active.CheckedChanged += Active_CheckedChanged;
+            
               this.PwdExp.CheckedChanged += PwdExp_CheckedChanged;
             
               this.Password.TextChanged += Password_TextChanged;
@@ -2934,6 +2936,8 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
 
             // Call the Set methods for each controls on the panel
         
+                SetActive();
+                SetActiveLabel();
                 SetPassword();
                 SetPasswordLabel();
                 SetPwdExp();
@@ -2972,6 +2976,33 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         }
         
         
+        public virtual void SetActive()
+        {
+            
+                    
+            // Set the Active CheckBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Users database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Users record retrieved from the database.
+            // this.Active is the ASP:CheckBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.ActiveSpecified) {
+                							
+                // If the Active is non-NULL, then format the value.
+                // The Format method will use the Display Format
+                this.Active.Checked = this.DataSource.Active;
+                    				
+            } else {
+            
+                // Active is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+                if (!this.DataSource.IsCreated) 
+                    this.Active.Checked = UsersTable.Active.ParseValue(UsersTable.Active.DefaultValue).ToBoolean();                
+                    									
+            }
+            
+        }
+                
         public virtual void SetPassword()
         {
             
@@ -3015,14 +3046,11 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
             // this.DataSource is the DatabaseMM_IP1%dbo.Users record retrieved from the database.
             // this.PwdExp is the ASP:CheckBox on the webpage.
                   
-            if (this.DataSource != null && this.DataSource.IsCreated) {					
+            if (this.DataSource != null && this.DataSource.PwdExpSpecified) {
                 							
                 // If the PwdExp is non-NULL, then format the value.
-                // The Format method will use the Display Format	
-                if (StringUtils.InvariantLCase(EvaluateFormula("true")).Equals("true"))
-                    this.PwdExp.Checked = true;
-                else
-                    this.PwdExp.Checked = false;
+                // The Format method will use the Display Format
+                this.PwdExp.Checked = this.DataSource.PwdExp;
                     				
             } else {
             
@@ -3068,6 +3096,12 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
                                
         }
                 
+        public virtual void SetActiveLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetPasswordLabel()
                   {
                   
@@ -3077,7 +3111,7 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetPwdExpLabel()
                   {
                   
-                        this.PwdExpLabel.Text = EvaluateFormula("\"Prompt user to update password at next login ?\"");
+                        this.PwdExpLabel.Text = EvaluateFormula("\"Prompt for new Password\"");
                       
                     
         }
@@ -3251,12 +3285,24 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
       
             // Call the Get methods for each of the user interface controls.
         
+            GetActive();
             GetPassword();
             GetPwdExp();
             GetUserName0();
         }
         
         
+        public virtual void GetActive()
+        {	
+        		
+            // Retrieve the value entered by the user on the Active ASP:CheckBox, and
+            // save it into the Active field in DataSource DatabaseMM_IP1%dbo.Users record.
+            // Custom validation should be performed in Validate, not here.
+            
+            this.DataSource.Active = this.Active.Checked;						
+                    
+        }
+                
         public virtual void GetPassword()
         {
             
@@ -3628,6 +3674,11 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
     
         // Generate set method for buttons
         
+        protected virtual void Active_CheckedChanged(object sender, EventArgs args)
+        {
+           						
+        }
+            
         protected virtual void PwdExp_CheckedChanged(object sender, EventArgs args)
         {
            						
@@ -3754,6 +3805,18 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         }
        
 #region "Helper Properties"
+        
+        public System.Web.UI.WebControls.CheckBox Active {
+            get {
+                return (System.Web.UI.WebControls.CheckBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Active");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal ActiveLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ActiveLabel");
+            }
+        }
         
         public System.Web.UI.WebControls.TextBox Password {
             get {

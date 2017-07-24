@@ -1588,6 +1588,10 @@
           <Value>False</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:DeleteRecord</Value>
           <Type>ResourceReference</Type>
@@ -1631,6 +1635,10 @@
         <Attribute>
           <Name>RedirectURL</Name>
           <Value>../Suppliers/EditSuppliers.aspx?Suppliers={PK}</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>

@@ -993,7 +993,11 @@ public class BaseSuppliersTableControlRow : IPv5.UI.BaseApplicationRecordControl
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)SuppliersRowDeleteButton, "1;3");
+					
+            this.Page.Authorize((Control)SuppliersRowEditButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {

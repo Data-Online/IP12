@@ -6100,7 +6100,11 @@ public class BaseContactsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)DeleteRowButton, "1;3");
+					
+            this.Page.Authorize((Control)EditRowButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -8597,7 +8601,9 @@ public class BaseContactsTableControl : IPv5.UI.BaseApplicationTableControl
                     this.DataBind();					
                     
                 }
-                                
+                
+            this.Page.Authorize((Control)ContactsNewButton, "1;3");
+					                
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {

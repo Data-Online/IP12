@@ -841,7 +841,9 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)EditRowButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {

@@ -206,6 +206,12 @@ public partial class SignIn
       // This method is called when login is succeeded. 
       protected void RedirectOnSuccess()
       {
+            // If account is inactive logout, even if credentials are correct.
+            if (!UserSecurityTools.UserActive())
+            {
+                this.Page.Response.Redirect("../security/InactiveAccount.aspx");
+            }
+
             if (UserSecurityTools.PasswordUpdateRequired())
             {
                 //string encryptFrom = BaseClasses.Utils.SecurityControls.GetCurrentUserID();

@@ -364,7 +364,7 @@
     </Column>
   </ColumnDefinition>
   <TableName>LinkTable</TableName>
-  <Version>2</Version>
+  <Version>4</Version>
   <Owner>dbo</Owner>
   <TableAliasName>LinkTable_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

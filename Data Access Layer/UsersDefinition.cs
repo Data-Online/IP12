@@ -365,11 +365,11 @@ public class UsersDefinition
          tbf.Append(    "</Column>");
          tbf.Append(    @"<Column InternalName=""9"" Priority=""10"" ColumnNum=""9"">");
          tbf.Append(      @"<columnName>PwdExp</columnName>");
-         tbf.Append(      @"<columnUIName Source=""User"">= &quot;Prompt user to update password at next login ?&quot;</columnUIName>");
+         tbf.Append(      @"<columnUIName Source=""User"">= &quot;Prompt for new Password&quot;</columnUIName>");
          tbf.Append(      @"<columnType>Boolean</columnType>");
          tbf.Append(      @"<columnDBType>bit</columnDBType>");
          tbf.Append(      @"<columnLengthSet></columnLengthSet>");
-         tbf.Append(      @"<columnDefault>= true</columnDefault>");
+         tbf.Append(      @"<columnDefault></columnDefault>");
          tbf.Append(      @"<columnDBDefault Source=""User""></columnDBDefault>");
          tbf.Append(      @"<columnIndex>N</columnIndex>");
          tbf.Append(      @"<columnUnique>N</columnUnique>");
@@ -395,9 +395,9 @@ public class UsersDefinition
          tbf.Append(      @"<applyInitializeUpdatingRecord>N</applyInitializeUpdatingRecord>");
          tbf.Append(      @"<applyValidateInsertingRecord>N</applyValidateInsertingRecord>");
          tbf.Append(      @"<applyValidateUpdatingRecord>N</applyValidateUpdatingRecord>");
-         tbf.Append(      @"<applyDefaultValue>Y</applyDefaultValue>");
+         tbf.Append(      @"<applyDefaultValue>N</applyDefaultValue>");
          tbf.Append(      @"<applyDFKA>N</applyDFKA>");
-         tbf.Append(      @"<readingRecordFormula>= true</readingRecordFormula>");
+         tbf.Append(      @"<readingRecordFormula></readingRecordFormula>");
          tbf.Append(      @"<insertingRecordFormula></insertingRecordFormula>");
          tbf.Append(      @"<updatingRecordFormula></updatingRecordFormula>");
          tbf.Append(      @"<insertingFormula></insertingFormula>");
@@ -405,7 +405,7 @@ public class UsersDefinition
          tbf.Append(    "</Column>");
          tbf.Append(  "</ColumnDefinition>");
          tbf.Append(  @"<TableName>Users</TableName>");
-         tbf.Append(  @"<Version>3</Version>");
+         tbf.Append(  @"<Version>5</Version>");
          tbf.Append(  @"<Owner>dbo</Owner>");
          tbf.Append(  @"<TableAliasName>Users_</TableAliasName>");
          tbf.Append(  @"<ConnectionName>DatabaseMM_IP1</ConnectionName>");

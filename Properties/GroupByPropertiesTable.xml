@@ -1768,6 +1768,10 @@
           <Value>False</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:DeleteRecord</Value>
           <Type>ResourceReference</Type>
@@ -1824,6 +1828,10 @@
         <Attribute>
           <Name>RedirectURL</Name>
           <Value>../BankLoans/EditBankLoans.aspx?BankLoans={BankLoansTableControlRow:PK}&amp;SaveAndNewVisible=False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>
@@ -4422,6 +4430,10 @@
           <Value>../Contacts/EditContacts.aspx?Contacts={DirectorsTableControlRow:FK:FK_Directors_Contacts}</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:EditRecord</Value>
           <Type>ResourceReference</Type>
@@ -4598,6 +4610,10 @@
           <Value>../Contacts/EditContacts.aspx?Contacts={PK}</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:EditRecord</Value>
           <Type>ResourceReference</Type>
@@ -4641,6 +4657,10 @@
         <Attribute>
           <Name>RedirectURL</Name>
           <Value>../PropertyNotes/EditPropertyNotes.aspx?PropertyNotes={PK}</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>
@@ -4692,6 +4712,10 @@
           <Value>../TermExpires/EditTermExpires.aspx?TermExpires={PK}</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:EditRecord</Value>
           <Type>ResourceReference</Type>
@@ -4739,6 +4763,10 @@
         <Attribute>
           <Name>RedirectURL</Name>
           <Value>../MMContracts/EditMMContracts.aspx?MMContracts={PK}</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>
@@ -7760,6 +7788,10 @@
           <Value>../Contacts/AddContacts.aspx?TabVisible=False&amp;SaveAndNewVisible=False</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Btn:Add</Value>
           <Type>ResourceReference</Type>
@@ -9042,6 +9074,10 @@
           <Value>False</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:DeleteRecord</Value>
           <Type>ResourceReference</Type>
@@ -9085,6 +9121,10 @@
         <Attribute>
           <Name>RedirectURL</Name>
           <Value>../Properties/EditProperties.aspx?Properties={PK}</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>
@@ -9787,6 +9827,10 @@
           <Value>False</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:DeleteRecord</Value>
           <Type>ResourceReference</Type>
@@ -9834,6 +9878,10 @@
         <Attribute>
           <Name>RedirectURL</Name>
           <Value>../PropertyContacts/EditPropertyContacts.aspx?PropertyContacts={PK}</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>
@@ -11443,6 +11491,10 @@
           <Value>False</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:DeleteRecord</Value>
           <Type>ResourceReference</Type>
@@ -11490,6 +11542,10 @@
         <Attribute>
           <Name>RedirectURL</Name>
           <Value>../RentReviews/EditRentReviews.aspx?RentReviews={PK}</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>
@@ -14601,6 +14657,10 @@
           <Value>False</Value>
         </Attribute>
         <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
+        </Attribute>
+        <Attribute>
           <Name>ToolTip</Name>
           <Value>Txt:DeleteRecord</Value>
           <Type>ResourceReference</Type>
@@ -14648,6 +14708,10 @@
         <Attribute>
           <Name>RedirectURL</Name>
           <Value>../TermRenewals/EditTermRenewals.aspx?TermRenewals={PK}</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RequiredRoles</Name>
+          <Value>&lt;PRoles&gt;1;3&lt;/PRoles&gt;</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>

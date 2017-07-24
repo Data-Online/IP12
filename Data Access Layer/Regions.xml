@@ -60,8 +60,8 @@
       </columnDefault>
       <columnDBDefault>
       </columnDBDefault>
-      <columnIndex>Y</columnIndex>
-      <columnUnique>Y</columnUnique>
+      <columnIndex>N</columnIndex>
+      <columnUnique>N</columnUnique>
       <columnFunction>
       </columnFunction>
       <columnDBFormat>
@@ -298,7 +298,7 @@
     </Column>
   </ColumnDefinition>
   <TableName>Regions</TableName>
-  <Version>2</Version>
+  <Version>3</Version>
   <Owner>dbo</Owner>
   <TableAliasName>Regions_</TableAliasName>
   <ConnectionName>DatabaseMM_IP1</ConnectionName>

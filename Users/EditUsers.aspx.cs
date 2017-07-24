@@ -295,6 +295,10 @@ public override void SetControl(string control)
         }
         
     
+        public System.Web.UI.WebControls.CheckBox Active;
+            
+        public System.Web.UI.WebControls.Literal ActiveLabel;
+        
         public ThemeButton CancelButton;
                 
         public System.Web.UI.WebControls.Literal PageTitle;

@@ -333,13 +333,22 @@
     <Compile Include="BaseContactBackgroundSqlTable.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VPropertyDirectorsDefinition.cs" >
+    <Compile Include="VPropertyDirectorsDefinition.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VPropertyDirectorsSqlView.cs" >
+    <Compile Include="VPropertyDirectorsSqlView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseVPropertyDirectorsSqlView.cs" >
+    <Compile Include="BaseVPropertyDirectorsSqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VUserRoleSummaryDefinition.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VUserRoleSummarySqlView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVUserRoleSummarySqlView.cs" >
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

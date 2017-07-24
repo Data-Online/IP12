@@ -431,6 +431,18 @@
     <Compile Include="BaseVPropertyDirectorsRecord.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="VUserRoleSummaryView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVUserRoleSummaryView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VUserRoleSummaryRecord.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVUserRoleSummaryRecord.cs" >
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data Access Layer\IPv5.Data.csproj">

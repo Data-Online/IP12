@@ -2314,6 +2314,8 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
 
             // Call the Set methods for each controls on the panel
         
+                SetActive();
+                SetActiveLabel();
                 SetPassword();
                 SetPasswordLabel();
                 SetPwdExp();
@@ -2358,6 +2360,46 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         }
         
         
+        public virtual void SetActive()
+        {
+            
+                    
+            // Set the Active Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Users database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Users record retrieved from the database.
+            // this.Active is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.ActiveSpecified) {
+                								
+                // If the Active is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(UsersTable.Active);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.Active.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // Active is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.Active.Text = UsersTable.Active.Format(UsersTable.Active.DefaultValue);
+            		
+            }
+            
+            // If the Active is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.Active.Text == null ||
+                this.Active.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.Active.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SetPassword()
         {
             
@@ -2478,6 +2520,12 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
                                      
         }
                 
+        public virtual void SetActiveLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetPasswordLabel()
                   {
                   
@@ -2487,7 +2535,7 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         public virtual void SetPwdExpLabel()
                   {
                   
-                        this.PwdExpLabel.Text = EvaluateFormula("\"Prompt user to update password at next login ?\"");
+                        this.PwdExpLabel.Text = EvaluateFormula("\"Prompt for new Password\"");
                       
                     
         }
@@ -2677,12 +2725,18 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
       
             // Call the Get methods for each of the user interface controls.
         
+            GetActive();
             GetPassword();
             GetPwdExp();
             GetUserName0();
         }
         
         
+        public virtual void GetActive()
+        {
+            
+        }
+                
         public virtual void GetPassword()
         {
             
@@ -3068,6 +3122,18 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         }
        
 #region "Helper Properties"
+        
+        public System.Web.UI.WebControls.Literal Active {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Active");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal ActiveLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ActiveLabel");
+            }
+        }
         
         public System.Web.UI.WebControls.Literal Password {
             get {
@@ -4288,6 +4354,10 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
             if (recControl.Visible && recControl.IsNewRecord) {
       UsersRecord rec = new UsersRecord();
         
+                        if (recControl.Active.Text != "") {
+                            rec.Parse(recControl.Active.Text, UsersTable.Active);
+                  }
+                
                         if (recControl.Password.Text != "") {
                             rec.Parse(recControl.Password.Text, UsersTable.Password);
                   }
@@ -4936,6 +5006,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 BaseColumn[] columns = new BaseColumn[] {
                              UsersTable.UserName0,
              UsersTable.Password,
+             UsersTable.Active,
              UsersTable.PwdExp,
              null};
                 ExportDataToCSV exportData = new ExportDataToCSV(UsersTable.Instance,wc,orderBy,columns);
@@ -4994,6 +5065,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
               DataForExport data = new DataForExport(UsersTable.Instance, wc, orderBy, null,join);
                            data.ColumnList.Add(new ExcelColumn(UsersTable.UserName0, "Default"));
              data.ColumnList.Add(new ExcelColumn(UsersTable.Password, "Default"));
+             data.ColumnList.Add(new ExcelColumn(UsersTable.Active, "Default"));
              data.ColumnList.Add(new ExcelColumn(UsersTable.PwdExp, "Default"));
 
 
@@ -5166,6 +5238,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(UsersTable.UserName0.Name, ReportEnum.Align.Left, "${UserName0}", ReportEnum.Align.Left, 28);
                  report.AddColumn(UsersTable.Password.Name, ReportEnum.Align.Left, "${Password}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(UsersTable.Active.Name, ReportEnum.Align.Left, "${Active}", ReportEnum.Align.Left, 15);
                  report.AddColumn(UsersTable.PwdExp.Name, ReportEnum.Align.Left, "${PwdExp}", ReportEnum.Align.Left, 15);
 
   
@@ -5203,6 +5276,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 4th parameter represent the maximum length of the data value being shown
                                                  report.AddData("${UserName0}", record.Format(UsersTable.UserName0), ReportEnum.Align.Left, 100);
                              report.AddData("${Password}", record.Format(UsersTable.Password), ReportEnum.Align.Left, 100);
+                             report.AddData("${Active}", record.Format(UsersTable.Active), ReportEnum.Align.Left, 100);
                              report.AddData("${PwdExp}", record.Format(UsersTable.PwdExp), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();
@@ -5318,6 +5392,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(UsersTable.UserName0.Name, ReportEnum.Align.Left, "${UserName0}", ReportEnum.Align.Left, 28);
                  report.AddColumn(UsersTable.Password.Name, ReportEnum.Align.Left, "${Password}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(UsersTable.Active.Name, ReportEnum.Align.Left, "${Active}", ReportEnum.Align.Left, 15);
                  report.AddColumn(UsersTable.PwdExp.Name, ReportEnum.Align.Left, "${PwdExp}", ReportEnum.Align.Left, 15);
 
                 WhereClause whereClause = null;
@@ -5351,6 +5426,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 4th parameter represents the maximum length of the data value being shown
                              report.AddData("${UserName0}", record.Format(UsersTable.UserName0), ReportEnum.Align.Left, 100);
                              report.AddData("${Password}", record.Format(UsersTable.Password), ReportEnum.Align.Left, 100);
+                             report.AddData("${Active}", record.Format(UsersTable.Active), ReportEnum.Align.Left, 100);
                              report.AddData("${PwdExp}", record.Format(UsersTable.PwdExp), ReportEnum.Align.Left, 100);
 
                             report.WriteRow();

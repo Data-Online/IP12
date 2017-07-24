@@ -1089,7 +1089,11 @@ public class BaseBankLoansTableControlRow : IPv5.UI.BaseApplicationRecordControl
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)BankLoansRowDeleteButton, "1;3");
+					
+            this.Page.Authorize((Control)BankLoansRowEditButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -5466,7 +5470,9 @@ public class BaseContactsTableControl1Row : IPv5.UI.BaseApplicationRecordControl
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)EditRowButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -7622,7 +7628,9 @@ public class BaseContactsTableControl1 : IPv5.UI.BaseApplicationTableControl
                     this.DataBind();					
                     
                 }
-                                
+                
+            this.Page.Authorize((Control)NewButton2, "1;3");
+					                
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -9474,7 +9482,9 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)DirectorsRowEditButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -12626,7 +12636,9 @@ public class BaseMMContractsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)EditRowButton3, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -17149,7 +17161,11 @@ public class BasePropertiesTableControlRow : IPv5.UI.BaseApplicationRecordContro
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)PropertiesRowDeleteButton, "1;3");
+					
+            this.Page.Authorize((Control)PropertiesRowEditButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -24153,7 +24169,11 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)PropertyContactsRowDeleteButton, "1;3");
+					
+            this.Page.Authorize((Control)PropertyContactsRowEditButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -28747,7 +28767,9 @@ public class BasePropertyNotesTableControlRow : IPv5.UI.BaseApplicationRecordCon
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)EditRowButton1, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -31954,7 +31976,11 @@ public class BaseRentReviewsTableControlRow : IPv5.UI.BaseApplicationRecordContr
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)RentReviewsRowDeleteButton, "1;3");
+					
+            this.Page.Authorize((Control)RentReviewsRowEditButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -35451,7 +35477,9 @@ public class BaseTermExpiresTableControlRow : IPv5.UI.BaseApplicationRecordContr
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)EditRowButton2, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
@@ -38937,7 +38965,11 @@ public class BaseTermRenewalsTableControlRow : IPv5.UI.BaseApplicationRecordCont
                     this.LoadData();
                     this.DataBind();
                 }
-                				
+                
+            this.Page.Authorize((Control)TermRenewalsRowDeleteButton, "1;3");
+					
+            this.Page.Authorize((Control)TermRenewalsRowEditButton, "1;3");
+									
             } catch (Exception ex) {
                 BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
             } finally {
