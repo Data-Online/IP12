@@ -4,3 +4,6 @@ E:\Projects\InvestmentProperties\IPv5\Data Access Layer\obj\Release\IPv5.Data.dl
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Data Access Layer\bin\IPv5.Data.dll
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Data Access Layer\obj\Release\IPv5.Data.csprojResolveAssemblyReference.cache
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Data Access Layer\obj\Release\IPv5.Data.dll
+C:\Users\atkin\Source\Repos\IP12\Data Access Layer\bin\IPv5.Data.dll
+C:\Users\atkin\Source\Repos\IP12\Data Access Layer\obj\Release\IPv5.Data.csprojResolveAssemblyReference.cache
+C:\Users\atkin\Source\Repos\IP12\Data Access Layer\obj\Release\IPv5.Data.dll
