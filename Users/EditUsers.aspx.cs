@@ -301,6 +301,8 @@ public override void SetControl(string control)
         
         public ThemeButton CancelButton;
                 
+        public System.Web.UI.WebControls.Literal eMailLabel;
+        
         public System.Web.UI.WebControls.Literal PageTitle;
         
         public System.Web.UI.WebControls.Literal PasswordLabel;

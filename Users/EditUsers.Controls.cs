@@ -2843,6 +2843,8 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
             
               this.PwdExp.CheckedChanged += PwdExp_CheckedChanged;
             
+              this.eMail.TextChanged += eMail_TextChanged;
+            
               this.Password.TextChanged += Password_TextChanged;
             
               this.UserName0.TextChanged += UserName0_TextChanged;
@@ -2938,6 +2940,8 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         
                 SetActive();
                 SetActiveLabel();
+                SeteMail();
+                SeteMailLabel();
                 SetPassword();
                 SetPasswordLabel();
                 SetPwdExp();
@@ -3001,6 +3005,39 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
                     									
             }
             
+        }
+                
+        public virtual void SeteMail()
+        {
+            
+                    
+            // Set the eMail TextBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Users database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Users record retrieved from the database.
+            // this.eMail is the ASP:TextBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.eMailSpecified) {
+                								
+                // If the eMail is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(UsersTable.eMail);
+                                
+                this.eMail.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // eMail is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.eMail.Text = UsersTable.eMail.Format(UsersTable.eMail.DefaultValue);
+            		
+            }
+            
+              this.eMail.TextChanged += eMail_TextChanged;
+                               
         }
                 
         public virtual void SetPassword()
@@ -3097,6 +3134,12 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void SetActiveLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SeteMailLabel()
                   {
                   
                     
@@ -3286,6 +3329,7 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
             // Call the Get methods for each of the user interface controls.
         
             GetActive();
+            GeteMail();
             GetPassword();
             GetPwdExp();
             GetUserName0();
@@ -3301,6 +3345,20 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
             
             this.DataSource.Active = this.Active.Checked;						
                     
+        }
+                
+        public virtual void GeteMail()
+        {
+            
+            // Retrieve the value entered by the user on the eMail ASP:TextBox, and
+            // save it into the eMail field in DataSource DatabaseMM_IP1%dbo.Users record.
+            
+            // Custom validation should be performed in Validate, not here.
+                    
+            // Save the value to data source
+            this.DataSource.Parse(this.eMail.Text, UsersTable.eMail);							
+                          
+                      
         }
                 
         public virtual void GetPassword()
@@ -3684,6 +3742,11 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
            						
         }
             
+        protected virtual void eMail_TextChanged(object sender, EventArgs args)
+        {
+                    
+              }
+            
         protected virtual void Password_TextChanged(object sender, EventArgs args)
         {
                     
@@ -3815,6 +3878,18 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         public System.Web.UI.WebControls.Literal ActiveLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ActiveLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox eMail {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMail");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal eMailLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMailLabel");
             }
         }
         

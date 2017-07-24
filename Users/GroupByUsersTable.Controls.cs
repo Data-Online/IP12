@@ -2316,6 +2316,8 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         
                 SetActive();
                 SetActiveLabel();
+                SeteMail();
+                SeteMailLabel();
                 SetPassword();
                 SetPasswordLabel();
                 SetPwdExp();
@@ -2396,6 +2398,46 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
                 this.Active.Text.Trim().Length == 0) {
                 // Set the value specified on the Properties.
                 this.Active.Text = "&nbsp;";
+            }
+                                     
+        }
+                
+        public virtual void SeteMail()
+        {
+            
+                    
+            // Set the eMail Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Users database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Users record retrieved from the database.
+            // this.eMail is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.eMailSpecified) {
+                								
+                // If the eMail is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(UsersTable.eMail);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.eMail.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // eMail is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.eMail.Text = UsersTable.eMail.Format(UsersTable.eMail.DefaultValue);
+            		
+            }
+            
+            // If the eMail is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.eMail.Text == null ||
+                this.eMail.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.eMail.Text = "&nbsp;";
             }
                                      
         }
@@ -2521,6 +2563,12 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void SetActiveLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SeteMailLabel()
                   {
                   
                     
@@ -2726,6 +2774,7 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Call the Get methods for each of the user interface controls.
         
             GetActive();
+            GeteMail();
             GetPassword();
             GetPwdExp();
             GetUserName0();
@@ -2733,6 +2782,11 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         
         
         public virtual void GetActive()
+        {
+            
+        }
+                
+        public virtual void GeteMail()
         {
             
         }
@@ -3132,6 +3186,18 @@ public class BaseUsersTableControlRow : IPv5.UI.BaseApplicationRecordControl
         public System.Web.UI.WebControls.Literal ActiveLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ActiveLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal eMail {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMail");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal eMailLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "eMailLabel");
             }
         }
         
@@ -4358,6 +4424,10 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                             rec.Parse(recControl.Active.Text, UsersTable.Active);
                   }
                 
+                        if (recControl.eMail.Text != "") {
+                            rec.Parse(recControl.eMail.Text, UsersTable.eMail);
+                  }
+                
                         if (recControl.Password.Text != "") {
                             rec.Parse(recControl.Password.Text, UsersTable.Password);
                   }
@@ -5006,6 +5076,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 BaseColumn[] columns = new BaseColumn[] {
                              UsersTable.UserName0,
              UsersTable.Password,
+             UsersTable.eMail,
              UsersTable.Active,
              UsersTable.PwdExp,
              null};
@@ -5065,6 +5136,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
               DataForExport data = new DataForExport(UsersTable.Instance, wc, orderBy, null,join);
                            data.ColumnList.Add(new ExcelColumn(UsersTable.UserName0, "Default"));
              data.ColumnList.Add(new ExcelColumn(UsersTable.Password, "Default"));
+             data.ColumnList.Add(new ExcelColumn(UsersTable.eMail, "Default"));
              data.ColumnList.Add(new ExcelColumn(UsersTable.Active, "Default"));
              data.ColumnList.Add(new ExcelColumn(UsersTable.PwdExp, "Default"));
 
@@ -5238,6 +5310,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(UsersTable.UserName0.Name, ReportEnum.Align.Left, "${UserName0}", ReportEnum.Align.Left, 28);
                  report.AddColumn(UsersTable.Password.Name, ReportEnum.Align.Left, "${Password}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(UsersTable.eMail.Name, ReportEnum.Align.Left, "${eMail}", ReportEnum.Align.Left, 28);
                  report.AddColumn(UsersTable.Active.Name, ReportEnum.Align.Left, "${Active}", ReportEnum.Align.Left, 15);
                  report.AddColumn(UsersTable.PwdExp.Name, ReportEnum.Align.Left, "${PwdExp}", ReportEnum.Align.Left, 15);
 
@@ -5276,6 +5349,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 4th parameter represent the maximum length of the data value being shown
                                                  report.AddData("${UserName0}", record.Format(UsersTable.UserName0), ReportEnum.Align.Left, 100);
                              report.AddData("${Password}", record.Format(UsersTable.Password), ReportEnum.Align.Left, 100);
+                             report.AddData("${eMail}", record.Format(UsersTable.eMail), ReportEnum.Align.Left, 100);
                              report.AddData("${Active}", record.Format(UsersTable.Active), ReportEnum.Align.Left, 100);
                              report.AddData("${PwdExp}", record.Format(UsersTable.PwdExp), ReportEnum.Align.Left, 100);
 
@@ -5392,6 +5466,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                 // The 5th parameter represents the relative width of the column
                  report.AddColumn(UsersTable.UserName0.Name, ReportEnum.Align.Left, "${UserName0}", ReportEnum.Align.Left, 28);
                  report.AddColumn(UsersTable.Password.Name, ReportEnum.Align.Left, "${Password}", ReportEnum.Align.Left, 28);
+                 report.AddColumn(UsersTable.eMail.Name, ReportEnum.Align.Left, "${eMail}", ReportEnum.Align.Left, 28);
                  report.AddColumn(UsersTable.Active.Name, ReportEnum.Align.Left, "${Active}", ReportEnum.Align.Left, 15);
                  report.AddColumn(UsersTable.PwdExp.Name, ReportEnum.Align.Left, "${PwdExp}", ReportEnum.Align.Left, 15);
 
@@ -5426,6 +5501,7 @@ public class BaseUsersTableControl : IPv5.UI.BaseApplicationTableControl
                             // The 4th parameter represents the maximum length of the data value being shown
                              report.AddData("${UserName0}", record.Format(UsersTable.UserName0), ReportEnum.Align.Left, 100);
                              report.AddData("${Password}", record.Format(UsersTable.Password), ReportEnum.Align.Left, 100);
+                             report.AddData("${eMail}", record.Format(UsersTable.eMail), ReportEnum.Align.Left, 100);
                              report.AddData("${Active}", record.Format(UsersTable.Active), ReportEnum.Align.Left, 100);
                              report.AddData("${PwdExp}", record.Format(UsersTable.PwdExp), ReportEnum.Align.Left, 100);
 
