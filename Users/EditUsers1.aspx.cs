@@ -286,6 +286,8 @@ public partial class EditUsers1
         
         public System.Web.UI.WebControls.Literal PasswordLabel;
         
+        public System.Web.UI.WebControls.CheckBox PwdExp1;
+            
         public ThemeButton SaveButton;
                 
         public System.Web.UI.WebControls.Literal Title0;

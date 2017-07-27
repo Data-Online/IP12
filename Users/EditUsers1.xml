@@ -254,6 +254,44 @@
       <InsideControl>UsersRecordControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>PwdExp1</Name>
+      <Type>FieldValue</Type>
+      <Field>PwdExp</Field>
+      <FieldValueStyle>CheckBox</FieldValueStyle>
+      <Table>DatabaseMM_IP1%dbo.Users</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CheckedValue</Name>
+          <Value>Yes</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:ApplyExistingRecordFormula</Name>
+          <Value>true</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>Parent</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:ExistingRecordFormula</Name>
+          <Value>"1"</Value>
+        </Attribute>
+        <Attribute>
+          <Name>TreatOtherValuesAsChecked</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>UncheckedValue</Name>
+          <Value>No</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>UsersRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>SaveButton</Name>
       <Type>Button</Type>
       <Layout>..\Shared\ThemeButton.ascx</Layout>
@@ -806,7 +844,7 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="PwdExp" /&amp;gt;&lt;/Value&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="PwdExp1" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;

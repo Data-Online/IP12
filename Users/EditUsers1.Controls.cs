@@ -160,6 +160,8 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
               // Register the event handlers.
 
           
+              this.PwdExp1.CheckedChanged += PwdExp1_CheckedChanged;
+            
               this.Password.TextChanged += Password_TextChanged;
             
               this.Password2.TextChanged += new EventHandler(Password2_TextChanged);						
@@ -259,6 +261,7 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
                 SetPassword();
                 SetPassword2();
                 SetPasswordLabel();
+                SetPwdExp1();
                 
                 SetUserName0();
                 SetUserNameLabel();
@@ -348,6 +351,36 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
             
               this.Password.TextChanged += Password_TextChanged;
                                
+        }
+                
+        public virtual void SetPwdExp1()
+        {
+            
+                    
+            // Set the PwdExp CheckBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Users database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Users record retrieved from the database.
+            // this.PwdExp1 is the ASP:CheckBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.IsCreated) {					
+                							
+                // If the PwdExp is non-NULL, then format the value.
+                // The Format method will use the Display Format	
+                if (StringUtils.InvariantLCase(EvaluateFormula("\"1\"")).Equals("true"))
+                    this.PwdExp1.Checked = true;
+                else
+                    this.PwdExp1.Checked = false;
+                    				
+            } else {
+            
+                // PwdExp is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+                if (!this.DataSource.IsCreated) 
+                    this.PwdExp1.Checked = UsersTable.PwdExp.ParseValue(UsersTable.PwdExp.DefaultValue).ToBoolean();                
+                    									
+            }
+            
         }
                 
         public virtual void SetUserName0()
@@ -583,6 +616,7 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
         
             GeteMail();
             GetPassword();
+            GetPwdExp1();
             GetUserName0();
         }
         
@@ -610,6 +644,17 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
                 }
             }
                       
+        }
+                
+        public virtual void GetPwdExp1()
+        {	
+        		
+            // Retrieve the value entered by the user on the PwdExp ASP:CheckBox, and
+            // save it into the PwdExp field in DataSource DatabaseMM_IP1%dbo.Users record.
+            // Custom validation should be performed in Validate, not here.
+            
+            this.DataSource.PwdExp = this.PwdExp1.Checked;						
+                    
         }
                 
         public virtual void GetUserName0()
@@ -937,6 +982,11 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
     
         // Generate set method for buttons
         
+        protected virtual void PwdExp1_CheckedChanged(object sender, EventArgs args)
+        {
+           						
+        }
+            
         protected virtual void Password_TextChanged(object sender, EventArgs args)
         {
                     
@@ -1096,6 +1146,12 @@ public class BaseUsersRecordControl : IPv5.UI.BaseApplicationRecordControl
             }
         }
         
+        public System.Web.UI.WebControls.CheckBox PwdExp1 {
+            get {
+                return (System.Web.UI.WebControls.CheckBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PwdExp1");
+            }
+        }
+            
         public System.Web.UI.WebControls.Literal Title0 {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "Title0");
