@@ -393,6 +393,10 @@ public override void SetControl(string control)
                 
         public PaginationModern Pagination2;
                 
+        public System.Web.UI.WebControls.Literal PhoneNumber;
+            
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel;
+        
         public System.Web.UI.WebControls.Literal PlaceOfBirth1;
             
         public System.Web.UI.WebControls.Literal PlaceOfBirthLabel1;

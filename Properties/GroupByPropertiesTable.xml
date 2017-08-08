@@ -15375,7 +15375,7 @@
         </Attribute>
         <Attribute>
           <Name>RedirectURL</Name>
-          <Value>../Contacts/ShowContacts.aspx?Contacts={DirectorsTableControlRow:PK}</Value>
+          <Value>../Contacts/ShowContacts.aspx?Contacts={DirectorsTableControlRow:FK:FK_Directors_Contacts}</Value>
         </Attribute>
         <Attribute>
           <Name>ToolTip</Name>

@@ -9011,6 +9011,8 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                 SetLastName2Label();
                 SetLastNameLabel();
                 
+                SetPhoneNumber();
+                SetPhoneNumberLabel();
                 SetPlaceOfBirth1();
                 SetPlaceOfBirthLabel1();
                 SetPostCode1();
@@ -9650,6 +9652,46 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                                      
         }
                 
+        public virtual void SetPhoneNumber()
+        {
+            
+                    
+            // Set the PhoneNumber Literal on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.PhoneNumber is the ASP:Literal on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PhoneNumberSpecified) {
+                								
+                // If the PhoneNumber is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.PhoneNumber);
+                                
+                formattedValue = HttpUtility.HtmlEncode(formattedValue);
+                this.PhoneNumber.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PhoneNumber is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PhoneNumber.Text = ContactsTable.PhoneNumber.Format(ContactsTable.PhoneNumber.DefaultValue);
+            		
+            }
+            
+            // If the PhoneNumber is NULL or blank, then use the value specified  
+            // on Properties.
+            if (this.PhoneNumber.Text == null ||
+                this.PhoneNumber.Text.Trim().Length == 0) {
+                // Set the value specified on the Properties.
+                this.PhoneNumber.Text = "&nbsp;";
+            }
+                                     
+        }
+                
         public virtual void SetPlaceOfBirth1()
         {
             
@@ -9934,6 +9976,12 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                     
         }
                 
+        public virtual void SetPhoneNumberLabel()
+                  {
+                  
+                    
+        }
+                
         public virtual void SetPlaceOfBirthLabel1()
                   {
                   
@@ -10200,6 +10248,7 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             GetIrdNumber2();
             GetLastName();
             GetLastName2();
+            GetPhoneNumber();
             GetPlaceOfBirth1();
             GetPostCode1();
             GetRegionID1();
@@ -10274,6 +10323,11 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void GetLastName2()
+        {
+            
+        }
+                
+        public virtual void GetPhoneNumber()
         {
             
         }
@@ -11009,6 +11063,18 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         public LinkTableTableControl LinkTableTableControl {
             get {
                 return (LinkTableTableControl)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LinkTableTableControl");
+            }
+        }
+        
+        public System.Web.UI.WebControls.Literal PhoneNumber {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumber");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumberLabel");
             }
         }
         

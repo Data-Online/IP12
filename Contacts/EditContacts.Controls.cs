@@ -11784,6 +11784,8 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             
               this.MiddleName.TextChanged += MiddleName_TextChanged;
             
+              this.PhoneNumber.TextChanged += PhoneNumber_TextChanged;
+            
               this.PlaceOfBirth.TextChanged += PlaceOfBirth_TextChanged;
             
               this.PostCode.TextChanged += PostCode_TextChanged;
@@ -11917,6 +11919,8 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                 
                 SetMiddleName();
                 SetMiddleNameLabel();
+                SetPhoneNumber();
+                SetPhoneNumberLabel();
                 SetPlaceOfBirth();
                 SetPlaceOfBirthLabel();
                 SetPostCode();
@@ -12508,6 +12512,39 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                                
         }
                 
+        public virtual void SetPhoneNumber()
+        {
+            
+                    
+            // Set the PhoneNumber TextBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.Contacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.Contacts record retrieved from the database.
+            // this.PhoneNumber is the ASP:TextBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PhoneNumberSpecified) {
+                								
+                // If the PhoneNumber is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(ContactsTable.PhoneNumber);
+                                
+                this.PhoneNumber.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PhoneNumber is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PhoneNumber.Text = ContactsTable.PhoneNumber.Format(ContactsTable.PhoneNumber.DefaultValue);
+            		
+            }
+            
+              this.PhoneNumber.TextChanged += PhoneNumber_TextChanged;
+                               
+        }
+                
         public virtual void SetPlaceOfBirth()
         {
             
@@ -12767,6 +12804,12 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         }
                 
         public virtual void SetMiddleNameLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetPhoneNumberLabel()
                   {
                   
                     
@@ -13039,6 +13082,7 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
             GetLastName();
             GetLastName2();
             GetMiddleName();
+            GetPhoneNumber();
             GetPlaceOfBirth();
             GetPostCode();
             GetRegionID();
@@ -13247,6 +13291,20 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                     
             // Save the value to data source
             this.DataSource.Parse(this.MiddleName.Text, ContactsTable.MiddleName);							
+                          
+                      
+        }
+                
+        public virtual void GetPhoneNumber()
+        {
+            
+            // Retrieve the value entered by the user on the PhoneNumber ASP:TextBox, and
+            // save it into the PhoneNumber field in DataSource DatabaseMM_IP1%dbo.Contacts record.
+            
+            // Custom validation should be performed in Validate, not here.
+                    
+            // Save the value to data source
+            this.DataSource.Parse(this.PhoneNumber.Text, ContactsTable.PhoneNumber);							
                           
                       
         }
@@ -14483,6 +14541,11 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
                     
               }
             
+        protected virtual void PhoneNumber_TextChanged(object sender, EventArgs args)
+        {
+                    
+              }
+            
         protected virtual void PlaceOfBirth_TextChanged(object sender, EventArgs args)
         {
                     
@@ -14828,6 +14891,18 @@ public class BaseContactsRecordControl : IPv5.UI.BaseApplicationRecordControl
         public System.Web.UI.WebControls.Literal MiddleNameLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MiddleNameLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox PhoneNumber {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumber");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumberLabel");
             }
         }
         

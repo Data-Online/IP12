@@ -9619,7 +9619,7 @@ public class BaseDirectorsTableControlRow : IPv5.UI.BaseApplicationRecordControl
             // Any code after the Response.Redirect call will not be executed, since the page is
             // redirected to the URL.
             
-            string url = @"../Contacts/ShowContacts.aspx?Contacts={DirectorsTableControlRow:PK}";
+            string url = @"../Contacts/ShowContacts.aspx?Contacts={DirectorsTableControlRow:FK:FK_Directors_Contacts}";
             
             if (!string.IsNullOrEmpty(this.Page.Request["RedirectStyle"]))
                 url += "&RedirectStyle=" + this.Page.Request["RedirectStyle"];

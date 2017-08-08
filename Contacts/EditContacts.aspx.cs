@@ -401,6 +401,8 @@ public override void SetControl(string control)
                 
         public PaginationModern Pagination3;
                 
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel;
+        
         public System.Web.UI.WebControls.Literal PlaceOfBirthLabel;
         
         public System.Web.UI.WebControls.Literal PostCodeLabel;
