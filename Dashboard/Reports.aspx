@@ -18,7 +18,8 @@
 			<ContentTemplate>
 
                 <table cellpadding="0" cellspacing="0" border="0" class="updatePanelContent"><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td style="text-align:center;"><asp:ImageButton runat="server" id="DirectorsButton" causesvalidation="False" clientidmode="Inherit" commandname="Redirect" enabletheming="True" imageurl="../Images/Directors.png">		
-	</asp:ImageButton></td><td></td><td style="text-align:center;"></td><td></td><td style="text-align:center;"></td><td>&nbsp;</td></tr><tr><td style="text-align:center;"><asp:Label runat="server" id="Label3" Text="Directors">	</asp:Label></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr></table>
+	</asp:ImageButton></td><td>&nbsp;</td><td style="text-align:center;"><asp:ImageButton runat="server" id="PropertyContactsButton" causesvalidation="False" clientidmode="Inherit" commandname="Redirect" enabletheming="True" imageurl="../Images/PropertyContact.png">		
+	</asp:ImageButton></td><td></td><td style="text-align:center;"></td><td>&nbsp;</td></tr><tr><td style="text-align:center;"><asp:Label runat="server" id="Label3" Text="Directors">	</asp:Label></td><td style="text-align:center;"></td><td style="text-align:center;"><asp:Label runat="server" id="Label" Text="Property Contacts">	</asp:Label></td><td style="text-align:center;"></td><td style="text-align:center;"></td><td style="text-align:center;"></td></tr></table>
       </ContentTemplate>
 </asp:UpdatePanel>
 

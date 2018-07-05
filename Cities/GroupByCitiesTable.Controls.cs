@@ -6965,6 +6965,8 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
         public virtual void SetAddress1Label1()
                   {
                   
+                        this.Address1Label1.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 

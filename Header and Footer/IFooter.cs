@@ -12,6 +12,8 @@ namespace IPv5.UI
         
         System.Web.UI.WebControls.Literal Copyright {get;}
                 
+        System.Web.UI.WebControls.Literal Copyright1 {get;}
+                
       bool Visible {get; set;}
       string ID {get; set;}
          

@@ -5,5 +5,6 @@ P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Business Layer\bin\IPv5.Busines
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Business Layer\obj\Release\IPv5.Business.csprojResolveAssemblyReference.cache
 P:\Projects\Cloud_Development\GitHub\IP12.2\IPv5\Business Layer\obj\Release\IPv5.Business.dll
 C:\Users\atkin\Source\Repos\IP12\Business Layer\bin\IPv5.Business.dll
-C:\Users\atkin\Source\Repos\IP12\Business Layer\obj\Release\IPv5.Business.csprojResolveAssemblyReference.cache
 C:\Users\atkin\Source\Repos\IP12\Business Layer\obj\Release\IPv5.Business.dll
+C:\Users\atkin\Source\Repos\IP12\Business Layer\obj\Release\IPv5.Business.csprojAssemblyReference.cache
+C:\Users\atkin\Source\Repos\IP12\Business Layer\obj\Release\IPv5.Business.csproj.CoreCompileInputs.cache

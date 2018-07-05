@@ -116,7 +116,49 @@ Next month<br />
 <asp:Literal runat="server" id="MMContractsCountControl3">	</asp:Literal>  <br />
 <asp:Literal runat="server" id="MMContractsCountControl">	</asp:Literal></td></tr><tr><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"><asp:LinkButton runat="server" id="CityID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> <br />
 <asp:LinkButton runat="server" id="RegionID" causesvalidation="False" commandname="Redirect"></asp:LinkButton> <asp:Literal runat="server" id="PostCode"></asp:Literal> <br />
-<asp:LinkButton runat="server" id="CountryID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></td><td class="tableCellValue" scope="col"></td><td class="tableCellValue" colspan="2"><asp:Literal runat="server" id="TenantName"></asp:Literal></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr runat="server"><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableCellValue" scope="col" colspan="5"><asp:accordion id="Accordion1" runat="server" requireopenedpane="false" suppressheaderpostbacks="true" selectedindex="1">
+<asp:LinkButton runat="server" id="CountryID" causesvalidation="False" commandname="Redirect"></asp:LinkButton></td><td class="tableCellValue" scope="col"></td><td class="tableCellValue" colspan="2"><asp:Literal runat="server" id="TenantName"></asp:Literal></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr runat="server"><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td scope="row"></td><td scope="row" colspan="2"><%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("CancelButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("EditButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("OKButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("SaveAndNewButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("SaveButton"))%>
+<IPv5:PropertiesPropertyContactsRecordControl runat="server" id="PropertiesPropertyContactsRecordControl">	<table cellpadding="0" cellspacing="0" border="0"><tr><td>
+                  <asp:panel id="CollapsibleRegion5" runat="server"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td>
+                    <asp:panel id="PropertiesPropertyContactsRecordControlPanel" runat="server"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tableCellLabel"><asp:Literal runat="server" id="ContactTypeId1"></asp:Literal> </td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="PropertyContactId"></asp:Literal></span>
+ </td></tr></table></asp:panel>
+
+                  </td></tr></table>
+</asp:panel>
+                </td></tr></table>
+	<asp:hiddenfield id="PropertiesPropertyContactsRecordControl_PostbackTracker" runat="server" />
+</IPv5:PropertiesPropertyContactsRecordControl>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("SaveButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("SaveAndNewButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("OKButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("EditButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("CancelButton"))%>
+</td><td scope="row" colspan="2"><%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("CancelButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("EditButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("OKButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("SaveAndNewButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("SaveButton"))%>
+<IPv5:PropertiesPropertyContactsRecordControl1 runat="server" id="PropertiesPropertyContactsRecordControl1">	<table cellpadding="0" cellspacing="0" border="0"><tr><td>
+                  <asp:panel id="CollapsibleRegion6" runat="server"><table class="dBody" cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td>
+                    <asp:panel id="PropertiesPropertyContactsRecordControl1Panel" runat="server"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tableCellLabel"><asp:Literal runat="server" id="ContactTypeId2"></asp:Literal></td><td class="tableCellValue"><span style="white-space:nowrap;">
+<asp:Literal runat="server" id="PropertyContactId1"></asp:Literal></span>
+</td></tr></table></asp:panel>
+
+                  </td></tr></table>
+</asp:panel>
+                </td></tr></table>
+	<asp:hiddenfield id="PropertiesPropertyContactsRecordControl1_PostbackTracker" runat="server" />
+</IPv5:PropertiesPropertyContactsRecordControl1>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("SaveButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("SaveAndNewButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("OKButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("EditButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("CancelButton"))%>
+</td><td scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td></tr><tr runat="server"><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableRowButton" scope="row"></td><td class="tableCellValue" scope="col" colspan="5"><asp:accordion id="Accordion1" runat="server" requireopenedpane="false" suppressheaderpostbacks="true" selectedindex="1">
     <panes>
         <asp:accordionpane id="AccordionPaneA1" runat="server">
             <header><a href=""><img src="../Images/Audit.png"></a></header>  
@@ -279,7 +321,7 @@ Next month<br />
 </IPv5:DirectorsTableControl>
  
  </ContentTemplate></BaseClasses:TabPanel> 
- <BaseClasses:TabPanel runat="server" id="TabPanel2" HeaderText="PropertyNotes">	<ContentTemplate> 
+ <BaseClasses:TabPanel runat="server" id="TabPanel2" HeaderText="Property Notes">	<ContentTemplate> 
   <IPv5:PropertyNotesTableControl runat="server" id="PropertyNotesTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
                   <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle">
                         <asp:Literal runat="server" id="Title0" Text="&lt;%#String.Concat(&quot;Property Notes&quot;) %>">	</asp:Literal>
@@ -343,7 +385,7 @@ Next month<br />
 </IPv5:PropertyNotesTableControl>
  
  </ContentTemplate></BaseClasses:TabPanel> 
- <BaseClasses:TabPanel runat="server" id="TabPanel3" HeaderText="BankLoans">	<ContentTemplate> 
+ <BaseClasses:TabPanel runat="server" id="TabPanel3" HeaderText="Bank Loans">	<ContentTemplate> 
   <IPv5:BankLoansTableControl runat="server" id="BankLoansTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
                   <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb" style="width: 100%"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle"><asp:Literal runat="server" id="BankLoansTitle" Text="&lt;%#String.Concat(&quot;Bank Loans&quot;) %>">	</asp:Literal></td></tr></table>
 </td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="BankLoansButtonsDiv" runat="server" class="popupWrapper">
@@ -424,7 +466,7 @@ Next month<br />
 </IPv5:BankLoansTableControl>
  
  </ContentTemplate></BaseClasses:TabPanel> 
- <BaseClasses:TabPanel runat="server" id="TabPanel4" HeaderText="RentReviews">	<ContentTemplate> 
+ <BaseClasses:TabPanel runat="server" id="TabPanel4" HeaderText="Rent Reviews">	<ContentTemplate> 
   <IPv5:RentReviewsTableControl runat="server" id="RentReviewsTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
                   <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb" style="width: 100%"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle"><asp:Literal runat="server" id="RentReviewsTitle" Text="&lt;%#String.Concat(&quot;Rent Reviews&quot;) %>">	</asp:Literal></td></tr></table>
 </td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="RentReviewsButtonsDiv" runat="server" class="popupWrapper">
@@ -505,7 +547,7 @@ Next month<br />
 </IPv5:RentReviewsTableControl>
  
  </ContentTemplate></BaseClasses:TabPanel> 
- <BaseClasses:TabPanel runat="server" id="TabPanel5" HeaderText="TermExpires">	<ContentTemplate> 
+ <BaseClasses:TabPanel runat="server" id="TabPanel5" HeaderText="Term Expires">	<ContentTemplate> 
   <IPv5:TermExpiresTableControl runat="server" id="TermExpiresTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
                   <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle">
                         <asp:Literal runat="server" id="Title1" Text="&lt;%#String.Concat(&quot;Term Expires&quot;) %>">	</asp:Literal>
@@ -580,7 +622,7 @@ Next month<br />
 </IPv5:TermExpiresTableControl>
  
  </ContentTemplate></BaseClasses:TabPanel> 
- <BaseClasses:TabPanel runat="server" id="TabPanel6" HeaderText="TermRenewals">	<ContentTemplate> 
+ <BaseClasses:TabPanel runat="server" id="TabPanel6" HeaderText="Term Renewals">	<ContentTemplate> 
   <IPv5:TermRenewalsTableControl runat="server" id="TermRenewalsTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
                   <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb" style="width: 100%"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle"><asp:Literal runat="server" id="TermRenewalsTitle" Text="&lt;%#String.Concat(&quot;Term Renewals&quot;) %>">	</asp:Literal></td></tr></table>
 </td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="TermRenewalsButtonsDiv" runat="server" class="popupWrapper">
@@ -661,7 +703,7 @@ Next month<br />
 </IPv5:TermRenewalsTableControl>
  
  </ContentTemplate></BaseClasses:TabPanel> 
- <BaseClasses:TabPanel runat="server" id="TabPanel7" HeaderText="MMContracts">	<ContentTemplate> 
+ <BaseClasses:TabPanel runat="server" id="TabPanel7" HeaderText="MM Contracts">	<ContentTemplate> 
   <IPv5:MMContractsTableControl runat="server" id="MMContractsTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
                   <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle">
                         <asp:Literal runat="server" id="Title2" Text="&lt;%#String.Concat(&quot;Month Contracts&quot;) %>">	</asp:Literal>
@@ -736,7 +778,7 @@ Next month<br />
 </IPv5:MMContractsTableControl>
  
  </ContentTemplate></BaseClasses:TabPanel> 
- <BaseClasses:TabPanel runat="server" id="TabPanel8" HeaderText="PropertyContacts">	<ContentTemplate> 
+ <BaseClasses:TabPanel runat="server" id="TabPanel8" visible="False" HeaderText="PropertyContacts">	<ContentTemplate> 
   <IPv5:PropertyContactsTableControl runat="server" id="PropertyContactsTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
                   <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb" style="width: 100%"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle"><asp:Literal runat="server" id="PropertyContactsTitle" Text="&lt;%#String.Concat(&quot;Property Contacts&quot;) %>">	</asp:Literal></td></tr></table>
 </td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="PropertyContactsButtonsDiv" runat="server" class="popupWrapper">
@@ -795,7 +837,7 @@ Next month<br />
 </td><td class="tableCellValue"><asp:Literal runat="server" id="Title"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="FirstNameLabel" Text="First Name">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="FirstName"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="LastNameLabel" Text="Last Name">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="LastName"></asp:Literal> </td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PostCodeLabel" Text="Post Code">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="PostCode1"></asp:Literal> </td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address1Label1" Text="Address 1">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="PostCode1"></asp:Literal> </td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address1Label1" Text="EvaluateFormula(&quot;= \&quot;Address\&quot;&quot;, true)">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="Address11"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CityIDLabel11" Text="City">	</asp:Literal></td><td class="tableCellValue"><asp:LinkButton runat="server" id="CityID1" causesvalidation="False" commandname="Redirect"></asp:LinkButton></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address2Label" Text="Address 2">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="Address21"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="RegionIDLabel11" Text="Region">	</asp:Literal></td><td class="tableCellValue"><asp:LinkButton runat="server" id="RegionID1" causesvalidation="False" commandname="Redirect"></asp:LinkButton></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;"></td><td class="tableCellSelectCheckbox" scope="row" style="font-size: 5px;"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"><asp:Literal runat="server" id="Address31"></asp:Literal></td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="CountryIDLabel1" Text="Country">	</asp:Literal></td><td class="tableCellValue"><asp:LinkButton runat="server" id="CountryID1" causesvalidation="False" commandname="Redirect"></asp:LinkButton></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellLabel" scope="col"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="10">&nbsp;</td><td class="tableRowDivider"></td><td class="tableRowDivider"></td><td class="tableRowDivider"></td><td class="tableRowDivider"></td><td class="tableRowDivider"></td><td class="tableRowDivider"></td></tr></IPv5:PropertyContactsTableControlRow>
 </ITEMTEMPLATE>
@@ -810,6 +852,103 @@ Next month<br />
                   </td><td></td></tr><tr><td></td><td></td><td></td></tr></table>
 	<asp:hiddenfield id="PropertyContactsTableControl_PostbackTracker" runat="server" />
 </IPv5:PropertyContactsTableControl>
+ 
+ </ContentTemplate></BaseClasses:TabPanel> 
+ <BaseClasses:TabPanel runat="server" id="TabPanel9" HeaderText="Property Contacts">	<ContentTemplate> 
+  <IPv5:PropertiesPropertyContactsTableControl runat="server" id="PropertiesPropertyContactsTableControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td></td><td></td><td></td></tr><tr><td class="panelHeaderL"></td><td class="dh">
+                  <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="dhel"><img src="../Images/space.gif" alt="" /></td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0"><tr><td class="dht" valign="middle">
+                        <asp:Literal runat="server" id="Title3" Text="&lt;%#String.Concat(&quot;Property Contacts&quot;) %>">	</asp:Literal>
+                      </td></tr></table>
+</td><td class="dhb"><table cellpadding="0" cellspacing="0" border="0" style="width: 100%;"><tr><td></td><td class="prbbc"></td><td class="prbbc"></td><td><div id="Actions4Div" runat="server" class="popupWrapper">
+                <table border="0" cellpadding="0" cellspacing="0"><tr><td></td><td></td><td></td><td></td><td></td><td></td><td style="text-align: right;" class="popupTableCellValue"><input type="image" src="../Images/closeButton.gif" onmouseover="this.src='../Images/closeButtonOver.gif'" onmouseout="this.src='../Images/closeButton.gif'" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /><br /></td></tr><tr><td></td><td>
+                    <asp:ImageButton runat="server" id="NewButton4" causesvalidation="false" commandname="Redirect" imageurl="../Images/ButtonBarNew.gif" onmouseout="this.src=&#39;../Images/ButtonBarNew.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarNewOver.gif&#39;" redirectstyle="Popup" tooltip="&lt;%# GetResourceValue(&quot;Btn:Add&quot;, &quot;IPv5&quot;) %>" visible="False">		
+	</asp:ImageButton>
+                  </td><td>
+                    <asp:ImageButton runat="server" id="PDFButton4" causesvalidation="false" commandname="ReportData" imageurl="../Images/ButtonBarPDFExport.gif" onmouseout="this.src=&#39;../Images/ButtonBarPDFExport.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarPDFExportOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:PDF&quot;, &quot;IPv5&quot;) %>">		
+	</asp:ImageButton>
+                  </td><td>
+                    <asp:ImageButton runat="server" id="WordButton3" causesvalidation="false" commandname="ExportToWord" imageurl="../Images/ButtonBarWordExport.gif" onmouseout="this.src=&#39;../Images/ButtonBarWordExport.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarWordExportOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:Word&quot;, &quot;IPv5&quot;) %>">		
+	</asp:ImageButton>
+                  </td><td>
+                    <asp:ImageButton runat="server" id="ExcelButton4" causesvalidation="false" commandname="ExportDataExcel" imageurl="../Images/ButtonBarExcelExport.gif" onmouseout="this.src=&#39;../Images/ButtonBarExcelExport.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarExcelExportOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:ExportExcel&quot;, &quot;IPv5&quot;) %>">		
+	</asp:ImageButton>
+                  </td><td>
+                    <asp:ImageButton runat="server" id="ImportButton3" causesvalidation="false" commandname="ImportCSV" imageurl="../Images/ButtonBarImport.gif" onmouseout="this.src=&#39;../Images/ButtonBarImport.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarImportOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:Import&quot;, &quot;IPv5&quot;) %>" visible="False">		
+	</asp:ImageButton>
+                  </td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>
+
+                </div></td><td class="prbbc"></td><td class="prspace"></td><td class="prbbc" style="text-align:right"><IPv5:ThemeButtonWithArrow runat="server" id="Actions4Button" button-causesvalidation="False" button-commandname="Custom" button-onclientclick="return ISD_ShowPopupPanel(&#39;Actions4Div&#39;,&#39;Actions4Button&#39;,this);" button-text="&lt;%# GetResourceValue(&quot;Btn:Actions&quot;, &quot;IPv5&quot;) %>" button-tooltip="&lt;%# GetResourceValue(&quot;Btn:Actions&quot;, &quot;IPv5&quot;) %>"></IPv5:ThemeButtonWithArrow></td><td class="prbbc" style="text-align:right">
+            <IPv5:ThemeButtonWithArrow runat="server" id="Filters4Button" button-causesvalidation="False" button-commandname="Custom" button-onclientclick="return ISD_ShowPopupPanel(&#39;Filters4Div&#39;,&#39;Filters4Button&#39;,this);" button-text="&lt;%# GetResourceValue(&quot;Btn:Filters&quot;, &quot;IPv5&quot;) %>" button-tooltip="&lt;%# GetResourceValue(&quot;Btn:Filters&quot;, &quot;IPv5&quot;) %>"></IPv5:ThemeButtonWithArrow>
+          </td><td class="prbbc"><img src="../Images/space.gif" alt="" style="width: 10px" /></td><td class="panelSearchBox"><table><tr><td><%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("SearchButton1"))%>
+
+                <asp:TextBox runat="server" id="PropertiesPropertyContactsSearchText" columns="50" cssclass="Search_Input">	</asp:TextBox>
+<asp:AutoCompleteExtender id="PropertiesPropertyContactsSearchTextAutoCompleteExtender" runat="server" TargetControlID="PropertiesPropertyContactsSearchText" ServiceMethod="GetAutoCompletionList_PropertiesPropertyContactsSearchText" MinimumPrefixLength="2" CompletionInterval="700" CompletionSetCount="10" CompletionListCssClass="autotypeahead_completionListElement" CompletionListItemCssClass="autotypeahead_listItem " CompletionListHighlightedItemCssClass="autotypeahead_highlightedListItem">
+</asp:AutoCompleteExtender>
+
+              <%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("SearchButton1"))%>
+</td><td>
+                <asp:ImageButton runat="server" id="SearchButton1" causesvalidation="False" commandname="Search" imageurl="../Images/panelSearchButton.png" tooltip="&lt;%# GetResourceValue(&quot;Btn:SearchGoButtonText&quot;, &quot;IPv5&quot;) %>">		
+	</asp:ImageButton>
+              </td></tr></table>
+</td><td class="prspaceEnd">&nbsp;</td><td></td></tr></table>
+</td><td class="dher"><img src="../Images/space.gif" alt="" /></td><td>
+                          <div id="Filters4Div" runat="server" class="popupWrapper">
+                          <table cellpadding="0" cellspacing="0" border="0"><tr><td class="popupTableCellLabel"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"></td><td style="text-align: right;" class="popupTableCellValue"><input type="image" src="../Images/closeButton.gif" onmouseover="this.src='../Images/closeButtonOver.gif'" onmouseout="this.src='../Images/closeButton.gif'" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /><br /></td></tr><tr><td class="popupTableCellLabel"><asp:Label runat="server" id="SortByLabel8" Text="&lt;%# GetResourceValue(&quot;Txt:SortBy&quot;, &quot;IPv5&quot;) %>">	</asp:Label></td><td class="popupTableCellValue"><asp:DropDownList runat="server" id="SortControl8" autopostback="True" cssclass="Filter_Input" priorityno="1">	</asp:DropDownList></td><td class="popupTableCellValue"></td><td class="popupTableCellValue"><IPv5:ThemeButton runat="server" id="FilterButton4" button-causesvalidation="False" button-commandname="Search" button-text="&lt;%# GetResourceValue(&quot;Btn:SearchGoButtonText&quot;, &quot;IPv5&quot;) %>" button-tooltip="&lt;%# GetResourceValue(&quot;Btn:SearchGoButtonText&quot;, &quot;IPv5&quot;) %>" postback="False" visible="False"></IPv5:ThemeButton></td><td class="popupTableCellValue">
+                                  <asp:ImageButton runat="server" id="ResetButton4" causesvalidation="false" commandname="ResetFilters" imageurl="../Images/ButtonBarReset.gif" onmouseout="this.src=&#39;../Images/ButtonBarReset.gif&#39;" onmouseover="this.src=&#39;../Images/ButtonBarResetOver.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Btn:Reset&quot;, &quot;IPv5&quot;) %>" visible="False">		
+	</asp:ImageButton>
+                                </td></tr></table>
+
+                          </div>
+                        </td><td class="dher"><img src="../Images/space.gif" alt="" /></td></tr></table>
+
+                </td><td class="panelHeaderR"></td></tr><tr><td></td><td>
+                  <asp:panel id="CollapsibleRegion4" runat="server"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td class="tre">
+                    <table id="PropertiesPropertyContactsTableControlGrid" cellpadding="0" cellspacing="0" border="0" width="100%" onkeydown="captureUpDownKey(this, event)"><tr class="tch"><th class="thc" style="display:none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th><th class="thc" style="display: none"></th></tr><asp:Repeater runat="server" id="PropertiesPropertyContactsTableControlRepeater">		<ITEMTEMPLATE>		<IPv5:PropertiesPropertyContactsTableControlRow runat="server" id="PropertiesPropertyContactsTableControlRow">
+<tr><td scope="row" style="font-size: 5px;"><asp:ImageButton runat="server" id="DeleteRowButton" causesvalidation="False" commandname="DeleteRecord" cssclass="button_link" imageurl="../Images/icon_delete.gif" onmouseout="this.src=&#39;../Images/icon_delete.gif&#39;" onmouseover="this.src=&#39;../Images/icon_delete_over.gif&#39;" tooltip="Remove Contact fom this Company" visible="False">		
+	</asp:ImageButton> 
+<asp:ImageButton runat="server" id="EditRowButton4" causesvalidation="False" commandname="Redirect" cssclass="button_link" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="Edit Contact Type">		
+	</asp:ImageButton></td><td scope="row" class="largeText" style="text-align:left;"><asp:Literal runat="server" id="ContactTypeId3"></asp:Literal></td><td scope="row" class="largeText" style="text-align:left;"></td><td scope="row" class="largeText" style="text-align:left;"></td><td class="tableCellLabel"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td></td><td><%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("CancelButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("EditButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("OKButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("SaveAndNewButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureBeginTag(FindControlRecursively("SaveButton"))%>
+<IPv5:PropertyContactsRecordControl runat="server" id="PropertyContactsRecordControl">	<table class="dv" cellpadding="0" cellspacing="0" border="0"><tr><td><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td>
+                    <asp:panel id="PropertyContactsRecordControlPanel" runat="server"><table cellpadding="0" cellspacing="0" border="0" width="100%"><tr><td><asp:ImageButton runat="server" id="DialogEditButton1" causesvalidation="false" commandname="Redirect" imageurl="../Images/icon_edit.gif" onmouseout="this.src=&#39;../Images/icon_edit.gif&#39;" onmouseover="this.src=&#39;../Images/icon_edit_over.gif&#39;" tooltip="Edit Contact Details">		
+	</asp:ImageButton></td><td class="largeText" colspan="4" style="text-align:left;"><asp:Literal runat="server" id="Title4"></asp:Literal> 
+<asp:Literal runat="server" id="FirstName1"></asp:Literal> 
+<asp:Literal runat="server" id="LastName1"></asp:Literal></td></tr><tr><td class="dhir"></td><td class="tableCellLabel"><asp:Literal runat="server" id="eMailLabel2" Text="Email">	</asp:Literal></td><td class="tableCellValue" colspan="3"><asp:Literal runat="server" id="eMail1"></asp:Literal></td></tr><tr><td class="tableCellLabel"></td><td class="tableCellLabel"><asp:Literal runat="server" id="Address1Label2" Text="EvaluateFormula(&quot;= \&quot;Address\&quot;&quot;, true)">	</asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="Address12"></asp:Literal>  <br />
+<asp:Literal runat="server" id="Address22"></asp:Literal>  <br />
+<asp:Literal runat="server" id="Address32"></asp:Literal>  <br />
+<asp:Literal runat="server" id="PostCode2"></asp:Literal>  <br />
+<asp:Literal runat="server" id="CityID2"></asp:Literal>  <br />
+<asp:Literal runat="server" id="RegionID2"></asp:Literal>  <br />
+<asp:Literal runat="server" id="CountryID2"></asp:Literal></td><td class="tableCellLabel"><asp:Literal runat="server" id="MobileNumberLabel" Text="Mobile Number">	</asp:Literal> <br />
+<asp:Literal runat="server" id="PhoneNumberLabel1" Text="Phone Number">	</asp:Literal></td><td class="tableCellValue"><asp:Literal runat="server" id="MobileNumber"></asp:Literal> <br />
+<asp:Literal runat="server" id="PhoneNumber"></asp:Literal></td></tr></table></asp:panel>
+
+                  </td></tr></table>
+</td></tr></table>
+	<asp:hiddenfield id="PropertyContactsRecordControl_PostbackTracker" runat="server" />
+</IPv5:PropertyContactsRecordControl>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("SaveButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("SaveAndNewButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("OKButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("EditButton"))%>
+<%= SystemUtils.GenerateEnterKeyCaptureEndTag(FindControlRecursively("CancelButton"))%>
+</td><td></td><td></td><td></td><td></td><td></td><td class="tableCellLabel"></td><td class="tableCellValue"></td></tr><tr><td class="tableRowDivider" colspan="9"></td></tr></IPv5:PropertiesPropertyContactsTableControlRow>
+</ITEMTEMPLATE>
+
+</asp:Repeater>
+</table>
+
+                  </td></tr></table>
+</asp:panel>
+                </td><td></td></tr><tr><td></td><td class="panelPaginationC">
+                    <IPv5:PaginationModern runat="server" id="Pagination4"></IPv5:PaginationModern>
+                    <!--To change the position of the pagination control, please search for "prspace" on the Online Help for instruction. -->
+                  </td><td></td></tr><tr><td></td><td></td><td></td></tr></table>
+	<asp:hiddenfield id="PropertiesPropertyContactsTableControl_PostbackTracker" runat="server" />
+</IPv5:PropertiesPropertyContactsTableControl>
  
  </ContentTemplate></BaseClasses:TabPanel> 
 </BaseClasses:TabContainer></td></tr><tr><td class="tableRowDivider" colspan="11">&nbsp;</td><td class="tableRowDivider"></td><td class="tableRowDivider"></td><td class="tableRowDivider"></td></tr></IPv5:PropertiesTableControlRow>

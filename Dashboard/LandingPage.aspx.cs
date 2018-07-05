@@ -252,6 +252,17 @@ public void AdminButton_Click(object sender, ImageClickEventArgs args)
           AdminButton_Click_Base(sender, args);
           // NOTE: If the Base function redirects to another page, any code here will not be executed.
         }
+//public void SetPropertyContactButton2()
+//        {
+//            SetPropertyContactButton2_Base(); 
+//        }              
+//public void PropertyContactButton2_Click(object sender, ImageClickEventArgs args)
+//        {
+//          // Click handler for PropertyContactButton2.
+//          // Customize by adding code before the call or replace the call to the Base function with your own code.
+//          PropertyContactButton2_Click_Base(sender, args);
+//          // NOTE: If the Base function redirects to another page, any code here will not be executed.
+//        }
 #endregion
 
 #region "Section 2: Do not modify this section."

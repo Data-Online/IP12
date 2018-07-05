@@ -364,6 +364,10 @@
           <Name>onkeypress</Name>
           <Value>dropDownListTypeAhead(this,false)</Value>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsRecordControl</InsideControl>
     </ContainedComponent>
@@ -408,6 +412,10 @@
           <Value>Btn:Add</Value>
           <Type>ResourceReference</Type>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsRecordControl</InsideControl>
     </ContainedComponent>
@@ -430,6 +438,10 @@
         <Attribute>
           <Name>Text</Name>
           <Value>%ISD_DEFAULT%PropertyContacts%ContactTypeID</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsRecordControl</InsideControl>
@@ -703,6 +715,59 @@
       <InsideControl>PropertyContactsRecordControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>MobileNumber</Name>
+      <Type>FieldValue</Type>
+      <Field>MobileNumber</Field>
+      <FieldValueStyle>TextBox</FieldValueStyle>
+      <Table>DatabaseMM_IP1%dbo.PropertyContacts</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>field_input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>EnableIncrementDecrementButtons</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>Parent</Value>
+        </Attribute>
+        <Attribute>
+          <Name>MobileNumberRequiredFieldValidator:Enabled</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>MobileNumberRequiredFieldValidator:Text</Name>
+          <Value>*</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertyContactsRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>MobileNumberLabel</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertyContactsRecordControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Field</Name>
+          <Value>MobileNumber</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DatabaseMM_IP1%dbo.PropertyContacts</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>%ISD_DEFAULT%DatabaseMM_IP1%dbo.PropertyContacts%MobileNumber</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertyContactsRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>PageTitle</Name>
       <Type>Literal</Type>
       <PassthroughAttributes>
@@ -711,6 +776,59 @@
           <Value>{Title:Add} Property Contacts</Value>
         </Attribute>
       </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PhoneNumber</Name>
+      <Type>FieldValue</Type>
+      <Field>PhoneNumber</Field>
+      <FieldValueStyle>TextBox</FieldValueStyle>
+      <Table>DatabaseMM_IP1%dbo.PropertyContacts</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>field_input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>EnableIncrementDecrementButtons</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>Parent</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PhoneNumberRequiredFieldValidator:Enabled</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PhoneNumberRequiredFieldValidator:Text</Name>
+          <Value>*</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertyContactsRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PhoneNumberLabel</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertyContactsRecordControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Field</Name>
+          <Value>PhoneNumber</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DatabaseMM_IP1%dbo.PropertyContacts</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>%ISD_DEFAULT%DatabaseMM_IP1%dbo.PropertyContacts%PhoneNumber</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertyContactsRecordControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
       <Name>PostCode</Name>
@@ -847,6 +965,10 @@
           <Name>PropertyIDRequiredFieldValidator:Text</Name>
           <Value>*</Value>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsRecordControl</InsideControl>
     </ContainedComponent>
@@ -891,6 +1013,10 @@
           <Value>Btn:Add</Value>
           <Type>ResourceReference</Type>
         </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsRecordControl</InsideControl>
     </ContainedComponent>
@@ -913,6 +1039,10 @@
         <Attribute>
           <Name>Text</Name>
           <Value>%ISD_DEFAULT%PropertyContacts%PropertyID</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsRecordControl</InsideControl>
@@ -1168,7 +1298,7 @@
       </PassthroughAttributes>
     </ContainedComponent>
   </ComposedOf>
-  <LayoutDefinition>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+  <LayoutDefinition>&lt;![CDATA[&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;LayoutDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
   &lt;Layout Name="Page" Type="RootLayout"&gt;
     &lt;Prolog&gt;
@@ -1182,7 +1312,9 @@
         &lt;Value&gt;
                         &amp;lt;GEN:RECORD NAME="PropertyContactsRecordControl"&amp;gt;&amp;lt;/GEN:RECORD&amp;gt;
             &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1194,6 +1326,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Epilog&gt;
       &lt;Value&gt;
@@ -1223,6 +1356,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="PropertyContactsRecordControl" Type="RecordPanel" PanelControlName="PropertyContactsRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelTLSpace" alt="" /&amp;gt;&lt;/Value&gt;
@@ -1250,6 +1384,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1279,6 +1414,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1293,6 +1429,7 @@
         &lt;Value&gt;
                   &amp;lt;asp:panel id="PropertyContactsRecordControlCollapsibleRegion" runat="server"&amp;gt;&amp;lt;GEN:PANEL NAME="PropertyContactsPanel"/&amp;gt;&amp;lt;/asp:panel&amp;gt;
                 &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;CellAttributes&gt;
@@ -1302,6 +1439,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1330,7 +1468,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;class&lt;/Name&gt;
@@ -1351,6 +1491,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="PropertyContactsPanelHeader" Type="PanelHeader" PanelControlName="PropertyContactsRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
@@ -1379,7 +1520,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -1400,6 +1543,7 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="PropertyContactsTitleRegion" PanelControlName="PropertyContactsRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:HTML NAME="PropertyContactsTitle"/&amp;gt;&lt;/Value&gt;
@@ -1414,7 +1558,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -1431,12 +1577,15 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="PropertyContactsPanel" PanelControlName="PropertyContactsRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:PANEL NAME="PropertyContactsFields"/&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;class&lt;/Name&gt;
@@ -1461,7 +1610,26 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="PropertyContactsFields" Type="RecordGrid" PanelControlName="PropertyContactsRecordControl"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="FirstNameLabel"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="FirstName"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="LastNameLabel"/&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
@@ -1480,24 +1648,7 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="Address1Label"/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Address1"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1511,6 +1662,84 @@
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Title"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="eMailLabel"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="eMail"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="MobileNumberLabel" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="MobileNumber" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="PhoneNumberLabel" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="PhoneNumber" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="Address1Label"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Address1"/&amp;gt; &lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
@@ -1536,26 +1765,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="FirstNameLabel"/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="FirstName"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="Address2Label"/&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
@@ -1574,6 +1786,120 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="CityIDLabel"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CityID"/&amp;gt; 
+&amp;lt;GEN:IMAGEBUTTON NAME="CityIDAddRecordLink"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="Address3Label"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Address3"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="RegionIDLabel"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="RegionID"/&amp;gt; 
+&amp;lt;GEN:IMAGEBUTTON NAME="RegionIDAddRecordLink"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="CountryIDLabel"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CountryID"/&amp;gt; 
+&amp;lt;GEN:IMAGEBUTTON NAME="CountryIDAddRecordLink"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
@@ -1622,134 +1948,9 @@
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
-    &lt;Row&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="eMailLabel"/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="eMail"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="Address3Label"/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="Address3"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-    &lt;/Row&gt;
-    &lt;Row&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="CityIDLabel"/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CityID"/&amp;gt; 
-&amp;lt;GEN:IMAGEBUTTON NAME="CityIDAddRecordLink"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="RegionIDLabel"/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="RegionID"/&amp;gt; 
-&amp;lt;GEN:IMAGEBUTTON NAME="RegionIDAddRecordLink"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-    &lt;/Row&gt;
-    &lt;Row&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="CountryIDLabel"/&amp;gt;&lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="CountryID"/&amp;gt; 
-&amp;lt;GEN:IMAGEBUTTON NAME="CountryIDAddRecordLink"/&amp;gt; &lt;/Value&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;style&lt;/Name&gt;
-            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;fls&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-      &lt;Cell&gt;
-        &lt;CellAttributes&gt;
-          &lt;Attribute&gt;
-            &lt;Name&gt;class&lt;/Name&gt;
-            &lt;AttributeValue&gt;dfv&lt;/AttributeValue&gt;
-          &lt;/Attribute&gt;
-        &lt;/CellAttributes&gt;
-      &lt;/Cell&gt;
-    &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -1766,17 +1967,23 @@
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
   &lt;Layout Name="PageButtons" Type="PageButton"&gt;
+    &lt;Prolog /&gt;
     &lt;Row&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:BUTTON NAME="SaveButton"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:BUTTON NAME="SaveAndNewButton"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
         &lt;Value&gt;&amp;lt;GEN:BUTTON NAME="CancelButton"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
     &lt;/Row&gt;
+    &lt;Epilog /&gt;
     &lt;TableAttributes&gt;
       &lt;Attribute&gt;
         &lt;Name&gt;cellpadding&lt;/Name&gt;
@@ -1792,5 +1999,5 @@
       &lt;/Attribute&gt;
     &lt;/TableAttributes&gt;
   &lt;/Layout&gt;
-&lt;/LayoutDefinition&gt;</LayoutDefinition>
+&lt;/LayoutDefinition&gt;]]&gt;</LayoutDefinition>
 </ComponentDefinition>

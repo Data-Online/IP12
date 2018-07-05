@@ -905,6 +905,8 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
         public virtual void SetAddress1Label()
                   {
                   
+                        this.Address1Label.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 
@@ -4527,6 +4529,8 @@ public class BasePropertyContactsTableControl : IPv5.UI.BaseApplicationTableCont
         public virtual void SetAddress1SortLabel()
                   {
                   
+                        this.Address1SortLabel.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 

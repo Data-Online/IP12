@@ -53,6 +53,16 @@
       </PassthroughAttributes>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>Label</Name>
+      <Type>Label</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>Property Contacts</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>Label3</Name>
       <Type>Label</Type>
       <PassthroughAttributes>
@@ -69,6 +79,40 @@
         <Attribute>
           <Name>Text</Name>
           <Value>Dashboard</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PropertyContactsButton</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ClientIDMode</Name>
+          <Value>Inherit</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>Redirect</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>page</Value>
+        </Attribute>
+        <Attribute>
+          <Name>EnableTheming</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageUrl</Name>
+          <Value>../Images/PropertyContact.png</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RedirectURL</Name>
+          <Value>../vPropertiesPropertyContacts/ShowVPropertiesPropertyContactsTable.aspx</Value>
         </Attribute>
       </PassthroughAttributes>
     </ContainedComponent>
@@ -148,9 +192,11 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
         &lt;CellAttributes /&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:IMAGEBUTTON Name="PropertyContactsButton" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;
@@ -194,6 +240,7 @@
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;
       &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:LABEL Name="Label" /&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes&gt;
           &lt;Attribute&gt;
             &lt;Name&gt;style&lt;/Name&gt;

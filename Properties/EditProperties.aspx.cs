@@ -326,10 +326,10 @@ public void SetBankLoansTableControl()
         {
             SetBankLoansTableControl_Base(); 
         }
-public void SetTabContainer()
-        {
-            SetTabContainer_Base(); 
-        }
+//public void SetTabContainer()
+//        {
+//            SetTabContainer_Base(); 
+//        }
 [System.Web.Services.WebMethod]
         public static string[] GetAutoCompletionList_TermRenewalsSearchText(string prefixText, int count)
         {
@@ -390,6 +390,24 @@ public void SetTabContainer()
             // or replace the call to GetAutoCompletionList_BankLoansSearchText_Base().
             return GetAutoCompletionList_BankLoansSearchText_Base(prefixText, count);
         }
+public void SetPropertiesPropertyContactsTableControl()
+        {
+            SetPropertiesPropertyContactsTableControl_Base(); 
+        }
+public void SetTabContainer()
+        {
+            SetTabContainer_Base(); 
+        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_PropertiesPropertyContactsSearchText(string prefixText, int count)
+        {
+            // GetPropertiesPropertyContactsSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_PropertiesPropertyContactsSearchText_Base()
+            // or replace the call to GetAutoCompletionList_PropertiesPropertyContactsSearchText_Base().
+            return GetAutoCompletionList_PropertiesPropertyContactsSearchText_Base(prefixText, count);
+        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -423,6 +441,8 @@ public void SetTabContainer()
                 
         public ThemeButtonWithArrow Actions8Button;
                 
+        public ThemeButtonWithArrow Actions9Button;
+                
         public ThemeButtonWithArrow ActionsButton;
                 
         public System.Web.UI.WebControls.ImageButton AddButton;
@@ -442,6 +462,8 @@ public void SetTabContainer()
         public System.Web.UI.WebControls.ImageButton AddButton7;
         
         public System.Web.UI.WebControls.ImageButton AddButton8;
+        
+        public System.Web.UI.WebControls.ImageButton AddButton9;
         
         public System.Web.UI.WebControls.Literal Address1Label;
         
@@ -491,6 +513,8 @@ public void SetTabContainer()
         
         public System.Web.UI.WebControls.ImageButton DeleteButton8;
         
+        public System.Web.UI.WebControls.ImageButton DeleteButton9;
+        
         public System.Web.UI.WebControls.Literal DescriptionLabel11;
         
         public System.Web.UI.WebControls.Literal DescriptionLabel14;
@@ -521,6 +545,8 @@ public void SetTabContainer()
                 
         public ThemeButton FilterButton8;
                 
+        public ThemeButton FilterButton9;
+                
         public ThemeButtonWithArrow Filters1Button;
                 
         public ThemeButtonWithArrow Filters2Button;
@@ -536,6 +562,8 @@ public void SetTabContainer()
         public ThemeButtonWithArrow Filters7Button;
                 
         public ThemeButtonWithArrow Filters8Button;
+                
+        public ThemeButtonWithArrow Filters9Button;
                 
         public ThemeButtonWithArrow FiltersButton;
                 
@@ -567,10 +595,16 @@ public void SetTabContainer()
                 
         public PaginationModern Pagination8;
                 
+        public PaginationModern Pagination9;
+                
         public System.Web.UI.WebControls.Literal PostCodeLabel;
         
         public System.Web.UI.WebControls.Literal PostCodeLabel3;
         
+        public System.Web.UI.WebControls.TextBox PropertiesPropertyContactsSearchText;
+        
+        public IPv5.UI.Controls.EditProperties.PropertiesPropertyContactsTableControl PropertiesPropertyContactsTableControl;
+          
         public IPv5.UI.Controls.EditProperties.PropertiesRecordControl PropertiesRecordControl;
           
         public System.Web.UI.WebControls.Literal PropertiesTitle;
@@ -609,9 +643,13 @@ public void SetTabContainer()
         
         public System.Web.UI.WebControls.ImageButton ResetButton8;
         
+        public System.Web.UI.WebControls.ImageButton ResetButton9;
+        
         public ThemeButton SaveButton;
                 
         public System.Web.UI.WebControls.ImageButton SaveButton1;
+        
+        public System.Web.UI.WebControls.ImageButton SaveButton10;
         
         public System.Web.UI.WebControls.ImageButton SaveButton2;
         
@@ -628,6 +666,8 @@ public void SetTabContainer()
         public System.Web.UI.WebControls.ImageButton SaveButton8;
         
         public System.Web.UI.WebControls.ImageButton SaveButton9;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton1;
         
         public System.Web.UI.WebControls.ImageButton SearchButton10;
         
@@ -659,6 +699,8 @@ public void SetTabContainer()
         
         public System.Web.UI.WebControls.Label SortByLabel8;
         
+        public System.Web.UI.WebControls.Label SortByLabel9;
+        
         public AjaxControlToolkit.TabContainer TabContainer;
         
         public System.Web.UI.WebControls.Literal TenantNameLabel;
@@ -689,6 +731,8 @@ public void SetTabContainer()
             
         public System.Web.UI.WebControls.Literal Title7;
             
+        public System.Web.UI.WebControls.Literal Title8;
+            
         public System.Web.UI.WebControls.CheckBox ToggleAll;
         
         public System.Web.UI.WebControls.CheckBox ToggleAll1;
@@ -706,6 +750,8 @@ public void SetTabContainer()
         public System.Web.UI.WebControls.CheckBox ToggleAll7;
         
         public System.Web.UI.WebControls.CheckBox ToggleAll8;
+        
+        public System.Web.UI.WebControls.CheckBox ToggleAll9;
         
         public ValidationSummary ValidationSummary1;
 
@@ -902,6 +948,10 @@ public void SetTabContainer()
                  SetMMContractsTableControl();
                  break;
           
+              case "PropertiesPropertyContactsTableControl":
+                 SetPropertiesPropertyContactsTableControl();
+                 break;
+          
               case "PropertiesRecordControl":
                  SetPropertiesRecordControl();
                  break;
@@ -1027,6 +1077,17 @@ public void SetTabContainer()
         IPv5.UI.Controls.EditProperties.MMContractsTableControl control = new IPv5.UI.Controls.EditProperties.MMContractsTableControl();
         
         return control.GetAutoCompletionList_MMContractsSearchText(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_PropertiesPropertyContactsSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.EditProperties.PropertiesPropertyContactsTableControl control = new IPv5.UI.Controls.EditProperties.PropertiesPropertyContactsTableControl();
+        
+        return control.GetAutoCompletionList_PropertiesPropertyContactsSearchText(prefixText, count);
             
     }
       
@@ -1251,6 +1312,16 @@ public void SetTabContainer()
             {
                 MMContractsTableControl.LoadData();
                 MMContractsTableControl.DataBind();
+            }
+        }
+      
+        public void SetPropertiesPropertyContactsTableControl_Base()           
+        
+        {        
+            if (PropertiesPropertyContactsTableControl.Visible)
+            {
+                PropertiesPropertyContactsTableControl.LoadData();
+                PropertiesPropertyContactsTableControl.DataBind();
             }
         }
       

@@ -510,6 +510,17 @@ public override void SetControl(string control)
             }
         }
                 
+        [Bindable(true),
+        Category("Behavior"),
+        DefaultValue(""),
+        NotifyParentProperty(true),
+        DesignerSerializationVisibility(DesignerSerializationVisibility.Content)]
+        public System.Web.UI.WebControls.Literal Copyright1 {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "_Copyright1");
+            }
+        }
+                
       public override bool Visible {
           get {
               return base.Visible;

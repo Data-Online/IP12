@@ -359,6 +359,16 @@ public void OKButton_Click(object sender, EventArgs args)
 //          EditButton_Click_Base(sender, args);
 //          // NOTE: If the Base function redirects to another page, any code here will not be executed.
 //        }
+[System.Web.Services.WebMethod]
+        public static string[] GetAutoCompletionList_PropertiesPropertyContactsSearchText(string prefixText, int count)
+        {
+            // GetPropertiesPropertyContactsSearchTextCompletionList gets the list of suggestions from the database.
+            // prefixText is the search text typed by the user .
+            // count specifies the number of suggestions to be returned.
+            // Customize by adding code before or after the call to  GetAutoCompletionList_PropertiesPropertyContactsSearchText_Base()
+            // or replace the call to GetAutoCompletionList_PropertiesPropertyContactsSearchText_Base().
+            return GetAutoCompletionList_PropertiesPropertyContactsSearchText_Base(prefixText, count);
+        }
 #endregion
 
 #region "Section 2: Do not modify this section."
@@ -382,14 +392,24 @@ public void OKButton_Click(object sender, EventArgs args)
                 
         public ThemeButtonWithArrow Actions3Button;
                 
+        public ThemeButtonWithArrow Actions4Button;
+                
         public ThemeButtonWithArrow ActionsButton;
                 
+        public System.Web.UI.WebControls.Literal Address12;
+            
         public System.Web.UI.WebControls.LinkButton Address1Label;
+        
+        public System.Web.UI.WebControls.Literal Address1Label2;
         
         public System.Web.UI.WebControls.LinkButton Address1SortLabel;
         
+        public System.Web.UI.WebControls.Literal Address22;
+            
         public System.Web.UI.WebControls.LinkButton Address2SortLabel;
         
+        public System.Web.UI.WebControls.Literal Address32;
+            
         public System.Web.UI.WebControls.LinkButton Address3SortLabel;
         
         public ThemeButtonWithArrow BankLoansButtonsButton;
@@ -418,6 +438,8 @@ public void OKButton_Click(object sender, EventArgs args)
             
         public System.Web.UI.WebControls.ImageButton BankLoansWordButton;
         
+        public System.Web.UI.WebControls.Literal CityID2;
+            
         public System.Web.UI.WebControls.Literal CityIDLabel1;
         
         public System.Web.UI.WebControls.Literal CityIDLabel3;
@@ -432,8 +454,14 @@ public void OKButton_Click(object sender, EventArgs args)
         
         public System.Web.UI.WebControls.TextBox ContactsSearchText1;
         
+        public System.Web.UI.WebControls.Literal ContactTypeId1;
+            
+        public System.Web.UI.WebControls.Literal ContactTypeId2;
+            
         public System.Web.UI.WebControls.Literal ContactTypeIDLabel1;
         
+        public System.Web.UI.WebControls.Literal CountryID2;
+            
         public System.Web.UI.WebControls.LinkButton CountryIDSortLabel;
         
         public System.Web.UI.WebControls.LinkButton CreatedOnLabel;
@@ -451,6 +479,8 @@ public void OKButton_Click(object sender, EventArgs args)
         public System.Web.UI.WebControls.LinkButton DescriptionLabel3;
         
         public System.Web.UI.WebControls.LinkButton DescriptionLabel7;
+        
+        public System.Web.UI.WebControls.ImageButton DialogEditButton1;
         
         public ThemeButtonWithArrow DirectorsButtonsButton;
                 
@@ -476,6 +506,10 @@ public void OKButton_Click(object sender, EventArgs args)
             
         public System.Web.UI.WebControls.ImageButton DirectorsWordButton;
         
+        public System.Web.UI.WebControls.Literal eMail1;
+            
+        public System.Web.UI.WebControls.Literal eMailLabel2;
+        
         public System.Web.UI.WebControls.ImageButton ExcelButton;
         
         public System.Web.UI.WebControls.ImageButton ExcelButton1;
@@ -483,6 +517,8 @@ public void OKButton_Click(object sender, EventArgs args)
         public System.Web.UI.WebControls.ImageButton ExcelButton2;
         
         public System.Web.UI.WebControls.ImageButton ExcelButton3;
+        
+        public System.Web.UI.WebControls.ImageButton ExcelButton4;
         
         public System.Web.UI.WebControls.LinkButton ExpiryDateLabel;
         
@@ -508,21 +544,35 @@ public void OKButton_Click(object sender, EventArgs args)
                 
         public ThemeButton FilterButton3;
                 
+        public ThemeButton FilterButton4;
+                
         public ThemeButtonWithArrow Filters1Button;
                 
         public ThemeButtonWithArrow Filters2Button;
                 
         public ThemeButtonWithArrow Filters3Button;
                 
+        public ThemeButtonWithArrow Filters4Button;
+                
         public ThemeButtonWithArrow FiltersButton;
                 
+        public System.Web.UI.WebControls.Literal FirstName1;
+            
         public System.Web.UI.WebControls.ImageButton ImportButton;
         
         public System.Web.UI.WebControls.ImageButton ImportButton1;
         
         public System.Web.UI.WebControls.ImageButton ImportButton2;
         
+        public System.Web.UI.WebControls.ImageButton ImportButton3;
+        
+        public System.Web.UI.WebControls.Literal LastName1;
+            
         public System.Web.UI.WebControls.TextBox MMContractsSearchText;
+        
+        public System.Web.UI.WebControls.Literal MobileNumber;
+            
+        public System.Web.UI.WebControls.Literal MobileNumberLabel;
         
         public System.Web.UI.WebControls.ImageButton NewButton;
         
@@ -531,6 +581,8 @@ public void OKButton_Click(object sender, EventArgs args)
         public System.Web.UI.WebControls.ImageButton NewButton2;
         
         public System.Web.UI.WebControls.ImageButton NewButton3;
+        
+        public System.Web.UI.WebControls.ImageButton NewButton4;
         
         public System.Web.UI.WebControls.LinkButton NotesLabel;
         
@@ -546,6 +598,8 @@ public void OKButton_Click(object sender, EventArgs args)
                 
         public PaginationModern Pagination3;
                 
+        public PaginationModern Pagination4;
+                
         public System.Web.UI.WebControls.ImageButton PDFButton;
         
         public System.Web.UI.WebControls.ImageButton PDFButton1;
@@ -554,6 +608,14 @@ public void OKButton_Click(object sender, EventArgs args)
         
         public System.Web.UI.WebControls.ImageButton PDFButton3;
         
+        public System.Web.UI.WebControls.ImageButton PDFButton4;
+        
+        public System.Web.UI.WebControls.Literal PhoneNumber;
+            
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel1;
+        
+        public System.Web.UI.WebControls.Literal PostCode2;
+            
         public System.Web.UI.WebControls.LinkButton PostCodeSortLabel;
         
         public ThemeButtonWithArrow PropertiesButtonsButton;
@@ -572,6 +634,8 @@ public void OKButton_Click(object sender, EventArgs args)
                 
         public System.Web.UI.WebControls.ImageButton PropertiesPDFButton;
         
+        public System.Web.UI.WebControls.TextBox PropertiesPropertyContactsSearchText;
+        
         public System.Web.UI.WebControls.ImageButton PropertiesResetButton;
         
         public System.Web.UI.WebControls.TextBox PropertiesSearch;
@@ -584,6 +648,10 @@ public void OKButton_Click(object sender, EventArgs args)
             
         public System.Web.UI.WebControls.ImageButton PropertiesWordButton;
         
+        public System.Web.UI.WebControls.Literal PropertyContactId;
+            
+        public System.Web.UI.WebControls.Literal PropertyContactId1;
+            
         public ThemeButtonWithArrow PropertyContactsButtonsButton;
                 
         public System.Web.UI.WebControls.ImageButton PropertyContactsExportExcelButton;
@@ -610,6 +678,8 @@ public void OKButton_Click(object sender, EventArgs args)
             
         public System.Web.UI.WebControls.ImageButton PropertyContactsWordButton;
         
+        public System.Web.UI.WebControls.Literal RegionID2;
+            
         public System.Web.UI.WebControls.Literal RegionIDLabel1;
         
         public System.Web.UI.WebControls.Literal RegionIDLabel3;
@@ -654,6 +724,10 @@ public void OKButton_Click(object sender, EventArgs args)
         
         public System.Web.UI.WebControls.ImageButton ResetButton3;
         
+        public System.Web.UI.WebControls.ImageButton ResetButton4;
+        
+        public System.Web.UI.WebControls.ImageButton SearchButton1;
+        
         public System.Web.UI.WebControls.ImageButton SearchButton2;
         
         public System.Web.UI.WebControls.ImageButton SearchButton3;
@@ -679,6 +753,8 @@ public void OKButton_Click(object sender, EventArgs args)
         public System.Web.UI.WebControls.Label SortByLabel6;
         
         public System.Web.UI.WebControls.Label SortByLabel7;
+        
+        public System.Web.UI.WebControls.Label SortByLabel8;
         
         public System.Web.UI.WebControls.LinkButton TenantNameLabel;
         
@@ -716,11 +792,17 @@ public void OKButton_Click(object sender, EventArgs args)
             
         public System.Web.UI.WebControls.Literal Title2;
             
+        public System.Web.UI.WebControls.Literal Title3;
+            
+        public System.Web.UI.WebControls.Literal Title4;
+            
         public System.Web.UI.WebControls.ImageButton WordButton;
         
         public System.Web.UI.WebControls.ImageButton WordButton1;
         
         public System.Web.UI.WebControls.ImageButton WordButton2;
+        
+        public System.Web.UI.WebControls.ImageButton WordButton3;
         
         public ValidationSummary ValidationSummary1;
 
@@ -1013,6 +1095,17 @@ public void OKButton_Click(object sender, EventArgs args)
         IPv5.UI.Controls.GroupByPropertiesTable.MMContractsTableControl control = new IPv5.UI.Controls.GroupByPropertiesTable.MMContractsTableControl();
         
         return control.GetAutoCompletionList_MMContractsSearchText(prefixText, count);
+            
+    }
+      
+    public static string[] GetAutoCompletionList_PropertiesPropertyContactsSearchText_Base(string prefixText, int count)
+    {
+        // Since this method is a shared/static method it does not maintain information about page or controls within the page.
+        // Hence we can not invoke any method associated with any controls.
+        // So, if we need to use any control in the page we need to instantiate it.
+        IPv5.UI.Controls.GroupByPropertiesTable.PropertiesPropertyContactsTableControl control = new IPv5.UI.Controls.GroupByPropertiesTable.PropertiesPropertyContactsTableControl();
+        
+        return control.GetAutoCompletionList_PropertiesPropertyContactsSearchText(prefixText, count);
             
     }
       

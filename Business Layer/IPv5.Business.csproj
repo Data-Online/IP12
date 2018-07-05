@@ -431,16 +431,40 @@
     <Compile Include="BaseVPropertyDirectorsRecord.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VUserRoleSummaryView.cs" >
+    <Compile Include="VUserRoleSummaryView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseVUserRoleSummaryView.cs" >
+    <Compile Include="BaseVUserRoleSummaryView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VUserRoleSummaryRecord.cs" >
+    <Compile Include="VUserRoleSummaryRecord.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseVUserRoleSummaryRecord.cs" >
+    <Compile Include="BaseVUserRoleSummaryRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContactsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertiesPropertyContactsTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContactsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertiesPropertyContactsRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertiesPropertyContactsView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertiesPropertyContactsView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertiesPropertyContactsRecord.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertiesPropertyContactsRecord.cs" >
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

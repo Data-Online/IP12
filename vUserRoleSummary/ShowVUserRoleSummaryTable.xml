@@ -14,6 +14,7 @@
     <Layout>vUserRoleSummary\ShowVUserRoleSummaryTable.html</Layout>
     <DisplayName>ShowVUserRoleSummaryTable</DisplayName>
     <Description>Table view to show or edit multiple records.</Description>
+    <LoginRequired>&lt;PRoles&gt;1;2;3&lt;/PRoles&gt;</LoginRequired>
     <CheckSum>-965894965-20924</CheckSum>
   </Self>
   <ComposedOf>

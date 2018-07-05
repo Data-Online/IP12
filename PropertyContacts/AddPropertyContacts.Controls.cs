@@ -123,6 +123,10 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             
               this.LastName.TextChanged += LastName_TextChanged;
             
+              this.MobileNumber.TextChanged += MobileNumber_TextChanged;
+            
+              this.PhoneNumber.TextChanged += PhoneNumber_TextChanged;
+            
               this.PostCode.TextChanged += PostCode_TextChanged;
             
               this.Title.TextChanged += Title_TextChanged;
@@ -224,6 +228,10 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                 SetFirstNameLabel();
                 SetLastName();
                 SetLastNameLabel();
+                SetMobileNumber();
+                SetMobileNumberLabel();
+                SetPhoneNumber();
+                SetPhoneNumberLabel();
                 SetPostCode();
                 SetPostCodeLabel();
                 
@@ -616,6 +624,72 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                                
         }
                 
+        public virtual void SetMobileNumber()
+        {
+            
+                    
+            // Set the MobileNumber TextBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.PropertyContacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.PropertyContacts record retrieved from the database.
+            // this.MobileNumber is the ASP:TextBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.MobileNumberSpecified) {
+                								
+                // If the MobileNumber is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertyContactsTable.MobileNumber);
+                                
+                this.MobileNumber.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // MobileNumber is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.MobileNumber.Text = PropertyContactsTable.MobileNumber.Format(PropertyContactsTable.MobileNumber.DefaultValue);
+            		
+            }
+            
+              this.MobileNumber.TextChanged += MobileNumber_TextChanged;
+                               
+        }
+                
+        public virtual void SetPhoneNumber()
+        {
+            
+                    
+            // Set the PhoneNumber TextBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.PropertyContacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.PropertyContacts record retrieved from the database.
+            // this.PhoneNumber is the ASP:TextBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PhoneNumberSpecified) {
+                								
+                // If the PhoneNumber is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertyContactsTable.PhoneNumber);
+                                
+                this.PhoneNumber.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PhoneNumber is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PhoneNumber.Text = PropertyContactsTable.PhoneNumber.Format(PropertyContactsTable.PhoneNumber.DefaultValue);
+            		
+            }
+            
+              this.PhoneNumber.TextChanged += PhoneNumber_TextChanged;
+                               
+        }
+                
         public virtual void SetPostCode()
         {
             
@@ -785,6 +859,8 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         public virtual void SetAddress1Label()
                   {
                   
+                        this.Address1Label.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 
@@ -831,6 +907,18 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         }
                 
         public virtual void SetLastNameLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetMobileNumberLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetPhoneNumberLabel()
                   {
                   
                     
@@ -1025,6 +1113,8 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             GeteMail();
             GetFirstName();
             GetLastName();
+            GetMobileNumber();
+            GetPhoneNumber();
             GetPostCode();
             GetPropertyID();
             GetRegionID();
@@ -1145,6 +1235,34 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                     
             // Save the value to data source
             this.DataSource.Parse(this.LastName.Text, PropertyContactsTable.LastName);							
+                          
+                      
+        }
+                
+        public virtual void GetMobileNumber()
+        {
+            
+            // Retrieve the value entered by the user on the MobileNumber ASP:TextBox, and
+            // save it into the MobileNumber field in DataSource DatabaseMM_IP1%dbo.PropertyContacts record.
+            
+            // Custom validation should be performed in Validate, not here.
+                    
+            // Save the value to data source
+            this.DataSource.Parse(this.MobileNumber.Text, PropertyContactsTable.MobileNumber);							
+                          
+                      
+        }
+                
+        public virtual void GetPhoneNumber()
+        {
+            
+            // Retrieve the value entered by the user on the PhoneNumber ASP:TextBox, and
+            // save it into the PhoneNumber field in DataSource DatabaseMM_IP1%dbo.PropertyContacts record.
+            
+            // Custom validation should be performed in Validate, not here.
+                    
+            // Save the value to data source
+            this.DataSource.Parse(this.PhoneNumber.Text, PropertyContactsTable.PhoneNumber);							
                           
                       
         }
@@ -2816,6 +2934,16 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                     
               }
             
+        protected virtual void MobileNumber_TextChanged(object sender, EventArgs args)
+        {
+                    
+              }
+            
+        protected virtual void PhoneNumber_TextChanged(object sender, EventArgs args)
+        {
+                    
+              }
+            
         protected virtual void PostCode_TextChanged(object sender, EventArgs args)
         {
                     
@@ -3061,6 +3189,30 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         public System.Web.UI.WebControls.Literal LastNameLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastNameLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox MobileNumber {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MobileNumber");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal MobileNumberLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MobileNumberLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox PhoneNumber {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumber");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumberLabel");
             }
         }
         

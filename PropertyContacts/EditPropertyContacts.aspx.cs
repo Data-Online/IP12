@@ -301,12 +301,6 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal CityIDLabel;
         
-        public System.Web.UI.WebControls.DropDownList ContactTypeID;
-            
-        public System.Web.UI.WebControls.ImageButton ContactTypeIDAddRecordLink;
-        
-        public System.Web.UI.WebControls.Literal ContactTypeIDLabel;
-        
         public System.Web.UI.WebControls.DropDownList CountryID;
             
         public System.Web.UI.WebControls.ImageButton CountryIDAddRecordLink;
@@ -319,7 +313,11 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal LastNameLabel;
         
+        public System.Web.UI.WebControls.Literal MobileNumberLabel;
+        
         public System.Web.UI.WebControls.Literal PageTitle;
+        
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel;
         
         public System.Web.UI.WebControls.Literal PostCodeLabel;
         

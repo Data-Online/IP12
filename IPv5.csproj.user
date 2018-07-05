@@ -4,6 +4,7 @@
     <ProjectView>ShowAllFiles</ProjectView>
     <UseIISExpress>false</UseIISExpress>
     <NameOfLastUsedPublishProfile>mhpl - Web Deploy %283%29</NameOfLastUsedPublishProfile>
+    <LastActiveSolutionConfig>Release|Any CPU</LastActiveSolutionConfig>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

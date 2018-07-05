@@ -93,7 +93,7 @@
                                   <asp:ImageButton runat="server" id="PropertyContactsRowDeleteButton" causesvalidation="False" commandname="DeleteRecord" cssclass="button_link" imageurl="../Images/icon_delete.gif" onmouseout="this.src=&#39;../Images/icon_delete.gif&#39;" onmouseover="this.src=&#39;../Images/icon_delete_over.gif&#39;" tooltip="&lt;%# GetResourceValue(&quot;Txt:DeleteRecord&quot;, &quot;IPv5&quot;) %>">		
 	</asp:ImageButton><br /><br />
                                 </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="LastNameLabel" Text="Last Name">	</asp:Literal> 
-</td><td class="tableCellValue"><asp:Literal runat="server" id="LastName"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address1Label" Text="Address 1">	</asp:Literal> 
+</td><td class="tableCellValue"><asp:Literal runat="server" id="LastName"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="Address1Label" Text="EvaluateFormula(&quot;= \&quot;Address\&quot;&quot;, true)">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="Address1"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="TitleLabel" Text="Title">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="Title"></asp:Literal> </td><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="PostCodeLabel" Text="Post Code">	</asp:Literal> 
 </td><td class="tableCellValue"><asp:Literal runat="server" id="PostCode"></asp:Literal> </td></tr><tr><td class="tableCellLabel" scope="col"><asp:Literal runat="server" id="FirstNameLabel" Text="First Name">	</asp:Literal> 

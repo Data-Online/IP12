@@ -44,6 +44,7 @@ The tags are case-sensitive and should contain the following case-sensitive attr
     <siteMapNode title="Suppliers" description="Suppliers" url="~/Suppliers/GroupBySuppliersTable.aspx" imageUrl="" roles="" order="4" />
     <siteMapNode title="Reports" description="Reports" url="~/Dashboard/Reports.aspx" imageUrl="" roles="" order="5">
       <siteMapNode title="Directors" description="Directors" url="~/vPropertyDirectors/ShowVPropertyDirectorsTable.aspx" imageUrl="" roles="" order="1" />
+      <siteMapNode title="Property Contacts" description="Property Contacts" url="~/vPropertiesPropertyContacts/ShowVPropertiesPropertyContactsTable.aspx" imageUrl="" roles="" order="2" />
     </siteMapNode>
     <siteMapNode title="Administration" description="Administration" url="~/Dashboard/Administration.aspx" imageUrl="" roles="" order="6">
       <siteMapNode title="Manage User Accounts" description="Manage User Accounts" url="~/Users/GroupByUsersTable.aspx" imageUrl="" roles="" order="1" />

@@ -773,6 +773,8 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         public virtual void SetAddress1Label()
                   {
                   
+                        this.Address1Label.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 

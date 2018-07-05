@@ -93,15 +93,11 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
           
                     this.CityIDAddRecordLink.Click += CityIDAddRecordLink_Click;
                         
-                    this.ContactTypeIDAddRecordLink.Click += ContactTypeIDAddRecordLink_Click;
-                        
                     this.CountryIDAddRecordLink.Click += CountryIDAddRecordLink_Click;
                         
                     this.RegionIDAddRecordLink.Click += RegionIDAddRecordLink_Click;
                         
               this.CityID.SelectedIndexChanged += CityID_SelectedIndexChanged;
-            
-              this.ContactTypeID.SelectedIndexChanged += ContactTypeID_SelectedIndexChanged;
             
               this.CountryID.SelectedIndexChanged += CountryID_SelectedIndexChanged;
             
@@ -118,6 +114,10 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
               this.FirstName.TextChanged += FirstName_TextChanged;
             
               this.LastName.TextChanged += LastName_TextChanged;
+            
+              this.MobileNumber.TextChanged += MobileNumber_TextChanged;
+            
+              this.PhoneNumber.TextChanged += PhoneNumber_TextChanged;
             
               this.PostCode.TextChanged += PostCode_TextChanged;
             
@@ -221,9 +221,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                 SetCityID();
                 
                 SetCityIDLabel();
-                SetContactTypeID();
-                
-                SetContactTypeIDLabel();
                 SetCountryID();
                 
                 SetCountryIDLabel();
@@ -233,6 +230,10 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                 SetFirstNameLabel();
                 SetLastName();
                 SetLastNameLabel();
+                SetMobileNumber();
+                SetMobileNumberLabel();
+                SetPhoneNumber();
+                SetPhoneNumberLabel();
                 SetPostCode();
                 SetPostCodeLabel();
                 
@@ -242,8 +243,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                 SetTitle();
                 SetTitleLabel();
                 SetCityIDAddRecordLink();
-              
-                SetContactTypeIDAddRecordLink();
               
                 SetCountryIDAddRecordLink();
               
@@ -421,56 +420,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                   
         }
                 
-        public virtual void SetContactTypeID()
-        {
-            				
-        
-        
-            string selectedValue = null;
-            
-            // figure out the selectedValue
-                  
-            
-            
-            // Set the ContactTypeID DropDownList on the webpage with value from the
-            // DatabaseMM_IP1%dbo.PropertyContacts database record.
-            
-            // this.DataSource is the DatabaseMM_IP1%dbo.PropertyContacts record retrieved from the database.
-            // this.ContactTypeID is the ASP:DropDownList on the webpage.
-            
-            // You can modify this method directly, or replace it with a call to
-            //     base.SetContactTypeID();
-            // and add your own custom code before or after the call to the base function.
-
-            
-            if (this.DataSource != null && this.DataSource.ContactTypeIDSpecified)
-            {
-                            
-                // If the ContactTypeID is non-NULL, then format the value.
-                // The Format method will return the Display Foreign Key As (DFKA) value
-                selectedValue = this.DataSource.ContactTypeID.ToString();
-                
-            }
-            else
-            {
-                
-                // ContactTypeID is NULL in the database, so use the Default Value.  
-                // Default Value could also be NULL.
-                if (this.DataSource != null && this.DataSource.IsCreated)
-                    selectedValue = null;
-                else
-                    selectedValue = PropertyContactsTable.ContactTypeID.DefaultValue;
-                				
-            }			
-                            
-                  
-            // Populate the item(s) to the control
-            
-            this.PopulateContactTypeIDDropDownList(selectedValue, 100);              
-                
-                  
-        }
-                
         public virtual void SetCountryID()
         {
             				
@@ -620,6 +569,72 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                                
         }
                 
+        public virtual void SetMobileNumber()
+        {
+            
+                    
+            // Set the MobileNumber TextBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.PropertyContacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.PropertyContacts record retrieved from the database.
+            // this.MobileNumber is the ASP:TextBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.MobileNumberSpecified) {
+                								
+                // If the MobileNumber is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertyContactsTable.MobileNumber);
+                                
+                this.MobileNumber.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // MobileNumber is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.MobileNumber.Text = PropertyContactsTable.MobileNumber.Format(PropertyContactsTable.MobileNumber.DefaultValue);
+            		
+            }
+            
+              this.MobileNumber.TextChanged += MobileNumber_TextChanged;
+                               
+        }
+                
+        public virtual void SetPhoneNumber()
+        {
+            
+                    
+            // Set the PhoneNumber TextBox on the webpage with value from the
+            // DatabaseMM_IP1%dbo.PropertyContacts database record.
+
+            // this.DataSource is the DatabaseMM_IP1%dbo.PropertyContacts record retrieved from the database.
+            // this.PhoneNumber is the ASP:TextBox on the webpage.
+                  
+            if (this.DataSource != null && this.DataSource.PhoneNumberSpecified) {
+                								
+                // If the PhoneNumber is non-NULL, then format the value.
+                // The Format method will use the Display Format
+               string formattedValue = this.DataSource.Format(PropertyContactsTable.PhoneNumber);
+                                
+                this.PhoneNumber.Text = formattedValue;
+                   
+            } 
+            
+            else {
+            
+                // PhoneNumber is NULL in the database, so use the Default Value.  
+                // Default Value could also be NULL.
+        
+              this.PhoneNumber.Text = PropertyContactsTable.PhoneNumber.Format(PropertyContactsTable.PhoneNumber.DefaultValue);
+            		
+            }
+            
+              this.PhoneNumber.TextChanged += PhoneNumber_TextChanged;
+                               
+        }
+                
         public virtual void SetPostCode()
         {
             
@@ -739,6 +754,8 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         public virtual void SetAddress1Label()
                   {
                   
+                        this.Address1Label.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 
@@ -755,12 +772,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         }
                 
         public virtual void SetCityIDLabel()
-                  {
-                  
-                    
-        }
-                
-        public virtual void SetContactTypeIDLabel()
                   {
                   
                     
@@ -785,6 +796,18 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         }
                 
         public virtual void SetLastNameLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetMobileNumberLabel()
+                  {
+                  
+                    
+        }
+                
+        public virtual void SetPhoneNumberLabel()
                   {
                   
                     
@@ -973,11 +996,12 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             GetAddress2();
             GetAddress3();
             GetCityID();
-            GetContactTypeID();
             GetCountryID();
             GeteMail();
             GetFirstName();
             GetLastName();
+            GetMobileNumber();
+            GetPhoneNumber();
             GetPostCode();
             GetRegionID();
             GetTitle();
@@ -1037,17 +1061,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                 			 
         }
                 
-        public virtual void GetContactTypeID()
-        {
-         // Retrieve the value entered by the user on the ContactTypeID ASP:DropDownList, and
-            // save it into the ContactTypeID field in DataSource DatabaseMM_IP1%dbo.PropertyContacts record.
-            
-            // Custom validation should be performed in Validate, not here.
-            
-            this.DataSource.Parse(MiscUtils.GetValueSelectedPageRequest(this.ContactTypeID), PropertyContactsTable.ContactTypeID);			
-                			 
-        }
-                
         public virtual void GetCountryID()
         {
          // Retrieve the value entered by the user on the CountryID ASP:DropDownList, and
@@ -1097,6 +1110,34 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                     
             // Save the value to data source
             this.DataSource.Parse(this.LastName.Text, PropertyContactsTable.LastName);							
+                          
+                      
+        }
+                
+        public virtual void GetMobileNumber()
+        {
+            
+            // Retrieve the value entered by the user on the MobileNumber ASP:TextBox, and
+            // save it into the MobileNumber field in DataSource DatabaseMM_IP1%dbo.PropertyContacts record.
+            
+            // Custom validation should be performed in Validate, not here.
+                    
+            // Save the value to data source
+            this.DataSource.Parse(this.MobileNumber.Text, PropertyContactsTable.MobileNumber);							
+                          
+                      
+        }
+                
+        public virtual void GetPhoneNumber()
+        {
+            
+            // Retrieve the value entered by the user on the PhoneNumber ASP:TextBox, and
+            // save it into the PhoneNumber field in DataSource DatabaseMM_IP1%dbo.PropertyContacts record.
+            
+            // Custom validation should be performed in Validate, not here.
+                    
+            // Save the value to data source
+            this.DataSource.Parse(this.PhoneNumber.Text, PropertyContactsTable.PhoneNumber);							
                           
                       
         }
@@ -1489,35 +1530,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
    
         }
             
-        public virtual void SetContactTypeIDAddRecordLink()                
-              
-        {
-        
-              try
-              {
-                    string url = "../ContactTypes/AddContactTypes.aspx";
-              
-                      
-                    url = this.ModifyRedirectUrl(url, "", true);
-                    
-                    url = this.Page.ModifyRedirectUrl(url, "", true);                                  
-                    
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.ContactTypeID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("ContactType")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("ContactTypeID");                      
-                              
-                string javascriptCall = "";
-                
-                    javascriptCall = "initializeNewWindow(this, '" + url + "', false, event);";                  
-                       
-                    this.ContactTypeIDAddRecordLink.Attributes["onClick"] = javascriptCall + "return false;";            
-                }
-                catch
-                {
-                    // do nothing.  If the code above fails, server side click event, ContactTypeIDAddRecordLink_ClickContactTypeIDAddRecordLink_Click will be trigger when user click the button.
-                }
-                  
-   
-        }
-            
         public virtual void SetCountryIDAddRecordLink()                
               
         {
@@ -1585,21 +1597,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             // Examples:
             // wc.iAND(CitiesTable.City, BaseFilter.ComparisonOperator.EqualsTo, "XYZ");
             // wc.iAND(CitiesTable.Active, BaseFilter.ComparisonOperator.EqualsTo, "1");
-            
-            WhereClause wc = new WhereClause();
-            return wc;
-            				
-        }
-        
-        public virtual WhereClause CreateWhereClause_ContactTypeIDDropDownList() 
-        {
-            // By default, we simply return a new WhereClause.
-            // Add additional where clauses to restrict the items shown in the dropdown list.
-            						
-            // This WhereClause is for the DatabaseMM_IP1%dbo.ContactTypes table.
-            // Examples:
-            // wc.iAND(ContactTypesTable.ContactType, BaseFilter.ComparisonOperator.EqualsTo, "XYZ");
-            // wc.iAND(ContactTypesTable.Active, BaseFilter.ComparisonOperator.EqualsTo, "1");
             
             WhereClause wc = new WhereClause();
             return wc;
@@ -1767,148 +1764,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
                             					
                         if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
                         MiscUtils.ResetSelectedItem(this.CityID, new ListItem(fvalue, cvalue));                      
-                    }
-                }
-                catch
-                {
-                }
-
-                    					
-            }					
-                        
-        }
-                  
-        // Fill the ContactTypeID list.
-        protected virtual void PopulateContactTypeIDDropDownList(string selectedValue, int maxItems) 
-        {
-            		  					                
-            this.ContactTypeID.Items.Clear();
-            
-            // 1. Setup the static list items        
-            
-              // Add the Please Select item.
-              this.ContactTypeID.Items.Insert(0, new ListItem(this.Page.GetResourceValue("Txt:PleaseSelect", "IPv5"), "--PLEASE_SELECT--"));
-            		  			
-            // 2. Set up the WHERE and the ORDER BY clause by calling the CreateWhereClause_ContactTypeIDDropDownList function.
-            // It is better to customize the where clause there.
-            
-                      
-            WhereClause wc = CreateWhereClause_ContactTypeIDDropDownList();
-                        
-                
-            // Create the ORDER BY clause to sort based on the displayed value.							
-                
-            OrderBy orderBy = new OrderBy(false, false);
-                          orderBy.Add(ContactTypesTable.ContactType, OrderByItem.OrderDir.Asc);
-
-            System.Collections.Generic.IDictionary<string, object> variables = new System.Collections.Generic.Dictionary<string, object> ();
-            FormulaEvaluator evaluator = new FormulaEvaluator();
-
-            // 3. Read a total of maxItems from the database and insert them into the ContactTypeIDDropDownList.
-            ContactTypesRecord[] itemValues  = null;
-            if (wc.RunQuery)
-            {
-                int counter = 0;
-                int pageNum = 0;	
-                ArrayList listDuplicates = new ArrayList();
-
-                do
-                {
-                    itemValues = ContactTypesTable.GetRecords(wc, orderBy, pageNum, maxItems);
-                    foreach (ContactTypesRecord itemValue in itemValues) 
-                    {
-                        // Create the item and add to the list.
-                        string cvalue = null;
-                        string fvalue = null;
-                        if (itemValue.ContactTypeIDSpecified) 
-                        {
-                            cvalue = itemValue.ContactTypeID.ToString().ToString();
-                            if (counter < maxItems && this.ContactTypeID.Items.FindByValue(cvalue) == null)
-                            {
-                                     
-                                Boolean _isExpandableNonCompositeForeignKey = PropertyContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertyContactsTable.ContactTypeID);
-                                if(_isExpandableNonCompositeForeignKey && PropertyContactsTable.ContactTypeID.IsApplyDisplayAs)
-                                    fvalue = PropertyContactsTable.GetDFKA(itemValue, PropertyContactsTable.ContactTypeID);
-                                if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                                    fvalue = itemValue.Format(ContactTypesTable.ContactType);
-                                    		
-
-                                if (fvalue == null || fvalue.Trim() == "") 
-                                    fvalue = cvalue;
-
-                                if (fvalue == null) {
-                                    fvalue = "";
-                                }
-
-                                fvalue = fvalue.Trim();
-
-                                if ( fvalue.Length > 50 ) {
-                                    fvalue = fvalue.Substring(0, 50) + "...";
-                                }
-
-                                ListItem dupItem = this.ContactTypeID.Items.FindByText(fvalue);
-								
-                                if (dupItem != null) {
-                                    listDuplicates.Add(fvalue);
-                                    if (!string.IsNullOrEmpty(dupItem.Value))
-                                    {
-                                        dupItem.Text = fvalue + " (ID " + dupItem.Value.Substring(0, Math.Min(dupItem.Value.Length,38)) + ")";
-                                    }
-                                }
-
-                                ListItem newItem = new ListItem(fvalue, cvalue);
-                                this.ContactTypeID.Items.Add(newItem);
-
-                                if (listDuplicates.Contains(fvalue) &&  !string.IsNullOrEmpty(cvalue)) {
-                                    newItem.Text = fvalue + " (ID " + cvalue.Substring(0, Math.Min(cvalue.Length,38)) + ")";
-                                }
-
-                                counter += 1;
-                            }
-                        }
-                    }
-                    pageNum++;
-                }
-                while (itemValues.Length == maxItems && counter < maxItems);
-            }
-                        
-                                        
-            // 4. Set the selected value (insert if not already present).
-              
-            if (selectedValue != null &&
-                selectedValue.Trim() != "" &&
-                !MiscUtils.SetSelectedValue(this.ContactTypeID, selectedValue) &&
-                !MiscUtils.SetSelectedDisplayText(this.ContactTypeID, selectedValue))
-            {
-
-                // construct a whereclause to query a record with DatabaseMM_IP1%dbo.ContactTypes.ContactTypeID = selectedValue
-                    
-                CompoundFilter filter2 = new CompoundFilter(CompoundFilter.CompoundingOperators.And_Operator, null);
-                WhereClause whereClause2 = new WhereClause();
-                filter2.AddFilter(new BaseClasses.Data.ColumnValueFilter(ContactTypesTable.ContactTypeID, selectedValue, BaseClasses.Data.BaseFilter.ComparisonOperator.EqualsTo, false));
-                whereClause2.AddFilter(filter2, CompoundFilter.CompoundingOperators.And_Operator);
-
-                // Execute the query
-                try
-                {
-                    ContactTypesRecord[] rc = ContactTypesTable.GetRecords(whereClause2, new OrderBy(false, false), 0, 1);
-                    System.Collections.Generic.IDictionary<string, object> vars = new System.Collections.Generic.Dictionary<string, object> ();
-                    // if find a record, add it to the dropdown and set it as selected item
-                    if (rc != null && rc.Length == 1)
-                    {
-                        ContactTypesRecord itemValue = rc[0];
-                        string cvalue = null;
-                        string fvalue = null;                        
-                        if (itemValue.ContactTypeIDSpecified)
-                            cvalue = itemValue.ContactTypeID.ToString(); 
-                        Boolean _isExpandableNonCompositeForeignKey = PropertyContactsTable.Instance.TableDefinition.IsExpandableNonCompositeForeignKey(PropertyContactsTable.ContactTypeID);
-                        if(_isExpandableNonCompositeForeignKey && PropertyContactsTable.ContactTypeID.IsApplyDisplayAs)
-                            fvalue = PropertyContactsTable.GetDFKA(itemValue, PropertyContactsTable.ContactTypeID);
-                        if ((!_isExpandableNonCompositeForeignKey) || (String.IsNullOrEmpty(fvalue)))
-                            fvalue = itemValue.Format(ContactTypesTable.ContactType);
-                            					
-                        if (fvalue == null || fvalue.Trim() == "") fvalue = cvalue;
-                        MiscUtils.ResetSelectedItem(this.ContactTypeID, new ListItem(fvalue, cvalue));                      
                     }
                 }
                 catch
@@ -2256,57 +2111,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             
         
         // event handler for ImageButton
-        public virtual void ContactTypeIDAddRecordLink_Click(object sender, ImageClickEventArgs args)
-        {
-              
-            // The redirect URL is set on the Properties, Custom Properties or Actions.
-            // The ModifyRedirectURL call resolves the parameters before the
-            // Response.Redirect redirects the page to the URL.  
-            // Any code after the Response.Redirect call will not be executed, since the page is
-            // redirected to the URL.
-            
-            string url = @"../ContactTypes/AddContactTypes.aspx";
-            
-        bool shouldRedirect = true;
-        string target = null;
-        if (target == null) target = ""; // avoid warning on VS
-      
-            try {
-                // Enclose all database retrieval/update code within a Transaction boundary
-                DbUtils.StartTransaction();
-                
-                url = this.ModifyRedirectUrl(url, "",true);
-                url = this.Page.ModifyRedirectUrl(url, "",true);
-              
-            } catch (Exception ex) {
-                  // Upon error, rollback the transaction
-                  this.Page.RollBackTransaction(sender);
-                  shouldRedirect = false;
-                  this.Page.ErrorOnPage = true;
-
-            // Report the error message to the end user
-            BaseClasses.Utils.MiscUtils.RegisterJScriptAlert(this, "BUTTON_CLICK_MESSAGE", ex.Message);
-    
-            } finally {
-                DbUtils.EndTransaction();
-            }
-            if (shouldRedirect) {
-                this.Page.ShouldSaveControlsToSession = true;
-      
-                    url = url + "?RedirectStyle=" + (this.Page as BaseApplicationPage).Encrypt("NewWindow") + "&Target=" + (this.Page as BaseApplicationPage).Encrypt(this.ContactTypeID.ClientID) + "&DFKA=" + (this.Page as BaseApplicationPage).Encrypt("ContactType")+ "&IndexField=" + (this.Page as BaseApplicationPage).Encrypt("ContactTypeID");                      
-                              
-                string javascriptCall = "";
-                
-                    javascriptCall = "initializeNewWindow(this, '" + url + "', false, event);";                  
-                AjaxControlToolkit.ToolkitScriptManager.RegisterStartupScript(this, this.GetType(), "ContactTypeIDAddRecordLink_Click", javascriptCall, true);
-        
-            }
-        
-        }
-            
-            
-        
-        // event handler for ImageButton
         public virtual void CountryIDAddRecordLink_Click(object sender, ImageClickEventArgs args)
         {
               
@@ -2423,21 +2227,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
            						
         }
             
-        protected virtual void ContactTypeID_SelectedIndexChanged(object sender, EventArgs args)
-        {
-            // for the value inserted by quick add button or large list selector, 
-            // the value is necessary to be inserted by this event during postback 
-            string val = (string)(this.Page.Session[ContactTypeID.ClientID + "_SelectedValue"]);
-            string displayText = (string)(this.Page.Session[ContactTypeID.ClientID + "_SelectedDisplayText"]);
-            if (!string.IsNullOrEmpty(displayText) && !string.IsNullOrEmpty(val)) {
-	            this.ContactTypeID.Items.Add(new ListItem(displayText, val));
-	            this.ContactTypeID.SelectedIndex = this.ContactTypeID.Items.Count - 1;
-	            this.Page.Session.Remove(ContactTypeID.ClientID + "_SelectedValue");
-	            this.Page.Session.Remove(ContactTypeID.ClientID + "_SelectedDisplayText");
-            }
-           						
-        }
-            
         protected virtual void CountryID_SelectedIndexChanged(object sender, EventArgs args)
         {
             // for the value inserted by quick add button or large list selector, 
@@ -2494,6 +2283,16 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
               }
             
         protected virtual void LastName_TextChanged(object sender, EventArgs args)
+        {
+                    
+              }
+            
+        protected virtual void MobileNumber_TextChanged(object sender, EventArgs args)
+        {
+                    
+              }
+            
+        protected virtual void PhoneNumber_TextChanged(object sender, EventArgs args)
         {
                     
               }
@@ -2674,24 +2473,6 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
             }
         }
         
-        public System.Web.UI.WebControls.DropDownList ContactTypeID {
-            get {
-                return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactTypeID");
-            }
-        }
-            
-        public System.Web.UI.WebControls.ImageButton ContactTypeIDAddRecordLink {
-            get {
-                return (System.Web.UI.WebControls.ImageButton)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactTypeIDAddRecordLink");
-            }
-        }
-        
-        public System.Web.UI.WebControls.Literal ContactTypeIDLabel {
-            get {
-                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "ContactTypeIDLabel");
-            }
-        }
-        
         public System.Web.UI.WebControls.DropDownList CountryID {
             get {
                 return (System.Web.UI.WebControls.DropDownList)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "CountryID");
@@ -2743,6 +2524,30 @@ public class BasePropertyContactsRecordControl : IPv5.UI.BaseApplicationRecordCo
         public System.Web.UI.WebControls.Literal LastNameLabel {
             get {
                 return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "LastNameLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox MobileNumber {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MobileNumber");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal MobileNumberLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "MobileNumberLabel");
+            }
+        }
+        
+        public System.Web.UI.WebControls.TextBox PhoneNumber {
+            get {
+                return (System.Web.UI.WebControls.TextBox)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumber");
+            }
+        }
+            
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel {
+            get {
+                return (System.Web.UI.WebControls.Literal)BaseClasses.Utils.MiscUtils.FindControlRecursively(this, "PhoneNumberLabel");
             }
         }
         

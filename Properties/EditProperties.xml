@@ -293,6 +293,40 @@
       <InsideControl>PropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>Actions9Button</Name>
+      <Type>Button</Type>
+      <Layout>..\Shared\ThemeButtonWithArrow.html</Layout>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Button-CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-CommandName</Name>
+          <Value>Custom</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Consumers</Name>
+          <Value>page</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Onclientclick</Name>
+          <Value>return ISD_ShowPopupPanel('Actions9Div','Actions9Button',this);</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Text</Name>
+          <Value>Btn:Actions</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>Button-ToolTip</Name>
+          <Value>Btn:Actions</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>ActionsButton</Name>
       <Type>Button</Type>
       <Layout>..\Shared\ThemeButtonWithArrow.html</Layout>
@@ -685,6 +719,46 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>AddButton9</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>false</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>AddRecord</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageURL</Name>
+          <Value>../Images/ButtonBarNew.gif</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseout</Name>
+          <Value>this.src='../Images/ButtonBarNew.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseover</Name>
+          <Value>this.src='../Images/ButtonBarNewOver.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Btn:Add</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
       <Name>Address1</Name>
@@ -1662,6 +1736,102 @@
       <InsideItemTemplate>true</InsideItemTemplate>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>ContactTypeId1</Name>
+      <Type>FieldValue</Type>
+      <Field>ContactTypeId</Field>
+      <FieldValueStyle>DropDownList</FieldValueStyle>
+      <Table>DatabaseMM_IP1%dbo.PropertiesPropertyContacts</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>ContactTypeId1RequiredFieldValidator:Enabled</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ContactTypeId1RequiredFieldValidator:InitialValue</Name>
+          <Value>--PLEASE_SELECT--</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ContactTypeId1RequiredFieldValidator:Text</Name>
+          <Value>*</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>field_input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>Parent</Value>
+        </Attribute>
+        <Attribute>
+          <Name>MaxGeneratedItems</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>MinListItems</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ModernPopup</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onkeypress</Name>
+          <Value>dropDownListTypeAhead(this,false)</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>ContactTypeId1AddRecordLink</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>Redirect</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ControlToUpdate</Name>
+          <Value>ContactTypeId1</Value>
+        </Attribute>
+        <Attribute>
+          <Name>FieldValue</Name>
+          <Value>ContactTypeId</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageURL</Name>
+          <Value>../Images/iconNewFlat.gif</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ModernPopup</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RedirectStyle</Name>
+          <Value>Popup</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RedirectURL</Name>
+          <Value>../ContactTypes/AddContactTypes.aspx</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Btn:Add</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>ContactTypeIDAddRecordLink</Name>
       <Type>ImageButton</Type>
       <PassthroughAttributes>
@@ -1732,6 +1902,30 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>ContactTypeIdLabel1</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Field</Name>
+          <Value>ContactTypeId</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DatabaseMM_IP1%dbo.PropertiesPropertyContacts</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>%ISD_DEFAULT%DatabaseMM_IP1%dbo.PropertiesPropertyContacts%ContactTypeId</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
       <InsideItemTemplate>true</InsideItemTemplate>
     </ContainedComponent>
     <ContainedComponent>
@@ -2344,6 +2538,55 @@
       <InsideControl>PropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>DeleteButton9</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>false</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandArgument</Name>
+          <Value>DeleteOnUpdate</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>DeleteRecord</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ConfirmMessage</Name>
+          <Value>DeleteConfirm</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageURL</Name>
+          <Value>../Images/ButtonBarDelete.gif</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseout</Name>
+          <Value>this.src='../Images/ButtonBarDelete.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseover</Name>
+          <Value>this.src='../Images/ButtonBarDeleteOver.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Btn:Delete</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>DeleteRowButton</Name>
       <Type>ImageButton</Type>
       <PassthroughAttributes>
@@ -2825,6 +3068,59 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>DeleteRowButton9</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandArgument</Name>
+          <Value>DeleteOnUpdate</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>DeleteRecord</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ConfirmMessage</Name>
+          <Value>DeleteRecordConfirm</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControlRow</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>button_link</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageURL</Name>
+          <Value>../Images/icon_delete.gif</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseout</Name>
+          <Value>this.src='../Images/icon_delete.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseover</Name>
+          <Value>this.src='../Images/icon_delete_over.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Remove contact from this company</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
       <InsideItemTemplate>true</InsideItemTemplate>
     </ContainedComponent>
     <ContainedComponent>
@@ -4458,6 +4754,44 @@
       <InsideControl>PropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>FilterButton9</Name>
+      <Type>Button</Type>
+      <Layout>..\Shared\ThemeButton.ascx</Layout>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Button-CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-CommandName</Name>
+          <Value>Search</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Consumers</Name>
+          <Value>PropertyContactIdFilter1</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Text</Name>
+          <Value>Btn:SearchGoButtonText</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>Button-ToolTip</Name>
+          <Value>Btn:SearchGoButtonText</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>Filters1Button</Name>
       <Type>Button</Type>
       <Layout>..\Shared\ThemeButtonWithArrow.html</Layout>
@@ -4728,6 +5062,40 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>Filters9Button</Name>
+      <Type>Button</Type>
+      <Layout>..\Shared\ThemeButtonWithArrow.html</Layout>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Button-CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-CommandName</Name>
+          <Value>Custom</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Consumers</Name>
+          <Value>page</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Onclientclick</Name>
+          <Value>return ISD_ShowPopupPanel('Filters9Div','Filters9Button',this);</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Button-Text</Name>
+          <Value>Btn:Filters</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>Button-ToolTip</Name>
+          <Value>Btn:Filters</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
       <Name>FiltersButton</Name>
@@ -5509,6 +5877,38 @@
       <InsideControl>PropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>Pagination9</Name>
+      <Type>Pagination</Type>
+      <Layout>..\Shared\PaginationModern.ascx</Layout>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>FirstPage-Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TableControl</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>LastPage-Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>NextPage-Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PageSizeButton-Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PreviousPage-Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>PostCode</Name>
       <Type>FieldValue</Type>
       <Field>PostCode</Field>
@@ -5635,6 +6035,136 @@
       <InsideControl>PropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>PropertiesPropertyContactsSearchText</Name>
+      <Type>SearchFilter</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>AutoTypeAhead</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>AutoTypeAheadDelay</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>AutoTypeAheadDisplayFoundText</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>AutoTypeAheadListSize</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>AutoTypeAheadMinChars</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>AutoTypeAheadSearch</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>AutoTypeAheadWordSeparators</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CaseSensitive</Name>
+          <Value>false</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Columns</Name>
+          <Value>50</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>Search_Input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>EnterKeyCaptureToButton</Name>
+          <Value>SearchButton1</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Fields</Name>
+          <Value>ContactTypeId</Value>
+        </Attribute>
+        <Attribute>
+          <Name>FilterOperator</Name>
+          <Value>Contains</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DatabaseMM_IP1%dbo.PropertiesPropertyContacts</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PropertiesPropertyContactsTableControl</Name>
+      <Type>Table</Type>
+      <PanelStyle>EditTable</PanelStyle>
+      <Table>DatabaseMM_IP1%dbo.PropertiesPropertyContacts</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>HasScrolling</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>HideDataUntilSearched</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InitialRowDisplayStyle</Name>
+          <Value>FirstRowExpanded</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>TableOrQuery</Value>
+        </Attribute>
+        <Attribute>
+          <Name>NumberOfColumns</Name>
+          <Value>3</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PageSize</Name>
+          <Value>10</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PaginationCurrentPage</Name>
+          <Value>Pagination9-CurrentPage</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PaginationPageSize</Name>
+          <Value>Pagination9-PageSize</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PaginationTotalItems</Name>
+          <Value>Pagination9-TotalItems</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PaginationTotalPages</Name>
+          <Value>Pagination9-TotalPages</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <Querys>
+        <Query>
+          <LeftQueryContent>
+            <Type>TableField</Type>
+            <Prefix>DatabaseMM_IP1%dbo.PropertiesPropertyContacts</Prefix>
+            <Suffix>PropertyId</Suffix>
+          </LeftQueryContent>
+          <RightQueryContent>
+            <Type>Control</Type>
+            <Prefix>PropertiesRecordControl</Prefix>
+            <Suffix>PropertyID</Suffix>
+          </RightQueryContent>
+          <ForeignKeyName>FK_PropertiesPropertyContacts_Properties</ForeignKeyName>
+        </Query>
+      </Querys>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>PropertiesRecordControl</Name>
       <Type>Record</Type>
       <PanelStyle>EditRec_DTB_Parent</PanelStyle>
@@ -5676,6 +6206,126 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertiesRecordControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PropertyContactId</Name>
+      <Type>FieldValue</Type>
+      <Field>PropertyContactId</Field>
+      <FieldValueStyle>DropDownList</FieldValueStyle>
+      <Table>DatabaseMM_IP1%dbo.PropertiesPropertyContacts</Table>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>field_input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:DataSource</Name>
+          <Value>Parent</Value>
+        </Attribute>
+        <Attribute>
+          <Name>MaxGeneratedItems</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>MinListItems</Name>
+          <Value>Default</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ModernPopup</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onkeypress</Name>
+          <Value>dropDownListTypeAhead(this,false)</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PropertyContactIdRequiredFieldValidator:Enabled</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PropertyContactIdRequiredFieldValidator:InitialValue</Name>
+          <Value>--PLEASE_SELECT--</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PropertyContactIdRequiredFieldValidator:Text</Name>
+          <Value>*</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PropertyContactIdAddRecordLink</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>Redirect</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ControlToUpdate</Name>
+          <Value>PropertyContactId</Value>
+        </Attribute>
+        <Attribute>
+          <Name>FieldValue</Name>
+          <Value>PropertyContactId</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageURL</Name>
+          <Value>../Images/iconNewFlat.gif</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ModernPopup</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RedirectStyle</Name>
+          <Value>Popup</Value>
+        </Attribute>
+        <Attribute>
+          <Name>RedirectURL</Name>
+          <Value>../PropertyContacts/AddPropertyContacts.aspx</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Btn:Add</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>PropertyContactIdLabel</Name>
+      <Type>Literal</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Field</Name>
+          <Value>PropertyContactId</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DatabaseMM_IP1%dbo.PropertiesPropertyContacts</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>%ISD_DEFAULT%DatabaseMM_IP1%dbo.PropertiesPropertyContacts%PropertyContactId</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
     </ContainedComponent>
     <ContainedComponent>
       <Name>PropertyContactsSearchText</Name>
@@ -6529,6 +7179,50 @@
       <InsideControl>PropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>ResetButton9</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>false</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>ResetFilters</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageURL</Name>
+          <Value>../Images/ButtonBarReset.gif</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseout</Name>
+          <Value>this.src='../Images/ButtonBarReset.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseover</Name>
+          <Value>this.src='../Images/ButtonBarResetOver.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Btn:Reset</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>SaveButton</Name>
       <Type>Button</Type>
       <Layout>..\Shared\ThemeButton.ascx</Layout>
@@ -6604,6 +7298,46 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>LinkTableTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>SaveButton10</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>true</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>UpdateData</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsTableControl</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageURL</Name>
+          <Value>../Images/ButtonBarSave.gif</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseout</Name>
+          <Value>this.src='../Images/ButtonBarSave.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>onmouseover</Name>
+          <Value>this.src='../Images/ButtonBarSaveOver.gif'</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Btn:Save</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
       <Name>SaveButton2</Name>
@@ -6926,6 +7660,38 @@
       <InsideControl>PropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>SearchButton1</Name>
+      <Type>ImageButton</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>CausesValidation</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CommandName</Name>
+          <Value>Search</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Consumers</Name>
+          <Value>PropertiesPropertyContactsSearchText</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ImageURL</Name>
+          <Value>../Images/panelSearchButton.png</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PostBack</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>ToolTip</Name>
+          <Value>Btn:SearchGoButtonText</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>SearchButton10</Name>
       <Type>ImageButton</Type>
       <PassthroughAttributes>
@@ -7226,6 +7992,18 @@
       <InsideItemTemplate>true</InsideItemTemplate>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>SelectRow9</Name>
+      <Type>Selection</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>onclick</Name>
+          <Value>moveToThisTableRow(this);</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+      <InsideItemTemplate>true</InsideItemTemplate>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>SortByLabel</Name>
       <Type>Label</Type>
       <PassthroughAttributes>
@@ -7332,6 +8110,18 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>SortByLabel9</Name>
+      <Type>Label</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>Txt:SortBy</Value>
+          <Type>ResourceReference</Type>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
       <Name>SortControl</Name>
@@ -8262,6 +9052,22 @@
           <Name>MiddleName Desc</Name>
           <Value>Middle Name {Txt:Descending}</Value>
         </Item>
+        <Item>
+          <Name>PhoneNumber Asc</Name>
+          <Value>Phone Number {Txt:Ascending}</Value>
+        </Item>
+        <Item>
+          <Name>PhoneNumber Desc</Name>
+          <Value>Phone Number {Txt:Descending}</Value>
+        </Item>
+        <Item>
+          <Name>MobileNumber Asc</Name>
+          <Value>Mobile Number {Txt:Ascending}</Value>
+        </Item>
+        <Item>
+          <Name>MobileNumber Desc</Name>
+          <Value>Mobile Number {Txt:Descending}</Value>
+        </Item>
       </SpecifiedItems>
       <PassthroughAttributes>
         <Attribute>
@@ -8298,6 +9104,68 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>SortControl9</Name>
+      <Type>OrderSort</Type>
+      <FieldValueStyle>DropDownList</FieldValueStyle>
+      <SpecifiedItems>
+        <Item>
+          <Name>--PLEASE_SELECT--</Name>
+          <Value>{Txt:PleaseSelect}</Value>
+        </Item>
+        <Item>
+          <Name>ContactTypeId Asc</Name>
+          <Value>Contact Type {Txt:Ascending}</Value>
+        </Item>
+        <Item>
+          <Name>ContactTypeId Desc</Name>
+          <Value>Contact Type {Txt:Descending}</Value>
+        </Item>
+        <Item>
+          <Name>PropertyContactId Asc</Name>
+          <Value>Property Contact {Txt:Ascending}</Value>
+        </Item>
+        <Item>
+          <Name>PropertyContactId Desc</Name>
+          <Value>Property Contact {Txt:Descending}</Value>
+        </Item>
+      </SpecifiedItems>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>AutoPostBack</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>CssClass</Name>
+          <Value>Filter_Input</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:ApplyQuery</Name>
+          <Value>False</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:ApplyStaticList</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:GenerateSpecificItems</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:Table</Name>
+          <Value>DatabaseMM_IP1%dbo.PropertiesPropertyContacts</Value>
+        </Attribute>
+        <Attribute>
+          <Name>InternalUse:TreatAs</Name>
+          <Value>FieldFilter</Value>
+        </Attribute>
+        <Attribute>
+          <Name>PriorityNo</Name>
+          <Value>1</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
       <Name>TabContainer</Name>
@@ -8359,7 +9227,7 @@
         </Attribute>
         <Attribute>
           <Name>Text</Name>
-          <Value>PropertyNotes</Value>
+          <Value>Property Notes</Value>
         </Attribute>
       </PassthroughAttributes>
     </ContainedComponent>
@@ -8373,7 +9241,7 @@
         </Attribute>
         <Attribute>
           <Name>Text</Name>
-          <Value>BankLoans</Value>
+          <Value>Bank Loans</Value>
         </Attribute>
       </PassthroughAttributes>
     </ContainedComponent>
@@ -8387,7 +9255,7 @@
         </Attribute>
         <Attribute>
           <Name>Text</Name>
-          <Value>RentReviews</Value>
+          <Value>Rent Reviews</Value>
         </Attribute>
       </PassthroughAttributes>
     </ContainedComponent>
@@ -8401,7 +9269,7 @@
         </Attribute>
         <Attribute>
           <Name>Text</Name>
-          <Value>TermExpires</Value>
+          <Value>Term Expires</Value>
         </Attribute>
       </PassthroughAttributes>
     </ContainedComponent>
@@ -8415,7 +9283,7 @@
         </Attribute>
         <Attribute>
           <Name>Text</Name>
-          <Value>TermRenewals</Value>
+          <Value>Term Renewals</Value>
         </Attribute>
       </PassthroughAttributes>
     </ContainedComponent>
@@ -8429,7 +9297,7 @@
         </Attribute>
         <Attribute>
           <Name>Text</Name>
-          <Value>MMContracts</Value>
+          <Value>MM Contracts</Value>
         </Attribute>
       </PassthroughAttributes>
     </ContainedComponent>
@@ -8444,6 +9312,24 @@
         <Attribute>
           <Name>Text</Name>
           <Value>PropertyContacts</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Visible</Name>
+          <Value>False</Value>
+        </Attribute>
+      </PassthroughAttributes>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>TabPanel9</Name>
+      <Type>TabPanel</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>ParentTabContainer</Name>
+          <Value>TabContainer</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>Property Contacts</Value>
         </Attribute>
       </PassthroughAttributes>
     </ContainedComponent>
@@ -8896,6 +9782,21 @@
       <InsideControl>MMContractsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
+      <Name>Title8</Name>
+      <Type>Html</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>HtmlEncodeWhiteSpace</Name>
+          <Value>True</Value>
+        </Attribute>
+        <Attribute>
+          <Name>Text</Name>
+          <Value>&lt;%#String.Concat("Property Contacts") %&gt;</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
       <Name>ToggleAll</Name>
       <Type>Selection</Type>
       <PassthroughAttributes>
@@ -8993,6 +9894,17 @@
         </Attribute>
       </PassthroughAttributes>
       <InsideControl>PropertyContactsTableControl</InsideControl>
+    </ContainedComponent>
+    <ContainedComponent>
+      <Name>ToggleAll9</Name>
+      <Type>Selection</Type>
+      <PassthroughAttributes>
+        <Attribute>
+          <Name>onclick</Name>
+          <Value>toggleAllCheckboxes(this);</Value>
+        </Attribute>
+      </PassthroughAttributes>
+      <InsideControl>PropertiesPropertyContactsTableControl</InsideControl>
     </ContainedComponent>
     <ContainedComponent>
       <Name>UpdatePanel1</Name>
@@ -9432,6 +10344,9 @@
  &amp;lt;/GEN:TABPANEL&amp;gt; 
  &amp;lt;GEN:TABPANEL NAME="TabPanel8"&amp;gt; 
   &amp;lt;GEN:TABLE NAME="PropertyContactsTableControl" /&amp;gt; 
+ &amp;lt;/GEN:TABPANEL&amp;gt; 
+ &amp;lt;GEN:TABPANEL NAME="TabPanel9"&amp;gt; 
+  &amp;lt;GEN:TABLE NAME="PropertiesPropertyContactsTableControl" /&amp;gt; 
  &amp;lt;/GEN:TABPANEL&amp;gt; 
 &amp;lt;/GEN:TABCONTAINER&amp;gt;&lt;/Value&gt;
         &lt;CellAttributes /&gt;
@@ -18768,6 +19683,905 @@
           &lt;Attribute&gt;
             &lt;Name&gt;class&lt;/Name&gt;
             &lt;AttributeValue&gt;tableRowDivider&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;width&lt;/Name&gt;
+        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;onkeydown&lt;/Name&gt;
+        &lt;AttributeValue&gt;captureUpDownKey(this, event)&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="PropertiesPropertyContactsTableControl" Type="TablePanel" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelTLSpace" alt="" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelTL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelT&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelTRSpace" alt="" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelTR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelHeaderL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                  &amp;lt;GEN:PANEL NAME="Header9"/&amp;gt;
+                &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dh&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelHeaderR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                  &amp;lt;asp:panel id="CollapsibleRegion9" runat="server"&amp;gt;&amp;lt;GEN:PANEL NAME="Panel9"/&amp;gt;&amp;lt;/asp:panel&amp;gt;
+                &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:PAGINATION NAME="Pagination9"&amp;gt;&amp;lt;/GEN:PAGINATION&amp;gt;
+                    &amp;lt;!--To change the position of the pagination control, please search for "prspace" on the Online Help for instruction. --&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelPaginationC&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelBLSpace" alt="" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelBL&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelB&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" class="panelBRSpace" alt="" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelBR&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;class&lt;/Name&gt;
+        &lt;AttributeValue&gt;dv&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Header9" Type="PanelHeader" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dhel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="TitleRegion9"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dhb&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="Actions9"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dhb&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dher&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                          &amp;lt;div id="Filters9Div" runat="server" class="popupWrapper" &amp;gt;
+                          &amp;lt;GEN:PANEL NAME="Filters9"/&amp;gt;
+                          &amp;lt;/div&amp;gt;
+                        &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt=""/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dher&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;width&lt;/Name&gt;
+        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="TitleRegion9" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                        &amp;lt;GEN:HTML NAME="Title8"/&amp;gt;
+                      &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;dht&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;valign&lt;/Name&gt;
+            &lt;AttributeValue&gt;middle&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Actions9" Type="PanelButton" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;div id="Actions9Div" runat="server" class="popupWrapper" &amp;gt;
+                &amp;lt;GEN:PANEL NAME="Actions9Panel"/&amp;gt;
+                &amp;lt;/div&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prspace&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:Button NAME="Actions9Button" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:right&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+            &amp;lt;GEN:Button NAME="Filters9Button"  /&amp;gt;
+          &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align:right&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;img src="../Images/space.gif" alt="" style="width: 10px" /&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prbbc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:PANEL NAME="Actions9Search"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;panelSearchBox&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;prspaceEnd&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;style&lt;/Name&gt;
+        &lt;AttributeValue&gt;width: 100%;&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Actions9Panel" Type="BlankPanel" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;input type="image" src="../Images/closeButton.gif" onmouseover="this.src='../Images/closeButtonOver.gif'" onmouseout="this.src='../Images/closeButton.gif'" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /&amp;gt;&amp;lt;br/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align: right;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:ImageButton NAME="AddButton9" /&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:ImageButton NAME="DeleteButton9" /&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:ImageButton NAME="SaveButton10" /&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Actions9Search" Type="SearchAndFilter" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                &amp;lt;GEN:SEARCHFILTER NAME="PropertiesPropertyContactsSearchText"/&amp;gt;
+              &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                &amp;lt;GEN:IMAGEBUTTON NAME="SearchButton1"/&amp;gt;
+              &lt;/Value&gt;
+        &lt;CellAttributes /&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes /&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Filters9" Type="SearchAndFilter" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;input type="image" src="../Images/closeButton.gif" onmouseover="this.src='../Images/closeButtonOver.gif'" onmouseout="this.src='../Images/closeButton.gif'" alt="" onclick="ISD_HidePopupPanel();return false;" align="top" /&amp;gt;&amp;lt;br/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;text-align: right;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:LABEL NAME="SortByLabel9"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:ORDERSORT NAME="SortControl9"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:BUTTON NAME="FilterButton9"/&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                                  &amp;lt;GEN:IMAGEBUTTON NAME="ResetButton9" /&amp;gt;
+                                &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;popupTableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Panel9" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                    &amp;lt;GEN:PANEL NAME="Fields9"/&amp;gt;
+                  &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tre&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Epilog /&gt;
+    &lt;TableAttributes&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;class&lt;/Name&gt;
+        &lt;AttributeValue&gt;dBody&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellpadding&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;cellspacing&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;border&lt;/Name&gt;
+        &lt;AttributeValue&gt;0&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+      &lt;Attribute&gt;
+        &lt;Name&gt;width&lt;/Name&gt;
+        &lt;AttributeValue&gt;100%&lt;/AttributeValue&gt;
+      &lt;/Attribute&gt;
+    &lt;/TableAttributes&gt;
+  &lt;/Layout&gt;
+  &lt;Layout Name="Fields9" Type="TableGridRegular" PanelControlName="PropertiesPropertyContactsTableControl"&gt;
+    &lt;Prolog /&gt;
+    &lt;Row Type="Header"&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:SELECTION NAME="ToggleAll9"&amp;gt;&amp;lt;/GEN:SELECTION&amp;gt;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thcnb&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;colspan&lt;/Name&gt;
+            &lt;AttributeValue&gt;3&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thcnb&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;amp;nbsp;&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;thc&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes&gt;
+        &lt;Attribute&gt;
+          &lt;Name&gt;class&lt;/Name&gt;
+          &lt;AttributeValue&gt;tch&lt;/AttributeValue&gt;
+        &lt;/Attribute&gt;
+      &lt;/RowAttributes&gt;
+    &lt;/Row&gt;
+    &lt;Row Type="Repeater"&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                              &amp;lt;GEN:SELECTION NAME="SelectRow9" TYPE="Single" /&amp;gt;                              
+                            &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellSelectCheckbox&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;scope&lt;/Name&gt;
+            &lt;AttributeValue&gt;row&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;font-size: 5px;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;colspan&lt;/Name&gt;
+            &lt;AttributeValue&gt;3&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;
+                          
+                        
+                          
+                        
+                          &amp;lt;GEN:IMAGEBUTTON NAME="DeleteRowButton9"&amp;gt;&amp;lt;/GEN:IMAGEBUTTON&amp;gt;
+                        &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableRowButtonsCellVertical&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="PropertyContactIdLabel"/&amp;gt; 
+&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="PropertyContactId"/&amp;gt; 
+&amp;lt;GEN:IMAGEBUTTON NAME="PropertyContactIdAddRecordLink"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDLABEL NAME="ContactTypeIdLabel1"/&amp;gt; 
+&lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;Value&gt;&amp;lt;GEN:FIELDVALUE NAME="ContactTypeId1"/&amp;gt; 
+&amp;lt;GEN:IMAGEBUTTON NAME="ContactTypeId1AddRecordLink"/&amp;gt; &lt;/Value&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;style&lt;/Name&gt;
+            &lt;AttributeValue&gt;white-space:nowrap;&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellLabel&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableCellValue&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+        &lt;/CellAttributes&gt;
+      &lt;/Cell&gt;
+      &lt;RowAttributes /&gt;
+    &lt;/Row&gt;
+    &lt;Row Type="Repeater"&gt;
+      &lt;Cell&gt;
+        &lt;CellAttributes&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;class&lt;/Name&gt;
+            &lt;AttributeValue&gt;tableRowDivider&lt;/AttributeValue&gt;
+          &lt;/Attribute&gt;
+          &lt;Attribute&gt;
+            &lt;Name&gt;colspan&lt;/Name&gt;
+            &lt;AttributeValue&gt;10&lt;/AttributeValue&gt;
           &lt;/Attribute&gt;
         &lt;/CellAttributes&gt;
       &lt;/Cell&gt;

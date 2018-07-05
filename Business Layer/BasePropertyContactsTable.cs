@@ -63,6 +63,7 @@ public class BasePropertyContactsTable : PrimaryKeyTable
         FirstNameColumn.CodeName = "FirstName";
         LastNameColumn.CodeName = "LastName";
         Address1Column.CodeName = "Address1";
+        Address1Column.Name = EvaluateFormula("\"Address\"");
         Address2Column.CodeName = "Address2";
         Address3Column.CodeName = "Address3";
         CityIDColumn.CodeName = "CityID";
@@ -76,6 +77,8 @@ public class BasePropertyContactsTable : PrimaryKeyTable
         UpdatedByColumn.CodeName = "UpdatedBy";
         CreatedOnColumn.CodeName = "CreatedOn";
         UpdatedOnColumn.CodeName = "UpdatedOn";
+        MobileNumberColumn.CodeName = "MobileNumber";
+        PhoneNumberColumn.CodeName = "PhoneNumber";
 
         
     }
@@ -532,6 +535,56 @@ public class BasePropertyContactsTable : PrimaryKeyTable
         get
         {
             return PropertyContactsTable.Instance.UpdatedOnColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's PropertyContacts_.MobileNumber column object.
+    /// </summary>
+    public BaseClasses.Data.StringColumn MobileNumberColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.StringColumn)this.TableDefinition.ColumnList[18];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's PropertyContacts_.MobileNumber column object.
+    /// </summary>
+    public static BaseClasses.Data.StringColumn MobileNumber
+    {
+        get
+        {
+            return PropertyContactsTable.Instance.MobileNumberColumn;
+        }
+    }
+    
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's PropertyContacts_.PhoneNumber column object.
+    /// </summary>
+    public BaseClasses.Data.StringColumn PhoneNumberColumn
+    {
+        get
+        {
+            return (BaseClasses.Data.StringColumn)this.TableDefinition.ColumnList[19];
+        }
+    }
+    
+
+    
+    /// <summary>
+    /// This is a convenience property that provides direct access to the table's PropertyContacts_.PhoneNumber column object.
+    /// </summary>
+    public static BaseClasses.Data.StringColumn PhoneNumber
+    {
+        get
+        {
+            return PropertyContactsTable.Instance.PhoneNumberColumn;
         }
     }
     
@@ -1077,7 +1130,9 @@ public class BasePropertyContactsTable : PrimaryKeyTable
         string CreatedByValue, 
         string UpdatedByValue, 
         string CreatedOnValue, 
-        string UpdatedOnValue
+        string UpdatedOnValue, 
+        string MobileNumberValue, 
+        string PhoneNumberValue
     )
         {
             IPrimaryKeyRecord rec = (IPrimaryKeyRecord)this.CreateRecord();
@@ -1098,6 +1153,8 @@ public class BasePropertyContactsTable : PrimaryKeyTable
         rec.SetString(UpdatedByValue, UpdatedByColumn);
         rec.SetString(CreatedOnValue, CreatedOnColumn);
         rec.SetString(UpdatedOnValue, UpdatedOnColumn);
+        rec.SetString(MobileNumberValue, MobileNumberColumn);
+        rec.SetString(PhoneNumberValue, PhoneNumberColumn);
 
 
             rec.Create(); //update the DB so any DB-initialized fields (like autoincrement IDs) can be initialized

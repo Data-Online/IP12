@@ -25,7 +25,9 @@ C:\Users\atkin\Source\Repos\IP12\bin\IPv5.Business.pdb
 C:\Users\atkin\Source\Repos\IP12\bin\IPv5.Data.pdb
 C:\Users\atkin\Source\Repos\IP12\bin\Newtonsoft.Json.xml
 C:\Users\atkin\Source\Repos\IP12\bin\System.Net.Http.Formatting.xml
-C:\Users\atkin\Source\Repos\IP12\obj\Release\IPv5.csprojResolveAssemblyReference.cache
 C:\Users\atkin\Source\Repos\IP12\obj\Release\IPv5.Global.resources
 C:\Users\atkin\Source\Repos\IP12\obj\Release\IPv5.csproj.GenerateResource.Cache
 C:\Users\atkin\Source\Repos\IP12\obj\Release\IPv5.dll
+C:\Users\atkin\Source\Repos\IP12\obj\Release\IPv5.csprojAssemblyReference.cache
+C:\Users\atkin\Source\Repos\IP12\obj\Release\IPv5.csproj.CoreCompileInputs.cache
+C:\Users\atkin\Source\Repos\IP12\obj\Release\IPv5.csproj.CopyComplete

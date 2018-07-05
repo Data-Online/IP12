@@ -892,6 +892,70 @@ public class BasePropertyContactsRecord : PrimaryKeyRecord
 		ColumnValue cv = new ColumnValue(val);
 		this.SetValue(cv, TableUtils.UpdatedOnColumn);
 	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's PropertyContacts_.MobileNumber field.
+	/// </summary>
+	public ColumnValue GetMobileNumberValue()
+	{
+		return this.GetValue(TableUtils.MobileNumberColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's PropertyContacts_.MobileNumber field.
+	/// </summary>
+	public string GetMobileNumberFieldValue()
+	{
+		return this.GetValue(TableUtils.MobileNumberColumn).ToString();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's PropertyContacts_.MobileNumber field.
+	/// </summary>
+	public void SetMobileNumberFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.MobileNumberColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's PropertyContacts_.MobileNumber field.
+	/// </summary>
+	public void SetMobileNumberFieldValue(string val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.MobileNumberColumn);
+	}
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's PropertyContacts_.PhoneNumber field.
+	/// </summary>
+	public ColumnValue GetPhoneNumberValue()
+	{
+		return this.GetValue(TableUtils.PhoneNumberColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that provides direct access to the value of the record's PropertyContacts_.PhoneNumber field.
+	/// </summary>
+	public string GetPhoneNumberFieldValue()
+	{
+		return this.GetValue(TableUtils.PhoneNumberColumn).ToString();
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's PropertyContacts_.PhoneNumber field.
+	/// </summary>
+	public void SetPhoneNumberFieldValue(ColumnValue val)
+	{
+		this.SetValue(val, TableUtils.PhoneNumberColumn);
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's PropertyContacts_.PhoneNumber field.
+	/// </summary>
+	public void SetPhoneNumberFieldValue(string val)
+	{
+		ColumnValue cv = new ColumnValue(val);
+		this.SetValue(cv, TableUtils.PhoneNumberColumn);
+	}
 
 
 #endregion
@@ -1672,6 +1736,92 @@ public class BasePropertyContactsRecord : PrimaryKeyRecord
 		get
 		{
 			return TableUtils.UpdatedOnColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's PropertyContacts_.MobileNumber field.
+	/// </summary>
+	public string MobileNumber
+	{
+		get
+		{
+			return this.GetValue(TableUtils.MobileNumberColumn).ToString();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.MobileNumberColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool MobileNumberSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.MobileNumberColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's PropertyContacts_.MobileNumber field.
+	/// </summary>
+	public string MobileNumberDefault
+	{
+		get
+		{
+			return TableUtils.MobileNumberColumn.DefaultValue;
+		}
+	}
+	/// <summary>
+	/// This is a property that provides direct access to the value of the record's PropertyContacts_.PhoneNumber field.
+	/// </summary>
+	public string PhoneNumber
+	{
+		get
+		{
+			return this.GetValue(TableUtils.PhoneNumberColumn).ToString();
+		}
+		set
+		{
+			ColumnValue cv = new ColumnValue(value);
+			this.SetValue(cv, TableUtils.PhoneNumberColumn);
+		}
+	}
+
+
+	/// <summary>
+	/// This is a convenience method that can be used to determine that the column is set.
+	/// </summary>
+	public bool PhoneNumberSpecified
+	{
+		get
+		{
+			ColumnValue val = this.GetValue(TableUtils.PhoneNumberColumn);
+            if (val == null || val.IsNull)
+            {
+                return false;
+            }
+            return true;
+		}
+	}
+
+	/// <summary>
+	/// This is a convenience method that allows direct modification of the value of the record's PropertyContacts_.PhoneNumber field.
+	/// </summary>
+	public string PhoneNumberDefault
+	{
+		get
+		{
+			return TableUtils.PhoneNumberColumn.DefaultValue;
 		}
 	}
 

@@ -1514,6 +1514,41 @@
       <DependentUpon>InactiveAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
+    <Compile Include="PropertiesPropertyContacts\AddPropertiesPropertyContacts.aspx.cs">
+      <DependentUpon>AddPropertiesPropertyContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContacts\AddPropertiesPropertyContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContacts\EditPropertiesPropertyContacts.aspx.cs">
+      <DependentUpon>EditPropertiesPropertyContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContacts\EditPropertiesPropertyContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContacts\EditPropertiesPropertyContactsTable.aspx.cs">
+      <DependentUpon>EditPropertiesPropertyContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContacts\EditPropertiesPropertyContactsTable.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContacts\ShowPropertiesPropertyContacts.aspx.cs">
+      <DependentUpon>ShowPropertiesPropertyContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContacts\ShowPropertiesPropertyContacts.Controls.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="vPropertiesPropertyContacts\ShowVPropertiesPropertyContactsTable.aspx.cs" >
+      <DependentUpon>ShowVPropertiesPropertyContactsTable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vPropertiesPropertyContacts\ShowVPropertiesPropertyContactsTable.Controls.cs" >
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="BaseClasses\Readme.txt" />
@@ -1952,6 +1987,11 @@
     <Content Include="Properties\ShowPropertiesQuickList.aspx" />
     <Content Include="vUserRoleSummary\ShowVUserRoleSummaryTable.aspx" />
     <Content Include="Security\InactiveAccount.aspx" />
+    <Content Include="PropertiesPropertyContacts\AddPropertiesPropertyContacts.aspx" />
+    <Content Include="PropertiesPropertyContacts\EditPropertiesPropertyContacts.aspx" />
+    <Content Include="PropertiesPropertyContacts\EditPropertiesPropertyContactsTable.aspx" />
+    <Content Include="PropertiesPropertyContacts\ShowPropertiesPropertyContacts.aspx" />
+    <Content Include="vPropertiesPropertyContacts\ShowVPropertiesPropertyContactsTable.aspx"  />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Global.asax.resx">

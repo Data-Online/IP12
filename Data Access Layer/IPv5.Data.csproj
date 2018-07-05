@@ -342,13 +342,31 @@
     <Compile Include="BaseVPropertyDirectorsSqlView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VUserRoleSummaryDefinition.cs" >
+    <Compile Include="VUserRoleSummaryDefinition.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="VUserRoleSummarySqlView.cs" >
+    <Compile Include="VUserRoleSummarySqlView.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="BaseVUserRoleSummarySqlView.cs" >
+    <Compile Include="BaseVUserRoleSummarySqlView.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContactsDefinition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PropertiesPropertyContactsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BasePropertiesPropertyContactsSqlTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertiesPropertyContactsDefinition.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="VPropertiesPropertyContactsSqlView.cs" >
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BaseVPropertiesPropertyContactsSqlView.cs" >
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

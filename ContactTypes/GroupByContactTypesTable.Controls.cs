@@ -4113,6 +4113,8 @@ public class BasePropertyContactsTableControlRow : IPv5.UI.BaseApplicationRecord
         public virtual void SetAddress1Label()
                   {
                   
+                        this.Address1Label.Text = EvaluateFormula("\"Address\"");
+                      
                     
         }
                 

@@ -332,7 +332,11 @@ public override void SetControl(string control)
         
         public System.Web.UI.WebControls.Literal LastNameLabel;
         
+        public System.Web.UI.WebControls.Literal MobileNumberLabel;
+        
         public System.Web.UI.WebControls.Literal PageTitle;
+        
+        public System.Web.UI.WebControls.Literal PhoneNumberLabel;
         
         public System.Web.UI.WebControls.Literal PostCodeLabel;
         
